@@ -79,7 +79,10 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "sk-or-v1-f0bbb7f66f5e
 TAVILY_API_KEY     = os.environ.get("TAVILY_API_KEY", "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")
 FINNHUB_API_KEY    = os.environ.get("FINNHUB_API_KEY", "d7kj3h9r01qiqbcuk1ugd7kj3h9r01qiqbcuk1v0")
 POLYGON_API_KEY    = os.environ.get("POLYGON_API_KEY", "Ojx6p343h5SwBVq_0ZOntf_dbpcm5EAy")  # For live options
-ALPACA_API_KEY     = os.environ.get("ALPACA_API_KEY", "")   # Alternative options source
+ALPACA_API_KEY     = os.environ.get("ALPACA_API_KEY", "PKQPPHGBKHMRBLDY6HKSXKXA3Y")
+ALPACA_SECRET_KEY  = os.environ.get("ALPACA_SECRET_KEY", "7vq32opSfSvDhwp5qttV6o7SePyfrfTfVffS7zTKiDZp")
+CLICKUP_API_KEY    = os.environ.get("CLICKUP_API_KEY", "pk_210064579_GKJGK3ZL7YXS46SKMB4GZ7UBDR61JRLE")
+CLICKUP_LIST_ID    = os.environ.get("CLICKUP_LIST_ID", "901416047336")
 
 # ─────────────────────────────────────────────
 # MODEL CONFIGURATION (Comprehensive Free Models + Smart Routing)
