@@ -1,0 +1,49 @@
+# Portfolio Restructuring Skill
+
+## Purpose
+Analyze portfolio holdings to identify:
+- Overvalued positions
+- Concentration risks
+- Better allocation opportunities
+- Sell candidates with risk/reward imbalance
+- Rebalancing recommendations
+
+## Input Context
+- Portfolio holdings from CSV imports
+- Current market prices
+- Sector classifications
+- Valuation metrics (P/E, P/B, EV/EBITDA)
+- Risk metrics (beta, volatility)
+
+## Output Format
+Markdown sections:
+### 📊 Portfolio Analysis
+- Current allocation by sector/asset class
+- Concentration risk assessment
+- Valuation comparison vs sector averages
+
+### 🔍 Overvalued Positions
+- List of positions with valuation metrics > sector average by X%
+- Reasoning for overvaluation
+- Suggested action (sell/hold/rotate)
+
+### 🔄 Rebalancing Recommendations
+- Underweight sectors needing exposure
+- Suggested new positions with rationale
+- Portfolio weight targets
+
+### ⚠️ Risk Alerts
+- Regulatory risks
+- Balance sheet concerns
+- Technical indicators suggesting downtrend
+
+## Usage
+Include this skill when:
+- Generating investment ideas
+- Updating recommendations
+- Analyzing portfolio performance
+- Creating market sentiment analysis
+
+## Integration
+Call via LLM prompt template:
+"Analyze portfolio restructuring using the Portfolio Restructuring Skill with context: {portfolio_context}"

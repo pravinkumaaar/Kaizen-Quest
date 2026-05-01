@@ -1,0 +1,44 @@
+name: Daily Agent Run
+
+on:
+  schedule:
+    # Run at 9:30 AM ET (market open) and 4:30 PM ET (market close)
+    - cron: '30 9 * * 1-5'
+    - cron: '30 16 * * 1-5'
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Run agent
+      env:
+        OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+        ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
+        CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
+      run: python3 agent.py
+    
+    - name: Commit and push reports
+      run: |
+        git config user.name "Agent Bot"
+        git config user.email "agent@kaizen-quest.local"
+        git add REPORTS/ docs/
+        git commit -m "Daily agent run: $(date +%Y-%m-%d-%H%M)" || echo "No changes"
+        git push || echo "Nothing to push"
