@@ -10,10 +10,14 @@ on:
 jobs:
   run-agent:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allow the workflow to write to the repository
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -33,6 +37,7 @@ jobs:
         ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
         CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       run: python3 agent.py
     
     - name: Commit and push reports
