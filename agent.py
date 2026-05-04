@@ -42,6 +42,10 @@ try:
     from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary
     from skills.clickup_integration import create_recommendation_task, send_daily_summary, get_active_recommendations
     from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run
+    from skills.enhanced_trading import (generate_trade_thesis_prompt, calculate_kelly_criterion,
+                                         calculate_position_size, detect_options_imbalances,
+                                         generate_options_strategy_prompt, re_evaluate_positions,
+                                         generate_revaluation_report, should_auto_trade)
     SKILLS_AVAILABLE = True
     print("[✓] Skills modules loaded successfully")
 except ImportError as e:
@@ -83,8 +87,9 @@ ALPACA_API_KEY     = os.environ.get("ALPACA_API_KEY", "PKQPPHGBKHMRBLDY6HKSXKXA3
 ALPACA_SECRET_KEY  = os.environ.get("ALPACA_SECRET_KEY", "7vq32opSfSvDhwp5qttV6o7SePyfrfTfVffS7zTKiDZp")
 CLICKUP_API_KEY    = os.environ.get("CLICKUP_API_KEY", "pk_210064579_GKJGK3ZL7YXS46SKMB4GZ7UBDR61JRLE")
 CLICKUP_LIST_ID    = os.environ.get("CLICKUP_LIST_ID", "901416047336")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8636007397:AAHNNsTemjFJujygybFCBMWELLdYfLk6xjc")
 
-# ─────────────────────────────────────────────
+# ─────────────────────────────────────
 # MODEL CONFIGURATION (Comprehensive Free Models + Smart Routing)
 # ─────────────────────────────────────────────
 
@@ -1851,31 +1856,83 @@ Digest (summary):
 
 {once_in_a_lifetime_context}
 
-Generate **3-5 Investment Ideas** (aggressive long-term/swing):
+Generate **3-5 Investment Ideas** using the STRUCTURED TRADE THESIS FRAMEWORK.
 
-BROAD MARKET SCAN:
-- First, scan for compelling opportunities across the broader market (not just current holdings)
-- Look for: sector rotations, beaten-down quality names, emerging themes, earnings plays, catalyst-driven setups
-- Only recommend non-portfolio stocks if they meet the conviction threshold (8+/10)
+## MANDATORY TRADE THESIS FRAMEWORK
 
-PORTFOLIO-AWARE:
-- Analyze current holdings by WEIGHT. Largest positions matter most.
-- SELL/REDUCE overvalued or overweight positions
-- BUY/ACCUMULATE on underweight sectors with conviction
-- Recommend HOLDING CASH if no compelling opportunities exist
+For EVERY trade idea, provide this structured analysis:
 
-For EACH idea (be concise):
-### [#] TICKER — Thesis
+### THESIS (1 sentence)
+[Clear, concise investment logic]
+
+### BULL CASE (3 strongest reasons this goes up)
+1. [Reason 1 - specific with data/catalysts]
+2. [Reason 2 - specific with data/catalysts]
+3. [Reason 3 - specific with data/catalysts]
+
+### BEAR CASE (3 strongest reasons this goes wrong)
+1. [Risk 1 - what could cause losses]
+2. [Risk 2 - what could cause losses]
+3. [Risk 3 - what could cause losses]
+
+### RISK/REWARD ANALYSIS
+- Entry Price: $X.XX
+- Target Price: $Y.YY (upside: Z%)
+- Stop Loss: $A.AA (downside: B%)
+- Risk/Reward Ratio: [MUST be >= 3:1 to recommend]
+- Win Probability: [X% based on analysis]
+- Expected Value: [Win% * Upside - Loss% * Downside]
+- Kelly Position Size: [calculated % of portfolio]
+
+### PRE-MORTEM ANALYSIS
+"This trade will fail if:"
+1. [Specific failure condition 1]
+2. [Specific failure condition 2]
+3. [Specific failure condition 3]
+
+### SCENARIO ANALYSIS
+- Bull Case (25% prob): Stock reaches $X (+Y%)
+- Base Case (50% prob): Stock reaches $A (+B%)
+- Bear Case (25% prob): Stock drops to $C (-D%)
+- Expected Return: [weighted average]
+
+### EXIT CRITERIA
+- Profit Target: Sell at $X or when [condition]
+- Stop Loss: Sell at $A (B% below entry)
+- Time Stop: Re-evaluate if thesis hasnt played out in [timeframe]
+- Thesis Break: Exit immediately if [specific condition changes]
+
+### PORTFOLIO FIT
+- Sector: [sector] - Current exposure: X%
+- Correlation to existing holdings: [low/medium/high]
+
+## RULES
+1. Only recommend trades where Risk/Reward >= 3:1
+2. Expected Value must be strongly positive
+3. Win probability >= 60% OR asymmetric upside (5x+)
+4. Position size <= 10% of portfolio (use Kelly Criterion)
+5. Must be able to articulate WHY this is a good trade
+6. Scan BROAD market, not just current holdings
+7. For portfolio positions: analyze by WEIGHT, suggest SELL/REDUCE for overvalued
+8. Recommend HOLDING CASH if no compelling opportunities
+9. Look for ONCE-IN-A-LIFETIME opportunities: extreme asymmetric plays, 50%+ upside potential, clear catalysts
+
+For EACH idea output:
+### [#] TICKER - Thesis
 **Type/Price:** [Stock/ETF/Crypto] @ $X.XX
 **Why:** 2-3 sentences, first-principles
-**Catalysts:** 1-2 key drivers
-**Horizon:** [Swing 2-8wk/Medium 3-12mo/Long 1-3yr]
-**Entry/Target:** $X.XX → $Y.YY (timeframe)
-**Stop/Size:** $Z.XX / X% of portfolio
+**Bull Case:** 1. 2. 3.
+**Bear Case:** 1. 2. 3.
+**Risk/Reward:** X:1 | Win Prob: X% | EV: +X%
+**Kelly Size:** X% of portfolio
+**Entry/Target/Stop:** $X.XX -> $Y.YY / $Z.ZZ
+**Pre-Mortem:** "Fails if: 1. 2. 3."
+**Exit Criteria:** Profit at $X / Stop at $Z / Time stop: X weeks
+**Horizon:** [Swing 2-8wk / Medium 3-12mo / Long 1-3yr]
 **Conviction:** X/10 | **Track:** Yes/No
-**Portfolio Fit:** [New Position/ADD/REDUCE/SELL/HOLD]
+**Portfolio Fit:** [New/ADD/REDUCE/SELL/HOLD]
 
-⚠️ Not financial advice. Verify before acting.""".format(
+Not financial advice. Verify before acting.""".format(
             memory=memory_slice,
             market_data=market_data_slice,
             digest=digest_slice,
@@ -1910,25 +1967,61 @@ Digest:
 Options Data:
 {options_context}
 
-Generate **2 Options Ideas** (STRICT rules):
-- Defined-risk ONLY (long calls/puts, covered calls, LEAPS)
+Generate **2-3 Options Ideas** using PRICING IMBALANCE analysis.
+
+## OPTIONS STRATEGY FRAMEWORK
+
+First, analyze the options data for PRICING IMBALANCES:
+- IV Rank > 70: Options are EXPENSIVE -> Sell premium (covered calls, cash-secured puts, credit spreads)
+- IV Rank < 30: Options are CHEAP -> Buy premium (LEAPS calls, debit spreads)
+- Put/Call Ratio > 1.5: Extreme bearish sentiment -> Contrarian buy opportunity
+- Put/Call Ratio < 0.5: Extreme bullish sentiment -> Consider taking profits
+- IV > HV by 50%+: Options overpriced -> Sell volatility
+- IV < HV by 30%+: Options underpriced -> Buy volatility
+
+## STRATEGY TYPES (in order of priority)
+
+### 1. ASYMMETRIC PLAYS (highest priority)
+- Trades where upside is 5x+ the downside
+- LEAPS calls on high-conviction growth stocks
+- Must have clear catalyst and timeline
+- Once-in-a-lifetime opportunities with massive upside
+
+### 2. PREMIUM SELLING (consistent income)
+- Covered calls on existing positions
+- Cash-secured puts on stocks you want to own
+- Only sell when IV Rank > 70 (expensive options)
+- Target 1-2% monthly return with high probability
+
+### 3. HIGH PROBABILITY TRADES
+- Credit spreads on overbought/oversold conditions
+- Iron condors on range-bound stocks
+- Probability of profit > 70%
+
+## RULES
+- Defined-risk ONLY (long calls/puts, covered calls, LEAPS, credit spreads)
 - Min 2wk expiry, prefer 30-90d or 6mo+ LEAPS
-- Max 10% portfolio total
+- Max 5% portfolio total in options
 - NEVER let expire ITM - SELL before expiry
 - NO leverage, NO naked, NO margin
+- Every trade must have a clear EDGE (pricing imbalance)
+- Look for pricing imbalances that present asymmetric opportunities
 
 For EACH:
 ### [Strategy] on [TICKER]
-**Type/Underlying:** [Long Call/Put/Covered/LEAPS] @ $X
+**Type:** [Long Call/Put/Covered Call/LEAPS/Credit Spread]
+**Edge:** [Why this has an edge - pricing imbalance]
 **Why:** 1-2 sentences
-**Strike/Expiry:** $X / [date, min 2wk]
+**Strike/Expiry:** $X / [date]
 **Premium/Max Risk:** $X (all you can lose)
-**Target:** Sell @ $X or X% premium gain
-**⚠️ EXIT:** SELL before expiry, NEVER let ITM.
+**Target:** Sell @ $X or X% gain
+**Probability of Profit:** X%
+**EXIT:** SELL before expiry, NEVER let ITM.
+**Conviction:** X/10
 
 Suggest 1 **Covered Call** if owner holds underlying.
 
-⚠️ Educational only. Verify with broker.*""".format(
+Educational only. Verify with broker.*""".format(
             memory_summary=memory_summary,
             market_data=market_data_slice,
             digest_summary=digest_summary,
