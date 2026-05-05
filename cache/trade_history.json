@@ -11,6 +11,30 @@
       "realized_pnl": 0.0,
       "timestamp": "2026-05-05 00:09:32",
       "cash_remaining": 98500.0
+    },
+    {
+      "ticker": "CRDO",
+      "action": "BUY",
+      "quantity": 30,
+      "price": 198.25,
+      "total_cost": 5947.5,
+      "trade_type": "stock",
+      "status": "FILLED",
+      "realized_pnl": 0.0,
+      "timestamp": "2026-05-05 19:01:44",
+      "cash_remaining": 92552.5
+    },
+    {
+      "ticker": "VRT",
+      "action": "BUY",
+      "quantity": 29,
+      "price": 339.78,
+      "total_cost": 9853.619999999999,
+      "trade_type": "stock",
+      "status": "FILLED",
+      "realized_pnl": 0.0,
+      "timestamp": "2026-05-05 19:01:44",
+      "cash_remaining": 82698.88
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 98500.0,
+  "cash": 82698.88,
   "initial_cash": 100000,
   "positions": {
     "AAPL": {
@@ -7,8 +7,20 @@
       "avg_cost": 150.0,
       "opened": "2026-05-05",
       "shares": 10
+    },
+    "CRDO": {
+      "type": "stock",
+      "avg_cost": 198.25,
+      "opened": "2026-05-05",
+      "shares": 30
+    },
+    "VRT": {
+      "type": "stock",
+      "avg_cost": 339.78,
+      "opened": "2026-05-05",
+      "shares": 29
     }
   },
   "total_value": 100000,
-  "last_updated": "2026-05-05 00:09:32"
+  "last_updated": "2026-05-05 19:01:44"
 }

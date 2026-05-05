@@ -1,23 +1,6 @@
-# 🎓 Agent Learnings
+...[older entries archived in HISTORY/]
 
-*Auto-updated after each run. Read at the start of every run.*
-
-## Human-Written Seed Rules
-- Investment ideas must include specific entry prices, not just "buy now"
-- Options: ALWAYS include the EXIT RULE reminding to close before expiry
-- Learning topics: avoid obvious ones. Surprising and counterintuitive > popular
-- News digest: every sentence should earn its place. Cut the fluff ruthlessly.
-- Cross-domain insights are the most valued output — look for non-obvious connections
-- Time horizons matter: always specify swing vs medium vs long-term clearly
-- When suggesting covered calls: calculate and show the annualized yield
-- For asymmetric options plays: explain WHY the market might be mispricing them
-
----
-*Agent appends entries below after each run.*
-
-
-## Run: 2026-04-22 17:36 UTC
-[LLM unavailable: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Venice', 'is_byok': False}}, 'user_id': 'user_3CjDMJJxt7kLXfsmDFwdcO4xdJF'}]
+rror': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Venice', 'is_byok': False}}, 'user_id': 'user_3CjDMJJxt7kLXfsmDFwdcO4xdJF'}]
 
 ## Run: 2026-04-22 18:22 UTC
 Here’s a critical self-assessment of this run’s performance with actionable learnings:
@@ -180,3 +163,18 @@ Here's my critical self-assessment and learnings from this run:
 - **❌ Portfolio-only recommendation tunnel vision persists and the user noticed (8.5/10)** — The latest rating praised understanding of positions but penalized only recommending from existing holdings. The user wants NEW tickers never held that may present better opportunities. The system has 67+ tickers and 19 consolidated holdings — there's enough context about the user's style (AI infrastructure, semis, quantum computing, fintech) to screen and suggest positions outside the current portfolio. *Recommendation engine must include a "new ideas" section with 2-3 tickers the user does NOT own, backed by screening criteria and thesis.*
 
 - **❌ Options data freshness is still a critical failure point** — The 2/10 user flagged "options data is completely outdated and from 2 years back." Despite partial improvements (4/10 acknowledged "good options recommendations" but "PLTR data was old"), this remains unresolved. OWL must ensure options chains (iv, bid/ask, OI, Greeks) reflect current market conditions, not stale historical data. If real-time options data
+
+## Run: 2026-05-05 18:53:34
+# LEARNINGS.md — Run 1853 | 2026-05-05 18:53:34
+
+---
+
+## ✅ What Worked Well This Run
+
+- **Portfolio-aware analysis with weightage context**: The 8.5/10 rating from 2026-04-30 explicitly praised this as "the best run yet" — the report correctly identified positions, holdings, and weightage across the consolidated portfolio. The user felt understood. This is the single biggest driver of high ratings and must be preserved as a baseline in every run.
+- **Nuanced, thesis-driven recommendations with reasoning**: The 7/10 and 8.5/10 ratings both highlighted that recommendations were "specific, nuanced" with clear reasoning. The CRDO and VRT picks with conviction scores (8/10, 9/10) show the model is calibrating conviction — this directly addresses the user's request to "teach me while recommending."
+- **High-quality news synthesis**: The 8.5/10 user called news "the highest quality." The Railway $100M raise, OpenAI/Anthropic PE partnership, and AI capex narrative were well-connected to portfolio movers (SNDK, MU, CRDO, NVTS, WOLF). Linking macro news to specific holdings is a proven high-rating pattern.
+
+## ❌ What Needs Improvement
+
+- **Recommendations only from existing holdings — no new ideas**: The 8.5/10 user's "biggest problem" was that the report "only considered stocks from my portfolio to recommend buying or selling and not anything new." This is a critical gap. The user wants **net-new tickers** they don't currently own that present better opportunities. Every run must include 2-3 fresh ideas outside the current 67-t
