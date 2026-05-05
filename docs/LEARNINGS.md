@@ -1,6 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-rror': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Venice', 'is_byok': False}}, 'user_id': 'user_3CjDMJJxt7kLXfsmDFwdcO4xdJF'}]
+: 'user_3CjDMJJxt7kLXfsmDFwdcO4xdJF'}]
 
 ## Run: 2026-04-22 18:22 UTC
 Here’s a critical self-assessment of this run’s performance with actionable learnings:
@@ -178,3 +178,6 @@ Here's my critical self-assessment and learnings from this run:
 ## ❌ What Needs Improvement
 
 - **Recommendations only from existing holdings — no new ideas**: The 8.5/10 user's "biggest problem" was that the report "only considered stocks from my portfolio to recommend buying or selling and not anything new." This is a critical gap. The user wants **net-new tickers** they don't currently own that present better opportunities. Every run must include 2-3 fresh ideas outside the current 67-t
+
+## Run: 2026-05-05 20:38:39
+- **What worked well:** The report correctly identified the strongest movers (e.g., MU +11%, APLD +12%, VRT +3%) and aligned active recommendations (SNDK, MU, VRT) with those high‑impact stocks, which directly contributed to the 8.5/10 rating. The concise market‑sentiment narrative and

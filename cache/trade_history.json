@@ -35,6 +35,18 @@
       "realized_pnl": 0.0,
       "timestamp": "2026-05-05 19:01:44",
       "cash_remaining": 82698.88
+    },
+    {
+      "ticker": "VRT",
+      "action": "BUY",
+      "quantity": 17,
+      "price": 341.02,
+      "total_cost": 5797.34,
+      "trade_type": "stock",
+      "status": "FILLED",
+      "realized_pnl": 0.0,
+      "timestamp": "2026-05-05 20:46:01",
+      "cash_remaining": 76901.54000000001
     }
   ]
 }
