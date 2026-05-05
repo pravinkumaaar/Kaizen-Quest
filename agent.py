@@ -1947,10 +1947,11 @@ Not financial advice. Verify before acting.""".format(
         max_tokens=2500,
     )
 
-def task_options_ideas(market_data: str, digest: str, memory: str) -> str:
+def task_options_ideas(market_data: str, digest: str, memory: str, options_context: str = "") -> str:
     log("  → Generating options ideas...")
-    # Get options data for key tickers
-    options_context = fetch_options_snapshot(["SPY", "QQQ", "NVDA", "AAPL"])
+    # Use pre-fetched options data if available
+    if not options_context:
+        options_context = fetch_options_snapshot(["SPY", "QQQ", "NVDA", "AAPL"])
 
     # Summarize memory and digest to save tokens
     memory_summary = summarize_text(memory, "memory", 300)
@@ -2300,6 +2301,23 @@ def main():
         except Exception as e:
             log(f"[!] Memory init failed: {e}")
 
+        # Initialize skills with API keys
+        try:
+            from skills.portfolio_analysis import init_skills as init_portfolio
+            from skills.options_intelligence import init_options_skill
+            from skills.recommendation_tracker import init_tracker_skill
+            from skills.news_research import init_news_skill
+            from skills.learning_curator import init_learning_skill
+
+            init_portfolio(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
+            init_options_skill(polygon_key=POLYGON_API_KEY, base_dir=str(BASE_DIR))
+            init_tracker_skill(base_dir=str(BASE_DIR), finnhub_key=FINNHUB_API_KEY)
+            init_news_skill(tavily_key=TAVILY_API_KEY, finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
+            init_learning_skill(base_dir=str(BASE_DIR))
+            log("[OK] All skills initialized with API keys")
+        except Exception as e:
+            log(f"[!] Skills initialization failed: {e}")
+
     # 0. Load portfolios from CSV (multiple portfolio consolidation)
     # Auto-discovers portfolio1.csv, portfolio2.csv, portfolio3.csv, portfolio4.csv
     portfolio_data = import_multiple_portfolios()
@@ -2360,7 +2378,10 @@ def main():
     # 3. Analyze portfolio and market sentiment
     log("📊 Analyzing portfolio positions by weightage...")
     portfolio_analysis = analyze_portfolio_weightage()
-    
+
+    # Extract portfolio tickers for options and earnings analysis
+    portfolio_tickers = [h['ticker'] for h in portfolio_analysis.get('top_positions', [])][:5]
+
     log("🌡️  Analyzing market sentiment (fear/greed)...")
     market_sentiment = get_market_sentiment()
 
@@ -2374,15 +2395,16 @@ def main():
     log("✍️  Running sub-agents...")
     digest      = task_news_digest(rss, fin_news, memory)
     digest_summary = summarize_text(digest, "news digest", 300)
-    
-    # Fetch options data early so both investment and options tasks can use it
-    options_context = fetch_options_snapshot(["SPY", "QQQ", "NVDA", "AAPL", "PLTR", "TEM"])
+
+    # Fetch options data early with portfolio tickers included
+    options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL"] + portfolio_tickers))
+    options_context = fetch_options_snapshot(options_tickers)
     investments = task_investment_ideas(market_data, digest_summary, memory, portfolio_analysis, options_context)
-    
+
     # Store trackable recommendations
     parse_and_store_recommendations(investments)
-    
-    options     = task_options_ideas(market_data, digest_summary, memory)
+
+    options     = task_options_ideas(market_data, digest_summary, memory, options_context=options_context)
     learning    = task_learning(digest_summary, memory)
     market_reaction = task_market_reaction(market_data, digest_summary)
 

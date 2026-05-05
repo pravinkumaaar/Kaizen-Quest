@@ -33,9 +33,9 @@ def fetch_options_snapshot_polygon(tickers: list) -> str:
     """
     if not POLYGON_API_KEY:
         return fetch_options_snapshot_yfinance(tickers)
-    
+
     lines = []
-    today = datetime.date.today()
+    today = datetime.today().date()
     min_expiry = today + timedelta(days=14)
     
     for ticker in tickers:
@@ -110,7 +110,7 @@ def fetch_options_snapshot_yfinance(tickers: list) -> str:
     Free fallback: Fetch options chain via yfinance.
     """
     lines = []
-    today = datetime.date.today()
+    today = datetime.today().date()
     min_expiry = today + timedelta(days=14)
 
     for ticker in tickers:

@@ -8,6 +8,7 @@ Manages investment recommendations:
 - Clear/reset recommendations
 """
 
+import sys
 import re
 import requests
 import yfinance as yf
@@ -42,36 +43,76 @@ def clear_active_recommendations():
     except Exception:
         pass
 
-def parse_and_store_recommendations(investments_text: str):
-    """Parse investment ideas and store high-conviction ones (9+/10)."""
+def parse_and_store_recommendations(investments_text: str, model_used: str = "unknown"):
+    """Parse investment ideas and store high-conviction ones (8+/10) in RECOMMENDATIONS.md"""
     trackable = []
-    pattern = r'### \[\d+\] Asset: ([\w\-]+)\s*[—–].*?\n\n(.*?)(?=(?:### \[|\Z))'
-    
-    matches = re.finditer(pattern, investments_text, re.DOTALL)
-    
+    # Flexible regex to match various LLM output formats:
+    # ### [1] TICKER — Thesis or ### [1] **TICKER (Company)** — Thesis
+    pattern = r'### \[\d+\]\s*(?:\*\*)?([A-Z]{1,5})(?:\s*\([^)]*\))?(?:\*\*)?\s*[—–\-]\s*.*?\n\n(.*?)(?=(?:### \[|\Z))'
+
+    matches = list(re.finditer(pattern, investments_text, re.DOTALL))
+
     for match in matches:
-        ticker = match.group(1).strip()
+        ticker = match.group(1).strip().upper()
         content = match.group(2)
-        
-        if not ticker or len(ticker) > 6 or not any(c.isupper() for c in ticker):
+
+        # Skip invalid tickers - strict validation
+        if not ticker or len(ticker) < 1 or len(ticker) > 5:
             continue
-        
-        # Extract details
-        price_match = re.search(r'\*\*Current Price:\*\*\s*\$?([\d.]+)', content)
-        target_match = re.search(r'\*\*Target:\*\*\s*\$?([\d.]+)', content)
-        conviction_match = re.search(r'\*\*Conviction Score:\*\*\s*(\d+)', content)
-        track_match = re.search(r'\*\*Track This:\*\*\s*(Yes|No)', content)
-        
-        if not conviction_match:
-            conviction_match = re.search(r'(\d+)/10', content)
-        
-        current_price = price_match.group(1) if price_match else 'N/A'
-        target_price = target_match.group(1) if target_match else 'N/A'
-        conviction = conviction_match.group(1) if conviction_match else '5'
-        should_track = track_match and track_match.group(1) == 'Yes'
-        
-        # Store only 9+/10 conviction or explicitly tracked
-        if should_track or int(conviction) >= 9:
+        if ticker in ['ASSET', 'TYPE', 'LEAPS', 'STOCK', 'ETF', 'CRYPTO', 'SELL', 'BUY', 'HOLD', 'THE', 'AND', 'FOR', 'YOU', 'WITH', 'THIS', 'THAT']:
+            continue
+        if not ticker.isalpha():
+            continue
+
+        # Extract conviction score - look for multiple patterns
+        conviction = '5'
+        for conv_pattern in [
+            r'\*\*Conviction:\*\*\s*(\d+)',
+            r'\*\*Conviction Score:\*\*\s*(\d+)',
+            r'Conviction:\s*(\d+)/10',
+            r'(\d+)/10'
+        ]:
+            conv_match = re.search(conv_pattern, content)
+            if conv_match:
+                conviction = conv_match.group(1)
+                break
+
+        # Extract track indicator
+        track_match = re.search(r'\*\*Track:\*\*\s*(Yes|No)', content)
+        should_track = track_match and track_match.group(1) == 'Yes' if track_match else False
+
+        # Extract price info - multiple patterns to handle LLM output variations
+        current_price = 'N/A'
+        for price_pattern in [
+            r'\*\*Type/Price:\*\*\s*[\w\s]+\s*@\s*\$?([\d,.]+)',
+            r'@\s*\$?([\d,.]+)',
+            r'\*\*Current Price:\*\*\s*\$?([\d,.]+)',
+            r'Price:\s*\$?([\d,.]+)',
+        ]:
+            price_match = re.search(price_pattern, content)
+            if price_match:
+                current_price = price_match.group(1).replace(',', '')
+                break
+
+        # Extract target price
+        target_price = 'N/A'
+        for target_pattern in [
+            r'\*\*Entry/Target:\*\*\s*\$?[\d,.]+\s*→\s*\$?([\d,.]+)',
+            r'Target:\s*\$?([\d,.]+)',
+            r'→\s*\$?([\d,.]+)',
+        ]:
+            target_match = re.search(target_pattern, content)
+            if target_match:
+                target_price = target_match.group(1).replace(',', '')
+                break
+
+        # Track if conviction >= 8 or explicitly marked
+        try:
+            conv_int = int(conviction)
+        except ValueError:
+            conv_int = 5
+
+        if should_track or conv_int >= 8:
             trackable.append({
                 'date': datetime.now().date().isoformat(),
                 'ticker': ticker,
@@ -82,22 +123,22 @@ def parse_and_store_recommendations(investments_text: str):
                 'current_price': current_price,
                 'performance': '0%'
             })
-    
+
     if trackable and RECOMMENDATIONS_FILE:
         existing = RECOMMENDATIONS_FILE.read_text(encoding="utf-8") if RECOMMENDATIONS_FILE.exists() else ""
         new_entries = "\n".join([
             f"- {r['date']} | {r['ticker']} | ${r['entry_price']} | ${r['target']} | {r['conviction']}/10 | {r['status']} | ${r['current_price']} | {r['performance']}"
             for r in trackable
         ])
-        
+
         if "## Active Recommendations" in existing:
             updated = existing.replace(
-                "## Active Recommendations\n<!-- Agent will update this section with current recommendations -->",
-                f"## Active Recommendations\n{new_entries}\n<!-- Agent will update this section with current recommendations -->"
+                "<!-- Agent will update this section with current recommendations -->",
+                f"{new_entries}\n<!-- Agent will update this section with current recommendations -->"
             )
         else:
-            updated = existing + f"\n## Active Recommendations\n{new_entries}"
-        
+            updated = existing + f"\n\n## Active Recommendations\n{new_entries}\n<!-- Agent will update this section with current recommendations -->\n"
+
         RECOMMENDATIONS_FILE.write_text(updated, encoding="utf-8")
 
 def update_recommendation_performance():
