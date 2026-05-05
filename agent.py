@@ -41,11 +41,12 @@ try:
     from skills.alpaca_trading import get_account_info, get_positions, get_portfolio_history
     from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary
     from skills.clickup_integration import create_recommendation_task, send_daily_summary, get_active_recommendations
-    from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run
+    from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run, update_warm_memory
     from skills.enhanced_trading import (generate_trade_thesis_prompt, calculate_kelly_criterion,
                                          calculate_position_size, detect_options_imbalances,
                                          generate_options_strategy_prompt, re_evaluate_positions,
                                          generate_revaluation_report, should_auto_trade)
+    from skills.telegram_bot import send_report_via_telegram
     SKILLS_AVAILABLE = True
     print("[✓] Skills modules loaded successfully")
 except ImportError as e:
@@ -2307,20 +2308,27 @@ def main():
         if portfolio_data["holdings"]:
             PORTFOLIO_FILE.write_text(portfolio_data["total"], encoding="utf-8")
     
+    # 0b. Alpaca paper trading account check
     if SKILLS_AVAILABLE:
         try:
             acct = get_account_info()
             if "error" not in acct:
-                pass
+                log(f"[OK] Paper trading account: ${acct.get('portfolio_value', 0):,.2f} equity")
+            else:
+                log(f"[!] Alpaca not configured: {acct['error']}")
         except Exception:
             pass
 
-    # 1. Load memory
+    # 1. Load memory (tiered: hot → warm → cold)
     log("📚 Loading memory...")
     if SKILLS_AVAILABLE:
         try:
             memory = get_memory_for_run()
+            if memory == "[No memory data yet]":
+                memory = load_memory()
+            log(f"[OK] Memory loaded: {len(memory)} chars")
         except Exception as e:
+            log(f"[!] Memory manager failed, using built-in: {e}")
             memory = load_memory()
     else:
         memory = load_memory()
@@ -2388,25 +2396,96 @@ def main():
         market_reaction=market_reaction
     )
 
+    # 5. Send report to Telegram (free, non-blocking)
     if SKILLS_AVAILABLE:
         try:
-            send_daily_summary(report)
-        except Exception:
-            pass
+            sent = send_report_via_telegram(report)
+            if sent:
+                log(f"[OK] Report sent to {sent} Telegram user(s)")
+            else:
+                log("[!] Telegram: No users configured yet (message the bot first)")
+        except Exception as e:
+            log(f"[!] Telegram send failed: {e}")
 
-    # 5. Self-reflect & update learnings (rating-based, efficient)
+    # 6. Self-reflect & update learnings (rating-based, efficient)
     log("🪞 Reflecting and updating LEARNINGS.md (rating-based)...")
     reflection = task_self_reflect(report, memory)
     save_learnings(reflection)
 
+    # 7. Update tiered memory system
     if SKILLS_AVAILABLE:
         try:
-            update_hot_memory({"date": TODAY})
-        except Exception:
-            pass
+            run_data = {
+                "date": TODAY,
+                "rating": 0,  # Will be updated when user rates
+                "recommendations": parse_and_store_recommendations.__defaults__ or [],
+                "learnings": [],
+                "portfolio_value": portfolio_analysis.get('total_value', 0),
+                "concentration": portfolio_analysis.get('concentration_ratio', 0),
+                "model": "free"
+            }
+            update_hot_memory(run_data)
+            update_warm_memory()
+            log("[OK] Tiered memory updated (hot + warm)")
+        except Exception as e:
+            log(f"[!] Memory update failed: {e}")
+
+    # 8. Log benchmark comparison
+    if SKILLS_AVAILABLE:
+        try:
+            perf = calculate_portfolio_performance(
+                portfolio_analysis.get('total_value', 0),
+                sum(h['cost_basis'] for h in portfolio_analysis.get('top_positions', []))
+            )
+            comparison = compare_to_benchmarks(perf.get('total_return_pct', 0))
+            outperformed = comparison.get('outperformed', [])
+            if outperformed:
+                log(f"[OK] Portfolio outperforming: {', '.join(outperformed)}")
+            update_benchmark_log(
+                portfolio_analysis.get('total_value', 0),
+                sum(h['cost_basis'] for h in portfolio_analysis.get('top_positions', [])),
+                []
+            )
+            log("[OK] Benchmark log updated")
+        except Exception as e:
+            log(f"[!] Benchmark logging failed: {e}")
+
+    # 9. Create ClickUp tasks for high-conviction recommendations (8+)
+    if SKILLS_AVAILABLE:
+        try:
+            recs = read_file(RECOMMENDATIONS_FILE)
+            active_lines = [l for l in recs.split('\n') if l.startswith('- ') and 'Active' in l]
+            tasks_created = 0
+            for line in active_lines:
+                parts = line[2:].split(' | ')
+                if len(parts) >= 5:
+                    try:
+                        conviction = int(parts[4].split('/')[0].strip())
+                        if conviction >= 8:
+                            ticker = parts[1].strip()
+                            rec_data = {
+                                "ticker": ticker,
+                                "action": "BUY",
+                                "thesis": f"Conviction {conviction}/10 - see report {TODAY}-{RUN_LABEL}",
+                                "entry_price": parts[2].strip().replace('$', ''),
+                                "target_price": parts[3].strip().replace('$', ''),
+                                "stop_loss": "TBD",
+                                "conviction": conviction,
+                                "horizon": "Swing to Long-term"
+                            }
+                            result = create_recommendation_task(rec_data)
+                            if "error" not in result:
+                                tasks_created += 1
+                    except (ValueError, IndexError):
+                        continue
+            if tasks_created:
+                log(f"[OK] Created {tasks_created} ClickUp task(s) for high-conviction picks")
+        except Exception as e:
+            log(f"[!] ClickUp task creation failed: {e}")
 
     log("✅ Agent run complete.")
     log(f"   Report: REPORTS/{TODAY}-{RUN_LABEL}.md")
+    log(f"   Skills: {'✅ All active' if SKILLS_AVAILABLE else '⚠️  Built-in only (skills import failed)'}")
     log(f"   Rate this run: add_rating(score, 'optional notes') in Python")
 
 
