@@ -138,3 +138,16 @@ Here's my critical self-assessment and learnings from this run:
 - **❌ Options data staleness destroyed trust.** The 2/10 and 4/10 ratings specifically called out options data being "2 years back" and "not current." The report must surface options data dated within the last 5 trading days, or explicitly state "no current options data available" rather than silently showing stale chains. This is a credibility issue — one bad data point and the user dismisses the entire report.
 
 - **📊 Conviction accuracy requires a feedback loop the system isn't doing.** The recommendation tracking section shows `
+
+## Run: 2026-05-05 03:43:37
+# LEARNINGS.md — 2026-05-05
+
+## Run 0343 Performance Review
+
+---
+
+- **Portfolio-aware analysis is winning but too narrow.** The 8.5/10 run on 04-30 succeeded because it analyzed actual holdings, weightages, and cost bases rather than generic picks. But the user explicitly called out that it *only* recommended from within the portfolio and missed new opportunities outside of it. Going forward: every scan must have a dual bucket — (A) portfolio position management (trim/add/hold with thesis for each), AND (B) 3–5 new actionable tickers NOT currently held that present compelling risk/reward. The 4.8 average confirms this: once the agent broke the pattern of only looking inward, the rating jumped to 8.5. Reversion to generic reporting dropped it back down.
+
+- **Recommendation tracking remains non-functional, and repeat options data staleness is a trust killer.** The 04-23 user (7/10) noted "recommendation tracking part isn't working" — this is still unresolved. The active recommendations section was left as a placeholder comment. Users across multiple runs flagged stale options data (quotes from 2 years ago). The track record must be maintained in a structured format: date entered, ticker, direction (buy/sell/trim), thesis in one sentence, entry price, current price, P&L%, and pending/closed status. Every day's report should append new evaluations and score the previous day's recommendations. Without this, the "conviction accuracy" goal is meaningless — you can't claim a win rate if you're not actually tracking outcomes.
+
+- **Sort holdings display by absolute dollar impact (shares × price change %), not by price level or alphabetical read-order.** Multiple users have said the portfolio movers list reads as "random." Currently it
