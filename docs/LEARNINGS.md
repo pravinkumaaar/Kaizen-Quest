@@ -171,3 +171,12 @@ Here's my critical self-assessment and learnings from this run:
 • **Recommendation tracking / decision journal is still a ghost section.** The 7/10 review pointed out it "isn't working" — and in this run it's literally empty (`<!-- Agent will update -->`). Every single run must log: (a) what was recommended last run, (b) what the P&L on that recommendation is today, (c) whether the thesis played out or broke. This is the single highest-leverage fix for hitting the 90–95% win-rate goal — you can't improve conviction accuracy if you don't track what you said and what happened.
 
 • **Prioritize movers by event, not just magnitude.** A user (6/10) said they want *"the ones that had a big event or news or moved the
+
+## Run: 2026-05-05 17:06:13
+# LEARNINGS.md — 2026-05-05 17:06:13 (Run 1706)
+
+- **✅ Biggest mover formatting worked well this time** — The user explicitly asked (6/10 rating) to see positions with the biggest daily moves first, not random order. This run correctly surfaced STRL (+47%), SHOP (-14.6%), SNDK (+12%), MU (+11.2%) etc. at the top of the portfolio display. The user's ratings climbed from 2 → 6 → 7 → 8.5 as this was fixed. *Lesson: Always sort the portfolio movers section by absolute daily change descending. Never present holdings in the order they were read from a file.*
+
+- **❌ Portfolio-only recommendation tunnel vision persists and the user noticed (8.5/10)** — The latest rating praised understanding of positions but penalized only recommending from existing holdings. The user wants NEW tickers never held that may present better opportunities. The system has 67+ tickers and 19 consolidated holdings — there's enough context about the user's style (AI infrastructure, semis, quantum computing, fintech) to screen and suggest positions outside the current portfolio. *Recommendation engine must include a "new ideas" section with 2-3 tickers the user does NOT own, backed by screening criteria and thesis.*
+
+- **❌ Options data freshness is still a critical failure point** — The 2/10 user flagged "options data is completely outdated and from 2 years back." Despite partial improvements (4/10 acknowledged "good options recommendations" but "PLTR data was old"), this remains unresolved. OWL must ensure options chains (iv, bid/ask, OI, Greeks) reflect current market conditions, not stale historical data. If real-time options data
