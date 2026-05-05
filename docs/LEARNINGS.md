@@ -160,3 +160,14 @@ Here's my critical self-assessment and learnings from this run:
 - **Critical gap — recommendations are too narrow:** The 8.5/10 user explicitly stated the "biggest problem" was that the system only recommends buy/sell actions on *existing* portfolio holdings and never surfaces *new* opportunities. This is a recurring theme: the 2/10 user wanted "more niche stocks that are not just megacaps," and the 4/10 user wanted deeper conviction on names like PLTR and MU. The system must add a dedicated "New Opportunities" section that screens for high-conviction tickers *not currently held*, using momentum, sector rotation signals, and thematic alignment with the user's existing strategy (AI infrastructure, quantum, space, fintech).
 
 - **Data freshness is a persistent trust killer:** The 2/10 and 4/10 users both flagged outdated options data and stale price references (e.g., PLTR price not current). Even though this run shows live prices, the system must explicitly timestamp all data sources and flag any data older than 24 hours. A "Data Freshness" badge (✅ Live / ⚠️ Delayed / ❌ St
+
+## Run: 2026-05-05 12:46:45
+## LEARNINGS.md — 2026-05-5
+
+• **Portfolio-aware analysis finally landed — but stop there at your peril.** The 8.5/10 run succeeded because it read actual holdings, compared cost basis to current prices, and gave position-specific theses. But the user explicitly said: *"only considered stocks from my portfolio — I want new stocks I may not have."* From now on, every report must have TWO sections: (1) portfolio position review AND (2) 3–5 new ticker ideas outside the portfolio with full thesis. Permanent rule, no exceptions.
+
+• **Data freshness is non-negotiable.** Multiple users flagged outdated options data and stale PLTR prices across separate sessions. If a data source is older than 48 hours, say so explicitly and flag it — never present old data as current. Build a "data age" check into every ticker snippet: show the timestamp of the last price/volume update. If options data can't be confirmed live, drop the options section entirely rather than risk presenting 2-year-old expirations as actionable.
+
+• **Recommendation tracking / decision journal is still a ghost section.** The 7/10 review pointed out it "isn't working" — and in this run it's literally empty (`<!-- Agent will update -->`). Every single run must log: (a) what was recommended last run, (b) what the P&L on that recommendation is today, (c) whether the thesis played out or broke. This is the single highest-leverage fix for hitting the 90–95% win-rate goal — you can't improve conviction accuracy if you don't track what you said and what happened.
+
+• **Prioritize movers by event, not just magnitude.** A user (6/10) said they want *"the ones that had a big event or news or moved the
