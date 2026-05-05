@@ -1,0 +1,16 @@
+{
+  "trades": [
+    {
+      "ticker": "AAPL",
+      "action": "BUY",
+      "quantity": 10,
+      "price": 150.0,
+      "total_cost": 1500.0,
+      "trade_type": "stock",
+      "status": "FILLED",
+      "realized_pnl": 0.0,
+      "timestamp": "2026-05-05 00:09:32",
+      "cash_remaining": 98500.0
+    }
+  ]
+}

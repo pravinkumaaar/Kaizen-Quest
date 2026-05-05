@@ -2,9 +2,13 @@ name: Daily Agent Run
 
 on:
   schedule:
-    # Run at 9:30 AM ET (market open) and 4:30 PM ET (market close)
+    # Run 6 times per day on weekdays (every 2 hours from 9:30 AM to 7:30 PM ET)
     - cron: '30 9 * * 1-5'
-    - cron: '30 16 * * 1-5'
+    - cron: '30 11 * * 1-5'
+    - cron: '30 13 * * 1-5'
+    - cron: '30 15 * * 1-5'
+    - cron: '30 17 * * 1-5'
+    - cron: '30 19 * * 1-5'
   workflow_dispatch:  # Allow manual triggers
 
 jobs:

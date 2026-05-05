@@ -405,6 +405,150 @@ def should_auto_trade(conviction: int, win_prob: float,
     }
 
 
+def calculate_rsi(prices, period=14):
+    """Calculate Relative Strength Index (RSI). RSI < 30 = oversold, RSI > 70 = overbought."""
+    if len(prices) < period + 1:
+        return 50.0
+    deltas = [prices[i] - prices[i - 1] for i in range(1, len(prices))]
+    gains = [d if d > 0 else 0 for d in deltas]
+    losses = [-d if d < 0 else 0 for d in deltas]
+    avg_gain = sum(gains[:period]) / period
+    avg_loss = sum(losses[:period]) / period
+    for i in range(period, len(gains)):
+        avg_gain = (avg_gain * (period - 1) + gains[i]) / period
+        avg_loss = (avg_loss * (period - 1) + losses[i]) / period
+    if avg_loss == 0:
+        return 100.0
+    rs = avg_gain / avg_loss
+    return round(100.0 - (100.0 / (1.0 + rs)), 2)
+
+
+def calculate_macd(prices, fast=12, slow=26, signal=9):
+    """Calculate MACD with signal line and histogram."""
+    if len(prices) < slow + signal:
+        return {"macd_line": 0, "signal_line": 0, "histogram": 0, "signal": "NEUTRAL", "interpretation": "Insufficient data"}
+
+    def ema(data, period):
+        mult = 2.0 / (period + 1)
+        val = sum(data[:period]) / period
+        for p in data[period:]:
+            val = (p - val) * mult + val
+        return val
+
+    fast_ema = ema(prices, fast)
+    slow_ema = ema(prices, slow)
+    macd_line = fast_ema - slow_ema
+    macd_history = []
+    for i in range(slow, len(prices)):
+        macd_history.append(ema(prices[:i + 1], fast) - ema(prices[:i + 1], slow))
+    signal_line = ema(macd_history, signal) if len(macd_history) >= signal else macd_line
+    histogram = macd_line - signal_line
+    if macd_line > signal_line and histogram > 0:
+        sig = "BULLISH"
+        interp = "MACD above signal - positive momentum"
+    elif macd_line < signal_line and histogram < 0:
+        sig = "BEARISH"
+        interp = "MACD below signal - negative momentum"
+    else:
+        sig = "NEUTRAL"
+        interp = "MACD near signal - mixed momentum"
+    return {"macd_line": round(macd_line, 4), "signal_line": round(signal_line, 4),
+            "histogram": round(histogram, 4), "signal": sig, "interpretation": interp}
+
+
+def calculate_bollinger_bands(prices, period=20, std_dev=2.0):
+    """Calculate Bollinger Bands (upper, middle/SMA, lower)."""
+    if len(prices) < period:
+        return {"upper": 0, "middle": 0, "lower": 0, "bandwidth": 0, "position": "MIDDLE", "signal": "Insufficient data"}
+    recent = prices[-period:]
+    sma = sum(recent) / period
+    var = sum((p - sma) ** 2 for p in recent) / period
+    std = var ** 0.5
+    upper = sma + (std_dev * std)
+    lower = sma - (std_dev * std)
+    bw = (upper - lower) / sma if sma > 0 else 0
+    cur = prices[-1]
+    if cur > upper:
+        pos, sig = "ABOVE_UPPER", "Above upper band - overbought or strong trend"
+    elif cur < lower:
+        pos, sig = "BELOW_LOWER", "Below lower band - oversold or strong downtrend"
+    elif cur > sma:
+        pos, sig = "UPPER_HALF", "Upper half of bands - bullish bias"
+    elif cur < sma:
+        pos, sig = "LOWER_HALF", "Lower half of bands - bearish bias"
+    else:
+        pos, sig = "MIDDLE", "At middle band - neutral"
+    return {"upper": round(upper, 2), "middle": round(sma, 2), "lower": round(lower, 2),
+            "bandwidth": round(bw, 4), "position": pos, "signal": sig}
+
+
+def get_technical_signals(ticker, period_days=60):
+    """Get combined RSI + MACD + Bollinger Bands signals for a ticker via yfinance."""
+    try:
+        t = yf.Ticker(ticker)
+        hist = t.history(period="3mo")
+        if hist.empty or len(hist) < 30:
+            return {"error": "Insufficient data", "ticker": ticker}
+        closes = hist["Close"].tolist()
+        current_price = closes[-1]
+        rsi = calculate_rsi(closes)
+        macd = calculate_macd(closes)
+        bb = calculate_bollinger_bands(closes)
+        bullish_count = 0
+        bearish_count = 0
+        signals = []
+        if rsi < 30:
+            bullish_count += 2
+            signals.append("RSI oversold ({:.1f})".format(rsi))
+        elif rsi < 40:
+            bullish_count += 1
+            signals.append("RSI approaching oversold ({:.1f})".format(rsi))
+        elif rsi > 70:
+            bearish_count += 2
+            signals.append("RSI overbought ({:.1f})".format(rsi))
+        elif rsi > 60:
+            bearish_count += 1
+            signals.append("RSI approaching overbought ({:.1f})".format(rsi))
+        else:
+            signals.append("RSI neutral ({:.1f})".format(rsi))
+        if macd["signal"] == "BULLISH":
+            bullish_count += 1
+            signals.append("MACD bullish crossover")
+        elif macd["signal"] == "BEARISH":
+            bearish_count += 1
+            signals.append("MACD bearish crossover")
+        else:
+            signals.append("MACD neutral")
+        if bb["position"] == "BELOW_LOWER":
+            bullish_count += 1
+            signals.append("Below lower Bollinger Band")
+        elif bb["position"] == "ABOVE_UPPER":
+            bearish_count += 1
+            signals.append("Above upper Bollinger Band")
+        else:
+            signals.append("BB: {}".format(bb["position"]))
+        net = bullish_count - bearish_count
+        if net >= 2:
+            overall = "STRONG BUY"
+        elif net >= 1:
+            overall = "BUY"
+        elif net <= -2:
+            overall = "STRONG SELL"
+        elif net <= -1:
+            overall = "SELL"
+        else:
+            overall = "HOLD"
+        return {
+            "ticker": ticker, "current_price": round(current_price, 2),
+            "rsi": rsi, "macd": macd, "bollinger_bands": bb,
+            "signals": signals, "bullish_score": bullish_count,
+            "bearish_score": bearish_count, "net_score": net,
+            "overall_signal": overall
+        }
+    except Exception as e:
+        return {"error": str(e), "ticker": ticker}
+
+
 __all__ = [
     'generate_trade_thesis_prompt',
     'calculate_kelly_criterion',
@@ -414,4 +558,8 @@ __all__ = [
     're_evaluate_positions',
     'generate_revaluation_report',
     'should_auto_trade',
+    'calculate_rsi',
+    'calculate_macd',
+    'calculate_bollinger_bands',
+    'get_technical_signals',
 ]

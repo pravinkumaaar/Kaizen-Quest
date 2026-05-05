@@ -1,0 +1,14 @@
+{
+  "cash": 98500.0,
+  "initial_cash": 100000,
+  "positions": {
+    "AAPL": {
+      "type": "stock",
+      "avg_cost": 150.0,
+      "opened": "2026-05-05",
+      "shares": 10
+    }
+  },
+  "total_value": 100000,
+  "last_updated": "2026-05-05 00:09:32"
+}

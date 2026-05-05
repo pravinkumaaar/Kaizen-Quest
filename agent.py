@@ -47,6 +47,9 @@ try:
                                          generate_options_strategy_prompt, re_evaluate_positions,
                                          generate_revaluation_report, should_auto_trade)
     from skills.telegram_bot import send_report_via_telegram
+    from skills.paper_trader import (execute_from_recommendation, get_paper_portfolio_summary,
+                                      format_portfolio_report, get_trade_performance,
+                                      get_paper_portfolio, save_paper_portfolio)
     SKILLS_AVAILABLE = True
     print("[✓] Skills modules loaded successfully")
 except ImportError as e:
@@ -2482,6 +2485,53 @@ def main():
                 log(f"[OK] Created {tasks_created} ClickUp task(s) for high-conviction picks")
         except Exception as e:
             log(f"[!] ClickUp task creation failed: {e}")
+
+    # 10. Execute paper trades for high-conviction recommendations
+    if SKILLS_AVAILABLE:
+        try:
+            recs = read_file(RECOMMENDATIONS_FILE)
+            active_lines = [l for l in recs.split('\n') if l.startswith('- ') and 'Active' in l]
+            trades_executed = 0
+            for line in active_lines:
+                parts = line[2:].split(' | ')
+                if len(parts) >= 5:
+                    try:
+                        conviction = int(parts[4].split('/')[0].strip())
+                        if conviction >= 8:
+                            ticker = parts[1].strip()
+                            entry_str = parts[2].strip().replace('$', '').replace(',', '')
+                            target_str = parts[3].strip().replace('$', '').replace(',', '')
+                            try:
+                                entry_price = float(entry_str) if entry_str != 'N/A' else 0
+                            except ValueError:
+                                entry_price = 0
+                            try:
+                                target_price = float(target_str) if target_str != 'N/A' else 0
+                            except ValueError:
+                                target_price = 0
+                            if entry_price > 0:
+                                rec_data = {
+                                    "ticker": ticker,
+                                    "action": "BUY",
+                                    "conviction": conviction,
+                                    "entry_price": entry_price,
+                                    "target_price": target_price,
+                                    "type": "stock"
+                                }
+                                trade_result = execute_from_recommendation(rec_data, entry_price)
+                                if trade_result.get("status") == "FILLED":
+                                    trades_executed += 1
+                                    log(f"[OK] Paper trade: BUY {ticker} x{trade_result.get('quantity', '?')} @ ${entry_price:.2f}")
+                                elif trade_result.get("status") == "REJECTED":
+                                    log(f"[!] Paper trade rejected for {ticker}: {trade_result.get('reason', 'unknown')}")
+                    except (ValueError, IndexError):
+                        continue
+            if trades_executed:
+                log(f"[OK] Executed {trades_executed} paper trade(s)")
+                paper_summary = get_paper_portfolio_summary()
+                log(f"[OK] Paper portfolio: ${paper_summary['total_value']:,.2f} ({paper_summary['total_return_pct']:+.2f}%)")
+        except Exception as e:
+            log(f"[!] Paper trade execution failed: {e}")
 
     log("✅ Agent run complete.")
     log(f"   Report: REPORTS/{TODAY}-{RUN_LABEL}.md")
