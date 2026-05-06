@@ -1,29 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ghlights a need for better conviction accuracy and alignment with market trends.
-- **Missed Opportunities**: Users suggested stocks like PLTR and MU, which were not included in recommendations. This signals a potential blind spot in identifying emerging or high-potential plays.
-
-### How to increase conviction accuracy for a 90-95% win rate
-
-## Run: 2026-04-24 11:04:58
-Here's my critical self-assessment and learnings from this run:
-
-**LEARNINGS.md - 2026-04-24**
-
-- **What worked well**:
-  - Portfolio movers section effectively highlighted key gainers/losers (WOLF +9%, NVTS -7%) with clear formatting - aligns with user praise for "big event" visibility
-  - Market narrative tied specific stock movements to macro catalysts (Taiwan Semi guidance, PPI data) - matches user preference for explanatory depth
-  - Flagged data issues (OPENZ, SNDK) demonstrated analytical rigor - addresses prior complaints about outdated data
-
-- **Improvement opportunities**:
-  - Failed to connect analysis to user's actual holdings (NVDA, SMCI, PLTR positions visible in portfolio) - misses key feedback about personalization
-  - No options analysis despite portfolio containing options positions - ignores repeated user requests for options education
-  - Sentiment section marked "unavailable" shows incomplete data integration - contradicts user desire for comprehensive insights
-
-- **Portfolio-recommendation gaps**:
-  - Highlighted SMCI's 8.9% gain but didn't analyze position sizing (user holds 100 shares) - misses portfolio management opportunity
-  - No commentary on PLTR despite being user's largest holding ($32k position) - ignores explicit user interest in this stock
-  - RR's -3.5% move noted without discussing portfolio impact (1,647 shares held) - lacks position-aware risk analysis
+ position-aware risk analysis
 
 - **Conviction accuracy boosters**:
   - Need deeper fundamental checks (e.g., verify SNDK's $996 price against acquisition history) - prevents data errors that hurt credibility
@@ -159,3 +136,14 @@ Here's my critical self-assessment and learnings from this run:
 
 - **No new stock recommendations outside the portfolio** — the user explicitly complained on the 8.5/10 run (Apr 30) that "it only considered stocks from my portfolio to recommend buying or selling and not anything new." This run has **zero** new ticker suggestions. The user has their holdings; they want me to scan the universe for opportunities they're missing. Need to add a dedicated "New Opportunities" section with 2-3 tickers they don't own but should consider, backed by the day's macro themes.
 - **Options data appears stale again** — the Apr 22 (2/10) rating flagged "options data is completely outdated and from 2 years back" and the Apr 22 (4/10) rating
+
+## Run: 2026-05-06 13:12:27
+Here's a self-critical performance review based on this run and accumulated feedback:
+
+- **We still aren't surfacing new stock ideas outside the user's existing portfolio.** The 8.5/10 rating on 2026-04-30 explicitly praised portfolio-aware analysis but flagged that we only recommend from holdings already owned. The user wants us to scan the broader market — especially niche, non-megacap opportunities — and present 2–3 fresh tickers with full thesis, entry logic, and risk parameters. This is a recurring gap across multiple runs and directly caps our rating ceiling.
+
+- **Options data and price feeds are stale or inconsistently sourced.** Multiple users (2/10, 4/10 ratings) called out outdated options chains and prices that don't reflect real-time quotes. We need to prioritize live data pulls (e.g., current bid/ask, IV rank, open interest) and timestamp every data point so the user knows freshness. If real-time options data isn't available, we should say so explicitly rather than silently serving old numbers.
+
+- **Our recommendation tracking section is empty — it has been for multiple runs.** The 7/10 rating on 2026-04-23 noted "the recommendation tracking part isn't working." We have an `Active Recommendations` block that is literally a comment placeholder with no content. We must populate it with every buy/sell/hold call we make, including date, ticker, thesis, entry/exit levels, and outcome. This is foundational to our 90–95% win-rate goal — you can't improve what you don't track.
+
+- **Formatting and prioritization of the portfolio movers section needs work.** The 6/10 rating said tickers "seem random or in the order in which it was read." We should sort by absolute dollar impact (shares × price
