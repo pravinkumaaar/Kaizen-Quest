@@ -33,3 +33,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-05 | MU | BUY | $640.20 | N/A | 8/10 | Active | - | Why: Micron is the *only* domestic HBM3E supplier to NVIDIA's data center GPUs.  |
 | 2026-05-05 | VRT | BUY | $341.02 | N/A | 8/10 | Active | - | Why: Every AI data center needs power, cooling, and infrastructure — Vertiv is t |
 | 2026-05-05 | SNDK | BUY | $1406.32 | N/A | 7/10 | Active | - | Why: NAND flash is the forgotten memory cycle. While everyone chases HBM, NAND p |
+| 2026-05-06 | MU | BUY | $640.20 | $850.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-05-06 | VRT | BUY | $341.02 | $475.00 | 8/10 | Active | - | Why: Vertiv is the "picks and shovels" play of AI that most investors overlook.  |

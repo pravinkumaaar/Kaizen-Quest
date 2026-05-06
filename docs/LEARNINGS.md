@@ -1,57 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-nable formatting with color-coded arrows (▲/▼) improved readability  
-- Included both major indices *and* sector-specific movers (Tech vs. Alt/Hedge)  
-
-✅ **AI & Tech Developments Section**  
-- Connected Railway’s funding to semiconductor/data center plays (NVIDIA, AMT)  
-- Highlighted *non-obvious* pressure points (Claude Code vs. free alternatives)  
-
-✅ **Geopolitical Context**  
-- Linked Iran ceasefire to market highs *and* persistent energy risks (Hormuz blockade → oil hedges)  
-
----  
-
-### **Improvement Areas**  
-⚠️ **Weak Options Analysis**  
-- User rated options ideas "weak" – didn’t calculate annualized yields for covered calls  
-- Missed asymmetric opportunities (e.g., SpaceX IPO → space ETF mispricing)  
-
-⚠️ **Portfolio Integration**  
-- Holdings table was empty – should’ve auto-pulled from Yahoo Finance API  
-- No linkage between recommendations (e.g., NVDA $300 target) and portfolio positions  
-
-⚠️ **Rate Limit Issue**  
-- Failed to handle LLM error gracefully (429 error). Should’ve:  
-  - Switched to cached data  
-  - Provided manual workaround faster  
-
----  
-
-### **Patterns Noticed**  
-🔍 **High Ratings Correlate With:**  
-- Cross-domain insights (e.g., AI funding → chip demand)  
-- Clear time horizons (swing vs. long-term calls)  
-
-🔍 **Low Ratings Correlate With:**  
-- Generic options ideas (lack of yield math)  
-- Missing portfolio context (no position sizing)  
-
----  
-
-### **Next-Run Fixes**  
-1. **Pre-calculate Options Math**
-
-## Run: 2026-04-22 21:07 UTC
-[ERROR: OPENROUTER_API_KEY not set]
-
-## Run: 2026-04-22 21:19 UTC
-[LLM unavailable after 3 attempts]
-
-## Run: 2026-04-22 23:29 UTC
-# LEARNINGS.md - 2026-04-22 23:29 UTC
-
-### What worked well in this run:
+:
 - **Market Snapshot Clarity**: The portfolio and indices performance were clearly presented with concise percentage changes, making it easy to grasp market trends at a glance. User feedback highlighted this as a strength (e.g., "Good summary of indices").
 - **Tech Developments Relevance**: The analysis of Railway’s AI-native cloud challenge and Slackbot AI transformation tied tech developments to actionable investment insights, particularly for semis and cloud infrastructure stocks.
 - **Portfolio Performance Tracking**: The detailed breakdown of current holdings and cost basis provided transparency and helped users contextualize the recommendations.
@@ -199,3 +148,12 @@ Here's my critical self-assessment and learnings from this run:
 - **The user explicitly wants NEW stock ideas outside their portfolio — this is a recurring gap.** The 8.5/10 reviewer's "biggest problem" was that the report "only considered stocks from my portfolio to recommend buying or selling and not anything new." This run repeated that mistake: the active recommendations (MU, VRT, SNDK) are all existing holdings. **Lesson: Every run must include 2-3 high-conviction ideas the user does NOT currently own, with full thesis, entry price, and risk framework.** The user has 67 tickers — they want discovery, not just portfolio management. Screen for niche mid-caps, sector rotations, or under-the-radar names that complement their existing AI/infrastructure/quantum exposure.
 
 - **Options data staleness is a trust killer — and it's still not fixed.** The 2/10 review flagged "
+
+## Run: 2026-05-06 02:41:12
+## 🧠 Self-Review & Learnings — Run 0241 (2026-05-06)
+
+- **Portfolio-aware analysis is now working well — keep and deepen it.** The 8.5/10 run (Apr 30) confirmed that users value reports that reference their actual holdings, weightages, cost basis, and position-specific theses. This run continued that trend by showing biggest movers from the user's 70 holdings. However, the user explicitly noted the system still only recommends from within their existing portfolio — it must start screening *new* tickers outside the portfolio that present better risk/reward, using the same thesis-driven framework. Build a "discovery layer" that scans for high-conviction setups the user doesn't yet own.
+
+- **Data freshness is the #1 credibility killer — and it's still not fully resolved.** Multiple low ratings (2/10, 4/10) cited outdated options data and stale prices (e.g., PLTR data from 2 years ago). This run's report uses delayed/after-hours data and the news narrative references "Railway's $100M Series B" — if that data point is not verified against a real-time source, it risks being hallucinated or outdated. **Action:** Before every run, validate that price data, options chains, and news citations are from the last 24 hours. Flag any data older than 48 hours explicitly. Never present unverified narrative as fact.
+
+- **Recommendation tracking is broken and eroding trust.** The Apr 23 user (7/10) flagged that recommendation tracking "isn't working." This run's tracking section shows MU and VRT recommendations at +0.0% since inception today — which is trivially true for same-day recommendations but useless. The system needs to: (a) track recommendations across
