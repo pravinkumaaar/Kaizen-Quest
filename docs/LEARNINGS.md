@@ -1,15 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-sis — yet recommendations appear generic. The system should cross-reference every buy/sell recommendation against current positions, average cost, and P&L before suggesting. A SELL signal on a position up 40% with thesis erosion is infinitely more valuable than a generic buy.
-
-- **Conviction accuracy gap (4.8 avg → 7+ target):** Low conviction stems from surface-level news summaries masquerading as edge. To reach 8+/10 consistently: (1) Every recommendation needs a thesis + catalyst + risk/stop level stated explicitly. (2) Recommendation tracking must *work*
-
-## Run: 2026-05-01 00:53:35
-## LEARNINGS.md — Run 0053
-
-- **✅ Sticky reasoning worked — keep and deepen it.** The 4/10, 6/10, and 7/10 ratings all praised the shift to "specific, nuanced" recommendations with visible reasoning, especially the LEAPs explanation that "taught" the user something. The user explicitly said they want to be *taught*, not just told. Going forward, every recommendation should include a 2-sentence "because + mechanism" so the user learns the thesis, e.g., "Buy X because [catalyst], which historically has driven [outcome] in similar setups."
-
-- **❌ Portfolio-context blindness is a recurring killer.** All three ratings complained that recommendations don't account for existing holdings (PLTR, MU, NVDA are already heavily held). The user has 516 shares of PLTR at $62.67, 18.58 shares of MU at $378.94, and 150 shares of NVDA at $103.77 — yet the report recommends or highlights these without noting concentration risk. **Rule: always cross-reference cost basis and position size before recommending. Flag positions >10% of portfolio as "already loaded — consider trimming or holding, not adding."**
+*Rule: always cross-reference cost basis and position size before recommending. Flag positions >10% of portfolio as "already loaded — consider trimming or holding, not adding."**
 
 - **❌ Options data staleness destroyed trust.** The 2/10 and 4/10 ratings specifically called out options data being "2 years back" and "not current." The report must surface options data dated within the last 5 trading days, or explicitly state "no current options data available" rather than silently showing stale chains. This is a credibility issue — one bad data point and the user dismisses the entire report.
 
@@ -142,3 +133,18 @@ Here's a self-critical performance review based on this run and accumulated feed
 - **Critical failure — recommendations only from existing holdings (the 8.5/10 ceiling):** The top-rated run still got dinged because it never surfaced *new* names. The user explicitly said: "I would like to see new stocks that I may not have that might present a better opportunity." This is a recurring blind spot. The agent is treating the portfolio as a closed universe. Fix: every run should include 2–3 "new idea" tickers with full thesis, ideally niche/non-megacap (per the 2/10 feedback: "look for more niche stocks, not just megacaps or gold"). Cross-reference today's biggest movers, sector rotation patterns, and options flow to find names the user *doesn't* own but should consider.
 
 - **Data staleness is destroying credibility — especially options data:** Multiple reviews flagged outdated options data ("from 2 years back"). If the agent is pulling options chains,
+
+## Run: 2026-05-06 17:05:40
+# 📝 LEARNINGS.md — Run 1705 | 2026-05-06 17:05:40
+
+---
+
+## ✅ What Worked Well This Run
+
+- **Portfolio-aware analysis with cost-basis context**: The 8.5/10 run (2026-04-30) confirmed that referencing actual holdings, weightages, and average buy prices — not just current prices — dramatically increases perceived value. This run continued that by showing biggest movers from the user's actual 70 holdings, which directly addresses the 6/10 feedback asking for "ones that had a big event or news or moved the most today."
+- **Nuanced options education with reasoning**: The 4/10 and 7/10 runs both highlighted that explaining *why* a LEAP or strategy works — not just recommending it — is the single highest-value feature. The user explicitly said "teach me while recommending" and rated runs higher when the logic chain was clear.
+- **News quality and narrative synthesis**: The 8.5/10 run praised news quality as "highest quality." This run's narrative about AI infrastructure rotation (NVDA/SMCI up, ANET profit-taking, speculative AI names surging) follows that pattern — connecting individual stock moves into a coherent macro story.
+
+## ❌ What Needs Improvement
+
+- **Stale/incorrect data is the #1 rating killer**: Multiple low ratings (2/10, 4/10) explicitly cited outdated options data and wrong prices (e.g., PLTR data "from 2 years back"). This run shows ANET at $142.25 ▼16.43% — if that's after-hours delayed data, it must be **explicitly labeled as such** and cross-referenced.
