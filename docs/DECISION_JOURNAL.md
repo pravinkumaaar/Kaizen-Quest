@@ -35,3 +35,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-05 | SNDK | BUY | $1406.32 | N/A | 7/10 | Active | - | Why: NAND flash is the forgotten memory cycle. While everyone chases HBM, NAND p |
 | 2026-05-06 | MU | BUY | $640.20 | $850.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
 | 2026-05-06 | VRT | BUY | $341.02 | $475.00 | 8/10 | Active | - | Why: Vertiv is the "picks and shovels" play of AI that most investors overlook.  |
+| 2026-05-06 | RKLB | BUY | N/A | N/A | 8/10 | Active | - | Type/Stock: Equity — Currently in portfolio at 2.2% ($5,198 current value, cost  |
+| 2026-05-06 | SMCI | BUY | $32.16 | $44.00 | 7/10 | Active | - | Type/Stock: Equity — Currently in portfolio at 1.4% ($3,287 current value, cost  |
+| 2026-05-06 | MU | BUY | $660.58 | $850.00 | 8/10 | Active | - | Type/Stock: Equity — Currently in portfolio at 5.2% ($12,219 current value, cost |

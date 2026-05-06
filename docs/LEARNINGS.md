@@ -1,20 +1,6 @@
 ...[older entries archived in HISTORY/]
 
- position-aware risk analysis
-
-- **Conviction accuracy boosters**:
-  - Need deeper fundamental checks (e.g., verify SNDK's $996 price against acquisition history) - prevents data errors that hurt credibility
-  - Should correlate technical moves with portfolio cost basis (e.g., NVDA's $208 vs $104 avg cost) - provides clearer profit-taking context
-  - Must validate all tickers against current corporate actions - addresses user frustration with "defunct"
-
-## Run: 2026-04-30 23:47:24
-## LEARNINGS.md — Run #2347
-
-- **What worked well:** The 2026-04-23 run earned a 7/10 (highest in the sample) because recommendations were *specific and nuanced with clear reasoning* — this is the ceiling to replicate. The user explicitly valued the LEAP options explanation and the "why" behind each call. The Biggest Movers section remains useful but only when filtered by news/event significance, not just sort order. Drop generic tickers; surface the ones the user actually holds that moved >3% *and explain why*.
-
-- **Persistent data quality failure:** Multiple users called out outdated options data, stale prices (PLTR cited twice), and 2-year-old options chains. This single issue dragged ratings from 7→2 in one case. The system is not pulling *current-session* options Greeks, IV rank, or front-month flow data. Fix is non-negotiable before next run: real-time options data must be verified live at generation time, with timestamps shown.
-
-- **Portfolio-aware recommendations are still absent:** Across 3 of 4 runs, the user noted recommendations don't reference or build on existing holdings. The portfolio has 67 tickers across 4 sub-portfolios with $143K cost basis — yet recommendations appear generic. The system should cross-reference every buy/sell recommendation against current positions, average cost, and P&L before suggesting. A SELL signal on a position up 40% with thesis erosion is infinitely more valuable than a generic buy.
+sis — yet recommendations appear generic. The system should cross-reference every buy/sell recommendation against current positions, average cost, and P&L before suggesting. A SELL signal on a position up 40% with thesis erosion is infinitely more valuable than a generic buy.
 
 - **Conviction accuracy gap (4.8 avg → 7+ target):** Low conviction stems from surface-level news summaries masquerading as edge. To reach 8+/10 consistently: (1) Every recommendation needs a thesis + catalyst + risk/stop level stated explicitly. (2) Recommendation tracking must *work*
 
@@ -147,3 +133,12 @@ Here's a self-critical performance review based on this run and accumulated feed
 - **Our recommendation tracking section is empty — it has been for multiple runs.** The 7/10 rating on 2026-04-23 noted "the recommendation tracking part isn't working." We have an `Active Recommendations` block that is literally a comment placeholder with no content. We must populate it with every buy/sell/hold call we make, including date, ticker, thesis, entry/exit levels, and outcome. This is foundational to our 90–95% win-rate goal — you can't improve what you don't track.
 
 - **Formatting and prioritization of the portfolio movers section needs work.** The 6/10 rating said tickers "seem random or in the order in which it was read." We should sort by absolute dollar impact (shares × price
+
+## Run: 2026-05-06 15:40:26
+## 🧠 Self-Review & Learnings — Run 1540 (2026-05-06)
+
+- **What worked well — and why ratings climbed to 8.5/10:** The last run succeeded because it finally read the *actual portfolio* — cost basis, position sizing, concentration risk — and gave position-specific theses (e.g., "your NVDA avg is $103, you're up ~99%, consider trimming into strength"). That's the single biggest unlock. Users don't want generic "buy NVDA" advice when they already own 150 shares. The news quality was also highest when it connected specific portfolio holdings to the day's catalysts (ANET's guidance cut → customer concentration risk thesis). **Lesson: always lead with what the user owns, why it moved, and what to do about it — not with what's moving in a vacuum.**
+
+- **Critical failure — recommendations only from existing holdings (the 8.5/10 ceiling):** The top-rated run still got dinged because it never surfaced *new* names. The user explicitly said: "I would like to see new stocks that I may not have that might present a better opportunity." This is a recurring blind spot. The agent is treating the portfolio as a closed universe. Fix: every run should include 2–3 "new idea" tickers with full thesis, ideally niche/non-megacap (per the 2/10 feedback: "look for more niche stocks, not just megacaps or gold"). Cross-reference today's biggest movers, sector rotation patterns, and options flow to find names the user *doesn't* own but should consider.
+
+- **Data staleness is destroying credibility — especially options data:** Multiple reviews flagged outdated options data ("from 2 years back"). If the agent is pulling options chains,
