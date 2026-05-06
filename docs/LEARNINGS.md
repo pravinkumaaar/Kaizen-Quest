@@ -1,18 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-:
-- **Market Snapshot Clarity**: The portfolio and indices performance were clearly presented with concise percentage changes, making it easy to grasp market trends at a glance. User feedback highlighted this as a strength (e.g., "Good summary of indices").
-- **Tech Developments Relevance**: The analysis of Railway’s AI-native cloud challenge and Slackbot AI transformation tied tech developments to actionable investment insights, particularly for semis and cloud infrastructure stocks.
-- **Portfolio Performance Tracking**: The detailed breakdown of current holdings and cost basis provided transparency and helped users contextualize the recommendations.
-
-### What could be improved:
-- **Outdated Data**: Multiple users pointed out that options data and stock prices (e.g., PLTR) were outdated. This undermines credibility and usefulness. Prioritize real-time or near-real-time data sourcing.
-- **Mainstream Recommendations**: Feedback criticized the stock picks as too mainstream (e.g., "recommendations are too mainstream"). Explore more niche or under-the-radar opportunities to diversify recommendations.
-- **Depth of Reasoning**: Users requested deeper explanations and learning insights behind recommendations (e.g., "teach me while recommending"). Include more detailed rationale, risk analysis, and educational content.
-- **Options Recommendations Weakness**: One user noted that options ideas were weak. Strengthen this section with more sophisticated strategies and up-to-date data.
-
-### Patterns noticed in portfolio performance vs recommendations:
-- **High Conviction, Low Performance**: NVDA recommendation has a 5/10 confidence level, yet it remains flat. This highlights a need for better conviction accuracy and alignment with market trends.
+ghlights a need for better conviction accuracy and alignment with market trends.
 - **Missed Opportunities**: Users suggested stocks like PLTR and MU, which were not included in recommendations. This signals a potential blind spot in identifying emerging or high-potential plays.
 
 ### How to increase conviction accuracy for a 90-95% win rate
@@ -157,3 +145,17 @@ Here's my critical self-assessment and learnings from this run:
 - **Data freshness is the #1 credibility killer — and it's still not fully resolved.** Multiple low ratings (2/10, 4/10) cited outdated options data and stale prices (e.g., PLTR data from 2 years ago). This run's report uses delayed/after-hours data and the news narrative references "Railway's $100M Series B" — if that data point is not verified against a real-time source, it risks being hallucinated or outdated. **Action:** Before every run, validate that price data, options chains, and news citations are from the last 24 hours. Flag any data older than 48 hours explicitly. Never present unverified narrative as fact.
 
 - **Recommendation tracking is broken and eroding trust.** The Apr 23 user (7/10) flagged that recommendation tracking "isn't working." This run's tracking section shows MU and VRT recommendations at +0.0% since inception today — which is trivially true for same-day recommendations but useless. The system needs to: (a) track recommendations across
+
+## Run: 2026-05-06 11:24:51
+# LEARNINGS.md — Self-Analysis: Run 1124
+
+## What Worked Well This Run
+
+- **Portfolio-aware movers section finally clicked** — the 8.5/10 run (Apr 30) proved that showing the user's own holdings ranked by daily % move, with portfolio context (💰 flags for positions with meaningful weight) was the right move. This run continued that pattern. Users want to see *their* stocks first, not just a generic news digest.
+- **Narrative depth on market moving events improved significantly** — this run correctly tied the OpenAI $110B raise to specific portfolio names (MU, SNDK, APLD, CRDO) and explained *why* each moved, which aligns with the user's feedback from the 6/10 run wanting "big event or news" context for repositioning decisions.
+- **Market sentiment unavailable but the report didn't collapse** — when Finnhub/yfinance data was missing, the narrative section compensated with real event analysis instead of leaving a dead section. This is resilience.
+
+## What Could Be Improved
+
+- **No new stock recommendations outside the portfolio** — the user explicitly complained on the 8.5/10 run (Apr 30) that "it only considered stocks from my portfolio to recommend buying or selling and not anything new." This run has **zero** new ticker suggestions. The user has their holdings; they want me to scan the universe for opportunities they're missing. Need to add a dedicated "New Opportunities" section with 2-3 tickers they don't own but should consider, backed by the day's macro themes.
+- **Options data appears stale again** — the Apr 22 (2/10) rating flagged "options data is completely outdated and from 2 years back" and the Apr 22 (4/10) rating
