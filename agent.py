@@ -2346,7 +2346,7 @@ Not financial advice. Verify before acting.""".format(
             options_section=options_section,
             once_in_a_lifetime_context=once_in_a_lifetime_context
         ),
-        max_tokens=2500,
+        max_tokens=6000,
     )
 
 def task_options_ideas(market_data: str, digest: str, memory: str,
@@ -2481,7 +2481,7 @@ Educational only. Verify with broker.*""".format(
             earnings_section=earnings_section,
             sentiment_section=sentiment_section
         ),
-        max_tokens=1200,
+        max_tokens=5000,
     )
 
 def task_learning(digest: str, memory: str) -> str:
