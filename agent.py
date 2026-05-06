@@ -3067,6 +3067,36 @@ def main():
 
     parse_and_store_recommendations(investments)
 
+    # 4a-1. Immediately update recommendation performance (captures intraday moves)
+    # This ensures that if MU was recommended at $640 and is now $663, we see +3.6% not 0.0%
+    update_recommendation_performance()
+
+    # 4a-2. Also track Alpaca positions as "recommendations" so their performance is visible
+    # This ensures NVDA, MU, VRT (actual holdings) show live P&L in the recommendations section
+    try:
+        alpaca_positions = get_alpaca_portfolio_snapshot()
+        for pos in alpaca_positions["positions"]:
+            if pos["type"] == "stock":
+                # Check if this ticker is already tracked
+                existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
+                if pos["symbol"] not in existing_recs:
+                    # Add as a tracked position with the actual entry price from Alpaca
+                    rec_line = (f"- {TODAY} | {pos['symbol']} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
+                                f"${pos['current_price']:.2f} | {pos['unrealized_plpc']:+.1f}% | Long-term (Alpaca)")
+                    # Append to recommendations file
+                    content = existing_recs
+                    if "## Active Recommendations" in content:
+                        content = content.replace(
+                            "<!-- Agent will update this section with current recommendations -->",
+                            f"{rec_line}\n<!-- Agent will update this section with current recommendations -->"
+                        )
+                    else:
+                        content += f"\n\n## Active Recommendations\n{rec_line}\n<!-- Agent will update this section with current recommendations -->\n"
+                    RECOMMENDATIONS_FILE.write_text(content, encoding="utf-8")
+                    log(f"[OK] Tracking Alpaca position: {pos['symbol']} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({pos['unrealized_plpc']:+.1f}%)")
+    except Exception as e:
+        log(f"[!] Error tracking Alpaca positions: {e}")
+
     # 4b. Options ideas with earnings + sentiment awareness
     combined_earnings = ""
     if earnings_alerts:

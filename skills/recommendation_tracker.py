@@ -206,6 +206,7 @@ def parse_and_store_recommendations(investments_text, model_used="unknown"):
 
         # Track if conviction >= 7 or explicitly marked
         if should_track or conviction >= 7:
+            # Calculate initial performance (will be 0.0 for same-day, but update_performance will fix it next run)
             trackable.append({
                 'date': datetime.now().date().isoformat(),
                 'ticker': ticker,

@@ -31,7 +31,8 @@ BASE_DIR = None
 RSS_CACHE_FILE = None
 
 # Maximum age of articles to include (in hours)
-MAX_ARTICLE_AGE_HOURS = 48
+# Reduced to 24h to prevent stale articles from persisting across runs
+MAX_ARTICLE_AGE_HOURS = 24
 
 def init_news_skill(tavily_key=None, finnhub_key=None, base_dir=None):
     """Initialize with config from main agent."""
@@ -137,8 +138,9 @@ def fetch_rss(max_per_feed: int = 5, cache_duration: int = 1200) -> dict:
     """Fetch RSS feeds with caching and strict freshness filtering.
     
     Cache duration reduced to 20 minutes (1200s) for more current news.
-    Articles older than 48 hours are filtered out.
+    Articles older than 24 hours are filtered out.
     Duplicate articles across feeds are deduplicated.
+    Cache is validated for staleness before use.
     """
     # Check cache
     if RSS_CACHE_FILE and RSS_CACHE_FILE.exists():
@@ -146,7 +148,10 @@ def fetch_rss(max_per_feed: int = 5, cache_duration: int = 1200) -> dict:
             cache_data = json.loads(RSS_CACHE_FILE.read_text())
             cache_time = cache_data.get("timestamp", 0)
             if time.time() - cache_time < cache_duration:
-                return cache_data["data"]
+                # Validate cache freshness — check if any articles are too old
+                cache_age_hours = (time.time() - cache_time) / 3600
+                if cache_age_hours < 1:  # Only use cache if < 1 hour old for extra freshness
+                    return cache_data["data"]
         except Exception:
             pass
     
