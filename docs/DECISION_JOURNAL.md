@@ -40,3 +40,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-06 | MU | BUY | $660.58 | $850.00 | 8/10 | Active | - | Type/Stock: Equity — Currently in portfolio at 5.2% ($12,219 current value, cost |
 | 2026-05-06 | NVDA | BUY | $204.92 | N/A | 7/10 | Active | - | Why: NVDA reports May 20. The AI capex cycle is undeniable — every hyperscaler i |
 | 2026-05-06 | ANET | BUY | $142.25 | N/A | 5/10 | Active | - | Why: Arista Networks dropped 16% on what appears to be a post-earnings "sell the |
+| 2026-05-06 | SMCI | BUY | $34.46 | N/A | 7/10 | Active | - | Why: Super Micro ripped +24% today on what appears to be a short squeeze combine |
+| 2026-05-06 | NVDA | BUY | $207.32 | N/A | 9/10 | Active | - | Why: NVIDIA reports May 20 — 14 days out. You already own 13.2% at a +99.8% gain |
