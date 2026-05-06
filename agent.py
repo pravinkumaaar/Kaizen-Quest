@@ -35,11 +35,13 @@ try:
     from skills.market_sentiment import get_market_sentiment, analyze_macro_trends
     from skills.crypto_tracker import fetch_crypto_prices, analyze_crypto_portfolio
     from skills.options_intelligence import fetch_options_snapshot, get_options_ideas
-    from skills.news_research import fetch_rss, tavily_search, finnhub_news
+    from skills.news_research import fetch_rss, tavily_search, finnhub_news, finnhub_earnings_surprise
+    from skills.earnings_intelligence import get_comprehensive_earnings_intelligence, init_earnings_skill
+    from skills.market_foresight import get_market_foresight, init_foresight_skill
     from skills.learning_curator import get_or_create_weekly_theme, generate_learning_content
     from skills.recommendation_tracker import clear_active_recommendations as clear_recs, parse_and_store_recommendations, update_recommendation_performance
     from skills.alpaca_trading import get_account_info, get_positions, get_portfolio_history
-    from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary
+    from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary, calculate_portfolio_performance
     from skills.clickup_integration import create_recommendation_task, send_daily_summary, get_active_recommendations
     from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run, update_warm_memory
     from skills.enhanced_trading import (calculate_kelly_criterion,
@@ -50,6 +52,10 @@ try:
     from skills.paper_trader import (execute_from_recommendation, get_paper_portfolio_summary,
                                       format_portfolio_report, get_trade_performance,
                                       get_paper_portfolio, save_paper_portfolio)
+    from skills.portfolio_manager import (init_portfolio_manager, get_alpaca_portfolio_snapshot,
+                                           review_all_positions, generate_portfolio_report,
+                                           generate_urgent_alert, generate_once_in_a_lifetime_alert,
+                                           TARGET_ALLOCATION)
     SKILLS_AVAILABLE = True
     print("[✓] Skills modules loaded successfully")
 except ImportError as e:
@@ -733,6 +739,26 @@ def _get_live_price_yf(ticker):
     return None, None
 
 
+def _yf_price(ticker):
+    """Quick price lookup from yfinance. Returns dict with price, prev_close, change_pct."""
+    try:
+        old_stderr = sys.stderr
+        sys.stderr = StringIO()
+        try:
+            t = yf.Ticker(ticker)
+            fi = t.fast_info
+            p = fi.last_price
+            pc = fi.previous_close
+            if p and p > 0:
+                chg = ((p - pc) / pc * 100) if pc and pc > 0 else 0
+                return {"price": float(p), "prev_close": float(pc) if pc else 0, "change_pct": float(chg)}
+        finally:
+            sys.stderr = old_stderr
+    except Exception:
+        pass
+    return {"price": 0, "prev_close": 0, "change_pct": 0}
+
+
 def fetch_market_data() -> str:
     """
     Pull prices + % change for watchlist: consolidated portfolio holdings sorted by biggest movers + indices.
@@ -946,95 +972,466 @@ def fetch_options_snapshot_yfinance(tickers):
         return f"[yfinance options unavailable: {str(e)[:80]}]"
 
 # ─────────────────────────────────────────────
-# EARNINGS CHECKER
 # ─────────────────────────────────────────────
-def check_upcoming_earnings(tickers):
-    """
-    Check if any portfolio holdings have upcoming or recent earnings.
-    Uses Finnhub earnings calendar API (works even when yfinance is down).
-    Returns a formatted string with earnings info for the LLM.
-    """
-    earnings_info = []
-    today = datetime.date.today()
+# COMPREHENSIVE EARNINGS INTELLIGENCE
+# ─────────────────────────────────────────────
+#
+# Covers 3 layers:
+#   1. PORTFOLIO earnings — your actual holdings
+#   2. RELATED/SUPPLY CHAIN earnings — companies in the same ecosystem as your holdings
+#      (e.g. if you own NVDA → also watch TSM, ASML, MU, MRVL, etc.)
+#   3. SECTOR EXCITEMENT — the most anticipated earnings in sectors you're invested in,
+#      including emerging companies you may not own or know about yet
+#
+# Uses Finnhub earnings calendar (free tier) which covers ~5000 companies per query.
 
-    for ticker in tickers[:15]:  # Check top holdings
-        # METHOD 1: Try Finnhub earnings calendar
-        if FINNHUB_API_KEY:
+# Supply chain / ecosystem mapping: if you own a key company, also watch these related tickers
+SUPPLY_CHAIN_MAP = {
+    # AI / Semiconductors ecosystem
+    "NVDA": ["TSM", "ASML", "MU", "MRVL", "AVGO", "AMAT", "LRCX", "KLAC", "SNPS", "CDNS", "ARM"],
+    "AMD":  ["TSM", "MU", "MRVL", "AVGO", "QCOM", "SWKS", "QRVO", "MRAM"],
+    "INTC": ["TSM", "ASML", "AMAT", "LRCX", "KLAC", "MRVL"],
+    "AVGO": ["TSM", "MRVL", "SWKS", "QRVO", "QCOM"],
+    "QCOM": ["TSM", "SWKS", "QRVO", "MRVL", "MU"],
+    "MU":   ["TSM", "ASML", "AMAT", "LRCX", "KLAC"],
+    "TSM":  ["ASML", "AMAT", "LRCX", "KLAC"],
+    "AMAT": ["LRCX", "KLAC", "ASML", "TSM"],
+    "LRCX": ["AMAT", "KLAC", "ASML", "TSM"],
+    "MRVL": ["TSM", "AVGO", "MU", "QCOM"],
+    # Cloud / SaaS ecosystem
+    "MSFT": ["SNOW", "DDOG", "MDB", "NET", "CRM", "NOW", "WDAY", "ZS", "CRWD", "OKTA", "PANW"],
+    "GOOG": ["SNOW", "DDOG", "MDB", "NET", "ZM", "TEAM", "HUBS", "VEEV"],
+    "AMZN": ["SNOW", "DDOG", "MDB", "NET", "SHOP", "WIX", "SQ", "MELI"],
+    "CRM":  ["NOW", "WDAY", "HUBS", "ZM", "TEAM", "DOCU", "PLTR"],
+    "SNOW": ["DDOG", "MDB", "PLTR", "NET", "MSFT"],
+    "PLTR": ["SNOW", "DDOG", "AI", "CRM", "MSFT"],
+    "DDOG": ["SNOW", "MDB", "NET", "MSFT", "GOOG"],
+    "NET":  ["DDOG", "SNOW", "MSFT", "GOOG", "AMZN"],
+    "AI":   ["PLTR", "SNOW", "DDOG", "MSFT", "GOOG", "AMZN"],
+    "MDB":  ["SNOW", "DDOG", "NET", "MSFT"],
+    # Mega-Cap Tech ecosystem
+    "AAPL": ["QCOM", "SWKS", "QRVO", "MU", "AVGO", "TSM", "TXN"],
+    "META": ["SNAP", "PINS", "TTD", "ROKU", "GOOG", "MSFT"],
+    "TSLA": ["F", "GM", "RIVN", "LCID", "NIO", "XPEV", "LI", "ALV", "APTV"],
+    # Finance ecosystem
+    "JPM":  ["BAC", "WFC", "C", "GS", "MS", "BLK", "SCHW", "COIN"],
+    "V":    ["MA", "PYPL", "SQ", "AFRM", "GPN", "FI"],
+    "MA":   ["V", "PYPL", "SQ", "AFRM", "GPN"],
+    "GS":   ["JPM", "MS", "BLK", "SCHW"],
+    "COIN": ["MARA", "RIOT", "MSTR", "SQ", "HOOD"],
+    # Healthcare / Pharma ecosystem
+    "JNJ":  ["PFE", "MRK", "ABBV", "LLY", "BMY", "GILD", "AMGN", "REGN", "VRTX", "BIIB"],
+    "PFE":  ["JNJ", "MRK", "ABBV", "LLY", "BMY", "GILD", "AMGN", "REGN", "MRNA", "BNTX"],
+    "LLY":  ["JNJ", "PFE", "MRK", "ABBV", "NVO", "REGN", "VRTX", "BIIB"],
+    "ABBV": ["JNJ", "PFE", "MRK", "LLY", "BMY", "GILD", "AMGN", "REGN", "VRTX"],
+    "UNH":  ["CI", "HUM", "ELV", "MOH", "CNC"],
+    "REGN": ["VRTX", "BIIB", "GILD", "AMGN", "JNJ", "PFE"],
+    "VRTX": ["REGN", "BIIB", "GILD", "AMGN", "JNJ"],
+    "GILD": ["REGN", "VRTX", "BIIB", "AMGN", "JNJ", "PFE"],
+    "AMGN": ["REGN", "VRTX", "BIIB", "GILD", "JNJ", "PFE"],
+    "MRK":  ["JNJ", "PFE", "ABBV", "LLY", "BMY", "GILD", "AMGN", "REGN"],
+    "BMY":  ["JNJ", "PFE", "MRK", "ABBV", "LLY", "GILD", "AMGN", "REGN"],
+    "NVO":  ["LLY", "JNJ", "PFE", "MRK", "ABBV"],
+    "MRNA": ["PFE", "BNTX", "JNJ", "MRK", "GILD"],
+    "BNTX": ["PFE", "MRNA", "JNJ", "MRK"],
+    # Consumer / Retail ecosystem
+    "WMT":  ["TGT", "COST", "DG", "DLTR", "AMZN", "SHOP"],
+    "COST": ["WMT", "TGT", "DG", "DLTR", "AMZN"],
+    "AMZN": ["WMT", "TGT", "SHOP", "WIX", "MELI", "SE", "ETSY"],
+    "HD":   ["LOW", "TSCO", "WMT", "AMZN"],
+    "NKE":  ["ADDYY", "LULU", "DECK", "ONON", "CROX", "SKX", "COLM"],
+    "SBUX": ["MCD", "DPZ", "YUM", "CMG", "WING"],
+    "MCD":  ["SBUX", "DPZ", "YUM", "CMG", "WING"],
+    "LULU": ["NKE", "ADDYY", "DECK", "ONON", "COLM"],
+    "DECK": ["NKE", "LULU", "ONON", "SKX", "COLM"],
+    "CMG":  ["SBUX", "MCD", "YUM", "WING", "DPZ"],
+    "TGT":  ["WMT", "COST", "DG", "DLTR", "AMZN"],
+    "LOW":  ["HD", "TSCO", "WMT", "AMZN"],
+    "DG":   ["WMT", "TGT", "COST", "DLTR"],
+    "DLTR": ["WMT", "TGT", "COST", "DG"],
+    "SHOP": ["AMZN", "WIX", "SQ", "MELI", "ETSY", "SE"],
+    # Energy ecosystem
+    "XOM":  ["CVX", "COP", "EOG", "PXD", "SLB", "BKR", "HAL", "OXY", "MPC", "VLO", "PSX"],
+    "CVX":  ["XOM", "COP", "EOG", "PXD", "SLB", "BKR", "HAL", "OXY"],
+    "SLB":  ["BKR", "HAL", "XOM", "CVX", "COP", "EOG", "PXD"],
+    "COP":  ["XOM", "CVX", "EOG", "PXD", "SLB", "BKR"],
+    "EOG":  ["XOM", "CVX", "COP", "PXD", "SLB", "BKR"],
+    "PXD":  ["XOM", "CVX", "COP", "EOG", "SLB", "BKR"],
+    "OXY":  ["XOM", "CVX", "COP", "EOG", "PXD"],
+    "MPC":  ["VLO", "PSX", "XOM", "CVX", "DK", "PAR"],
+    "VLO":  ["MPC", "PSX", "XOM", "CVX", "DK"],
+    # Industrials / Defense ecosystem
+    "CAT":  ["DE", "URI", "PCAR", "CMI", "AME", "ETN", "PH", "ITW", "DOV", "IR"],
+    "BA":   ["LMT", "RTX", "NOC", "GD", "HII", "TDY", "TXT", "SPR", "HEI", "CW"],
+    "LMT":  ["RTX", "NOC", "GD", "BA", "HII", "TDY", "TXT", "SPR", "HEI"],
+    "RTX":  ["LMT", "NOC", "GD", "BA", "HII", "TDY", "TXT", "SPR"],
+    "NOC":  ["LMT", "RTX", "GD", "BA", "HII", "TDY"],
+    "GD":   ["LMT", "RTX", "NOC", "BA", "HII", "TDY"],
+    "DE":   ["CAT", "URI", "PCAR", "CMI", "AME", "AGCO"],
+    "URI":  ["CAT", "DE", "PCAR", "CMI", "AME"],
+    # Media / Entertainment ecosystem
+    "NFLX": ["DIS", "WBD", "PARA", "FOXA", "LYV", "ROKU", "SPOT", "TME"],
+    "DIS":  ["NFLX", "WBD", "PARA", "FOXA", "LYV", "ROKU"],
+    "SPOT": ["NFLX", "DIS", "ROKU", "TME", "WMG"],
+    "ROKU": ["NFLX", "DIS", "SPOT", "TTD", "WBD"],
+    "TTD":  ["ROKU", "SPOT", "NFLX", "DIS", "META", "GOOG"],
+    # Payments / FinTech ecosystem
+    "SQ":   ["PYPL", "AFRM", "COIN", "HOOD", "MA", "V", "GPN", "FI", "WU"],
+    "PYPL": ["SQ", "AFRM", "MA", "V", "GPN", "FI", "WU", "COIN"],
+    "AFRM": ["SQ", "PYPL", "MA", "V", "COIN", "UPST", "SOFI"],
+    "COIN": ["HOOD", "SQ", "MARA", "RIOT", "MSTR", "PYPL"],
+    "HOOD": ["COIN", "SQ", "PYPL", "AFRM", "SOFI"],
+    "SOFI": ["AFRM", "UPST", "COIN", "HOOD", "SQ", "PYPL"],
+    "UPST": ["AFRM", "SOFI", "SQ", "PYPL"],
+    # EV / Auto ecosystem
+    "F":    ["GM", "TSLA", "RIVN", "LCID", "NIO", "XPEV", "LI", "ALV", "APTV", "BWA"],
+    "GM":   ["F", "TSLA", "RIVN", "LCID", "NIO", "XPEV", "LI", "ALV", "APTV"],
+    "RIVN": ["LCID", "F", "GM", "TSLA", "NIO", "XPEV", "LI"],
+    "NIO":  ["XPEV", "LI", "TSLA", "F", "GM", "RIVN", "LCID"],
+    "XPEV": ["NIO", "LI", "TSLA", "F", "GM", "RIVN", "LCID"],
+    "LI":   ["NIO", "XPEV", "TSLA", "F", "GM", "RIVN", "LCID"],
+    "ALV":  ["APTV", "BWA", "F", "GM", "TSLA"],
+    "APTV": ["ALV", "BWA", "F", "GM", "TSLA"],
+    # Real Estate ecosystem
+    "PLD":  ["AMT", "EQIX", "DLR", "SPG", "O", "WELL", "VTR", "PSA", "EXR", "AVB"],
+    "AMT":  ["EQIX", "SBAC", "PLD", "DLR", "SPG"],
+    # Telecom ecosystem
+    "TMUS": ["T", "VZ", "CMCSA", "CHTR", "LUMN"],
+    # Biotech ecosystem
+    "BIIB": ["REGN", "VRTX", "GILD", "AMGN", "JNJ", "PFE"],
+    # Crypto-adjacent
+    "MSTR": ["COIN", "MARA", "RIOT", "SQ", "HOOD"],
+    "MARA": ["RIOT", "COIN", "MSTR", "SQ"],
+    "RIOT": ["MARA", "COIN", "MSTR", "SQ"],
+    # Additional high-interest tickers (not in supply chain map but always worth watching)
+    # These are added automatically in the function below
+}
+
+# Sector classification for broad earnings discovery
+# Maps sector names to representative ETFs and key tickers for sector-level analysis
+SECTOR_CLASSIFICATION = {
+    "Technology": {
+        "etf": "XLK",
+        "keywords": ["technology", "software", "semiconductor", "hardware", "it services", "electronics"],
+        "extras": ["ANUBIS", "AI", "MDB", "WDAY", "ZS", "CRWD", "OKTA", "PANW", "NET", "COUR", "UDMY", "BIRD", "DLO", "GTLB", "S", "PATH", "ASAN", "BL", "DV", "NCNO", "SUMO", "QLYS", "TENB", "VRNS", "RPD", "SWI", "BLKB", "ALTR", "APPN", "MSTR", "RIOT", "MARA"],
+    },
+    "Communication Services": {
+        "etf": "XLC",
+        "keywords": ["communication", "media", "entertainment", "advertising", "social", "telecom"],
+        "extras": ["TTD", "ROKU", "MTCH", "BMBL", "RBLX", "U", "DKNG", "PENN", "FUN", "MSGS", "MANU", "FWONA", "LYV", "SIRI", "TME", "WMG", "NWSA", "FOXA", "PARA", "WBD", "LGF.A", "AMC"],
+    },
+    "Consumer Discretionary": {
+        "etf": "XLY",
+        "keywords": ["consumer", "retail", "automotive", "restaurant", "travel", "luxury", "e-commerce"],
+        "extras": ["LULU", "DECK", "ONON", "COLM", "CROX", "SKX", "NKE", "ADDYY", "CMG", "WING", "DPZ", "YUM", "SBUX", "MCD", "ABNB", "BKNG", "RCL", "CCL", "NCLH", "MAR", "HLT", "WH", "ETSY", "WIX", "SE", "MELI", "CPNG", "GLBE", "DTC", "OLPX", "REAL", "CART", "RIVN", "LCID", "FSR", "GOEV", "WKHS", "RIDE", "FFIE", "ARVL", "LCID", "LEV", "XL", "ZEV"],
+    },
+    "Consumer Staples": {
+        "etf": "XLP",
+        "keywords": ["staples", "food", "beverage", "household", "personal care", "tobacco"],
+        "extras": ["DG", "DLTR", "TGT", "WMT", "COST", "ACI", "KR", "CASY", "IMKTA", "NGVT", "PFGC", "USFD", "UNFI", "ANDE", "CALM", "TSN", "PPC", "HRL", "CAG", "CPB", "GIS", "HSY", "KHC", "MKC", "SJM", "CL", "PG", "CHD", "CLX", "EL", "KMB", "COTY", "ELF", "IPAR", "NUS", "USNA", "HLF", "NHTC", "MED", "NATR", "RELV", "MTEX"],
+    },
+    "Financials": {
+        "etf": "XLF",
+        "keywords": ["financial", "bank", "insurance", "asset management", "fintech", "broker", "capital markets"],
+        "extras": ["COIN", "HOOD", "SOFI", "UPST", "AFRM", "LC", "OPFI", "NU", "NUVB", "NUWE", "V", "MA", "AXP", "DFS", "SYF", "ALLY", "COF", "BAC", "WFC", "C", "GS", "MS", "JPM", "BK", "STT", "TFC", "USB", "PNC", "RF", "CFG", "HBAN", "FITB", "KEY", "MTB", "CMA", "ZION", "WAL", "PACW", "SIVB", "SBNY", "FRC", "PACW", "EWBC", "UMPQ", "BANF", "FFIN", "TCBI", "SFBS", "ABCB", "AUB", "BKU", "BOH", "CBSH", "CFR", "CHCO", "CTBI", "CVBF", "EBC", "EFSC", "EGBN", "ESNT", "FBK", "FFBC", "FFWM", "FHB", "FISI", "FLIC", "FMBH", "FULT", "GABC", "GBCI", "GSBC", "HAFC", "HBNC", "HBT", "HFWA", "HWC", "HOMB", "HTLF", "HTBK", "IBCP", "IBOC", "INDB", "ISBC", "LBAI", "LKFN", "MBCN", "MCB", "MCBC", "MOFG", "MPB", "MSBI", "MTG", "NMIH", "NRIM", "NWBI", "OCFC", "OFG", "ONB", "OPBK", "ORI", "OZK", "PB", "PFBC", "PFIS", "PFS", "PPBI", "PRK", "PSTG", "QCRH", "RBCAA", "RBNC", "RNST", "SASR", "SBCF", "SBFG", "SBSI", "SF", "SFBS", "SFNC", "SFST", "SHBI", "SIVB", "SLM", "SMBK", "SMBC", "SMMF", "SNV", "SPFI", "SRCE", "SSB", "STBA", "STEL", "STL", "STLD", "TCBI", "TCBK", "TCF", "TCOM", "THFF", "TMP", "TRMK", "TRST", "TSC", "UBSI", "UCBI", "UCBIO", "UHT", "UMBF", "UMPQ", "UNB", "UNTY", "USB", "UVSP", "VBTX", "VLY", "WABC", "WAFD", "WAL", "WASH", "WBS", "WD", "WFC", "WTBA", "WTFC", "ZION"],
+    },
+    "Healthcare": {
+        "etf": "XLV",
+        "keywords": ["healthcare", "pharma", "biotech", "medical", "drug", "hospital", "health"],
+        "extras": ["NVO", "MRNA", "BNTX", "TXN", "KRYS", "SRPT", "BMRN", "INCY", "HALO", "EXEL", "NBIX", "ALNY", "ARWR", "NTLA", "BEAM", "EDIT", "CRSP", "VRTX", "REGN", "GILD", "AMGN", "BIIB", "VTRS", "PBH", "PRGO", "TEVA", "ZTS", "IDXX", "WST", "TFX", "PEN", "GMED", "NUVA", "ARVN", "TMDX", "INSP", "IRTC", "ABMD", "BSX", "EW", "DXCM", "PODD", "SWAV", "LMAT", "AXNX", "KIDS", "CNMD", "UFPI", "ICUI", "HAE", "ATR", "RMD", "STE", "ZBH", "SYK", "BSX", "MDT", "ABT", "DHR", "TMO", "A", "LH", "DGX", "IQV", "MTD", "WAT", "PKI", "BIO", "TECH", "CTLT", "MEDP", "NVCR", "HOLX", "ISRG", "INTU", "EW", "PEN", "GMED", "NUVA", "ARVN", "TMDX", "INSP", "IRTC", "ABMD", "BSX", "EW", "DXCM", "PODD", "SWAV", "LMAT", "AXNX", "KIDS", "CNMD", "UFPI", "ICUI", "HAE", "ATR", "RMD", "STE", "ZBH", "SYK", "BSX", "MDT", "ABT", "DHR", "TMO", "A", "LH", "DGX", "IQV", "MTD", "WAT", "PKI", "BIO", "TECH", "CTLT", "MEDP", "NVCR", "HOLX", "ISRG", "INTU", "EW"],
+    },
+    "Energy": {
+        "etf": "XLE",
+        "keywords": ["energy", "oil", "gas", "drilling", "refining", "pipeline", "solar", "wind", "renewable", "clean energy"],
+        "extras": ["BKR", "HAL", "OXY", "MPC", "VLO", "PSX", "DK", "PAR", "SUN", "CVI", "DINO", "VTLE", "GPRE", "CLNE", "BLDP", "FCEL", "PLUG", "BE", "ICLN", "QCLN", "PBW", "LIT", "REMX", "URA", "SMH", "XME", "KRE", "XOP", "IEO", "OIH", "XES"],
+    },
+    "Industrials": {
+        "etf": "XLI",
+        "keywords": ["industrial", "aerospace", "defense", "machinery", "construction", "engineering", "transportation", "logistics"],
+        "extras": ["DE", "URI", "PCAR", "CMI", "AME", "ETN", "PH", "ITW", "DOV", "IR", "DAL", "AAL", "UAL", "LUV", "CCJ", "NEM", "GOLD", "AEM", "WPM", "FNV", "KGC", "AGI", "AUY", "HMY", "GFI", "EDR", "OR", "IAG", "FRES", "LAC", "SQM", "ALB", "LTHM", "PLL", "MP", "CRML", "SGML", "CHPT", "BLNK", "EVGO", "ABNB", "R", "CAR", "HTZ", "Avis", "DHT", "EURN", "NAT", "SFL", "INSW", "TK", "TNK", "STNG", "FRO", "GNK", "GOGL", "SB", "CMRE", "NETI", "GRIN", "PANL", "ZIM", "MATX", "BWXT", "ESLT", "RADA", "KTOS", "AVAV", "MOG.A", "HXL", "TGI", "MRCY", "DRS", "ACHR", "JOBY", "VLDR", "EH", "ASTR", "RKLB", "SPIR", "MNTS", "LILM", "SDRD"],
+    },
+    "Materials": {
+        "etf": "XLB",
+        "keywords": ["materials", "chemical", "mining", "metal", "steel", "gold", "silver", "lithium", "rare earth"],
+        "extras": ["CCJ", "NEM", "GOLD", "AEM", "WPM", "FNV", "KGC", "AGI", "AUY", "HMY", "GFI", "EDR", "OR", "IAG", "FRES", "LAC", "SQM", "ALB", "LTHM", "PLL", "MP", "CRML", "SGML", "LIN", "APD", "ECL", "SHW", "FCX", "NUE", "STLD", "CLF", "X", "MT", "PKX", "SCCO", "RIO", "BHP", "VALE", "TECK", "HBM", "CENX", "KALU", "CSTM", "WOR", "TGLS", "ZWS", "IEX", "DOV", "GGG", "LECO", "EMR", "ROP", "OTIS", "PH", "CARR", "TT", "JCI", "HON", "MMM", "GE", "HWM", "CAT", "DE", "PCAR", "CMI", "AME", "ETN", "ITW", "IR", "DAL", "AAL", "UAL", "LUV"],
+    },
+    "Real Estate": {
+        "etf": "XLRE",
+        "keywords": ["real estate", "reit", "property", "housing", "commercial"],
+        "extras": ["DLR", "EQIX", "SBAC", "SPG", "O", "WELL", "VTR", "PSA", "EXR", "AVB", "EQR", "MAA", "UDR", "CPT", "BXP", "VNO", "SLG", "HIW", "DECU", "KRC", "JBGS", "HPP", "BDN", "PGRE", "ALEX", "CMCT", "OPI", "UNIT", "LTC", "NHI", "OHI", "MPW", "HR", "PEAK", "SBRA", "CTRE", "GMRE", "CHCT", "DHC", "RHP", "PK", "SHO", "PEB", "DRH", "HST", "APLE", "CLDT", "RLJ", "RHP", "ILPT", "SELF", "GRTA", "LAND", "MDRR", "ALEX", "BRT", "CDR", "FPI", "NXRT", "ROIC", "RPAI", "RPT", "SKT", "TCO", "UBA", "WRI", "XAN", "AAT", "ADC", "AKR", "ALX", "ALEX", "APTS", "BFS", "BRSP", "BXP", "CBL", "CDR", "CHCT", "CLDT", "CMCT", "CPT", "CTRE", "CUZ", "CXW", "DHC", "DLR", "DRH", "EPR", "EQR", "EXR", "FPI", "GMRE", "GRTA", "HPP", "HST", "HT", "IIPR", "ILPT", "JBGS", "JLL", "KRC", "LAMR", "LAND", "LTC", "MAA", "MDRR", "MPW", "NHI", "NNN", "NRE", "NRZ", "NTST", "NXRT", "O", "OHI", "OPI", "PEAK", "PEB", "PK", "PLD", "PSA", "PSB", "REG", "REXR", "RHP", "RLJ", "ROIC", "RPAI", "RPT", "RWT", "SBRA", "SELF", "SHO", "SKT", "SLG", "SPG", "STAG", "STOR", "TCO", "UBA", "UDR", "UNIT", "VICI", "VNO", "VTR", "WELL", "WPC", "WRI", "XAN"],
+    },
+    "Utilities": {
+        "etf": "XLU",
+        "keywords": ["utility", "electric", "water", "gas utility", "power", "renewable energy"],
+        "extras": ["NEE", "DUK", "SO", "D", "AEP", "EXC", "SRE", "XEL", "ED", "PEG", "AWK", "ES", "ETR", "FE", "ES", "CNP", "NI", "LNT", "EIX", "PPL", "AES", "AGR", "AMPS", "ARIS", "AQN", "ATO", "AVA", "BKH", "BEP", "BEPC", "CEG", "CIG", "CMS", "CPK", "CTRA", "CWEN", "DTE", "EAI", "EBR", "EVRG", "FLNC", "FCEL", "GPRE", "HE", "IDA", "KEN", "KEP", "KMI", "LNG", "MGEE", "MNTN", "NFG", "NGG", "NJR", "NOVA", "NRG", "NTG", "NWE", "OGE", "OGS", "OPAL", "ORA", "OTTR", "PCG", "PCYO", "PNM", "PNW", "PPA", "PRP", "PPL", "RGCO", "RNW", "RUG", "SBS", "SJI", "SM", "SMLP", "SPH", "SR", "SWX", "TAC", "TPIC", "TPH", "TRGP", "TS", "UGI", "UMC", "UTL", "VGAS", "VIA", "VIST", "VST", "WEC", "WTRG", "WTRU", "XEL", "ZNH"],
+    },
+}
+
+
+def _get_portfolio_tickers_set():
+    """Helper: load all portfolio tickers into a set."""
+    portfolio_set = set()
+    try:
+        portfolios_dir = BASE_DIR / "portfolios"
+        if portfolios_dir.exists():
+            for i in range(1, 5):
+                portfolio_csv = portfolios_dir / f"portfolio{i}.csv"
+                if portfolio_csv.exists():
+                    with open(portfolio_csv, 'r') as f:
+                        reader = csv.DictReader(f)
+                        for row in reader:
+                            ticker = row.get('Symbol', '').strip().upper()
+                            if ticker:
+                                portfolio_set.add(ticker)
+    except Exception:
+        pass
+    return portfolio_set
+
+
+def _format_earning(e, today):
+    """Format a single earnings calendar entry into a readable string."""
+    ticker = e.get("symbol", "").upper()
+    earnings_date = e.get("date", "")
+    if not ticker or not earnings_date:
+        return None
+    try:
+        e_dt = datetime.date.fromisoformat(earnings_date)
+        days_until = (e_dt - today).days
+    except ValueError:
+        return None
+
+    hour = e.get("hour", "")
+    eps_est = e.get("epsEstimate", "")
+    rev_est = e.get("revenueEstimate", "")
+
+    if days_until < -2 or days_until > 21:
+        return None
+
+    status = "REPORTED" if days_until < 0 else "TODAY" if days_until == 0 else f"in {days_until}d"
+    detail = f" ({hour})" if hour else ""
+    if eps_est:
+        try:
+            detail += f" EPS est: ${float(eps_est):.2f}"
+        except (ValueError, TypeError):
+            detail += f" EPS est: ${eps_est}"
+    if rev_est:
+        try:
+            rv = float(rev_est)
+            if rv > 1e9:
+                detail += f" Rev est: ${rv/1e9:.1f}B"
+            else:
+                detail += f" Rev est: ${rv/1e6:.0f}M"
+        except (ValueError, TypeError):
+            pass
+
+    return f"  🔔 {ticker} — Earnings {status} ({earnings_date}){detail}", days_until
+
+
+def _classify_sector(ticker, info):
+    """Try to determine a company's sector from yfinance info."""
+    sector = info.get('sector', '')
+    industry = info.get('industry', '')
+    return sector, industry
+
+
+def get_comprehensive_earnings(days_ahead: int = 21):
+    """
+    Comprehensive earnings intelligence covering 3 layers:
+    
+    Layer 1: PORTFOLIO — your actual holdings
+    Layer 2: RELATED/SUPPLY CHAIN — companies in the same ecosystem as your holdings
+    Layer 3: SECTOR EXCITEMENT — most anticipated earnings in sectors you're invested in,
+             including emerging companies you may not own or know about
+    
+    Uses Finnhub earnings calendar API (free tier) which returns ~5000 companies.
+    Also uses yfinance for fallback on portfolio tickers.
+    
+    Returns a dict with:
+        portfolio_earnings: str — formatted earnings for your holdings
+        related_earnings: str — formatted earnings for supply chain / ecosystem companies
+        sector_earnings: str — formatted earnings for exciting companies in your sectors
+        all_earnings_flat: list — all raw earnings entries for LLM context
+    """
+    today = datetime.date.today()
+    portfolio_tickers = _get_portfolio_tickers_set()
+
+    # ── Build the set of related tickers from supply chain map ──
+    related_tickers = set()
+    for ticker in portfolio_tickers:
+        if ticker in SUPPLY_CHAIN_MAP:
+            for related in SUPPLY_CHAIN_MAP[ticker]:
+                if related not in portfolio_tickers:
+                    related_tickers.add(related)
+
+    # ── Determine which sectors the portfolio is invested in ──
+    portfolio_sectors = set()
+    for ticker in portfolio_tickers:
+        try:
+            old_stderr = sys.stderr
+            sys.stderr = StringIO()
             try:
-                from_date = (today - datetime.timedelta(days=2)).isoformat()
-                to_date = (today + datetime.timedelta(days=14)).isoformat()
-                r = requests.get(
-                    f"https://finnhub.io/api/v1/calendar/earnings",
-                    params={
-                        "from": from_date,
-                        "to": to_date,
-                        "symbol": ticker,
-                        "token": FINNHUB_API_KEY
-                    },
-                    timeout=10
-                )
-                data = r.json()
-                earnings_list = data.get("earningsCalendar", [])
-                for e in earnings_list:
-                    earnings_date = e.get("date", "")
-                    if earnings_date:
-                        try:
-                            e_dt = datetime.date.fromisoformat(earnings_date)
-                            days_until = (e_dt - today).days
-                            if -2 <= days_until <= 14:
-                                hour = e.get("hour", "")
-                                eps_est = e.get("epsEstimate", "")
-                                rev_est = e.get("revenueEstimate", "")
-                                status = "REPORTED" if days_until < 0 else "TODAY" if days_until == 0 else f"in {days_until}d"
-                                detail = f" ({hour})" if hour else ""
-                                if eps_est:
-                                    detail += f" EPS est: ${eps_est}"
-                                earnings_info.append(
-                                    f"  🔔 {ticker} — Earnings {status} ({earnings_date}){detail}"
-                                )
-                        except ValueError:
-                            continue
+                t = yf.Ticker(ticker)
+                info = t.info
+                sector = info.get('sector', '')
+                if sector:
+                    portfolio_sectors.add(sector)
             except Exception:
                 pass
+            finally:
+                sys.stderr = old_stderr
+        except Exception:
+            pass
 
-        # METHOD 2: Try yfinance as fallback
-        if not any(ticker in e for e in earnings_info):
-            try:
-                old_stderr = sys.stderr
-                sys.stderr = StringIO()
-                try:
-                    t = yf.Ticker(ticker)
-                    info = t.info
-                    earnings_ts = info.get('earningsTimestamp') or info.get('earningsDate')
-                    if earnings_ts:
-                        if isinstance(earnings_ts, (int, float)):
-                            earnings_dt = datetime.datetime.fromtimestamp(earnings_ts).date()
-                        elif isinstance(earnings_ts, str):
-                            try:
-                                earnings_dt = datetime.date.fromisoformat(earnings_ts[:10])
-                            except ValueError:
-                                continue
-                        else:
-                            continue
+    # ── Fetch the full earnings calendar from Finnhub ──
+    # The free tier returns ~5000 companies for a date range
+    all_earnings = []
+    if FINNHUB_API_KEY:
+        try:
+            from_date = (today - datetime.timedelta(days=2)).isoformat()
+            to_date = (today + datetime.timedelta(days=days_ahead)).isoformat()
+            r = requests.get(
+                "https://finnhub.io/api/v1/calendar/earnings",
+                params={"from": from_date, "to": to_date, "token": FINNHUB_API_KEY},
+                timeout=15
+            )
+            data = r.json()
+            all_earnings = data.get("earningsCalendar", [])
+        except Exception:
+            pass
 
-                        days_until = (earnings_dt - today).days
-                        if -2 <= days_until <= 7:
-                            status = "REPORTED" if days_until < 0 else "TODAY" if days_until == 0 else f"in {days_until}d"
-                            price = info.get('currentPrice') or info.get('regularMarketPrice')
-                            earnings_info.append(
-                                f"  🔔 {ticker} — Earnings {status} ({earnings_dt})"
-                                + (f" @ ${price:.2f}" if price else "")
-                            )
-                except Exception:
-                    pass
-                finally:
-                    sys.stderr = old_stderr
-            except Exception:
+    # ── Categorize earnings into 3 layers ──
+    portfolio_earnings = []
+    related_earnings = []
+    sector_earnings = []
+    seen_tickers = set()
+
+    for e in all_earnings:
+        ticker = e.get("symbol", "").upper()
+        if ticker in seen_tickers:
+            continue
+
+        formatted = _format_earning(e, today)
+        if formatted is None:
+            continue
+        entry_str, days_until = formatted
+
+        if ticker in portfolio_tickers:
+            portfolio_earnings.append(entry_str)
+            seen_tickers.add(ticker)
+        elif ticker in related_tickers:
+            related_earnings.append(entry_str)
+            seen_tickers.add(ticker)
+
+    # ── Layer 3: Sector excitement — scan for companies in portfolio sectors ──
+    # We need to identify which earnings belong to sectors we're invested in.
+    # Strategy: for each sector we're in, check if any earnings tickers match
+    # known sector tickers, or use yfinance to classify them.
+    if portfolio_sectors and all_earnings:
+        # Build a set of all tickers we've already captured
+        captured = set()
+
+        # First pass: match against known sector tickers from SECTOR_CLASSIFICATION
+        sector_known_tickers = {}
+        for sector_name, sector_data in SECTOR_CLASSIFICATION.items():
+            if sector_name in portfolio_sectors:
+                for t in sector_data.get("extras", []):
+                    sector_known_tickers[t.upper()] = sector_name
+
+        for e in all_earnings:
+            ticker = e.get("symbol", "").upper()
+            if ticker in seen_tickers or ticker in captured:
+                continue
+            if ticker in portfolio_tickers:
                 continue
 
-    if earnings_info:
-        return "**📅 Earnings Alerts (Portfolio Holdings):**\n" + "\n".join(earnings_info) + "\n"
-    return ""
+            formatted = _format_earning(e, today)
+            if formatted is None:
+                continue
+            entry_str, days_until = formatted
+
+            # Check if this ticker is a known sector ticker
+            if ticker in sector_known_tickers:
+                sector_name = sector_known_tickers[ticker]
+                sector_earnings.append(f"{entry_str} [{sector_name}]")
+                captured.add(ticker)
+                continue
+
+            # For high-revenue companies (>$1B rev estimate), try yfinance classification
+            rev_est = e.get("revenueEstimate", "")
+            try:
+                if rev_est and float(rev_est) > 500_000_000:  # >$500M revenue
+                    old_stderr = sys.stderr
+                    sys.stderr = StringIO()
+                    try:
+                        t = yf.Ticker(ticker)
+                        info = t.info
+                        sector = info.get('sector', '')
+                        if sector and sector in portfolio_sectors:
+                            sector_earnings.append(f"{entry_str} [{sector}]")
+                            captured.add(ticker)
+                    except Exception:
+                        pass
+                    finally:
+                        old_stderr = old_stderr
+            except (ValueError, TypeError):
+                pass
+
+    # ── Fallback: yfinance for portfolio tickers Finnhub might have missed ──
+    for ticker in portfolio_tickers:
+        if ticker in seen_tickers:
+            continue
+        try:
+            old_stderr = sys.stderr
+            sys.stderr = StringIO()
+            try:
+                t = yf.Ticker(ticker)
+                info = t.info
+                earnings_ts = info.get('earningsTimestamp') or info.get('earningsDate')
+                if earnings_ts:
+                    if isinstance(earnings_ts, (int, float)):
+                        earnings_dt = datetime.date.fromtimestamp(earnings_ts)
+                    elif isinstance(earnings_ts, str):
+                        try:
+                            earnings_dt = datetime.date.fromisoformat(earnings_ts[:10])
+                        except ValueError:
+                            continue
+                    else:
+                        continue
+                    days_until = (earnings_dt - today).days
+                    if -2 <= days_until <= 14:
+                        status = "REPORTED" if days_until < 0 else "TODAY" if days_until == 0 else f"in {days_until}d"
+                        price = info.get('currentPrice') or info.get('regularMarketPrice')
+                        portfolio_earnings.append(
+                            f"  🔔 {ticker} — Earnings {status} ({earnings_dt})"
+                            + (f" @ ${price:.2f}" if price else "")
+                        )
+                        seen_tickers.add(ticker)
+            except Exception:
+                pass
+            finally:
+                sys.stderr = old_stderr
+        except Exception:
+            pass
+
+    # ── Build formatted output strings ──
+    portfolio_str = ""
+    if portfolio_earnings:
+        portfolio_str = "**📅 Earnings — Your Portfolio Holdings:**\n" + "\n".join(portfolio_earnings) + "\n"
+
+    related_str = ""
+    if related_earnings:
+        related_str = "**📅 Earnings — Related / Supply Chain Companies:**\n" + "\n".join(related_earnings) + "\n"
+
+    sector_str = ""
+    if sector_earnings:
+        sector_str = "**📅 Earnings — Sector Excitement (Companies in Your Sectors You May Not Own):**\n" + "\n".join(sector_earnings) + "\n"
+
+    return {
+        "portfolio_earnings": portfolio_str,
+        "related_earnings": related_str,
+        "sector_earnings": sector_str,
+        "all_earnings_flat": all_earnings,
+    }
 
 
 # ─────────────────────────────────────────────
@@ -1919,10 +2316,12 @@ For EVERY trade idea, provide this structured analysis:
 3. Win probability >= 60% OR asymmetric upside (5x+)
 4. Position size <= 10% of portfolio (use Kelly Criterion)
 5. Must be able to articulate WHY this is a good trade
-6. Scan BROAD market, not just current holdings
+6. Scan BROAD market — NOT just current holdings. Include companies from the broad earnings watchlist, sector leaders, and emerging players.
 7. For portfolio positions: analyze by WEIGHT, suggest SELL/REDUCE for overvalued
 8. Recommend HOLDING CASH if no compelling opportunities
 9. Look for ONCE-IN-A-LIFETIME opportunities: extreme asymmetric plays, 50%+ upside potential, clear catalysts
+10. EARNINGS AWARENESS: If a company has upcoming earnings (from the earnings alerts), factor that into the thesis — consider pre-earnings setups, post-earnings plays, or avoidance if too risky. Earnings can be a major catalyst.
+11. SECTOR ROTATION: If multiple companies in the same sector have upcoming earnings, consider sector-wide implications and which companies are best positioned.
 
 For EACH idea output:
 ### [#] TICKER - Thesis
@@ -2255,7 +2654,13 @@ Format: A single paragraph with specific reasoning.""",
 
 def build_and_save_report(market_data, digest, investments, options, learning,
                             market_sentiment="", portfolio_analysis_text="", market_reaction="",
-                            earnings_alerts="") -> str:
+                            earnings_alerts="", related_earnings="", sector_earnings="",
+                            forward_analysis="", recent_surprises="",
+                            foresight_score=0, foresight_direction="neutral",
+                            foresight_outlook="", foresight_actions=None) -> str:
+    if foresight_actions is None:
+        foresight_actions = []
+
     # Get recommendation updates
     rec_updates = read_file(RECOMMENDATIONS_FILE)
     if rec_updates:
@@ -2265,7 +2670,28 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 
     reaction_section = f"\n---\n\n## 📰 Why The Market Moved Today\n\n{market_reaction}\n" if market_reaction else ""
 
-    earnings_section = f"\n---\n\n## 📅 Earnings Alerts\n\n{earnings_alerts}\n" if earnings_alerts else ""
+    # Market Foresight section
+    foresight_emoji = "🟢" if foresight_score > 20 else "🔴" if foresight_score < -20 else "⚪"
+    foresight_section = f"\n---\n\n## 🔮 Market Foresight Outlook ({foresight_emoji} Score: {foresight_score}/100 — {foresight_direction.replace('_', ' ').title()})\n\n{foresight_outlook}\n"
+    if foresight_actions:
+        foresight_section += "\n**Suggested Actions:**\n"
+        for action in foresight_actions[:7]:
+            foresight_section += f"- {action}\n"
+
+    # Earnings sections
+    earnings_section = ""
+    if earnings_alerts:
+        earnings_section += f"\n---\n\n## 📅 Earnings — Your Portfolio Holdings\n\n{earnings_alerts}\n"
+    if related_earnings:
+        earnings_section += f"\n---\n\n## 📅 Earnings — Related / Supply Chain Companies\n\n{related_earnings}\n"
+    if sector_earnings:
+        earnings_section += f"\n---\n\n## 📅 Earnings — Comprehensive Sector Coverage\n\n{sector_earnings}\n"
+    if forward_analysis:
+        earnings_section += f"\n---\n\n## 🔮 Forward-Looking Earnings Analysis (Beat/Miss Predictions)\n\n{forward_analysis}\n"
+    if recent_surprises:
+        earnings_section += f"\n---\n\n## 📊 Recent Earnings Surprises\n\n{recent_surprises}\n"
+    if not earnings_section:
+        earnings_section = ""
 
     report = f"""# 🧠 Daily Intelligence Report
 **{NOW}** | Run {RUN_LABEL} | Market {'Open 🟢' if IS_MARKET_OPEN else 'Closed 🔴 (After-Hours)'}
@@ -2282,6 +2708,7 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 ## 🌡️ Market Sentiment & Timing
 {market_sentiment}
 {reaction_section}
+{foresight_section}
 {earnings_section}
 ---
 
@@ -2327,10 +2754,16 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 # MAIN
 # ─────────────────────────────────────────────
 def main():
-    # Initialize run metadata
+    # Initialize run metadata — always use US Eastern Time (owner is in Jersey City, NJ)
     global NOW, TODAY, RUN_LABEL, IS_MARKET_OPEN
-    now = datetime.datetime.now()
-    NOW = now.strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        import pytz
+        eastern = pytz.timezone('US/Eastern')
+        now = datetime.datetime.now(eastern)
+    except ImportError:
+        # Fallback: assume system time is Eastern (user is in Jersey City)
+        now = datetime.datetime.now()
+    NOW = now.strftime("%Y-%m-%d %H:%M:%S ET")
     TODAY = now.strftime("%Y-%m-%d")
     RUN_LABEL = now.strftime("%H%M")
     
@@ -2363,12 +2796,18 @@ def main():
             from skills.recommendation_tracker import init_tracker_skill
             from skills.news_research import init_news_skill
             from skills.learning_curator import init_learning_skill
+            from skills.earnings_intelligence import init_earnings_skill
+            from skills.market_foresight import init_foresight_skill
 
             init_portfolio(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_options_skill(polygon_key=POLYGON_API_KEY, base_dir=str(BASE_DIR))
             init_tracker_skill(base_dir=str(BASE_DIR), finnhub_key=FINNHUB_API_KEY)
             init_news_skill(tavily_key=TAVILY_API_KEY, finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_learning_skill(base_dir=str(BASE_DIR))
+            init_earnings_skill(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
+            init_foresight_skill(finnhub_key=FINNHUB_API_KEY, tavily_key=TAVILY_API_KEY, base_dir=str(BASE_DIR))
+            init_portfolio_manager(finnhub_key=FINNHUB_API_KEY, alpaca_key=ALPACA_API_KEY,
+                                   alpaca_secret=ALPACA_SECRET_KEY, base_dir=str(BASE_DIR))
             log("[OK] All skills initialized with API keys")
         except Exception as e:
             log(f"[!] Skills initialization failed: {e}")
@@ -2424,7 +2863,13 @@ def main():
     fin_news = finnhub_news()
 
     # Optionally do a Tavily deep-dive on today's top story (conserve credits)
-    run_hour = datetime.datetime.now().hour
+    # Use Eastern Time for consistency
+    try:
+        import pytz
+        eastern = pytz.timezone('US/Eastern')
+        run_hour = datetime.datetime.now(eastern).hour
+    except ImportError:
+        run_hour = datetime.datetime.now().hour
     if run_hour in [11, 17]:  # only 2 of 5 runs use Tavily
         log("🔍 Tavily deep-dive (morning/evening run only)...")
         extra = tavily_search("latest AI model releases investment implications today", 3)
@@ -2441,19 +2886,136 @@ def main():
     log("🌡️  Analyzing market sentiment (fear/greed)...")
     market_sentiment = get_market_sentiment()
 
-    # 3b. Check for upcoming/recent earnings in portfolio
-    log("📅 Checking earnings calendar for portfolio holdings...")
-    earnings_alerts = check_upcoming_earnings(all_portfolio_tickers)
+    # 3b. Comprehensive earnings intelligence — portfolio + supply chain + sector + forward analysis
+    log("📅 Running comprehensive earnings intelligence (full universe + forward analysis)...")
+    earnings_data = get_comprehensive_earnings_intelligence(
+        portfolio_tickers=all_portfolio_tickers, days_ahead=21
+    )
+    earnings_alerts = earnings_data["portfolio_earnings"]
+    related_earnings = earnings_data["related_earnings"]
+    sector_earnings = earnings_data["sector_earnings"]
+    forward_analysis = earnings_data["forward_analysis"]
+    recent_surprises = earnings_data["recent_surprises"]
     if earnings_alerts:
-        log(f"✓ Earnings alerts found: {earnings_alerts[:100]}")
-    else:
-        log("  No upcoming earnings in the next 7 days for portfolio holdings")
+        log(f"✓ Portfolio earnings: {earnings_alerts[:100]}")
+    if related_earnings:
+        log(f"✓ Related/supply chain earnings: {related_earnings[:100]}")
+    if sector_earnings:
+        log(f"✓ Sector earnings: {sector_earnings[:100]}")
+    if forward_analysis:
+        log(f"✓ Forward analysis generated")
+    if not (earnings_alerts or related_earnings or sector_earnings):
+        log("  No upcoming earnings found across all layers")
+
+    # 3c. Market Foresight Predictor — crash/bullish alerts
+    log("🔮 Running market foresight predictor...")
+    foresight = get_market_foresight()
+    foresight_score = foresight["composite_score"]
+    foresight_direction = foresight["direction"]
+    log(f"[OK] Market Foresight Score: {foresight_score}/100 ({foresight_direction})")
+    for sig in foresight["signals"]:
+        if abs(sig.get("score", 0)) > 5:
+            log(f"  → {sig['name']}: {sig['detail'][:120]}")
+
+    # Send Telegram alert for extreme readings
+    if foresight.get("alert"):
+        try:
+            from skills.telegram_bot import broadcast
+            broadcast(foresight["alert"])
+            log("[OK] 🚨 Market foresight alert sent to Telegram!")
+        except Exception as e:
+            log(f"[!] Failed to send foresight alert: {e}")
 
     if SKILLS_AVAILABLE:
         try:
             get_index_prices()
         except Exception:
             pass
+
+    # 3d. Continuous portfolio monitoring — Alpaca is source of truth
+    log("📊 Running continuous portfolio monitoring (Alpaca API)...")
+    portfolio_snapshot = get_alpaca_portfolio_snapshot()
+    portfolio_actions = review_all_positions(portfolio_snapshot)
+
+    # Log key findings
+    cash_pct = portfolio_snapshot["allocation"]["cash"]
+    log(f"[OK] Portfolio: ${portfolio_snapshot['total_value']:,.0f} total | "
+        f"${portfolio_snapshot['cash']:,.0f} cash ({cash_pct:.0%}) | "
+        f"{portfolio_snapshot['num_positions']} positions | "
+        f"P&L: ${portfolio_snapshot['total_pnl']:+,.0f} ({portfolio_snapshot['total_pnl_pct']:+.2f}%)")
+
+    for action in portfolio_actions:
+        if action["priority"] in ("URGENT", "HIGH"):
+            log(f"  → [{action['priority']}] {action['type']}: {action['action']}")
+
+    # Send urgent Telegram alerts for critical portfolio actions
+    alert_text = generate_urgent_alert(portfolio_snapshot, portfolio_actions)
+    if alert_text:
+        try:
+            from skills.telegram_bot import broadcast
+            broadcast(alert_text)
+            log("[OK] 🚨 Urgent portfolio alert sent to Telegram!")
+        except Exception as e:
+            log(f"[!] Failed to send portfolio alert: {e}")
+
+    # 3e. Execute portfolio rebalancing trades via Alpaca
+    log("💼 Executing portfolio rebalancing trades via Alpaca...")
+    rebalance_trades = []
+
+    for action in portfolio_actions:
+        if action["type"] in ("SELL", "SELL_PARTIAL", "REDUCE") and action["priority"] in ("URGENT", "HIGH"):
+            ticker = action.get("symbol", "")
+            if ticker and ticker != "CASH":
+                # Determine sell percentage
+                if action["type"] == "SELL" and action["priority"] == "URGENT":
+                    sell_pct = 1.0  # Sell all for URGENT
+                elif action["type"] == "SELL_PARTIAL":
+                    sell_pct = 0.5  # Sell 50% for partial
+                else:
+                    sell_pct = 0.5  # Sell 50% for REDUCE/HIGH
+
+                try:
+                    from skills.alpaca_trading import place_stock_order
+                    # Get current position qty from snapshot
+                    pos = next((p for p in portfolio_snapshot["positions"] if p["symbol"] == ticker), None)
+                    if pos:
+                        sell_qty = max(1, int(pos["qty"] * sell_pct))
+                        result = place_stock_order(ticker, sell_qty, "sell", "market")
+                        if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                            rebalance_trades.append(f"SELL {ticker} x{sell_qty} ({action['priority']})")
+                            log(f"[OK] Rebalance SELL: {ticker} x{sell_qty} @ market (status: {result.get('status')})")
+                        elif result.get("status") == "REJECTED":
+                            log(f"[!] Alpaca SELL rejected for {ticker}: {result.get('error', 'unknown')}")
+                except Exception as e:
+                    log(f"[!] Error selling {ticker}: {e}")
+
+        elif action["type"] == "DEPLOY_CASH":
+            # Deploy excess cash into diversified positions via Alpaca
+            try:
+                from skills.alpaca_trading import place_stock_order
+                deploy_amount = portfolio_snapshot["cash"] - (portfolio_snapshot["total_value"] * 0.15)
+                if deploy_amount > 1000:
+                    # Split: 40% broad market, 30% BTC, 30% GLD
+                    allocations = [
+                        ("VTI", deploy_amount * 0.4),
+                        ("BTC-USD", deploy_amount * 0.3),
+                        ("GLD", deploy_amount * 0.3),
+                    ]
+                    for ticker, amount in allocations:
+                        price = _yf_price(ticker)["price"]
+                        if price > 0:
+                            qty = max(1, int(amount / price))
+                            result = place_stock_order(ticker, qty, "buy", "market")
+                            if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                                rebalance_trades.append(f"BUY {ticker} x{qty} (${amount:,.0f})")
+                                log(f"[OK] Deploy BUY: {ticker} x{qty} @ market")
+            except Exception as e:
+                log(f"[!] Error deploying cash: {e}")
+
+    if rebalance_trades:
+        log(f"[OK] Executed {len(rebalance_trades)} rebalance trades")
+    else:
+        log("  No rebalance trades needed this run")
 
     # 4. Generate content (sub-agents run sequentially)
     log("✍️  Running sub-agents...")
@@ -2475,9 +3037,27 @@ def main():
     # Build combined context for investment ideas with ALL data
     investment_context = options_context
     if earnings_alerts:
-        investment_context += f"\n\n⚠️ EARNINGS ALERT:\n{earnings_alerts}\nConsider earnings implications for any recommendations."
+        investment_context += f"\n\n⚠️ EARNINGS ALERT (Your Portfolio):\n{earnings_alerts}\nConsider earnings implications for any recommendations."
+    if related_earnings:
+        investment_context += f"\n\n⚠️ EARNINGS ALERT (Related / Supply Chain):\n{related_earnings}\nThese companies are in the same ecosystem as your holdings — their earnings can signal sector trends, supply chain health, and opportunities you may not own yet."
+    if sector_earnings:
+        investment_context += f"\n\n⚠️ EARNINGS ALERT (Comprehensive Sector Coverage):\n{sector_earnings}\nThese are companies in sectors you're invested in that could present new opportunities or signal sector-wide moves."
+    if forward_analysis:
+        investment_context += f"\n\n🔮 FORWARD-LOOKING EARNINGS ANALYSIS (Beat/Miss Predictions & Options Implications):\n{forward_analysis}\nUse these predictions to inform pre-earnings positioning and options strategies."
+    if recent_surprises:
+        investment_context += f"\n\n📊 RECENT EARNINGS SURPRISES:\n{recent_surprises}\nRecent beats/misses can indicate sector-wide trends and inform expectations for upcoming reporters."
     if market_sentiment:
         investment_context += f"\n\n🌡️ MARKET SENTIMENT:\n{market_sentiment}\nAdjust sizing/strategy based on VIX/fear-greed."
+
+    # Add market foresight to investment context
+    foresight_summary = f"\n\n🔮 MARKET FORESIGHT OUTLOOK (Score: {foresight_score}/100 — {foresight_direction}):\n{foresight['outlook']}\n\nKey Signals:\n"
+    for sig in foresight["signals"]:
+        if abs(sig.get("score", 0)) > 3:
+            foresight_summary += f"• {sig['name']}: {sig['detail']}\n"
+    foresight_summary += f"\nSuggested Actions:\n"
+    for action in foresight["action_items"][:5]:
+        foresight_summary += f"• {action}\n"
+    investment_context += foresight_summary
 
     # 4a. Investment ideas with everything: portfolio, options, earnings, sentiment
     investments = task_investment_ideas(
@@ -2488,10 +3068,20 @@ def main():
     parse_and_store_recommendations(investments)
 
     # 4b. Options ideas with earnings + sentiment awareness
+    combined_earnings = ""
+    if earnings_alerts:
+        combined_earnings += earnings_alerts
+    if related_earnings:
+        combined_earnings += "\n" + related_earnings
+    if sector_earnings:
+        combined_earnings += "\n" + sector_earnings
+    if not combined_earnings:
+        combined_earnings = "No upcoming earnings."
+
     options = task_options_ideas(
         market_data, digest_summary, memory,
         options_context=options_context,
-        earnings_context=earnings_alerts or "No upcoming earnings.",
+        earnings_context=combined_earnings,
         market_sentiment=market_sentiment
     )
 
@@ -2510,7 +3100,15 @@ def main():
         market_sentiment=market_sentiment,
         portfolio_analysis_text=portfolio_analysis.get('weighted_summary', ''),
         market_reaction=market_reaction,
-        earnings_alerts=earnings_alerts
+        earnings_alerts=earnings_alerts,
+        related_earnings=related_earnings,
+        sector_earnings=sector_earnings,
+        forward_analysis=forward_analysis,
+        recent_surprises=recent_surprises,
+        foresight_score=foresight_score,
+        foresight_direction=foresight_direction,
+        foresight_outlook=foresight["outlook"],
+        foresight_actions=foresight["action_items"],
     )
 
     # 5. Send report to Telegram (free, non-blocking)
@@ -2550,19 +3148,24 @@ def main():
     # 8. Log benchmark comparison
     if SKILLS_AVAILABLE:
         try:
-            perf = calculate_portfolio_performance(
-                portfolio_analysis.get('total_value', 0),
-                sum(h['cost_basis'] for h in portfolio_analysis.get('top_positions', []))
-            )
+            # Use ALL holdings for cost basis, not just top_positions
+            all_holdings = portfolio_analysis.get('top_positions', [])
+            total_value = portfolio_analysis.get('total_value', 0)
+            total_cost = sum(h.get('cost_basis', 0) for h in all_holdings)
+            
+            perf = calculate_portfolio_performance(total_value, total_cost)
             comparison = compare_to_benchmarks(perf.get('total_return_pct', 0))
+            
+            log(f"[OK] Portfolio: ${total_value:,.0f} value / ${total_cost:,.0f} cost = {perf['total_return_pct']:+.2f}% total return")
+            
+            for sym, data in comparison.get('indices', {}).items():
+                log(f"  vs {sym} ({data['name']}): {data['return']:+.2f}% today → diff: {data['diff']:+.2f}%")
+            
             outperformed = comparison.get('outperformed', [])
             if outperformed:
-                log(f"[OK] Portfolio outperforming: {', '.join(outperformed)}")
-            update_benchmark_log(
-                portfolio_analysis.get('total_value', 0),
-                sum(h['cost_basis'] for h in portfolio_analysis.get('top_positions', [])),
-                []
-            )
+                log(f"[OK] Portfolio outperforming today: {', '.join(outperformed)}")
+            
+            update_benchmark_log(total_value, total_cost, [])
             log("[OK] Benchmark log updated")
         except Exception as e:
             log(f"[!] Benchmark logging failed: {e}")
@@ -2666,27 +3269,167 @@ def main():
                     except (ValueError, IndexError):
                         continue
 
-            # 10c. Place options trades from options intelligence section
-            # Parse options ideas from the report text
+            # 10c. Execute options trades on Alpaca from options intelligence section
+            from skills.alpaca_trading import find_option_symbol
+            from datetime import datetime as dt_parser
+
             options_section = options if 'options' in dir() else ""
-            option_trades = 0
+            options_executed = 0
+            options_failed = 0
+
             if options_section and "Options Ideas" in str(options_section):
-                # Extract option trade ideas from the options text
                 import re
-                option_pattern = r'\*\*Type:\*\*\s*(Long Call|Long Put|Covered Call|LEAPS Call|Credit Spread|Bull Put Spread)\s*\n.*?\*\*Strike/Expiry:\*\*\s*\$?([\d,.]+)\s*/\s*(\w+\s+\d+,?\s*\d*)'
-                for match in re.finditer(option_pattern, str(options_section), re.DOTALL):
-                    opt_type = match.group(1)
-                    strike = float(match.group(2).replace(',', ''))
-                    expiry_str = match.group(3)
-                    log(f"  Found options idea: {opt_type} @ ${strike} exp {expiry_str}")
-                    # Note: Full options execution requires OCC symbol lookup via Alpaca's options chain API
-                    # This is a placeholder for when options chain integration is complete
-                    option_trades += 1
+
+                # Parse option ideas from the LLM-generated options text
+                # Matches patterns like:
+                #   **Type:** Long Call
+                #   **Strike/Expiry:** $150 / May 16, 2026
+                #   **Underlying:** AAPL (sometimes implied from context)
+                option_blocks = re.findall(
+                    r'###\s+\[([^\]]+)\]\s+on\s+\*\*([A-Z]+)\*\*.*?'
+                    r'\*\*Type:\*\*\s*(Long Call|Long Put|Covered Call|LEAPS Call|LEAPS Put)\s*\n.*?'
+                    r'\*\*Strike/Expiry:\*\*\s*\$?([\d,.]+)\s*/\s*([^\n]+)',
+                    str(options_section), re.DOTALL
+                )
+
+                # Also try a simpler fallback pattern if the detailed one doesn't match
+                if not option_blocks:
+                    option_blocks = re.findall(
+                        r'\*\*Type:\*\*\s*(Long Call|Long Put|Covered Call|LEAPS Call|LEAPS Put)\s*\n.*?'
+                        r'\*\*Strike/Expiry:\*\*\s*\$?([\d,.]+)\s*/\s*([^\n]+)',
+                        str(options_section), re.DOTALL
+                    )
+                    # Reformat to match expected structure: (strategy, underlying, type, strike, expiry)
+                    reformatted = []
+                    current_underlying = ""
+                    for match in re.finditer(r'###\s+\[([^\]]+)\]\s+on\s+\*\*([A-Z]+)\*\*', str(options_section)):
+                        current_underlying = match.group(2)
+                    for block in option_blocks:
+                        reformatted.append((block[0], current_underlying, block[0], block[1], block[2]))
+                    option_blocks = reformatted
+
+                for block in option_blocks:
+                    try:
+                        if len(block) == 5:
+                            strategy_label, underlying, opt_type_raw, strike_str, expiry_raw = block
+                        else:
+                            continue
+
+                        underlying = underlying.strip().upper()
+                        opt_type_raw = opt_type_raw.strip()
+                        strike = float(strike_str.replace(',', '').strip())
+                        expiry_raw = expiry_raw.strip()
+
+                        # Determine option type
+                        if "call" in opt_type_raw.lower():
+                            occ_type = "call"
+                        elif "put" in opt_type_raw.lower():
+                            occ_type = "put"
+                        else:
+                            log(f"  [!] Skipping unknown option type: {opt_type_raw}")
+                            continue
+
+                        # Parse expiry — try multiple formats
+                        expiry_date = None
+                        for fmt in ["%B %d, %Y", "%b %d, %Y", "%B %d %Y", "%b %d %Y", "%m/%d/%Y", "%Y-%m-%d"]:
+                            try:
+                                expiry_date = dt_parser.strptime(expiry_raw, fmt)
+                                break
+                            except ValueError:
+                                continue
+
+                        if not expiry_date:
+                            # Try to parse relative dates like "in 35d" or "May 2026"
+                            month_year = re.match(r'(\w+)\s+(\d{4})', expiry_raw)
+                            if month_year:
+                                try:
+                                    expiry_date = dt_parser.strptime(f"{month_year.group(1)} 1, {month_year.group(2)}", "%B %d, %Y")
+                                except ValueError:
+                                    try:
+                                        expiry_date = dt_parser.strptime(f"{month_year.group(1)} 1, {month_year.group(2)}", "%b %d, %Y")
+                                    except ValueError:
+                                        pass
+
+                        if not expiry_date:
+                            log(f"  [!] Could not parse expiry '{expiry_raw}' for {underlying} {opt_type_raw} ${strike}")
+                            continue
+
+                        days_out = (expiry_date.date() - datetime.date.today()).days
+                        if days_out < 0:
+                            log(f"  [!] Expiry {expiry_date.date()} is in the past, skipping {underlying} {opt_type_raw}")
+                            continue
+
+                        # Enforce minimum 2-week expiry per CLAUDE.md rules
+                        if days_out < 14:
+                            log(f"  [!] Expiry only {days_out} days away (< 14 day minimum), skipping {underlying} {opt_type_raw}")
+                            continue
+
+                        # Find the OCC option symbol via Alpaca's options chain
+                        option_symbol = find_option_symbol(underlying, occ_type, strike, days_out)
+
+                        if not option_symbol:
+                            log(f"  [!] Could not find OCC symbol for {underlying} {occ_type} ${strike} exp {expiry_date.date()}")
+                            options_failed += 1
+                            continue
+
+                        # Determine position size: max 5% of portfolio for options per CLAUDE.md
+                        acct = get_account_info()
+                        portfolio_val = acct.get('portfolio_value', 100000)
+                        options_budget = portfolio_val * 0.05  # 5% max for single options trade
+
+                        # Get current option price to estimate contracts
+                        try:
+                            headers = {
+                                "APCA-API-KEY-ID": ALPACA_API_KEY,
+                                "APCA-API-SECRET-KEY": ALPACA_SECRET_KEY,
+                            }
+                            quote_r = requests.get(
+                                f"https://paper-api.alpaca.markets/v2/markets/us/options/snapshots?symbols={option_symbol}",
+                                headers=headers, timeout=10
+                            )
+                            option_price = 0
+                            if quote_r.status_code == 200:
+                                snap = quote_r.json().get("snapshots", {}).get(option_symbol, {})
+                                option_price = snap.get("latestTrade", {}).get("p", 0) or snap.get("latestQuote", {}).get("ap", 0)
+                        except Exception:
+                            option_price = 0
+
+                        # Default to 1 contract if we can't get price, or calculate from budget
+                        if option_price > 0:
+                            max_contracts = max(1, int(options_budget / (option_price * 100)))
+                            qty = min(max_contracts, 3)  # Cap at 3 contracts for safety
+                        else:
+                            qty = 1
+
+                        log(f"  → Executing: {opt_type_raw} {underlying} ${strike} exp {expiry_date.date()} ({option_symbol}) x{qty}")
+
+                        # Place the options order
+                        trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
+
+                        if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
+                            options_executed += 1
+                            log(f"[OK] Alpaca options trade: BUY {option_symbol} x{qty} "
+                                f"(status: {trade_result.get('status')})")
+                        elif trade_result.get("status") == "REJECTED":
+                            options_failed += 1
+                            log(f"[!] Alpaca options trade REJECTED: {option_symbol} — {trade_result.get('error', 'unknown')}")
+                        else:
+                            options_failed += 1
+                            log(f"[!] Alpaca options trade uncertain: {option_symbol} — {trade_result}")
+
+                    except Exception as e:
+                        options_failed += 1
+                        log(f"[!] Error processing options block: {e}")
+                        continue
 
             if trades_executed:
                 log(f"[OK] Executed {trades_executed} Alpaca stock trade(s)")
-            if option_trades:
-                log(f"[OK] Identified {option_trades} options trade ideas (execution requires options chain lookup)")
+            if options_executed:
+                log(f"[OK] Executed {options_executed} Alpaca options trade(s)")
+            if options_failed:
+                log(f"[!] {options_failed} options trade(s) failed or skipped")
+            if not options_executed and not options_failed and not trades_executed:
+                log("  No trades executed this run (no high-conviction recommendations or Alpaca not configured)")
 
             # 10d. Read back updated positions after trading
             updated_positions = get_all_positions_including_options()

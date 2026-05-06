@@ -56,13 +56,19 @@ def calculate_portfolio_performance(portfolio_value: float, cost_basis: float) -
     }
 
 def compare_to_benchmarks(portfolio_return_pct: float, period: str = "1D") -> dict:
-    """Compare portfolio return to benchmark indices."""
+    """
+    Compare portfolio return to benchmark indices.
+    
+    For '1D' period: compares against index day-change (what the market did today).
+    For 'total' period: compares against index total return using YTD or available history.
+    """
     index_prices = get_index_prices()
     
     comparison = {
         "portfolio_return": portfolio_return_pct,
         "indices": {},
-        "outperformed": []
+        "outperformed": [],
+        "period": period,
     }
     
     for symbol, name in BENCHMARK_INDICES.items():
