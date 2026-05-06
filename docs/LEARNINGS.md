@@ -1,18 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-a (quotes from 2 years ago). The track record must be maintained in a structured format: date entered, ticker, direction (buy/sell/trim), thesis in one sentence, entry price, current price, P&L%, and pending/closed status. Every day's report should append new evaluations and score the previous day's recommendations. Without this, the "conviction accuracy" goal is meaningless — you can't claim a win rate if you're not actually tracking outcomes.
-
-- **Sort holdings display by absolute dollar impact (shares × price change %), not by price level or alphabetical read-order.** Multiple users have said the portfolio movers list reads as "random." Currently it
-
-## Run: 2026-05-05 10:51:48
-## 📚 LEARNINGS.md — Post-Run Self-Review
-**2026-05-05 10:51:48** | Run 1051
-
----
-
-- **✅ What worked well — Portfolio-aware analysis earned the highest rating (8.5/10):** The 4/30 run that cross-referenced actual holdings, weightings, cost basis, and current prices was rated the best yet. Users explicitly valued understanding *their* positions rather than generic picks. The options education component (LEAPs, reasoning, thesis) also consistently scored well when present. The news summary quality was praised when it connected macro catalysts to specific portfolio holdings.
-
-- **❌ Critical gap — Recommendations only covered existing holdings, missing new opportunities:** The top-rated review (8.5/10) explicitly flagged this as the "biggest problem": the agent only recommended buys/sells within the existing portfolio and never surfaced *new* tickers the user doesn't already own. This is a recurring blind spot. The user wants discovery of niche, non-megacap opportunities — not just portfolio management of what they already hold. Need a dedicated "New Opportunities" section scanning for high-conviction setups outside current holdings.
+egacap opportunities — not just portfolio management of what they already hold. Need a dedicated "New Opportunities" section scanning for high-conviction setups outside current holdings.
 
 - **❌ Data freshness and options data remain broken:** Multiple reviews (2/10, 4/10) cited outdated options data from ~2 years ago and stale price references (e.g., PLTR price not current). This destroys credibility. The agent must verify all price data is from the current trading session and either source real-time options chains or clearly label data as delayed/estimated. Never present stale data as current — it's the fastest path to user distrust.
 
@@ -144,3 +132,23 @@ Here's a self-critical performance review based on this run and accumulated feed
 - **Portfolio-only tunnel vision:** Users rated reports higher when recommendations included *new* tickers not already in the portfolio. The 8.5/10 run was docked specifically for only suggesting buys/sells within existing holdings. **Action:** Always include 2–3 "discovery" picks outside the portfolio that align with the user's evident thesis (AI infrastructure, semiconductors, niche plays like MU, PLTR). The user's own suggestions (MU, PLTR) should be treated as high-priority research leads, not ignored.
 
 - **Formatting & prioritization:** Users want the biggest movers and most news-impacting events surfaced first, not a random or alphabetical list. The 6/10 feedback explicitly called out that tickers seemed "random or in the order in which it was read." **Action:** Sort
+
+## Run: 2026-05-06 20:52:18
+# 🧠 Self-Review & Learnings — Run 2052
+**2026-05-06 20:52:18**
+
+---
+
+## 📉 What Caused Low Ratings (Pattern Analysis)
+
+- **Stale/Outdated Data Recurring Issue:** Multiple low ratings (2/10, 4/10) explicitly cited outdated options data and stale price references (e.g., PLTR data from 2 years back). This is a systemic data pipeline problem — the agent is pulling cached or delayed data instead of real-time feeds. This erodes trust more than any other single failure.
+- **Recommendations Too Mainstream:** The 2/10 rating called out that picks were "too mainstream" — just megapaps and heavily traded names. The user wants niche, under-the-radar opportunities, not the same NVDA/PLTR/MU everyone already knows about.
+- **Weak Educational/Hobby Content:** The 4/10 rating said the learning section was "very weak and something I already knew." The agent is regurgitating surface-level content instead of teaching novel frameworks or deeper analysis.
+- **Portfolio-Agnostic Recommendations:** Earlier runs (7/10) didn't understand positions or weightings. The 8.5/10 run improved here but still only recommended from existing holdings — the user explicitly wants **new tickers not in their portfolio**.
+
+---
+
+## ✅ What Worked Well This Run
+
+- **Portfolio-Aware Analysis:** The 8.5/10 rating confirmed the agent finally understood positions, weightings, cost basis vs. current price, and gave thesis-driven suggestions on existing holdings. This is the strongest progress area.
+- **News Quality:** The 8.5/10 rating praised news quality as "highest quality." The AI infrastructure rally narrative with specific tickers (SMCI
