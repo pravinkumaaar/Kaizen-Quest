@@ -1,32 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-egacap opportunities — not just portfolio management of what they already hold. Need a dedicated "New Opportunities" section scanning for high-conviction setups outside current holdings.
-
-- **❌ Data freshness and options data remain broken:** Multiple reviews (2/10, 4/10) cited outdated options data from ~2 years ago and stale price references (e.g., PLTR price not current). This destroys credibility. The agent must verify all price data is from the current trading session and either source real-time options chains or clearly label data as delayed/estimated. Never present stale data as current — it's the fastest path to user distrust.
-
-- **📊 Portfolio display should be sorted by impact, not alphabetical or insertion order:** A 6/10 review noted tickers appeared "random"
-
-## Run: 2026-05-05 12:10:51
-# 📊 LEARNINGS — 2026-05-05 12:10:51
-
-## What Worked Well (Correlated with Higher Ratings)
-- **Portfolio-aware analysis**: The report correctly identified top movers from the user's portfolio (STRL +47%, SHOP -12%, NVDA -0.48%) and showed holdings with 💰 icons, which earned an 8.5/10 rating on 2026-04-30
-- **Market thesis depth**: The AI infrastructure/semiconductor rally explanation was well-received, showing users value contextual market narratives
-- **Specific ticker highlighting**: Use of concrete examples (STRL, SNDK, MU) with percentage moves resonated better than generic summaries
-
-## What Needs Improvement
--
-
-## Run: 2026-05-05 15:44:53
-```markdown
-# 🧠 OWL — Self-Review & Learnings
-**2026-05-05 15:44:53** | Run 1544
-
----
-
-## 📝 LEARNINGS.md — Key Takeaways from This Run
-
-- **Portfolio-aware analysis is now the #1 driver of user satisfaction.** The 8.5/10 run (2026-04-30) was the first to deeply integrate holdings, weightage, cost basis, and position-specific thesis — and it scored highest. This run continued that with biggest-movers-first formatting and per-position reasoning. *Keep this as the non-negotiable foundation.* However, the user explicitly noted the system still only recommends from within the existing portfolio — **expand screening to include 2–3 new tickers not currently held** that present better risk/reward, using the same thesis framework.
+, cost basis, and position-specific thesis — and it scored highest. This run continued that with biggest-movers-first formatting and per-position reasoning. *Keep this as the non-negotiable foundation.* However, the user explicitly noted the system still only recommends from within the existing portfolio — **expand screening to include 2–3 new tickers not currently held** that present better risk/reward, using the same thesis framework.
 
 - **Data freshness is a recurring trust killer.** Multiple low-rated runs (2/10, 4/10) cited stale options data and outdated prices. This run's "Market sentiment unavailable — no data from Finnhub or yfinance" gap is a red flag. *Action: implement a fallback chain (Finnhub → yfinance → Alpha Vantage → cached last-known) and flag staleness transparently with timestamps.* Any data older than 15 minutes during market hours should carry a ⚠️ warning.
 
@@ -152,3 +126,10 @@ Here's a self-critical performance review based on this run and accumulated feed
 
 - **Portfolio-Aware Analysis:** The 8.5/10 rating confirmed the agent finally understood positions, weightings, cost basis vs. current price, and gave thesis-driven suggestions on existing holdings. This is the strongest progress area.
 - **News Quality:** The 8.5/10 rating praised news quality as "highest quality." The AI infrastructure rally narrative with specific tickers (SMCI
+
+## Run: 2026-05-06 18:34:17 ET
+- **What User Feedback Consistently Demands vs. What's Delivered**: Low ratings (2–4/10) all cite the same failure modes: recommendations lack niche conviction, options data is stale, reasoning is surface-level, and the system only recycles existing holdings instead of scouting new opportunities. The one 8.5/10 rating explicitly praised portfolio-aware analysis with weighted positions and cost-basis context — confirming the user wants *personalized*, *position-aware* intelligence, not generic market commentary. **Lesson: Never recommend without cross-referencing cost basis vs. current price, position weight, and whether the ticker already exists in the portfolio alongside concentration risk.**
+
+- **Data Staleness Is the #1 Trust Killer**: Multiple reviews flagged options chains and prices as "outdated by 2 years" or referencing wrong dates. This signals the data pipeline is either pulling cached snapshots or falling back to stale endpoints during market hours. **Lesson: Every price, options chain, and news item must be timestamp-verified at report generation time. If real-time data is unavailable, explicitly flag it as "delayed" with the timestamp — never let stale data silently pass as current.**
+
+- **Biggest Movers ≠ Most Important Movers for This Portfolio**: The report lists SMCI +24.5% as the top mover, but the user holds WOLF at $380.70 avg price (now $43.08 — a ~89% loss) and doesn't appear to get any specific guidance on that catastrophic drawdown. Similarly, ANET at -13.61% is only a 2-share position, yet the narrative treats it as significant. **Lesson: Rank movers by *dollar impact on portfolio* (shares × price change), not percentage move. A 3% shift on PLTR (516 shares, ~$62 avg
