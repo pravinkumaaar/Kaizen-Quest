@@ -31,7 +31,7 @@ from io import StringIO
 # Import skill modules for better organization
 # These can be used independently or called from main agent
 try:
-    from skills.portfolio_analysis import analyze_portfolio_weightage, suggest_rebalancing
+    from skills.portfolio_analysis import analyze_portfolio_weightage
     from skills.market_sentiment import get_market_sentiment, analyze_macro_trends
     from skills.crypto_tracker import fetch_crypto_prices, analyze_crypto_portfolio
     from skills.options_intelligence import fetch_options_snapshot, get_options_ideas
@@ -42,10 +42,10 @@ try:
     from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary
     from skills.clickup_integration import create_recommendation_task, send_daily_summary, get_active_recommendations
     from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run, update_warm_memory
-    from skills.enhanced_trading import (generate_trade_thesis_prompt, calculate_kelly_criterion,
-                                         calculate_position_size, detect_options_imbalances,
-                                         generate_options_strategy_prompt, re_evaluate_positions,
-                                         generate_revaluation_report, should_auto_trade)
+    from skills.enhanced_trading import (calculate_kelly_criterion,
+                                         calculate_position_size,
+                                         detect_options_imbalances,
+                                         generate_options_strategy_prompt)
     from skills.telegram_bot import send_report_via_telegram
     from skills.paper_trader import (execute_from_recommendation, get_paper_portfolio_summary,
                                       format_portfolio_report, get_trade_performance,
@@ -637,28 +637,112 @@ def fetch_rss(max_per_feed: int = 4) -> dict:
     return results
 
 def fetch_crypto_prices(cryptos: list = ["BTC-USD", "ETH-USD", "XRP-USD"]) -> dict:
-    """Fetch crypto prices from yfinance or CoinGecko (FREE)"""
+    """Fetch crypto prices from CoinGecko (FREE, no API key) with yfinance fallback."""
     import requests
     result = {}
     for crypto in cryptos:
+        price = None
         try:
             # Try yfinance first
-            t = yf.Ticker(crypto)
-            price = t.fast_info.last_price
-            # Fallback to CoinGecko if yfinance fails
-            if price is None:
-                symbol = crypto.split('-')[0].lower()
-                r = requests.get(f"https://api.coingecko.com/api/v3/simple/price?ids={symbol}&vs_currencies=usd")
-                data = r.json()
-                price = data.get(symbol, {}).get('usd')
-            result[crypto] = price
+            old_stderr = sys.stderr
+            sys.stderr = StringIO()
+            try:
+                t = yf.Ticker(crypto)
+                price = t.fast_info.last_price
+            except Exception:
+                price = None
+            finally:
+                sys.stderr = old_stderr
         except Exception:
             pass
+
+        # Fallback to CoinGecko (free, no key, very reliable)
+        if not price:
+            try:
+                symbol = crypto.split('-')[0].lower()
+                # Map common symbols to CoinGecko IDs
+                cg_id = {"btc": "bitcoin", "eth": "ethereum", "xrp": "ripple"}.get(symbol, symbol)
+                r = requests.get(
+                    f"https://api.coingecko.com/api/v3/simple/price?ids={cg_id}&vs_currencies=usd",
+                    timeout=10
+                )
+                data = r.json()
+                price = data.get(cg_id, {}).get('usd')
+            except Exception:
+                pass
+
+        if price:
+            result[crypto] = price
     return result
 
+def _get_live_price_yf(ticker):
+    """
+    Get the most current price for a ticker using multiple sources.
+    Priority: Finnhub (most reliable) > yfinance fast_info > yfinance info
+    Works during market hours AND after hours.
+    Returns (price, prev_close) or (None, None).
+    """
+    # SOURCE 1: Finnhub (most reliable — works after hours)
+    if FINNHUB_API_KEY:
+        try:
+            r = requests.get(
+                f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={FINNHUB_API_KEY}",
+                timeout=10
+            )
+            data = r.json()
+            p = data.get("c", 0)
+            pc = data.get("pc", 0)
+            if p and float(p) > 0:
+                return float(p), float(pc) if pc and float(pc) > 0 else None
+        except Exception:
+            pass
+
+    # SOURCE 2: yfinance fast_info
+    old_stderr = sys.stderr
+    sys.stderr = StringIO()
+    try:
+        t = yf.Ticker(ticker)
+        fi = t.fast_info
+        p = fi.last_price
+        pc = fi.previous_close
+        if p and p > 0:
+            return float(p), float(pc) if pc and pc > 0 else None
+    except Exception:
+        pass
+    finally:
+        sys.stderr = old_stderr
+
+    # SOURCE 3: yfinance info() — includes postMarketPrice
+    sys.stderr = StringIO()
+    try:
+        t = yf.Ticker(ticker)
+        info = t.info
+        p = (info.get('postMarketPrice') or
+             info.get('currentPrice') or
+             info.get('regularMarketPrice') or
+             info.get('previousClose'))
+        pc = (info.get('regularMarketPreviousClose') or
+              info.get('previousClose'))
+        if p and float(p) > 0:
+            return float(p), float(pc) if pc and float(pc) > 0 else None
+    except Exception:
+        pass
+    finally:
+        sys.stderr = old_stderr
+
+    return None, None
+
+
 def fetch_market_data() -> str:
-    """Pull prices + % change for watchlist: consolidated portfolio holdings sorted by biggest movers + indices."""
+    """
+    Pull prices + % change for watchlist: consolidated portfolio holdings sorted by biggest movers + indices.
     
+    FIXED: Uses robust multi-source price fetching that works after market hours.
+    Never falls back to purchase price — clearly labels data source.
+    """
+    now = datetime.datetime.now()
+    market_status = "OPEN 🟢" if IS_MARKET_OPEN else "CLOSED 🔴 (after-hours/delayed data)"
+
     # Load portfolio holdings to use as primary watchlist
     portfolio_tickers = []
     portfolio_costs = {}  # ticker -> cost_basis for weighting
@@ -674,7 +758,6 @@ def fetch_market_data() -> str:
                             ticker = row.get('Symbol', '').strip().upper()
                             if ticker and ticker not in portfolio_tickers:
                                 portfolio_tickers.append(ticker)
-                                # Track cost basis for weighting
                                 try:
                                     qty = float(row.get('Quantity', row.get('Shares', 0)))
                                     price = float(row.get('Purchase Price', 0))
@@ -686,47 +769,21 @@ def fetch_market_data() -> str:
                                     pass
     except Exception:
         pass
-    
+
     # Fetch prices for ALL portfolio tickers + key indices
     all_tickers = portfolio_tickers + ["SPY", "QQQ", "IWM", "VTI", "GLD", "SLV"]
-    all_tickers = list(dict.fromkeys(all_tickers))  # Remove duplicates while preserving order
-    
+    all_tickers = list(dict.fromkeys(all_tickers))
+
     ticker_data = []
     crypto_tickers = [t for t in portfolio_tickers if t.endswith("-USD")]
     stock_tickers = [t for t in all_tickers if not t.endswith("-USD")]
-    
-    # Fetch stock prices
+
+    # Fetch stock prices using robust multi-source method
     for ticker in stock_tickers:
         try:
-            price = None
-            prev = None
-            
-            if FINNHUB_API_KEY:
-                try:
-                    r = requests.get(
-                        f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={FINNHUB_API_KEY}",
-                        timeout=10
-                    )
-                    data = r.json()
-                    price = data.get("c")
-                    prev = data.get("pc")
-                except Exception:
-                    pass
-            
-            if price is None:
-                old_stderr = sys.stderr
-                sys.stderr = StringIO()
-                try:
-                    t = yf.Ticker(ticker)
-                    info = t.fast_info
-                    price = info.last_price
-                    prev = info.previous_close
-                except Exception:
-                    pass
-                finally:
-                    sys.stderr = old_stderr
-            
-            if price and prev:
+            price, prev = _get_live_price_yf(ticker)
+
+            if price and prev and prev > 0:
                 chg = ((price - prev) / prev) * 100
                 weight = portfolio_costs.get(ticker, 0)
                 ticker_data.append({
@@ -736,17 +793,26 @@ def fetch_market_data() -> str:
                     'is_index': ticker in ["SPY", "QQQ", "IWM", "VTI", "GLD", "SLV"],
                     'weight': weight
                 })
+            elif price:
+                # Have price but no prev_close — still show it
+                weight = portfolio_costs.get(ticker, 0)
+                ticker_data.append({
+                    'ticker': ticker,
+                    'price': price,
+                    'change': None,
+                    'is_index': ticker in ["SPY", "QQQ", "IWM", "VTI", "GLD", "SLV"],
+                    'weight': weight
+                })
         except Exception:
             pass
-    
+
     # Fetch crypto prices
     crypto_prices = fetch_crypto_prices(crypto_tickers if crypto_tickers else ["BTC-USD", "ETH-USD", "XRP-USD"])
     for crypto, price in crypto_prices.items():
         if price:
             try:
-                t = yf.Ticker(crypto)
-                prev = t.fast_info.previous_close
-                chg = ((price - prev) / prev * 100) if prev else 0
+                prev = _get_live_price_yf(crypto)[1]
+                chg = ((price - prev) / prev * 100) if prev and prev > 0 else None
                 weight = portfolio_costs.get(crypto, 0)
                 ticker_data.append({
                     'ticker': crypto,
@@ -760,40 +826,51 @@ def fetch_market_data() -> str:
                 ticker_data.append({
                     'ticker': crypto,
                     'price': price,
-                    'change': 0,
+                    'change': None,
                     'is_index': False,
                     'weight': portfolio_costs.get(crypto, 0),
                     'is_crypto': True
                 })
-    
+
     # Sort portfolio tickers by absolute change (biggest movers first) for watchlist
     portfolio_data = [t for t in ticker_data if not t.get('is_index')]
-    portfolio_data.sort(key=lambda x: abs(x['change']), reverse=True)
-    
-    # Top movers from portfolio (show top 12 biggest movers + top 3 by weight if not already shown)
-    top_movers = portfolio_data[:12]
+    # Sort: items with change first (by abs), then items without change
+    with_change = [t for t in portfolio_data if t['change'] is not None]
+    without_change = [t for t in portfolio_data if t['change'] is None]
+    with_change.sort(key=lambda x: abs(x['change']), reverse=True)
+
+    top_movers = with_change[:12]
     shown_tickers = {t['ticker'] for t in top_movers}
-    
+
     # Add top by weight if not already in movers
-    by_weight = sorted([t for t in portfolio_data if t['ticker'] not in shown_tickers], 
-                       key=lambda x: x['weight'], reverse=True)
-    top_weight = by_weight[:3]
-    
+    remaining = [t for t in with_change + without_change if t['ticker'] not in shown_tickers]
+    remaining.sort(key=lambda x: x['weight'], reverse=True)
+    top_weight = remaining[:3]
+
     lines = []
-    lines.append(f"\n  [📊 Your Portfolio — Biggest Movers Today ({len(portfolio_tickers)} total holdings)]")
+    lines.append(f"\n  [📊 Your Portfolio — Biggest Movers Today ({len(portfolio_tickers)} total holdings) | Market: {market_status}]")
     for t in top_movers + top_weight:
-        arrow = "▲" if t['change'] >= 0 else "▼"
+        if t['change'] is not None:
+            arrow = "▲" if t['change'] >= 0 else "▼"
+            chg_str = f"{arrow}{abs(t['change']):.2f}%"
+        else:
+            chg_str = "N/A"
         tag = " 💰" if t['weight'] > 0 and t in top_weight and t not in top_movers[:12] else ""
-        lines.append(f"    {t['ticker']:<10} ${t['price']:>9.2f}  {arrow}{abs(t['change']):.2f}%{tag}")
-    
+        lines.append(f"    {t['ticker']:<10} ${t['price']:>9.2f}  {chg_str}{tag}")
+
     # Indices
     lines.append("\n  [Indices & Benchmarks]")
     indices = [t for t in ticker_data if t.get('is_index')]
-    indices.sort(key=lambda x: abs(x['change']), reverse=True)
-    for t in indices:
-        arrow = "▲" if t['change'] >= 0 else "▼"
-        lines.append(f"    {t['ticker']:<10} ${t['price']:>9.2f}  {arrow}{abs(t['change']):.2f}%")
-    
+    indices_with_change = [t for t in indices if t['change'] is not None]
+    indices_without_change = [t for t in indices if t['change'] is None]
+    indices_with_change.sort(key=lambda x: abs(x['change']), reverse=True)
+    for t in indices_with_change + indices_without_change:
+        if t['change'] is not None:
+            arrow = "▲" if t['change'] >= 0 else "▼"
+            lines.append(f"    {t['ticker']:<10} ${t['price']:>9.2f}  {arrow}{abs(t['change']):.2f}%")
+        else:
+            lines.append(f"    {t['ticker']:<10} ${t['price']:>9.2f}  N/A")
+
     return "\n".join(lines)
 
 def tavily_search(query: str, n: int = 4) -> str:
@@ -836,193 +913,128 @@ def finnhub_news(n: int = 8) -> str:
         return "[Finnhub unavailable]"
 
 
-# ─────────────────────────────────────────────
-# LIVE OPTIONS DATA (Polygon.io or Alpaca)
-# ─────────────────────────────────────────────
-def fetch_options_snapshot_polygon(tickers: list) -> str:
-    """
-    Fetch live options data from Polygon.io (recommended).
-    Free tier: 5 API calls/min.
-    Requires POLYGON_API_KEY from environment.
-    """
-    if not POLYGON_API_KEY:
-        return fetch_options_snapshot_yfinance(tickers)  # Fallback to yfinance
-    
-    lines = []
-    today = datetime.date.today()
-    min_expiry = today + datetime.timedelta(days=14)
-    
-    for ticker in tickers:
-        try:
-            # Get options contracts for this ticker
-            r = requests.get(
-                f"https://api.polygon.io/v3/snapshot/options/{ticker}",
-                params={"apikey": POLYGON_API_KEY},
-                timeout=10
-            )
-            
-            if r.status_code != 200:
-                continue
-            
-            data = r.json().get("results", {})
-            if not data:
-                continue
-            
-            # Get current price
-            t = yf.Ticker(ticker)
-            price = t.fast_info.last_price
-            if not price:
-                continue
-            
-            lines.append(f"\n{ticker} @ ${price:.2f}")
-            
-            # Parse option chain data
-            options = data.get("options", [])
-            
-            # Filter to relevant expirations
-            expirations = {}
-            for opt in options:
-                exp_date = opt.get("expiration_date", "")
-                if exp_date and datetime.date.fromisoformat(exp_date) >= min_expiry:
-                    if exp_date not in expirations:
-                        expirations[exp_date] = {"calls": [], "puts": []}
-                    
-                    opt_type = opt.get("option_type", "").lower()
-                    strike = opt.get("strike_price", 0)
-                    
-                    # Store ATM options (within 5% of price)
-                    if abs(strike - price) / price < 0.05:
-                        bid = opt.get("bid", None)
-                        ask = opt.get("ask", None)
-                        iv = opt.get("implied_volatility", None)
-                        
-                        data_point = {
-                            "strike": strike,
-                            "bid": bid,
-                            "ask": ask,
-                            "iv": iv
-                        }
-                        
-                        if opt_type == "call":
-                            expirations[exp_date]["calls"].append(data_point)
-                        else:
-                            expirations[exp_date]["puts"].append(data_point)
-            
-            # Show top 2 expirations
-            for exp_date in sorted(expirations.keys())[:2]:
-                days_out = (datetime.date.fromisoformat(exp_date) - today).days
-                lines.append(f"  Expiry {exp_date} ({days_out}d):")
-                
-                exp_data = expirations[exp_date]
-                
-                if exp_data["calls"]:
-                    call = exp_data["calls"][0]
-                    iv_str = f" IV={call['iv']:.0%}" if call.get('iv') else ""
-                    lines.append(f"    ATM Call: bid=${call['bid']:.2f} ask=${call['ask']:.2f}{iv_str}")
-                
-                if exp_data["puts"]:
-                    put = exp_data["puts"][0]
-                    iv_str = f" IV={put['iv']:.0%}" if put.get('iv') else ""
-                    lines.append(f"    ATM Put:  bid=${put['bid']:.2f} ask=${put['ask']:.2f}{iv_str}")
-        
-        except Exception as e:
-            log_error(f"Polygon options for {ticker} failed", e)
-            continue
-    
-    return "\n".join(lines) if lines else fetch_options_snapshot_yfinance(tickers)
+# NOTE: Options data functions are DELEGATED to skills/options_intelligence.py
+# to avoid duplication. The skill versions use correct API parameters and better error handling.
+# Your Polygon key (from Massive) is valid but the free tier doesn't include options snapshot data.
+# Options will use yfinance as the primary free source, with clear error messages when unavailable.
 
-def fetch_options_snapshot_yfinance(tickers: list) -> str:
-    """
-    Free fallback: Fetch options chain summary for key tickers via yfinance.
-    Updated with current market data.
-    """
-    lines = []
-    today = datetime.date.today()
-    min_expiry = today + datetime.timedelta(days=14)
+def fetch_options_snapshot(tickers):
+    """Delegate to skill module."""
+    try:
+        from skills.options_intelligence import fetch_options_snapshot as _fetch
+        return _fetch(tickers)
+    except Exception as e:
+        log_error("Options snapshot failed", e)
+        return f"[Options data unavailable: {str(e)[:80]}]"
 
-    for ticker in tickers:
-        try:
-            old_stderr = sys.stderr
-            sys.stderr = StringIO()
+def fetch_options_snapshot_polygon(tickers):
+    """Delegate to skill module."""
+    try:
+        from skills.options_intelligence import fetch_options_snapshot_polygon as _fetch
+        result, _ = _fetch(tickers)
+        return result or "[Options data unavailable from Polygon]"
+    except Exception as e:
+        return f"[Polygon options unavailable: {str(e)[:80]}]"
+
+def fetch_options_snapshot_yfinance(tickers):
+    """Delegate to skill module."""
+    try:
+        from skills.options_intelligence import fetch_options_snapshot_yfinance as _fetch
+        result, _ = _fetch(tickers)
+        return result or "[Options data unavailable from yfinance]"
+    except Exception as e:
+        return f"[yfinance options unavailable: {str(e)[:80]}]"
+
+# ─────────────────────────────────────────────
+# EARNINGS CHECKER
+# ─────────────────────────────────────────────
+def check_upcoming_earnings(tickers):
+    """
+    Check if any portfolio holdings have upcoming or recent earnings.
+    Uses Finnhub earnings calendar API (works even when yfinance is down).
+    Returns a formatted string with earnings info for the LLM.
+    """
+    earnings_info = []
+    today = datetime.date.today()
+
+    for ticker in tickers[:15]:  # Check top holdings
+        # METHOD 1: Try Finnhub earnings calendar
+        if FINNHUB_API_KEY:
             try:
-                t = yf.Ticker(ticker)
-                price = t.fast_info.last_price
-                exps  = t.options
-            finally:
-                sys.stderr = old_stderr
+                from_date = (today - datetime.timedelta(days=2)).isoformat()
+                to_date = (today + datetime.timedelta(days=14)).isoformat()
+                r = requests.get(
+                    f"https://finnhub.io/api/v1/calendar/earnings",
+                    params={
+                        "from": from_date,
+                        "to": to_date,
+                        "symbol": ticker,
+                        "token": FINNHUB_API_KEY
+                    },
+                    timeout=10
+                )
+                data = r.json()
+                earnings_list = data.get("earningsCalendar", [])
+                for e in earnings_list:
+                    earnings_date = e.get("date", "")
+                    if earnings_date:
+                        try:
+                            e_dt = datetime.date.fromisoformat(earnings_date)
+                            days_until = (e_dt - today).days
+                            if -2 <= days_until <= 14:
+                                hour = e.get("hour", "")
+                                eps_est = e.get("epsEstimate", "")
+                                rev_est = e.get("revenueEstimate", "")
+                                status = "REPORTED" if days_until < 0 else "TODAY" if days_until == 0 else f"in {days_until}d"
+                                detail = f" ({hour})" if hour else ""
+                                if eps_est:
+                                    detail += f" EPS est: ${eps_est}"
+                                earnings_info.append(
+                                    f"  🔔 {ticker} — Earnings {status} ({earnings_date}){detail}"
+                                )
+                        except ValueError:
+                            continue
+            except Exception:
+                pass
 
-            if not exps or not price:
-                continue
-
-            # Filter to expiries ≥ 2 weeks out
-            valid_exps = [e for e in exps
-                          if datetime.date.fromisoformat(e) >= min_expiry]
-
-            if not valid_exps:
-                continue
-
-            # Show next 2 valid expiries (prefer 30-90 day, then LEAPS)
-            target_exps = []
-            for e in valid_exps:
-                days_out = (datetime.date.fromisoformat(e) - today).days
-                if 14 <= days_out <= 400:
-                    target_exps.append(e)
-                if len(target_exps) >= 2:
-                    break
-
-            # Also grab a LEAPS if available
-            for e in valid_exps:
-                days_out = (datetime.date.fromisoformat(e) - today).days
-                if days_out > 180 and e not in target_exps:
-                    target_exps.append(e)
-                    break
-
-            lines.append(f"\n{ticker} @ ${price:.2f}")
-            lines.append(f"  Available expiries (≥2wk): {', '.join(valid_exps[:6])}")
-
-            # For each target expiry, show ATM options
-            for exp in target_exps[:2]:
+        # METHOD 2: Try yfinance as fallback
+        if not any(ticker in e for e in earnings_info):
+            try:
+                old_stderr = sys.stderr
+                sys.stderr = StringIO()
                 try:
-                    sys.stderr = StringIO()
-                    try:
-                        chain = t.option_chain(exp)
-                    finally:
-                        sys.stderr = old_stderr
-                        
-                    days_out = (datetime.date.fromisoformat(exp) - today).days
+                    t = yf.Ticker(ticker)
+                    info = t.info
+                    earnings_ts = info.get('earningsTimestamp') or info.get('earningsDate')
+                    if earnings_ts:
+                        if isinstance(earnings_ts, (int, float)):
+                            earnings_dt = datetime.datetime.fromtimestamp(earnings_ts).date()
+                        elif isinstance(earnings_ts, str):
+                            try:
+                                earnings_dt = datetime.date.fromisoformat(earnings_ts[:10])
+                            except ValueError:
+                                continue
+                        else:
+                            continue
 
-                    # Find ATM call (strike closest to current price)
-                    calls = chain.calls.copy()
-                    calls['diff'] = abs(calls['strike'] - price)
-                    atm_call = calls.nsmallest(1, 'diff').iloc[0]
-
-                    # Find ATM put
-                    puts = chain.puts.copy()
-                    puts['diff'] = abs(puts['strike'] - price)
-                    atm_put = puts.nsmallest(1, 'diff').iloc[0]
-
-                    lines.append(f"  Expiry {exp} ({days_out}d out):")
-                    lines.append(f"    ATM Call ${atm_call['strike']:.0f}: "
-                                 f"bid=${atm_call['bid']:.2f} ask=${atm_call['ask']:.2f} "
-                                 f"IV={atm_call['impliedVolatility']:.0%}")
-                    lines.append(f"    ATM Put  ${atm_put['strike']:.0f}: "
-                                 f"bid=${atm_put['bid']:.2f} ask=${atm_put['ask']:.2f} "
-                                 f"IV={atm_put['impliedVolatility']:.0%}")
+                        days_until = (earnings_dt - today).days
+                        if -2 <= days_until <= 7:
+                            status = "REPORTED" if days_until < 0 else "TODAY" if days_until == 0 else f"in {days_until}d"
+                            price = info.get('currentPrice') or info.get('regularMarketPrice')
+                            earnings_info.append(
+                                f"  🔔 {ticker} — Earnings {status} ({earnings_dt})"
+                                + (f" @ ${price:.2f}" if price else "")
+                            )
                 except Exception:
                     pass
+                finally:
+                    sys.stderr = old_stderr
+            except Exception:
+                continue
 
-        except Exception:
-            pass
-
-    return "\n".join(lines) if lines else "[Options data unavailable]"
-
-# Choose based on available API keys
-def fetch_options_snapshot(tickers: list) -> str:
-    """Route to best available options data source."""
-    if POLYGON_API_KEY:
-        return fetch_options_snapshot_polygon(tickers)
-    else:
-        return fetch_options_snapshot_yfinance(tickers)
+    if earnings_info:
+        return "**📅 Earnings Alerts (Portfolio Holdings):**\n" + "\n".join(earnings_info) + "\n"
+    return ""
 
 
 # ─────────────────────────────────────────────
@@ -1103,159 +1115,26 @@ def get_company_info(ticker: str) -> dict:
         return {'name': ticker, 'sector': 'Unknown', 'industry': 'Unknown'}
 
 
-def parse_and_store_recommendations(investments_text: str, model_used: str = "unknown"):
-    """Parse investment ideas and store high-conviction ones (8+/10) in RECOMMENDATIONS.md"""
-    import re
-    
-    trackable = []
-    # Flexible regex to match various LLM output formats:
-    # ### [1] TICKER — Thesis
-    # ### [1] **TICKER (Company)** — Thesis
-    # Only match valid stock tickers (1-5 letters, not common words)
-    pattern = r'### \[\d+\]\s*(?:\*\*)?([A-Z]{1,5})(?:\s*\([^)]*\))?(?:\*\*)?\s*[—–\-]\s*.*?\n\n(.*?)(?=(?:### \[|\Z))'
-    
-    matches = list(re.finditer(pattern, investments_text, re.DOTALL))
-    
-    for match in matches:
-        ticker = match.group(1).strip().upper()
-        content = match.group(2)
-        
-        # Skip invalid tickers - strict validation
-        if not ticker or len(ticker) < 1 or len(ticker) > 5:
-            continue
-        # Skip common words that might be mistaken as tickers
-        if ticker in ['ASSET', 'TYPE', 'LEAPS', 'STOCK', 'ETF', 'CRYPTO', 'SELL', 'BUY', 'HOLD', 'THE', 'AND', 'FOR', 'YOU', 'WITH', 'THIS', 'THAT']:
-            continue
-        # Validate ticker format (letters only)
-        if not ticker.isalpha():
-            continue
-        
-        # Extract conviction score - look for multiple patterns
-        conviction = '5'
-        for conv_pattern in [
-            r'\*\*Conviction:\*\*\s*(\d+)',
-            r'\*\*Conviction Score:\*\*\s*(\d+)',
-            r'Conviction:\s*(\d+)/10',
-            r'(\d+)/10'
-        ]:
-            conv_match = re.search(conv_pattern, content)
-            if conv_match:
-                conviction = conv_match.group(1)
-                break
-        
-        # Extract track indicator
-        track_match = re.search(r'\*\*Track:\*\*\s*(Yes|No)', content)
-        should_track = track_match and track_match.group(1) == 'Yes' if track_match else False
-        
-        # Extract price info - multiple patterns to handle LLM output variations
-        current_price = 'N/A'
-        for price_pattern in [
-            r'\*\*Type/Price:\*\*\s*[\w\s]+\s*@\s*\$?([\d,.]+)',  # **Type/Price:** Stock @ $X.XX
-            r'@\s*\$?([\d,.]+)',  # @ $X.XX or @ X.XX
-            r'\*\*Current Price:\*\*\s*\$?([\d,.]+)',  # **Current Price:** $X.XX
-            r'Price:\s*\$?([\d,.]+)',  # Price: $X.XX
-        ]:
-            price_match = re.search(price_pattern, content)
-            if price_match:
-                current_price = price_match.group(1).replace(',', '')
-                break
-        
-        # Extract target price
-        target_price = 'N/A'
-        for target_pattern in [
-            r'\*\*Entry/Target:\*\*\s*\$?[\d,.]+\s*→\s*\$?([\d,.]+)',  # **Entry/Target:** $X → $Y
-            r'Target:\s*\$?([\d,.]+)',  # Target: $X
-            r'→\s*\$?([\d,.]+)',  # → $X
-        ]:
-            target_match = re.search(target_pattern, content)
-            if target_match:
-                target_price = target_match.group(1).replace(',', '')
-                break
-        
-        # Track if conviction >= 8 or explicitly marked
-        try:
-            conv_int = int(conviction)
-        except ValueError:
-            conv_int = 5
-        
-        if should_track or conv_int >= 8:
-            trackable.append({
-                'date': TODAY,
-                'ticker': ticker,
-                'entry_price': current_price,
-                'target': target_price,
-                'conviction': conviction,
-                'status': 'Active',
-                'current_price': current_price,
-                'performance': '0%'
-            })
-    
-    if trackable:
-        existing = read_file(RECOMMENDATIONS_FILE)
-        new_entries = "\n".join([
-            f"- {r['date']} | {r['ticker']} | ${r['entry_price']} | ${r['target']} | {r['conviction']}/10 | {r['status']} | ${r['current_price']} | {r['performance']}"
-            for r in trackable
-        ])
-        
-        # Update active section - append to existing
-        if "## Active Recommendations" in existing:
-            # Insert before the comment placeholder
-            updated = existing.replace(
-                "<!-- Agent will update this section with current recommendations -->",
-                f"{new_entries}\n<!-- Agent will update this section with current recommendations -->"
-            )
-        else:
-            updated = existing + f"\n\n## Active Recommendations\n{new_entries}\n<!-- Agent will update this section with current recommendations -->\n"
-        
-        RECOMMENDATIONS_FILE.write_text(updated, encoding="utf-8")
-        log(f"Tracked {len(trackable)} high-conviction (8+) ideas: {[r['ticker'] for r in trackable]} (model: {model_used})")
+# NOTE: parse_and_store_recommendations and update_recommendation_performance
+# are now DELEGATED to skills/recommendation_tracker.py to avoid duplication.
+# The skill versions are called from main() after skills are initialized.
 
+def parse_and_store_recommendations(investments_text: str, model_used: str = "unknown"):
+    """Delegate to skill module."""
+    try:
+        from skills.recommendation_tracker import parse_and_store_recommendations as _store
+        return _store(investments_text, model_used)
+    except Exception as e:
+        log_error("Recommendation tracking failed", e)
+        return []
 
 def update_recommendation_performance():
-    """Update prices and performance of tracked recommendations"""
-    existing = read_file(RECOMMENDATIONS_FILE)
-    lines = existing.split('\n')
-    updated_lines = []
-    
-    for line in lines:
-        if line.startswith('- ') and ' | ' in line:
-            parts = line[2:].split(' | ')
-            if len(parts) >= 7:
-                date, ticker, entry_str, target_str, conviction, status, current_str, perf = parts[:8]
-                
-                if status == 'Active':
-                    try:
-                        # Get current price
-                        if FINNHUB_API_KEY and ticker.upper() not in ['BTC-USD', 'ETH-USD']:
-                            r = requests.get(f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={FINNHUB_API_KEY}", timeout=10)
-                            data = r.json()
-                            current_price = data.get("c", 0)
-                        else:
-                            t = yf.Ticker(ticker)
-                            current_price = t.fast_info.last_price or 0
-                        
-                        if current_price and entry_str.startswith('$'):
-                            entry_price = float(entry_str[1:])
-                            if entry_price > 0:
-                                change_pct = ((current_price - entry_price) / entry_price) * 100
-                                perf = f"{change_pct:+.1f}%"
-                        
-                        current_str = f"${current_price:.2f}" if current_price else current_str
-                        
-                        # Check if target hit or stop loss
-                        if target_str.startswith('$'):
-                            target_price = float(target_str[1:])
-                            if current_price >= target_price * 0.95:  # Within 5% of target
-                                status = 'Target Hit'
-                        
-                        line = f"- {date} | {ticker} | {entry_str} | {target_str} | {conviction} | {status} | {current_str} | {perf}"
-                    except Exception as e:
-                        log_error(f"Error updating {ticker}", e)
-        
-        updated_lines.append(line)
-    
-    updated_content = '\n'.join(updated_lines)
-    RECOMMENDATIONS_FILE.write_text(updated_content, encoding="utf-8")
+    """Delegate to skill module."""
+    try:
+        from skills.recommendation_tracker import update_recommendation_performance as _update
+        return _update()
+    except Exception as e:
+        log_error("Recommendation performance update failed", e)
 
 
 # ─────────────────────────────────────────────
@@ -1503,192 +1382,290 @@ def rotate_to_next_theme() -> dict:
 def analyze_portfolio_weightage() -> dict:
     """
     Analyze portfolio holdings by weightage and volatility.
-    Returns weighted positions sorted by portfolio % and news relevance.
+    DELEGATES to skills.portfolio_analysis for robust multi-source price fetching.
     Uses current market values (not cost basis) for portfolio % calculations.
     """
+    try:
+        from skills.portfolio_analysis import analyze_portfolio_weightage as _analyze
+        result = _analyze()
+        if result and result.get('total_holdings', 0) > 0:
+            log(f"✓ Portfolio analysis: {result.get('data_quality', 'unknown')}")
+            return result
+    except Exception as e:
+        log_error("Skill portfolio analysis failed, using built-in", e)
+
+    # FALLBACK: Built-in analysis (same logic as skill, kept for resilience)
     portfolio_data = import_multiple_portfolios()
     holdings = portfolio_data.get('holdings', [])
-    
+
     if not holdings:
         return {
             'total_holdings': 0,
             'weighted_summary': 'No portfolio data loaded',
             'top_positions': [],
-            'risk_assessment': ''
+            'concentration_ratio': 0,
+            'total_value': 0,
+            'total_cost_basis': 0,
+            'total_unrealized_pnl': 0,
+            'total_unrealized_pnl_pct': 0,
+            'data_quality': 'no_data'
         }
-    
+
     total_cost = sum(h['cost_basis'] for h in holdings)
-    
-    # PASS 1: Fetch all current prices and calculate current values
     weighted_holdings = []
     api_errors = 0
+
     for h in holdings:
         try:
             current_price = None
             prev_close = None
-            
-            # Try Finnhub first
-            if FINNHUB_API_KEY and h['ticker'].upper() not in ['BTC-USD', 'ETH-USD', 'XRP-USD']:
-                try:
-                    r = requests.get(
-                        f"https://finnhub.io/api/v1/quote?symbol={h['ticker']}&token={FINNHUB_API_KEY}",
-                        timeout=10
-                    )
-                    data = r.json()
-                    if data and data.get("c", 0) > 0:
-                        current_price = data["c"]
-                        prev_close = data.get("pc", None)
-                except Exception as e:
-                    pass
-            
-            # Fallback to yfinance
-            if current_price is None or current_price == 0:
-                old_stderr = sys.stderr
+
+            # Try yfinance with multiple fallbacks
+            old_stderr = sys.stderr
+            sys.stderr = StringIO()
+            try:
+                t = yf.Ticker(h['ticker'])
+                fi = t.fast_info
+                p = fi.last_price
+                pc = fi.previous_close
+                if p and p > 0:
+                    current_price = float(p)
+                    prev_close = float(pc) if pc and pc > 0 else None
+            except Exception:
+                pass
+            finally:
+                sys.stderr = old_stderr
+
+            # Try yfinance info() for postMarketPrice
+            if current_price is None:
                 sys.stderr = StringIO()
                 try:
                     t = yf.Ticker(h['ticker'])
-                    price = t.fast_info.last_price
-                    if price and price > 0:
-                        current_price = price
-                        prev_close = t.fast_info.previous_close
+                    info = t.info
+                    p = (info.get('postMarketPrice') or info.get('currentPrice') or
+                         info.get('regularMarketPrice'))
+                    pc = info.get('regularMarketPreviousClose')
+                    if p and float(p) > 0:
+                        current_price = float(p)
+                        prev_close = float(pc) if pc and float(pc) > 0 else None
                 except Exception:
                     pass
                 finally:
                     sys.stderr = old_stderr
-            
-            # Final fallback to purchase price
+
             if current_price is None or current_price == 0:
-                current_price = h['purchase_price']
-                prev_close = h['purchase_price']
+                current_price = None
                 api_errors += 1
-            
-            if prev_close is None or prev_close == 0:
-                prev_close = h['purchase_price']
-            
-            current_value = h['shares'] * current_price
-            
-            weighted_holdings.append({
-                'ticker': h['ticker'],
-                'shares': h['shares'],
-                'cost_basis': h['cost_basis'],
-                'purchase_price': h['purchase_price'],
-                'current_price': current_price,
-                'current_value': current_value,
-                'prev_close': prev_close if prev_close else h['purchase_price'],
-                'sources': h.get('sources', 1)
-            })
+
+            if current_price is not None:
+                current_value = h['shares'] * current_price
+                weighted_holdings.append({
+                    'ticker': h['ticker'],
+                    'shares': h['shares'],
+                    'cost_basis': h['cost_basis'],
+                    'purchase_price': h['purchase_price'],
+                    'current_price': current_price,
+                    'current_value': current_value,
+                    'prev_close': prev_close,
+                    'sources': h.get('sources', 1)
+                })
         except Exception as e:
             log_error(f"Error analyzing {h['ticker']}", e)
             continue
-    
-    # Calculate total current value across all holdings
+
+    if not weighted_holdings:
+        return {
+            'total_holdings': 0,
+            'weighted_summary': 'No price data available',
+            'top_positions': [],
+            'concentration_ratio': 0,
+            'total_value': 0,
+            'total_cost_basis': total_cost,
+            'total_unrealized_pnl': 0,
+            'total_unrealized_pnl_pct': 0,
+            'data_quality': 'all_failed'
+        }
+
     total_current_value = sum(wh['current_value'] for wh in weighted_holdings)
-    
-    # Log API errors
-    if api_errors > 0:
-        log(f"⚠ Portfolio analysis: {api_errors}/{len(weighted_holdings)} tickers used purchase price (API failed)")
-    
-    # PASS 2: Calculate percentages and gains
+
     for wh in weighted_holdings:
         wh['portfolio_pct'] = (wh['current_value'] / total_current_value * 100) if total_current_value > 0 else 0
-        wh['unrealized_gain'] = ((wh['current_price'] - wh['purchase_price']) / wh['purchase_price'] * 100) if wh['purchase_price'] > 0 else 0
-        wh['day_change'] = ((wh['current_price'] - wh['prev_close']) / wh['prev_close'] * 100) if wh['prev_close'] > 0 else 0
-    
+        wh['unrealized_pnl'] = wh['current_value'] - wh['cost_basis']
+        wh['unrealized_pnl_pct'] = ((wh['current_price'] - wh['purchase_price']) / wh['purchase_price'] * 100) if wh['purchase_price'] > 0 else 0
+        wh['day_change'] = ((wh['current_price'] - wh['prev_close']) / wh['prev_close'] * 100) if wh.get('prev_close') and wh['prev_close'] > 0 else None
+
     weighted_holdings.sort(key=lambda x: x['portfolio_pct'], reverse=True)
-    
+
     top_5 = weighted_holdings[:5]
     top_5_pct = sum(h['portfolio_pct'] for h in top_5)
-    
+    total_unrealized_pnl = total_current_value - total_cost
+    total_unrealized_pnl_pct = ((total_current_value - total_cost) / total_cost * 100) if total_cost > 0 else 0
+
+    if api_errors > 0:
+        log(f"⚠ Portfolio analysis: {api_errors}/{len(holdings)} tickers had no live price")
+
     summary = f"**Portfolio Analysis ({len(weighted_holdings)} holdings):**\n"
     summary += f"- Total Cost Basis: ${total_cost:,.0f}\n"
     summary += f"- Total Current Value: ${total_current_value:,.0f}\n"
+    summary += f"- Total Unrealized P&L: ${total_unrealized_pnl:+,.0f} ({total_unrealized_pnl_pct:+.1f}%)\n"
     summary += f"- Top 5 positions: {top_5_pct:.1f}% of portfolio\n"
     summary += f"- Concentration risk: {'HIGH' if top_5_pct > 60 else 'MODERATE' if top_5_pct > 40 else 'LOW'}\n\n"
-    summary += "| Ticker | % of Portfolio | Current Price | Today's Move | Unrealized P&L |\n"
-    summary += "|--------|----------------|---------------|--------------|----------------|\n"
+    summary += "| Ticker | % Portfolio | Current Price | Today's Move | Unrealized P&L |\n"
+    summary += "|--------|-------------|---------------|--------------|----------------|\n"
     for h in weighted_holdings[:10]:
-        summary += f"| {h['ticker']} | {h['portfolio_pct']:.1f}% | ${h['current_price']:.2f} | {h['day_change']:+.2f}% | {h['unrealized_gain']:+.1f}% |\n"
-    
+        day_str = f"{h['day_change']:+.2f}%" if h.get('day_change') is not None else "N/A"
+        summary += (f"| {h['ticker']} | {h['portfolio_pct']:.1f}% "
+                    f"| ${h['current_price']:.2f} "
+                    f"| {day_str} "
+                    f"| ${h.get('unrealized_pnl', 0):+,.0f} ({h.get('unrealized_pnl_pct', 0):+.1f}%) |\n")
+
     return {
         'total_holdings': len(weighted_holdings),
         'weighted_summary': summary,
         'top_positions': weighted_holdings,
         'concentration_ratio': top_5_pct,
-        'total_value': total_current_value
+        'total_value': total_current_value,
+        'total_cost_basis': total_cost,
+        'total_unrealized_pnl': total_unrealized_pnl,
+        'total_unrealized_pnl_pct': total_unrealized_pnl_pct,
+        'data_quality': f'{api_errors} errors'
     }
+
+# Cache for market sentiment to avoid repeated API calls during one run
+_market_sentiment_cache = None
 
 def get_market_sentiment() -> str:
     """
     Analyze market sentiment using VIX, market breadth, and economic indicators.
+    Uses Finnhub as primary source (reliable), yfinance as fallback.
+    Caches result to avoid rate limits during a single agent run.
     Returns: fear/greed assessment and market timing context.
     """
-    try:
-        log("  → Analyzing market sentiment...")
-        
-        # Get VIX (fear gauge)
-        old_stderr = sys.stderr
-        sys.stderr = StringIO()
+    global _market_sentiment_cache
+    if _market_sentiment_cache is not None:
+        return _market_sentiment_cache
+
+    log("  → Analyzing market sentiment...")
+
+    vix_price, vix_prev = 0.0, 0.0
+    spy_price, spy_prev = 0.0, 0.0
+    qqq_price, qqq_prev = 0.0, 0.0
+    source = "none"
+
+    # PRIMARY: Finnhub with retry logic for rate limits
+    if FINNHUB_API_KEY:
+        for attempt in range(3):  # Retry up to 3 times
+            try:
+                for symbol in ["SPY", "QQQ"]:
+                    r = requests.get(
+                        f"https://finnhub.io/api/v1/quote?symbol={symbol}&token={FINNHUB_API_KEY}",
+                        timeout=15
+                    )
+                    if r.status_code == 429:
+                        time.sleep(2 * (attempt + 1))  # Exponential backoff
+                        continue
+                    data = r.json()
+                    p = data.get("c", 0)
+                    pc = data.get("pc", 0)
+                    if isinstance(p, (int, float)) and float(p) > 0:
+                        if symbol == "SPY":
+                            spy_price, spy_prev = float(p), float(pc) if pc else 0.0
+                        elif symbol == "QQQ":
+                            qqq_price, qqq_prev = float(p), float(pc) if pc else 0.0
+                    time.sleep(0.5)  # Rate limit buffer between calls
+
+                # Try VIX index first, fall back to VIXY ETF
+                r_vix = requests.get(
+                    f"https://finnhub.io/api/v1/quote?symbol=%5EVIX&token={FINNHUB_API_KEY}",
+                    timeout=15
+                )
+                vix_data = r_vix.json()
+                vix_raw = vix_data.get("c", 0)
+                if isinstance(vix_raw, (int, float)) and float(vix_raw) > 0:
+                    vix_price = float(vix_raw)
+                    vix_prev = float(vix_data.get("pc", 0))
+                else:
+                    time.sleep(0.5)
+                    r_vixy = requests.get(
+                        f"https://finnhub.io/api/v1/quote?symbol=VIXY&token={FINNHUB_API_KEY}",
+                        timeout=15
+                    )
+                    vixy_data = r_vixy.json()
+                    vixy_raw = vixy_data.get("c", 0)
+                    if isinstance(vixy_raw, (int, float)) and float(vixy_raw) > 0:
+                        vix_price = float(vixy_raw)
+                        vix_prev = float(vixy_data.get("pc", 0))
+
+                source = "finnhub"
+                break  # Success, exit retry loop
+            except Exception:
+                time.sleep(1)
+                continue
+
+    # FALLBACK: yfinance if Finnhub failed completely
+    if vix_price == 0 and spy_price == 0:
         try:
-            vix = yf.Ticker("^VIX")
-            vix_price = vix.fast_info.last_price or 0
-            vix_prev = vix.fast_info.previous_close or 0
+            old_stderr = sys.stderr
+            sys.stderr = StringIO()
+            try:
+                vix = yf.Ticker("^VIX")
+                vix_price = float(vix.fast_info.last_price or 0)
+                vix_prev = float(vix.fast_info.previous_close or 0)
+                spy = yf.Ticker("SPY")
+                spy_price = float(spy.fast_info.last_price or 0)
+                spy_prev = float(spy.fast_info.previous_close or 0)
+                qqq = yf.Ticker("QQQ")
+                qqq_price = float(qqq.fast_info.last_price or 0)
+                qqq_prev = float(qqq.fast_info.previous_close or 0)
+                source = "yfinance"
+            except Exception:
+                pass
+            finally:
+                sys.stderr = old_stderr
         except Exception:
-            vix_price = 0
-            vix_prev = 0
-        finally:
-            sys.stderr = old_stderr
-        
-        # Get market index prices
-        spy = yf.Ticker("SPY")
-        spy_price = spy.fast_info.last_price or 0
-        spy_prev = spy.fast_info.previous_close or 0
-        
-        qqq = yf.Ticker("QQQ")
-        qqq_price = qqq.fast_info.last_price or 0
-        qqq_prev = qqq.fast_info.previous_close or 0
-        
-        # Calculate moves
-        spy_move = ((spy_price - spy_prev) / spy_prev * 100) if spy_prev > 0 else 0
-        qqq_move = ((qqq_price - qqq_prev) / qqq_prev * 100) if qqq_prev > 0 else 0
-        
-        # Determine sentiment
-        if vix_price == 0:
-            sentiment = "[VIX data unavailable - cannot assess market sentiment]"
-        elif vix_price < 12:
+            pass
+
+    # Calculate moves
+    spy_move = ((spy_price - spy_prev) / spy_prev * 100) if spy_prev and spy_prev > 0 else 0
+    qqq_move = ((qqq_price - qqq_prev) / qqq_prev * 100) if qqq_prev and qqq_prev > 0 else 0
+
+    if vix_price == 0 and spy_price == 0:
+        _market_sentiment_cache = "[Market sentiment unavailable — no data from Finnhub or yfinance]"
+        return _market_sentiment_cache
+
+    sentiment = ""
+    if isinstance(vix_price, (int, float)) and vix_price > 0:
+        if vix_price < 12:
             sentiment = f"**EXTREME GREED** (VIX: {vix_price:.1f})\n"
-            sentiment += "Markets are pricing in near-perfect outcomes. Complacency is high.\n"
-            sentiment += "**Timing Assessment:** Elevated risk of sharp corrections. Consider defensive positioning.\n"
-            sentiment += "**Action:** Take profits on winners, trim concentrated positions, add hedges."
+            sentiment += "Markets pricing in near-perfect outcomes. Complacency high.\n"
+            sentiment += "**Action:** Take profits, trim concentrated positions, add hedges."
         elif vix_price < 16:
             sentiment = f"**GREED** (VIX: {vix_price:.1f})\n"
-            sentiment += "Investors are confident but not complacent. Reasonable risk appetite.\n"
-            sentiment += "**Timing Assessment:** Good environment for buyable dips and sector rotation.\n"
-            sentiment += "**Action:** Steady accumulation, look for weakness to add."
+            sentiment += "Investors confident but not complacent.\n"
+            sentiment += "**Action:** Steady accumulation, buy dips."
         elif vix_price < 20:
             sentiment = f"**NEUTRAL** (VIX: {vix_price:.1f})\n"
-            sentiment += "Normal market volatility. Mix of optimism and caution.\n"
-            sentiment += "**Timing Assessment:** Balanced - stick to high-conviction ideas.\n"
-            sentiment += "**Action:** Continue with disciplined thesis-based trading."
+            sentiment += "Normal volatility. Mix of optimism and caution.\n"
+            sentiment += "**Action:** Stick to high-conviction ideas."
         elif vix_price < 30:
             sentiment = f"**FEAR** (VIX: {vix_price:.1f})\n"
-            sentiment += "Investors are nervous but not panicked. Some pain in the market.\n"
-            sentiment += "**Timing Assessment:** Often creates opportunities for disciplined buyers.\n"
-            sentiment += "**Action:** Have dry powder ready, add to high-conviction positions on weakness."
+            sentiment += "Investors nervous but not panicked.\n"
+            sentiment += "**Action:** Have dry powder ready, add to high-conviction on weakness."
         else:
             sentiment = f"**EXTREME FEAR** (VIX: {vix_price:.1f})\n"
-            sentiment += "Markets are pricing in significant downside risk. Panic selling possible.\n"
-            sentiment += "**Timing Assessment:** Historically, extreme fear creates best long-term buying opportunities.\n"
-            sentiment += "**Action:** Contrarian positions for aggressive investors, cash for conservative."
-        
-        sentiment += f"\n**Today's Market Movement:**\n"
+            sentiment += "Markets pricing in significant downside.\n"
+            sentiment += "**Action:** Contrarian buying opportunity for aggressive investors."
+    else:
+        sentiment = "[VIX data unavailable]\n"
+
+    sentiment += f"\n**Today's Market Movement (via {source}):**\n"
+    if isinstance(spy_price, (int, float)) and spy_price > 0:
         sentiment += f"- SPY: {spy_move:+.2f}% @ ${spy_price:.2f}\n"
+    if isinstance(qqq_price, (int, float)) and qqq_price > 0:
         sentiment += f"- QQQ: {qqq_move:+.2f}% @ ${qqq_price:.2f}\n"
-        
-        return sentiment
-    
-    except Exception as e:
-        log_error("Market sentiment analysis failed", e)
-        return "[Market sentiment analysis unavailable]"
+
+    _market_sentiment_cache = sentiment
+    return sentiment
 
 def analyze_rebalancing_opportunities(portfolio_analysis: dict) -> str:
     """
@@ -1717,20 +1694,22 @@ def analyze_rebalancing_opportunities(portfolio_analysis: dict) -> str:
             suggestions += f"**✅ HEALTHY DIVERSIFICATION:** Top 5 = {concentration:.1f}%\n"
             suggestions += "Portfolio is well-balanced. Continue with disciplined additions.\n\n"
         
-        # Identify underperforming positions
-        losers = [p for p in top_pos if p['unrealized_gain'] < -10]
+        # Identify underperforming positions (support both old and new key names)
+        losers = [p for p in top_pos if p.get('unrealized_pnl_pct', p.get('unrealized_gain', 0)) < -10]
         if losers:
             suggestions += f"**Losing Positions ({len(losers)}):**\n"
-            for p in losers[:3]:
-                suggestions += f"- {p['ticker']}: {p['unrealized_gain']:+.1f}% | {p['portfolio_pct']:.1f}% of portfolio\n"
+            for p in losers[:5]:
+                pct = p.get('unrealized_pnl_pct', p.get('unrealized_gain', 0))
+                suggestions += f"- {p['ticker']}: {pct:+.1f}% | {p['portfolio_pct']:.1f}% of portfolio\n"
             suggestions += "Decision points: Are fundamentals intact? Or cut losses and redeploy?\n\n"
         
         # Identify strong performers
-        winners = [p for p in top_pos if p['unrealized_gain'] > 20]
+        winners = [p for p in top_pos if p.get('unrealized_pnl_pct', p.get('unrealized_gain', 0)) > 20]
         if winners:
             suggestions += f"**Top Performers ({len(winners)}):**\n"
-            for p in winners[:3]:
-                suggestions += f"- {p['ticker']}: {p['unrealized_gain']:+.1f}% | {p['portfolio_pct']:.1f}% of portfolio\n"
+            for p in winners[:5]:
+                pct = p.get('unrealized_pnl_pct', p.get('unrealized_gain', 0))
+                suggestions += f"- {p['ticker']}: {pct:+.1f}% | {p['portfolio_pct']:.1f}% of portfolio\n"
             suggestions += "Consider: Lock in profits on winners > 50% if they've become too large?\n\n"
         
         return suggestions
@@ -1803,12 +1782,36 @@ Date: {now} | Be specific. Skip fluff. Every sentence should earn its place.""".
 
 def task_investment_ideas(market_data: str, digest: str, memory: str, portfolio_analysis: dict = None, options_context: str = "") -> str:
     log("  → Generating investment ideas...")
-    
+
     # Slice inputs before formatting to avoid format string syntax errors
     memory_slice = memory[:600]
     market_data_slice = market_data[:800]
     digest_slice = digest[:600]
-    
+
+    # Use enhanced_trading for position sizing calculations
+    position_sizing = ""
+    total_value = portfolio_analysis.get('total_value', 0) if portfolio_analysis else 0
+    if total_value > 0:
+        try:
+            from skills.enhanced_trading import calculate_position_size, calculate_kelly_criterion
+            # Calculate position sizes for different conviction levels
+            sizing_9 = calculate_position_size(total_value, 9)
+            sizing_8 = calculate_position_size(total_value, 8)
+            sizing_7 = calculate_position_size(total_value, 7)
+            # Kelly example: 60% win prob, 3:1 reward/risk
+            kelly_3x = calculate_kelly_criterion(0.60, 0.30, 0.10)
+            kelly_2x = calculate_kelly_criterion(0.55, 0.20, 0.10)
+            position_sizing = f"""
+POSITION SIZING REFERENCE (Portfolio: ${total_value:,.0f}):
+- Conviction 9/10: {sizing_9.get('recommendation', 'N/A')}
+- Conviction 8/10: {sizing_8.get('recommendation', 'N/A')}
+- Conviction 7/10: {sizing_7.get('recommendation', 'N/A')}
+- Kelly Criterion (60% win, 3:1 R/R): {kelly_3x*100:.1f}% of portfolio
+- Kelly Criterion (55% win, 2:1 R/R): {kelly_2x*100:.1f}% of portfolio
+USE THESE for all position sizing in recommendations."""
+        except Exception:
+            pass
+
     # Build portfolio context for the LLM
     portfolio_context = ""
     if portfolio_analysis:
@@ -1820,16 +1823,16 @@ Concentration Ratio: {portfolio_analysis.get('concentration_ratio', 0):.1f}%
 Top holdings need attention if this ratio is too high.
 
 {analyze_rebalancing_opportunities(portfolio_analysis)}
+{position_sizing}
 """
-    
+
     # Add options context for cross-referencing
     options_section = ""
     if options_context and options_context != "[Options data unavailable]":
         options_section = f"""
 OPTIONS MARKET CONTEXT:
-{options_context[:500]}
-Use options data (IV levels, unusual activity) to inform stock recommendations if relevant.
-"""
+{options_context[:800]}
+Use options data (IV levels, unusual activity, earnings dates) to inform stock recommendations."""
     
     # Add once-in-a-lifetime opportunities context
     once_in_a_lifetime_context = ""
@@ -1947,17 +1950,60 @@ Not financial advice. Verify before acting.""".format(
         max_tokens=2500,
     )
 
-def task_options_ideas(market_data: str, digest: str, memory: str, options_context: str = "") -> str:
+def task_options_ideas(market_data: str, digest: str, memory: str,
+                        options_context: str = "", earnings_context: str = "",
+                        market_sentiment: str = "") -> str:
     log("  → Generating options ideas...")
-    # Use pre-fetched options data if available
     if not options_context:
         options_context = fetch_options_snapshot(["SPY", "QQQ", "NVDA", "AAPL"])
 
-    # Summarize memory and digest to save tokens
     memory_summary = summarize_text(memory, "memory", 300)
-    digest_summary = digest[:500]  # Limit digest to 500 chars
-    market_data_slice = market_data[:600]  # Slice before format call
-    
+    digest_summary = digest[:500]
+    market_data_slice = market_data[:600]
+
+    # Use enhanced_trading to detect options imbalances for top tickers
+    options_imbalance_data = ""
+    try:
+        from skills.enhanced_trading import detect_options_imbalances
+        for ticker in ["SPY", "QQQ", "NVDA", "AAPL", "PLTR"]:
+            try:
+                imb = detect_options_imbalances(ticker)
+                if "error" not in imb:
+                    options_imbalance_data += f"\n{ticker} @ ${imb.get('current_price', 0):.2f}:\n"
+                    if imb.get('expirations'):
+                        for exp, data in imb['expirations'].items():
+                            options_imbalance_data += f"  {exp}: "
+                            if data.get('put_call_volume_ratio'):
+                                options_imbalance_data += f"P/C vol ratio={data['put_call_volume_ratio']:.2f} "
+                            if data.get('avg_call_iv') and data.get('avg_put_iv'):
+                                options_imbalance_data += f"Call IV={data['avg_call_iv']:.0%} Put IV={data['avg_put_iv']:.0%}"
+                            options_imbalance_data += "\n"
+            except Exception:
+                continue
+    except Exception:
+        pass
+
+    if options_imbalance_data:
+        options_context += f"\n\n📊 OPTIONS IMBALANCE ANALYSIS:\n{options_imbalance_data}"
+
+    # Build earnings section for options context
+    earnings_section = ""
+    if earnings_context and earnings_context != "No upcoming earnings.":
+        earnings_section = f"""
+⚠️ EARNINGS CALENDAR (CRITICAL FOR OPTIONS):
+{earnings_context}
+RULE: Avoid selling covered calls on stocks reporting earnings within 2 weeks.
+RULE: Consider buying protective puts before earnings for large positions.
+RULE: High IV before earnings = expensive options = favor selling premium."""
+
+    # Build sentiment section
+    sentiment_section = ""
+    if market_sentiment and "unavailable" not in market_sentiment.lower():
+        sentiment_section = f"""
+🌡️ MARKET SENTIMENT:
+{market_sentiment}
+Use VIX level to guide strategy: High VIX = sell premium, Low VIX = buy protection."""
+
     return call_llm(
         system=SYSTEM,
         user="""Memory (summary):
@@ -1971,8 +2017,10 @@ Digest:
 
 Options Data:
 {options_context}
+{earnings_section}
+{sentiment_section}
 
-Generate **2-3 Options Ideas** using PRICING IMBALANCE analysis.
+Generate **2-3 Options Ideas** using PRICING IMBALANCE analysis + EARNINGS AWARENESS.
 
 ## OPTIONS STRATEGY FRAMEWORK
 
@@ -2030,9 +2078,11 @@ Educational only. Verify with broker.*""".format(
             memory_summary=memory_summary,
             market_data=market_data_slice,
             digest_summary=digest_summary,
-            options_context=options_context
+            options_context=options_context,
+            earnings_section=earnings_section,
+            sentiment_section=sentiment_section
         ),
-        max_tokens=1200,  # Reduced from 1500
+        max_tokens=1200,
     )
 
 def task_learning(digest: str, memory: str) -> str:
@@ -2203,18 +2253,22 @@ Format: A single paragraph with specific reasoning.""",
     )
 
 
-def build_and_save_report(market_data, digest, investments, options, learning, market_sentiment="", portfolio_analysis_text="", market_reaction="") -> str:
+def build_and_save_report(market_data, digest, investments, options, learning,
+                            market_sentiment="", portfolio_analysis_text="", market_reaction="",
+                            earnings_alerts="") -> str:
     # Get recommendation updates
     rec_updates = read_file(RECOMMENDATIONS_FILE)
     if rec_updates:
-        rec_section = "\n---\n# 📊 Recommendation Tracking\n" + rec_updates[:1500] + "\n"
+        rec_section = "\n---\n# 📊 Recommendation Tracking & Decision Journal\n" + rec_updates[:2000] + "\n"
     else:
         rec_section = ""
-    
+
     reaction_section = f"\n---\n\n## 📰 Why The Market Moved Today\n\n{market_reaction}\n" if market_reaction else ""
-    
+
+    earnings_section = f"\n---\n\n## 📅 Earnings Alerts\n\n{earnings_alerts}\n" if earnings_alerts else ""
+
     report = f"""# 🧠 Daily Intelligence Report
-**{NOW}** | Run {RUN_LABEL} | Market {'Open 🟢' if IS_MARKET_OPEN else 'Closed 🔴'}
+**{NOW}** | Run {RUN_LABEL} | Market {'Open 🟢' if IS_MARKET_OPEN else 'Closed 🔴 (After-Hours)'}
 
 ---
 
@@ -2228,6 +2282,7 @@ def build_and_save_report(market_data, digest, investments, options, learning, m
 ## 🌡️ Market Sentiment & Timing
 {market_sentiment}
 {reaction_section}
+{earnings_section}
 ---
 
 {digest}
@@ -2380,10 +2435,19 @@ def main():
     portfolio_analysis = analyze_portfolio_weightage()
 
     # Extract portfolio tickers for options and earnings analysis
-    portfolio_tickers = [h['ticker'] for h in portfolio_analysis.get('top_positions', [])][:5]
+    all_portfolio_tickers = [h['ticker'] for h in portfolio_analysis.get('top_positions', [])]
+    top_portfolio_tickers = all_portfolio_tickers[:5]
 
     log("🌡️  Analyzing market sentiment (fear/greed)...")
     market_sentiment = get_market_sentiment()
+
+    # 3b. Check for upcoming/recent earnings in portfolio
+    log("📅 Checking earnings calendar for portfolio holdings...")
+    earnings_alerts = check_upcoming_earnings(all_portfolio_tickers)
+    if earnings_alerts:
+        log(f"✓ Earnings alerts found: {earnings_alerts[:100]}")
+    else:
+        log("  No upcoming earnings in the next 7 days for portfolio holdings")
 
     if SKILLS_AVAILABLE:
         try:
@@ -2391,34 +2455,62 @@ def main():
         except Exception:
             pass
 
-    # 3. Generate content (sub-agents run sequentially)
+    # 4. Generate content (sub-agents run sequentially)
     log("✍️  Running sub-agents...")
     digest      = task_news_digest(rss, fin_news, memory)
     digest_summary = summarize_text(digest, "news digest", 300)
 
     # Fetch options data early with portfolio tickers included
-    options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL"] + portfolio_tickers))
-    options_context = fetch_options_snapshot(options_tickers)
-    investments = task_investment_ideas(market_data, digest_summary, memory, portfolio_analysis, options_context)
+    # Use skill module's fetch_options_snapshot for better reliability
+    try:
+        from skills.options_intelligence import fetch_options_snapshot as _fetch_options
+        options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL", "PLTR"] + top_portfolio_tickers))
+        options_context = _fetch_options(options_tickers)
+    except Exception:
+        options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL"] + top_portfolio_tickers))
+        options_context = fetch_options_snapshot_yfinance(options_tickers)
+        if not options_context or options_context == "[Options data unavailable]":
+            options_context = "[Options data unavailable — both Polygon and yfinance failed. This may be due to after-hours data delays or API rate limits.]"
 
-    # Store trackable recommendations
+    # Build combined context for investment ideas with ALL data
+    investment_context = options_context
+    if earnings_alerts:
+        investment_context += f"\n\n⚠️ EARNINGS ALERT:\n{earnings_alerts}\nConsider earnings implications for any recommendations."
+    if market_sentiment:
+        investment_context += f"\n\n🌡️ MARKET SENTIMENT:\n{market_sentiment}\nAdjust sizing/strategy based on VIX/fear-greed."
+
+    # 4a. Investment ideas with everything: portfolio, options, earnings, sentiment
+    investments = task_investment_ideas(
+        market_data, digest_summary, memory, portfolio_analysis,
+        options_context=investment_context
+    )
+
     parse_and_store_recommendations(investments)
 
-    options     = task_options_ideas(market_data, digest_summary, memory, options_context=options_context)
-    learning    = task_learning(digest_summary, memory)
+    # 4b. Options ideas with earnings + sentiment awareness
+    options = task_options_ideas(
+        market_data, digest_summary, memory,
+        options_context=options_context,
+        earnings_context=earnings_alerts or "No upcoming earnings.",
+        market_sentiment=market_sentiment
+    )
+
+    # 4c. Learning and market reaction
+    learning = task_learning(digest_summary, memory)
     market_reaction = task_market_reaction(market_data, digest_summary)
 
-    # 4. Write report
+    # 5. Write report
     log("📝 Writing report...")
     report = build_and_save_report(
-        market_data, 
-        digest, 
-        investments, 
-        options, 
+        market_data,
+        digest,
+        investments,
+        options,
         learning,
         market_sentiment=market_sentiment,
         portfolio_analysis_text=portfolio_analysis.get('weighted_summary', ''),
-        market_reaction=market_reaction
+        market_reaction=market_reaction,
+        earnings_alerts=earnings_alerts
     )
 
     # 5. Send report to Telegram (free, non-blocking)
@@ -2508,9 +2600,26 @@ def main():
         except Exception as e:
             log(f"[!] ClickUp task creation failed: {e}")
 
-    # 10. Execute paper trades for high-conviction recommendations
+    # 10. Execute trades on Alpaca for high-conviction recommendations (8+)
     if SKILLS_AVAILABLE:
         try:
+            from skills.alpaca_trading import (place_stock_order, place_option_order,
+                                                get_all_positions_including_options,
+                                                get_trade_history)
+
+            # 10a. Read Alpaca positions for learning/feedback
+            alpaca_positions = get_all_positions_including_options()
+            alpaca_trades = get_trade_history(limit=20)
+            if alpaca_positions:
+                log(f"[OK] Alpaca positions: {len(alpaca_positions)} holdings")
+                for pos in alpaca_positions[:5]:
+                    pl_str = f"{pos.get('unrealized_plpc', 0):+.1f}%" if pos.get('unrealized_plpc') else "N/A"
+                    log(f"  → {pos['symbol']}: {pos['qty']} @ ${pos.get('avg_entry', 0):.2f} "
+                        f"(current: ${pos.get('current_price', 0):.2f}, P&L: {pl_str}) [{pos['type']}]")
+            if alpaca_trades:
+                log(f"[OK] Recent Alpaca trades: {len(alpaca_trades)} fills")
+
+            # 10b. Place new stock trades for high-conviction (8+) recommendations
             recs = read_file(RECOMMENDATIONS_FILE)
             active_lines = [l for l in recs.split('\n') if l.startswith('- ') and 'Active' in l]
             trades_executed = 0
@@ -2522,38 +2631,71 @@ def main():
                         if conviction >= 8:
                             ticker = parts[1].strip()
                             entry_str = parts[2].strip().replace('$', '').replace(',', '')
-                            target_str = parts[3].strip().replace('$', '').replace(',', '')
                             try:
                                 entry_price = float(entry_str) if entry_str != 'N/A' else 0
                             except ValueError:
                                 entry_price = 0
-                            try:
-                                target_price = float(target_str) if target_str != 'N/A' else 0
-                            except ValueError:
-                                target_price = 0
                             if entry_price > 0:
-                                rec_data = {
-                                    "ticker": ticker,
-                                    "action": "BUY",
-                                    "conviction": conviction,
-                                    "entry_price": entry_price,
-                                    "target_price": target_price,
-                                    "type": "stock"
-                                }
-                                trade_result = execute_from_recommendation(rec_data, entry_price)
-                                if trade_result.get("status") == "FILLED":
+                                # Check if we already hold this position
+                                already_held = any(p['symbol'] == ticker for p in alpaca_positions)
+                                if already_held:
+                                    log(f"  Already hold {ticker} in Alpaca, skipping")
+                                    continue
+
+                                # Calculate position size based on conviction
+                                acct = get_account_info()
+                                portfolio_val = acct.get('portfolio_value', 100000)
+                                if conviction >= 9:
+                                    pct = 0.08
+                                elif conviction >= 8:
+                                    pct = 0.05
+                                else:
+                                    pct = 0.03
+                                dollar_amount = portfolio_val * pct
+                                qty = max(1, int(dollar_amount / entry_price))
+
+                                trade_result = place_stock_order(ticker, qty, "buy", "market")
+                                if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                                     trades_executed += 1
-                                    log(f"[OK] Paper trade: BUY {ticker} x{trade_result.get('quantity', '?')} @ ${entry_price:.2f}")
+                                    log(f"[OK] Alpaca trade: BUY {ticker} x{qty} @ ${entry_price:.2f} "
+                                        f"(conviction: {conviction}/10, status: {trade_result.get('status')})")
                                 elif trade_result.get("status") == "REJECTED":
-                                    log(f"[!] Paper trade rejected for {ticker}: {trade_result.get('reason', 'unknown')}")
+                                    log(f"[!] Alpaca trade rejected for {ticker}: {trade_result.get('error', 'unknown')}")
+                                else:
+                                    log(f"[!] Alpaca trade uncertain for {ticker}: {trade_result}")
                     except (ValueError, IndexError):
                         continue
+
+            # 10c. Place options trades from options intelligence section
+            # Parse options ideas from the report text
+            options_section = options if 'options' in dir() else ""
+            option_trades = 0
+            if options_section and "Options Ideas" in str(options_section):
+                # Extract option trade ideas from the options text
+                import re
+                option_pattern = r'\*\*Type:\*\*\s*(Long Call|Long Put|Covered Call|LEAPS Call|Credit Spread|Bull Put Spread)\s*\n.*?\*\*Strike/Expiry:\*\*\s*\$?([\d,.]+)\s*/\s*(\w+\s+\d+,?\s*\d*)'
+                for match in re.finditer(option_pattern, str(options_section), re.DOTALL):
+                    opt_type = match.group(1)
+                    strike = float(match.group(2).replace(',', ''))
+                    expiry_str = match.group(3)
+                    log(f"  Found options idea: {opt_type} @ ${strike} exp {expiry_str}")
+                    # Note: Full options execution requires OCC symbol lookup via Alpaca's options chain API
+                    # This is a placeholder for when options chain integration is complete
+                    option_trades += 1
+
             if trades_executed:
-                log(f"[OK] Executed {trades_executed} paper trade(s)")
-                paper_summary = get_paper_portfolio_summary()
-                log(f"[OK] Paper portfolio: ${paper_summary['total_value']:,.2f} ({paper_summary['total_return_pct']:+.2f}%)")
+                log(f"[OK] Executed {trades_executed} Alpaca stock trade(s)")
+            if option_trades:
+                log(f"[OK] Identified {option_trades} options trade ideas (execution requires options chain lookup)")
+
+            # 10d. Read back updated positions after trading
+            updated_positions = get_all_positions_including_options()
+            if updated_positions:
+                total_pl = sum(p.get('unrealized_pl', 0) for p in updated_positions)
+                log(f"[OK] Updated Alpaca portfolio: {len(updated_positions)} positions, "
+                    f"total unrealized P&L: ${total_pl:+,.0f}")
         except Exception as e:
-            log(f"[!] Paper trade execution failed: {e}")
+            log(f"[!] Alpaca trade execution failed: {e}")
 
     log("✅ Agent run complete.")
     log(f"   Report: REPORTS/{TODAY}-{RUN_LABEL}.md")

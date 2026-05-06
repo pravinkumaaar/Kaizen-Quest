@@ -1,30 +1,6 @@
-# 🎓 Agent Learnings
+...[older entries archived in HISTORY/]
 
-*Auto-updated after each run. Read at the start of every run.*
-
-## Human-Written Seed Rules
-- Investment ideas must include specific entry prices, not just "buy now"
-- Options: ALWAYS include the EXIT RULE reminding to close before expiry
-- Learning topics: avoid obvious ones. Surprising and counterintuitive > popular
-- News digest: every sentence should earn its place. Cut the fluff ruthlessly.
-- Cross-domain insights are the most valued output — look for non-obvious connections
-- Time horizons matter: always specify swing vs medium vs long-term clearly
-- When suggesting covered calls: calculate and show the annualized yield
-- For asymmetric options plays: explain WHY the market might be mispricing them
-
----
-*Agent appends entries below after each run.*
-
-
-## Run: 2026-04-22 17:36 UTC
-[LLM unavailable: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Venice', 'is_byok': False}}, 'user_id': 'user_3CjDMJJxt7kLXfsmDFwdcO4xdJF'}]
-
-## Run: 2026-04-22 18:22 UTC
-Here’s a critical self-assessment of this run’s performance with actionable learnings:
-
-### **What Worked Well**  
-✅ **Market Snapshot Clarity**  
-- Clean, scannable formatting with color-coded arrows (▲/▼) improved readability  
+nable formatting with color-coded arrows (▲/▼) improved readability  
 - Included both major indices *and* sector-specific movers (Tech vs. Alt/Hedge)  
 
 ✅ **AI & Tech Developments Section**  
@@ -151,3 +127,75 @@ Here's my critical self-assessment and learnings from this run:
 - **Recommendation tracking remains non-functional, and repeat options data staleness is a trust killer.** The 04-23 user (7/10) noted "recommendation tracking part isn't working" — this is still unresolved. The active recommendations section was left as a placeholder comment. Users across multiple runs flagged stale options data (quotes from 2 years ago). The track record must be maintained in a structured format: date entered, ticker, direction (buy/sell/trim), thesis in one sentence, entry price, current price, P&L%, and pending/closed status. Every day's report should append new evaluations and score the previous day's recommendations. Without this, the "conviction accuracy" goal is meaningless — you can't claim a win rate if you're not actually tracking outcomes.
 
 - **Sort holdings display by absolute dollar impact (shares × price change %), not by price level or alphabetical read-order.** Multiple users have said the portfolio movers list reads as "random." Currently it
+
+## Run: 2026-05-05 10:51:48
+## 📚 LEARNINGS.md — Post-Run Self-Review
+**2026-05-05 10:51:48** | Run 1051
+
+---
+
+- **✅ What worked well — Portfolio-aware analysis earned the highest rating (8.5/10):** The 4/30 run that cross-referenced actual holdings, weightings, cost basis, and current prices was rated the best yet. Users explicitly valued understanding *their* positions rather than generic picks. The options education component (LEAPs, reasoning, thesis) also consistently scored well when present. The news summary quality was praised when it connected macro catalysts to specific portfolio holdings.
+
+- **❌ Critical gap — Recommendations only covered existing holdings, missing new opportunities:** The top-rated review (8.5/10) explicitly flagged this as the "biggest problem": the agent only recommended buys/sells within the existing portfolio and never surfaced *new* tickers the user doesn't already own. This is a recurring blind spot. The user wants discovery of niche, non-megacap opportunities — not just portfolio management of what they already hold. Need a dedicated "New Opportunities" section scanning for high-conviction setups outside current holdings.
+
+- **❌ Data freshness and options data remain broken:** Multiple reviews (2/10, 4/10) cited outdated options data from ~2 years ago and stale price references (e.g., PLTR price not current). This destroys credibility. The agent must verify all price data is from the current trading session and either source real-time options chains or clearly label data as delayed/estimated. Never present stale data as current — it's the fastest path to user distrust.
+
+- **📊 Portfolio display should be sorted by impact, not alphabetical or insertion order:** A 6/10 review noted tickers appeared "random"
+
+## Run: 2026-05-05 12:10:51
+# 📊 LEARNINGS — 2026-05-05 12:10:51
+
+## What Worked Well (Correlated with Higher Ratings)
+- **Portfolio-aware analysis**: The report correctly identified top movers from the user's portfolio (STRL +47%, SHOP -12%, NVDA -0.48%) and showed holdings with 💰 icons, which earned an 8.5/10 rating on 2026-04-30
+- **Market thesis depth**: The AI infrastructure/semiconductor rally explanation was well-received, showing users value contextual market narratives
+- **Specific ticker highlighting**: Use of concrete examples (STRL, SNDK, MU) with percentage moves resonated better than generic summaries
+
+## What Needs Improvement
+-
+
+## Run: 2026-05-05 15:44:53
+```markdown
+# 🧠 OWL — Self-Review & Learnings
+**2026-05-05 15:44:53** | Run 1544
+
+---
+
+## 📝 LEARNINGS.md — Key Takeaways from This Run
+
+- **Portfolio-aware analysis is now the #1 driver of user satisfaction.** The 8.5/10 run (2026-04-30) was the first to deeply integrate holdings, weightage, cost basis, and position-specific thesis — and it scored highest. This run continued that with biggest-movers-first formatting and per-position reasoning. *Keep this as the non-negotiable foundation.* However, the user explicitly noted the system still only recommends from within the existing portfolio — **expand screening to include 2–3 new tickers not currently held** that present better risk/reward, using the same thesis framework.
+
+- **Data freshness is a recurring trust killer.** Multiple low-rated runs (2/10, 4/10) cited stale options data and outdated prices. This run's "Market sentiment unavailable — no data from Finnhub or yfinance" gap is a red flag. *Action: implement a fallback chain (Finnhub → yfinance → Alpha Vantage → cached last-known) and flag staleness transparently with timestamps.* Any data older than 15 minutes during market hours should carry a ⚠️ warning.
+
+- **Conviction accuracy requires a structured scoring rubric, not just narrative.** The user wants 90–95% win rate on recommendations. Currently, conviction scores (7/10, 8/10) are assigned ad hoc. *Build a quantitative scoring matrix: (1) technical momentum (RSI, volume spike, breakout confirmation), (2) fundamental catalyst proximity (earnings, product launch
+
+## Run: 2026-05-05 19:14:40
+# LEARNINGS.md — Run 1914 | 2026-05-05 19:14:40
+
+---
+
+## ✅ What Worked Well This Run
+
+- **Portfolio-aware analysis finally landed.** The 8.5/10 rating on 2026-04-30 confirmed that reading actual holdings, weightings, and cost basis — then reasoning about *those specific positions* — is the single biggest quality lever. This run continued that: the report correctly identified STRL +52%, SHOP -16%, and the AI infrastructure rotation thesis across the user's actual holdings (MU, APLD, NVDA, SMCI, VRT). The user explicitly said "this is the first report that looks at my portfolio and understands it." **Never regress on this.**
+
+- **News narrative quality was highest-ever.** The 8.5/10 user praised the news summary as "highest quality." The macro narrative connecting STRL's surge, the AI capex supercycle, SHOP's disruption risk, and the Railway/OpenAI partnership into a coherent story worked. The user wants *teaching*, not just summarizing — and framing the day's moves as a single thesis (AI infrastructure rotation) rather than disconnected tickers is what creates that teaching moment.
+
+- **Biggest-movers-first formatting is correct.** The 6/10 user explicitly asked to "see the ones that had a big event or news or moved the most today." This run leads with the top movers (STRL +52%, SHOP -16%, SNDK +12%) rather than alphabetical or random ordering. Keep this — it directly addresses a stated pain point.
+
+---
+
+## ❌ What Needs Improvement
+
+- **Recommendations are still too narrow — only from existing holdings.** The 8.5/10 user
+
+## Run: 2026-05-05 20:42:10
+# 🧠 OWL Self-Review — Run 2042 | 2026-05-05
+
+## LEARNINGS.md — Key Takeaways
+
+---
+
+- **Portfolio-aware analysis is the #1 driver of user satisfaction.** The 8.5/10 run (2026-04-30) was explicitly praised because it "looked at my portfolio and understood it and the positions and holdings I have along with the weightage." This run (2042) continued that with cost-basis tracking, position sizing context, and per-holding P&L awareness. The earlier 2/10 and 4/10 runs failed because they gave generic, one-size-fits-all recommendations. **Lesson: Every recommendation must reference the user's actual holdings, cost basis, and portfolio weight — not just ticker names.** The user wants to know "should I add to my 516-share PLTR position?" not "PLTR is a buy."
+
+- **The user explicitly wants NEW stock ideas outside their portfolio — this is a recurring gap.** The 8.5/10 reviewer's "biggest problem" was that the report "only considered stocks from my portfolio to recommend buying or selling and not anything new." This run repeated that mistake: the active recommendations (MU, VRT, SNDK) are all existing holdings. **Lesson: Every run must include 2-3 high-conviction ideas the user does NOT currently own, with full thesis, entry price, and risk framework.** The user has 67 tickers — they want discovery, not just portfolio management. Screen for niche mid-caps, sector rotations, or under-the-radar names that complement their existing AI/infrastructure/quantum exposure.
+
+- **Options data staleness is a trust killer — and it's still not fixed.** The 2/10 review flagged "

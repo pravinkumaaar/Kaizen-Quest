@@ -1,5 +1,5 @@
 {
-  "cash": 98500.0,
+  "cash": 75344.69,
   "initial_cash": 100000,
   "positions": {
     "AAPL": {
@@ -7,8 +7,20 @@
       "avg_cost": 150.0,
       "opened": "2026-05-05",
       "shares": 10
+    },
+    "MU": {
+      "type": "stock",
+      "avg_cost": 643.74,
+      "opened": "2026-05-05",
+      "shares": 18
+    },
+    "VRT": {
+      "type": "stock",
+      "avg_cost": 340.235,
+      "opened": "2026-05-05",
+      "shares": 34
     }
   },
   "total_value": 100000,
-  "last_updated": "2026-05-05 00:09:32"
+  "last_updated": "2026-05-05 20:52:04"
 }
