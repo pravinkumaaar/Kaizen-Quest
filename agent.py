@@ -3611,163 +3611,162 @@ def main():
 
             log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")
 
-            # 10d. Execute options trades on Alpaca from options intelligence section
+            # 10d. Advanced options strategies — research-backed, high-return, defined-risk
+            from skills.options_strategies import (
+                init_options_skill, generate_options_strategies, format_options_report,
+                get_options_chain, get_option_pricing, analyze_iv_rank, find_mispriced_options
+            )
             from skills.alpaca_trading import find_option_symbol
-            from datetime import datetime as dt_parser
-
-            options_section = options if 'options' in dir() else ""
+            init_options_skill(
+                alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
+                finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR)
+            )
+            
             options_executed = 0
             options_failed = 0
-
-            if options_section and "Options Ideas" in str(options_section):
-                import re
-
-                # Parse option ideas from the LLM-generated options text
-                # Matches patterns like:
-                #   **Type:** Long Call
-                #   **Strike/Expiry:** $150 / May 16, 2026
-                #   **Underlying:** AAPL (sometimes implied from context)
-                option_blocks = re.findall(
-                    r'###\s+\[([^\]]+)\]\s+on\s+\*\*([A-Z]+)\*\*.*?'
-                    r'\*\*Type:\*\*\s*(Long Call|Long Put|Covered Call|LEAPS Call|LEAPS Put)\s*\n.*?'
-                    r'\*\*Strike/Expiry:\*\*\s*\$?([\d,.]+)\s*/\s*([^\n]+)',
-                    str(options_section), re.DOTALL
-                )
-
-                # Also try a simpler fallback pattern if the detailed one doesn't match
-                if not option_blocks:
-                    option_blocks = re.findall(
-                        r'\*\*Type:\*\*\s*(Long Call|Long Put|Covered Call|LEAPS Call|LEAPS Put)\s*\n.*?'
-                        r'\*\*Strike/Expiry:\*\*\s*\$?([\d,.]+)\s*/\s*([^\n]+)',
-                        str(options_section), re.DOTALL
-                    )
-                    # Reformat to match expected structure: (strategy, underlying, type, strike, expiry)
-                    reformatted = []
-                    current_underlying = ""
-                    for match in re.finditer(r'###\s+\[([^\]]+)\]\s+on\s+\*\*([A-Z]+)\*\*', str(options_section)):
-                        current_underlying = match.group(2)
-                    for block in option_blocks:
-                        reformatted.append((block[0], current_underlying, block[0], block[1], block[2]))
-                    option_blocks = reformatted
-
-                for block in option_blocks:
+            
+            # Generate advanced options strategies for high-conviction names
+            # Focus on: existing Alpaca positions + top watchlist picks
+            option_underlyings = []
+            
+            # Add existing Alpaca positions
+            for pos in alpaca_positions:
+                if pos.get('type') == 'stock':
+                    option_underlyings.append(pos['symbol'])
+            
+            # Add top watchlist recommendations (conviction 8+)
+            for wl_line in watchlist_lines:
+                parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                if len(parts) >= 5:
                     try:
-                        if len(block) == 5:
-                            strategy_label, underlying, opt_type_raw, strike_str, expiry_raw = block
-                        else:
-                            continue
-
-                        underlying = underlying.strip().upper()
-                        opt_type_raw = opt_type_raw.strip()
-                        strike = float(strike_str.replace(',', '').strip())
-                        expiry_raw = expiry_raw.strip()
-
-                        # Determine option type
-                        if "call" in opt_type_raw.lower():
-                            occ_type = "call"
-                        elif "put" in opt_type_raw.lower():
-                            occ_type = "put"
-                        else:
-                            log(f"  [!] Skipping unknown option type: {opt_type_raw}")
-                            continue
-
-                        # Parse expiry — try multiple formats
-                        expiry_date = None
-                        for fmt in ["%B %d, %Y", "%b %d, %Y", "%B %d %Y", "%b %d %Y", "%m/%d/%Y", "%Y-%m-%d"]:
-                            try:
-                                expiry_date = dt_parser.strptime(expiry_raw, fmt)
-                                break
-                            except ValueError:
-                                continue
-
-                        if not expiry_date:
-                            # Try to parse relative dates like "in 35d" or "May 2026"
-                            month_year = re.match(r'(\w+)\s+(\d{4})', expiry_raw)
-                            if month_year:
-                                try:
-                                    expiry_date = dt_parser.strptime(f"{month_year.group(1)} 1, {month_year.group(2)}", "%B %d, %Y")
-                                except ValueError:
-                                    try:
-                                        expiry_date = dt_parser.strptime(f"{month_year.group(1)} 1, {month_year.group(2)}", "%b %d, %Y")
-                                    except ValueError:
-                                        pass
-
-                        if not expiry_date:
-                            log(f"  [!] Could not parse expiry '{expiry_raw}' for {underlying} {opt_type_raw} ${strike}")
-                            continue
-
-                        days_out = (expiry_date.date() - datetime.date.today()).days
-                        if days_out < 0:
-                            log(f"  [!] Expiry {expiry_date.date()} is in the past, skipping {underlying} {opt_type_raw}")
-                            continue
-
-                        # Enforce minimum 2-week expiry per CLAUDE.md rules
-                        if days_out < 14:
-                            log(f"  [!] Expiry only {days_out} days away (< 14 day minimum), skipping {underlying} {opt_type_raw}")
-                            continue
-
-                        # Find the OCC option symbol via Alpaca's options chain
-                        option_symbol = find_option_symbol(underlying, occ_type, strike, days_out)
-
-                        if not option_symbol:
-                            log(f"  [!] Could not find OCC symbol for {underlying} {occ_type} ${strike} exp {expiry_date.date()}")
-                            options_failed += 1
-                            continue
-
-                        # Determine position size: max 5% of portfolio for options per CLAUDE.md
-                        acct = get_account_info()
-                        portfolio_val = acct.get('portfolio_value', 100000)
-                        options_budget = portfolio_val * 0.05  # 5% max for single options trade
-
-                        # Get current option price to estimate contracts
-                        try:
-                            headers = {
-                                "APCA-API-KEY-ID": ALPACA_API_KEY,
-                                "APCA-API-SECRET-KEY": ALPACA_SECRET_KEY,
-                            }
-                            quote_r = requests.get(
-                                f"https://paper-api.alpaca.markets/v2/markets/us/options/snapshots?symbols={option_symbol}",
-                                headers=headers, timeout=10
-                            )
-                            option_price = 0
-                            if quote_r.status_code == 200:
-                                snap = quote_r.json().get("snapshots", {}).get(option_symbol, {})
-                                option_price = snap.get("latestTrade", {}).get("p", 0) or snap.get("latestQuote", {}).get("ap", 0)
-                        except Exception:
-                            option_price = 0
-
-                        # Default to 1 contract if we can't get price, or calculate from budget
-                        if option_price > 0:
-                            max_contracts = max(1, int(options_budget / (option_price * 100)))
-                            qty = min(max_contracts, 3)  # Cap at 3 contracts for safety
-                        else:
-                            qty = 1
-
-                        log(f"  → Executing: {opt_type_raw} {underlying} ${strike} exp {expiry_date.date()} ({option_symbol}) x{qty}")
-
-                        # Place the options order
-                        trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
-
-                        if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
-                            options_executed += 1
-                            log(f"[OK] Alpaca options trade: BUY {option_symbol} x{qty} "
-                                f"(status: {trade_result.get('status')})")
-                        elif trade_result.get("status") == "REJECTED":
-                            options_failed += 1
-                            log(f"[!] Alpaca options trade REJECTED: {option_symbol} — {trade_result.get('error', 'unknown')}")
-                        else:
-                            options_failed += 1
-                            log(f"[!] Alpaca options trade uncertain: {option_symbol} — {trade_result}")
-
-                    except Exception as e:
-                        options_failed += 1
-                        log(f"[!] Error processing options block: {e}")
+                        conv = int(parts[4].split('/')[0].strip())
+                        ticker = parts[1].strip()
+                        if conv >= 8 and ticker not in option_underlyings:
+                            option_underlyings.append(ticker)
+                    except (ValueError, IndexError):
+                        pass
+            
+            # Limit to top 5 underlyings to avoid rate limits
+            option_underlyings = option_underlyings[:5]
+            
+            all_options_strategies = []
+            for underlying in option_underlyings:
+                try:
+                    price = _yf_price(underlying)["price"]
+                    if price <= 0:
                         continue
-
+                    
+                    # Analyze IV rank
+                    iv_analysis = analyze_iv_rank(underlying)
+                    iv_rank = iv_analysis["iv_rank"] if iv_analysis else 50
+                    
+                    # Find mispriced options
+                    mispriced = find_mispriced_options(underlying)
+                    
+                    # Determine direction from existing position or watchlist
+                    direction = "neutral"
+                    conviction = 7
+                    for wl_line in watchlist_lines:
+                        parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                        if len(parts) >= 5 and parts[1].strip() == underlying:
+                            try:
+                                conviction = int(parts[4].split('/')[0].strip())
+                            except (ValueError, IndexError):
+                                pass
+                            # Check if bullish or bearish from the thesis
+                            thesis = str(parts).lower()
+                            if any(w in thesis for w in ['buy', 'bull', 'up', 'growth', 'beat']):
+                                direction = "bullish"
+                            elif any(w in thesis for w in ['sell', 'bear', 'down', 'miss', 'weak']):
+                                direction = "bearish"
+                            break
+                    
+                    # If we hold it and it's uptrend, direction is bullish
+                    for pos in alpaca_positions:
+                        if pos['symbol'] == underlying and pos.get('unrealized_plpc', 0) > 0:
+                            direction = "bullish"
+                    
+                    # Generate strategies
+                    strategies = generate_options_strategies(
+                        underlying, conviction, direction, price
+                    )
+                    
+                    if strategies:
+                        all_options_strategies.extend(strategies)
+                        log(f"  {underlying}: {len(strategies)} strategies generated (IV rank: {iv_rank:.0f}, {len(mispriced)} mispriced)")
+                
+                except Exception as e:
+                    log(f"  [!] Error analyzing options for {underlying}: {e}")
+                    continue
+            
+            # Execute the best options strategies (highest conviction, best risk/reward)
+            for strat in sorted(all_options_strategies, key=lambda s: s.get('conviction', 0), reverse=True)[:3]:
+                try:
+                    underlying = strat.get('underlying', '')
+                    option_info = strat.get('option', {})
+                    
+                    if not option_info:
+                        # For multi-leg strategies, construct the order differently
+                        log(f"  [!] Skipping {strat['strategy']} — complex multi-leg not yet automated")
+                        continue
+                    
+                    option_symbol = option_info.get('symbol', '')
+                    if not option_symbol:
+                        # Find OCC symbol
+                        strike = float(option_info.get('strike_price', 0))
+                        occ_type = 'call' if 'call' in strat['strategy'].lower() else 'put'
+                        dte = option_info.get('dte', 30)
+                        option_symbol = find_option_symbol(underlying, occ_type, strike, dte)
+                    
+                    if not option_symbol:
+                        log(f"  [!] Could not find OCC symbol for {strat['strategy']} on {underlying}")
+                        options_failed += 1
+                        continue
+                    
+                    # Position sizing: max 3% of portfolio per options trade
+                    acct = get_account_info()
+                    portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
+                    options_budget = portfolio_val * 0.03
+                    
+                    # Get option pricing
+                    pricing = get_option_pricing([option_symbol])
+                    opt_price = 0
+                    if pricing.get(option_symbol):
+                        snap = pricing[option_symbol]
+                        opt_price = float(snap.get("latestTrade", {}).get("p", 0) or 
+                                         snap.get("latestQuote", {}).get("ap", 0))
+                    
+                    if opt_price > 0:
+                        max_contracts = max(1, int(options_budget / (opt_price * 100)))
+                        qty = min(max_contracts, 2)  # Cap at 2 contracts
+                    else:
+                        qty = 1
+                    
+                    log(f"  → EXECUTE: {strat['strategy']} on {underlying} — {option_symbol} x{qty} (conviction: {strat.get('conviction', 'N/A')}/10)")
+                    
+                    trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
+                    
+                    if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
+                        options_executed += 1
+                        log(f"[OK] Options trade: BUY {option_symbol} x{qty} (status: {trade_result.get('status')})")
+                    elif trade_result.get("status") == "REJECTED":
+                        options_failed += 1
+                        log(f"[!] Options trade REJECTED: {option_symbol} — {trade_result.get('error', 'unknown')}")
+                    else:
+                        options_failed += 1
+                        log(f"[!] Options trade uncertain: {option_symbol} — {trade_result}")
+                
+                except Exception as e:
+                    options_failed += 1
+                    log(f"  [!] Error executing options strategy: {e}")
+                    continue
+            
             if trades_executed:
                 log(f"[OK] Executed {trades_executed} Alpaca stock trade(s)")
             if options_executed:
                 log(f"[OK] Executed {options_executed} Alpaca options trade(s)")
+            if options_failed:
+                log(f"[!] {options_failed} options trade(s) failed or skipped")
             if options_failed:
                 log(f"[!] {options_failed} options trade(s) failed or skipped")
             if not options_executed and not options_failed and not trades_executed:
