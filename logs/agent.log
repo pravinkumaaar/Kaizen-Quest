@@ -1887,3 +1887,102 @@
 [2026-05-07 17:33:12] INFO:    Report: REPORTS/2026-05-07-1318.md
 [2026-05-07 17:33:12] INFO:    Skills: ✅ All active
 [2026-05-07 17:33:12] INFO:    Rate this run: add_rating(score, 'optional notes') in Python
+[2026-05-07 19:14:21] INFO: ============================================================
+[2026-05-07 19:14:21] INFO: 🤖 Agent v2.2 starting — Run 1514
+[2026-05-07 19:14:21] INFO:    Model Priority: Free (Qwen/Llama) → DeepSeek Chat
+[2026-05-07 19:14:21] INFO:    Watchlist: Dynamic (portfolio) + Indices + Crypto
+[2026-05-07 19:14:21] INFO: ✓ Cleared active recommendations
+[2026-05-07 19:14:21] INFO:    Learning: Rotating weekly themes with daily deep dives
+[2026-05-07 19:14:21] INFO: ============================================================
+[2026-05-07 19:14:21] INFO: [OK] Tiered memory initialized
+[2026-05-07 19:14:21] INFO: [OK] All skills initialized with API keys
+[2026-05-07 19:14:21] INFO: ✓ Loaded 4 portfolios: 67 unique holdings, $143,608 total cost basis
+[2026-05-07 19:14:21] INFO:   → 19 tickers consolidated from multiple portfolios
+[2026-05-07 19:14:21] INFO: [OK] Paper trading account: $99,549.03 equity
+[2026-05-07 19:14:21] INFO: 📚 Loading memory...
+[2026-05-07 19:14:21] INFO: [OK] Memory loaded: 106 chars
+[2026-05-07 19:14:21] INFO: 📈 Updating recommendation tracking...
+[2026-05-07 19:14:21] INFO: 📡 Fetching RSS feeds...
+[2026-05-07 19:14:26] INFO: Cached fresh RSS feeds
+[2026-05-07 19:14:26] INFO: 💹 Fetching market data...
+[2026-05-07 19:15:13] INFO: 📰 Fetching Finnhub news...
+[2026-05-07 19:15:15] INFO: 📊 Analyzing portfolio positions by weightage...
+[2026-05-07 19:16:08] INFO: ✓ Portfolio analysis: Live: 60, Stale: 7, Errors: 7 (of 67 tickers)
+[2026-05-07 19:16:08] INFO: 🌡️  Analyzing market sentiment (fear/greed)...
+[2026-05-07 19:16:08] INFO:   → Analyzing market sentiment...
+[2026-05-07 19:16:14] INFO: 📅 Running comprehensive earnings intelligence (full universe + forward analysis)...
+[2026-05-07 19:16:16] INFO: ✓ Portfolio earnings: **📅 Earnings — Your Portfolio Holdings:**
+  🔔 NTRB — Earnings in 21d (2026-05-28)
+  🔔 PATH — Earning
+[2026-05-07 19:16:16] INFO: ✓ Related/supply chain earnings: **📅 Earnings — Related / Supply Chain Companies:**
+  🔔 PLAB — Earnings in 20d (2026-05-27) EPS est: 
+[2026-05-07 19:16:16] INFO: ✓ Sector earnings: **📅 Earnings — Comprehensive Sector Coverage:**
+  🔔 CHA — Earnings in 21d (2026-05-28) EPS est: $2.0
+[2026-05-07 19:16:16] INFO: 🔮 Running market foresight predictor...
+[2026-05-07 19:16:35] INFO: [OK] Market Foresight Score: -2/100 (neutral)
+[2026-05-07 19:16:35] INFO:   → News Sentiment: News sentiment: leaning bearish (5 bearish vs 3 bullish)
+[2026-05-07 19:16:35] INFO: [!] Failed to send Telegram alerts: cannot access local variable 'investments' where it is not associated with a value
+[2026-05-07 19:16:36] INFO: 📊 Advanced CSV portfolio management (8-strategy system)...
+[2026-05-07 19:17:30] INFO: ✓ Portfolio analysis: Live: 60, Stale: 7, Errors: 7 (of 67 tickers)
+[2026-05-07 19:17:30] INFO: [OK] CSV Portfolio: $236,018 | P&L: $+92,410 (+64.3%) | Concentration: 63.1% | Positions: 67
+[2026-05-07 19:19:34] INFO: [OK] CSV portfolio actions generated: 49 items
+[2026-05-07 19:19:34] INFO:   ✂️ TRIM PLTR: Concentration: 29.9% of portfolio exceeds 20% max
+[2026-05-07 19:19:34] INFO:   ➕ BUY_MORE APLD: Uptrend +243.5%, only 6.4% of portfolio — adding to winner
+[2026-05-07 19:19:34] INFO:   ➕ BUY_MORE MU: Uptrend +69.6%, only 5.1% of portfolio — adding to winner
+[2026-05-07 19:19:34] INFO:   ➕ BUY_MORE VRT: Uptrend +132.0%, only 4.0% of portfolio — adding to winner
+[2026-05-07 19:19:34] INFO:   ➕ BUY_MORE ASTS: Uptrend +78.3%, only 2.7% of portfolio — adding to winner
+[2026-05-07 19:19:35] INFO: [OK] 📈 CSV portfolio action alert sent to Telegram!
+[2026-05-07 19:19:35] INFO: 📊 Monitoring Alpaca paper trading account...
+[2026-05-07 19:19:35] INFO: [OK] Alpaca: $99,445 | Cash: 60% | Positions: 6
+[2026-05-07 19:19:35] INFO:   💰 CASH DRAG: 60% cash ($59,906). Excess: $44,990. Est. daily opportunity cost: $18.00
+[2026-05-07 19:19:35] INFO:   → Agent should deploy excess cash into high-conviction picks to reduce drag
+[2026-05-07 19:19:35] INFO: 💼 Alpaca paper trading — buy/sell decisions handled by conviction-based trading in section 10
+[2026-05-07 19:19:35] INFO: ✍️  Running sub-agents...
+[2026-05-07 19:19:35] INFO:   → Generating news digest...
+[2026-05-07 19:21:28] INFO:   → Generating investment ideas...
+[2026-05-07 19:23:56] INFO: [OK] Alpaca holding: MU @ $651.61 → $640.21 (-1.8%)
+[2026-05-07 19:23:56] INFO: [OK] Alpaca holding: NVDA @ $207.14 → $211.80 (+2.2%)
+[2026-05-07 19:23:56] INFO: [OK] Alpaca holding: PLTR @ $139.47 → $136.53 (-2.1%)
+[2026-05-07 19:23:56] INFO: [OK] Alpaca holding: SOFI @ $16.29 → $15.90 (-2.4%)
+[2026-05-07 19:23:56] INFO: [OK] Alpaca holding: TEM @ $50.22 → $48.91 (-2.6%)
+[2026-05-07 19:23:56] INFO: [OK] Alpaca holding: VRT @ $348.38 → $339.56 (-2.5%)
+[2026-05-07 19:23:56] INFO: [OK] Recommendations synced: 6 Alpaca holdings + watchlist separated
+[2026-05-07 19:23:56] INFO:   → Generating options ideas...
+[2026-05-07 19:25:25] INFO:   → Generating learning recommendation (weekly theme + daily deep dive)...
+[2026-05-07 19:26:54] INFO:   → Analyzing market reaction...
+[2026-05-07 19:27:14] INFO: 📝 Writing report...
+[2026-05-07 19:27:14] INFO: Report saved: /home/runner/work/Kaizen-Quest/Kaizen-Quest/REPORTS/2026-05-07-1514.md
+[2026-05-07 19:27:15] INFO: [OK] Report sent to 1 Telegram user(s)
+[2026-05-07 19:27:15] INFO: 🪞 Deep self-reflection & learning...
+[2026-05-07 19:27:15] INFO:   → Deep self-reflection & learning...
+[2026-05-07 19:28:39] INFO: [!] Memory update failed: 'str' object has no attribute 'get'
+[2026-05-07 19:28:42] INFO: [OK] Portfolio: $235,991 value / $143,608 cost = +64.33% total return
+[2026-05-07 19:28:42] INFO:   vs SPY (S&P 500): +0.00% today → diff: +64.33%
+[2026-05-07 19:28:42] INFO:   vs QQQ (Nasdaq 100): +0.00% today → diff: +64.33%
+[2026-05-07 19:28:42] INFO:   vs IWM (Russell 2000): +0.00% today → diff: +64.33%
+[2026-05-07 19:28:42] INFO: [OK] Portfolio outperforming today: SPY, QQQ, IWM
+[2026-05-07 19:28:44] INFO: [OK] Benchmark log updated
+[2026-05-07 19:28:46] INFO: [OK] Alpaca positions: 6 holdings
+[2026-05-07 19:28:46] INFO:   → MU: 7 @ $651.61 (current: $640.01, P&L: -0.0%) [stock]
+[2026-05-07 19:28:46] INFO:   → NVDA: 38 @ $207.14 (current: $211.97, P&L: +0.0%) [stock]
+[2026-05-07 19:28:46] INFO:   → PLTR: 57 @ $139.47 (current: $136.69, P&L: -0.0%) [stock]
+[2026-05-07 19:28:46] INFO:   → SOFI: 306 @ $16.29 (current: $15.90, P&L: -0.0%) [stock]
+[2026-05-07 19:28:46] INFO:   → TEM: 99 @ $50.22 (current: $48.90, P&L: -0.0%) [stock]
+[2026-05-07 19:28:46] INFO: [OK] Recent Alpaca trades: 7 fills
+[2026-05-07 19:28:47] INFO:   Cash available: $59,906 (60% of portfolio)
+[2026-05-07 19:28:47] INFO:   No trades executed — agent didn't find conviction 8+ opportunities worth deploying cash
+[2026-05-07 19:28:47] INFO:   ⚠️ Cash at 60% — agent is being selective, waiting for high-conviction setups
+[2026-05-07 19:28:47] INFO:   Managing existing Alpaca positions with research-backed strategies...
+[2026-05-07 19:28:48] INFO:   ✅ HOLD MU: 7 shares, -1.8% P&L, 4.5% of portfolio | uptrend | thesis intact | trailing stop at -10% from high
+[2026-05-07 19:28:50] INFO:   ✅ HOLD NVDA: 38 shares, +2.3% P&L, 8.1% of portfolio | uptrend | thesis intact | trailing stop at -10% from high
+[2026-05-07 19:28:51] INFO:   ✅ HOLD PLTR: 57 shares, -2.0% P&L, 7.8% of portfolio | uptrend | thesis intact | trailing stop at -10% from high
+[2026-05-07 19:28:54] INFO:   ✅ HOLD SOFI: 306 shares, -2.4% P&L, 4.9% of portfolio | uptrend | thesis intact | trailing stop at -10% from high
+[2026-05-07 19:28:55] INFO:   ✅ HOLD TEM: 99 shares, -2.6% P&L, 4.9% of portfolio | uptrend | thesis intact | trailing stop at -10% from high
+[2026-05-07 19:28:58] INFO:   ✅ HOLD VRT: 28 shares, -2.5% P&L, 9.6% of portfolio | uptrend | thesis intact | trailing stop at -10% from high
+[2026-05-07 19:28:58] INFO:   Reviewed 6 existing positions with full strategy engine
+[2026-05-07 19:29:00] INFO:   No trades executed this run (no high-conviction recommendations or Alpaca not configured)
+[2026-05-07 19:29:01] INFO: [OK] Updated Alpaca portfolio: 6 positions, total unrealized P&L: $-569
+[2026-05-07 19:29:01] INFO: ✅ Agent run complete.
+[2026-05-07 19:29:01] INFO:    Report: REPORTS/2026-05-07-1514.md
+[2026-05-07 19:29:01] INFO:    Skills: ✅ All active
+[2026-05-07 19:29:01] INFO:    Rate this run: add_rating(score, 'optional notes') in Python
