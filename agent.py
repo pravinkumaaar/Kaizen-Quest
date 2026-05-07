@@ -2316,12 +2316,13 @@ For EVERY trade idea, provide this structured analysis:
 3. Win probability >= 60% OR asymmetric upside (5x+)
 4. Position size <= 10% of portfolio (use Kelly Criterion)
 5. Must be able to articulate WHY this is a good trade
-6. Scan BROAD market — NOT just current holdings. Include companies from the broad earnings watchlist, sector leaders, and emerging players.
+6. **MUST include at least 2 NEW stock ideas the user does NOT currently own** — scan the broad earnings watchlist, sector leaders, emerging players, and companies with upcoming catalysts. Do NOT just recommend existing holdings.
 7. For portfolio positions: analyze by WEIGHT, suggest SELL/REDUCE for overvalued
 8. Recommend HOLDING CASH if no compelling opportunities
 9. Look for ONCE-IN-A-LIFETIME opportunities: extreme asymmetric plays, 50%+ upside potential, clear catalysts
-10. EARNINGS AWARENESS: If a company has upcoming earnings (from the earnings alerts), factor that into the thesis — consider pre-earnings setups, post-earnings plays, or avoidance if too risky. Earnings can be a major catalyst.
-11. SECTOR ROTATION: If multiple companies in the same sector have upcoming earnings, consider sector-wide implications and which companies are best positioned.
+10. EARNINGS AWARENESS: If a company has upcoming earnings (from the earnings alerts), factor that into the thesis — consider pre-earnings setups, post-earnings plays, or avoidance if too risky.
+11. SECTOR ROTATION: If multiple companies in the same sector have upcoming earnings, consider sector-wide implications.
+12. **OPTIONS RECOMMENDATIONS: For high-conviction ideas (8+), also suggest an options strategy** — long calls for bullish, long puts for bearish, spreads for defined risk, iron condors for range-bound. Include strike, expiry (min 14 DTE), and max risk.
 
 For EACH idea output:
 ### [#] TICKER - Thesis
@@ -2419,59 +2420,61 @@ Options Data:
 {earnings_section}
 {sentiment_section}
 
-Generate **2-3 Options Ideas** using PRICING IMBALANCE analysis + EARNINGS AWARENESS.
+Generate **2-4 Options Ideas** using the most advanced, research-backed strategies.
 
-## OPTIONS STRATEGY FRAMEWORK
+## AVAILABLE STRATEGIES (select best for each situation)
 
-First, analyze the options data for PRICING IMBALANCES:
-- IV Rank > 70: Options are EXPENSIVE -> Sell premium (covered calls, cash-secured puts, credit spreads)
-- IV Rank < 30: Options are CHEAP -> Buy premium (LEAPS calls, debit spreads)
-- Put/Call Ratio > 1.5: Extreme bearish sentiment -> Contrarian buy opportunity
-- Put/Call Ratio < 0.5: Extreme bullish sentiment -> Consider taking profits
-- IV > HV by 50%+: Options overpriced -> Sell volatility
-- IV < HV by 30%+: Options underpriced -> Buy volatility
+### DIRECTIONAL (High Conviction)
+1. **ASYMMETRIC LONG CALLS** — Unlimited upside, defined risk. Best: low IV + high conviction + catalyst. Position: 2-3% of portfolio.
+2. **ASYMMETRIC LONG PUTS** — Defined risk bearish. Best: low IV + clear downside thesis.
+3. **CALL DEBIT SPREADS** — Buy ATM call, sell OTM at target. Reduces cost when IV is high.
+4. **PUT DEBIT SPREADS** — Buy ATM put, sell OTM at support. Defined risk, lower cost.
+5. **LEVERAGED OTM CALLS** — For conviction 9+. Cheaper entry, higher ROI if thesis plays.
 
-## STRATEGY TYPES (in order of priority)
+### INCOME / RANGE-BOUND (High IV)
+6. **IRON CONDORS** — Sell OTM call spread + OTM put spread. 70-80% probability of profit. Best: high IV rank.
+7. **IRON BUTTERFLIES** — Narrower wings. Higher max profit, narrower zone. Best: earnings with expected small move.
+8. **CALENDAR SPREADS** — Sell near-term, buy longer-term same strike. Profits from faster decay.
+9. **COVERED CALLS** — Sell OTM calls on stocks already owned. Income generation.
+10. **CASH-SECURED PUTS** — Sell OTM puts on stocks willing to own. Income + potential buying.
 
-### 1. ASYMMETRIC PLAYS (highest priority)
-- Trades where upside is 5x+ the downside
-- LEAPS calls on high-conviction growth stocks
-- Must have clear catalyst and timeline
-- Once-in-a-lifetime opportunities with massive upside
+### VOLATILITY & ARBITRAGE
+11. **STRADDLES/STRANGLES** — Buy call + put. Profits from large move either direction. Best: before earnings when IV low.
+12. **RATIO SPREADS** — Buy 1 ATM, sell 2 OTM. Zero/negative cost, unlimited upside to short strike.
+13. **DIAGONAL SPREADS** — Sell near-term OTM, buy longer-term further OTM. Directional + time decay.
+14. **VOLATILITY ARBITRAGE** — Sell overpriced options (IV >> HV), buy underpriced (IV << HV).
 
-### 2. PREMIUM SELLING (consistent income)
-- Covered calls on existing positions
-- Cash-secured puts on stocks you want to own
-- Only sell when IV Rank > 70 (expensive options)
-- Target 1-2% monthly return with high probability
-
-### 3. HIGH PROBABILITY TRADES
-- Credit spreads on overbought/oversold conditions
-- Iron condors on range-bound stocks
-- Probability of profit > 70%
+## STRATEGY SELECTION RULES
+- **Bullish + Low IV** → Long calls or call debit spreads
+- **Bullish + High IV** → Covered calls or cash-secured puts
+- **Bearish + Low IV** → Long puts or put debit spreads
+- **Bearish + High IV** → Put credit spreads
+- **Neutral + High IV** → Iron condors or iron butterflies
+- **Neutral + Low IV** → Calendar spreads
+- **High uncertainty** → Straddles/strangles
+- **Mispricing detected** → Volatility arbitrage
+- **Earnings approaching** → Straddles (buy) or iron condors (sell)
 
 ## RULES
-- Defined-risk ONLY (long calls/puts, covered calls, LEAPS, credit spreads)
-- Min 2wk expiry, prefer 30-90d or 6mo+ LEAPS
-- Max 5% portfolio total in options
-- NEVER let expire ITM - SELL before expiry
+- Defined-risk ONLY (long calls/puts, covered calls, LEAPS, credit spreads, iron condors)
+- Min 14-day expiry, prefer 30-90 DTE or 6mo+ LEAPS
+- Max 3% of portfolio per options trade
+- NEVER let expire ITM — SELL before expiry
 - NO leverage, NO naked, NO margin
-- Every trade must have a clear EDGE (pricing imbalance)
-- Look for pricing imbalances that present asymmetric opportunities
+- Every trade must have a clear EDGE
 
-For EACH:
-### [Strategy] on [TICKER]
-**Type:** [Long Call/Put/Covered Call/LEAPS/Credit Spread]
-**Edge:** [Why this has an edge - pricing imbalance]
-**Why:** 1-2 sentences
-**Strike/Expiry:** $X / [date]
-**Premium/Max Risk:** $X (all you can lose)
+## FORMAT FOR EACH IDEA
+### [Strategy Name] on [TICKER]
+**Type:** [Long Call/Put/Spread/etc.]
+**Why:** 1-2 sentences on the edge
+**Strike/Expiry:** $X / [date, min 14 DTE]
+**Max Risk:** $X (all you can lose)
 **Target:** Sell @ $X or X% gain
-**Probability of Profit:** X%
-**EXIT:** SELL before expiry, NEVER let ITM.
+**Probability of Profit:** X% (if applicable)
 **Conviction:** X/10
+**EXIT:** SELL before expiry, NEVER let ITM.
 
-Suggest 1 **Covered Call** if owner holds underlying.
+**IMPORTANT:** Include at least 1 strategy on a NEW ticker the user doesn't own (from the earnings watchlist or broad market scan). Also suggest 1 covered call or cash-secured put on existing holdings if appropriate.
 
 Educational only. Verify with broker.*""".format(
             memory_summary=memory_summary,
@@ -3019,42 +3022,125 @@ def main():
             pass
 
     # 3d. Portfolio monitoring — CSV portfolio (user's real holdings) for alerts
-    # Alpaca paper trading is monitored separately below (no Telegram alerts for paper trades)
-    log("📊 Monitoring CSV portfolio (user's real holdings)...")
+    # 3d-2. Advanced CSV portfolio management — same 8-strategy system as Alpaca
+    # Uses: trailing stops, thesis checks, momentum, risk parity, contrarian buys, etc.
+    log("📊 Advanced CSV portfolio management (8-strategy system)...")
     csv_portfolio = analyze_portfolio_weightage()
     csv_total = csv_portfolio.get('total_value', 0)
     csv_cost = sum(h.get('cost_basis', 0) for h in csv_portfolio.get('top_positions', []))
     csv_pnl = csv_total - csv_cost
     csv_pnl_pct = (csv_pnl / csv_cost * 100) if csv_cost > 0 else 0
     concentration = csv_portfolio.get('concentration_ratio', 0)
-
-    log(f"[OK] CSV Portfolio: ${csv_total:,.0f} value | P&L: ${csv_pnl:+,.0f} ({csv_pnl_pct:+.1f}%) | "
+    
+    log(f"[OK] CSV Portfolio: ${csv_total:,.0f} | P&L: ${csv_pnl:+,.0f} ({csv_pnl_pct:+.1f}%) | "
         f"Concentration: {concentration:.1f}% | Positions: {csv_portfolio.get('total_holdings', 0)}")
-
-    # Check CSV portfolio for urgent alerts (stop-loss, concentration, etc.)
-    csv_urgent = []
+    
+    # Apply the same 8-strategy system to CSV portfolio
+    from skills.portfolio_manager import get_position_fundamentals, review_all_positions
+    csv_actions = []
+    
     for pos in csv_portfolio.get('top_positions', []):
+        ticker = pos.get('ticker', '')
         pnl_pct = pos.get('unrealized_pnl_pct', 0)
         pos_pct = pos.get('portfolio_pct', 0)
-        ticker = pos.get('ticker', '')
-        # Alert on significant moves in user's real portfolio
-        if pnl_pct <= -15:
-            csv_urgent.append(f"🛑 {ticker} down {pnl_pct:.1f}% — consider selling")
-        if pos_pct > 25:
-            csv_urgent.append(f"⚠️ {ticker} is {pos_pct:.0f}% of portfolio — concentration risk")
-        if pnl_pct >= 50:
-            csv_urgent.append(f"🎯 {ticker} up {pnl_pct:.1f}% — consider taking profits")
-
-    # Send Telegram alerts for CSV portfolio (user's real holdings) — NOT for paper trading
-    if csv_urgent:
+        shares = pos.get('shares', 0)
+        avg_cost = pos.get('purchase_price', 0)
+        current_price = pos.get('current_price', 0)
+        
+        # Get fundamentals for deeper analysis
+        fundamentals = get_position_fundamentals(ticker)
+        
+        # Technical analysis
+        try:
+            import yfinance as yf
+            old_stderr = __import__('sys').stderr
+            __import__('sys').stderr = __import__('io').StringIO()
+            try:
+                t = yf.Ticker(ticker)
+                hist = t.history(period="3mo")
+                if hist is not None and len(hist) > 20:
+                    recent_high = hist["Close"].rolling(20).max().iloc[-1]
+                    pullback = ((current_price - recent_high) / recent_high * 100) if recent_high > 0 else 0
+                    ma20 = hist["Close"].rolling(20).mean().iloc[-1]
+                    ma50 = hist["Close"].rolling(50).mean().iloc[-1] if len(hist) >= 50 else ma20
+                    uptrend = current_price > ma20 > ma50
+                    downtrend = current_price < ma20 < ma50
+                else:
+                    pullback = 0; uptrend = True; downtrend = False
+            finally:
+                __import__('sys').stderr = old_stderr
+        except Exception:
+            pullback = 0; uptrend = True; downtrend = False
+        
+        # Thesis check
+        thesis_intact = not fundamentals.get("consecutive_misses", False)
+        thesis_broken = fundamentals.get("consecutive_misses", False) or fundamentals.get("below_200ma", False) and pnl_pct < -10
+        
+        # Trailing stop (dynamic)
+        stop_pct = -10 if uptrend else (-7 if downtrend else -12)
+        
+        # Generate action
+        action = None
+        reason = ""
+        
+        # 1. Trailing stop hit
+        if pullback <= stop_pct and pnl_pct < 0:
+            action = "SELL"
+            reason = f"Trailing stop: pulled back {pullback:.1f}% from 20-day high (stop: {stop_pct}%)"
+        # 2. Thesis broken
+        elif thesis_broken:
+            action = "SELL"
+            reason = "Thesis broken: consecutive misses or deteriorating fundamentals"
+        # 3. Downtrend + loss = cut quickly
+        elif downtrend and pnl_pct < -10:
+            action = "SELL"
+            reason = f"Downtrend + {pnl_pct:+.1f}% loss — cut before deeper damage"
+        # 4. Concentration risk
+        elif pos_pct > 20:
+            action = "TRIM"
+            reason = f"Concentration: {pos_pct:.1f}% of portfolio exceeds 20% max"
+        # 5. Contrarian buy (average down on weakness, thesis intact)
+        elif pnl_pct <= -20 and thesis_intact and not downtrend and pos_pct < 5:
+            action = "BUY_MORE"
+            reason = f"Down {pnl_pct:.1f}% but thesis intact — averaging down on weakness"
+        # 6. Add to winner (uptrend, conviction, small position)
+        elif uptrend and thesis_intact and pnl_pct > 10 and pos_pct < 8:
+            action = "BUY_MORE"
+            reason = f"Uptrend +{pnl_pct:.1f}%, only {pos_pct:.1f}% of portfolio — adding to winner"
+        
+        if action:
+            csv_actions.append({
+                "ticker": ticker,
+                "action": action,
+                "reason": reason,
+                "pnl_pct": pnl_pct,
+                "pos_pct": pos_pct,
+                "shares": shares,
+                "current_price": current_price,
+            })
+    
+    # Log and alert on CSV actions
+    if csv_actions:
+        log(f"[OK] CSV portfolio actions generated: {len(csv_actions)} items")
+        for a in csv_actions[:5]:
+            emoji = {"SELL": "🛑", "TRIM": "✂️", "BUY_MORE": "➕"}.get(a["action"], "⚪")
+            log(f"  {emoji} {a['action']} {a['ticker']}: {a['reason']}")
+    
+    # Telegram alerts for CSV portfolio actions
+    urgent_csv = [a for a in csv_actions if a["action"] in ("SELL", "TRIM")]
+    if urgent_csv:
         try:
             from skills.telegram_bot import broadcast
-            alert_text = "📈 <b>PORTFOLIO ALERT</b> (Your Holdings)\n\n"
-            for msg in csv_urgent:
-                alert_text += f"• {msg}\n"
-            alert_text += f"\nPortfolio: ${csv_total:,.0f} | P&L: {csv_pnl_pct:+.1f}%"
+            alert_text = "📈 <b>PORTFOLIO ACTION REQUIRED</b>\n\n"
+            for a in urgent_csv[:5]:
+                emoji = "🛑" if a["action"] == "SELL" else "✂️"
+                alert_text += f"{emoji} <b>{a['action']} {a['ticker']}</b>: {a['reason']}\n"
+                alert_text += f"   P&L: {a['pnl_pct']:+.1f}% | Position: {a['pos_pct']:.1f}% of portfolio\n\n"
+            alert_text += f"Portfolio: ${csv_total:,.0f} | P&L: {csv_pnl_pct:+.1f}%"
             broadcast(alert_text)
-            log("[OK] 📈 CSV portfolio alert sent to Telegram!")
+            log("[OK] 📈 CSV portfolio action alert sent to Telegram!")
+        except Exception as e:
+            log(f"[!] Failed to send CSV alert: {e}")
         except Exception as e:
             log(f"[!] Failed to send CSV portfolio alert: {e}")
 

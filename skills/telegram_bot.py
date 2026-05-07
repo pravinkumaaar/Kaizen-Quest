@@ -85,6 +85,7 @@ def _split_message(text, max_chars):
     """
     Split text into chunks that fit within max_chars.
     Tries to split on paragraph boundaries, then line breaks, then hard split.
+    HTML-aware: avoids splitting in the middle of <pre>...</pre> blocks.
     """
     if len(text) <= max_chars:
         return [text]
@@ -109,9 +110,32 @@ def _split_message(text, max_chars):
             split_pos = max_chars
 
         chunk = remaining[:split_pos].rstrip()
+        
+        # HTML tag balancing: check for unclosed tags
+        import re
+        # Find all opening and closing tags
+        opens = re.findall(r'<(pre|b|i|u|s|code|blockquote)[^>]*>', chunk)
+        closes = re.findall(r'</(pre|b|i|u|s|code|blockquote)>', chunk)
+        
+        # If we have unclosed <pre> tags, close them and add opening tag to next chunk
+        pre_opens = chunk.count('<pre>')
+        pre_closes = chunk.count('</pre>')
+        if pre_opens > pre_closes:
+            chunk += '\n</pre>'
+            remaining = '<pre>\n' + remaining[split_pos:].lstrip()
+        else:
+            remaining = remaining[split_pos:].lstrip()
+        
+        # Balance other inline tags
+        for tag in ['b', 'i', 'u', 's', 'code']:
+            tag_opens = chunk.count(f'<{tag}>')
+            tag_closes = chunk.count(f'</{tag}>')
+            if tag_opens > tag_closes:
+                chunk += f'</{tag}>'
+                remaining = f'<{tag}>' + remaining
+        
         if chunk:
             chunks.append(chunk)
-        remaining = remaining[split_pos:].lstrip()
 
     return chunks
 
@@ -174,8 +198,37 @@ def cmd_portfolio():
     if not p.exists():
         return "📊 No portfolio yet. Add portfolio CSV files to the portfolios/ folder."
     text = p.read_text()
-    # Don't pre-truncate — let send() handle splitting
-    return f"📊 <b>Portfolio</b>\n\n<pre>{text}</pre>"
+    # Split into sections for better Telegram rendering
+    lines = text.split('\n')
+    header = []
+    table_lines = []
+    in_table = False
+    for line in lines:
+        if line.startswith('| ') and '---' not in line:
+            in_table = True
+            table_lines.append(line)
+        elif not in_table:
+            header.append(line)
+    
+    # Build output in chunks that split well
+    output = f"📊 <b>Portfolio</b>\n\n"
+    output += '\n'.join(header[:10]) + '\n\n'  # First part of header
+    
+    # Add table in chunks
+    if table_lines:
+        output += "<b>Top Holdings:</b>\n"
+        for tl in table_lines[:30]:  # Top 30 positions
+            # Simplify table rows for Telegram
+            parts = [x.strip() for x in tl.split('|') if x.strip()]
+            if len(parts) >= 4:
+                ticker = parts[0].replace('**', '')
+                shares = parts[1] if len(parts) > 1 else ''
+                price = parts[2] if len(parts) > 2 else ''
+                value = parts[3] if len(parts) > 3 else ''
+                pnl = parts[4] if len(parts) > 4 else ''
+                output += f"• <b>{ticker}</b>: {shares} @ {price} = {value} ({pnl})\n"
+    
+    return output
 
 def cmd_recs():
     p = BASE_DIR / "docs" / "RECOMMENDATIONS.md"
@@ -266,6 +319,7 @@ def cmd_report():
     if not rs:
         return "📝 No reports yet. Run the agent to generate one."
     text = rs[0].read_text()
+    # Return full report — send() will split into multiple messages if needed
     return f"📝 <b>Latest Report</b> ({rs[0].stem})\n\n{text}"
 
 def cmd_buy(args):
