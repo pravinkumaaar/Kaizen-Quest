@@ -38,10 +38,15 @@ Track every investment decision, its reasoning, and outcome.
 2026-05-06|RKLB|BUY|N/A|N/A|8/10| Active | +0.0% |Type/Stock: Equity — Currently in portfolio at 2.2% ($5,198 current value, cost  |
 | 2026-05-06 | SMCI | BUY | $32.16 | $44.00 | 7/10 | Active | - | Type/Stock: Equity — Currently in portfolio at 1.4% ($3,287 current value, cost  |
 | 2026-05-06 | MU | BUY | $660.58 | $850.00 | 8/10 | Active | - | Type/Stock: Equity — Currently in portfolio at 5.2% ($12,219 current value, cost |
-| 2026-05-06 | NVDA | BUY | $204.92 | N/A | 7/10 | Active | - | Why: NVDA reports May 20. The AI capex cycle is undeniable — every hyperscaler i |
+2026-05-06|NVDA|BUY|$204.92|N/A|7/10| Active | +0.0% |Why: NVDA reports May 20. The AI capex cycle is undeniable — every hyperscaler i |
 | 2026-05-06 | ANET | BUY | $142.25 | N/A | 5/10 | Active | - | Why: Arista Networks dropped 16% on what appears to be a post-earnings "sell the |
 | 2026-05-06 | SMCI | BUY | $34.46 | N/A | 7/10 | Active | - | Why: Super Micro ripped +24% today on what appears to be a short squeeze combine |
-| 2026-05-06 | NVDA | BUY | $207.32 | N/A | 9/10 | Active | - | Why: NVIDIA reports May 20 — 14 days out. You already own 13.2% at a +99.8% gain |
+2026-05-06|NVDA|BUY|$207.32|N/A|9/10| Active | +0.0% |Why: NVIDIA reports May 20 — 14 days out. You already own 13.2% at a +99.8% gain |
 2026-05-06|VRT|BUY|$358.92|$475.00|8/10| Active | +0.0% |Why: AI data centers don't just need chips — they need power, cooling, and elect |
 2026-05-06|RKLB|BUY|$84.65|$125.00|7/10| Active | +0.0% |Why: Rocket Lab is the "second derivative" of the space economy — they're not ju |
 2026-05-07|REDUCE|BUY|$133.79|N/A|8/10| Active | +0.0% |Why: 28.7% of your entire portfolio in a single stock trading at a ~95x forward  |
+2026-05-07|NVDA|BUY|$213.01|$250.00|7/10| Active | +0.0% |Why: NVDA reports May 20 (13 days). Consensus EPS $1.79 on $80.1B revenue. Black |
+2026-05-07|SOFI|BUY|$16.35|$24.00|8/10| Active | +0.0% |Why: SoFi is the only fintech that became a bank and is actually thriving becaus |
+2026-05-07|PLTR|BUY|$139.51|N/A|9/10| Active | +0.0% |Why: Palantir is your best performer (+122.6%) and it's now 30% of your portfoli |
+2026-05-07|VRT|BUY|$344.63|$420.00|7/10| Active | +0.0% |Why: Vertiv is the invisible backbone of every AI data center on Earth. They mak |
+2026-05-07|TEM|BUY|$50.09|N/A|8/10| Active | +0.0% |Why: Tempus AI is down 30.2% from your cost basis and down 6.39% today. The thes |

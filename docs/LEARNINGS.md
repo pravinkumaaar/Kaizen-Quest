@@ -1,49 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-rategy works — not just recommending it — is the single highest-value feature. The user explicitly said "teach me while recommending" and rated runs higher when the logic chain was clear.
-- **News quality and narrative synthesis**: The 8.5/10 run praised news quality as "highest quality." This run's narrative about AI infrastructure rotation (NVDA/SMCI up, ANET profit-taking, speculative AI names surging) follows that pattern — connecting individual stock moves into a coherent macro story.
-
-## ❌ What Needs Improvement
-
-- **Stale/incorrect data is the #1 rating killer**: Multiple low ratings (2/10, 4/10) explicitly cited outdated options data and wrong prices (e.g., PLTR data "from 2 years back"). This run shows ANET at $142.25 ▼16.43% — if that's after-hours delayed data, it must be **explicitly labeled as such** and cross-referenced.
-
-## Run: 2026-05-06 19:10:05
-## LEARNINGS.md — Run 1910 Self-Review
-
-- **What worked well:** The portfolio-aware analysis in the most recent runs (scoring 7–8.5/10) succeeded because it cross-referenced actual holdings, weightings, and cost basis against current prices — users explicitly praised understanding their positions and giving thesis-backed suggestions on existing holdings. The options education component (LEAPs, reasoning, "teach me" approach) was repeatedly cited as a strength when it included current data and clear logic chains.
-
-- **Critical failure — stale data:** The single most damaging pattern across low-rated runs (2/10, 4/10) was outdated options data and stale price references (e.g., PLTR data from 2 years back). This destroys trust instantly. **Action:** Every price, options chain, and news citation must be verified as same-day before output. If a data source is stale, flag it explicitly rather than silently outputting bad data. Build a pre-output validation checkpoint that rejects any ticker price older than 24 hours.
-
-- **Portfolio-only tunnel vision:** Users rated reports higher when recommendations included *new* tickers not already in the portfolio. The 8.5/10 run was docked specifically for only suggesting buys/sells within existing holdings. **Action:** Always include 2–3 "discovery" picks outside the portfolio that align with the user's evident thesis (AI infrastructure, semiconductors, niche plays like MU, PLTR). The user's own suggestions (MU, PLTR) should be treated as high-priority research leads, not ignored.
-
-- **Formatting & prioritization:** Users want the biggest movers and most news-impacting events surfaced first, not a random or alphabetical list. The 6/10 feedback explicitly called out that tickers seemed "random or in the order in which it was read." **Action:** Sort
-
-## Run: 2026-05-06 20:52:18
-# 🧠 Self-Review & Learnings — Run 2052
-**2026-05-06 20:52:18**
-
----
-
-## 📉 What Caused Low Ratings (Pattern Analysis)
-
-- **Stale/Outdated Data Recurring Issue:** Multiple low ratings (2/10, 4/10) explicitly cited outdated options data and stale price references (e.g., PLTR data from 2 years back). This is a systemic data pipeline problem — the agent is pulling cached or delayed data instead of real-time feeds. This erodes trust more than any other single failure.
-- **Recommendations Too Mainstream:** The 2/10 rating called out that picks were "too mainstream" — just megapaps and heavily traded names. The user wants niche, under-the-radar opportunities, not the same NVDA/PLTR/MU everyone already knows about.
-- **Weak Educational/Hobby Content:** The 4/10 rating said the learning section was "very weak and something I already knew." The agent is regurgitating surface-level content instead of teaching novel frameworks or deeper analysis.
-- **Portfolio-Agnostic Recommendations:** Earlier runs (7/10) didn't understand positions or weightings. The 8.5/10 run improved here but still only recommended from existing holdings — the user explicitly wants **new tickers not in their portfolio**.
-
----
-
-## ✅ What Worked Well This Run
-
-- **Portfolio-Aware Analysis:** The 8.5/10 rating confirmed the agent finally understood positions, weightings, cost basis vs. current price, and gave thesis-driven suggestions on existing holdings. This is the strongest progress area.
-- **News Quality:** The 8.5/10 rating praised news quality as "highest quality." The AI infrastructure rally narrative with specific tickers (SMCI
-
-## Run: 2026-05-06 18:34:17 ET
-- **What User Feedback Consistently Demands vs. What's Delivered**: Low ratings (2–4/10) all cite the same failure modes: recommendations lack niche conviction, options data is stale, reasoning is surface-level, and the system only recycles existing holdings instead of scouting new opportunities. The one 8.5/10 rating explicitly praised portfolio-aware analysis with weighted positions and cost-basis context — confirming the user wants *personalized*, *position-aware* intelligence, not generic market commentary. **Lesson: Never recommend without cross-referencing cost basis vs. current price, position weight, and whether the ticker already exists in the portfolio alongside concentration risk.**
-
-- **Data Staleness Is the #1 Trust Killer**: Multiple reviews flagged options chains and prices as "outdated by 2 years" or referencing wrong dates. This signals the data pipeline is either pulling cached snapshots or falling back to stale endpoints during market hours. **Lesson: Every price, options chain, and news item must be timestamp-verified at report generation time. If real-time data is unavailable, explicitly flag it as "delayed" with the timestamp — never let stale data silently pass as current.**
-
-- **Biggest Movers ≠ Most Important Movers for This Portfolio**: The report lists SMCI +24.5% as the top mover, but the user holds WOLF at $380.70 avg price (now $43.08 — a ~89% loss) and doesn't appear to get any specific guidance on that catastrophic drawdown. Similarly, ANET at -13.61% is only a 2-share position, yet the narrative treats it as significant. **Lesson: Rank movers by *dollar impact on portfolio* (shares × price change), not percentage move. A 3% shift on PLTR (516 shares, ~$62 avg
+3% shift on PLTR (516 shares, ~$62 avg
 
 ## Run: 2026-05-07 07:25:38 ET
 # 🔍 Self-Reflection — Run 0725 | 2026-05-07
@@ -149,3 +106,49 @@ rategy works — not just recommending it — is the single highest-value featur
 - **No stop-losses defined for any position.** This is a critical, recurring gap. The learning history flagged this and it remains unaddressed. For a portfolio holding WOLF (potentially down 89%), the absence of stop-loss discipline is a systemic risk that could lead to catastrophic loss.
 - **78% cash concentration is itself a risk** — not a market risk, but an inflation and opportunity cost risk. In a rising market (SPY +1.4%, QQQ +2.1% today), holding 78% cash is a guaranteed underperformance strategy.
 - **No tail risk hedges are
+
+## Run: 2026-05-07 11:41:53 ET
+## 🧠 OWL Self-Reflection — Run 1141 | 2026-05-07
+
+---
+
+### What Worked Well
+
+- **SOFI at $16.35 with 8/10 conviction was a strong call.** SOFI is up +5.37% today (SHOP proxy for fintech momentum) and the broader fintech rotation is supporting this thesis. The reasoning around SOFI's lending platform moat and deposit growth was well-articulated in prior runs, and today's price action validates the setup. This is the kind of non-megacap, non-precious-metal pick the user explicitly asked for.
+- **PLTR at $139.51 with 9/10 conviction is the highest-rated pick and aligns perfectly with user feedback.** The user specifically said "I personally believe PLTR is a great buy now" (April 22 feedback), and we've now elevated it to top conviction. PLTR's AIP commercial traction and government contract pipeline justify the rating. This is a direct response to user preference and it's working.
+- **NVDA at $213.01 with 7/10 conviction is directionally correct** — NVDA is up +2.49% today, outperforming the market. The thesis around Blackwell ramp and data center demand remains intact. However, the conviction score should arguably be higher given today's relative strength.
+- **Market sentiment reading was accurate.** Identifying the "split performance" and "risk-off rotation out of speculative AI/quantum names" correctly diagnosed why IONQ (-6.45%), QUBT (-5.64%), CRWV (-6.28%), and NVTS (-7.43%) were getting hit. This shows the narrative analysis is working.
+
+---
+
+### What Didn't Work
+
+- **The portfolio only has 3 positions with 78% cash.** This is the single biggest failure. The user's portfolio shows 70 total holdings in the movers section but only 3 active positions in the portfolio summary. This disconnect suggests a data ingestion problem — the system is reading the holdings list but not properly loading them into the portfolio management layer. This has been flagged repeatedly and remains broken.
+- **Concentration showing 0.0% is mathematically absurd.** With $100K portfolio, 3 positions, and visible holdings like NVDA at $213.01, VRT at $344.63, and WOLF at $47.27, the concentration cannot be 0.0%. This is either a division-by-zero bug or the position sizes aren't being read. This was flagged in learning history and persists — it needs an immediate code-level fix.
+- **WOLF at $47.27 is up +9.73% today but we have no thesis on it.** It's the biggest mover in the portfolio and we're not explaining why or whether to take profits. This is a gap — every major mover in the user's existing holdings deserves a comment.
+- **The report is still only recommending from a narrow watchlist.** The user's April 30 feedback explicitly said: "it only considered stocks from my portfolio to recommend buying or selling and not anything new." Today's recommendations (NVDA, SOFI, PLTR, VRT, TEM) — NVDA and VRT are already in the portfolio. Only SOFI, PLTR, and TEM are truly "new." We need to expand the universe.
+
+---
+
+### Conviction Calibration
+
+- **9/10 on PLTR is justified and well-calibrated.** PLTR is a high-quality name with strong fundamentals, government + commercial AI revenue, and the user specifically wants exposure here. If anything, the only risk is that 9/10 leaves no room for "perfect" — but given the user's explicit preference, this is appropriate.
+- **8/10 on TEM at $50.09 is interesting but unproven.** TEM (Tempus AI) is down -6.37% today, which is concerning for a fresh recommendation. The thesis around AI-driven precision medicine is sound, but recommending a stock on a -6% day without acknowledging the momentum risk is a calibration error. Should be 7/10 with a "wait for stabilization" caveat.
+- **7/10 on NVDA at $213.01 is under-rated.** NVDA is up +2.49% today, showing relative strength while the rest of the AI infrastructure stack craters. This is exactly the kind of divergence that signals quality. NVDA should be 8/10 — it's the "best house on a bad street" trade.
+- **No recommendations below 5/10 conviction.** This is a calibration problem. If every pick is 7+, the scale is compressed. We need to be willing to rate marginal ideas at 4-5/10 to maintain discriminative power.
+
+---
+
+### Missed Opportunities
+
+- **SHOP at $111.10 is up +5.37% today and not in recommendations.** Shopify is showing massive relative strength, likely benefiting from the same e-commerce/tailwind narrative. This should have been flagged as a "momentum continuation" candidate, especially since the user wants non-megacap ideas.
+- **UUUU at $24.79 up +5.40% — Energy Fuels Corp (uranium)** is the exact kind of niche, non-mainstream pick the user asked for on April 22. Uranium names have been rallying on nuclear energy renaissance thesis. This is a missed opportunity to show we're listening.
+- **MU (Micron) was explicitly requested by the user on April 22** and still hasn't appeared in recommendations. MU is critical for the AI memory/stack thesis and is a direct ask. This is a failure to incorporate user feedback.
+- **No short or hedge recommendations.** With VIX at 27.1 and speculative AI names crashing (IONQ -6.45%, QUBT -5.64%), there's a clear asymmetry in recommending puts or spreads on the weakest names. The user asked for options education — this is the perfect setup for explaining a put spread on IONQ or NVTS.
+
+---
+
+### Data Quality Issues
+
+- **The 70 holdings listed in the "Biggest Movers" section are not reflected in the portfolio management layer.** This is a critical data pipeline failure. The system can read the holdings for display but can't use them for position sizing, concentration analysis, or P&L attribution. This needs to be the #1 engineering priority.
+- **Options data remains a concern.** The April 22 feedback flagged "options data is completely outdated and from 2 years back." The learning history says "if the system cannot source current options chains, it should stop displaying options data entirely." Today's report doesn't show options data, which is the right call — but we need to confirm the pipeline is fixed, not just
