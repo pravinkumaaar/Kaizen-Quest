@@ -50,3 +50,6 @@ Track every investment decision, its reasoning, and outcome.
 2026-05-07|PLTR|BUY|$139.51|N/A|9/10| Active | +0.0% |Why: Palantir is your best performer (+122.6%) and it's now 30% of your portfoli |
 2026-05-07|VRT|BUY|$344.63|$420.00|7/10| Active | +0.0% |Why: Vertiv is the invisible backbone of every AI data center on Earth. They mak |
 2026-05-07|TEM|BUY|$50.09|N/A|8/10| Active | +0.0% |Why: Tempus AI is down 30.2% from your cost basis and down 6.39% today. The thes |
+2026-05-07|NVDA|BUY|$211.50|N/A|8/10| Active | +0.0% |Why: You own 13.5% of your portfolio in NVDA. It's the single most important ear |
+2026-05-07|AAPL|BUY|$193.00|$240.00|7/10| Active | +0.0% |Why: Everyone's distracted by the GPU wars, but AAPL is executing the most under |
+2026-05-07|NEBIUS|BUY|$184.77|$5.00|7/10| Active | +0.0% |Why: NBIS is up +246.3% from your cost base and represents 8.3% of your portfoli |
