@@ -48,7 +48,6 @@ def init_news_skill(tavily_key=None, finnhub_key=None, base_dir=None):
 # RSS Feeds — expanded with more diverse, higher-quality, real-time sources
 RSS_FEEDS = {
     "🤖 AI & Tech": [
-        "https://venturebeat.com/category/ai/feed/",
         "https://techcrunch.com/feed/",
         "https://www.theverge.com/rss/index.xml",
         "https://arstechnica.com/feed/",
@@ -56,6 +55,7 @@ RSS_FEEDS = {
         "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
         "https://feeds.bbci.co.uk/news/technology/rss.xml",
         "https://www.technologyreview.com/feed/",
+        "https://venturebeat.com/category/ai/feed/",
     ],
     "📈 Markets & Finance": [
         "https://feeds.marketwatch.com/marketwatch/topstories",
@@ -94,15 +94,19 @@ def _parse_date(date_str):
     """Try to parse an RSS date string into a datetime. Returns None if unparseable."""
     if not date_str:
         return None
-    # Common RSS date formats
+    # Common RSS date formats — order matters, try most specific first
     formats = [
         "%a, %d %b %Y %H:%M:%S %z",
         "%a, %d %b %Y %H:%M:%S GMT",
+        "%a, %d %b %Y %H:%M:%S",
         "%Y-%m-%dT%H:%M:%S%z",
         "%Y-%m-%dT%H:%M:%SZ",
         "%Y-%m-%dT%H:%M:%S.%f%z",
+        "%Y-%m-%dT%H:%M:%S",
         "%Y-%m-%d",
         "%d %b %Y",
+        "%a, %d %b %Y",  # e.g. "Thu, 22 Jan 2026" — date only, no time
+        "%b %d, %Y",     # e.g. "Jan 22, 2026"
     ]
     # Clean up common variations
     cleaned = date_str.strip()
@@ -122,11 +126,12 @@ def _parse_date(date_str):
     return None
 
 def _is_fresh(date_str, max_hours=MAX_ARTICLE_AGE_HOURS):
-    """Check if an article is fresh enough to include."""
+    """Check if an article is fresh enough to include.
+    Returns False (exclude) if date can't be parsed — better to skip stale content."""
     pub_date = _parse_date(date_str)
     if pub_date is None:
-        # If we can't parse the date, include it (better safe)
-        return True
+        # Can't parse date — exclude it to be safe (don't show potentially stale news)
+        return False
     # Make timezone-naive comparison
     now = datetime.utcnow()
     if pub_date.tzinfo:
@@ -168,15 +173,27 @@ def fetch_rss(max_per_feed: int = 5, cache_duration: int = 1200) -> dict:
                 
                 # Sort entries by published date (newest first) to avoid stale content
                 def _entry_date_key(entry):
-                    """Extract sortable date from feed entry."""
+                    """Extract sortable date from feed entry. Returns 0 for unparseable dates (sorted to bottom)."""
                     pub = entry.get("published_parsed") or entry.get("updated_parsed")
                     if pub:
                         try:
                             import calendar
-                            return calendar.timegm(pub)
+                            ts = calendar.timegm(pub)
+                            if ts > 0:
+                                return ts
                         except Exception:
                             pass
-                    return 0
+                    # Try parsing the published string as fallback
+                    pub_str = entry.get("published", "") or entry.get("updated", "")
+                    if pub_str:
+                        parsed = _parse_date(pub_str)
+                        if parsed:
+                            import calendar
+                            try:
+                                return calendar.timegm(parsed.timetuple())
+                            except Exception:
+                                pass
+                    return 0  # Unparseable dates sort to bottom
                 
                 sorted_entries = sorted(feed.entries, key=_entry_date_key, reverse=True)
                 

@@ -2566,60 +2566,101 @@ Use vivid language. Cross-domain connections welcome. No fluff.""".format(
         max_tokens=2000,
     )
 
-def task_self_reflect(report: str, memory: str) -> str:
+def task_self_reflect(report: str, memory: str, snapshot: dict = None,
+                         actions: list = None, foresight: dict = None) -> str:
     """
-    EFFICIENT SELF-REFLECTION:
-    - Uses rating-based feedback (minimal tokens)
-    - References recent ratings without full conversation
-    - Learns from tracking, not verbose introspection
+    Deep self-reflection for continuous improvement.
+    Analyzes: recommendation quality, portfolio decisions, data accuracy,
+    conviction calibration, risk management, and learning progression.
     """
-    log("  → Self-reflecting on run quality (rating-based)...")
+    log("  → Deep self-reflection & learning...")
     
     recent_ratings = get_recent_ratings(10)
     avg_rating = calculate_avg_rating()
     
-    # If avg_rating is low (<6), focus on improvement areas
-    # If high (>7), focus on what's working
-    improvement_mode = "LOW" if avg_rating != "N/A" and float(avg_rating.split('/')[0]) < 6 else "NORMAL"
+    # Determine improvement mode
+    try:
+        rating_val = float(avg_rating.split('/')[0]) if avg_rating != "N/A" else 5.0
+    except (ValueError, IndexError):
+        rating_val = 5.0
+    improvement_mode = "LOW" if rating_val < 6 else "NORMAL" if rating_val < 8 else "HIGH"
     
-    focus_prompt = "Focus on: What patterns caused low ratings? How to increase conviction accuracy?" if improvement_mode == "LOW" else ""
+    # Build rich context for reflection
+    learnings_history = read_file(LEARNING_FILE, max_chars=2000)
+    portfolio_summary = read_file(PORTFOLIO_FILE, max_chars=500)
+    recs_summary = read_file(RECOMMENDATIONS_FILE, max_chars=500)
+    
+    # Portfolio performance context
+    portfolio_context = ""
+    if snapshot:
+        portfolio_context = f"""
+Portfolio: ${snapshot.get('total_value', 0):,.0f} | P&L: ${snapshot.get('total_pnl', 0):+,.0f} ({snapshot.get('total_pnl_pct', 0):+.1f}%)
+Cash: {snapshot.get('allocation', {}).get('cash', 0):.0%} | Positions: {snapshot.get('num_positions', 0)}
+Concentration: {snapshot.get('concentration_ratio', 0):.1f}%"""
+    
+    # Actions taken context
+    actions_context = ""
+    if actions:
+        urgent = [a for a in actions if a.get('priority') == 'URGENT']
+        high = [a for a in actions if a.get('priority') == 'HIGH']
+        actions_context = f"\nActions taken: {len(urgent)} urgent, {len(high)} high priority"
+        for a in urgent[:3]:
+            actions_context += f"\n  • {a['type']} {a.get('symbol', '')}: {a['action']}"
+    
+    # Foresight context
+    foresight_context = ""
+    if foresight:
+        foresight_context = f"\nMarket Foresight: {foresight.get('composite_score', 0)}/100 ({foresight.get('direction', 'neutral')})"
     
     return call_llm(
-        system="You are an AI agent reviewing your own performance. Be specific and self-critical. Learn from user ratings and portfolio performance.",
-        user="""Report generated this run (first 2000 chars):
-{report}
+        system="""You are an AI investment agent conducting deep self-reflection. Your goal is to continuously improve recommendation quality, risk management, and portfolio performance.
 
-Recent user ratings (last 10):
-{ratings}
+Be brutally honest about mistakes. Identify specific patterns that led to good or bad outcomes. Propose concrete, actionable improvements. Reference specific data points, not vague generalities.
 
-Average rating: {avg_rating}
+Focus areas:
+1. RECOMMENDATION QUALITY: Were conviction scores calibrated correctly? Did high-conviction picks outperform? Were stop-losses set appropriately?
+2. PORTFOLIO MANAGEMENT: Is cash being deployed efficiently? Are concentration risks managed? Is the asset allocation optimal?
+3. DATA ACCURACY: Were there any stale prices, missing data, or hallucinated facts? How can data quality be improved?
+4. RISK MANAGEMENT: Were stop-losses triggered appropriately? Is the portfolio protected against tail risks?
+5. LEARNING PROGRESSION: Are we getting better over time? What recurring mistakes need systematic fixes?
+6. OPPORTUNITY COST: What did we miss? What should we have bought/sold but didn't?""",
+        user=f"""=== RUN CONTEXT ===
+Date: {NOW}
+Mode: {improvement_mode} (avg rating: {avg_rating})
 
-Portfolio performance context:
-{portfolio}
+=== REPORT SUMMARY (first 1500 chars) ===
+{report[:1500]}
 
-Recommendation tracking updates:
-{recommendations}
+=== USER FEEDBACK ===
+Recent ratings: {', '.join(recent_ratings[-5:]) if recent_ratings else 'None yet'}
+Average: {avg_rating}
 
-{focus}
+=== PORTFOLIO ===
+{portfolio_context}
+{actions_context}
+{foresight_context}
 
-Write 3-5 bullet points for LEARNINGS.md about:
-- What worked well in this run (be specific) - correlate with high ratings
-- What could be improved (data sources? formatting? depth?) - learn from low ratings  
-- Patterns noticed in portfolio performance vs recommendations
-- How to increase conviction accuracy for 90-95% win rate goal
-- Suggestions to make the next run better based on user feedback
+=== ACTIVE RECOMMENDATIONS ===
+{recs_summary}
 
-Format: markdown bullets. Today: {now}""".format(
-            report=report[:2000],
-            learnings=read_file(LEARNING_FILE, max_chars=800),
-            ratings='\n'.join(recent_ratings),
-            avg_rating=avg_rating,
-            portfolio=read_file(PORTFOLIO_FILE),
-            recommendations=read_file(RECOMMENDATIONS_FILE, max_chars=1000),
-            now=NOW,
-            focus=focus_prompt
-        ),
-        max_tokens=400,
+=== LEARNING HISTORY (recent) ===
+{learnings_history[-1000:]}
+
+=== YOUR TASK ===
+Write a comprehensive self-reflection (8-12 bullet points) covering:
+
+**What Worked Well** (be specific — name tickers, data sources, strategies)
+**What Didn't Work** (be specific — what was wrong and why)
+**Conviction Calibration** (were 8+ conviction picks actually good? any false positives?)
+**Missed Opportunities** (what should have been recommended but wasn't?)
+**Data Quality Issues** (any stale prices, missing chains, hallucinated facts?)
+**Risk Management** (are stop-losses set correctly? concentration managed?)
+**Cash Deployment** (is idle cash being deployed efficiently? opportunity cost?)
+**Process Improvements** (what systematic changes would improve next run?)
+
+Format: markdown bullets with specific tickers, prices, and data points. Be actionable.
+Today: {NOW}""",
+        max_tokens=1500,
     )
 
 
@@ -2917,14 +2958,59 @@ def main():
         if abs(sig.get("score", 0)) > 5:
             log(f"  → {sig['name']}: {sig['detail'][:120]}")
 
-    # Send Telegram alert for extreme readings
-    if foresight.get("alert"):
-        try:
-            from skills.telegram_bot import broadcast
+    # Send Telegram alerts for: foresight extremes, once-in-a-lifetime ops, rebalancing
+    # These are for the USER'S REAL PORTFOLIO (CSV), not paper trading
+    try:
+        from skills.telegram_bot import broadcast
+        alerts_sent = 0
+
+        # 1. Foresight alerts (crash warning / major bullish signal)
+        if foresight.get("alert"):
             broadcast(foresight["alert"])
-            log("[OK] 🚨 Market foresight alert sent to Telegram!")
-        except Exception as e:
-            log(f"[!] Failed to send foresight alert: {e}")
+            log("[OK] 🚨 Foresight alert sent to Telegram!")
+            alerts_sent += 1
+
+        # 2. Once-in-a-lifetime opportunities from the LLM's investment ideas
+        # The LLM flags these in the report with specific language
+        if "once-in-a-lifetime" in str(investments).lower() or "once in a lifetime" in str(investments).lower():
+            # Extract the opportunity from the report
+            import re
+            otl_match = re.search(r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n\n|\Z)', str(investments), re.DOTALL | re.IGNORECASE)
+            if otl_match:
+                otl_text = otl_match.group(0)[:500]
+                alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{otl_text}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                broadcast(alert_text)
+                log("[OK] ⭐ Once-in-a-lifetime alert sent to Telegram!")
+                alerts_sent += 1
+
+        # 3. Portfolio rebalancing suggestions for user's CSV portfolio
+        csv_portfolio = analyze_portfolio_weightage()
+        rebalance_alerts = []
+        for pos in csv_portfolio.get('top_positions', []):
+            pnl_pct = pos.get('unrealized_pnl_pct', 0)
+            pos_pct = pos.get('portfolio_pct', 0)
+            ticker = pos.get('ticker', '')
+            if pnl_pct <= -15:
+                rebalance_alerts.append(f"🛑 {ticker} down {pnl_pct:.1f}% — consider selling")
+            if pos_pct > 25:
+                rebalance_alerts.append(f"⚠️ {ticker} is {pos_pct:.0f}% of portfolio — trim to reduce concentration")
+            if pnl_pct >= 50:
+                rebalance_alerts.append(f"🎯 {ticker} up {pnl_pct:.1f}% — consider taking profits")
+
+        if rebalance_alerts:
+            alert_text = "📈 <b>PORTFOLIO REBALANCE ALERT</b>\n\n"
+            for msg in rebalance_alerts[:5]:
+                alert_text += f"• {msg}\n"
+            alert_text += f"\nPortfolio: ${csv_portfolio.get('total_value', 0):,.0f}"
+            broadcast(alert_text)
+            log(f"[OK] 📈 Rebalance alert sent ({len(rebalance_alerts)} items)")
+            alerts_sent += 1
+
+        if alerts_sent == 0:
+            log("  No urgent Telegram alerts this run")
+
+    except Exception as e:
+        log(f"[!] Failed to send Telegram alerts: {e}")
 
     if SKILLS_AVAILABLE:
         try:
@@ -2932,90 +3018,69 @@ def main():
         except Exception:
             pass
 
-    # 3d. Continuous portfolio monitoring — Alpaca is source of truth
-    log("📊 Running continuous portfolio monitoring (Alpaca API)...")
-    portfolio_snapshot = get_alpaca_portfolio_snapshot()
-    portfolio_actions = review_all_positions(portfolio_snapshot)
+    # 3d. Portfolio monitoring — CSV portfolio (user's real holdings) for alerts
+    # Alpaca paper trading is monitored separately below (no Telegram alerts for paper trades)
+    log("📊 Monitoring CSV portfolio (user's real holdings)...")
+    csv_portfolio = analyze_portfolio_weightage()
+    csv_total = csv_portfolio.get('total_value', 0)
+    csv_cost = sum(h.get('cost_basis', 0) for h in csv_portfolio.get('top_positions', []))
+    csv_pnl = csv_total - csv_cost
+    csv_pnl_pct = (csv_pnl / csv_cost * 100) if csv_cost > 0 else 0
+    concentration = csv_portfolio.get('concentration_ratio', 0)
 
-    # Log key findings
-    cash_pct = portfolio_snapshot["allocation"]["cash"]
-    log(f"[OK] Portfolio: ${portfolio_snapshot['total_value']:,.0f} total | "
-        f"${portfolio_snapshot['cash']:,.0f} cash ({cash_pct:.0%}) | "
-        f"{portfolio_snapshot['num_positions']} positions | "
-        f"P&L: ${portfolio_snapshot['total_pnl']:+,.0f} ({portfolio_snapshot['total_pnl_pct']:+.2f}%)")
+    log(f"[OK] CSV Portfolio: ${csv_total:,.0f} value | P&L: ${csv_pnl:+,.0f} ({csv_pnl_pct:+.1f}%) | "
+        f"Concentration: {concentration:.1f}% | Positions: {csv_portfolio.get('total_holdings', 0)}")
 
-    for action in portfolio_actions:
-        if action["priority"] in ("URGENT", "HIGH"):
-            log(f"  → [{action['priority']}] {action['type']}: {action['action']}")
+    # Check CSV portfolio for urgent alerts (stop-loss, concentration, etc.)
+    csv_urgent = []
+    for pos in csv_portfolio.get('top_positions', []):
+        pnl_pct = pos.get('unrealized_pnl_pct', 0)
+        pos_pct = pos.get('portfolio_pct', 0)
+        ticker = pos.get('ticker', '')
+        # Alert on significant moves in user's real portfolio
+        if pnl_pct <= -15:
+            csv_urgent.append(f"🛑 {ticker} down {pnl_pct:.1f}% — consider selling")
+        if pos_pct > 25:
+            csv_urgent.append(f"⚠️ {ticker} is {pos_pct:.0f}% of portfolio — concentration risk")
+        if pnl_pct >= 50:
+            csv_urgent.append(f"🎯 {ticker} up {pnl_pct:.1f}% — consider taking profits")
 
-    # Send urgent Telegram alerts for critical portfolio actions
-    alert_text = generate_urgent_alert(portfolio_snapshot, portfolio_actions)
-    if alert_text:
+    # Send Telegram alerts for CSV portfolio (user's real holdings) — NOT for paper trading
+    if csv_urgent:
         try:
             from skills.telegram_bot import broadcast
+            alert_text = "📈 <b>PORTFOLIO ALERT</b> (Your Holdings)\n\n"
+            for msg in csv_urgent:
+                alert_text += f"• {msg}\n"
+            alert_text += f"\nPortfolio: ${csv_total:,.0f} | P&L: {csv_pnl_pct:+.1f}%"
             broadcast(alert_text)
-            log("[OK] 🚨 Urgent portfolio alert sent to Telegram!")
+            log("[OK] 📈 CSV portfolio alert sent to Telegram!")
         except Exception as e:
-            log(f"[!] Failed to send portfolio alert: {e}")
+            log(f"[!] Failed to send CSV portfolio alert: {e}")
 
-    # 3e. Execute portfolio rebalancing trades via Alpaca
-    log("💼 Executing portfolio rebalancing trades via Alpaca...")
-    rebalance_trades = []
+    # 3d-2. Also monitor Alpaca paper trading (NO Telegram alerts — agent trades silently)
+    log("📊 Monitoring Alpaca paper trading account...")
+    try:
+        alpaca_snapshot = get_alpaca_portfolio_snapshot()
+        alpaca_cash_pct = alpaca_snapshot["allocation"]["cash"]
+        log(f"[OK] Alpaca: ${alpaca_snapshot['total_value']:,.0f} | "
+            f"Cash: {alpaca_cash_pct:.0%} | Positions: {alpaca_snapshot['num_positions']}")
 
-    for action in portfolio_actions:
-        if action["type"] in ("SELL", "SELL_PARTIAL", "REDUCE") and action["priority"] in ("URGENT", "HIGH"):
-            ticker = action.get("symbol", "")
-            if ticker and ticker != "CASH":
-                # Determine sell percentage
-                if action["type"] == "SELL" and action["priority"] == "URGENT":
-                    sell_pct = 1.0  # Sell all for URGENT
-                elif action["type"] == "SELL_PARTIAL":
-                    sell_pct = 0.5  # Sell 50% for partial
-                else:
-                    sell_pct = 0.5  # Sell 50% for REDUCE/HIGH
+        # Cash drag awareness — log opportunity cost
+        if alpaca_cash_pct > 0.50:
+            excess_cash = alpaca_snapshot["cash"] - (alpaca_snapshot["total_value"] * 0.15)
+            # Estimate opportunity cost: if market returns ~10% annually, idle cash costs ~0.04% daily
+            daily_opportunity_cost = excess_cash * 0.0004  # ~10% annual / 252 trading days
+            log(f"  💰 CASH DRAG: {alpaca_cash_pct:.0%} cash (${alpaca_snapshot['cash']:,.0f}). "
+                f"Excess: ${excess_cash:,.0f}. Est. daily opportunity cost: ${daily_opportunity_cost:.2f}")
+            log(f"  → Agent should deploy excess cash into high-conviction picks to reduce drag")
+    except Exception as e:
+        log(f"[!] Alpaca monitoring failed: {e}")
 
-                try:
-                    from skills.alpaca_trading import place_stock_order
-                    # Get current position qty from snapshot
-                    pos = next((p for p in portfolio_snapshot["positions"] if p["symbol"] == ticker), None)
-                    if pos:
-                        sell_qty = max(1, int(pos["qty"] * sell_pct))
-                        result = place_stock_order(ticker, sell_qty, "sell", "market")
-                        if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
-                            rebalance_trades.append(f"SELL {ticker} x{sell_qty} ({action['priority']})")
-                            log(f"[OK] Rebalance SELL: {ticker} x{sell_qty} @ market (status: {result.get('status')})")
-                        elif result.get("status") == "REJECTED":
-                            log(f"[!] Alpaca SELL rejected for {ticker}: {result.get('error', 'unknown')}")
-                except Exception as e:
-                    log(f"[!] Error selling {ticker}: {e}")
-
-        elif action["type"] == "DEPLOY_CASH":
-            # Deploy excess cash into diversified positions via Alpaca
-            try:
-                from skills.alpaca_trading import place_stock_order
-                deploy_amount = portfolio_snapshot["cash"] - (portfolio_snapshot["total_value"] * 0.15)
-                if deploy_amount > 1000:
-                    # Split: 40% broad market, 30% BTC, 30% GLD
-                    allocations = [
-                        ("VTI", deploy_amount * 0.4),
-                        ("BTC-USD", deploy_amount * 0.3),
-                        ("GLD", deploy_amount * 0.3),
-                    ]
-                    for ticker, amount in allocations:
-                        price = _yf_price(ticker)["price"]
-                        if price > 0:
-                            qty = max(1, int(amount / price))
-                            result = place_stock_order(ticker, qty, "buy", "market")
-                            if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
-                                rebalance_trades.append(f"BUY {ticker} x{qty} (${amount:,.0f})")
-                                log(f"[OK] Deploy BUY: {ticker} x{qty} @ market")
-            except Exception as e:
-                log(f"[!] Error deploying cash: {e}")
-
-    if rebalance_trades:
-        log(f"[OK] Executed {len(rebalance_trades)} rebalance trades")
-    else:
-        log("  No rebalance trades needed this run")
+    # 3e. Alpaca paper trading — no separate rebalancing needed
+    # The agent's buy decisions in section 10b handle capital deployment intelligently
+    # Sell decisions are made by the portfolio review in section 3d-2
+    log("💼 Alpaca paper trading — buy/sell decisions handled by conviction-based trading in section 10")
 
     # 4. Generate content (sub-agents run sequentially)
     log("✍️  Running sub-agents...")
@@ -3071,31 +3136,61 @@ def main():
     # This ensures that if MU was recommended at $640 and is now $663, we see +3.6% not 0.0%
     update_recommendation_performance()
 
-    # 4a-2. Also track Alpaca positions as "recommendations" so their performance is visible
-    # This ensures NVDA, MU, VRT (actual holdings) show live P&L in the recommendations section
+    # 4a-2. Sync Alpaca holdings into recommendations with correct entry prices
+    # This ensures NVDA, MU, VRT (actual Alpaca holdings) show live P&L with real entry prices
+    # Split into two sections: "Alpaсa Holdings" (what we own) and "Watchlist" (recommendations we don't own yet)
     try:
-        alpaca_positions = get_alpaca_portfolio_snapshot()
-        for pos in alpaca_positions["positions"]:
+        alpaca_snapshot = get_alpaca_portfolio_snapshot()
+        alpaca_symbols = set()
+        alpaca_rec_lines = []
+        for pos in alpaca_snapshot["positions"]:
             if pos["type"] == "stock":
-                # Check if this ticker is already tracked
-                existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
-                if pos["symbol"] not in existing_recs:
-                    # Add as a tracked position with the actual entry price from Alpaca
-                    rec_line = (f"- {TODAY} | {pos['symbol']} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
-                                f"${pos['current_price']:.2f} | {pos['unrealized_plpc']:+.1f}% | Long-term (Alpaca)")
-                    # Append to recommendations file
-                    content = existing_recs
-                    if "## Active Recommendations" in content:
-                        content = content.replace(
-                            "<!-- Agent will update this section with current recommendations -->",
-                            f"{rec_line}\n<!-- Agent will update this section with current recommendations -->"
-                        )
-                    else:
-                        content += f"\n\n## Active Recommendations\n{rec_line}\n<!-- Agent will update this section with current recommendations -->\n"
-                    RECOMMENDATIONS_FILE.write_text(content, encoding="utf-8")
-                    log(f"[OK] Tracking Alpaca position: {pos['symbol']} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({pos['unrealized_plpc']:+.1f}%)")
+                sym = pos["symbol"]
+                alpaca_symbols.add(sym)
+                # Use actual Alpaca entry price and current P&L
+                rec_line = (f"- {TODAY} | {sym} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
+                            f"${pos['current_price']:.2f} | {pos['unrealized_plpc']:+.1f}% | Long-term (Alpaca)")
+                alpaca_rec_lines.append(rec_line)
+                log(f"[OK] Alpaca holding: {sym} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({pos['unrealized_plpc']:+.1f}%)")
+
+        # Read current recommendations
+        existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
+
+        # Separate: remove any old Alpaca entries, keep non-Alpaca recommendations
+        all_lines = existing_recs.split('\n') if existing_recs else []
+        non_alpaca_lines = []
+        in_active = False
+        for line in all_lines:
+            if "## Active Recommendations" in line:
+                in_active = True
+                non_alpaca_lines.append(line)
+                continue
+            if in_active and line.startswith('- '):
+                # Check if this is an Alpaca line or a recommendation line
+                is_alpaca = '(Alpaca)' in line
+                if not is_alpaca:
+                    non_alpaca_lines.append(line)
+            else:
+                non_alpaca_lines.append(line)
+
+        # Rebuild: Alpaca Holdings section + Watchlist section
+        new_content = '\n'.join(non_alpaca_lines)
+
+        # Add Alpaca Holdings section
+        if alpaca_rec_lines:
+            alpaca_section = "\n\n## 🏦 Alpaca Holdings (Actual Positions)\n"
+            alpaca_section += "\n".join(alpaca_rec_lines)
+            alpaca_section += "\n"
+            # Insert before the Active Recommendations section
+            if "## Active Recommendations" in new_content:
+                new_content = new_content.replace("## Active Recommendations", alpaca_section + "\n## 📋 Watchlist Recommendations")
+            else:
+                new_content += alpaca_section
+
+        RECOMMENDATIONS_FILE.write_text(new_content, encoding="utf-8")
+        log(f"[OK] Recommendations synced: {len(alpaca_rec_lines)} Alpaca holdings + watchlist separated")
     except Exception as e:
-        log(f"[!] Error tracking Alpaca positions: {e}")
+        log(f"[!] Error syncing Alpaca positions: {e}")
 
     # 4b. Options ideas with earnings + sentiment awareness
     combined_earnings = ""
@@ -3152,9 +3247,19 @@ def main():
         except Exception as e:
             log(f"[!] Telegram send failed: {e}")
 
-    # 6. Self-reflect & update learnings (rating-based, efficient)
-    log("🪞 Reflecting and updating LEARNINGS.md (rating-based)...")
-    reflection = task_self_reflect(report, memory)
+    # 6. Deep self-reflection & continuous learning
+    log("🪞 Deep self-reflection & learning...")
+    # Get Alpaca snapshot for reflection (if available)
+    alpaca_snap = None
+    try:
+        alpaca_snap = get_alpaca_portfolio_snapshot()
+    except Exception:
+        pass
+    reflection = task_self_reflect(
+        report=report, memory=memory,
+        snapshot=alpaca_snap,
+        foresight=foresight if 'foresight' in dir() else None
+    )
     save_learnings(reflection)
 
     # 7. Update tiered memory system
@@ -3252,54 +3357,261 @@ def main():
             if alpaca_trades:
                 log(f"[OK] Recent Alpaca trades: {len(alpaca_trades)} fills")
 
-            # 10b. Place new stock trades for high-conviction (8+) recommendations
-            recs = read_file(RECOMMENDATIONS_FILE)
-            active_lines = [l for l in recs.split('\n') if l.startswith('- ') and 'Active' in l]
-            trades_executed = 0
-            for line in active_lines:
-                parts = line[2:].split(' | ')
-                if len(parts) >= 5:
-                    try:
-                        conviction = int(parts[4].split('/')[0].strip())
-                        if conviction >= 8:
+            # 10b. Deploy cash into high-conviction opportunities
+            # Agent treats paper trading with same discipline as real trading — every dollar matters
+            # Only buys when: conviction >= 8, positive expected value, and opportunity cost of cash > expected return
+            acct = get_account_info()
+            if "error" not in acct:
+                available_cash = acct.get('cash', 0)
+                portfolio_val = acct.get('portfolio_value', 100000)
+                cash_pct = available_cash / portfolio_val if portfolio_val > 0 else 1.0
+                log(f"  Cash available: ${available_cash:,.0f} ({cash_pct:.0%} of portfolio)")
+
+                # Only deploy if cash is excessive (>30%) OR we have very high conviction (>8) ideas
+                should_deploy = cash_pct > 0.30
+
+                # Read watchlist recommendations
+                recs_content = read_file(RECOMMENDATIONS_FILE)
+                in_watchlist = False
+                watchlist_lines = []
+                for rec_line in recs_content.split('\n'):
+                    if "## 📋 Watchlist Recommendations" in rec_line:
+                        in_watchlist = True
+                        continue
+                    if "## 🏦 Alpaca Holdings" in rec_line or "## Active Recommendations" in rec_line:
+                        in_watchlist = False
+                        continue
+                    if in_watchlist and rec_line.startswith('- ') and 'Active' in rec_line:
+                        watchlist_lines.append(rec_line)
+
+                trades_executed = 0
+                for line in watchlist_lines:
+                    parts = line[2:].split(' | ')
+                    if len(parts) >= 5:
+                        try:
+                            conviction = int(parts[4].split('/')[0].strip())
                             ticker = parts[1].strip()
                             entry_str = parts[2].strip().replace('$', '').replace(',', '')
                             try:
                                 entry_price = float(entry_str) if entry_str != 'N/A' else 0
                             except ValueError:
                                 entry_price = 0
-                            if entry_price > 0:
-                                # Check if we already hold this position
-                                already_held = any(p['symbol'] == ticker for p in alpaca_positions)
-                                if already_held:
-                                    log(f"  Already hold {ticker} in Alpaca, skipping")
-                                    continue
 
-                                # Calculate position size based on conviction
-                                acct = get_account_info()
-                                portfolio_val = acct.get('portfolio_value', 100000)
-                                if conviction >= 9:
-                                    pct = 0.08
-                                elif conviction >= 8:
-                                    pct = 0.05
-                                else:
-                                    pct = 0.03
-                                dollar_amount = portfolio_val * pct
-                                qty = max(1, int(dollar_amount / entry_price))
+                            if entry_price <= 0:
+                                continue
 
-                                trade_result = place_stock_order(ticker, qty, "buy", "market")
-                                if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
-                                    trades_executed += 1
-                                    log(f"[OK] Alpaca trade: BUY {ticker} x{qty} @ ${entry_price:.2f} "
-                                        f"(conviction: {conviction}/10, status: {trade_result.get('status')})")
-                                elif trade_result.get("status") == "REJECTED":
-                                    log(f"[!] Alpaca trade rejected for {ticker}: {trade_result.get('error', 'unknown')}")
-                                else:
-                                    log(f"[!] Alpaca trade uncertain for {ticker}: {trade_result}")
-                    except (ValueError, IndexError):
+                            # Skip if already held
+                            already_held = any(p['symbol'] == ticker for p in alpaca_positions)
+                            if already_held:
+                                continue
+
+                            # STRICT: Only buy conviction 8+ (same as real trading)
+                            # The agent must believe this will genuinely bring value
+                            if conviction < 8:
+                                log(f"  Skip {ticker}: conviction {conviction}/10 below 8+ threshold — cash is better deployed elsewhere")
+                                continue
+
+                            # Calculate position size: 5-8% of portfolio for conviction 8-9, 10% for 10/10
+                            if conviction >= 10:
+                                pct = 0.10
+                            elif conviction >= 9:
+                                pct = 0.08
+                            else:
+                                pct = 0.05
+                            dollar_amount = portfolio_val * pct
+
+                            # Don't deploy more than 50% of available cash in a single trade
+                            dollar_amount = min(dollar_amount, available_cash * 0.50)
+
+                            if dollar_amount < 500:
+                                log(f"  Skip {ticker}: allocation ${dollar_amount:.0f} too small (min $500)")
+                                continue
+
+                            qty = max(1, int(dollar_amount / entry_price))
+
+                            log(f"  → BUY {ticker}: conviction {conviction}/10, ${dollar_amount:,.0f} ({pct:.0%} of portfolio), x{qty} @ ${entry_price:.2f}")
+                            trade_result = place_stock_order(ticker, qty, "buy", "market")
+                            if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                                trades_executed += 1
+                                log(f"[OK] Alpaca BUY: {ticker} x{qty} @ ${entry_price:.2f} (status: {trade_result.get('status')})")
+                            elif trade_result.get("status") == "REJECTED":
+                                log(f"[!] Alpaca BUY rejected for {ticker}: {trade_result.get('error', 'unknown')}")
+                            else:
+                                log(f"[!] Alpaca BUY uncertain for {ticker}: {trade_result}")
+                        except (ValueError, IndexError):
+                            continue
+
+                if trades_executed == 0:
+                    log(f"  No trades executed — agent didn't find conviction 8+ opportunities worth deploying cash")
+                    if cash_pct > 0.50:
+                        log(f"  ⚠️ Cash at {cash_pct:.0%} — agent is being selective, waiting for high-conviction setups")
+                else:
+                    log(f"[OK] Executed {trades_executed} Alpaca trade(s) this run")
+
+            # 10c. Active position management — best-in-class long-term strategies
+            # Combines: Buffett's "hold wonderful businesses", Dalio's risk parity,
+            # Marks' "buy when there's blood in the streets", Howard Marks' market timing,
+            # AQR's momentum + value, CMT trailing stops, Kelly position sizing
+            log("  Managing existing Alpaca positions with research-backed strategies...")
+            from skills.alpaca_trading import place_stock_order
+            from skills.portfolio_manager import get_position_fundamentals
+            positions_reviewed = 0
+
+            for pos in alpaca_positions:
+                if pos.get('type') != 'stock':
+                    continue
+                sym = pos['symbol']
+                qty = int(pos.get('qty', 0))
+                avg_entry = float(pos.get('avg_entry_price', 0))
+                current = float(pos.get('current_price', 0))
+                pnl_pct = float(pos.get('unrealized_plpc', 0)) * 100
+                market_value = float(pos.get('market_value', 0))
+                pos_pct = market_value / portfolio_val * 100 if portfolio_val > 0 else 0
+
+                # ── GATHER INTELLIGENCE ──
+                fundamentals = get_position_fundamentals(sym)
+
+                # ── STRATEGY 1: TRAILING STOP (CMT-inspired) ──
+                # Use ATR-based trailing stop instead of fixed -15%
+                # If stock has pulled back >10% from recent highs, tighten stop
+                # If stock is in strong uptrend, give it room to run
+                try:
+                    import yfinance as yf
+                    t = yf.Ticker(sym)
+                    hist = t.history(period="3mo")
+                    if hist is not None and len(hist) > 20:
+                        recent_high = hist["Close"].rolling(20).max().iloc[-1]
+                        pullback_from_high = ((current - recent_high) / recent_high * 100) if recent_high > 0 else 0
+                        # 20-day MA for trend direction
+                        ma20 = hist["Close"].rolling(20).mean().iloc[-1]
+                        ma50 = hist["Close"].rolling(50).mean().iloc[-1] if len(hist) >= 50 else ma20
+                        uptrend = current > ma20 > ma50
+                        downtrend = current < ma20 < ma50
+                    else:
+                        pullback_from_high = 0
+                        uptrend = True
+                        downtrend = False
+                except Exception:
+                    pullback_from_high = 0
+                    uptrend = True
+                    downtrend = False
+
+                # ── STRATEGY 2: THESIS CHECK (Buffett-inspired) ──
+                # "The stock market is a device for transferring money from the impatient to the patient"
+                # Only sell if the investment thesis is fundamentally broken, not because of price alone
+                thesis_intact = True
+                thesis_broken = False
+
+                # Check earnings trend — 2 consecutive misses = thesis at risk
+                if fundamentals.get("consecutive_misses"):
+                    thesis_intact = False
+                    thesis_broken = True
+
+                # Check if below 200-day MA with deteriorating fundamentals
+                if fundamentals.get("below_200ma") and pnl_pct < -10:
+                    thesis_intact = False
+
+                # ── STRATEGY 3: RISK PARITY (Dalio-inspired) ──
+                # No single position should risk more than 2% of total portfolio
+                # If position has grown too large, trim to maintain balance
+                max_position_pct = 15.0  # Max 15% in single position
+                if pos_pct > max_position_pct:
+                    excess_value = market_value - (portfolio_val * max_position_pct / 100)
+                    trim_qty = max(1, int(excess_value / current))
+                    log(f"  ⚖️ TRIM {sym}: {pos_pct:.1f}% of portfolio exceeds {max_position_pct}% max — selling {trim_qty} shares")
+                    result = place_stock_order(sym, trim_qty, "sell", "market")
+                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                        log(f"[OK] TRIMMED {sym} x{trim_qty} (risk parity)")
+                    continue
+
+                # ── STRATEGY 4: MOMENTUM + VALUE (AQR-inspired) ──
+                # Winners in uptrend → let them run (don't cap gains)
+                # Losers in downtrend → cut quickly (don't average down blindly)
+                if downtrend and pnl_pct < -10:
+                    # Downtrend + loss = cut quickly (don't be a hero)
+                    log(f"  🛑 SELL {sym}: downtrend + {pnl_pct:+.1f}% loss — cutting before deeper damage")
+                    result = place_stock_order(sym, qty, "sell", "market")
+                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                        log(f"[OK] SOLD {sym} x{qty} (downtrend cut)")
+                    continue
+
+                # ── STRATEGY 5: CONTRARIAN BUY (Howard Marks / Seth Klarman) ──
+                # "The best buying opportunities come when others are panicking"
+                # If stock is down >20% on market noise (not fundamentals), consider averaging down
+                if pnl_pct <= -20 and thesis_intact and not downtrend:
+                    # Stock is down but thesis is intact — this is a buying opportunity
+                    if pos_pct < 5.0:  # Only average down if position is still small
+                        add_value = portfolio_val * 0.03  # Add 3% of portfolio
+                        add_qty = max(1, int(add_value / current))
+                        log(f"  💰 AVERAGE DOWN {sym}: down {pnl_pct:.1f}% but thesis intact — buying {add_qty} more at discount")
+                        result = place_stock_order(sym, add_qty, "buy", "market")
+                        if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                            log(f"[OK] BOUGHT {sym} x{add_qty} more (averaging down on weakness)")
                         continue
 
-            # 10c. Execute options trades on Alpaca from options intelligence section
+                # ── STRATEGY 6: TRAILING STOP (dynamic, not fixed) ──
+                # In uptrend: trail stop at -10% from recent high (give room to run)
+                # In downtrend: trail stop at -7% from recent high (cut quickly)
+                # In sideways: trail stop at -12% (moderate)
+                if uptrend:
+                    stop_pct = -10  # Give winners room to breathe
+                elif downtrend:
+                    stop_pct = -7   # Cut losers quickly
+                else:
+                    stop_pct = -12  # Moderate for sideways
+
+                if pullback_from_high <= stop_pct and pnl_pct < 0:
+                    log(f"  🛑 TRAILING STOP {sym}: pulled back {pullback_from_high:.1f}% from high (stop: {stop_pct}%)")
+                    result = place_stock_order(sym, qty, "sell", "market")
+                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                        log(f"[OK] SOLD {sym} x{qty} (trailing stop)")
+                    continue
+
+                # ── STRATEGY 7: ADD TO WINNERS (Peter Lynch / Warren Buffett) ──
+                # "If the company is still buying back stock, the CEO is still excited,
+                #  and the thesis is intact, add on strength"
+                # Add to positions that are: uptrend, thesis intact, conviction high, position small
+                if uptrend and thesis_intact and pnl_pct > 10 and pos_pct < 8.0:
+                    # Check if this is a high-conviction pick
+                    wl_conviction = 0
+                    for wl_line in watchlist_lines:
+                        wl_parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                        if len(wl_parts) >= 5 and wl_parts[1].strip() == sym:
+                            try:
+                                wl_conviction = int(wl_parts[4].split('/')[0].strip())
+                            except (ValueError, IndexError):
+                                pass
+                            break
+
+                    if wl_conviction >= 8:
+                        # Add up to 8% of portfolio for high-conviction winners
+                        target_value = min(portfolio_val * 0.08, portfolio_val * 0.15 - market_value)
+                        if target_value > 500:
+                            add_qty = max(1, int(target_value / current))
+                            log(f"  ➕ ADD TO WINNER {sym}: uptrend +{pnl_pct:.1f}%, conviction {wl_conviction}/10, only {pos_pct:.1f}% of portfolio")
+                            result = place_stock_order(sym, add_qty, "buy", "market")
+                            if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                                log(f"[OK] BOUGHT {sym} x{add_qty} more (adding to winner)")
+                            continue
+
+                # ── STRATEGY 8: THESIS-BROKEN SELL (Buffett's "when the facts change") ──
+                if thesis_broken:
+                    log(f"  🛑 SELL {sym}: thesis broken (consecutive misses, deteriorating fundamentals)")
+                    result = place_stock_order(sym, qty, "sell", "market")
+                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                        log(f"[OK] SOLD {sym} x{qty} (thesis broken)")
+                    continue
+
+                # ── DEFAULT: HOLD with trailing stop awareness ──
+                log(f"  ✅ HOLD {sym}: {qty} shares, {pnl_pct:+.1f}% P&L, {pos_pct:.1f}% of portfolio | "
+                    f"{'uptrend' if uptrend else 'downtrend' if downtrend else 'sideways'} | "
+                    f"thesis {'intact' if thesis_intact else 'at risk'} | "
+                    f"trailing stop at {stop_pct}% from high")
+                positions_reviewed += 1
+
+            log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")
+
+            # 10d. Execute options trades on Alpaca from options intelligence section
             from skills.alpaca_trading import find_option_symbol
             from datetime import datetime as dt_parser
 
