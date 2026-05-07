@@ -1,51 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-, cost basis, and position-specific thesis — and it scored highest. This run continued that with biggest-movers-first formatting and per-position reasoning. *Keep this as the non-negotiable foundation.* However, the user explicitly noted the system still only recommends from within the existing portfolio — **expand screening to include 2–3 new tickers not currently held** that present better risk/reward, using the same thesis framework.
-
-- **Data freshness is a recurring trust killer.** Multiple low-rated runs (2/10, 4/10) cited stale options data and outdated prices. This run's "Market sentiment unavailable — no data from Finnhub or yfinance" gap is a red flag. *Action: implement a fallback chain (Finnhub → yfinance → Alpha Vantage → cached last-known) and flag staleness transparently with timestamps.* Any data older than 15 minutes during market hours should carry a ⚠️ warning.
-
-- **Conviction accuracy requires a structured scoring rubric, not just narrative.** The user wants 90–95% win rate on recommendations. Currently, conviction scores (7/10, 8/10) are assigned ad hoc. *Build a quantitative scoring matrix: (1) technical momentum (RSI, volume spike, breakout confirmation), (2) fundamental catalyst proximity (earnings, product launch
-
-## Run: 2026-05-05 19:14:40
-# LEARNINGS.md — Run 1914 | 2026-05-05 19:14:40
-
----
-
-## ✅ What Worked Well This Run
-
-- **Portfolio-aware analysis finally landed.** The 8.5/10 rating on 2026-04-30 confirmed that reading actual holdings, weightings, and cost basis — then reasoning about *those specific positions* — is the single biggest quality lever. This run continued that: the report correctly identified STRL +52%, SHOP -16%, and the AI infrastructure rotation thesis across the user's actual holdings (MU, APLD, NVDA, SMCI, VRT). The user explicitly said "this is the first report that looks at my portfolio and understands it." **Never regress on this.**
-
-- **News narrative quality was highest-ever.** The 8.5/10 user praised the news summary as "highest quality." The macro narrative connecting STRL's surge, the AI capex supercycle, SHOP's disruption risk, and the Railway/OpenAI partnership into a coherent story worked. The user wants *teaching*, not just summarizing — and framing the day's moves as a single thesis (AI infrastructure rotation) rather than disconnected tickers is what creates that teaching moment.
-
-- **Biggest-movers-first formatting is correct.** The 6/10 user explicitly asked to "see the ones that had a big event or news or moved the most today." This run leads with the top movers (STRL +52%, SHOP -16%, SNDK +12%) rather than alphabetical or random ordering. Keep this — it directly addresses a stated pain point.
-
----
-
-## ❌ What Needs Improvement
-
-- **Recommendations are still too narrow — only from existing holdings.** The 8.5/10 user
-
-## Run: 2026-05-05 20:42:10
-# 🧠 OWL Self-Review — Run 2042 | 2026-05-05
-
-## LEARNINGS.md — Key Takeaways
-
----
-
-- **Portfolio-aware analysis is the #1 driver of user satisfaction.** The 8.5/10 run (2026-04-30) was explicitly praised because it "looked at my portfolio and understood it and the positions and holdings I have along with the weightage." This run (2042) continued that with cost-basis tracking, position sizing context, and per-holding P&L awareness. The earlier 2/10 and 4/10 runs failed because they gave generic, one-size-fits-all recommendations. **Lesson: Every recommendation must reference the user's actual holdings, cost basis, and portfolio weight — not just ticker names.** The user wants to know "should I add to my 516-share PLTR position?" not "PLTR is a buy."
-
-- **The user explicitly wants NEW stock ideas outside their portfolio — this is a recurring gap.** The 8.5/10 reviewer's "biggest problem" was that the report "only considered stocks from my portfolio to recommend buying or selling and not anything new." This run repeated that mistake: the active recommendations (MU, VRT, SNDK) are all existing holdings. **Lesson: Every run must include 2-3 high-conviction ideas the user does NOT currently own, with full thesis, entry price, and risk framework.** The user has 67 tickers — they want discovery, not just portfolio management. Screen for niche mid-caps, sector rotations, or under-the-radar names that complement their existing AI/infrastructure/quantum exposure.
-
-- **Options data staleness is a trust killer — and it's still not fixed.** The 2/10 review flagged "
-
-## Run: 2026-05-06 02:41:12
-## 🧠 Self-Review & Learnings — Run 0241 (2026-05-06)
-
-- **Portfolio-aware analysis is now working well — keep and deepen it.** The 8.5/10 run (Apr 30) confirmed that users value reports that reference their actual holdings, weightages, cost basis, and position-specific theses. This run continued that trend by showing biggest movers from the user's 70 holdings. However, the user explicitly noted the system still only recommends from within their existing portfolio — it must start screening *new* tickers outside the portfolio that present better risk/reward, using the same thesis-driven framework. Build a "discovery layer" that scans for high-conviction setups the user doesn't yet own.
-
-- **Data freshness is the #1 credibility killer — and it's still not fully resolved.** Multiple low ratings (2/10, 4/10) cited outdated options data and stale prices (e.g., PLTR data from 2 years ago). This run's report uses delayed/after-hours data and the news narrative references "Railway's $100M Series B" — if that data point is not verified against a real-time source, it risks being hallucinated or outdated. **Action:** Before every run, validate that price data, options chains, and news citations are from the last 24 hours. Flag any data older than 48 hours explicitly. Never present unverified narrative as fact.
-
-- **Recommendation tracking is broken and eroding trust.** The Apr 23 user (7/10) flagged that recommendation tracking "isn't working." This run's tracking section shows MU and VRT recommendations at +0.0% since inception today — which is trivially true for same-day recommendations but useless. The system needs to: (a) track recommendations across
+or same-day recommendations but useless. The system needs to: (a) track recommendations across
 
 ## Run: 2026-05-06 11:24:51
 # LEARNINGS.md — Self-Analysis: Run 1124
@@ -133,3 +88,55 @@ Here's a self-critical performance review based on this run and accumulated feed
 - **Data Staleness Is the #1 Trust Killer**: Multiple reviews flagged options chains and prices as "outdated by 2 years" or referencing wrong dates. This signals the data pipeline is either pulling cached snapshots or falling back to stale endpoints during market hours. **Lesson: Every price, options chain, and news item must be timestamp-verified at report generation time. If real-time data is unavailable, explicitly flag it as "delayed" with the timestamp — never let stale data silently pass as current.**
 
 - **Biggest Movers ≠ Most Important Movers for This Portfolio**: The report lists SMCI +24.5% as the top mover, but the user holds WOLF at $380.70 avg price (now $43.08 — a ~89% loss) and doesn't appear to get any specific guidance on that catastrophic drawdown. Similarly, ANET at -13.61% is only a 2-share position, yet the narrative treats it as significant. **Lesson: Rank movers by *dollar impact on portfolio* (shares × price change), not percentage move. A 3% shift on PLTR (516 shares, ~$62 avg
+
+## Run: 2026-05-07 07:25:38 ET
+# 🔍 Self-Reflection — Run 0725 | 2026-05-07
+
+---
+
+## What Worked Well
+
+- **Portfolio-aware recommendations**: The three active Alpaca holdings (MU, NVDA, VRT) are correctly identified with current prices and conviction scores. The system is now reading actual positions rather than hallucinating — a clear improvement from earlier runs flagged in user feedback.
+- **AI infrastructure narrative**: The report correctly identifies the "picks-and-shovels" rotation theme (SMCI +24.5%, APLD +10.9%, NBIS +10.9%) and ties it to Railway's $100M raise. This is a coherent, timely thesis that connects individual movers to a macro narrative.
+- **User feedback loop is functioning**: The learning history shows the system is cataloging specific failures (stale options data, wrong mover ranking) and attempting corrections. The progression from 2/10 → 8.5/10 in user ratings over 5 runs demonstrates genuine improvement.
+
+---
+
+## What Didn't Work
+
+- **78% cash sitting idle with only 3 positions**: This is the single biggest failure of this run. The portfolio is $100,242 with ~$78,000 in cash earning nothing. The user explicitly asked in their 4/30 feedback: *"I would like to see new stocks that I may not have that might present a better opportunity."* This run still only recommends actions on existing holdings (MU, NVDA, VRT) and one REDUCE on an unspecified ticker. Zero new buy recommendations despite massive deployable capital.
+- **WOLF position completely unaddressed**: The report lists WOLF as +17.61% today at $43.08, but the learning history reveals the user's average cost is ~$380.70 — an ~89% drawdown. This is a catastrophic loss position that deserves a dedicated analysis: Is the +17.6% bounce a dead-cat or a genuine reversal? Should the user average down, hold, or cut? The report ignores this entirely.
+- **Market sentiment data is blank**: Both Finnhub and yfinance returned no sentiment data. The report acknowledges this but offers no fallback — no VIX reading, no put/call ratio, no breadth data. A "LOW" mode rating of 4.8/10 with no sentiment input is essentially flying blind.
+- **Concentration reported as 0.0%**: This is clearly a data error or calculation bug. With 3 positions in a $100K portfolio, concentration cannot be 0.0%. If NVDA is ~$207 and the position is meaningful, the concentration is non-zero. This undermines trust in all quantitative outputs.
+
+---
+
+## Conviction Calibration
+
+- **8/10 on MU, NVDA, VRT — all "Long-term"**: These conviction scores are identical and generic. There's no differentiation. MU at $651.61 (current) vs. NVDA at $207.14 (current) vs. VRT at $348.38 (current) — these are fundamentally different risk/reward profiles. NVDA just gained +5.77% on AI infrastructure momentum and is at an all-time high territory; VRT gained +5.25%; MU is relatively flat. The conviction scores should reflect these divergences. An 8/10 on all three is not calibration — it's a placeholder.
+- **REDUCE recommendation at 8/10 conviction**: This is contradictory. An 8/10 conviction with a REDUCE action is internally inconsistent. If conviction is high, you hold or add. If you're reducing, conviction should be 5-6/10. This signals the conviction scoring logic is disconnected from the action recommendation.
+- **No stop-losses set on any position**: Despite WOLF being down ~89% from cost basis, no stop-loss or exit framework is discussed. For NVDA at +5.77% today (momentum), no trailing stop is suggested to protect gains. Conviction without risk parameters is just optimism.
+
+---
+
+## Missed Opportunities
+
+- **No new buy recommendations despite 78% cash**: The user explicitly requested this. Today's market action (SMCI +24.5%, APLD +10.9%, NBIS +10.9%, ASTS +10.6%) is screaming AI infrastructure opportunity. Even in LOW mode, the system should be screening for high-momentum, high-volume breakouts and presenting 2-3 new ideas with clear entry/exit levels.
+- **PLTR not mentioned**: The user specifically cited PLTR as a stock they believe in (4/22 feedback). PLTR is not in the current 3-position portfolio. It should be on the watchlist or recommended as a new position, especially given the AI infrastructure theme dominating today's action.
+- **SMCI at $34.66 (+24.5%)**: This is the biggest mover in the entire portfolio universe and a pure-play AI infrastructure name. If the thesis is "AI deployment bottleneck," SMCI is the most direct expression. No analysis, no recommendation, no mention beyond the mover list.
+- **No options strategies**: Previous runs that included LEAP explanations and options analysis received higher ratings (6-8.5/10). This run has zero options content. The user explicitly valued this: *"I liked the options part as well."* Its absence is a regression.
+
+---
+
+## Data Quality Issues
+
+- **Market sentiment: completely unavailable**: No fallback data source was used. At minimum, the report should pull VIX, advancing/declining issues, or put/call ratios as proxy sentiment indicators.
+- **Concentration = 0.0%**: This is either a division-by-zero bug (positions not properly weighted) or a missing data field. Needs immediate debugging.
+- **WOLF cost basis discrepancy**: The learning history says $380.70 avg price, but the current price is $43.08. This is an ~89% loss. Either the cost basis data is wrong (maybe a split-adjusted issue?), or the position is genuinely underwater. This needs verification — if the cost basis is wrong, it's a data pipeline error. If it's correct, it's the most important position to address and the report ignores it.
+- **"Market Closed 🔴 (After-Hours)" but showing after-hours prices**: The report shows SMCI at $34.66 (+24.5%) which is likely the regular close, not after-hours. The labeling is confusing. After-hours data should be clearly distinguished from regular session closes.
+
+---
+
+## Risk Management
+
+- **No stop-losses defined for any position**: This is a critical gap. For a portfolio with a position down ~89% (WOLF), the absence of stop-loss discipline is a systemic risk

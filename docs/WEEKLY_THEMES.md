@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-04-30)
+## Current Theme (Week of 2026-05-07)
 
-**📌 Theme:** Energy & Climate: The Next Mega-Trend
+**📌 Theme:** Human Longevity & Biohacking - Living Longer, Better
 
-**Duration:** Week of 2026-04-30
+**Duration:** Week of 2026-05-07
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: The Physics of Energy - Why We Need More Than We Think
-- [ ] Day 2: Fossil Fuels in Decline - When Peak Oil Finally Comes
-- [ ] Day 3: Renewables Revolution - Solar, Wind, Battery Breakthroughs
-- [ ] Day 4: Nuclear Energy - Fission & Fusion's Comeback
-- [ ] Day 5: The Grid Problem - Storage & Distribution Challenges
-- [ ] Day 6: Climate Finance - Carbon Credits & Green Bonds
-- [ ] Day 7: Energy Investing - Who Wins in the Transition
+- [ ] Day 1: Why We Age - The Biology of Aging
+- [ ] Day 2: Senescent Cells & Senolytics - Removing the Damage
+- [ ] Day 3: Cellular Reprogramming - Yamanaka Factors & De-Aging
+- [ ] Day 4: Metabolic Health - Glucose, Insulin, Ketones
+- [ ] Day 5: Sleep, Exercise, Fasting - The Unglamorous Basics
+- [ ] Day 6: Supplements & Biomarkers - What Actually Works
+- [ ] Day 7: Biotech Investing - The Companies Racing to Extend Life
 
 ---
 *New theme rotates each week. Archive your learnings.*

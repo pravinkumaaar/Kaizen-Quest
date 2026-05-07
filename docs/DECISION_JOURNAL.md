@@ -44,3 +44,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-06 | NVDA | BUY | $207.32 | N/A | 9/10 | Active | - | Why: NVIDIA reports May 20 — 14 days out. You already own 13.2% at a +99.8% gain |
 2026-05-06|VRT|BUY|$358.92|$475.00|8/10| Active | +0.0% |Why: AI data centers don't just need chips — they need power, cooling, and elect |
 2026-05-06|RKLB|BUY|$84.65|$125.00|7/10| Active | +0.0% |Why: Rocket Lab is the "second derivative" of the space economy — they're not ju |
+2026-05-07|REDUCE|BUY|$133.79|N/A|8/10| Active | +0.0% |Why: 28.7% of your entire portfolio in a single stock trading at a ~95x forward  |
