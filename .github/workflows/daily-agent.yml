@@ -1,40 +1,59 @@
-name: Daily Agent Run
+name: Trading Agent Scheduler
 
 on:
   schedule:
-    # Run 6 times per day on weekdays (every 2 hours from 9:30 AM to 7:30 PM ET)
+    # ═══ 3 FULL REPORTS PER DAY ═══
+    - cron: '0 8 * * 1-5'    # 8:00 AM ET — Pre-market report
+    - cron: '30 12 * * 1-5'  # 12:30 PM ET — Mid-day report (during market)
+    - cron: '30 16 * * 1-5'  # 4:30 PM ET — Post-market report
+
+    # ═══ MARKET-HOURS RUNS (every 30 min) — Trade + Alerts only ═══
     - cron: '30 9 * * 1-5'
+    - cron: '0 10 * * 1-5'
+    - cron: '30 10 * * 1-5'
+    - cron: '0 11 * * 1-5'
     - cron: '30 11 * * 1-5'
+    - cron: '0 12 * * 1-5'
+    - cron: '0 13 * * 1-5'
     - cron: '30 13 * * 1-5'
+    - cron: '0 14 * * 1-5'
+    - cron: '30 14 * * 1-5'
+    - cron: '0 15 * * 1-5'
     - cron: '30 15 * * 1-5'
-    - cron: '30 17 * * 1-5'
-    - cron: '30 19 * * 1-5'
-  workflow_dispatch:  # Allow manual triggers
+  workflow_dispatch:
 
 jobs:
   run-agent:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Allow the workflow to write to the repository
-    
+      contents: write
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
-        # Using PAT_TOKEN (Personal Access Token) for push access
-        # You created this at: https://github.com/settings/tokens with "repo" scope
         token: ${{ secrets.PAT_TOKEN }}
-    
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    
-    - name: Install dependencies
+    - run: pip install -r requirements.txt
+
+    - name: Determine run mode
+      id: mode
       run: |
-        pip install -r requirements.txt
-    
-    - name: Run agent
+        HOUR=$(TZ='US/Eastern' date +%H)
+        MIN=$(TZ='US/Eastern' date +%M)
+        DOW=$(TZ='US/Eastern' date +%u)
+        if [ "$DOW" -gt 5 ]; then echo "MODE=skip" >> $GITHUB_OUTPUT; exit 0; fi
+        # Full report at 8:00 AM, 12:30 PM, 4:30 PM
+        if ([ "$HOUR" -eq 8 ] && [ "$MIN" -eq 0 ]) || \
+           ([ "$HOUR" -eq 12 ] && [ "$MIN" -eq 30 ]) || \
+           ([ "$HOUR" -eq 16 ] && [ "$MIN" -eq 30 ]); then
+          echo "MODE=full" >> $GITHUB_OUTPUT
+        else
+          echo "MODE=alerts-only" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Run agent (full — report + trade + alerts)
+      if: steps.mode.outputs.MODE == 'full'
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
@@ -44,17 +63,28 @@ jobs:
         CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
         CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        RUN_MODE: full
       run: python3 agent.py
-    
-    - name: Commit and push reports
+
+    - name: Run agent (alerts-only — trade + alerts, no report)
+      if: steps.mode.outputs.MODE == 'alerts-only'
+      env:
+        OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+        ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
+        CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        RUN_MODE: alerts-only
+      run: python3 agent.py
+
+    - name: Commit reports (full mode only)
+      if: steps.mode.outputs.MODE == 'full'
       run: |
-        git config user.name "Kaizen Quest Agent"
-        git config user.email "agent@kaizen-quest.local"
-        git add REPORTS/ docs/ logs/agent.log cache/
-        # Only commit if there are actual changes
-        if git diff --cached --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Daily agent run: $(date +%Y-%m-%d-%H%M)"
-          git push
-        fi
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add -A
+        git diff --staged --quiet || git commit -m "Agent: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
+        git push

@@ -269,17 +269,21 @@ def cmd_price(args):
 
     try:
         import yfinance as yf
-        t = yf.Ticker(ticker)
-        price = t.fast_info.last_price
-        prev = t.fast_info.previous_close
-
-        if not price:
-            # Try alternative price fields
-            try:
-                info = t.info
-                price = info.get('currentPrice') or info.get('regularMarketPrice') or info.get('previousClose')
-            except Exception:
-                pass
+        from io import StringIO
+        old_stderr = __import__('sys').stderr
+        __import__('sys').stderr = StringIO()
+        try:
+            t = yf.Ticker(ticker)
+            price = t.fast_info.last_price
+            prev = t.fast_info.previous_close
+            if not price:
+                try:
+                    info = t.info
+                    price = info.get('currentPrice') or info.get('regularMarketPrice') or info.get('previousClose')
+                    if not prev: prev = info.get('previousClose')
+                except Exception: pass
+        finally:
+            __import__('sys').stderr = old_stderr
 
         if not price:
             return f"❌ No price data for <b>{ticker}</b>. Market may be closed or ticker may be invalid."
@@ -290,25 +294,20 @@ def cmd_price(args):
             emoji = "🟢" if chg >= 0 else "🔴"
             change_str = f"\n{emoji} Change: {chg:+.2f}%"
 
-        # Get extra context
         extra = ""
         try:
+            __import__('sys').stderr = StringIO()
             info = t.info
+            __import__('sys').stderr = old_stderr
             name = info.get('longName', '')
             sector = info.get('sector', '')
-            if name:
-                extra += f"\n🏢 {name}"
-            if sector:
-                extra += f"\n📂 {sector}"
-        except Exception:
-            pass
+            if name: extra += f"\n🏢 {name}"
+            if sector: extra += f"\n📂 {sector}"
+        except Exception: pass
 
         return (
             f"{'🟢' if change_str and '+' in change_str else '🔴' if change_str else '⚪'} "
-            f"<b>{ticker}</b>\n\n"
-            f"💰 <b>Price:</b> ${price:.2f}"
-            f"{change_str}"
-            f"{extra}\n\n"
+            f"<b>{ticker}</b>\n\n💰 <b>Price:</b> ${price:.2f}{change_str}{extra}\n\n"
             f"<i>Not financial advice.</i>"
         )
     except Exception as e:
@@ -330,20 +329,26 @@ def cmd_buy(args):
     ticker = args.strip().upper().split()[0]
     try:
         import yfinance as yf
+        from io import StringIO
+        old_stderr = __import__('sys').stderr
+        
+        __import__('sys').stderr = StringIO()
         t = yf.Ticker(ticker)
         price = t.fast_info.last_price
-
         if not price:
             try:
                 info = t.info
                 price = info.get('currentPrice') or info.get('regularMarketPrice')
-            except Exception:
-                pass
+            except Exception: pass
+        __import__('sys').stderr = old_stderr
 
         if not price:
             return f"❌ No data for <b>{ticker}</b>."
 
+        __import__('sys').stderr = StringIO()
         i = t.info
+        __import__('sys').stderr = old_stderr
+        
         pe = i.get("trailingPE", "N/A")
         mc = i.get("marketCap", 0)
         mc_s = f"${mc/1e9:.1f}B" if mc > 1e9 else f"${mc/1e6:.0f}M" if mc else "N/A"
@@ -358,14 +363,11 @@ def cmd_buy(args):
             range_str = f"\n📊 52wk Range: ${low52:.2f} - ${high52:.2f}"
 
         return (
-            f"📊 <b>{name} ({ticker})</b>\n\n"
-            f"💰 <b>Price:</b> ${price:.2f}\n"
+            f"📊 <b>{name} ({ticker})</b>\n\n💰 <b>Price:</b> ${price:.2f}\n"
             f"📂 <b>Sector:</b> {sector}"
             f"{' — ' + industry if industry else ''}\n"
-            f"🏢 <b>Market Cap:</b> {mc_s}\n"
-            f"📈 <b>P/E:</b> {pe}"
-            f"{range_str}\n\n"
-            f"<i>Not financial advice. Verify before acting.</i>"
+            f"🏢 <b>Market Cap:</b> {mc_s}\n📈 <b>P/E:</b> {pe}"
+            f"{range_str}\n\n<i>Not financial advice.</i>"
         )
     except Exception as e:
         return f"❌ Error analyzing <b>{ticker}</b>: {str(e)[:100]}"
@@ -375,7 +377,9 @@ def cmd_earnings():
     try:
         import yfinance as yf
         from datetime import date, timedelta
-
+        from io import StringIO
+        
+        old_stderr = __import__('sys').stderr
         today = date.today()
         lines = ["📅 <b>Upcoming Earnings (Next 14 Days)</b>\n"]
 
@@ -389,8 +393,10 @@ def cmd_earnings():
         found = 0
         for ticker in tickers:
             try:
+                __import__('sys').stderr = StringIO()
                 t = yf.Ticker(ticker)
                 info = t.info
+                __import__('sys').stderr = old_stderr
                 earnings_ts = info.get('earningsTimestamp') or info.get('earningsDate')
                 if not earnings_ts:
                     continue
@@ -411,6 +417,7 @@ def cmd_earnings():
                     lines.append(f"  {status} — <b>{ticker}</b> ({earnings_dt})")
                     found += 1
             except Exception:
+                __import__('sys').stderr = old_stderr
                 continue
 
         if found == 0:
@@ -425,29 +432,31 @@ def cmd_sectors():
     """Show sector ETF performance."""
     try:
         import yfinance as yf
+        from io import StringIO
+        old_stderr = __import__('sys').stderr
         lines = ["🏭 <b>Sector Performance</b>\n"]
-
         sectors = [
             ("XLK", "Tech"), ("XLF", "Financial"), ("XLE", "Energy"),
             ("XLV", "Healthcare"), ("XLI", "Industrial"), ("XLP", "Consumer Staples"),
             ("XLY", "Consumer Disc."), ("XLU", "Utilities"), ("XLRE", "Real Estate"),
             ("XLC", "Comm Services"), ("XLB", "Materials")
         ]
-
         for ticker, name in sectors:
             try:
+                __import__('sys').stderr = StringIO()
                 tk = yf.Ticker(ticker)
                 price = tk.fast_info.last_price
                 prev = tk.fast_info.previous_close
+                __import__('sys').stderr = old_stderr
                 if price and prev:
                     chg = ((price - prev) / prev) * 100
                     emoji = "🟢" if chg >= 0 else "🔴"
                     lines.append(f"{emoji} <b>{name}</b> ({ticker}): ${price:.2f} ({chg:+.2f}%)")
                 elif price:
-                    lines.append(f"⚪ <b>{name}</b> (${price:.2f})")
+                    lines.append(f"⚪ <b>{name}</b> ({ticker}): ${price:.2f})")
             except Exception:
+                __import__('sys').stderr = old_stderr
                 continue
-
         return "\n".join(lines) if len(lines) > 1 else "❌ Could not fetch sector data."
     except Exception as e:
         return f"❌ Sector data error: {str(e)[:80]}"

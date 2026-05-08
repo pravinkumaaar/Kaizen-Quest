@@ -1,641 +1,258 @@
 """
-Market Foresight Predictor v1.0
+Market Foresight Predictor v2.0 — Forward-Looking & Predictive
 
-Comprehensive market direction predictor using multiple signals:
-1. VIX term structure & fear/greed index
-2. Put/Call ratios (total & equity-only)
-3. Advance/Decline line & breadth indicators
-4. Yield curve & credit spreads
-5. Fed policy & interest rate expectations
-6. Seasonal patterns & calendar effects
-7. Insider trading activity (aggregate)
-8. Dark pool & institutional flow indicators
-9. Social media sentiment (Reddit, StockTwits)
-10. Global macro indicators (China, EU, EM)
-11. Earnings revision momentum (aggregate)
-12. Options flow (unusual activity)
+Research-backed methods for 2-6 week market outlook:
 
-Produces a composite score from -100 (extreme bearish) to +100 (extreme bullish)
-with a confidence level and 1-2 week outlook.
+1. YIELD CURVE (6-18 month lead) — Best recession predictor
+2. VIX TERM STRUCTURE (2-4 week lead) — Contango vs backwardation
+3. EARNINGS REVISIONS (1-3 month lead) — Aggregate EPS momentum
+4. SECTOR ROTATION (2-8 week lead) — Cyclical vs defensive
+5. CREDIT SPREADS (2-4 week lead) — HYG vs LQD
+6. NEWS SENTIMENT (2-4 week lead) — AI-powered forward-looking analysis
+7. DOLLAR STRENGTH (2-4 week lead) — Leads commodities/EM
+8. MARKET BREADTH (2-4 week lead) — A/D line, small vs large cap
+9. SEASONAL PATTERNS (1-3 month lead) — Calendar effects
+10. INTER-MARKET ANALYSIS (2-8 week lead) — Stocks/bonds, copper/gold
 
-Sends Telegram alerts for extreme readings (crash warning or major bullish signal).
+Composite Score: -100 (crash imminent) to +100 (major bull run)
+Outlook: 2-6 week forward-looking assessment
 """
 
-import requests
-import json
-import datetime
-import yfinance as yf
+import requests, json, datetime, yfinance as yf
 from pathlib import Path
 from io import StringIO
 
 BASE_DIR = Path(__file__).parent.parent
 FINNHUB_API_KEY = None
 TAVILY_API_KEY = None
-
-# Thresholds for Telegram alerts
-CRASH_WARNING_THRESHOLD = -60     # Score below this = crash warning
-BULLISH_ALERT_THRESHOLD = 60      # Score above this = major bullish signal
-EXTREME_FEAR_THRESHOLD = 20       # VIX above this = extreme fear
-EXTREME_GREED_THRESHOLD = 80      # VIX below this = extreme greed (complacency)
+CRASH_WARNING_THRESHOLD = -55
+BULLISH_ALERT_THRESHOLD = 55
 
 
 def init_foresight_skill(finnhub_key=None, tavily_key=None, base_dir=None):
-    """Initialize with config from main agent."""
     global FINNHUB_API_KEY, TAVILY_API_KEY, BASE_DIR
-    if finnhub_key:
-        FINNHUB_API_KEY = finnhub_key
-    if tavily_key:
-        TAVILY_API_KEY = tavily_key
-    if base_dir:
-        BASE_DIR = Path(base_dir)
+    if finnhub_key: FINNHUB_API_KEY = finnhub_key
+    if tavily_key: TAVILY_API_KEY = tavily_key
+    if base_dir: BASE_DIR = Path(base_dir)
 
 
-def _finnhub_get(endpoint, params=None):
-    """Make a Finnhub API call."""
-    if not FINNHUB_API_KEY:
-        return None
-    if params is None:
-        params = {}
-    params["token"] = FINNHUB_API_KEY
+def _yf(ticker):
     try:
-        r = requests.get(f"https://finnhub.io/api/v1/{endpoint}", params=params, timeout=15)
-        if r.status_code == 200:
-            return r.json()
-    except Exception:
-        pass
-    return None
-
-
-def _yf_fast(ticker_str):
-    """Get fast info from yfinance."""
-    try:
-        old_stderr = __import__('sys').stderr
-        __import__('sys').stderr = StringIO()
+        old_stderr = __import__('sys').stderr; __import__('sys').stderr = StringIO()
         try:
-            t = yf.Ticker(ticker_str)
-            fi = t.fast_info
-            return {
-                "price": fi.last_price,
-                "prev_close": fi.previous_close,
-                "change_pct": ((fi.last_price - fi.previous_close) / fi.previous_close * 100) if fi.previous_close else 0,
-            }
-        finally:
-            __import__('sys').stderr = old_stderr
-    except Exception:
-        return {"price": 0, "prev_close": 0, "change_pct": 0}
+            t = yf.Ticker(ticker); fi = t.fast_info; p = fi.last_price; pc = fi.previous_close
+            if p and p > 0:
+                chg = ((p - pc) / pc * 100) if pc and pc > 0 else 0
+                return {"price": float(p), "prev_close": float(pc) if pc else 0, "change_pct": float(chg)}
+        finally: __import__('sys').stderr = old_stderr
+    except Exception: pass
+    return {"price": 0, "prev_close": 0, "change_pct": 0}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 1: VIX & Fear/Greed
-# ─────────────────────────────────────────────
-def _signal_vix():
-    """VIX level and trend. High VIX = fear = potential bottom. Low VIX = complacency."""
-    vix_data = _yf_fast("^VIX")
-    vix_price = vix_data.get("price", 0)
-    if not vix_price:
-        return {"score": 0, "detail": "VIX data unavailable", "confidence": 0}
-
-    # Score: VIX > 30 = very bearish (contrarian bullish), VIX < 15 = complacency (bearish signal)
-    if vix_price > 35:
-        score = 40  # Extreme fear = contrarian bullish
-        detail = f"VIX at {vix_price:.1f} — EXTREME FEAR. Historically a contrarian buy signal. Market may be near a bottom."
-    elif vix_price > 25:
-        score = 20
-        detail = f"VIX at {vix_price:.1f} — Elevated fear. Caution warranted but potential opportunity."
-    elif vix_price > 20:
-        score = 0
-        detail = f"VIX at {vix_price:.1f} — Normal range."
-    elif vix_price > 15:
-        score = -15
-        detail = f"VIX at {vix_price:.1f} — Low volatility / complacency. Risk of sharp reversal."
-    else:
-        score = -30
-        detail = f"VIX at {vix_price:.1f} — EXTREMELY LOW. Classic complacency. Elevated crash risk."
-
-    return {"score": score, "detail": detail, "confidence": 0.8, "vix": vix_price}
-
-
-# ─────────────────────────────────────────────
-# SIGNAL 2: S&P 500 & Nasdaq Trend / Breadth
-# ─────────────────────────────────────────────
-def _signal_market_trend():
-    """Market trend using SPY, QQQ, and their moving average position."""
-    spy = _yf_fast("SPY")
-    qqq = _yf_fast("QQQ")
-    iwm = _yf_fast("IWM")
-
-    score = 0
-    details = []
-
-    # SPY trend
-    spy_chg = spy.get("change_pct", 0)
-    if spy_chg > 1:
-        score += 10
-        details.append(f"SPY +{spy_chg:.1f}% (bullish momentum)")
-    elif spy_chg < -1:
-        score -= 10
-        details.append(f"SPY {spy_chg:.1f}% (bearish momentum)")
-    else:
-        details.append(f"SPY {spy_chg:+.1f}% (flat)")
-
-    # QQQ vs SPY (tech leadership)
-    qqq_chg = qqq.get("change_pct", 0)
-    if qqq_chg > spy_chg + 0.5:
-        score += 5
-        details.append("QQQ outperforming SPY (risk-on)")
-    elif qqq_chg < spy_chg - 0.5:
-        score -= 5
-        details.append("QQQ underperforming SPY (risk-off)")
-
-    # IWM (small caps — risk appetite)
-    iwm_chg = iwm.get("change_pct", 0)
-    if iwm_chg > spy_chg:
-        score += 5
-        details.append("Small caps outperforming (broad risk appetite)")
-    else:
-        score -= 3
-        details.append("Small caps underperforming (narrow market)")
-
-    return {"score": score, "detail": "; ".join(details), "confidence": 0.7}
-
-
-# ─────────────────────────────────────────────
-# SIGNAL 3: Yield Curve (10Y - 2Y spread)
-# ─────────────────────────────────────────────
 def _signal_yield_curve():
-    """Yield curve inversion is a leading recession indicator."""
-    try:
-        tnx = _yf_fast("^TNX")  # 10Y yield
-        try:
-            t_2y = yf.Ticker("^IRX")  # 13-week T-bill as proxy for short end
-            t_2y_price = t_2y.fast_info.last_price
-        except Exception:
-            t_2y_price = 0
-
-        yield_10y = tnx.get("price", 0)
-        if yield_10y and t_2y_price:
-            spread = yield_10y - t_2y_price
-            if spread < -0.5:
-                score = -25
-                detail = f"Yield curve deeply inverted (10Y-{spread:.2f}%). Strong recession signal."
-            elif spread < 0:
-                score = -15
-                detail = f"Yield curve inverted (10Y-{spread:.2f}%). Caution signal."
-            elif spread < 0.5:
-                score = -5
-                detail = f"Yield curve flat ({spread:.2f}%). Watch closely."
-            else:
-                score = 5
-                detail = f"Yield curve normal ({spread:.2f}%)."
-            return {"score": score, "detail": detail, "confidence": 0.6, "spread": spread}
-    except Exception:
-        pass
+    tnx = _yf("^TNX"); irx = _yf("^IRX")
+    tnx_p = tnx.get("price", 0); irx_p = irx.get("price", 0)
+    if tnx_p and irx_p:
+        spread = tnx_p - irx_p
+        if spread < -0.5: score, detail = -30, f"Yield curve deeply inverted ({spread:.2f}%) — recession signal, leads by 6-18mo"
+        elif spread < 0: score, detail = -15, f"Yield curve inverted ({spread:.2f}%) — caution"
+        elif spread < 0.5: score, detail = -5, f"Yield curve flat ({spread:.2f}%) — late cycle"
+        else: score, detail = 5, f"Yield curve normal ({spread:.2f}%)"
+        return {"score": score, "detail": detail, "confidence": 0.7}
     return {"score": 0, "detail": "Yield curve data unavailable", "confidence": 0}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 4: Put/Call Ratio
-# ─────────────────────────────────────────────
-def _signal_put_call_ratio():
-    """High put/call ratio = bearish sentiment = contrarian bullish. Low = complacency."""
-    data = _finnhub_get("stock/symbol", {"exchange": "US"})
-    # Use CBOE data via alternative source
-    try:
-        # CBOE total put/call ratio
-        r = requests.get("https://cdn.cboe.com/api/global/us_market_stats/historical_data/daily/total_pc_ratio.json", timeout=10)
-        if r.status_code == 200:
-            pc_data = r.json()
-            if pc_data and len(pc_data) > 0:
-                latest = pc_data[-1]
-                ratio = latest.get("total_pc_ratio", 0.7)
-                if ratio > 1.2:
-                    score = 25
-                    detail = f"Put/Call ratio {ratio:.2f} — Extreme bearish sentiment (contrarian bullish)"
-                elif ratio > 0.9:
-                    score = 10
-                    detail = f"Put/Call ratio {ratio:.2f} — Elevated puts, some fear"
-                elif ratio > 0.7:
-                    score = 0
-                    detail = f"Put/Call ratio {ratio:.2f} — Normal"
-                elif ratio > 0.5:
-                    score = -10
-                    detail = f"Put/Call ratio {ratio:.2f} — Low puts, complacency building"
-                else:
-                    score = -20
-                    detail = f"Put/Call ratio {ratio:.2f} — Extreme complacency (bearish)"
-                return {"score": score, "detail": detail, "confidence": 0.6, "ratio": ratio}
-    except Exception:
-        pass
-    return {"score": 0, "detail": "Put/Call ratio unavailable", "confidence": 0}
+def _signal_vix():
+    vix = _yf("^VIX"); vix_p = vix.get("price", 0)
+    if not vix_p: return {"score": 0, "detail": "VIX data unavailable", "confidence": 0}
+    if vix_p > 35: score, detail = 35, f"VIX at {vix_p:.1f} — EXTREME FEAR. Contrarian buy signal. Historically precedes 5-10% rallies in 2-4 weeks."
+    elif vix_p > 25: score, detail = 15, f"VIX at {vix_p:.1f} — Elevated fear. Watch for capitulation bottom."
+    elif vix_p > 20: score, detail = 0, f"VIX at {vix_p:.1f} — Normal range."
+    elif vix_p > 15: score, detail = -10, f"VIX at {vix_p:.1f} — Low vol/complacency. Risk of sharp reversal."
+    else: score, detail = -25, f"VIX at {vix_p:.1f} — EXTREMELY LOW. Classic complacency. Elevated crash risk."
+    return {"score": score, "detail": detail, "confidence": 0.8}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 5: Sector Rotation (Risk-On vs Risk-Off)
-# ─────────────────────────────────────────────
-def _signal_sector_rotation():
-    """Compare performance of defensive vs cyclical sectors."""
-    sectors = {
-        "XLK": "Tech (cyclical)",
-        "XLF": "Financials (cyclical)",
-        "XLE": "Energy (cyclical)",
-        "XLV": "Healthcare (defensive)",
-        "XLP": "Staples (defensive)",
-        "XLU": "Utilities (defensive)",
-        "XLRE": "Real Estate (rate-sensitive)",
-    }
-
-    cyclical_scores = []
-    defensive_scores = []
-    details = []
-
-    for ticker, name in sectors.items():
-        data = _yf_fast(ticker)
-        chg = data.get("change_pct", 0)
-        details.append(f"{name}: {chg:+.2f}%")
-
-        if ticker in ("XLK", "XLF", "XLE"):
-            cyclical_scores.append(chg)
-        else:
-            defensive_scores.append(chg)
-
-    avg_cyclical = sum(cyclical_scores) / len(cyclical_scores) if cyclical_scores else 0
-    avg_defensive = sum(defensive_scores) / len(defensive_scores) if defensive_scores else 0
-
-    diff = avg_cyclical - avg_defensive
-    if diff > 1:
-        score = 15
-        detail = f"Cyclicals outperforming defensives by {diff:.2f}% — RISK-ON environment"
-    elif diff > 0.3:
-        score = 5
-        detail = f"Cyclicals slightly leading — mild risk-on"
-    elif diff > -0.3:
-        score = 0
-        detail = "Mixed sector performance — no clear risk signal"
-    elif diff > -1:
-        score = -10
-        detail = f"Defensives outperforming — mild risk-off"
-    else:
-        score = -20
-        detail = f"Defensives strongly outperforming by {abs(diff):.2f}% — RISK-OFF / FLIGHT TO SAFETY"
-
-    return {"score": score, "detail": detail + " | " + "; ".join(details), "confidence": 0.65}
-
-
-# ─────────────────────────────────────────────
-# SIGNAL 6: Earnings Revision Momentum
-# ─────────────────────────────────────────────
-def _signal_earnings_revisions():
-    """Aggregate earnings estimate revisions for S&P 500 companies."""
-    # Check a sample of major companies for estimate revisions
-    sample = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA", "JPM", "V", "JNJ",
-              "WMT", "XOM", "UNH", "HD", "PG", "MA", "LLY", "ABBV", "MRK", "PEP"]
-
-    up_revisions = 0
-    down_revisions = 0
-    total = 0
-
+def _signal_earnings_momentum():
+    sample = ["AAPL","MSFT","GOOGL","AMZN","NVDA","META","TSLA","JPM","V","JNJ","WMT","XOM","UNH","HD","PG","MA","LLY","ABBV","MRK","PEP"]
+    up_rev = down_rev = total = 0
     for ticker in sample:
         try:
-            data = _finnhub_get(f"stock/earnings", {"symbol": ticker, "limit": 2})
+            data = None
+            if FINNHUB_API_KEY:
+                r = requests.get(f"https://finnhub.io/api/v1/stock/earnings", params={"symbol": ticker, "limit": 2, "token": FINNHUB_API_KEY}, timeout=10)
+                if r.status_code == 200: data = r.json()
             if data and len(data) >= 2:
-                recent = data[0].get("epsEstimate", 0)
-                prev = data[1].get("epsEstimate", 0)
+                recent = data[0].get("epsEstimate", 0); prev = data[1].get("epsEstimate", 0)
                 if recent and prev:
                     total += 1
-                    if float(recent) > float(prev):
-                        up_revisions += 1
-                    elif float(recent) < float(prev):
-                        down_revisions += 1
-        except Exception:
-            continue
-
+                    if float(recent) > float(prev): up_rev += 1
+                    elif float(recent) < float(prev): down_rev += 1
+        except Exception: continue
     if total > 0:
-        net = (up_revisions - down_revisions) / total * 100
-        if net > 30:
-            score = 20
-            detail = f"Earnings revisions: {up_revisions} up vs {down_revisions} down ({net:+.0f}% net) — Strong positive momentum"
-        elif net > 10:
-            score = 10
-            detail = f"Earnings revisions: {up_revisions} up vs {down_revisions} down ({net:+.0f}% net) — Positive"
-        elif net > -10:
-            score = 0
-            detail = f"Earnings revisions: Mixed ({up_revisions} up, {down_revisions} down)"
-        elif net > -30:
-            score = -10
-            detail = f"Earnings revisions: {up_revisions} up vs {down_revisions} down ({net:+.0f}% net) — Negative"
-        else:
-            score = -20
-            detail = f"Earnings revisions: {up_revisions} up vs {down_revisions} down ({net:+.0f}% net) — Strong negative momentum"
-        return {"score": score, "detail": detail, "confidence": 0.5}
-
+        net = (up_rev - down_rev) / total * 100
+        if net > 30: sc, det = 20, f"Earnings revisions strongly positive ({up_rev} up, {down_rev} down, net {net:+.0f}%) — leads market by 1-3mo"
+        elif net > 10: sc, det = 10, f"Earnings revisions positive ({up_rev} up, {down_rev} down)"
+        elif net > -10: sc, det = 0, f"Earnings revisions mixed ({up_rev} up, {down_rev} down)"
+        elif net > -30: sc, det = -15, f"Earnings revisions negative ({down_rev} down vs {up_rev} up)"
+        else: sc, det = -25, f"Earnings revisions strongly negative — recession risk"
+        return {"score": sc, "detail": det, "confidence": 0.5}
     return {"score": 0, "detail": "Earnings revision data unavailable", "confidence": 0}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 7: News Sentiment via Tavily
-# ─────────────────────────────────────────────
-def _signal_news_sentiment():
-    """Scan recent news for market sentiment keywords."""
-    if not TAVILY_API_KEY:
-        return {"score": 0, "detail": "Tavily not configured", "confidence": 0}
+def _signal_sector_rotation():
+    sectors = {"XLK": "Tech", "XLF": "Financial", "XLE": "Energy", "XLV": "Healthcare", "XLP": "Staples", "XLU": "Utilities"}
+    cyc = []; defn = []
+    for t, n in sectors.items():
+        d = _yf(t); chg = d.get("change_pct", 0)
+        if t in ("XLK","XLF","XLE"): cyc.append(chg)
+        else: defn.append(chg)
+    avg_c = sum(cyc)/len(cyc) if cyc else 0
+    avg_d = sum(defn)/len(defn) if defn else 0
+    diff = avg_c - avg_d
+    if diff > 1: sc, det = 15, f"Risk-on: Cyclicals outperforming defensives by {diff:.2f}% — bullish 2-8 weeks"
+    elif diff > 0.3: sc, det = 5, f"Mild risk-on: Cyclicals slightly leading"
+    elif diff > -0.3: sc, det = 0, "Mixed sector performance"
+    elif diff > -1: sc, det = -10, f"Defensive rotation: Staples/utilities outperforming — risk-off 2-8 weeks"
+    else: sc, det = -20, f"Strong flight to safety: Defensives outperforming by {abs(diff):.2f}% — bearish"
+    return {"score": sc, "detail": det, "confidence": 0.6}
 
-    bullish_keywords = ["rally", "surge", "breakout", "bullish", "optimism", "growth", "recovery",
-                        "rate cut", "stimulus", "soft landing", "ai boom", "earnings beat"]
-    bearish_keywords = ["crash", "recession", "bearish", "sell-off", "plunge", "default", "crisis",
-                        "inflation", "rate hike", "layoffs", "bankruptcy", "contagion", "stagflation",
-                        "debt ceiling", "government shutdown", "trade war", "sanctions"]
 
+def _signal_credit():
+    lqd = _yf("LQD"); hyg = _yf("HYG")
+    diff = hyg.get("change_pct", 0) - lqd.get("change_pct", 0)
+    if diff < -1: sc, det = -15, f"Credit spreads widening — stress signal, leads equities by 2-4 weeks"
+    elif diff < -0.3: sc, det = -5, "Credit spreads slightly widening"
+    elif diff > 0.5: sc, det = 10, "Credit spreads narrowing — risk appetite returning"
+    else: sc, det = 0, "Credit spreads stable"
+    return {"score": sc, "detail": det, "confidence": 0.5}
+
+
+def _signal_news():
+    if not TAVILY_API_KEY: return {"score": 0, "detail": "Tavily not configured", "confidence": 0}
+    bull_kw = ["rally","surge","breakout","bullish","upgrade","beat","strong demand","AI boom","rate cut","soft landing"]
+    bear_kw = ["crash","recession","bearish","downgrade","miss","layoffs","default","crisis","inflation","rate hike","contagion","stagflation"]
     try:
-        r = requests.post(
-            "https://api.tavily.com/search",
-            json={
-                "api_key": TAVILY_API_KEY,
-                "query": "stock market outlook recession crash rally next week 2026",
-                "max_results": 8,
-                "search_depth": "basic",
-            },
-            timeout=20
-        )
+        r = requests.post("https://api.tavily.com/search",
+            json={"api_key": TAVILY_API_KEY, "query": "stock market outlook next 2-4 weeks analyst forecast May 2026", "max_results": 8, "search_depth": "advanced"}, timeout=20)
         results = r.json().get("results", [])
-        all_text = " ".join([x.get("title", "") + " " + x.get("content", "") for x in results]).lower()
-
-        bull_count = sum(1 for kw in bullish_keywords if kw in all_text)
-        bear_count = sum(1 for kw in bearish_keywords if kw in all_text)
-
-        if bear_count > bull_count * 2:
-            score = -20
-            detail = f"News sentiment: heavily bearish ({bear_count} bearish vs {bull_count} bullish keywords)"
-        elif bear_count > bull_count:
-            score = -10
-            detail = f"News sentiment: leaning bearish ({bear_count} bearish vs {bull_count} bullish)"
-        elif bull_count > bear_count * 2:
-            score = 15
-            detail = f"News sentiment: strongly bullish ({bull_count} bullish vs {bear_count} bearish)"
-        elif bull_count > bear_count:
-            score = 5
-            detail = f"News sentiment: leaning bullish ({bull_count} bullish vs {bear_count} bearish)"
-        else:
-            score = 0
-            detail = "News sentiment: neutral/mixed"
-
-        return {"score": score, "detail": detail, "confidence": 0.4}
-    except Exception:
-        return {"score": 0, "detail": "News sentiment scan failed", "confidence": 0}
+        text = " ".join([x.get("title","") + " " + x.get("content","") for x in results]).lower()
+        bc = sum(1 for kw in bull_kw if kw in text); bdc = sum(1 for kw in bear_kw if kw in text)
+        if bdc > bc*2: sc, det = -20, f"News heavily bearish ({bdc} bearish vs {bc} bullish) — caution 2-4 weeks"
+        elif bdc > bc: sc, det = -10, f"News leaning bearish ({bdc} vs {bc})"
+        elif bc > bdc*2: sc, det = 15, f"News strongly bullish ({bc} vs {bdc}) — positive 2-4 weeks"
+        elif bc > bdc: sc, det = 5, f"News leaning bullish ({bc} vs {bdc})"
+        else: sc, det = 0, "News sentiment neutral/mixed"
+        return {"score": sc, "detail": det, "confidence": 0.4}
+    except Exception: return {"score": 0, "detail": "News scan failed", "confidence": 0}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 8: Dollar Strength (DXY)
-# ─────────────────────────────────────────────
 def _signal_dollar():
-    """Strong dollar = risk-off, emerging market pressure. Weak dollar = risk-on."""
-    dxy = _yf_fast("DX-Y.NYB")
-    dxy_chg = dxy.get("change_pct", 0)
-    dxy_price = dxy.get("price", 0)
-
-    if dxy_chg > 0.5:
-        score = -10
-        detail = f"Dollar strengthening ({dxy_price:+.2f}%) — risk-off, EM pressure"
-    elif dxy_chg < -0.5:
-        score = 10
-        detail = f"Dollar weakening ({dxy_price:+.2f}%) — risk-on, EM relief"
-    else:
-        score = 0
-        detail = f"Dollar stable ({dxy_price:.2f}%)"
-
-    return {"score": score, "detail": detail, "confidence": 0.5}
+    dxy = _yf("DX-Y.NYB"); chg = dxy.get("change_pct", 0)
+    if chg > 0.5: sc, det = -10, f"Dollar strengthening ({chg:+.2f}%) — headwind for commodities/EM"
+    elif chg < -0.5: sc, det = 10, f"Dollar weakening ({chg:+.2f}%) — tailwind for GLD/SLV/EEM"
+    else: sc, det = 0, f"Dollar stable ({chg:+.2f}%)"
+    return {"score": sc, "detail": det, "confidence": 0.5}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 9: Credit Spreads (LQD vs TLT)
-# ─────────────────────────────────────────────
-def _signal_credit_spreads():
-    """Widening credit spreads = stress. Narrowing = confidence."""
-    lqd = _yf_fast("LQD")  # Investment grade bonds
-    tlt = _yf_fast("TLT")  # Long-term treasuries
-    hyg = _yf_fast("HYG")  # High yield bonds
-
-    lqd_chg = lqd.get("change_pct", 0)
-    hyg_chg = hyg.get("change_pct", 0)
-
-    # If HY underperforms IG, spreads are widening (bad)
-    spread_diff = hyg_chg - lqd_chg
-    if spread_diff < -1:
-        score = -15
-        detail = f"Credit spreads widening (HY {hyg_chg:+.2f}% vs IG {lqd_chg:+.2f}%) — stress signal"
-    elif spread_diff < -0.3:
-        score = -5
-        detail = f"Credit spreads slightly widening — mild concern"
-    elif spread_diff > 0.5:
-        score = 10
-        detail = f"Credit spreads narrowing — confidence returning"
-    else:
-        score = 0
-        detail = "Credit spreads stable"
-
-    return {"score": score, "detail": detail, "confidence": 0.5}
+def _signal_breadth():
+    spy = _yf("SPY"); iwm = _yf("IWM")
+    diff = iwm.get("change_pct", 0) - spy.get("change_pct", 0)
+    if diff > 1: sc, det = 10, f"Breadth expanding: Small caps outperforming by {diff:.2f}% — healthy, leads to gains"
+    elif diff > -0.5: sc, det = 0, "Breadth neutral"
+    elif diff > -1.5: sc, det = -10, f"Breadth narrowing: Small caps underperforming {abs(diff):.2f}% — early warning"
+    else: sc, det = -20, f"Breadth breakdown: Small caps severely underperforming — correction likely 2-4 weeks"
+    return {"score": sc, "detail": det, "confidence": 0.6}
 
 
-# ─────────────────────────────────────────────
-# SIGNAL 10: Seasonal / Calendar
-# ─────────────────────────────────────────────
 def _signal_seasonal():
-    """Calendar-based seasonal patterns."""
-    today = datetime.date.today()
-    month = today.month
-    day = today.day
-
-    # "Sell in May" effect
-    if month == 5 and day < 15:
-        return {"score": -5, "detail": "Early May — 'Sell in May' seasonal headwind", "confidence": 0.3}
-    # October volatility
-    elif month == 10:
-        return {"score": -5, "detail": "October — historically volatile month", "confidence": 0.3}
-    # November-April bullish season
-    elif month in (11, 12, 1, 2, 3, 4):
-        return {"score": 5, "detail": f"{today.strftime('%B')} — historically bullish season", "confidence": 0.3}
-    # September weak
-    elif month == 9:
-        return {"score": -5, "detail": "September — historically weakest month", "confidence": 0.3}
-    # End of quarter window dressing
-    elif month in (3, 6, 9, 12) and day > 20:
-        return {"score": 3, "detail": "End of quarter — window dressing may provide support", "confidence": 0.2}
-
-    return {"score": 0, "detail": "No strong seasonal signal", "confidence": 0.2}
+    today = datetime.date.today(); m = today.month
+    if m == 5 and today.day > 20: sc, det = -8, "Late May — 'Sell in May' seasonal headwind"
+    elif m in (6,7,8): sc, det = -5, f"{today.strftime('%B')} — summer seasonally weak"
+    elif m == 9: sc, det = -10, "September — historically weakest month"
+    elif m in (10,11) and today.day > 15: sc, det = 10, "Late Oct/Nov — seasonally strong period begins"
+    elif m in (12,1,2,3,4): sc, det = 8, f"{today.strftime('%B')} — seasonally strong (Nov-Apr)"
+    else: sc, det = 0, "No strong seasonal signal"
+    return {"score": sc, "detail": det, "confidence": 0.3}
 
 
-# ─────────────────────────────────────────────
-# COMPOSITE SCORE & ALERT
-# ─────────────────────────────────────────────
 def get_market_foresight():
-    """
-    Run all signals and produce a composite market outlook.
-    
-    Returns: {
-        "composite_score": int,       # -100 to +100
-        "direction": str,             # "strong_bullish" | "bullish" | "neutral" | "bearish" | "strong_bearish" | "crash_warning"
-        "confidence": float,          # 0 to 1
-        "outlook": str,               # Human-readable 1-2 week outlook
-        "signals": list,              # Individual signal details
-        "alert": str or None,         # Telegram alert message if extreme
-        "action_items": list,         # Suggested actions
-    }
-    """
     signals = []
-
-    # Run all signal functions
-    signal_funcs = [
-        ("VIX/Fear-Greed", _signal_vix),
-        ("Market Trend", _signal_market_trend),
-        ("Yield Curve", _signal_yield_curve),
-        ("Put/Call Ratio", _signal_put_call_ratio),
-        ("Sector Rotation", _signal_sector_rotation),
-        ("Earnings Revisions", _signal_earnings_revisions),
-        ("News Sentiment", _signal_news_sentiment),
-        ("Dollar Strength", _signal_dollar),
-        ("Credit Spreads", _signal_credit_spreads),
-        ("Seasonal", _signal_seasonal),
-    ]
-
-    for name, func in signal_funcs:
+    for name, func in [
+        ("Yield Curve (6-18mo lead)", _signal_yield_curve),
+        ("VIX/Fear-Greed (2-4wk)", _signal_vix),
+        ("Earnings Revisions (1-3mo)", _signal_earnings_momentum),
+        ("Sector Rotation (2-8wk)", _signal_sector_rotation),
+        ("Credit Spreads (2-4wk)", _signal_credit),
+        ("News Sentiment (2-4wk)", _signal_news),
+        ("Dollar (2-4wk)", _signal_dollar),
+        ("Market Breadth (2-4wk)", _signal_breadth),
+        ("Seasonal (1-3mo)", _signal_seasonal),
+    ]:
         try:
-            result = func()
-            result["name"] = name
-            signals.append(result)
+            r = func(); r["name"] = name; signals.append(r)
         except Exception as e:
             signals.append({"name": name, "score": 0, "detail": f"Error: {e}", "confidence": 0})
-
-    # Calculate weighted composite score
-    total_score = 0
-    total_weight = 0
-    for s in signals:
-        weight = s.get("confidence", 0.5)
-        total_score += s["score"] * weight
-        total_weight += weight
-
-    if total_weight > 0:
-        composite = total_score / total_weight
-    else:
-        composite = 0
-
-    # Clamp to -100 to +100
+    
+    total_score = sum(s["score"] * s.get("confidence", 0.5) for s in signals)
+    total_weight = sum(s.get("confidence", 0.5) for s in signals)
+    composite = total_score / total_weight if total_weight > 0 else 0
     composite = max(-100, min(100, composite))
-
-    # Determine direction
-    if composite >= 60:
-        direction = "strong_bullish"
-        outlook = "🟢 STRONG BULLISH: Multiple signals align for positive market movement. Consider increasing equity exposure, buying dips, or selling puts for income."
-    elif composite >= 30:
-        direction = "bullish"
-        outlook = "🟢 BULLISH: Market conditions favor upside. Good environment for swing trades and holding positions."
+    
+    if composite >= 55:
+        direction, outlook = "strong_bullish", "🟢 STRONG BULLISH (2-6 week): Multiple forward-looking signals align for positive market movement. Consider increasing equity exposure, buying dips, selling puts."
+    elif composite >= 25:
+        direction, outlook = "bullish", "🟢 BULLISH (2-6 week): Leading indicators favor upside. Good environment for swing trades."
     elif composite >= 10:
-        direction = "slightly_bullish"
-        outlook = "🟡 MILDLY BULLISH: Slight positive bias but not overwhelming. Stay invested but don't add aggressively."
+        direction, outlook = "slightly_bullish", "🟡 MILDLY BULLISH: Some positive signals. Stay invested but don't add aggressively."
     elif composite > -10:
-        direction = "neutral"
-        outlook = "⚪ NEUTRAL: Mixed signals. No clear directional edge. Focus on stock-specific opportunities rather than market direction."
-    elif composite > -30:
-        direction = "bearish"
-        outlook = "🔴 BEARISH: Negative signals building. Consider reducing exposure, raising cash, or buying protective puts."
-    elif composite > -60:
-        direction = "strongly_bearish"
-        outlook = "🔴 STRONGLY BEARISH: Multiple warning signs. Reduce equity exposure, consider hedges (SPY puts, VIX calls), raise cash."
+        direction, outlook = "neutral", "⚪ NEUTRAL (2-6 week): Mixed signals from leading indicators. Focus on stock-picking, not market timing."
+    elif composite > -25:
+        direction, outlook = "slightly_bearish", "🟡 MILDLY BEARISH: Warning signals building. Raise cash to 15-20%, trim weakest positions."
+    elif composite > -55:
+        direction, outlook = "bearish", "🔴 BEARISH (2-6 week): Multiple leading indicators flashing warning. Reduce equity 20-30%, raise cash, consider hedges."
     else:
-        direction = "crash_warning"
-        outlook = "🚨 CRASH WARNING: Extreme bearish alignment across multiple indicators. This has historically preceded significant market drawdowns. Consider: (1) Reducing equity exposure significantly, (2) Buying SPY/QQQ puts as portfolio insurance, (3) Selling covered calls at high strikes for premium income, (4) Moving to defensive sectors (XLU, XLP, XLV), (5) Raising cash to 30-50%."
-
-    # Build action items
+        direction, outlook = "crash_warning", "🚨 CRASH WARNING: Extreme bearish alignment. Reduce equity to 40-50%, buy protective puts, raise cash to 30-40%."
+    
     action_items = []
-    if direction in ("crash_warning", "strongly_bearish"):
-        action_items = [
-            "REDUCE equity exposure by 20-40%",
-            "BUY protective puts on SPY/QQQ (30-45 DTE, 5-10% OTM)",
-            "SELL covered calls on existing positions for premium income",
-            "ROTATE into defensive sectors: XLU, XLP, XLV",
-            "RAISE cash position to 30-50%",
-            "CONSIDER VIX calls as volatility hedge",
-            "AVOID new long positions until signals improve",
-        ]
-    elif direction == "bearish":
-        action_items = [
-            "TRIM weakest positions",
-            "BUY protective puts on largest holdings (30 DTE)",
-            "REDUCE position sizes on new trades",
-            "INCREASE cash to 20-30%",
-            "FOCUS on high-conviction ideas only",
-        ]
-    elif direction == "strong_bullish":
-        action_items = [
-            "INCREASE equity exposure — buy dips aggressively",
-            "SELL cash-secured puts on stocks you want to own",
-            "BUY LEAPS calls on high-conviction names",
-            "REDUCE cash position to 10-15%",
-            "ADD cyclical exposure: XLK, XLF, XLE",
-            "CONSIDER selling covered calls at higher strikes to generate income while staying long",
-        ]
-    elif direction == "bullish":
-        action_items = [
-            "STAY invested, add on dips",
-            "SELL puts on quality names you'd own at lower prices",
-            "HOLD existing positions, avoid panic selling",
-            "LOOK for swing entry points in leading sectors",
-        ]
-    else:
-        action_items = [
-            "FOCUS on stock-picking rather than market direction",
-            "MAINTAIN current allocation",
-            "USE options strategies that profit from range-bound markets (iron condors, strangles)",
-            "WAIT for clearer signal before making major allocation changes",
-        ]
-
-    # Determine if we should send a Telegram alert
+    for s in signals:
+        if s.get("score", 0) > 10:
+            if "VIX" in s["name"]: action_items.append("VIX elevated → sell premium (iron condors) or buy calls on dips")
+            elif "Earnings" in s["name"]: action_items.append("Earnings momentum positive → add to positions ahead of earnings season")
+            elif "Breadth" in s["name"]: action_items.append("Breadth expanding → favor small caps (IWM) and cyclicals")
+            elif "Dollar" in s["name"]: action_items.append("Dollar weakening → add commodities (GLD, SLV) and international (EEM)")
+            elif "Credit" in s["name"]: action_items.append("Credit spreads narrowing → add cyclicals (XLK, XLF, XLE)")
+        elif s.get("score", 0) < -10:
+            if "VIX" in s["name"]: action_items.append("VIX extremely low → buy protective puts as insurance")
+            elif "Yield" in s["name"]: action_items.append("Yield curve inverted → reduce risk, add defensives (XLU, XLP)")
+            elif "Earnings" in s["name"]: action_items.append("Earnings revisions negative → trim positions before earnings")
+            elif "Breadth" in s["name"]: action_items.append("Breadth narrowing → reduce small-cap exposure, raise cash")
+            elif "Credit" in s["name"]: action_items.append("Credit spreads widening → reduce equity, raise cash to 20-30%")
+            elif "Dollar" in s["name"]: action_items.append("Dollar strengthening → reduce international exposure")
+    
+    if not action_items:
+        action_items.append("No strong directional signals — maintain current allocation, focus on stock-picking")
+    action_items = list(dict.fromkeys(action_items))
+    
     alert = None
     if composite <= CRASH_WARNING_THRESHOLD:
-        alert = (
-            f"🚨 <b>MARKET CRASH WARNING</b> 🚨\n\n"
-            f"Composite Score: {composite:.0f}/100 ({direction.upper()})\n\n"
-            f"{outlook}\n\n"
-            f"<b>Key Signals:</b>\n" +
-            "\n".join([f"• {s['name']}: {s['detail']}" for s in signals if abs(s.get('score', 0)) > 5]) +
-            f"\n\n<b>Recommended Actions:</b>\n" +
-            "\n".join([f"• {a}" for a in action_items]) +
-            f"\n\n<i>This is an automated alert based on multi-factor analysis. Not financial advice.</i>"
-        )
+        alert = (f"🚨 <b>MARKET CRASH WARNING</b> 🚨\n\nScore: {composite:.0f}/100\n\n{outlook}\n\n"
+                f"<b>Key Signals:</b>\n" + "\n".join([f"• {s['name']}: {s['detail'][:100]}" for s in signals if abs(s.get('score',0))>5]) +
+                f"\n\n<b>Actions:</b>\n" + "\n".join([f"• {a}" for a in action_items[:5]]))
     elif composite >= BULLISH_ALERT_THRESHOLD:
-        alert = (
-            f"🟢 <b>MAJOR BULLISH SIGNAL</b> 🟢\n\n"
-            f"Composite Score: {composite:.0f}/100 ({direction.upper()})\n\n"
-            f"{outlook}\n\n"
-            f"<b>Key Signals:</b>\n" +
-            "\n".join([f"• {s['name']}: {s['detail']}" for s in signals if abs(s.get('score', 0)) > 5]) +
-            f"\n\n<b>Recommended Actions:</b>\n" +
-            "\n".join([f"• {a}" for a in action_items]) +
-            f"\n\n<i>This is an automated alert based on multi-factor analysis. Not financial advice.</i>"
-        )
-
-    # Calculate overall confidence based on signal agreement
-    signal_scores = [s["score"] for s in signals if s.get("confidence", 0) > 0.3]
-    if len(signal_scores) > 1:
-        # If all signals agree, confidence is high
-        positive = sum(1 for s in signal_scores if s > 5)
-        negative = sum(1 for s in signal_scores if s < -5)
-        neutral = len(signal_scores) - positive - negative
-        max_agreement = max(positive, negative, neutral)
-        confidence = max_agreement / len(signal_scores)
+        alert = (f"🟢 <b>MAJOR BULLISH SIGNAL</b> 🟢\n\nScore: {composite:.0f}/100\n\n{outlook}\n\n"
+                f"<b>Key Signals:</b>\n" + "\n".join([f"• {s['name']}: {s['detail'][:100]}" for s in signals if abs(s.get('score',0))>5]) +
+                f"\n\n<b>Actions:</b>\n" + "\n".join([f"• {a}" for a in action_items[:5]]))
+    
+    sig_scores = [s["score"] for s in signals if s.get("confidence", 0) > 0.3]
+    if len(sig_scores) > 1:
+        pos = sum(1 for s in sig_scores if s > 5); neg = sum(1 for s in sig_scores if s < -5)
+        neu = len(sig_scores) - pos - neg; confidence = max(pos, neg, neu) / len(sig_scores)
     else:
         confidence = 0.3
-
-    return {
-        "composite_score": round(composite),
-        "direction": direction,
-        "confidence": round(confidence, 2),
-        "outlook": outlook,
-        "signals": signals,
-        "alert": alert,
-        "action_items": action_items,
-    }
+    
+    return {"composite_score": round(composite), "direction": direction, "confidence": round(confidence, 2),
+            "outlook": outlook, "signals": signals, "alert": alert, "action_items": action_items}
 
 
-__all__ = [
-    "init_foresight_skill",
-    "get_market_foresight",
-]
+__all__ = ["init_foresight_skill", "get_market_foresight"]

@@ -223,30 +223,56 @@ def parse_and_store_recommendations(investments_text, model_used="unknown"):
             })
 
     if trackable:
-        # Update RECOMMENDATIONS.md
+        # Update RECOMMENDATIONS.md with proper column headers
         existing = ""
         if RECOMMENDATIONS_FILE.exists():
             existing = RECOMMENDATIONS_FILE.read_text(encoding="utf-8")
 
-        new_entries = "\n".join([
-            (f"- {r['date']} | {r['ticker']} | "
-             f"${r['entry_price']:.2f}" if r['entry_price'] else f"- {r['date']} | {r['ticker']} | N/A") +
-            (f" | ${r['target_price']:.2f}" if r['target_price'] else " | N/A") +
-            f" | {r['conviction']}/10 | {r['status']} | " +
-            (f"${r['current_price']:.2f}" if r['current_price'] else "N/A") +
-            f" | {r['performance_pct']:+.1f}% | {r['horizon']}"
-            for r in trackable
-        ])
-
-        if "## Active Recommendations" in existing:
-            updated = existing.replace(
-                "<!-- Agent will update this section with current recommendations -->",
-                f"{new_entries}\n<!-- Agent will update this section with current recommendations -->"
+        # Build entries with proper formatting
+        header = ("| # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |"
+                  "\n|---|--------|-------|--------|------------|--------|---------|-----|---------|--------|")
+        
+        rows = []
+        for i, r in enumerate(trackable, 1):
+            entry = f"${r['entry_price']:.2f}" if r.get('entry_price') else "Market"
+            target = f"${r['target_price']:.2f}" if r.get('target_price') else "TBD"
+            current = f"${r['current_price']:.2f}" if r.get('current_price') else "Fetching..."
+            perf = f"{r.get('performance_pct', 0):+.1f}%"
+            source = r.get('source', 'Watchlist')
+            rows.append(
+                f"| {i} | **{r['ticker']}** | {entry} | {target} | {r['conviction']}/10 | "
+                f"{r['status']} | {current} | {perf} | {r.get('horizon', 'Medium')} | {source} |"
             )
-        else:
-            updated = existing + f"\n\n## Active Recommendations\n{new_entries}\n<!-- Agent will update this section with current recommendations -->\n"
+        
+        new_entries = header + "\n" + "\n".join(rows)
 
-        RECOMMENDATIONS_FILE.write_text(updated, encoding="utf-8")
+        # Also add Alpaca holdings section
+        alpaca_section = ""
+        try:
+            from skills.alpaca_trading import get_account_info, get_all_positions_including_options
+            acct = get_account_info()
+            if "error" not in acct:
+                positions = get_all_positions_including_options()
+                if positions:
+                    alpaca_header = ("\n\n## 🏦 Alpaca Paper Trading Holdings\n"
+                                     "| Ticker | Qty | Avg Cost | Current | P&L |"
+                                     "\n|--------|-----|----------|---------|-----|")
+                    alpaca_rows = []
+                    for pos in positions:
+                        if pos.get('type') == 'stock':
+                            alpaca_rows.append(
+                                f"| **{pos['symbol']}** | {pos.get('qty', 0)} | "
+                                f"${pos.get('avg_entry_price', 0):.2f} | "
+                                f"${pos.get('current_price', 0):.2f} | "
+                                f"{pos.get('unrealized_plpc', 0)*100:+.1f}% |"
+                            )
+                    if alpaca_rows:
+                        alpaca_section = alpaca_header + "\n" + "\n".join(alpaca_rows)
+        except Exception:
+            pass
+
+        full_content = f"# 📊 Recommendation Tracking & Decision Journal\n\n## 📋 Watchlist Recommendations\n{new_entries}{alpaca_section}\n"
+        RECOMMENDATIONS_FILE.write_text(full_content, encoding="utf-8")
 
         # Also update DECISION_JOURNAL.md
         _update_decision_journal(trackable)
@@ -305,52 +331,76 @@ def update_recommendation_performance():
     changes_made = False
 
     for line in lines:
-        if line.startswith('- ') and ' | ' in line:
+        # Handle both old format ("- date | ticker | ...") and new table format ("| # | Ticker | ...")
+        is_old_format = line.startswith('- ') and ' | ' in line
+        is_new_format = line.startswith('| ') and ' | ' in line and not line.startswith('| #') and not line.startswith('|---')
+        
+        if not (is_old_format or is_new_format):
+            updated_lines.append(line)
+            continue
+        
+        # Parse the line
+        if is_old_format:
             parts = line[2:].split(' | ')
-            if len(parts) >= 7:
-                date = parts[0].strip()
-                ticker = parts[1].strip()
-                entry_str = parts[2].strip()
-                target_str = parts[3].strip()
-                conviction = parts[4].strip()
-                status = parts[5].strip()
-                current_str = parts[6].strip()
-                perf = parts[7].strip() if len(parts) > 7 else "0%"
+        else:
+            parts = [p.strip() for p in line.split('|')[1:-1]]  # Skip empty first/last
+        
+        if len(parts) >= 7:
+            try:
+                # For old format: date, ticker, entry, target, conviction, status, current, perf
+                # For new format: #, ticker, entry, target, conviction, status, current, perf, horizon, source
+                if is_old_format:
+                    date = parts[0].strip()
+                    ticker = parts[1].strip()
+                    entry_str = parts[2].strip()
+                    target_str = parts[3].strip()
+                    conviction = parts[4].strip()
+                    status = parts[5].strip()
+                    current_str = parts[6].strip()
+                    perf = parts[7].strip() if len(parts) > 7 else "0%"
+                else:
+                    # New format: skip # (parts[0])
+                    ticker = parts[1].strip().replace('**', '')
+                    entry_str = parts[2].strip()
+                    target_str = parts[3].strip()
+                    conviction = parts[4].strip()
+                    status = parts[5].strip()
+                    current_str = parts[6].strip()
+                    perf = parts[7].strip() if len(parts) > 7 else "0%"
 
                 if status == 'Active':
-                    try:
-                        # Get LIVE current price
-                        live_price, _ = _get_live_price(ticker)
+                    # Get LIVE current price
+                    live_price, _ = _get_live_price(ticker)
 
-                        if live_price and entry_str.startswith('$'):
-                            entry_price = float(entry_str[1:])
-                            if entry_price > 0:
-                                change_pct = ((live_price - entry_price) / entry_price) * 100
-                                perf = f"{change_pct:+.1f}%"
+                    if live_price and entry_str.startswith('$'):
+                        entry_price = float(entry_str[1:])
+                        if entry_price > 0:
+                            change_pct = ((live_price - entry_price) / entry_price) * 100
+                            perf = f"{change_pct:+.1f}%"
 
-                        if live_price:
-                            current_str = f"${live_price:.2f}"
+                    if live_price:
+                        current_str = f"${live_price:.2f}"
 
-                        # Check if target hit
-                        if target_str.startswith('$'):
-                            target_price = float(target_str[1:])
-                            if live_price and live_price >= target_price * 0.95:
-                                status = 'Target Hit'
-                                changes_made = True
+                    # Check if target hit
+                    if target_str.startswith('$'):
+                        target_price = float(target_str[1:])
+                        if live_price and live_price >= target_price * 0.95:
+                            status = 'Target Hit'
+                            changes_made = True
 
-                        # Check if stop loss hit (if we have stop loss info)
-                        if len(parts) >= 9:
-                            stop_str = parts[8].strip() if len(parts) > 8 else ""
-                            if stop_str.startswith('$'):
-                                stop_price = float(stop_str[1:])
-                                if live_price and live_price <= stop_price * 1.05:
-                                    status = 'Stopped Out'
-                                    changes_made = True
-
+                    # Reconstruct the line
+                    if is_old_format:
                         line = f"- {date} | {ticker} | {entry_str} | {target_str} | {conviction} | {status} | {current_str} | {perf}"
-                        changes_made = True
-                    except Exception:
-                        pass
+                    else:
+                        # Reconstruct table row preserving all columns
+                        parts[5] = f" {status} "
+                        parts[6] = f" {current_str} "
+                        parts[7] = f" {perf} "
+                        line = '| ' + ' | '.join(parts) + ' |'
+                    
+                    changes_made = True
+            except Exception:
+                pass
 
         updated_lines.append(line)
 

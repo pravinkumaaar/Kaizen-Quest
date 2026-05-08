@@ -55,7 +55,7 @@ RSS_FEEDS = {
         "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
         "https://feeds.bbci.co.uk/news/technology/rss.xml",
         "https://www.technologyreview.com/feed/",
-        "https://venturebeat.com/category/ai/feed/",
+        "https://www.axios.com/feed/",
     ],
     "📈 Markets & Finance": [
         "https://feeds.marketwatch.com/marketwatch/topstories",
