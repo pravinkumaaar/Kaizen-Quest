@@ -2937,38 +2937,50 @@ def main():
     log("📈 Updating recommendation tracking...")
     update_recommendation_performance()
 
-    # ═══ ALERTS-ONLY MODE: Fast path for market-hours runs ═══
-    # Skip expensive LLM calls, RSS feeds, news digest, report generation
-    # Only: foresight model, position review, trading decisions, urgent alerts
+    # ═══ ALERTS-ONLY MODE: Fetch all data, trade, but skip report generation ═══
     if ALERTS_ONLY_MODE:
-        log("⚡ ALERTS-ONLY MODE: Skipping RSS, news, LLM calls, report generation")
+        log("⚡ ALERTS-ONLY MODE: Fetching all data + trading, skipping report generation")
         
-        # Minimal data: just what's needed for trading decisions
-        market_data = ""
-        fin_news = ""
-        rss = {}
-        memory = ""
-        investments = ""
-        options = ""
-        learning = ""
-        market_sentiment = ""
-        portfolio_analysis = analyze_portfolio_weightage() if SKILLS_AVAILABLE else {}
+        # ── FETCH ALL DATA (same as full mode) ──
+        # Memory
+        if SKILLS_AVAILABLE:
+            try:
+                memory = get_memory_for_run()
+                if memory == "[No memory data yet]": memory = load_memory()
+            except Exception: memory = load_memory()
+        else:
+            memory = load_memory()
         
-        # Run foresight (lightweight — no LLM calls)
+        update_recommendation_performance()
+        
+        # Market data, news, RSS — all fetched for informed trading
+        rss = fetch_rss()
+        market_data = fetch_market_data()
+        fin_news = finnhub_news()
+        market_sentiment = get_market_sentiment()
+        portfolio_analysis = analyze_portfolio_weightage()
+        
+        # Foresight (lightweight — no LLM)
         log("🔮 Running market foresight predictor...")
         foresight = get_market_foresight()
         foresight_score = foresight["composite_score"]
         foresight_direction = foresight["direction"]
         log(f"[OK] Foresight: {foresight_score}/100 ({foresight_direction})")
         
-        # Run position management and trading
+        # ── TRADING DECISIONS (same as full mode) ──
+        # Get Alpaca positions
         alpaca_snapshot = None
+        alpaca_positions = []
+        portfolio_val = 100000
         try:
             alpaca_snapshot = get_alpaca_portfolio_snapshot()
             alpaca_positions = alpaca_snapshot.get("positions", [])
             portfolio_val = alpaca_snapshot.get("total_value", 100000)
-            
-            # Position review (same 8-strategy system)
+        except Exception as e:
+            log(f"[!] Alpaca data fetch failed: {e}")
+        
+        # Position review using 8-strategy system
+        if alpaca_snapshot:
             from skills.portfolio_manager import review_all_positions
             portfolio_actions = review_all_positions(alpaca_snapshot)
             for action in portfolio_actions:
@@ -2989,11 +3001,10 @@ def main():
             
             # Deploy cash if excessive
             cash_pct = alpaca_snapshot["allocation"]["cash"]
-            if cash_pct > 0.50 and portfolio_actions:
+            if cash_pct > 0.50:
                 buy_actions = [a for a in portfolio_actions if a["type"] == "ADD"]
                 if buy_actions:
-                    best = buy_actions[0]
-                    ticker = best.get("symbol", "")
+                    best = buy_actions[0]; ticker = best.get("symbol", "")
                     if ticker:
                         price = _yf_price(ticker)["price"]
                         if price > 0:
@@ -3001,29 +3012,27 @@ def main():
                             qty = max(1, int(deploy_amount / price))
                             result = place_stock_order(ticker, qty, "buy", "market")
                             log(f"[OK] BUY {ticker} x{qty}: {result.get('status')}")
-        except Exception as e:
-            log(f"[!] Alpaca trading failed: {e}")
         
-        # Send urgent alerts only
+        # ── SEND URGENT ALERTS ──
         try:
             from skills.telegram_bot import broadcast
             if foresight.get("alert"):
                 broadcast(foresight["alert"])
                 log("[OK] 🚨 Foresight alert sent!")
             
-            # Position-based alerts
-            urgent_actions = [a for a in portfolio_actions if a["priority"] == "URGENT"] if portfolio_actions else []
-            if urgent_actions:
-                alert_text = "🚨 <b>URGENT POSITION ALERT</b>\n\n"
-                for a in urgent_actions[:3]:
-                    alert_text += f"• {a['type']} {a.get('symbol', '')}: {a['reason']}\n"
-                broadcast(alert_text)
-                log("[OK] 🚨 Position alert sent!")
+            if alpaca_snapshot:
+                urgent = [a for a in portfolio_actions if a["priority"] == "URGENT"] if portfolio_actions else []
+                if urgent:
+                    alert_text = "🚨 <b>URGENT POSITION ALERT</b>\n\n"
+                    for a in urgent[:3]:
+                        alert_text += f"• {a['type']} {a.get('symbol', '')}: {a['reason']}\n"
+                    broadcast(alert_text)
+                    log("[OK] 🚨 Position alert sent!")
         except Exception as e:
             log(f"[!] Alert send failed: {e}")
         
-        log("✅ Alerts-only run complete")
-        return  # EXIT EARLY — skip all report generation
+        log("✅ Alerts-only run complete — no report generated")
+        return  # EXIT EARLY — skip LLM analysis and report generation
     
     # ═══ FULL MODE: Complete data collection and analysis ═══
     # 2. Collect data (all free)
