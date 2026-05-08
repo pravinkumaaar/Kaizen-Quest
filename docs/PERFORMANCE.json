@@ -250,5 +250,77 @@
       "period": "1D"
     },
     "recommendations_count": 0
+  },
+  {
+    "date": "2026-05-08",
+    "portfolio": {
+      "total_return_pct": 64.25,
+      "total_return_dollar": 92273.32,
+      "portfolio_value": 235881.34,
+      "cost_basis": 143608.03
+    },
+    "benchmarks": {
+      "portfolio_return": 64.25,
+      "indices": {
+        "SPY": {
+          "name": "S&P 500",
+          "return": 0,
+          "diff": 64.25
+        },
+        "QQQ": {
+          "name": "Nasdaq 100",
+          "return": 0,
+          "diff": 64.25
+        },
+        "IWM": {
+          "name": "Russell 2000",
+          "return": 0,
+          "diff": 64.25
+        }
+      },
+      "outperformed": [
+        "SPY",
+        "QQQ",
+        "IWM"
+      ],
+      "period": "1D"
+    },
+    "recommendations_count": 0
+  },
+  {
+    "date": "2026-05-08",
+    "portfolio": {
+      "total_return_pct": 64.26,
+      "total_return_dollar": 92281.84,
+      "portfolio_value": 235889.87,
+      "cost_basis": 143608.03
+    },
+    "benchmarks": {
+      "portfolio_return": 64.26,
+      "indices": {
+        "SPY": {
+          "name": "S&P 500",
+          "return": 0,
+          "diff": 64.26
+        },
+        "QQQ": {
+          "name": "Nasdaq 100",
+          "return": 0,
+          "diff": 64.26
+        },
+        "IWM": {
+          "name": "Russell 2000",
+          "return": 0,
+          "diff": 64.26
+        }
+      },
+      "outperformed": [
+        "SPY",
+        "QQQ",
+        "IWM"
+      ],
+      "period": "1D"
+    },
+    "recommendations_count": 0
   }
 ]
