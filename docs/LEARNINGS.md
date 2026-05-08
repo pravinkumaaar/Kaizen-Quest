@@ -1,53 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-e prices need to be spot-checked. LITE (Lumentum) at $863.74 would be an all-time high; STRL (Sterling Infrastructure) at $810.84 would be extraordinary. These prices may be correct but they need verification because they look anomalous. **If
-
-## Run: 2026-05-07 15:14:21 ET
-# 🔍 Self-Reflection — Run 1514 | 2026-05-07
-
----
-
-## What Worked Well
-
-- **ACRV conviction call showing spine: 9/10 rating as the report's top pick.** With ACRV at $10.93 still in early territory, assigning a 9/10 conviction to a small-cap name while the rest of the AI complex was cratering demonstrates asymmetric risk/reward thinking that the user has explicitly requested. This is the kind of non-mainstream recommendation that scores well against the April 22 feedback ("too mainstream").
-
-- **Catch on VRT at +2.76% intraday vs. broader market carnage.** The report correctly flags VRT at $339.81 as holding up ▲2.36% while names like IONQ ▼11.5% and BE ▼9.6% get repriced. Vertiv is the datacenter infrastructure beneficiary — picks like this signal when capex is being redirected rather than cut outright. Solid real-time relative strength detection.
-
-- **News catalyst identification on PLTR and the Stargate delay.** The report flags the OpenAI/Stargate delay and the Apple-to-Broadcom pivot as the root cause of the AI selloff rather than just reporting "tech was down." This second-order narrative — *hyperscaler capex doubt* — is exactly what the April 30 feedback asked for (thesis + explanation over just ticker lists).
-
-- **Repeating the alert on RLX** despite its negative daily move. The report sticks with the RLX recommendation, which shows it isn't purely momentum-chasing. Consistent thesis-based conviction rather than post-hoc rationalization.
-
----
-
-## What Didn't Work
-
-- **Missing the user's explicit interest in PLTR.** User said on April 22 they *believe PLTR is a great buy now*, and the report notes PLTR ▲3.19% intraday at $137.62 yet only assigns an 8/10. If PLTR is directly in the portfolio and the user told you they like it, not making it a focal bull case is a missed engagement opportunity. The report should explicitly address a user-cited conviction name, not sideline it.
-
-- **No actual options education or analysis today.** Despite being praised repeatedly ("the user likes the options part," April 22, 23, 30), this run has **zero options content**. No LEAP explanation, no Greeks mention, no skew/vol analysis. If the pipeline is broken, the report should say *"Options data unavailable"* — silent omission is worse than a disclaimer. Recurring pattern over 4+ feedback cycles makes this systemic, not incidental.
-
-- **Holdings display is unsorted and useless.** The movers list dumps 70 tickers in what appears to be file-read order — IONQ, PL, BE, RGTI, ABAT — not sorted by impact, not grouped by sector, not highlighting positions vs. watchlist. The April 23-1758 feedback said *"The tickers shown in my portfolio seem random."* This bug has never been fixed. It must be: **sort by largest absolute $ move today**, then secondarily by portfolio weight.
-
-- **Missing the IONQ BRAIN rot reprieve.** IONQ cratered ▼11.5% — a quantum computing stock collapsing on capex doubts is a textbook momentum crash, not a thesis change. But the report doesn't distinguish between *cyclical AI hype names* vs. *structural quantum thesis names* and whether IONQ at $46.51 is a short-term trade or a long-term conviction. The nuance between "buy the dip" vs. "the thesis changed" is exactly what the user asked for in April 22.
-
----
-
-## Conviction Calibration
-
-- **ACRV at 9/10 is aggressive but defensible** if the report acknowledges the binary risk (small-cap, low data). If the report's thesis for ACRV doesn't have a clear failure condition stated (e.g., fail = misses earnings or drops below a threshold), then the 9/10 is a false positive.
-
-- **8/10 for PLTR, SOFI, TEM, VRT are all identical.** If everything is an 8/10, nothing is. Conviction scores need to differentiate: **PLTR 8/10 thesis = "direct beneficiary of government AI spend rotation"** is structurally different from **TEM 8/10 thesis = "undervalued strategic platform."** The report must state *why one is 8 vs. why another is also 8* — otherwise the rating is cosmetic.
-
-- **NVDT was rated positive** but doesn't appear in the active recommendations section output. If a stock gets a positive mention but no formal conviction score, it creates ambiguity. Pick one: either formally recommend with conviction or don't mention it in a conviction context.
-
----
-
-## Missed Opportunities
-
-- **The Jevons Paradox trade — missed entirely.** If Apple pivots chip orders from NVDA to Broadcom, and OpenAI delays Stargate, the second-order play is *who benefits when AI inference cost drops anyway?* Semiconductor equipment names like AMKL or even non-US players won't appear in Alpaca easily, but the framework should at least identify that **the right trade isn't just "buy the dip in AI" but "buy the infrastructure that survives the capex rotation."**
-
-- **No mention of the user's existing positions in context.** The report says "6 positions" but doesn't name them or cross-reference them against the 70 holdings list. If the user holds NVDA, PLTR, and VRT, the report should explicitly say: *"Your NVDA position is up 2.4% today while the AI complex sells off — this is a relative strength signal. Consider whether to add or hold."* The April 30 feedback specifically praised this when it worked and criticized it when it didn't.
-
-- **No new stock recommendations outside the portfolio.** The April 30 feedback explicitly said: *"It only considered stocks from my portfolio to recommend buying or selling and not anything new."* This run appears to repeat that exact failure. The watchlist section is literally empty (`<!-- Agent will update this section -->`). This is a **critical, repeated failure** across multiple runs.
+dered stocks from my portfolio to recommend buying or selling and not anything new."* This run appears to repeat that exact failure. The watchlist section is literally empty (`<!-- Agent will update this section -->`). This is a **critical, repeated failure** across multiple runs.
 
 ---
 
@@ -160,3 +113,54 @@ e prices need to be spot-checked. LITE (Lumentum) at $863.74 would be an all-tim
 ## Risk Management
 
 - **No stop-loss levels are set or mentioned for any position.** PL at -11.21%, BE at -9.4
+
+## Run: 2026-05-08 08:52:59 ET
+# 🔍 OWL Self-Reflection — Run 0852 | 2026-05-08
+
+---
+
+## What Worked Well
+
+- **Portfolio-aware recommendations are improving.** The active recs (SOFI at $16.29, TEM at $50.22, VRT at $348.38) all carry 8/10 conviction, suggesting the scoring engine has matured past generic picks. VRT at exactly entry price ($348.40 vs $348.38) shows tight tracking.
+- **NVDA as a watchlist conviction-9 pick is well-timed.** NVDA was the *only green* stock in the portfolio today ▲1.77% to $211.50 while everything else bled. Flagging it as a high-conviction hold/add shows the momentum signal is working correctly.
+- **The report correctly identified the risk-off rotation** across quantum (IONQ ▼9.30%, RGTI ▼8.71%, QUBT ▼7.93%), space (ASTS ▼7.54%), and high-beta industrials (STRL ▼8.44%). The narrative matches the data.
+
+---
+
+## What Didn't Work
+
+- **Two new recommendations added the same day the portfolio got crushed — with no repositioning advice.** SOFI, TEM, and VRT were issued as fresh 8/10 buy signals on a day when PL ▼11.21%, BE ▼9.40%, and ABAT ▼9.52% are all deep in the red. The system should have been trimming losers and redeploying, not adding new long exposure indiscriminately.
+- **Watchlist includes NBIS at $184.77 (7/10) but no mention of whether it's being added to portfolio.** A 7/10 conviction watchlist entry on a day of broad selloff suggests the system is confusing "interesting research" with actionable conviction. If conviction is below 8, it shouldn't be surfaced as a recommendation during fear-market conditions.
+- **The reflection header labels this a "LOW (avg rating: 4.8/10)" run** — despite positive indicators — showing the feedback aggregation is flattening genuine improvement with legacy low scores. The weighting may need time-decay.
+
+---
+
+## Conviction Calibration
+
+- **All active Long-term conviction scores are 8/10 — a narrow band that's meaningless.** SOFI, TEM, and VRT all at 8/10 tells me the scoring system has a ceiling compression problem. A real calibration would differentiate between an 8.3 and a 7.6. Until the engine can spread scores meaningfully across a wider range, "8/10" just signals "moderately positive."
+- **NVDA at 9/10 watchlist conviction is the only differentiated score** and is justified by it being today's sole green in a risk-off day. This validates the conviction model *when differentiation exists*.
+- **No active recommendation is below 5 or above 9.** The entire recommendation band is 7–9, which means stop-loss and conviction logic isn't linked — if all picks are "good," none are truly high-conviction and the system can't prioritize capital allocation.
+
+---
+
+## Missed Opportunities
+
+- **SOFI just received a fresh 8/10 recommendation today** but the report gives no sizing guidance. With 60% cash ($60K+ idle), the system should have specified a position size range (e.g., "initiate 2–3% position at $16.29, add 1% on any pullback below $15.50").
+- **TEM at $50.22 (8/10) dropped 7.53% today** — if the conviction thesis is intact, this dip should have triggered an *existing-holder add* recommendation, not just a new buy signal. The report missed the chance to say "you're down on TEM but the thesis is unchanged — consider trimming at resistance near $52."
+- **PL at ▼11.21% with an active 8/10 long-term rec from a prior run** shows a disconnect: if the system still has an 8/10 conviction on PL, it should explicitly recommend averaging down with a price target, OR downgrade conviction if the thesis has broken. Silence on PL despite a double-digit drop is a failure.
+- **No new names outside existing portfolio.** Per the April 30 feedback (8.5/10 run): "It only considered stocks from my portion or portfolio to recommend buying or selling and not anything new." This pattern persists. Candidates like MU (mentioned by user), SMCI ($33.62, ▼3.00%), or even a defensive rotation into something like utilities or short-duration bonds were all missed.
+
+---
+
+## Data Quality Issues
+
+- **Persistent discrepancy: "70 total holdings" vs. "Positions: 6"** — this was flagged in the learning history and remains unresolved. If the portfolio truly has 70 positions but only 6 are in the current view, the concentration metric (0.0%) is mathematically dishonest. If it has 6, the display label is wrong. Either way, **this must be fixed before the next run.**
+- **Active recommendation for NBIS shows price target of $184.77 and current price of $184.77 (0.0% change).** This mirrors the exact data field error previously flagged in learning history for NBIS ($5.00 vs $184.77). The "price target" appears to be auto-populated with the current price — a hallucination pattern that hasn't been corrected.
+- **TEM recommendation shows entry at $49.65 vs. current $50.22 (−1.1%).** This suggests the recommendation was issued at $49.65 and the price moved up to $50.22. Is this a same-day fill or a stale entry timestamp? Needs clarification. If TEM was recommended at $49.65 but is now $50.22, is the system still recommending it as a buy or has the entry window passed?
+- **Options data staleness (flagged April 22) has no documented fix in the learning history.** If options chains are still stale, the system is either ignoring this or the fix hasn't propagated. **Options recommendations should carry a timestamp or be removed until data freshness is verified.**
+
+---
+
+## Risk Management
+
+- **Zero stop-loss levels set across all positions.** PL at ▼11.21%, BE at ▼9.40%, ABAT at ▼9.52% — none have documented stop-loss triggers. If the system recommended SOFI at $16.29 today, what's the stop-loss? $14.50? $1

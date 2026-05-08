@@ -53,3 +53,5 @@ Track every investment decision, its reasoning, and outcome.
 2026-05-07|NVDA|BUY|$211.50|N/A|8/10| Active | +0.0% |Why: You own 13.5% of your portfolio in NVDA. It's the single most important ear |
 2026-05-07|AAPL|BUY|$193.00|$240.00|7/10| Active | +0.0% |Why: Everyone's distracted by the GPU wars, but AAPL is executing the most under |
 2026-05-07|NEBIUS|BUY|$184.77|$5.00|7/10| Active | +0.0% |Why: NBIS is up +246.3% from your cost base and represents 8.3% of your portfoli |
+2026-05-08|NVDA|BUY|$211.50|N/A|9/10| Active | +0.0% |Why: Your single best position by conviction and sizing. NVDA reports May 20 (12 |
+2026-05-08|NBIS|BUY|$184.77|$184.77|7/10| Active | +0.0% |Why: This is your 3rd largest position at 8.3% and already up 246%. Nebius is a  |
