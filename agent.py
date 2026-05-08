@@ -2830,12 +2830,11 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 # MAIN
 # ─────────────────────────────────────────────
 def main():
-    # Check for silent mode (set by __main__ or environment)
-    global SILENT_MODE
-    try:
-        SILENT_MODE
-    except NameError:
-        SILENT_MODE = os.environ.get("RUN_MODE") == "silent"
+    # Check run mode (set by __main__ or environment variable)
+    global SILENT_MODE, ALERTS_ONLY_MODE
+    run_mode = os.environ.get("RUN_MODE", "full")
+    SILENT_MODE = run_mode == "silent"
+    ALERTS_ONLY_MODE = run_mode == "alerts-only"
     
     # Initialize run metadata — always use US Eastern Time (owner is in Jersey City, NJ)
     global NOW, TODAY, RUN_LABEL, IS_MARKET_OPEN
@@ -2938,6 +2937,95 @@ def main():
     log("📈 Updating recommendation tracking...")
     update_recommendation_performance()
 
+    # ═══ ALERTS-ONLY MODE: Fast path for market-hours runs ═══
+    # Skip expensive LLM calls, RSS feeds, news digest, report generation
+    # Only: foresight model, position review, trading decisions, urgent alerts
+    if ALERTS_ONLY_MODE:
+        log("⚡ ALERTS-ONLY MODE: Skipping RSS, news, LLM calls, report generation")
+        
+        # Minimal data: just what's needed for trading decisions
+        market_data = ""
+        fin_news = ""
+        rss = {}
+        memory = ""
+        investments = ""
+        options = ""
+        learning = ""
+        market_sentiment = ""
+        portfolio_analysis = analyze_portfolio_weightage() if SKILLS_AVAILABLE else {}
+        
+        # Run foresight (lightweight — no LLM calls)
+        log("🔮 Running market foresight predictor...")
+        foresight = get_market_foresight()
+        foresight_score = foresight["composite_score"]
+        foresight_direction = foresight["direction"]
+        log(f"[OK] Foresight: {foresight_score}/100 ({foresight_direction})")
+        
+        # Run position management and trading
+        alpaca_snapshot = None
+        try:
+            alpaca_snapshot = get_alpaca_portfolio_snapshot()
+            alpaca_positions = alpaca_snapshot.get("positions", [])
+            portfolio_val = alpaca_snapshot.get("total_value", 100000)
+            
+            # Position review (same 8-strategy system)
+            from skills.portfolio_manager import review_all_positions
+            portfolio_actions = review_all_positions(alpaca_snapshot)
+            for action in portfolio_actions:
+                if action["priority"] in ("URGENT", "HIGH"):
+                    log(f"  → [{action['priority']}] {action['type']}: {action['action']}")
+            
+            # Execute trades
+            from skills.alpaca_trading import place_stock_order
+            for action in portfolio_actions:
+                if action["type"] in ("SELL", "SELL_PARTIAL", "REDUCE") and action["priority"] in ("URGENT", "HIGH"):
+                    ticker = action.get("symbol", "")
+                    if ticker and ticker != "CASH":
+                        pos = next((p for p in alpaca_positions if p["symbol"] == ticker), None)
+                        if pos:
+                            sell_qty = max(1, int(pos["qty"] * 0.5)) if action["type"] != "SELL" else int(pos["qty"])
+                            result = place_stock_order(ticker, sell_qty, "sell", "market")
+                            log(f"[OK] SELL {ticker} x{sell_qty}: {result.get('status')}")
+            
+            # Deploy cash if excessive
+            cash_pct = alpaca_snapshot["allocation"]["cash"]
+            if cash_pct > 0.50 and portfolio_actions:
+                buy_actions = [a for a in portfolio_actions if a["type"] == "ADD"]
+                if buy_actions:
+                    best = buy_actions[0]
+                    ticker = best.get("symbol", "")
+                    if ticker:
+                        price = _yf_price(ticker)["price"]
+                        if price > 0:
+                            deploy_amount = alpaca_snapshot["cash"] * 0.10
+                            qty = max(1, int(deploy_amount / price))
+                            result = place_stock_order(ticker, qty, "buy", "market")
+                            log(f"[OK] BUY {ticker} x{qty}: {result.get('status')}")
+        except Exception as e:
+            log(f"[!] Alpaca trading failed: {e}")
+        
+        # Send urgent alerts only
+        try:
+            from skills.telegram_bot import broadcast
+            if foresight.get("alert"):
+                broadcast(foresight["alert"])
+                log("[OK] 🚨 Foresight alert sent!")
+            
+            # Position-based alerts
+            urgent_actions = [a for a in portfolio_actions if a["priority"] == "URGENT"] if portfolio_actions else []
+            if urgent_actions:
+                alert_text = "🚨 <b>URGENT POSITION ALERT</b>\n\n"
+                for a in urgent_actions[:3]:
+                    alert_text += f"• {a['type']} {a.get('symbol', '')}: {a['reason']}\n"
+                broadcast(alert_text)
+                log("[OK] 🚨 Position alert sent!")
+        except Exception as e:
+            log(f"[!] Alert send failed: {e}")
+        
+        log("✅ Alerts-only run complete")
+        return  # EXIT EARLY — skip all report generation
+    
+    # ═══ FULL MODE: Complete data collection and analysis ═══
     # 2. Collect data (all free)
     log("📡 Fetching RSS feeds...")
     rss = fetch_rss()
@@ -2949,7 +3037,6 @@ def main():
     fin_news = finnhub_news()
 
     # Optionally do a Tavily deep-dive on today's top story (conserve credits)
-    # Use Eastern Time for consistency
     try:
         import pytz
         eastern = pytz.timezone('US/Eastern')
