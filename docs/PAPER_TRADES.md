@@ -7,3 +7,4 @@
 | 2026-05-07 | SOFI | buy | 306 | stock | pending_new |
 | 2026-05-07 | PLTR | buy | 57 | stock | pending_new |
 | 2026-05-07 | TEM | buy | 99 | stock | pending_new |
+| 2026-05-08 | AVGO | buy | 11 | stock | pending_new |
