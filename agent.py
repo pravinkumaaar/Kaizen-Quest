@@ -2701,9 +2701,12 @@ def build_and_save_report(market_data, digest, investments, options, learning,
                             earnings_alerts="", related_earnings="", sector_earnings="",
                             forward_analysis="", recent_surprises="",
                             foresight_score=0, foresight_direction="neutral",
-                            foresight_outlook="", foresight_actions=None) -> str:
+                            foresight_outlook="", foresight_actions=None,
+                            foresight=None) -> str:
     if foresight_actions is None:
         foresight_actions = []
+    if foresight is None:
+        foresight = {"confidence": 0.5, "signals": []}
 
     # Get recommendation updates
     rec_updates = read_file(RECOMMENDATIONS_FILE)
@@ -2937,9 +2940,9 @@ def main():
     log("📈 Updating recommendation tracking...")
     update_recommendation_performance()
 
-    # ═══ ALERTS-ONLY MODE: Full data + LLM analysis, skip report generation ═══
+    # ═══ ALERTS-ONLY MODE: Full analysis, skip only report writing + GitHub commit ═══
     if ALERTS_ONLY_MODE:
-        log("⚡ ALERTS-ONLY MODE: Full data + LLM trading analysis, skipping report generation")
+        log("⚡ ALERTS-ONLY MODE: Running full analysis (news, options, self-reflection), skipping only report generation")
         
         # ── FETCH ALL DATA (same as full mode) ──
         if SKILLS_AVAILABLE:
@@ -2954,9 +2957,23 @@ def main():
         rss = fetch_rss()
         market_data = fetch_market_data()
         fin_news = finnhub_news()
+        
+        # Tavily deep-dive (same as full run_hour 11 or 17)
+        try:
+            import pytz
+            eastern = pytz.timezone('US/Eastern')
+            run_hour = datetime.datetime.now(eastern).hour
+        except ImportError:
+            run_hour = datetime.datetime.now().hour
+        if run_hour in [11, 17]:
+            log("🔍 Tavily deep-dive...")
+            extra = tavily_search("latest AI model releases investment implications today", 3)
+            fin_news = fin_news + "\n\nDEEP DIVE:\n" + extra
+        
         market_sentiment = get_market_sentiment()
         portfolio_analysis = analyze_portfolio_weightage()
         all_portfolio_tickers = [h['ticker'] for h in portfolio_analysis.get('top_positions', [])]
+        top_portfolio_tickers = all_portfolio_tickers[:5]
         
         # Foresight (lightweight — no LLM)
         log("🔮 Running market foresight predictor...")
@@ -2965,9 +2982,66 @@ def main():
         foresight_direction = foresight["direction"]
         log(f"[OK] Foresight: {foresight_score}/100 ({foresight_direction})")
         
-        # ── SINGLE LLM CALL: Trading decisions for all positions ──
-        # This gives the agent AI-powered analysis to make informed trading decisions
-        log("🤖 Running LLM trading analysis for all positions...")
+        # ── LLM ANALYSIS 1: News digest (same as full mode) ──
+        log("✍️ Running news digest (LLM)...")
+        from skills.news_research import generate_news_digest
+        digest = generate_news_digest(rss, fin_news, memory)
+        digest_summary = digest[:300]
+        
+        # ── LLM ANALYSIS 2: Investment ideas (same as full mode) ──
+        log("💡 Generating investment ideas (LLM)...")
+        from skills.options_intelligence import fetch_options_snapshot
+        options_context = fetch_options_snapshot(list(set(["SPY","QQQ","NVDA","AAPL","PLTR"] + top_portfolio_tickers)))
+        
+        investment_context = options_context
+        if earnings_alerts_data := get_comprehensive_earnings_intelligence(portfolio_tickers=all_portfolio_tickers, days_ahead=21):
+            investment_context += f"\n\n⚠️ EARNINGS ALERT:\n{earnings_alerts_data['portfolio_earnings']}"
+        if market_sentiment:
+            investment_context += f"\n\n🌡️ MARKET SENTIMENT:\n{market_sentiment}"
+        
+        investments = call_llm(
+            system=SYSTEM,
+            user=f"""Memory: {memory[:600]}
+
+Market Data: {market_data[:800]}
+
+Digest: {digest_summary}
+
+{investment_context}
+
+Generate **3-5 Investment Ideas** using the STRUCTURED TRADE THESIS FRAMEWORK.
+For EVERY trade idea: THESIS, BULL CASE (3 reasons), BEAR CASE (3 reasons), RISK/REWARD, Pre-Mortem, Exit Criteria.
+RULE 6: MUST include at least 2 NEW stock ideas the user does NOT currently own.
+RULE 12: For high-conviction ideas (8+), also suggest an options strategy.
+Not financial advice. Verify before acting.""",
+            max_tokens=4000,
+            task_type="investment_ideas"
+        )
+        log("[OK] Investment ideas generated")
+        
+        # ── LLM ANALYSIS 3: Options strategies (same as full mode) ──
+        log("🎯 Generating options strategies (LLM)...")
+        options = call_llm(
+            system=SYSTEM,
+            user=f"""Memory: {memory[:300]}
+
+Market: {market_data[:600]}
+
+Digest: {digest_summary}
+
+Options Data: {options_context}
+
+Generate **2-4 Options Ideas** using advanced strategies: asymmetric calls/puts, debit spreads, iron condors, calendar spreads, straddles, volatility arbitrage.
+For EACH: Type, Strike/Expiry, Max Risk, Target, Probability of Profit, Conviction.
+Include at least 1 strategy on a NEW ticker the user doesn't own.
+Educational only. Verify with broker.""",
+            max_tokens=3000,
+            task_type="options_ideas"
+        )
+        log("[OK] Options strategies generated")
+        
+        # ── TRADING EXECUTION (same as full mode) ──
+        log("💼 Executing trades based on analysis...")
         alpaca_snapshot = None
         alpaca_positions = []
         portfolio_val = 100000
@@ -2978,93 +3052,60 @@ def main():
         except Exception as e:
             log(f"[!] Alpaca data fetch failed: {e}")
         
-        # Build context for LLM trading decisions
-        positions_context = ""
-        if alpaca_positions:
-            for pos in alpaca_positions:
-                positions_context += (f"\n{pos['symbol']}: {pos.get('qty', 0)} shares @ "
-                                     f"${pos.get('avg_entry_price', 0):.2f} → "
-                                     f"${pos.get('current_price', 0):.2f} "
-                                     f"({pos.get('unrealized_plpc', 0)*100:+.1f}%)")
-        
-        # Single LLM call to analyze everything and make trading decisions
-        trading_analysis = ""
-        if alpaca_positions:
-            try:
-                trading_analysis = call_llm(
-                    system="""You are an AI trading agent making real-time decisions for a paper trading account.
-Analyze all positions and market data. For each position, decide: HOLD, SELL, or BUY_MORE.
-Consider: P&L %, trend, fundamentals, opportunity cost, portfolio concentration, market conditions.
-Be decisive — every dollar matters. Keep analysis concise (1-2 sentences per position).""",
-                    user=f"""=== MARKET CONDITIONS ===
-Foresight Score: {foresight_score}/100 ({foresight_direction})
-Market Sentiment: {market_sentiment[:200]}
-
-=== NEWS (last 24h) ===
-{fin_news[:500]}
-
-=== CURRENT POSITIONS ===
-Cash: ${alpaca_snapshot.get('cash', 0):,.0f} ({alpaca_snapshot['allocation']['cash']:.0%} of portfolio)
-Portfolio Value: ${portfolio_val:,.0f}
-Positions:{positions_context}
-
-=== PORTFOLIO CONTEXT ===
-Top CSV holdings: {', '.join(all_portfolio_tickers[:10])}
-
-For EACH position, provide: [TICKER] — DECISION: HOLD/SELL/BUY_MORE — Reason (1-2 sentences).
-Then provide 1-2 NEW trade ideas if cash > 30% of portfolio.
-Format: concise, actionable, no fluff.""",
-                    max_tokens=1500,
-                    task_type="trading_decisions"
-                )
-                log(f"[OK] LLM trading analysis complete")
-            except Exception as e:
-                log(f"[!] LLM trading analysis failed: {e}")
-        
-        # Parse LLM decisions and execute trades
-        if trading_analysis and alpaca_snapshot:
-            from skills.alpaca_trading import place_stock_order
-            for line in trading_analysis.split('\n'):
-                line = line.strip()
-                if not line or not any(d in line.upper() for d in ['SELL', 'BUY_MORE', 'HOLD']):
-                    continue
-                # Parse ticker and decision
-                import re
-                ticker_match = re.match(r'[*#]*\s*([A-Z]{1,5})\s*', line)
-                if not ticker_match:
-                    continue
-                ticker = ticker_match.group(1)
-                
-                if 'SELL' in line.upper() and ticker not in ('HOLD', 'THE', 'FOR'):
-                    pos = next((p for p in alpaca_positions if p['symbol'] == ticker), None)
-                    if pos:
-                        sell_qty = int(pos['qty'] * 0.5)  # Sell 50%
-                        if sell_qty > 0:
-                            result = place_stock_order(ticker, sell_qty, "sell", "market")
-                            log(f"[OK] SELL {ticker} x{sell_qty}: {result.get('status')} — {line[:80]}")
-                
-                elif 'BUY_MORE' in line.upper():
-                    pos = next((p for p in alpaca_positions if p['symbol'] == ticker), None)
-                    if pos:
-                        price = float(pos.get('current_price', 0))
-                        if price > 0:
-                            deploy = portfolio_val * 0.03  # 3% of portfolio
-                            qty = max(1, int(deploy / price))
-                            result = place_stock_order(ticker, qty, "buy", "market")
-                            log(f"[OK] BUY_MORE {ticker} x{qty}: {result.get('status')} — {line[:80]}")
-        
-        # Also run position review (non-LLM) for stop-loss and risk management
         if alpaca_snapshot:
+            # Position review (8-strategy system)
             from skills.portfolio_manager import review_all_positions
             portfolio_actions = review_all_positions(alpaca_snapshot)
+            
+            from skills.alpaca_trading import place_stock_order, place_option_order
+            
             for action in portfolio_actions:
-                if action["priority"] == "URGENT":
+                if action["priority"] in ("URGENT", "HIGH"):
                     ticker = action.get("symbol", "")
-                    if ticker and ticker != "CASH":
+                    if not ticker or ticker == "CASH": continue
+                    
+                    if action["type"] in ("SELL", "SELL_PARTIAL", "REDUCE"):
                         pos = next((p for p in alpaca_positions if p["symbol"] == ticker), None)
                         if pos:
-                            result = place_stock_order(ticker, int(pos["qty"]), "sell", "market")
-                            log(f"[OK] URGENT SELL {ticker}: {result.get('status')} — {action['reason'][:60]}")
+                            sell_qty = max(1, int(pos["qty"] * 0.5)) if action["type"] != "SELL" else int(pos["qty"])
+                            result = place_stock_order(ticker, sell_qty, "sell", "market")
+                            log(f"[OK] {action['type']} {ticker} x{sell_qty}: {result.get('status')}")
+                    
+                    elif action["type"] == "BUY_MORE":
+                        price = float(next((p for p in alpaca_positions if p["symbol"] == ticker), {}).get("current_price", 0))
+                        if price > 0:
+                            deploy = portfolio_val * 0.03
+                            qty = max(1, int(deploy / price))
+                            result = place_stock_order(ticker, qty, "buy", "market")
+                            log(f"[OK] BUY_MORE {ticker} x{qty}: {result.get('status')}")
+            
+            # Deploy cash if excessive
+            cash_pct = alpaca_snapshot["allocation"]["cash"]
+            if cash_pct > 0.50:
+                buy_actions = [a for a in portfolio_actions if a["type"] == "ADD"]
+                for ba in buy_actions[:2]:
+                    ticker = ba.get("symbol", "")
+                    if ticker:
+                        price = _yf_price(ticker)["price"]
+                        if price > 0:
+                            deploy = min(alpaca_snapshot["cash"] * 0.10, portfolio_val * 0.05)
+                            qty = max(1, int(deploy / price))
+                            result = place_stock_order(ticker, qty, "buy", "market")
+                            log(f"[OK] DEPLOY BUY {ticker} x{qty}: {result.get('status')}")
+        
+        # ── SELF-REFLECTION & LEARNING (same as full mode) ──
+        log("🪞 Self-reflection & learning...")
+        try:
+            alpaca_snap = get_alpaca_portfolio_snapshot() if not alpaca_snapshot else alpaca_snapshot
+        except Exception:
+            alpaca_snap = None
+        
+        reflection = task_self_reflect(
+            report="Alerts-only run — full analysis performed, no written report",
+            memory=memory, snapshot=alpaca_snap, foresight=foresight
+        )
+        save_learnings(reflection)
+        log("[OK] Self-reflection complete")
         
         # ── SEND URGENT ALERTS ──
         try:
@@ -3073,21 +3114,19 @@ Format: concise, actionable, no fluff.""",
                 broadcast(foresight["alert"])
                 log("[OK] 🚨 Foresight alert sent!")
             
-            urgent = []
             if alpaca_snapshot:
-                for a in portfolio_actions:
-                    if a["priority"] == "URGENT":
-                        urgent.append(f"• {a['type']} {a.get('symbol', '')}: {a['reason']}")
-            
-            if urgent:
-                alert_text = "🚨 <b>URGENT POSITION ALERT</b>\n\n" + "\n".join(urgent[:3])
-                broadcast(alert_text)
-                log("[OK] 🚨 Position alert sent!")
+                urgent = [a for a in portfolio_actions if a["priority"] == "URGENT"] if portfolio_actions else []
+                if urgent:
+                    alert_text = "🚨 <b>URGENT POSITION ALERT</b>\n\n"
+                    for a in urgent[:3]:
+                        alert_text += f"• {a['type']} {a.get('symbol', '')}: {a['reason']}\n"
+                    broadcast(alert_text)
+                    log("[OK] 🚨 Position alert sent!")
         except Exception as e:
             log(f"[!] Alert send failed: {e}")
         
-        log("✅ Alerts-only run complete — LLM analysis done, no report generated")
-        return
+        log("✅ Alerts-only run complete — full analysis done, no report written, no GitHub commit")
+        return  # EXIT — skip report generation and GitHub commit
     
     # ═══ FULL MODE: Complete data collection and analysis ═══
     # 2. Collect data (all free)
@@ -3510,6 +3549,7 @@ Format: concise, actionable, no fluff.""",
             foresight_direction=foresight_direction,
             foresight_outlook=foresight["outlook"],
             foresight_actions=foresight["action_items"],
+            foresight=foresight,
         )
 
         # 5b. Send report to Telegram
