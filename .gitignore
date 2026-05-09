@@ -1,0 +1,43 @@
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# API Keys
+*.key
+credentials.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# Cache
+.pytest_cache/
+.cache/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
