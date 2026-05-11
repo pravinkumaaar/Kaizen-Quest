@@ -2705,9 +2705,11 @@ def build_and_save_report(market_data, digest, investments, options, learning,
                             earnings_alerts="", related_earnings="", sector_earnings="",
                             forward_analysis="", recent_surprises="",
                             foresight_score=0, foresight_direction="neutral",
-                            foresight_outlook="", foresight_actions=None) -> str:
+                            foresight_outlook="", foresight_actions=None, foresight=None) -> str:
     if foresight_actions is None:
         foresight_actions = []
+    if foresight is None:
+        foresight = {}
 
     # Get recommendation updates
     rec_updates = read_file(RECOMMENDATIONS_FILE)
@@ -3363,6 +3365,7 @@ def main():
             foresight_direction=foresight_direction,
             foresight_outlook=foresight["outlook"],
             foresight_actions=foresight["action_items"],
+            foresight=foresight,
         )
 
         # 5b. Send report to Telegram
