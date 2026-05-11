@@ -703,6 +703,8 @@ def _get_live_price_yf(ticker):
     Works during market hours AND after hours.
     Returns (price, prev_close) or (None, None).
     """
+    import time
+    
     # SOURCE 1: Finnhub (most reliable — works after hours)
     if FINNHUB_API_KEY:
         try:
@@ -710,42 +712,49 @@ def _get_live_price_yf(ticker):
                 f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={FINNHUB_API_KEY}",
                 timeout=10
             )
-            data = r.json()
-            p = data.get("c", 0)
-            pc = data.get("pc", 0)
-            if p and float(p) > 0:
-                return float(p), float(pc) if pc and float(pc) > 0 else None
+            if r.status_code == 200 and r.text:
+                data = r.json()
+                p = data.get("c", 0)
+                pc = data.get("pc", 0)
+                if p and float(p) > 0:
+                    return float(p), float(pc) if pc and float(pc) > 0 else None
+            elif r.status_code == 429:
+                time.sleep(1)  # Rate limited — wait and try fallback
         except Exception:
             pass
 
-    # SOURCE 2: yfinance fast_info
+    # SOURCE 2: yfinance fast_info (with retry)
+    for attempt in range(2):
+        old_stderr = sys.stderr
+        sys.stderr = StringIO()
+        try:
+            t = yf.Ticker(ticker)
+            fi = t.fast_info
+            p = fi.last_price
+            pc = fi.previous_close
+            if p and p > 0:
+                return float(p), float(pc) if pc and pc > 0 else None
+        except Exception:
+            if attempt == 0:
+                time.sleep(0.5)
+        finally:
+            sys.stderr = old_stderr
+
+    # SOURCE 3: yfinance info() — includes postMarketPrice
     old_stderr = sys.stderr
     sys.stderr = StringIO()
     try:
         t = yf.Ticker(ticker)
-        fi = t.fast_info
-        p = fi.last_price
-        pc = fi.previous_close
-        if p and p > 0:
-            return float(p), float(pc) if pc and pc > 0 else None
-    except Exception:
-        pass
-    finally:
-        sys.stderr = old_stderr
-
-    # SOURCE 3: yfinance info() — includes postMarketPrice
-    sys.stderr = StringIO()
-    try:
-        t = yf.Ticker(ticker)
         info = t.info
-        p = (info.get('postMarketPrice') or
-             info.get('currentPrice') or
-             info.get('regularMarketPrice') or
-             info.get('previousClose'))
-        pc = (info.get('regularMarketPreviousClose') or
-              info.get('previousClose'))
-        if p and float(p) > 0:
-            return float(p), float(pc) if pc and float(pc) > 0 else None
+        if info:
+            p = (info.get('postMarketPrice') or
+                 info.get('currentPrice') or
+                 info.get('regularMarketPrice') or
+                 info.get('previousClose'))
+            pc = (info.get('regularMarketPreviousClose') or
+                  info.get('previousClose'))
+            if p and float(p) > 0:
+                return float(p), float(pc) if pc and float(pc) > 0 else None
     except Exception:
         pass
     finally:
@@ -755,22 +764,45 @@ def _get_live_price_yf(ticker):
 
 
 def _yf_price(ticker):
-    """Quick price lookup from yfinance. Returns dict with price, prev_close, change_pct."""
-    try:
-        old_stderr = sys.stderr
-        sys.stderr = StringIO()
+    """Quick price lookup with yfinance + Finnhub fallback. Returns dict with price, prev_close, change_pct."""
+    import time
+    # Try yfinance up to 2 times
+    for attempt in range(2):
         try:
-            t = yf.Ticker(ticker)
-            fi = t.fast_info
-            p = fi.last_price
-            pc = fi.previous_close
-            if p and p > 0:
-                chg = ((p - pc) / pc * 100) if pc and pc > 0 else 0
-                return {"price": float(p), "prev_close": float(pc) if pc else 0, "change_pct": float(chg)}
-        finally:
-            sys.stderr = old_stderr
-    except Exception:
-        pass
+            old_stderr = sys.stderr
+            sys.stderr = StringIO()
+            try:
+                t = yf.Ticker(ticker)
+                fi = t.fast_info
+                p = fi.last_price
+                pc = fi.previous_close
+                if p and p > 0:
+                    chg = ((p - pc) / pc * 100) if pc and pc > 0 else 0
+                    return {"price": float(p), "prev_close": float(pc) if pc else 0, "change_pct": float(chg)}
+            finally:
+                sys.stderr = old_stderr
+        except Exception:
+            if attempt == 0:
+                time.sleep(1)  # Brief pause before retry
+            continue
+    
+    # Fallback to Finnhub
+    if FINNHUB_API_KEY:
+        try:
+            r = requests.get(
+                f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={FINNHUB_API_KEY}",
+                timeout=10
+            )
+            if r.status_code == 200:
+                data = r.json()
+                p = data.get("c", 0)
+                pc = data.get("pc", 0)
+                if p and p > 0:
+                    chg = ((p - pc) / pc * 100) if pc and pc > 0 else 0
+                    return {"price": float(p), "prev_close": float(pc), "change_pct": float(chg)}
+        except Exception:
+            pass
+    
     return {"price": 0, "prev_close": 0, "change_pct": 0}
 
 
@@ -820,7 +852,8 @@ def fetch_market_data() -> str:
     stock_tickers = [t for t in all_tickers if not t.endswith("-USD")]
 
     # Fetch stock prices using robust multi-source method
-    for ticker in stock_tickers:
+    # Add small delays to avoid rate limits (Finnhub: 60 calls/min free tier)
+    for i, ticker in enumerate(stock_tickers):
         try:
             price, prev = _get_live_price_yf(ticker)
 
@@ -846,6 +879,10 @@ def fetch_market_data() -> str:
                 })
         except Exception:
             pass
+        # Rate limit: pause every 10 tickers
+        if (i + 1) % 10 == 0:
+            import time
+            time.sleep(1)
 
     # Fetch crypto prices
     crypto_prices = fetch_crypto_prices(crypto_tickers if crypto_tickers else ["BTC-USD", "ETH-USD", "XRP-USD"])
@@ -2239,12 +2276,18 @@ Top holdings need attention if this ratio is too high.
 """
 
     # Add options context for cross-referencing
+    # This includes: options data, earnings alerts, market sentiment, foresight,
+    # smart money signals, sector rotation, and benchmark comparison
     options_section = ""
     if options_context and options_context != "[Options data unavailable]":
+        # Use full context — the LLM needs all of it for informed decisions
+        # Truncate only if extremely long (leave room for other prompt sections)
+        max_context = 4000
+        truncated_context = options_context[:max_context] if len(options_context) > max_context else options_context
         options_section = f"""
-OPTIONS MARKET CONTEXT:
-{options_context[:800]}
-Use options data (IV levels, unusual activity, earnings dates) to inform stock recommendations."""
+ADDITIONAL MARKET INTELLIGENCE:
+{truncated_context}
+Use ALL of the above data (options, earnings, sentiment, foresight, smart money, sector rotation, benchmarks) to inform your stock recommendations."""
     
     # Add once-in-a-lifetime opportunities context
     once_in_a_lifetime_context = ""
@@ -3394,7 +3437,8 @@ def main():
     except Exception as e:
         log(f"[!] Error syncing Alpaca positions: {e}")
 
-    # 4b. Options ideas with earnings + sentiment awareness
+    # 4b. Options ideas — pass the full investment_context so options strategies
+    # benefit from earnings, sentiment, foresight, smart money, and sector data
     combined_earnings = ""
     if earnings_alerts:
         combined_earnings += earnings_alerts
@@ -3405,13 +3449,6 @@ def main():
     if not combined_earnings:
         combined_earnings = "No upcoming earnings."
 
-    options = task_options_ideas(
-        market_data, digest_summary, memory,
-        options_context=options_context,
-        earnings_context=combined_earnings,
-        market_sentiment=market_sentiment
-    )
-
     # 4c. Smart Money Tracking (hedge funds, congress, insiders)
     smart_money_context = ""
     smart_money_report = ""
@@ -3420,7 +3457,6 @@ def main():
             log("🏦 Analyzing smart money activity...")
             sm_summary = get_smart_money_summary()
             smart_money_report = generate_smart_money_report(sm_summary)
-            # Extract key signals for the LLM investment prompt
             smart_money_context = _extract_smart_money_context(sm_summary)
             log("[OK] Smart money analysis complete")
         except Exception as e:
@@ -3433,7 +3469,6 @@ def main():
         try:
             log("🔄 Analyzing sector rotation & emerging themes...")
             sector_rotation_report = generate_sector_report()
-            # Extract key signals for the LLM investment prompt
             sector_context = _extract_sector_context()
             log("[OK] Sector rotation analysis complete")
         except Exception as e:
@@ -3446,13 +3481,28 @@ def main():
         try:
             log("📊 Running benchmark comparison...")
             benchmark_report = generate_benchmark_report()
-            # Extract key signals for the LLM investment prompt
             benchmark_context = _extract_benchmark_context()
             log("[OK] Benchmark comparison complete")
         except Exception as e:
             log(f"[!] Benchmark comparison failed: {e}")
 
-    # 4f. Learning and market reaction
+    # 4f. Enrich options context with all collected intelligence
+    enriched_options_context = investment_context
+    if smart_money_context:
+        enriched_options_context += f"\n\n🏦 SMART MONEY:\n{smart_money_context}"
+    if sector_context:
+        enriched_options_context += f"\n\n🔄 SECTORS:\n{sector_context}"
+    if benchmark_context:
+        enriched_options_context += f"\n\n📊 BENCHMARKS:\n{benchmark_context}"
+
+    options = task_options_ideas(
+        market_data, digest_summary, memory,
+        options_context=enriched_options_context,
+        earnings_context=combined_earnings,
+        market_sentiment=market_sentiment
+    )
+
+    # 4g. Learning and market reaction
     learning = task_learning(digest_summary, memory)
     market_reaction = task_market_reaction(market_data, digest_summary)
 
