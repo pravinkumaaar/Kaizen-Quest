@@ -2836,12 +2836,15 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 # MAIN
 # ─────────────────────────────────────────────
 def main():
-    # Check for silent mode (set by __main__ or environment)
+    # Check for silent/alerts-only mode (set by __main__ or environment)
+    # "alerts-only" = trade + alerts, no report/Telegram report (but still self-reflect)
+    # "silent" = minimal run, skip everything non-essential
     global SILENT_MODE
     try:
         SILENT_MODE
     except NameError:
-        SILENT_MODE = os.environ.get("RUN_MODE") == "silent"
+        _run_mode = os.environ.get("RUN_MODE", "")
+        SILENT_MODE = _run_mode in ("silent", "alerts-only")
     
     # Initialize run metadata — always use US Eastern Time (owner is in Jersey City, NJ)
     global NOW, TODAY, RUN_LABEL, IS_MARKET_OPEN
@@ -3008,60 +3011,6 @@ def main():
     for sig in foresight["signals"]:
         if abs(sig.get("score", 0)) > 5:
             log(f"  → {sig['name']}: {sig['detail'][:120]}")
-
-    # Send Telegram alerts for: foresight extremes, once-in-a-lifetime ops, rebalancing
-    # These are for the USER'S REAL PORTFOLIO (CSV), not paper trading
-    try:
-        from skills.telegram_bot import broadcast
-        alerts_sent = 0
-
-        # 1. Foresight alerts (crash warning / major bullish signal)
-        if foresight.get("alert"):
-            broadcast(foresight["alert"])
-            log("[OK] 🚨 Foresight alert sent to Telegram!")
-            alerts_sent += 1
-
-        # 2. Once-in-a-lifetime opportunities from the LLM's investment ideas
-        # The LLM flags these in the report with specific language
-        if "once-in-a-lifetime" in str(investments).lower() or "once in a lifetime" in str(investments).lower():
-            # Extract the opportunity from the report
-            import re
-            otl_match = re.search(r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n\n|\Z)', str(investments), re.DOTALL | re.IGNORECASE)
-            if otl_match:
-                otl_text = otl_match.group(0)[:500]
-                alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{otl_text}\n\n<i>Review and act if you agree. Not financial advice.</i>"
-                broadcast(alert_text)
-                log("[OK] ⭐ Once-in-a-lifetime alert sent to Telegram!")
-                alerts_sent += 1
-
-        # 3. Portfolio rebalancing suggestions for user's CSV portfolio
-        csv_portfolio = analyze_portfolio_weightage()
-        rebalance_alerts = []
-        for pos in csv_portfolio.get('top_positions', []):
-            pnl_pct = pos.get('unrealized_pnl_pct', 0)
-            pos_pct = pos.get('portfolio_pct', 0)
-            ticker = pos.get('ticker', '')
-            if pnl_pct <= -15:
-                rebalance_alerts.append(f"🛑 {ticker} down {pnl_pct:.1f}% — consider selling")
-            if pos_pct > 25:
-                rebalance_alerts.append(f"⚠️ {ticker} is {pos_pct:.0f}% of portfolio — trim to reduce concentration")
-            if pnl_pct >= 50:
-                rebalance_alerts.append(f"🎯 {ticker} up {pnl_pct:.1f}% — consider taking profits")
-
-        if rebalance_alerts:
-            alert_text = "📈 <b>PORTFOLIO REBALANCE ALERT</b>\n\n"
-            for msg in rebalance_alerts[:5]:
-                alert_text += f"• {msg}\n"
-            alert_text += f"\nPortfolio: ${csv_portfolio.get('total_value', 0):,.0f}"
-            broadcast(alert_text)
-            log(f"[OK] 📈 Rebalance alert sent ({len(rebalance_alerts)} items)")
-            alerts_sent += 1
-
-        if alerts_sent == 0:
-            log("  No urgent Telegram alerts this run")
-
-    except Exception as e:
-        log(f"[!] Failed to send Telegram alerts: {e}")
 
     if SKILLS_AVAILABLE:
         try:
@@ -3348,7 +3297,8 @@ def main():
     learning = task_learning(digest_summary, memory)
     market_reaction = task_market_reaction(market_data, digest_summary)
 
-    # 5. Write report (skip in silent mode)
+    # 5. Write report and send to Telegram (only in full mode — 3x/day)
+    _run_mode = os.environ.get("RUN_MODE", "")
     if not SILENT_MODE:
         log("📝 Writing report...")
         report = build_and_save_report(
@@ -3368,7 +3318,7 @@ def main():
             foresight=foresight,
         )
 
-        # 5b. Send report to Telegram
+        # 5b. Send report to Telegram (only in full mode — 3x/day)
         if SKILLS_AVAILABLE:
             try:
                 sent = send_report_via_telegram(report)
@@ -3378,31 +3328,47 @@ def main():
                     log("[!] Telegram: No users configured yet")
             except Exception as e:
                 log(f"[!] Telegram send failed: {e}")
-    elif SILENT_MODE:
-        # Alerts-only mode: skip report but still send urgent alerts
-        log("📝 Alerts-only mode — skipping report generation, keeping alerts active")
-        report = ""  # No report generated
     else:
-        log("📝 Silent mode — skipping report generation and Telegram messages")
+        # Both "silent" and "alerts-only" skip report generation and Telegram report
+        # But the agent still trades, runs self-reflection, and sends urgent alerts
+        log(f"📝 {_run_mode.upper()} mode — skipping report generation and Telegram report")
         report = ""
 
-    # 6. Deep self-reflection & continuous learning (skip in alerts-only to save tokens)
-    if not SILENT_MODE or (SILENT_MODE and os.environ.get("RUN_MODE") != "alerts-only"):
-        log("🪞 Deep self-reflection & learning...")
-        alpaca_snap = None
-        try:
-            alpaca_snap = get_alpaca_portfolio_snapshot()
-        except Exception:
-            pass
-        reflection = task_self_reflect(
-            report=report if report else "Alerts-only run — no full report generated",
-            memory=memory, snapshot=alpaca_snap,
-            foresight=foresight if 'foresight' in dir() else None
-        )
+    # 5c. Send urgent Telegram alerts (foresight extremes, once-in-a-lifetime ops)
+    # Runs in BOTH full and alerts-only modes — these are time-sensitive
+    # Placed here AFTER investments is generated so we can scan it
+    try:
+        from skills.telegram_bot import broadcast
+        # Foresight crash/bullish alerts
+        if foresight.get("alert"):
+            broadcast(foresight["alert"])
+            log("[OK] 🚨 Foresight alert sent to Telegram!")
+        # Once-in-a-lifetime opportunities from LLM investment ideas
+        if investments and ("once-in-a-lifetime" in str(investments).lower() or "once in a lifetime" in str(investments).lower()):
+            import re
+            otl_match = re.search(r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n\n|\Z)', str(investments), re.DOTALL | re.IGNORECASE)
+            if otl_match:
+                otl_text = otl_match.group(0)[:500]
+                alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{otl_text}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                broadcast(alert_text)
+                log("[OK] ⭐ Once-in-a-lifetime alert sent to Telegram!")
+    except Exception as e:
+        log(f"[!] Failed to send Telegram alerts: {e}")
+
+    # 6. Deep self-reflection & continuous learning (ALWAYS runs — agent must learn from every run)
+    log("🪞 Deep self-reflection & learning...")
+    alpaca_snap = None
+    try:
+        alpaca_snap = get_alpaca_portfolio_snapshot()
+    except Exception:
+        pass
+    reflection = task_self_reflect(
+        report=report if report else "Alerts-only run — no full report generated",
+        memory=memory, snapshot=alpaca_snap,
+        foresight=foresight if 'foresight' in dir() else None
+    )
+    if reflection:
         save_learnings(reflection)
-    else:
-        log("🪞 Skipping self-reflection in alerts-only mode to save API calls")
-    save_learnings(reflection)
 
     # 7. Update tiered memory system
     if SKILLS_AVAILABLE:
@@ -3956,10 +3922,14 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    # Check for silent mode (market-hours trading only, no report/Telegram)
-    if "--silent" in sys.argv or os.environ.get("RUN_MODE") == "silent":
+    # Check for silent/alerts-only mode
+    _run_mode = os.environ.get("RUN_MODE", "")
+    if "--silent" in sys.argv or _run_mode in ("silent", "alerts-only"):
         SILENT_MODE = True
-        print("[SILENT MODE] Running market-hours trading only — no report generation, no Telegram messages")
+        if _run_mode == "alerts-only":
+            print("[ALERTS-ONLY MODE] Trading + alerts active — no report generation, no Telegram report")
+        else:
+            print("[SILENT MODE] Running market-hours trading only — no report generation, no Telegram messages")
     else:
         SILENT_MODE = False
     main()

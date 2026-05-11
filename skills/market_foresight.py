@@ -36,6 +36,23 @@ def init_foresight_skill(finnhub_key=None, tavily_key=None, base_dir=None):
     if base_dir: BASE_DIR = Path(base_dir)
 
 
+def _finnhub_quote(symbol):
+    """Get current price from Finnhub. Returns (price, prev_close) or (0, 0)."""
+    if not FINNHUB_API_KEY:
+        return 0, 0
+    try:
+        r = requests.get(
+            f"https://finnhub.io/api/v1/quote?symbol={symbol}&token={FINNHUB_API_KEY}",
+            timeout=10
+        )
+        if r.status_code == 200:
+            data = r.json()
+            return data.get("c", 0), data.get("pc", 0)
+    except Exception:
+        pass
+    return 0, 0
+
+
 def _yf(ticker):
     try:
         old_stderr = __import__('sys').stderr; __import__('sys').stderr = StringIO()
@@ -49,9 +66,26 @@ def _yf(ticker):
     return {"price": 0, "prev_close": 0, "change_pct": 0}
 
 
+def _price_with_fallback(yf_ticker, finnhub_symbol=None):
+    """Get price with yfinance primary and Finnhub fallback."""
+    result = _yf(yf_ticker)
+    if result["price"] > 0:
+        return result
+    # Fallback to Finnhub
+    sym = finnhub_symbol or yf_ticker.replace("^", "")
+    price, prev = _finnhub_quote(sym)
+    if price and price > 0:
+        chg = ((price - prev) / prev * 100) if prev and prev > 0 else 0
+        return {"price": float(price), "prev_close": float(prev) if prev else 0, "change_pct": float(chg)}
+    return {"price": 0, "prev_close": 0, "change_pct": 0}
+
+
 def _signal_yield_curve():
-    tnx = _yf("^TNX"); irx = _yf("^IRX")
-    tnx_p = tnx.get("price", 0); irx_p = irx.get("price", 0)
+    # Try yfinance first (^TNX = 10-Year Treasury, ^IRX = 13-Week T-Bill), fallback to Finnhub
+    tnx = _price_with_fallback("^TNX", "TNX")
+    irx = _price_with_fallback("^IRX", "IRX")
+    tnx_p = tnx.get("price", 0)
+    irx_p = irx.get("price", 0)
     if tnx_p and irx_p:
         spread = tnx_p - irx_p
         if spread < -0.5: score, detail = -30, f"Yield curve deeply inverted ({spread:.2f}%) — recession signal, leads by 6-18mo"
@@ -63,8 +97,10 @@ def _signal_yield_curve():
 
 
 def _signal_vix():
-    vix = _yf("^VIX"); vix_p = vix.get("price", 0)
-    if not vix_p: return {"score": 0, "detail": "VIX data unavailable", "confidence": 0}
+    vix = _price_with_fallback("^VIX", "VIX")
+    vix_p = vix.get("price", 0)
+    if not vix_p:
+        return {"score": 0, "detail": "VIX data unavailable", "confidence": 0}
     if vix_p > 35: score, detail = 35, f"VIX at {vix_p:.1f} — EXTREME FEAR. Contrarian buy signal. Historically precedes 5-10% rallies in 2-4 weeks."
     elif vix_p > 25: score, detail = 15, f"VIX at {vix_p:.1f} — Elevated fear. Watch for capitulation bottom."
     elif vix_p > 20: score, detail = 0, f"VIX at {vix_p:.1f} — Normal range."
@@ -74,21 +110,36 @@ def _signal_vix():
 
 
 def _signal_earnings_momentum():
+    """Use Finnhub recommendation trends (analyst estimate revisions) for earnings momentum."""
     sample = ["AAPL","MSFT","GOOGL","AMZN","NVDA","META","TSLA","JPM","V","JNJ","WMT","XOM","UNH","HD","PG","MA","LLY","ABBV","MRK","PEP"]
     up_rev = down_rev = total = 0
     for ticker in sample:
         try:
-            data = None
             if FINNHUB_API_KEY:
-                r = requests.get(f"https://finnhub.io/api/v1/stock/earnings", params={"symbol": ticker, "limit": 2, "token": FINNHUB_API_KEY}, timeout=10)
-                if r.status_code == 200: data = r.json()
-            if data and len(data) >= 2:
-                recent = data[0].get("epsEstimate", 0); prev = data[1].get("epsEstimate", 0)
-                if recent and prev:
-                    total += 1
-                    if float(recent) > float(prev): up_rev += 1
-                    elif float(recent) < float(prev): down_rev += 1
-        except Exception: continue
+                # Use recommendation_trends which gives analyst buy/hold/sell changes (estimate revisions proxy)
+                r = requests.get(
+                    f"https://finnhub.io/api/v1/stock/recommendation",
+                    params={"symbol": ticker, "token": FINNHUB_API_KEY},
+                    timeout=10
+                )
+                if r.status_code == 200:
+                    data = r.json()
+                    if data and len(data) >= 2:
+                        recent = data[0]
+                        prev = data[1]
+                        # strongBuy + buy = upward revision signal, strongSell + sell = downward
+                        recent_bull = recent.get("strongBuy", 0) + recent.get("buy", 0)
+                        recent_bear = recent.get("strongSell", 0) + recent.get("sell", 0)
+                        prev_bull = prev.get("strongBuy", 0) + prev.get("buy", 0)
+                        prev_bear = prev.get("strongSell", 0) + prev.get("sell", 0)
+                        if recent_bull + recent_bear > 0 and prev_bull + prev_bear > 0:
+                            total += 1
+                            if recent_bull > prev_bull:
+                                up_rev += 1
+                            elif recent_bear > prev_bear:
+                                down_rev += 1
+        except Exception:
+            continue
     if total > 0:
         net = (up_rev - down_rev) / total * 100
         if net > 30: sc, det = 20, f"Earnings revisions strongly positive ({up_rev} up, {down_rev} down, net {net:+.0f}%) — leads market by 1-3mo"
@@ -104,7 +155,7 @@ def _signal_sector_rotation():
     sectors = {"XLK": "Tech", "XLF": "Financial", "XLE": "Energy", "XLV": "Healthcare", "XLP": "Staples", "XLU": "Utilities"}
     cyc = []; defn = []
     for t, n in sectors.items():
-        d = _yf(t); chg = d.get("change_pct", 0)
+        d = _price_with_fallback(t); chg = d.get("change_pct", 0)
         if t in ("XLK","XLF","XLE"): cyc.append(chg)
         else: defn.append(chg)
     avg_c = sum(cyc)/len(cyc) if cyc else 0
@@ -119,7 +170,7 @@ def _signal_sector_rotation():
 
 
 def _signal_credit():
-    lqd = _yf("LQD"); hyg = _yf("HYG")
+    lqd = _price_with_fallback("LQD"); hyg = _price_with_fallback("HYG")
     diff = hyg.get("change_pct", 0) - lqd.get("change_pct", 0)
     if diff < -1: sc, det = -15, f"Credit spreads widening — stress signal, leads equities by 2-4 weeks"
     elif diff < -0.3: sc, det = -5, "Credit spreads slightly widening"
@@ -129,26 +180,72 @@ def _signal_credit():
 
 
 def _signal_news():
-    if not TAVILY_API_KEY: return {"score": 0, "detail": "Tavily not configured", "confidence": 0}
     bull_kw = ["rally","surge","breakout","bullish","upgrade","beat","strong demand","AI boom","rate cut","soft landing"]
     bear_kw = ["crash","recession","bearish","downgrade","miss","layoffs","default","crisis","inflation","rate hike","contagion","stagflation"]
-    try:
-        r = requests.post("https://api.tavily.com/search",
-            json={"api_key": TAVILY_API_KEY, "query": "stock market outlook next 2-4 weeks analyst forecast May 2026", "max_results": 8, "search_depth": "advanced"}, timeout=20)
-        results = r.json().get("results", [])
-        text = " ".join([x.get("title","") + " " + x.get("content","") for x in results]).lower()
-        bc = sum(1 for kw in bull_kw if kw in text); bdc = sum(1 for kw in bear_kw if kw in text)
-        if bdc > bc*2: sc, det = -20, f"News heavily bearish ({bdc} bearish vs {bc} bullish) — caution 2-4 weeks"
-        elif bdc > bc: sc, det = -10, f"News leaning bearish ({bdc} vs {bc})"
-        elif bc > bdc*2: sc, det = 15, f"News strongly bullish ({bc} vs {bdc}) — positive 2-4 weeks"
-        elif bc > bdc: sc, det = 5, f"News leaning bullish ({bc} vs {bdc})"
-        else: sc, det = 0, "News sentiment neutral/mixed"
-        return {"score": sc, "detail": det, "confidence": 0.4}
-    except Exception: return {"score": 0, "detail": "News scan failed", "confidence": 0}
+    text = ""
+
+    # 1. Try Tavily first (deep web search)
+    if TAVILY_API_KEY:
+        try:
+            r = requests.post("https://api.tavily.com/search",
+                json={"api_key": TAVILY_API_KEY, "query": "stock market outlook next 2-4 weeks analyst forecast " + datetime.date.today().strftime("%B %Y"), "max_results": 8, "search_depth": "advanced"}, timeout=20)
+            if r.status_code == 200:
+                results = r.json().get("results", [])
+                text = " ".join([x.get("title","") + " " + x.get("content","") for x in results]).lower()
+        except Exception:
+            pass
+
+    # 2. Fallback to Finnhub news sentiment API
+    if not text and FINNHUB_API_KEY:
+        try:
+            r = requests.get(
+                "https://finnhub.io/api/v1/news-sentiment",
+                params={"symbol": "SPY", "token": FINNHUB_API_KEY},
+                timeout=10
+            )
+            if r.status_code == 200:
+                data = r.json()
+                buzz = data.get("buzz", {})
+                buzz_text = str(buzz).lower()
+                text = buzz_text
+                # Also check company news
+                news = data.get("companyNews", [])
+                for article in news[:5]:
+                    text += " " + article.get("headline", "").lower()
+                    text += " " + article.get("summary", "").lower()
+        except Exception:
+            pass
+
+    # 3. Fallback to Finnhub general news
+    if not text and FINNHUB_API_KEY:
+        try:
+            r = requests.get(
+                "https://finnhub.io/api/v1/news",
+                params={"category": "general", "token": FINNHUB_API_KEY},
+                timeout=10
+            )
+            if r.status_code == 200:
+                news = r.json()
+                for article in news[:10]:
+                    text += " " + article.get("headline", "").lower()
+        except Exception:
+            pass
+
+    if not text:
+        return {"score": 0, "detail": "News sentiment: no data sources available (Tavily/Finnhub)", "confidence": 0}
+
+    bc = sum(1 for kw in bull_kw if kw in text)
+    bdc = sum(1 for kw in bear_kw if kw in text)
+    if bdc > bc*2: sc, det = -20, f"News heavily bearish ({bdc} bearish vs {bc} bullish) — caution 2-4 weeks"
+    elif bdc > bc: sc, det = -10, f"News leaning bearish ({bdc} vs {bc})"
+    elif bc > bdc*2: sc, det = 15, f"News strongly bullish ({bc} vs {bdc}) — positive 2-4 weeks"
+    elif bc > bdc: sc, det = 5, f"News leaning bullish ({bc} vs {bdc})"
+    else: sc, det = 0, "News sentiment neutral/mixed"
+    return {"score": sc, "detail": det, "confidence": 0.4}
 
 
 def _signal_dollar():
-    dxy = _yf("DX-Y.NYB"); chg = dxy.get("change_pct", 0)
+    dxy = _price_with_fallback("DX-Y.NYB", "DXY"); chg = dxy.get("change_pct", 0)
     if chg > 0.5: sc, det = -10, f"Dollar strengthening ({chg:+.2f}%) — headwind for commodities/EM"
     elif chg < -0.5: sc, det = 10, f"Dollar weakening ({chg:+.2f}%) — tailwind for GLD/SLV/EEM"
     else: sc, det = 0, f"Dollar stable ({chg:+.2f}%)"
@@ -156,7 +253,7 @@ def _signal_dollar():
 
 
 def _signal_breadth():
-    spy = _yf("SPY"); iwm = _yf("IWM")
+    spy = _price_with_fallback("SPY"); iwm = _price_with_fallback("IWM")
     diff = iwm.get("change_pct", 0) - spy.get("change_pct", 0)
     if diff > 1: sc, det = 10, f"Breadth expanding: Small caps outperforming by {diff:.2f}% — healthy, leads to gains"
     elif diff > -0.5: sc, det = 0, "Breadth neutral"

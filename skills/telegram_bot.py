@@ -314,7 +314,11 @@ def cmd_price(args):
         return f"❌ Error fetching <b>{ticker}</b>: {str(e)[:100]}"
 
 def cmd_report():
-    rs = sorted((BASE_DIR / "REPORTS").glob("*.md"), reverse=True) if (BASE_DIR / "REPORTS").exists() else []
+    reports_dir = BASE_DIR / "REPORTS"
+    if not reports_dir.exists():
+        return "📝 No reports yet. Run the agent to generate one."
+    # Search recursively in subdirectories (REPORTS/YYYY-MM-DD/HHMM.md)
+    rs = sorted(reports_dir.rglob("*.md"), reverse=True)
     if not rs:
         return "📝 No reports yet. Run the agent to generate one."
     text = rs[0].read_text()
