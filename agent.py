@@ -2711,6 +2711,85 @@ Format: A single paragraph with specific reasoning.""",
     )
 
 
+def _extract_smart_money_context(sm_summary):
+    """Extract concise smart money signals for the LLM investment prompt."""
+    lines = []
+    hf = sm_summary.get("hedge_funds", {})
+    if hf and hf.get("top_consensus"):
+        top = hf["top_consensus"][:5]
+        stocks = ", ".join([name for name, _ in top])
+        lines.append(f"Top hedge fund consensus holdings: {stocks}")
+    congress = sm_summary.get("congress", {})
+    if congress and congress.get("ticker_consensus"):
+        top = congress["ticker_consensus"][:5]
+        tickers = ", ".join([t["ticker"] for t in top])
+        lines.append(f"Congressional buying: {tickers}")
+    insiders = sm_summary.get("insiders", {})
+    if insiders and insiders.get("top_insider_buys"):
+        top = insiders["top_insider_buys"][:5]
+        tickers = ", ".join([t["ticker"] for t in top])
+        lines.append(f"Strong insider buying: {tickers}")
+    return "\n".join(lines) if lines else "No significant smart money signals."
+
+
+def _extract_sector_context():
+    """Extract concise sector rotation signals for the LLM investment prompt."""
+    lines = []
+    try:
+        # Top/bottom sectors
+        sector_data = analyze_sector_rotation()
+        if sector_data.get("sectors"):
+            top3 = sector_data["sectors"][:3]
+            bottom3 = sector_data["sectors"][-3:]
+            top_names = ", ".join([f"{s.get('name')} ({s.get('rs_score', 0):.1f})" for s in top3])
+            bottom_names = ", ".join([f"{s.get('name')} ({s.get('rs_score', 0):.1f})" for s in bottom3])
+            lines.append(f"Top sectors: {top_names}")
+            lines.append(f"Weak sectors: {bottom_names}")
+    except Exception:
+        pass
+    try:
+        # Cap rotation
+        cap = analyze_cap_rotation()
+        for key, data in cap.items():
+            label = key.replace("_", " ").title()
+            lines.append(f"{label}: {data.get('signal', '')}")
+    except Exception:
+        pass
+    try:
+        # Emerging themes
+        themes = detect_emerging_themes()
+        if themes.get("themes"):
+            hot = themes["themes"][:3]
+            theme_names = ", ".join([f"{name} ({data['theme_score']:.0f})" for name, data in hot])
+            lines.append(f"Hottest themes: {theme_names}")
+    except Exception:
+        pass
+    return "\n".join(lines) if lines else "No significant sector signals."
+
+
+def _extract_benchmark_context():
+    """Extract concise benchmark comparison for the LLM investment prompt."""
+    lines = []
+    try:
+        perf = get_performance_summary()
+        if perf:
+            lines.append(perf[:500])
+    except Exception:
+        pass
+    try:
+        # Small cap cycle
+        spy = _yf_price("SPY", "3mo")
+        iwm = _yf_price("IWM", "3mo")
+        if spy is not None and iwm is not None and len(spy) > 21:
+            ratio = iwm / spy
+            change = (ratio.iloc[-1] / ratio.iloc[-21] - 1) * 100
+            direction = "outperforming" if change > 0 else "underperforming"
+            lines.append(f"Small caps {direction} large caps by {abs(change):.1f}% this month")
+    except Exception:
+        pass
+    return "\n".join(lines) if lines else "Benchmark data unavailable."
+
+
 def build_and_save_report(market_data, digest, investments, options, learning,
                             market_sentiment="", portfolio_analysis_text="", market_reaction="",
                             earnings_alerts="", related_earnings="", sector_earnings="",
@@ -3235,7 +3314,19 @@ def main():
         foresight_summary += f"• {action}\n"
     investment_context += foresight_summary
 
-    # 4a. Investment ideas with everything: portfolio, options, earnings, sentiment
+    # Add smart money context (collected in section 4c)
+    if smart_money_context:
+        investment_context += f"\n\n🏦 SMART MONEY SIGNALS:\n{smart_money_context}\nUse these signals to validate or challenge your investment theses."
+
+    # Add sector rotation context (collected in section 4d)
+    if sector_context:
+        investment_context += f"\n\n🔄 SECTOR ROTATION & THEMES:\n{sector_context}\nAlign your picks with sector momentum and emerging themes."
+
+    # Add benchmark/performance context (collected in section 4e)
+    if benchmark_context:
+        investment_context += f"\n\n📊 PORTFOLIO vs BENCHMARKS:\n{benchmark_context}\nUnderstand your performance attribution and adjust allocation accordingly."
+
+    # 4a. Investment ideas with everything: portfolio, options, earnings, sentiment, smart money, sectors, benchmarks
     investments = task_investment_ideas(
         market_data, digest_summary, memory, portfolio_analysis,
         options_context=investment_context
@@ -3321,40 +3412,49 @@ def main():
         market_sentiment=market_sentiment
     )
 
-    # 4c. Learning and market reaction
-    learning = task_learning(digest_summary, memory)
-    market_reaction = task_market_reaction(market_data, digest_summary)
-
-    # 4d. Smart Money Tracking (hedge funds, congress, insiders)
+    # 4c. Smart Money Tracking (hedge funds, congress, insiders)
+    smart_money_context = ""
     smart_money_report = ""
     if SKILLS_AVAILABLE:
         try:
             log("🏦 Analyzing smart money activity...")
             sm_summary = get_smart_money_summary()
             smart_money_report = generate_smart_money_report(sm_summary)
+            # Extract key signals for the LLM investment prompt
+            smart_money_context = _extract_smart_money_context(sm_summary)
             log("[OK] Smart money analysis complete")
         except Exception as e:
             log(f"[!] Smart money analysis failed: {e}")
 
-    # 4e. Sector Rotation & Thematic Analysis
+    # 4d. Sector Rotation & Thematic Analysis
+    sector_context = ""
     sector_rotation_report = ""
     if SKILLS_AVAILABLE:
         try:
             log("🔄 Analyzing sector rotation & emerging themes...")
             sector_rotation_report = generate_sector_report()
+            # Extract key signals for the LLM investment prompt
+            sector_context = _extract_sector_context()
             log("[OK] Sector rotation analysis complete")
         except Exception as e:
             log(f"[!] Sector rotation analysis failed: {e}")
 
-    # 4f. Benchmark Comparison & Performance Attribution
+    # 4e. Benchmark Comparison & Performance Attribution
+    benchmark_context = ""
     benchmark_report = ""
     if SKILLS_AVAILABLE:
         try:
             log("📊 Running benchmark comparison...")
             benchmark_report = generate_benchmark_report()
+            # Extract key signals for the LLM investment prompt
+            benchmark_context = _extract_benchmark_context()
             log("[OK] Benchmark comparison complete")
         except Exception as e:
             log(f"[!] Benchmark comparison failed: {e}")
+
+    # 4f. Learning and market reaction
+    learning = task_learning(digest_summary, memory)
+    market_reaction = task_market_reaction(market_data, digest_summary)
 
     # 5. Write report and send to Telegram (only in full mode — 3x/day)
     _run_mode = os.environ.get("RUN_MODE", "")
