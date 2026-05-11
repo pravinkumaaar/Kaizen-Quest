@@ -3508,12 +3508,35 @@ def main():
         # Once-in-a-lifetime opportunities from LLM investment ideas
         if investments and ("once-in-a-lifetime" in str(investments).lower() or "once in a lifetime" in str(investments).lower()):
             import re
-            otl_match = re.search(r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n\n|\Z)', str(investments), re.DOTALL | re.IGNORECASE)
+            # Extract the full once-in-a-lifetime section — grab everything from the header
+            # to the next major section header (## or #) or end of text
+            otl_pattern = r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n#{1,3}\s|\Z)'
+            otl_match = re.search(otl_pattern, str(investments), re.DOTALL | re.IGNORECASE)
             if otl_match:
-                otl_text = otl_match.group(0)[:500]
-                alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{otl_text}\n\n<i>Review and act if you agree. Not financial advice.</i>"
-                broadcast(alert_text)
-                log("[OK] ⭐ Once-in-a-lifetime alert sent to Telegram!")
+                # Get the full match including the header
+                full_match = otl_match.group(0).strip()
+                # Clean up: remove excessive whitespace but preserve structure
+                full_match = re.sub(r'\n{3,}', '\n\n', full_match)
+                # Truncate to Telegram-safe length (leave room for wrapper text)
+                max_otl_len = 3500
+                if len(full_match) > max_otl_len:
+                    full_match = full_match[:max_otl_len] + "\n\n<i>... (truncated — use /report for full text)</i>"
+                alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                sent = broadcast(alert_text)
+                if sent:
+                    log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s)!")
+                else:
+                    log("[!] Once-in-a-lifetime alert: no Telegram users configured")
+            else:
+                log("[!] Once-in-a-lifetime found in investments but regex couldn't extract — sending raw snippet")
+                # Fallback: send a snippet around the keyword
+                idx = str(investments).lower().find("once-in-a-lifetime")
+                if idx == -1:
+                    idx = str(investments).lower().find("once in a lifetime")
+                if idx >= 0:
+                    snippet = str(investments)[max(0, idx-100):idx+2000]
+                    alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{snippet}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                    broadcast(alert_text)
     except Exception as e:
         log(f"[!] Failed to send Telegram alerts: {e}")
 

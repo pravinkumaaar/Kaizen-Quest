@@ -85,7 +85,7 @@ def _split_message(text, max_chars):
     """
     Split text into chunks that fit within max_chars.
     Tries to split on paragraph boundaries, then line breaks, then hard split.
-    HTML-aware: avoids splitting in the middle of <pre>...</pre> blocks.
+    HTML-aware: properly handles unclosed HTML tags without corrupting content.
     """
     if len(text) <= max_chars:
         return [text]
@@ -101,38 +101,43 @@ def _split_message(text, max_chars):
         # Try to split on paragraph boundary (double newline)
         split_pos = remaining.rfind('\n\n', 0, max_chars)
 
-        if split_pos == -1 or split_pos < max_chars // 3:
+        if split_pos == -1 or split_pos < max_chars // 4:
             # No good paragraph split, try single newline
             split_pos = remaining.rfind('\n', 0, max_chars)
 
-        if split_pos == -1 or split_pos < max_chars // 3:
+        if split_pos == -1 or split_pos < max_chars // 4:
             # No good line break, hard split at max_chars
             split_pos = max_chars
 
         chunk = remaining[:split_pos].rstrip()
+        remaining = remaining[split_pos:].lstrip()
         
-        # HTML tag balancing: check for unclosed tags
-        import re
-        # Find all opening and closing tags
-        opens = re.findall(r'<(pre|b|i|u|s|code|blockquote)[^>]*>', chunk)
-        closes = re.findall(r'</(pre|b|i|u|s|code|blockquote)>', chunk)
+        # HTML tag balancing: close any unclosed tags properly
+        # Find all opening and closing tags (only simple tags, not self-closing)
+        tag_pattern = re.compile(r'<(/?)(b|i|u|s|code|pre|blockquote)(?:[^>]*)>', re.IGNORECASE)
         
-        # If we have unclosed <pre> tags, close them and add opening tag to next chunk
-        pre_opens = chunk.count('<pre>')
-        pre_closes = chunk.count('</pre>')
-        if pre_opens > pre_closes:
-            chunk += '\n</pre>'
-            remaining = '<pre>\n' + remaining[split_pos:].lstrip()
-        else:
-            remaining = remaining[split_pos:].lstrip()
+        # Track open tags using a stack
+        open_tags = []
+        for match in tag_pattern.finditer(chunk):
+            is_closing = match.group(1) == '/'
+            tag_name = match.group(2).lower()
+            if is_closing:
+                # Remove from stack if present
+                if open_tags and open_tags[-1] == tag_name:
+                    open_tags.pop()
+                # else: unmatched closing tag, ignore
+            else:
+                open_tags.append(tag_name)
         
-        # Balance other inline tags
-        for tag in ['b', 'i', 'u', 's', 'code']:
-            tag_opens = chunk.count(f'<{tag}>')
-            tag_closes = chunk.count(f'</{tag}>')
-            if tag_opens > tag_closes:
-                chunk += f'</{tag}>'
-                remaining = f'<{tag}>' + remaining
+        # Close unclosed tags in reverse order
+        for tag in reversed(open_tags):
+            chunk += f'</{tag}>'
+        
+        # Re-open tags that were closed in the chunk for the next piece
+        # Only for inline tags (not pre/blockquote which are block-level)
+        inline_tags_to_reopen = [t for t in open_tags if t in ('b', 'i', 'u', 's', 'code')]
+        if inline_tags_to_reopen:
+            remaining = ''.join(f'<{t}>' for t in inline_tags_to_reopen) + remaining
         
         if chunk:
             chunks.append(chunk)
@@ -140,17 +145,26 @@ def _split_message(text, max_chars):
     return chunks
 
 def broadcast(txt):
-    for c in _ids():
-        send(c, txt)
+    """Send to all registered chat IDs. Returns number of successful sends."""
+    ids = _ids()
+    if not ids:
+        return 0
+    sent = 0
+    for c in ids:
+        try:
+            if send(c, txt):
+                sent += 1
+        except Exception:
+            pass
+    return sent
 
 def send_report_via_telegram(report_text):
+    """Send report to Telegram, properly splitting into multiple messages if needed."""
     if not TOKEN:
         return 0
-    preview = report_text[:3000]
-    if len(report_text) > 3000:
-        preview += "\n\n<i>... (Use /report for full text split into multiple messages)</i>"
-    broadcast(preview)
-    return len(_ids())
+    # Use the broadcast function which handles splitting via send()
+    sent = broadcast(report_text)
+    return sent
 
 def get_up(off=0):
     if not TOKEN:
