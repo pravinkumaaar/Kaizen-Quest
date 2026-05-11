@@ -3357,99 +3357,8 @@ def main():
         foresight_summary += f"• {action}\n"
     investment_context += foresight_summary
 
-    # Add smart money context (collected in section 4c)
-    if smart_money_context:
-        investment_context += f"\n\n🏦 SMART MONEY SIGNALS:\n{smart_money_context}\nUse these signals to validate or challenge your investment theses."
-
-    # Add sector rotation context (collected in section 4d)
-    if sector_context:
-        investment_context += f"\n\n🔄 SECTOR ROTATION & THEMES:\n{sector_context}\nAlign your picks with sector momentum and emerging themes."
-
-    # Add benchmark/performance context (collected in section 4e)
-    if benchmark_context:
-        investment_context += f"\n\n📊 PORTFOLIO vs BENCHMARKS:\n{benchmark_context}\nUnderstand your performance attribution and adjust allocation accordingly."
-
-    # 4a. Investment ideas with everything: portfolio, options, earnings, sentiment, smart money, sectors, benchmarks
-    investments = task_investment_ideas(
-        market_data, digest_summary, memory, portfolio_analysis,
-        options_context=investment_context
-    )
-
-    parse_and_store_recommendations(investments)
-
-    # 4a-1. Immediately update recommendation performance (captures intraday moves)
-    # This ensures that if MU was recommended at $640 and is now $663, we see +3.6% not 0.0%
-    update_recommendation_performance()
-
-    # 4a-2. Sync Alpaca holdings into recommendations with correct entry prices
-    # This ensures NVDA, MU, VRT (actual Alpaca holdings) show live P&L with real entry prices
-    # Split into two sections: "Alpaсa Holdings" (what we own) and "Watchlist" (recommendations we don't own yet)
-    try:
-        alpaca_snapshot = get_alpaca_portfolio_snapshot()
-        alpaca_symbols = set()
-        alpaca_rec_lines = []
-        for pos in alpaca_snapshot["positions"]:
-            if pos["type"] == "stock":
-                sym = pos["symbol"]
-                alpaca_symbols.add(sym)
-                # Use actual Alpaca entry price and current P&L
-                rec_line = (f"- {TODAY} | {sym} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
-                            f"${pos['current_price']:.2f} | {pos['unrealized_plpc']:+.1f}% | Long-term (Alpaca)")
-                alpaca_rec_lines.append(rec_line)
-                log(f"[OK] Alpaca holding: {sym} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({pos['unrealized_plpc']:+.1f}%)")
-
-        # Read current recommendations
-        existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
-
-        # Separate: remove any old Alpaca entries, keep non-Alpaca recommendations
-        all_lines = existing_recs.split('\n') if existing_recs else []
-        non_alpaca_lines = []
-        in_active = False
-        for line in all_lines:
-            if "## Active Recommendations" in line:
-                in_active = True
-                non_alpaca_lines.append(line)
-                continue
-            if in_active and line.startswith('- '):
-                # Check if this is an Alpaca line or a recommendation line
-                is_alpaca = '(Alpaca)' in line
-                if not is_alpaca:
-                    non_alpaca_lines.append(line)
-            else:
-                non_alpaca_lines.append(line)
-
-        # Rebuild: Alpaca Holdings section + Watchlist section
-        new_content = '\n'.join(non_alpaca_lines)
-
-        # Add Alpaca Holdings section
-        if alpaca_rec_lines:
-            alpaca_section = "\n\n## 🏦 Alpaca Holdings (Actual Positions)\n"
-            alpaca_section += "\n".join(alpaca_rec_lines)
-            alpaca_section += "\n"
-            # Insert before the Active Recommendations section
-            if "## Active Recommendations" in new_content:
-                new_content = new_content.replace("## Active Recommendations", alpaca_section + "\n## 📋 Watchlist Recommendations")
-            else:
-                new_content += alpaca_section
-
-        RECOMMENDATIONS_FILE.write_text(new_content, encoding="utf-8")
-        log(f"[OK] Recommendations synced: {len(alpaca_rec_lines)} Alpaca holdings + watchlist separated")
-    except Exception as e:
-        log(f"[!] Error syncing Alpaca positions: {e}")
-
-    # 4b. Options ideas — pass the full investment_context so options strategies
-    # benefit from earnings, sentiment, foresight, smart money, and sector data
-    combined_earnings = ""
-    if earnings_alerts:
-        combined_earnings += earnings_alerts
-    if related_earnings:
-        combined_earnings += "\n" + related_earnings
-    if sector_earnings:
-        combined_earnings += "\n" + sector_earnings
-    if not combined_earnings:
-        combined_earnings = "No upcoming earnings."
-
-    # 4c. Smart Money Tracking (hedge funds, congress, insiders)
+    # 4a. Smart Money Tracking (hedge funds, congress, insiders)
+    # Collected FIRST so it can be used in investment ideas
     smart_money_context = ""
     smart_money_report = ""
     if SKILLS_AVAILABLE:
@@ -3462,7 +3371,7 @@ def main():
         except Exception as e:
             log(f"[!] Smart money analysis failed: {e}")
 
-    # 4d. Sector Rotation & Thematic Analysis
+    # 4b. Sector Rotation & Thematic Analysis
     sector_context = ""
     sector_rotation_report = ""
     if SKILLS_AVAILABLE:
@@ -3474,7 +3383,7 @@ def main():
         except Exception as e:
             log(f"[!] Sector rotation analysis failed: {e}")
 
-    # 4e. Benchmark Comparison & Performance Attribution
+    # 4c. Benchmark Comparison & Performance Attribution
     benchmark_context = ""
     benchmark_report = ""
     if SKILLS_AVAILABLE:
@@ -3486,18 +3395,77 @@ def main():
         except Exception as e:
             log(f"[!] Benchmark comparison failed: {e}")
 
-    # 4f. Enrich options context with all collected intelligence
-    enriched_options_context = investment_context
+    # 4d. Enrich investment context with all collected intelligence
     if smart_money_context:
-        enriched_options_context += f"\n\n🏦 SMART MONEY:\n{smart_money_context}"
+        investment_context += f"\n\n🏦 SMART MONEY SIGNALS:\n{smart_money_context}\nUse these signals to validate or challenge your investment theses."
     if sector_context:
-        enriched_options_context += f"\n\n🔄 SECTORS:\n{sector_context}"
+        investment_context += f"\n\n🔄 SECTOR ROTATION & THEMES:\n{sector_context}\nAlign your picks with sector momentum and emerging themes."
     if benchmark_context:
-        enriched_options_context += f"\n\n📊 BENCHMARKS:\n{benchmark_context}"
+        investment_context += f"\n\n📊 PORTFOLIO vs BENCHMARKS:\n{benchmark_context}\nUnderstand your performance attribution and adjust allocation accordingly."
+
+    # 4e. Investment ideas with ALL data: portfolio, options, earnings, sentiment, foresight, smart money, sectors, benchmarks
+    investments = task_investment_ideas(
+        market_data, digest_summary, memory, portfolio_analysis,
+        options_context=investment_context
+    )
+
+    parse_and_store_recommendations(investments)
+
+    # 4e-1. Immediately update recommendation performance (captures intraday moves)
+    update_recommendation_performance()
+
+    # 4e-2. Sync Alpaca holdings into recommendations with correct entry prices
+    try:
+        alpaca_snapshot = get_alpaca_portfolio_snapshot()
+        alpaca_rec_lines = []
+        for pos in alpaca_snapshot["positions"]:
+            if pos["type"] == "stock":
+                sym = pos["symbol"]
+                rec_line = (f"- {TODAY} | {sym} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
+                            f"${pos['current_price']:.2f} | {pos['unrealized_plpc']:+.1f}% | Long-term (Alpaca)")
+                alpaca_rec_lines.append(rec_line)
+                log(f"[OK] Alpaca holding: {sym} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({pos['unrealized_plpc']:+.1f}%)")
+
+        existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
+        all_lines = existing_recs.split('\n') if existing_recs else []
+        non_alpaca_lines = []
+        in_active = False
+        for line in all_lines:
+            if "## Active Recommendations" in line:
+                in_active = True
+                non_alpaca_lines.append(line)
+                continue
+            if in_active and line.startswith('- ') and '(Alpaca)' not in line:
+                non_alpaca_lines.append(line)
+            elif not in_active or not line.startswith('- '):
+                non_alpaca_lines.append(line)
+
+        new_content = '\n'.join(non_alpaca_lines)
+        if alpaca_rec_lines:
+            alpaca_section = "\n\n## 🏦 Alpaca Holdings (Actual Positions)\n" + "\n".join(alpaca_rec_lines) + "\n"
+            if "## Active Recommendations" in new_content:
+                new_content = new_content.replace("## Active Recommendations", alpaca_section + "\n## 📋 Watchlist Recommendations")
+            else:
+                new_content += alpaca_section
+        RECOMMENDATIONS_FILE.write_text(new_content, encoding="utf-8")
+        log(f"[OK] Recommendations synced: {len(alpaca_rec_lines)} Alpaca holdings + watchlist separated")
+    except Exception as e:
+        log(f"[!] Error syncing Alpaca positions: {e}")
+
+    # 4f. Options ideas — also gets the full enriched context
+    combined_earnings = ""
+    if earnings_alerts:
+        combined_earnings += earnings_alerts
+    if related_earnings:
+        combined_earnings += "\n" + related_earnings
+    if sector_earnings:
+        combined_earnings += "\n" + sector_earnings
+    if not combined_earnings:
+        combined_earnings = "No upcoming earnings."
 
     options = task_options_ideas(
         market_data, digest_summary, memory,
-        options_context=enriched_options_context,
+        options_context=investment_context,
         earnings_context=combined_earnings,
         market_sentiment=market_sentiment
     )
