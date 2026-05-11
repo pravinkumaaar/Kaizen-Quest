@@ -2280,10 +2280,18 @@ Top holdings need attention if this ratio is too high.
     # smart money signals, sector rotation, and benchmark comparison
     options_section = ""
     if options_context and options_context != "[Options data unavailable]":
-        # Use full context — the LLM needs all of it for informed decisions
-        # Truncate only if extremely long (leave room for other prompt sections)
-        max_context = 4000
-        truncated_context = options_context[:max_context] if len(options_context) > max_context else options_context
+        # Use full context — the LLM needs ALL of it for informed decisions
+        # Typical context is ~5700 chars; 8000 limit captures everything with margin
+        max_context = 8000
+        if len(options_context) > max_context:
+            truncated_context = options_context[:max_context]
+            # Try to truncate at a paragraph boundary
+            last_para = truncated_context.rfind('\n\n')
+            if last_para > max_context * 0.7:  # Only if we keep at least 70%
+                truncated_context = truncated_context[:last_para]
+            truncated_context += "\n\n<i>(Context truncated — some data may be missing)</i>"
+        else:
+            truncated_context = options_context
         options_section = f"""
 ADDITIONAL MARKET INTELLIGENCE:
 {truncated_context}
@@ -3523,38 +3531,37 @@ def main():
         if foresight.get("alert"):
             broadcast(foresight["alert"])
             log("[OK] 🚨 Foresight alert sent to Telegram!")
-        # Once-in-a-lifetime opportunities from LLM investment ideas
-        if investments and ("once-in-a-lifetime" in str(investments).lower() or "once in a lifetime" in str(investments).lower()):
-            import re
-            # Extract the full once-in-a-lifetime section — grab everything from the header
-            # to the next major section header (## or #) or end of text
-            otl_pattern = r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n#{1,3}\s|\Z)'
-            otl_match = re.search(otl_pattern, str(investments), re.DOTALL | re.IGNORECASE)
-            if otl_match:
-                # Get the full match including the header
-                full_match = otl_match.group(0).strip()
-                # Clean up: remove excessive whitespace but preserve structure
-                full_match = re.sub(r'\n{3,}', '\n\n', full_match)
-                # Truncate to Telegram-safe length (leave room for wrapper text)
-                max_otl_len = 3500
-                if len(full_match) > max_otl_len:
-                    full_match = full_match[:max_otl_len] + "\n\n<i>... (truncated — use /report for full text)</i>"
-                alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<i>Review and act if you agree. Not financial advice.</i>"
-                sent = broadcast(alert_text)
-                if sent:
-                    log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s)!")
+        # Once-in-a-lifetime opportunities — only alert if a VALID opportunity exists
+        # Check that the LLM actually identified a specific opportunity (not just the header)
+        if investments:
+            inv_str = str(investments)
+            otl_lower = inv_str.lower()
+            has_otl = "once-in-a-lifetime" in otl_lower or "once in a lifetime" in otl_lower
+            if has_otl:
+                import re
+                # Extract the full section — must have actual content beyond just the header
+                otl_pattern = r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n#{1,3}\s|\Z)'
+                otl_match = re.search(otl_pattern, inv_str, re.DOTALL | re.IGNORECASE)
+                if otl_match:
+                    content = otl_match.group(1).strip()
+                    # Only send if there's meaningful content (not just empty lines or generic text)
+                    # Check for ticker symbols, price targets, or specific thesis language
+                    has_specifics = bool(re.search(r'\$[\d,]+|ticker|target|entry|stop|conviction|thesis|upside|downside', content.lower()))
+                    has_length = len(content) > 100  # At least 100 chars of actual content
+                    if has_specifics and has_length:
+                        full_match = otl_match.group(0).strip()
+                        full_match = re.sub(r'\n{3,}', '\n\n', full_match)
+                        # Send full content — no truncation, no /report reference
+                        alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                        sent = broadcast(alert_text)
+                        if sent:
+                            log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s)")
+                        else:
+                            log("[!] Once-in-a-lifetime: no Telegram users configured")
+                    else:
+                        log("[OK] Once-in-a-lifetime section found but no specific opportunity — skipping alert")
                 else:
-                    log("[!] Once-in-a-lifetime alert: no Telegram users configured")
-            else:
-                log("[!] Once-in-a-lifetime found in investments but regex couldn't extract — sending raw snippet")
-                # Fallback: send a snippet around the keyword
-                idx = str(investments).lower().find("once-in-a-lifetime")
-                if idx == -1:
-                    idx = str(investments).lower().find("once in a lifetime")
-                if idx >= 0:
-                    snippet = str(investments)[max(0, idx-100):idx+2000]
-                    alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{snippet}\n\n<i>Review and act if you agree. Not financial advice.</i>"
-                    broadcast(alert_text)
+                    log("[OK] Once-in-a-lifetime keyword found but no extractable content — skipping alert")
     except Exception as e:
         log(f"[!] Failed to send Telegram alerts: {e}")
 

@@ -27,24 +27,39 @@ def compress_run_output(run_data: dict) -> dict:
     Compress a run's output into a compact summary.
     Reduces token usage by ~80% while preserving key information.
     """
+    if not isinstance(run_data, dict):
+        run_data = {}
+    
+    recommendations = run_data.get("recommendations", [])
+    if not isinstance(recommendations, list):
+        recommendations = []
+    
+    learnings = run_data.get("learnings", [])
+    if not isinstance(learnings, list):
+        learnings = []
+    
+    portfolio_summary = run_data.get("portfolio_summary", {})
+    if not isinstance(portfolio_summary, dict):
+        portfolio_summary = {}
+    
     return {
         "date": run_data.get("date", ""),
         "model": run_data.get("model", ""),
         "rating": run_data.get("rating", 0),
         "top_recommendations": [
             {
-                "ticker": r.get("ticker", ""),
-                "action": r.get("action", ""),
-                "conviction": r.get("conviction", 0),
-                "thesis": r.get("thesis", "")[:100]  # Truncate long theses
+                "ticker": r.get("ticker", "") if isinstance(r, dict) else "",
+                "action": r.get("action", "") if isinstance(r, dict) else "",
+                "conviction": r.get("conviction", 0) if isinstance(r, dict) else 0,
+                "thesis": (r.get("thesis", "")[:100] if isinstance(r, dict) else "")
             }
-            for r in run_data.get("recommendations", [])[:3]  # Top 3 only
+            for r in recommendations[:3]  # Top 3 only
         ],
-        "key_learnings": run_data.get("learnings", [])[:5],  # Top 5 learnings
+        "key_learnings": learnings[:5],  # Top 5 learnings
         "portfolio_summary": {
-            "total_value": run_data.get("portfolio_value", 0),
-            "top_holding": run_data.get("top_holding", ""),
-            "concentration": run_data.get("concentration", 0)
+            "total_value": portfolio_summary.get("total_value", run_data.get("portfolio_value", 0)),
+            "top_holding": portfolio_summary.get("top_holding", ""),
+            "concentration": portfolio_summary.get("concentration", run_data.get("concentration", 0))
         },
         "benchmarks": run_data.get("benchmarks", {})
     }

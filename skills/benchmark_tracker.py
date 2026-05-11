@@ -105,15 +105,24 @@ def fetch_prices(tickers: list, period: str = "1y", interval: str = "1d") -> pd.
     if not tickers:
         return pd.DataFrame()
 
-    data = yf.download(
-        tickers=" ".join(tickers),
-        period=period,
-        interval=interval,
-        auto_adjust=True,
-        progress=False,
-        threads=True,
-        quiet=True,
-    )
+    # Suppress yfinance stderr spam (e.g., "Failed to get ticker", "possibly delisted")
+    import os, sys
+    old_stderr = sys.stderr
+    old_stdout = sys.stdout
+    sys.stderr = open(os.devnull, 'w')
+    sys.stdout = open(os.devnull, 'w')
+    try:
+        data = yf.download(
+            tickers=" ".join(tickers),
+            period=period,
+            interval=interval,
+            auto_adjust=True,
+            progress=False,
+            threads=True,
+        )
+    finally:
+        sys.stderr = old_stderr
+        sys.stdout = old_stdout
 
     if data.empty:
         return pd.DataFrame()
@@ -136,24 +145,39 @@ def fetch_risk_free_rate(ticker: str = RISK_FREE_TICKER) -> float:
     Falls back to 0.05 (5%) if all unavailable.
     """
     # Try ^IRX first (13-week T-Bill)
+    import os, sys
+    old_stderr = sys.stderr
+    old_stdout = sys.stdout
+    sys.stderr = open(os.devnull, 'w')
+    sys.stdout = open(os.devnull, 'w')
     try:
-        data = yf.download(ticker, period="5d", interval="1d", progress=False, quiet=True)
+        data = yf.download(ticker, period="5d", interval="1d", progress=False)
         if not data.empty:
             rate = float(data["Close"].iloc[-1])
             if rate > 0:
                 return rate / 100.0  # Convert from percentage
     except Exception:
         pass
+    finally:
+        sys.stderr = old_stderr
+        sys.stdout = old_stdout
 
     # Try ^FVX (5-Year Treasury) as backup
+    old_stderr = sys.stderr
+    old_stdout = sys.stdout
+    sys.stderr = open(os.devnull, 'w')
+    sys.stdout = open(os.devnull, 'w')
     try:
-        data = yf.download("^FVX", period="5d", interval="1d", progress=False, quiet=True)
+        data = yf.download("^FVX", period="5d", interval="1d", progress=False)
         if not data.empty:
             rate = float(data["Close"].iloc[-1])
             if rate > 0:
                 return rate / 100.0
     except Exception:
         pass
+    finally:
+        sys.stderr = old_stderr
+        sys.stdout = old_stdout
 
     # Try FRED API if available
     import os
