@@ -2890,7 +2890,7 @@ def main():
             from skills.learning_curator import init_learning_skill
             from skills.earnings_intelligence import init_earnings_skill
             from skills.market_foresight import init_foresight_skill
-            from skills.options_strategies import init_options_skill
+            from skills.options_strategies import init_options_skill as init_options_strategies_skill
 
             init_portfolio(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_options_skill(polygon_key=POLYGON_API_KEY, base_dir=str(BASE_DIR))
@@ -2899,7 +2899,7 @@ def main():
             init_learning_skill(base_dir=str(BASE_DIR))
             init_earnings_skill(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_foresight_skill(finnhub_key=FINNHUB_API_KEY, tavily_key=TAVILY_API_KEY, base_dir=str(BASE_DIR))
-            init_options_skill(alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
+            init_options_strategies_skill(alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
                               finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_portfolio_manager(finnhub_key=FINNHUB_API_KEY, alpaca_key=ALPACA_API_KEY,
                                    alpaca_secret=ALPACA_SECRET_KEY, base_dir=str(BASE_DIR))
@@ -3746,11 +3746,12 @@ def main():
 
             # 10d. Advanced options strategies — research-backed, high-return, defined-risk
             from skills.options_strategies import (
-                init_options_skill, generate_options_strategies, format_options_report,
+                generate_options_strategies, format_options_report,
                 get_options_chain, get_option_pricing, analyze_iv_rank, find_mispriced_options
             )
             from skills.alpaca_trading import find_option_symbol
-            init_options_skill(
+            # Re-init options strategies skill for trading context (already initialized earlier)
+            init_options_strategies_skill(
                 alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
                 finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR)
             )

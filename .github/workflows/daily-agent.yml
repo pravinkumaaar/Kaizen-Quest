@@ -2,24 +2,24 @@ name: Trading Agent Scheduler
 
 on:
   schedule:
-    # ═══ 3 FULL REPORTS PER DAY ═══
-    - cron: '0 8 * * 1-5'    # 8:00 AM ET — Pre-market report
-    - cron: '30 12 * * 1-5'  # 12:30 PM ET — Mid-day report (during market)
-    - cron: '30 16 * * 1-5'  # 4:30 PM ET — Post-market report
+    # ═══ 3 FULL REPORTS PER DAY (UTC times for EDT = ET-4) ═══
+    - cron: '0 12 * * 1-5'    # 8:00 AM ET (12:00 UTC) — Pre-market report
+    - cron: '30 16 * * 1-5'  # 12:30 PM ET (16:30 UTC) — Mid-day report
+    - cron: '30 20 * * 1-5'  # 4:30 PM ET (20:30 UTC) — Post-market report
 
     # ═══ MARKET-HOURS RUNS (every 30 min) — Trade + Alerts only ═══
-    - cron: '30 9 * * 1-5'
-    - cron: '0 10 * * 1-5'
-    - cron: '30 10 * * 1-5'
-    - cron: '0 11 * * 1-5'
-    - cron: '30 11 * * 1-5'
-    - cron: '0 12 * * 1-5'
-    - cron: '0 13 * * 1-5'
-    - cron: '30 13 * * 1-5'
-    - cron: '0 14 * * 1-5'
-    - cron: '30 14 * * 1-5'
-    - cron: '0 15 * * 1-5'
-    - cron: '30 15 * * 1-5'
+    - cron: '30 13 * * 1-5'  # 9:30 AM ET — Market open
+    - cron: '0 14 * * 1-5'   # 10:00 AM ET
+    - cron: '30 14 * * 1-5'  # 10:30 AM ET
+    - cron: '0 15 * * 1-5'   # 11:00 AM ET
+    - cron: '30 15 * * 1-5'  # 11:30 AM ET
+    - cron: '0 16 * * 1-5'   # 12:00 PM ET
+    - cron: '0 17 * * 1-5'   # 1:00 PM ET
+    - cron: '30 17 * * 1-5'  # 1:30 PM ET
+    - cron: '0 18 * * 1-5'   # 2:00 PM ET
+    - cron: '30 18 * * 1-5'  # 2:30 PM ET
+    - cron: '0 19 * * 1-5'   # 3:00 PM ET
+    - cron: '30 19 * * 1-5'  # 3:30 PM ET
   workflow_dispatch:
 
 jobs:
@@ -43,7 +43,8 @@ jobs:
         MIN=$(TZ='US/Eastern' date +%M)
         DOW=$(TZ='US/Eastern' date +%u)
         if [ "$DOW" -gt 5 ]; then echo "MODE=skip" >> $GITHUB_OUTPUT; exit 0; fi
-        # Full report at 8:00 AM, 12:30 PM, 4:30 PM
+        # Full report at 8:00 AM ET, 12:30 PM ET, 4:30 PM ET
+        # (Mode detection uses Eastern time; cron triggers are in UTC = ET-4 during EDT)
         if ([ "$HOUR" -eq 8 ] && [ "$MIN" -eq 0 ]) || \
            ([ "$HOUR" -eq 12 ] && [ "$MIN" -eq 30 ]) || \
            ([ "$HOUR" -eq 16 ] && [ "$MIN" -eq 30 ]); then
