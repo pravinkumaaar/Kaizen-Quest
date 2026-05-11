@@ -2298,15 +2298,18 @@ ADDITIONAL MARKET INTELLIGENCE:
 Use ALL of the above data (options, earnings, sentiment, foresight, smart money, sector rotation, benchmarks) to inform your stock recommendations."""
     
     # Add once-in-a-lifetime opportunities context
+    # Only prompt the LLM to look for these when there's a high-conviction signal
     once_in_a_lifetime_context = ""
     if portfolio_analysis and portfolio_analysis.get('concentration_ratio', 0) > 0.6:
         once_in_a_lifetime_context = """
-**ONCE-IN-A-LIFETIME OPPORTUNITIES TO CONSIDER**:
-- Extreme asymmetric plays with 50%+ upside potential
-- Positions with clear catalysts (regulatory approval, patent grant, etc.)
-- Situations where fundamentals are dramatically improving
-- Opportunities requiring minimal capital but offering outsized returns
-- Must have conviction score of 10/10 and clear downside protection
+**ONCE-IN-A-LIFETIME OPPORTUNITIES** (ONLY if truly exceptional):
+- Extreme asymmetric plays: 5x+ upside potential with defined risk
+- Clear catalyst within 30-90 days (earnings inflection, FDA approval, contract win, etc.)
+- Fundamentals dramatically improving (revenue acceleration, margin expansion, market share gains)
+- Smart money heavily accumulating (hedge fund consensus + insider buying)
+- Must have conviction score of 10/10 AND clear downside protection
+- Risk/reward ratio of 5:1 or better
+Do NOT include generic growth stories. Only flag truly rare, time-sensitive opportunities.
 """
     
     return call_llm(
@@ -3544,22 +3547,28 @@ def main():
                 otl_match = re.search(otl_pattern, inv_str, re.DOTALL | re.IGNORECASE)
                 if otl_match:
                     content = otl_match.group(1).strip()
-                    # Only send if there's meaningful content (not just empty lines or generic text)
-                    # Check for ticker symbols, price targets, or specific thesis language
-                    has_specifics = bool(re.search(r'\$[\d,]+|ticker|target|entry|stop|conviction|thesis|upside|downside', content.lower()))
-                    has_length = len(content) > 100  # At least 100 chars of actual content
-                    if has_specifics and has_length:
+                    content_lower = content.lower()
+                    # STRICT validation: only alert for truly exceptional opportunities
+                    # Must have ALL of these to qualify:
+                    has_ticker = bool(re.search(r'[A-Z]{1,5}\b', content))  # Specific ticker symbol
+                    has_price = bool(re.search(r'\$[\d,.]+', content))  # Price target or entry
+                    has_conviction = bool(re.search(r'conviction|10/10|high.confidence|certain', content_lower))
+                    has_catalyst = bool(re.search(r'catalyst|earnings|approval|contract|inflection|breakout|accelerat', content_lower))
+                    has_asymmetry = bool(re.search(r'5x|50%|asymmetric|outsized|10:1|5:1|risk.reward', content_lower))
+                    has_specific_thesis = len(content) > 200  # Substantial thesis, not just a sentence
+                    # Count how many criteria are met
+                    criteria_met = sum([has_ticker, has_price, has_conviction, has_catalyst, has_asymmetry, has_specific_thesis])
+                    if criteria_met >= 5:  # Must meet at least 5 of 6 criteria
                         full_match = otl_match.group(0).strip()
                         full_match = re.sub(r'\n{3,}', '\n\n', full_match)
-                        # Send full content — no truncation, no /report reference
                         alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<i>Review and act if you agree. Not financial advice.</i>"
                         sent = broadcast(alert_text)
                         if sent:
-                            log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s)")
+                            log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s) (criteria: {criteria_met}/6)")
                         else:
                             log("[!] Once-in-a-lifetime: no Telegram users configured")
                     else:
-                        log("[OK] Once-in-a-lifetime section found but no specific opportunity — skipping alert")
+                        log(f"[OK] Once-in-a-lifetime found but not exceptional enough (criteria: {criteria_met}/6) — skipping alert")
                 else:
                     log("[OK] Once-in-a-lifetime keyword found but no extractable content — skipping alert")
     except Exception as e:
