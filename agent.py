@@ -3554,14 +3554,18 @@ def main():
                     has_asymmetry = bool(re.search(r'5x|50%|asymmetric|outsized|10:1|5:1|risk.reward', content_lower))
                     has_specific_thesis = len(content) > 200  # Substantial thesis, not just a sentence
                     # Count how many criteria are met
-                    criteria_met = sum([has_ticker, has_price, has_conviction, has_catalyst, has_asymmetry, has_specific_thesis])
-                    if criteria_met >= 5:  # Must meet at least 5 of 6 criteria
+                    all_criteria = [has_ticker, has_price, has_conviction, has_catalyst, has_asymmetry, has_specific_thesis]
+                    criteria_met = sum(all_criteria)
+                    total_criteria = len(all_criteria)
+                    # Dynamic threshold: must meet all but one criteria (e.g., 5 of 6, 6 of 7, etc.)
+                    threshold = total_criteria - 1
+                    if criteria_met >= threshold:
                         full_match = otl_match.group(0).strip()
                         full_match = re.sub(r'\n{3,}', '\n\n', full_match)
                         alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<i>Review and act if you agree. Not financial advice.</i>"
                         sent = broadcast(alert_text)
                         if sent:
-                            log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s) (criteria: {criteria_met}/6)")
+                            log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s) (criteria: {criteria_met}/{total_criteria}, threshold: {threshold})")
                         else:
                             log("[!] Once-in-a-lifetime: no Telegram users configured")
                     else:

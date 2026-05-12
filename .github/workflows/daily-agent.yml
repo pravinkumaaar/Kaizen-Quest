@@ -8,6 +8,7 @@ on:
     - cron: '30 20 * * 1-5'  # 4:30 PM ET (20:30 UTC) — Post-market report
 
     # ═══ MARKET-HOURS RUNS (every 30 min) — Trade + Alerts only ═══
+    - cron: '0 13 * * 1-5'   # 9:00 AM ET — Pre-market check (30 min before open)
     - cron: '30 13 * * 1-5'  # 9:30 AM ET — Market open
     - cron: '0 14 * * 1-5'   # 10:00 AM ET
     - cron: '30 14 * * 1-5'  # 10:30 AM ET
