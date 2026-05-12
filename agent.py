@@ -2297,20 +2297,17 @@ ADDITIONAL MARKET INTELLIGENCE:
 {truncated_context}
 Use ALL of the above data (options, earnings, sentiment, foresight, smart money, sector rotation, benchmarks) to inform your stock recommendations."""
     
-    # Add once-in-a-lifetime opportunities context
-    # Only prompt the LLM to look for these when there's a high-conviction signal
-    once_in_a_lifetime_context = ""
-    if portfolio_analysis and portfolio_analysis.get('concentration_ratio', 0) > 0.6:
-        once_in_a_lifetime_context = """
-**ONCE-IN-A-LIFETIME OPPORTUNITIES** (ONLY if truly exceptional):
+    # Always ask the LLM to look for once-in-a-lifetime opportunities
+    # The alert validation (5 of 6 criteria) controls whether it actually gets sent
+    once_in_a_lifetime_context = """
+**ONCE-IN-A-LIFETIME OPPORTUNITIES** (ONLY if truly exceptional — do NOT include generic ideas):
 - Extreme asymmetric plays: 5x+ upside potential with defined risk
 - Clear catalyst within 30-90 days (earnings inflection, FDA approval, contract win, etc.)
 - Fundamentals dramatically improving (revenue acceleration, margin expansion, market share gains)
 - Smart money heavily accumulating (hedge fund consensus + insider buying)
 - Must have conviction score of 10/10 AND clear downside protection
 - Risk/reward ratio of 5:1 or better
-Do NOT include generic growth stories. Only flag truly rare, time-sensitive opportunities.
-"""
+Only flag truly rare, time-sensitive opportunities you would bet big on. Skip if uncertain."""
     
     return call_llm(
         system=SYSTEM,
