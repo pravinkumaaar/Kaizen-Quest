@@ -54,6 +54,30 @@ jobs:
           echo "MODE=alerts-only" >> $GITHUB_OUTPUT
         fi
 
+    - name: Debug - Test Alpaca API connection
+      run: |
+        python3 -c "
+        import os, requests
+        key = os.environ.get('ALPACA_API_KEY', '')
+        secret = os.environ.get('ALPACA_SECRET_KEY', '')
+        print(f'Key exists: {bool(key)} (len={len(key)})')
+        print(f'Secret exists: {bool(secret)} (len={len(secret)})')
+        if key and secret:
+            headers = {'APCA-API-KEY-ID': key, 'APCA-API-SECRET-KEY': secret}
+            r = requests.get('https://paper-api.alpaca.markets/v2/account', headers=headers, timeout=10)
+            print(f'Alpaca API status: {r.status_code}')
+            if r.status_code == 200:
+                d = r.json()
+                print(f'Account: {d.get(\"status\")} | Portfolio: {d.get(\"portfolio_value\")} | Cash: {d.get(\"cash\")}')
+            else:
+                print(f'Error: {r.text[:200]}')
+        else:
+            print('❌ Alpaca keys are empty!')
+        "
+      env:
+        ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+        ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+
     - name: Run agent (full — report + trade + alerts)
       if: steps.mode.outputs.MODE == 'full'
       env:
