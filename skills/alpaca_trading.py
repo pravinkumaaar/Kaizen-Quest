@@ -69,13 +69,14 @@ def get_account_info() -> dict:
         return {"error": "Alpaca not configured"}
     try:
         account = api.get_account()
-        return {
+        result = {
             "buying_power": float(account.buying_power),
             "portfolio_value": float(account.portfolio_value),
             "cash": float(account.cash),
             "equity": float(account.equity),
             "status": account.status,
         }
+        return result
     except Exception as e:
         return {"error": str(e)}
 

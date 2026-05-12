@@ -98,8 +98,12 @@ def get_alpaca_portfolio_snapshot():
     acct = {}
     try:
         r = requests.get(f"{base}/account", headers=headers, timeout=10)
-        if r.ok: acct = r.json()
-    except Exception: pass
+        if r.ok:
+            acct = r.json()
+        else:
+            print(f"[!] Alpaca account API error: HTTP {r.status_code} — {r.text[:200]}")
+    except Exception as e:
+        print(f"[!] Alpaca account API exception: {e}")
 
     cash = float(acct.get("cash", 0))
     portfolio_value = float(acct.get("portfolio_value", cash))
