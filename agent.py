@@ -4057,46 +4057,148 @@ def main():
             for strat in sorted(all_options_strategies, key=lambda s: s.get('conviction', 0), reverse=True)[:3]:
                 try:
                     underlying = strat.get('underlying', '')
+                    strategy_name = strat.get('strategy', 'UNKNOWN')
+                    
+                    # ── SINGLE-LEG STRATEGIES (long call, long put, cash-secured put) ──
                     option_info = strat.get('option', {})
-                    
-                    if not option_info:
-                        # For multi-leg strategies, construct the order differently
-                        log(f"  [!] Skipping {strat['strategy']} — complex multi-leg not yet automated")
+                    if option_info:
+                        option_symbol = option_info.get('symbol', '')
+                        if not option_symbol:
+                            strike = float(option_info.get('strike_price', 0))
+                            occ_type = 'call' if 'call' in strategy_name.lower() else 'put'
+                            dte = option_info.get('dte', 30)
+                            option_symbol = find_option_symbol(underlying, occ_type, strike, dte)
+                        
+                        if not option_symbol:
+                            log(f"  [!] Could not find OCC symbol for {strategy_name} on {underlying}")
+                            options_failed += 1
+                            continue
+                        
+                        # Position sizing: max 3% of portfolio per options trade
+                        acct = get_account_info()
+                        portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
+                        options_budget = portfolio_val * 0.03
+                        
+                        pricing = get_option_pricing([option_symbol])
+                        opt_price = 0
+                        if pricing.get(option_symbol):
+                            snap = pricing[option_symbol]
+                            opt_price = float(snap.get("latestTrade", {}).get("p", 0) or 
+                                             snap.get("latestQuote", {}).get("ap", 0))
+                        
+                        if opt_price > 0:
+                            max_contracts = max(1, int(options_budget / (opt_price * 100)))
+                            qty = min(max_contracts, 2)
+                        else:
+                            qty = 1
+                        
+                        log(f"  → EXECUTE: {strategy_name} on {underlying} — {option_symbol} x{qty}")
+                        trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
+                        if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
+                            options_executed += 1
+                            log(f"[OK] Options trade: BUY {option_symbol} x{qty} ({trade_result.get('status')})")
+                        else:
+                            options_failed += 1
+                            log(f"[!] Options trade failed: {option_symbol} — {trade_result}")
                         continue
                     
-                    option_symbol = option_info.get('symbol', '')
-                    if not option_symbol:
-                        # Find OCC symbol
-                        strike = float(option_info.get('strike_price', 0))
-                        occ_type = 'call' if 'call' in strat['strategy'].lower() else 'put'
-                        dte = option_info.get('dte', 30)
-                        option_symbol = find_option_symbol(underlying, occ_type, strike, dte)
+                    # ── MULTI-LEG STRATEGIES (debit spreads, iron condors, straddles) ──
+                    # These require multiple orders. We execute each leg separately.
+                    legs_to_execute = []
                     
-                    if not option_symbol:
-                        log(f"  [!] Could not find OCC symbol for {strat['strategy']} on {underlying}")
-                        options_failed += 1
-                        continue
+                    # Debit spreads: long_leg + short_leg
+                    if strat.get('long_leg') and strat.get('short_leg'):
+                        for leg_type in ['long_leg', 'short_leg']:
+                            leg = strat[leg_type]
+                            leg_symbol = leg.get('symbol', '')
+                            if not leg_symbol:
+                                strike = float(leg.get('strike_price', 0))
+                                occ_type = 'call' if 'call' in strategy_name.lower() or leg_type == 'long_leg' and 'CALL' in strategy_name else 'put'
+                                dte = leg.get('dte', 30)
+                                leg_symbol = find_option_symbol(underlying, occ_type, strike, dte)
+                            if leg_symbol:
+                                action = 'buy' if leg_type == 'long_leg' else 'sell'
+                                legs_to_execute.append((leg_symbol, action))
                     
-                    # Position sizing: max 3% of portfolio per options trade
-                    acct = get_account_info()
-                    portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
-                    options_budget = portfolio_val * 0.03
+                    # Iron condor: call_spread + put_spread
+                    elif strat.get('call_spread') and strat.get('put_spread'):
+                        call_spread = strat['call_spread']
+                        put_spread = strat['put_spread']
+                        # Call spread: sell lower strike, buy higher strike
+                        for i, leg in enumerate(call_spread):
+                            leg_symbol = leg.get('symbol', '') if isinstance(leg, dict) else ''
+                            if not leg_symbol and isinstance(leg, dict):
+                                strike = float(leg.get('strike_price', 0))
+                                leg_symbol = find_option_symbol(underlying, 'call', strike, leg.get('dte', 30))
+                            if leg_symbol:
+                                action = 'sell' if i == 0 else 'buy'
+                                legs_to_execute.append((leg_symbol, action))
+                        # Put spread: sell higher strike, buy lower strike
+                        for i, leg in enumerate(put_spread):
+                            leg_symbol = leg.get('symbol', '') if isinstance(leg, dict) else ''
+                            if not leg_symbol and isinstance(leg, dict):
+                                strike = float(leg.get('strike_price', 0))
+                                leg_symbol = find_option_symbol(underlying, 'put', strike, leg.get('dte', 30))
+                            if leg_symbol:
+                                action = 'sell' if i == 0 else 'buy'
+                                legs_to_execute.append((leg_symbol, action))
                     
-                    # Get option pricing
-                    pricing = get_option_pricing([option_symbol])
-                    opt_price = 0
-                    if pricing.get(option_symbol):
-                        snap = pricing[option_symbol]
-                        opt_price = float(snap.get("latestTrade", {}).get("p", 0) or 
-                                         snap.get("latestQuote", {}).get("ap", 0))
+                    # Straddle/Strangle: buy call + buy put
+                    elif 'STRADDLE' in strategy_name or 'STRANGLE' in strategy_name:
+                        # For straddles, we need to find ATM call and put
+                        chain_data = get_options_chain(underlying, min_dte=14, max_dte=60)
+                        if chain_data:
+                            price = _yf_price(underlying)["price"]
+                            if price > 0:
+                                # ATM call
+                                atm_calls = sorted(chain_data.get('calls', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
+                                # ATM put
+                                atm_puts = sorted(chain_data.get('puts', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
+                                if atm_calls:
+                                    call_symbol = atm_calls[0].get('symbol', '')
+                                    if not call_symbol:
+                                        call_symbol = find_option_symbol(underlying, 'call', float(atm_calls[0].get('strike_price', 0)), atm_calls[0].get('dte', 30))
+                                    if call_symbol:
+                                        legs_to_execute.append((call_symbol, 'buy'))
+                                if atm_puts:
+                                    put_symbol = atm_puts[0].get('symbol', '')
+                                    if not put_symbol:
+                                        put_symbol = find_option_symbol(underlying, 'put', float(atm_puts[0].get('strike_price', 0)), atm_puts[0].get('dte', 30))
+                                    if put_symbol:
+                                        legs_to_execute.append((put_symbol, 'buy'))
                     
-                    if opt_price > 0:
-                        max_contracts = max(1, int(options_budget / (opt_price * 100)))
-                        qty = min(max_contracts, 2)  # Cap at 2 contracts
+                    # Execute all legs
+                    if legs_to_execute:
+                        acct = get_account_info()
+                        portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
+                        options_budget = portfolio_val * 0.03
+                        max_legs = max(1, int(options_budget / 500))  # Rough estimate: $500 per leg
+                        qty = min(max_legs, 2)
+                        
+                        all_legs_success = True
+                        for leg_symbol, action in legs_to_execute:
+                            log(f"  → EXECUTE LEG: {action} {leg_symbol} x{qty} ({strategy_name})")
+                            trade_result = place_option_order(underlying, leg_symbol, qty, action, "market")
+                            if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
+                                log(f"[OK] Leg executed: {action} {leg_symbol} x{qty}")
+                            else:
+                                all_legs_success = False
+                                log(f"[!] Leg failed: {action} {leg_symbol} — {trade_result}")
+                        
+                        if all_legs_success:
+                            options_executed += 1
+                            log(f"[OK] Multi-leg options trade: {strategy_name} on {underlying} ({len(legs_to_execute)} legs)")
+                        else:
+                            options_failed += 1
+                            log(f"[!] Multi-leg options trade partially failed: {strategy_name}")
                     else:
-                        qty = 1
-                    
-                    log(f"  → EXECUTE: {strat['strategy']} on {underlying} — {option_symbol} x{qty} (conviction: {strat.get('conviction', 'N/A')}/10)")
+                        log(f"  [!] Skipping {strategy_name} — could not determine option symbols for legs")
+                        options_failed += 1
+                
+                except Exception as e:
+                    options_failed += 1
+                    log(f"  [!] Error executing options strategy: {e}")
+                    continue
                     
                     trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
                     
