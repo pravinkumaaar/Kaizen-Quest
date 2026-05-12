@@ -53,7 +53,11 @@ def init_portfolio_manager(finnhub_key=None, alpaca_key=None, alpaca_secret=None
 
 
 def _alpaca_headers():
-    return {"APCA-API-KEY-ID": ALPACA_API_KEY or "", "APCA-API-SECRET-KEY": ALPACA_SECRET_KEY or ""}
+    # Use module-level keys if set, fall back to environment variables
+    import os as _os
+    key = ALPACA_API_KEY or _os.environ.get("ALPACA_API_KEY", "")
+    secret = ALPACA_SECRET_KEY or _os.environ.get("ALPACA_SECRET_KEY", "")
+    return {"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret}
 
 
 def _alpaca_base():
