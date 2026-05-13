@@ -3620,18 +3620,46 @@ def main():
     # 8. Log benchmark comparison
     if SKILLS_AVAILABLE:
         try:
-            # Use ALL holdings for cost basis, not just top_positions
             all_holdings = portfolio_analysis.get('top_positions', [])
             total_value = portfolio_analysis.get('total_value', 0)
             total_cost = sum(h.get('cost_basis', 0) for h in all_holdings)
             
             perf = calculate_portfolio_performance(total_value, total_cost)
-            comparison = compare_to_benchmarks(perf.get('total_return_pct', 0))
+            total_return_pct = perf.get('total_return_pct', 0)
             
-            log(f"[OK] Portfolio: ${total_value:,.0f} value / ${total_cost:,.0f} cost = {perf['total_return_pct']:+.2f}% total return")
+            # Get index prices for daily comparison
+            index_prices = get_index_prices()
+            
+            # Calculate portfolio daily return using Alpaca snapshot
+            alpaca_daily_return_pct = 0
+            try:
+                alpaca_snap = get_alpaca_portfolio_snapshot()
+                alpaca_daily_return_pct = alpaca_snap.get("daily_return_pct", 0)
+            except Exception:
+                pass
+            
+            # Use Alpaca daily return if available, otherwise estimate from CSV portfolio
+            portfolio_daily_return = alpaca_daily_return_pct
+            
+            # Compare daily returns (apples to apples)
+            comparison = compare_to_benchmarks(portfolio_daily_return, period="daily")
+            
+            log(f"[OK] Portfolio: ${total_value:,.0f} value / ${total_cost:,.0f} cost = {total_return_pct:+.2f}% total return")
+            log(f"  Today's return: {portfolio_daily_return:+.2f}%")
             
             for sym, data in comparison.get('indices', {}).items():
-                log(f"  vs {sym} ({data['name']}): {data['return']:+.2f}% today → diff: {data['diff']:+.2f}%")
+                idx_return = data.get('return', 0)
+                idx_price = data.get('price', 0)
+                diff = data.get('diff', 0)
+                log(f"  vs {sym} ({data['name']}): {idx_return:+.2f}% today @ ${idx_price:,.2f} → diff: {diff:+.2f}%")
+            
+            # Also show total return comparison (all-time vs all-time)
+            total_comparison = compare_to_benchmarks(total_return_pct, period="total")
+            log(f"  Total return comparison:")
+            for sym, data in total_comparison.get('indices', {}).items():
+                idx_total_return = data.get('return', 0)
+                diff = total_return_pct - idx_total_return
+                log(f"    vs {sym}: portfolio {total_return_pct:+.2f}% vs index {idx_total_return:+.2f}% → diff: {diff:+.2f}%")
             
             outperformed = comparison.get('outperformed', [])
             if outperformed:

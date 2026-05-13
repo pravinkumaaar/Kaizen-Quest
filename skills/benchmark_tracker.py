@@ -1230,15 +1230,16 @@ def get_index_prices(symbols: list = None) -> dict:
         try:
             t = yf.Ticker(symbol)
             info = t.fast_info
+            last = float(info.last_price) if info.last_price else 0
+            prev = float(info.previous_close) if info.previous_close else 0
+            chg_pct = round(((last - prev) / prev * 100), 2) if prev > 0 else 0
             prices[symbol] = {
-                "price": round(float(info.last_price), 2),
-                "prev_close": round(float(info.previous_close), 2) if info.previous_close else None,
-                "change_pct": round(
-                    float((info.last_price - info.previous_close) / info.previous_close * 100), 2
-                ) if info.previous_close else 0,
+                "price": round(last, 2),
+                "prev_close": round(prev, 2) if prev > 0 else None,
+                "change_pct": chg_pct,
             }
         except Exception:
-            prices[symbol] = {"price": 0, "change_pct": 0}
+            prices[symbol] = {"price": 0, "prev_close": None, "change_pct": 0}
 
     return prices
 
@@ -1273,11 +1274,15 @@ def compare_to_benchmarks(portfolio_return_pct: float, period: str = "1D") -> di
     for symbol, name in BENCHMARK_INDICES.items():
         index_data = index_prices.get(symbol, {})
         index_return = index_data.get("change_pct", 0)
+        index_price = index_data.get("price", 0)
+        index_prev = index_data.get("prev_close", 0)
 
         comparison["indices"][symbol] = {
             "name": name,
             "return": round(index_return, 2),
             "diff": round(portfolio_return_pct - index_return, 2),
+            "price": index_price,
+            "prev_close": index_prev,
         }
 
         if portfolio_return_pct > index_return:
