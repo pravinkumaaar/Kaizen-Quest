@@ -63,6 +63,15 @@ try:
     from skills.smart_money_tracker import (get_smart_money_summary, generate_smart_money_report,
                                              get_hedge_fund_consensus, get_congressional_trades,
                                              get_insider_trades, init_smart_money_skill)
+    from skills.options_executor import (
+        init_options_executor, execute_straddle, execute_strangle,
+        execute_call_debit_spread, execute_put_debit_spread,
+        execute_iron_condor, execute_iron_butterfly,
+        execute_calendar_spread, execute_covered_call,
+        execute_cash_secured_put, close_option_position,
+        get_all_option_positions, get_option_live_price,
+        find_option_symbol, get_options_chain,
+    )
     from skills.sector_rotation import (analyze_sector_rotation, analyze_cap_rotation,
                                          detect_emerging_themes, generate_sector_report,
                                          get_macro_rotation_signals, get_sector_momentum_score,

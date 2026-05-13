@@ -2,25 +2,28 @@ name: Trading Agent Scheduler
 
 on:
   schedule:
-    # ═══ 3 FULL REPORTS PER DAY (UTC times for EDT = ET-4) ═══
-    - cron: '0 12 * * 1-5'    # 8:00 AM ET (12:00 UTC) — Pre-market report
-    - cron: '30 16 * * 1-5'  # 12:30 PM ET (16:30 UTC) — Mid-day report
-    - cron: '30 20 * * 1-5'  # 4:30 PM ET (20:30 UTC) — Post-market report
+    # 3 FULL REPORTS PER DAY
+    # Cron is in UTC. During EDT (Mar-Nov): UTC-4. During EST (Nov-Mar): UTC-5.
+    # 8:00 AM ET = 12:00 UTC (EDT) or 13:00 UTC (EST)
+    # We use 12:00 UTC which gives 8:00 AM EDT and 7:00 AM EST (still before market open)
+    - cron: '0 12 * * 1-5'    # Pre-market full report
+    - cron: '30 16 * * 1-5'  # Mid-day full report
+    - cron: '30 20 * * 1-5'  # Post-market full report
 
-    # ═══ MARKET-HOURS RUNS (every 30 min) — Trade + Alerts only ═══
-    - cron: '0 13 * * 1-5'   # 9:00 AM ET — Pre-market check (30 min before open)
-    - cron: '30 13 * * 1-5'  # 9:30 AM ET — Market open
-    - cron: '0 14 * * 1-5'   # 10:00 AM ET
-    - cron: '30 14 * * 1-5'  # 10:30 AM ET
-    - cron: '0 15 * * 1-5'   # 11:00 AM ET
-    - cron: '30 15 * * 1-5'  # 11:30 AM ET
-    - cron: '0 16 * * 1-5'   # 12:00 PM ET
-    - cron: '0 17 * * 1-5'   # 1:00 PM ET
-    - cron: '30 17 * * 1-5'  # 1:30 PM ET
-    - cron: '0 18 * * 1-5'   # 2:00 PM ET
-    - cron: '30 18 * * 1-5'  # 2:30 PM ET
-    - cron: '0 19 * * 1-5'   # 3:00 PM ET
-    - cron: '30 19 * * 1-5'  # 3:30 PM ET
+    # MARKET-HOURS RUNS (every 30 min) - Alerts only
+    - cron: '0 13 * * 1-5'   # 9:00 AM EDT
+    - cron: '30 13 * * 1-5'  # 9:30 AM EDT - Market open
+    - cron: '0 14 * * 1-5'   # 10:00 AM EDT
+    - cron: '30 14 * * 1-5'  # 10:30 AM EDT
+    - cron: '0 15 * * 1-5'   # 11:00 AM EDT
+    - cron: '30 15 * * 1-5'  # 11:30 AM EDT
+    - cron: '0 16 * * 1-5'   # 12:00 PM EDT
+    - cron: '0 17 * * 1-5'   # 1:00 PM EDT
+    - cron: '30 17 * * 1-5'  # 1:30 PM EDT
+    - cron: '0 18 * * 1-5'   # 2:00 PM EDT
+    - cron: '30 18 * * 1-5'  # 2:30 PM EDT
+    - cron: '0 19 * * 1-5'   # 3:00 PM EDT
+    - cron: '30 19 * * 1-5'  # 3:30 PM EDT
   workflow_dispatch:
 
 jobs:
@@ -45,7 +48,6 @@ jobs:
         DOW=$(TZ='US/Eastern' date +%u)
         if [ "$DOW" -gt 5 ]; then echo "MODE=skip" >> $GITHUB_OUTPUT; exit 0; fi
         # Full report at 8:00 AM ET, 12:30 PM ET, 4:30 PM ET
-        # (Mode detection uses Eastern time; cron triggers are in UTC = ET-4 during EDT)
         if ([ "$HOUR" -eq 8 ] && [ "$MIN" -eq 0 ]) || \
            ([ "$HOUR" -eq 12 ] && [ "$MIN" -eq 30 ]) || \
            ([ "$HOUR" -eq 16 ] && [ "$MIN" -eq 30 ]); then
@@ -54,31 +56,7 @@ jobs:
           echo "MODE=alerts-only" >> $GITHUB_OUTPUT
         fi
 
-    - name: Debug - Test Alpaca API connection
-      run: |
-        python3 -c "
-        import os, requests
-        key = os.environ.get('ALPACA_API_KEY', '')
-        secret = os.environ.get('ALPACA_SECRET_KEY', '')
-        print(f'Key exists: {bool(key)} (len={len(key)})')
-        print(f'Secret exists: {bool(secret)} (len={len(secret)})')
-        if key and secret:
-            headers = {'APCA-API-KEY-ID': key, 'APCA-API-SECRET-KEY': secret}
-            r = requests.get('https://paper-api.alpaca.markets/v2/account', headers=headers, timeout=10)
-            print(f'Alpaca API status: {r.status_code}')
-            if r.status_code == 200:
-                d = r.json()
-                print(f'Account: {d.get(\"status\")} | Portfolio: {d.get(\"portfolio_value\")} | Cash: {d.get(\"cash\")}')
-            else:
-                print(f'Error: {r.text[:200]}')
-        else:
-            print('❌ Alpaca keys are empty!')
-        "
-      env:
-        ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
-        ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-
-    - name: Run agent (full — report + trade + alerts)
+    - name: Run agent (full - report + trade + alerts)
       if: steps.mode.outputs.MODE == 'full'
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -92,7 +70,7 @@ jobs:
         RUN_MODE: full
       run: python3 agent.py
 
-    - name: Run agent (alerts-only — trade + alerts, no report)
+    - name: Run agent (alerts-only - trade + alerts, no report)
       if: steps.mode.outputs.MODE == 'alerts-only'
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -111,7 +89,6 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        # Only commit reports directory and docs, not cache/logs
         git add REPORTS/ docs/ logs/agent.log
         git diff --staged --quiet || git commit -m "Agent report: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
         git push
