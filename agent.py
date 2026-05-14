@@ -2307,12 +2307,12 @@ Top holdings need attention if this ratio is too high.
 
     # Add options context for cross-referencing
     # This includes: options data, earnings alerts, market sentiment, foresight,
-    # smart money signals, sector rotation, and benchmark comparison
+    # smart money signals, sector rotation, benchmarks, global markets, commodities
     options_section = ""
     if options_context and options_context != "[Options data unavailable]":
         # Use full context — the LLM needs ALL of it for informed decisions
         # Typical context is ~5700 chars; 8000 limit captures everything with margin
-        max_context = 8000
+        max_context = 10000  # Increased to fit global + commodities data
         if len(options_context) > max_context:
             truncated_context = options_context[:max_context]
             # Try to truncate at a paragraph boundary
@@ -2325,7 +2325,17 @@ Top holdings need attention if this ratio is too high.
         options_section = f"""
 ADDITIONAL MARKET INTELLIGENCE:
 {truncated_context}
-Use ALL of the above data (options, earnings, sentiment, foresight, smart money, sector rotation, benchmarks) to inform your stock recommendations."""
+Use ALL of the above data to inform your recommendations. This includes:
+- Individual stock analysis (options, earnings, sentiment, foresight, smart money, sectors)
+- Global market trends (which countries/regions are outperforming or underperforming)
+- Commodity & metals trends (gold, silver, oil, copper, etc.)
+- Benchmark comparisons (portfolio vs SPY/QQQ/IWM over matching timeframes)
+
+CRITICAL: Your recommendations MUST include analysis of:
+1. **Global Rotation**: Are emerging markets outperforming US? Should the portfolio have international exposure? Consider ETFs like EEM, EWY (Korea), EIDO (Indonesia), INDA (India), EWW (Mexico), TUR (Israel).
+2. **Commodities & Metals**: Are precious metals trending up (inflation hedge)? Is oil rising (energy exposure)? Consider ETFs like GLD, SLV, USO, COP, FCX.
+3. **Macro Allocation**: Based on ALL the data above, what % of the portfolio should be in US equities vs international vs commodities vs cash?
+4. **Specific Trade Actions**: For each recommendation, specify the exact ticker, action (BUY/SELL/HOLD), conviction (1-10), position size, entry/exit prices, and time horizon."""
     
     # Always ask the LLM to look for once-in-a-lifetime opportunities
     # The alert validation (5 of 6 criteria) controls whether it actually gets sent
@@ -2878,7 +2888,8 @@ def build_and_save_report(market_data, digest, investments, options, learning,
                             foresight_score=0, foresight_direction="neutral",
                             foresight_outlook="", foresight_actions=None, foresight=None,
                             smart_money_report="", sector_rotation_report="",
-                            benchmark_report="") -> str:
+                            benchmark_report="", global_report="", commodities_report="",
+                            macro_allocation_report="") -> str:
     if foresight_actions is None:
         foresight_actions = []
     if foresight is None:
@@ -2996,6 +3007,18 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 ---
 
 {benchmark_report}
+
+---
+
+{global_report}
+
+---
+
+{commodities_report}
+
+---
+
+{macro_allocation_report}
 
 {rec_section}
 ---
@@ -3289,11 +3312,109 @@ def main():
         except Exception:
             pullback = 0; uptrend = True; downtrend = False
         
-        # Thesis check
-        thesis_intact = not fundamentals.get("consecutive_misses", False)
-        thesis_broken = fundamentals.get("consecutive_misses", False) or fundamentals.get("below_200ma", False) and pnl_pct < -10
+        # ═══════════════════════════════════════════════════════════
+        # THESIS-DRIVEN DECISION FRAMEWORK
+        # Core principle: "The stock market is a device for transferring
+        # money from the impatient to the patient." — Warren Buffett
+        # 
+        # We sell ONLY when:
+        #   A) The investment thesis is fundamentally broken
+        #   B) There's a clearly better opportunity for the capital (opportunity cost)
+        #   C) Position size exceeds risk limits (trim, not sell)
+        #
+        # We do NOT sell just because:
+        #   - The stock is down X% (price ≠ value)
+        #   - The stock is in a downtrend (trends are noise for long-term investors)
+        #   - The stock hit a trailing stop (stops are safety nets, not sell signals)
+        # ═══════════════════════════════════════════════════════════
         
-        # Trailing stop (dynamic, ATR-based) — same logic as Alpaca section
+        # ── THESIS CHECK (Primary sell trigger) ──
+        thesis_intact = True
+        thesis_broken = False
+        thesis_reasons = []
+        
+        # Check 1: Consecutive earnings misses (2+ = thesis at risk)
+        if fundamentals.get("consecutive_misses"):
+            thesis_intact = False
+            thesis_broken = True
+            thesis_reasons.append("consecutive earnings misses")
+        
+        # Check 2: Revenue decline 2+ years (business deterioration)
+        if fundamentals.get("revenue_declining_2yr"):
+            thesis_intact = False
+            thesis_broken = True
+            thesis_reasons.append("revenue declining 2+ years")
+        
+        # Check 3: Margin collapse (competitive advantage eroding)
+        if fundamentals.get("margin_collapse"):
+            thesis_intact = False
+            thesis_broken = True
+            thesis_reasons.append("gross/operating margin collapse")
+        
+        # Check 4: Balance sheet deterioration (debt crisis)
+        if fundamentals.get("balance_sheet_deterioration"):
+            thesis_intact = False
+            thesis_broken = True
+            thesis_reasons.append("balance sheet deterioration")
+        
+        # Check 5: Management/insider selling (smart money leaving)
+        if fundamentals.get("heavy_insider_selling"):
+            thesis_intact = False
+            thesis_broken = True
+            thesis_reasons.append("heavy insider selling")
+        
+        # Check 6: Sector/industry structural decline
+        if fundamentals.get("sector_structural_decline"):
+            thesis_intact = False
+            thesis_broken = True
+            thesis_reasons.append("sector/industry structural decline")
+        
+        # Check 7: Below 200-day MA WITH deteriorating fundamentals
+        # (Price alone doesn't break thesis, but price + fundamentals does)
+        if fundamentals.get("below_200ma") and pnl_pct < -10 and not thesis_intact:
+            thesis_broken = True
+            thesis_reasons.append("below 200MA + deteriorating fundamentals")
+        
+        # ── OPPORTUNITY COST CHECK (Secondary sell trigger) ──
+        # Only sell if there's a clearly better place for the capital
+        opportunity_cost_sell = False
+        opportunity_cost_reason = ""
+        
+        if thesis_intact and pnl_pct > 0:
+            # Stock is up but thesis still intact — check if there's a better opportunity
+            # This is a "sell to redeploy" decision, not a "sell because it's up" decision
+            if pos_pct > 10:  # Only consider if position is meaningful
+                # Check if watchlist has higher-conviction opportunities
+                for wl_line in watchlist_lines:
+                    wl_parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                    if len(wl_parts) >= 5:
+                        try:
+                            wl_conviction = int(wl_parts[4].split('/')[0].strip())
+                            wl_ticker = wl_parts[1].strip()
+                            # If watchlist has 9+ conviction idea and this position is < 7
+                            if wl_conviction >= 9 and pos_pct > 5:
+                                # Check if this stock's conviction is lower
+                                current_conviction = 0
+                                for wl2 in watchlist_lines:
+                                    wl2_parts = wl2.split(' | ') if wl2.startswith('- ') else []
+                                    if len(wl2_parts) >= 5 and wl2_parts[1].strip() == ticker:
+                                        try:
+                                            current_conviction = int(wl2_parts[4].split('/')[0].strip())
+                                        except (ValueError, IndexError):
+                                            pass
+                                        break
+                                if current_conviction < wl_conviction - 2:
+                                    opportunity_cost_sell = True
+                                    opportunity_cost_reason = f"Better opportunity: {wl_ticker} (conviction {wl_conviction}/10 vs {current_conviction}/10)"
+                                    break
+                        except (ValueError, IndexError):
+                            pass
+        
+        # ── TRAILING STOP (Last-resort safety net only) ──
+        # This is NOT a primary sell trigger. It only fires when:
+        #   - The stock has pulled back significantly AND
+        #   - The thesis is already broken or at risk
+        # This is a "protect capital" measure, not a "take profits" measure
         try:
             high = hist["High"]
             low = hist["Low"]
@@ -3312,38 +3433,53 @@ def main():
                 stop_pct = -(atr_pct * 2.0)
             stop_pct = max(-25, min(-3, stop_pct))
         except Exception:
-            stop_pct = -10 if uptrend else (-7 if downtrend else -12)
+            try:
+                vol = hist["Close"].pct_change().std() * (252 ** 0.5) * 100
+                if uptrend:
+                    stop_pct = -(vol * 0.5)
+                elif downtrend:
+                    stop_pct = -(vol * 0.3)
+                else:
+                    stop_pct = -(vol * 0.4)
+                stop_pct = max(-25, min(-3, stop_pct))
+            except Exception:
+                stop_pct = -15  # Absolute last resort
         
-        # Generate action
+        # ── GENERATE ACTION (Thesis-first priority) ──
         action = None
         reason = ""
         
-        # 1. Trailing stop hit
-        if pullback <= stop_pct and pnl_pct < 0:
+        # 1. THESIS BROKEN — Primary sell trigger
+        if thesis_broken:
             action = "SELL"
-            reason = f"Trailing stop: pulled back {pullback:.1f}% from 20-day high (stop: {stop_pct:.1f}%)"
-        # 2. Thesis broken
-        elif thesis_broken:
+            reason = f"Thesis broken: {', '.join(thesis_reasons)}"
+        # 2. OPPORTUNITY COST — Sell to redeploy into better opportunity
+        elif opportunity_cost_sell:
             action = "SELL"
-            reason = "Thesis broken: consecutive misses or deteriorating fundamentals"
-        # 3. Downtrend + loss = cut quickly
-        elif downtrend and pnl_pct < -10:
-            action = "SELL"
-            reason = f"Downtrend + {pnl_pct:+.1f}% loss — cut before deeper damage"
-        # 4. Concentration risk
+            reason = f"Opportunity cost: {opportunity_cost_reason}"
+        # 3. CONCENTRATION RISK — Trim (not sell) if position too large
         elif pos_pct > 20:
             action = "TRIM"
-            reason = f"Concentration: {pos_pct:.1f}% of portfolio exceeds 20% max"
-        # 5. Contrarian buy (average down on weakness, thesis intact)
+            reason = f"Concentration: {pos_pct:.1f}% of portfolio exceeds 20% max — trimming to manage risk"
+        # 4. CONTRARIAN BUY — Average down if thesis intact and stock is on sale
         elif pnl_pct <= -20 and thesis_intact and not downtrend and pos_pct < 5:
             action = "BUY_MORE"
-            reason = f"Down {pnl_pct:.1f}% but thesis intact — averaging down on weakness"
-        # 6. Add to winner (uptrend, conviction, small position)
+            reason = f"Down {pnl_pct:.1f}% but thesis intact — averaging down on weakness (stock is on sale)"
+        # 5. ADD TO WINNERS — If thesis intact and position still small
         elif uptrend and thesis_intact and pnl_pct > 10 and pos_pct < 8:
             action = "BUY_MORE"
-            reason = f"Uptrend +{pnl_pct:.1f}%, only {pos_pct:.1f}% of portfolio — adding to winner"
+            reason = f"Uptrend +{pnl_pct:.1f}%, thesis intact, only {pos_pct:.1f}% of portfolio — adding to winner"
+        # 6. TRAILING STOP — Only if thesis is already broken AND stop hit
+        elif pullback <= stop_pct and pnl_pct < 0 and not thesis_intact:
+            action = "SELL"
+            reason = f"Safety stop: pulled back {pullback:.1f}% from high (stop: {stop_pct:.1f}%) + thesis at risk"
+        # 7. DEFAULT: HOLD — "The best thing to do is usually nothing"
+        else:
+            action = "HOLD"
+            reason = f"Thesis intact, no better opportunity, position size appropriate"
         
-        if action:
+        # Only add non-HOLD actions to the action list (HOLD = do nothing)
+        if action and action != "HOLD":
             csv_actions.append({
                 "ticker": ticker,
                 "action": action,
@@ -3353,6 +3489,8 @@ def main():
                 "shares": shares,
                 "current_price": current_price,
             })
+        else:
+            log(f"  ✅ HOLD {ticker}: {reason} | P&L: {pnl_pct:+.1f}% | {pos_pct:.1f}% of portfolio")
     
     # Log and alert on CSV actions
     if csv_actions:
@@ -3469,17 +3607,66 @@ def main():
         except Exception as e:
             log(f"[!] Sector rotation analysis failed: {e}")
 
-    # 4c. Benchmark Comparison & Performance Attribution
+    # 4c. Benchmark Comparison — Same-timeframe portfolio vs benchmarks + global + commodities
     benchmark_context = ""
     benchmark_report = ""
+    global_report = ""
+    commodities_report = ""
     if SKILLS_AVAILABLE:
         try:
-            log("📊 Running benchmark comparison...")
-            benchmark_report = generate_benchmark_report()
-            benchmark_context = _extract_benchmark_context()
-            log("[OK] Benchmark comparison complete")
+            log("📊 Running benchmark comparison (multi-period, global, commodities)...")
+            from skills.benchmark_tracker_v2 import compare_same_timeframe, format_benchmark_report
+            
+            # Get portfolio value and cost basis for comparison
+            portfolio_val = portfolio_analysis.get('total_value', 0)
+            portfolio_cost = portfolio_analysis.get('cost_basis', 0)
+            
+            # Compare across multiple periods for comprehensive view
+            comparison = compare_same_timeframe(portfolio_val, portfolio_cost, "YTD")
+            benchmark_report = format_benchmark_report(comparison)
+            
+            # Also get 1M and 3M for shorter-term context
+            comp_1m = compare_same_timeframe(portfolio_val, portfolio_cost, "1M")
+            comp_3m = compare_same_timeframe(portfolio_val, portfolio_cost, "3M")
+            
+            # Build context for LLM with multi-period data
+            benchmark_context = f"YTD: Portfolio {comparison['portfolio']['total_return_pct']:+.1f}%"
+            if comparison.get("benchmarks"):
+                for sym, data in comparison["benchmarks"].items():
+                    vs = data.get("vs_portfolio")
+                    if vs is not None:
+                        benchmark_context += f" | {sym} {data['return_pct']:+.1f}% ({vs:+.1f}% vs portfolio)"
+            
+            # Global markets summary
+            global_data = comparison.get("global", {})
+            if global_data:
+                sorted_global = sorted(global_data.items(), key=lambda x: x[1].get("return_pct", 0), reverse=True)
+                top_global = sorted_global[:5]
+                bottom_global = sorted_global[-3:] if len(sorted_global) >= 3 else []
+                global_report = "**Global Markets (YTD):**\n"
+                for sym, data in top_global:
+                    global_report += f"  🟢 {data['name']}: {data['return_pct']:+.1f}%\n"
+                for sym, data in bottom_global:
+                    global_report += f"  🔴 {data['name']}: {data['return_pct']:+.1f}%\n"
+            
+            # Commodities summary
+            comm_data = comparison.get("commodities", {})
+            if comm_data:
+                sorted_comm = sorted(comm_data.items(), key=lambda x: x[1].get("return_pct", 0), reverse=True)
+                commodities_report = "**Commodities & Metals (YTD):**\n"
+                for sym, data in sorted_comm:
+                    emoji = "🟢" if data['return_pct'] > 0 else "🔴"
+                    commodities_report += f"  {emoji} {data['name']}: {data['return_pct']:+.1f}%\n"
+            
+            log("[OK] Benchmark comparison complete (US + Global + Commodities)")
         except Exception as e:
             log(f"[!] Benchmark comparison failed: {e}")
+            # Fallback to old benchmark if new one fails
+            try:
+                benchmark_report = generate_benchmark_report()
+                benchmark_context = _extract_benchmark_context()
+            except Exception:
+                pass
 
     # 4d. Enrich investment context with all collected intelligence
     if smart_money_context:
@@ -3488,6 +3675,10 @@ def main():
         investment_context += f"\n\n🔄 SECTOR ROTATION & THEMES:\n{sector_context}\nAlign your picks with sector momentum and emerging themes."
     if benchmark_context:
         investment_context += f"\n\n📊 PORTFOLIO vs BENCHMARKS:\n{benchmark_context}\nUnderstand your performance attribution and adjust allocation accordingly."
+    if global_report:
+        investment_context += f"\n\n🌍 GLOBAL MARKETS:\n{global_report}\nConsider international diversification opportunities."
+    if commodities_report:
+        investment_context += f"\n\n🥇 COMMODITIES & METALS:\n{commodities_report}\nConsider commodity exposure for portfolio hedging and alpha generation."
 
     # 4e. Investment ideas with ALL data: portfolio, options, earnings, sentiment, foresight, smart money, sectors, benchmarks
     investments = task_investment_ideas(
@@ -3499,6 +3690,71 @@ def main():
 
     # 4e-1. Immediately update recommendation performance (captures intraday moves)
     update_recommendation_performance()
+
+    # 4e-1b. Macro Allocation Analysis — Global markets + Commodities trading decisions
+    # This is a dedicated LLM call to analyze macro trends and recommend ETF/commodity trades
+    macro_allocation_report = ""
+    if SKILLS_AVAILABLE and (global_report or commodities_report):
+        try:
+            log("🌍 Running macro allocation analysis (global + commodities)...")
+            macro_prompt = f"""You are a macro allocation analyst. Based on the following data, provide specific trading recommendations for the portfolio.
+
+## PORTFOLIO CONTEXT
+- Total Value: ${portfolio_analysis.get('total_value', 0):,.0f}
+- Current Cash: {portfolio_analysis.get('cash_pct', 0):.1f}%
+- Concentration: {portfolio_analysis.get('concentration_ratio', 0):.1f}%
+
+## GLOBAL MARKETS (YTD Performance)
+{global_report if global_report else "No global data available"}
+
+## COMMODITIES & METALS (YTD Performance)
+{commodities_report if commodities_report else "No commodities data available"}
+
+## BENCHMARK COMPARISON
+{benchmark_context if benchmark_context else "No benchmark data available"}
+
+## YOUR TASK
+Provide a MACRO ALLOCATION REPORT with:
+
+### 1. GLOBAL ROTATION ANALYSIS
+- Which regions/countries are showing the strongest momentum?
+- Are emerging markets outperforming or underwriting the US?
+- Is there a clear capital rotation trend (US → International, or vice versa)?
+- What does this mean for the next 3-12 months?
+
+### 2. COMMODITY OUTLOOK
+- What are the key commodity trends (gold, silver, oil, copper, agricultural)?
+- Are we in a commodity super-cycle or mean-reverting?
+- What's the inflation/deflation signal from commodities?
+
+### 3. SPECIFIC TRADE RECOMMENDATIONS
+For each recommendation, specify:
+- **Ticker**: Specific ETF or commodity (e.g., EEM, EWY, EIDO, INDA, GLD, SLV, USO, COP, FCX, DBA)
+- **Action**: BUY / SELL / HOLD
+- **Conviction**: 1-10
+- **Position Size**: % of portfolio
+- **Thesis**: 1-2 sentences on why
+- **Time Horizon**: Short (1-3mo) / Medium (3-12mo) / Long (1-3yr)
+- **Risk**: What could go wrong
+
+### 4. PORTFOLIO ALLOCATION SUGGESTION
+Based on ALL the data, suggest target allocation:
+- US Equities: X%
+- International Developed: X%
+- Emerging Markets: X%
+- Commodities/Metals: X%
+- Cash: X%
+
+Be specific and actionable. The agent will use these recommendations to place actual trades through Alpaca."""
+            
+            macro_allocation_report = call_llm(
+                system="You are a world-class macro allocation analyst. Think like Ray Dalio meets Howard Marks — big picture, data-driven, contrarian when the data supports it.",
+                user=macro_prompt,
+                max_tokens=3000,
+            )
+            log("[OK] Macro allocation analysis complete")
+        except Exception as e:
+            log(f"[!] Macro allocation analysis failed: {e}")
 
     # 4e-2. Sync Alpaca holdings into recommendations with correct entry prices
     try:
@@ -3582,6 +3838,9 @@ def main():
             smart_money_report=smart_money_report,
             sector_rotation_report=sector_rotation_report,
             benchmark_report=benchmark_report,
+            global_report=global_report,
+            commodities_report=commodities_report,
+            macro_allocation_report=macro_allocation_report,
         )
 
         # 5b. Send report to Telegram (only in full mode — 3x/day)
@@ -3930,25 +4189,88 @@ def main():
                     uptrend = True
                     downtrend = False
 
-                # ── STRATEGY 2: THESIS CHECK (Buffett-inspired) ──
-                # "The stock market is a device for transferring money from the impatient to the patient"
-                # Only sell if the investment thesis is fundamentally broken, not because of price alone
+                # ═══════════════════════════════════════════════════════════
+                # THESIS-DRIVEN DECISION FRAMEWORK (Alpaca Positions)
+                # Same philosophy as CSV portfolio: sell ONLY when thesis breaks
+                # or there's a clearly better opportunity for the capital.
+                # ═══════════════════════════════════════════════════════════
+                
+                # ── THESIS CHECK (Primary sell trigger) ──
                 thesis_intact = True
                 thesis_broken = False
-
-                # Check earnings trend — 2 consecutive misses = thesis at risk
+                thesis_reasons = []
+                
+                # Check 1: Consecutive earnings misses
                 if fundamentals.get("consecutive_misses"):
                     thesis_intact = False
                     thesis_broken = True
-
-                # Check if below 200-day MA with deteriorating fundamentals
-                if fundamentals.get("below_200ma") and pnl_pct < -10:
+                    thesis_reasons.append("consecutive earnings misses")
+                
+                # Check 2: Revenue decline 2+ years
+                if fundamentals.get("revenue_declining_2yr"):
                     thesis_intact = False
-
-                # ── STRATEGY 3: RISK PARITY (Dalio-inspired) ──
-                # No single position should risk more than 2% of total portfolio
-                # If position has grown too large, trim to maintain balance
-                max_position_pct = 15.0  # Max 15% in single position
+                    thesis_broken = True
+                    thesis_reasons.append("revenue declining 2+ years")
+                
+                # Check 3: Margin collapse
+                if fundamentals.get("margin_collapse"):
+                    thesis_intact = False
+                    thesis_broken = True
+                    thesis_reasons.append("gross/operating margin collapse")
+                
+                # Check 4: Balance sheet deterioration
+                if fundamentals.get("balance_sheet_deterioration"):
+                    thesis_intact = False
+                    thesis_broken = True
+                    thesis_reasons.append("balance sheet deterioration")
+                
+                # Check 5: Heavy insider selling
+                if fundamentals.get("heavy_insider_selling"):
+                    thesis_intact = False
+                    thesis_broken = True
+                    thesis_reasons.append("heavy insider selling")
+                
+                # Check 6: Sector structural decline
+                if fundamentals.get("sector_structural_decline"):
+                    thesis_intact = False
+                    thesis_broken = True
+                    thesis_reasons.append("sector/industry structural decline")
+                
+                # Check 7: Below 200MA + deteriorating fundamentals (not price alone)
+                if fundamentals.get("below_200ma") and pnl_pct < -10 and not thesis_intact:
+                    thesis_broken = True
+                    thesis_reasons.append("below 200MA + deteriorating fundamentals")
+                
+                # ── OPPORTUNITY COST CHECK ──
+                opportunity_cost_sell = False
+                opportunity_cost_reason = ""
+                
+                if thesis_intact and pnl_pct > 0 and pos_pct > 10:
+                    for wl_line in watchlist_lines:
+                        wl_parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                        if len(wl_parts) >= 5:
+                            try:
+                                wl_conviction = int(wl_parts[4].split('/')[0].strip())
+                                wl_ticker = wl_parts[1].strip()
+                                if wl_conviction >= 9 and pos_pct > 5:
+                                    current_conviction = 0
+                                    for wl2 in watchlist_lines:
+                                        wl2_parts = wl2.split(' | ') if wl2.startswith('- ') else []
+                                        if len(wl2_parts) >= 5 and wl2_parts[1].strip() == sym:
+                                            try:
+                                                current_conviction = int(wl2_parts[4].split('/')[0].strip())
+                                            except (ValueError, IndexError):
+                                                pass
+                                            break
+                                    if current_conviction < wl_conviction - 2:
+                                        opportunity_cost_sell = True
+                                        opportunity_cost_reason = f"Better opportunity: {wl_ticker} (conviction {wl_conviction}/10 vs {current_conviction}/10)"
+                                        break
+                            except (ValueError, IndexError):
+                                pass
+                
+                # ── RISK PARITY (Trim only, never full sell) ──
+                max_position_pct = 15.0
                 if pos_pct > max_position_pct:
                     excess_value = market_value - (portfolio_val * max_position_pct / 100)
                     trim_qty = max(1, int(excess_value / current))
@@ -3957,130 +4279,20 @@ def main():
                     if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                         log(f"[OK] TRIMMED {sym} x{trim_qty} (risk parity)")
                     continue
-
-                # ── STRATEGY 4: MOMENTUM + VALUE (AQR-inspired) ──
-                # Winners in uptrend → let them run (don't cap gains)
-                # Losers in downtrend → cut quickly (don't average down blindly)
-                if downtrend and pnl_pct < -10:
-                    # Downtrend + loss = cut quickly (don't be a hero)
-                    log(f"  🛑 SELL {sym}: downtrend + {pnl_pct:+.1f}% loss — cutting before deeper damage")
-                    result = place_stock_order(sym, qty, "sell", "market")
-                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
-                        log(f"[OK] SOLD {sym} x{qty} (downtrend cut)")
-                    continue
-
-                # ── STRATEGY 5: CONTRARIAN BUY (Howard Marks / Seth Klarman) ──
-                # "The best buying opportunities come when others are panicking"
-                # If stock is down >20% on market noise (not fundamentals), consider averaging down
+                
+                # ── CONTRARIAN BUY (Average down if thesis intact) ──
                 if pnl_pct <= -20 and thesis_intact and not downtrend:
-                    # Stock is down but thesis is intact — this is a buying opportunity
-                    if pos_pct < 5.0:  # Only average down if position is still small
-                        add_value = portfolio_val * 0.03  # Add 3% of portfolio
+                    if pos_pct < 5.0:
+                        add_value = portfolio_val * 0.03
                         add_qty = max(1, int(add_value / current))
                         log(f"  💰 AVERAGE DOWN {sym}: down {pnl_pct:.1f}% but thesis intact — buying {add_qty} more at discount")
                         result = place_stock_order(sym, add_qty, "buy", "market")
                         if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                             log(f"[OK] BOUGHT {sym} x{add_qty} more (averaging down on weakness)")
                         continue
-
-                # ── STRATEGY 6: DYNAMIC ATR-BASED TRAILING STOP ──
-                # Uses Average True Range (ATR) for volatility-adjusted stops.
-                # This is NOT a fixed percentage — it adapts to each stock's volatility.
-                # 
-                # Logic:
-                #   - Calculate 14-day ATR from recent price history
-                #   - ATR normalizes volatility across different-priced stocks
-                #   - Stop distance = ATR × multiplier (trend-dependent)
-                #   - Uptrend: 3× ATR (give winners room to breathe)
-                #   - Downtrend: 1.5× ATR (cut losers quickly)
-                #   - Sideways: 2× ATR (moderate)
-                #   - Also factor in: beta, sector volatility, earnings proximity
-                #
-                # This replaces the old hardcoded -10%/-7%/-12% rules.
-                try:
-                    # Calculate ATR from the same 3mo history we already fetched
-                    high = hist["High"]
-                    low = hist["Low"]
-                    close = hist["Close"]
-                    tr1 = high - low
-                    tr2 = abs(high - close.shift(1))
-                    tr3 = abs(low - close.shift(1))
-                    true_range = tr1.combine(tr2, max).combine(tr3, max)
-                    atr_14 = true_range.rolling(14).mean().iloc[-1]
-                    atr_pct = (atr_14 / current) * 100 if current > 0 else 2.0
-                    
-                    # Get beta for volatility context (higher beta = wider stop)
-                    beta = 1.0
-                    try:
-                        import yfinance as yf_ticker
-                        info = yf_ticker.Ticker(sym).info
-                        beta = info.get("beta", 1.0) or 1.0
-                    except Exception:
-                        pass
-                    
-                    # Dynamic ATR multiplier based on trend and beta
-                    if uptrend:
-                        atr_multiplier = 3.0  # Give winners room
-                    elif downtrend:
-                        atr_multiplier = 1.5  # Cut quickly
-                    else:
-                        atr_multiplier = 2.0  # Moderate
-                    
-                    # Adjust for high-beta stocks (wider stops for volatile names)
-                    if beta > 1.5:
-                        atr_multiplier *= 1.2  # 20% wider for high-beta
-                    elif beta < 0.5:
-                        atr_multiplier *= 0.8  # 20% tighter for low-beta
-                    
-                    # Calculate dynamic stop percentage
-                    dynamic_stop_pct = -(atr_pct * atr_multiplier)
-                    
-                    # Sanity bounds: never tighter than -3% or wider than -25%
-                    dynamic_stop_pct = max(-25, min(-3, dynamic_stop_pct))
-                    
-                    # Check if earnings are within 2 weeks — tighten stop before earnings
-                    earnings_soon = False
-                    try:
-                        from skills.earnings_intelligence import get_earnings_date
-                        earn_date = get_earnings_date(sym)
-                        if earn_date:
-                            days_to_earn = (earn_date - datetime.date.today()).days
-                            if 0 < days_to_earn <= 14:
-                                earnings_soon = True
-                                # Tighten stop by 40% before earnings (gamma risk)
-                                dynamic_stop_pct *= 0.6
-                                log(f"  📅 Earnings in {days_to_earn}d for {sym} — tightening stop to {dynamic_stop_pct:.1f}%")
-                    except Exception:
-                        pass
-                    
-                except Exception:
-                    # Fallback: use volatility-based estimate from historical data
-                    try:
-                        volatility = hist["Close"].pct_change().std() * (252 ** 0.5) * 100
-                        # Higher vol = wider stop
-                        if volatility > 50:
-                            dynamic_stop_pct = -15
-                        elif volatility > 30:
-                            dynamic_stop_pct = -10
-                        else:
-                            dynamic_stop_pct = -7
-                    except Exception:
-                        dynamic_stop_pct = -10  # Last resort fallback
-
-                if pullback_from_high <= dynamic_stop_pct and pnl_pct < 0:
-                    log(f"  🛑 TRAILING STOP {sym}: pulled back {pullback_from_high:.1f}% from high "
-                        f"(dynamic stop: {dynamic_stop_pct:.1f}%, ATR-based)")
-                    result = place_stock_order(sym, qty, "sell", "market")
-                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
-                        log(f"[OK] SOLD {sym} x{qty} (dynamic trailing stop)")
-                    continue
-
-                # ── STRATEGY 7: ADD TO WINNERS (Peter Lynch / Warren Buffett) ──
-                # "If the company is still buying back stock, the CEO is still excited,
-                #  and the thesis is intact, add on strength"
-                # Add to positions that are: uptrend, thesis intact, conviction high, position small
+                
+                # ── ADD TO WINNERS (If thesis intact and position small) ──
                 if uptrend and thesis_intact and pnl_pct > 10 and pos_pct < 8.0:
-                    # Check if this is a high-conviction pick
                     wl_conviction = 0
                     for wl_line in watchlist_lines:
                         wl_parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
@@ -4090,9 +4302,7 @@ def main():
                             except (ValueError, IndexError):
                                 pass
                             break
-
                     if wl_conviction >= 8:
-                        # Add up to 8% of portfolio for high-conviction winners
                         target_value = min(portfolio_val * 0.08, portfolio_val * 0.15 - market_value)
                         if target_value > 500:
                             add_qty = max(1, int(target_value / current))
@@ -4101,20 +4311,33 @@ def main():
                             if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                                 log(f"[OK] BOUGHT {sym} x{add_qty} more (adding to winner)")
                             continue
-
-                # ── STRATEGY 8: THESIS-BROKEN SELL (Buffett's "when the facts change") ──
+                
+                # ── SELL DECISIONS (Thesis-driven only) ──
+                
+                # 1. THESIS BROKEN — Primary sell trigger
                 if thesis_broken:
-                    log(f"  🛑 SELL {sym}: thesis broken (consecutive misses, deteriorating fundamentals)")
+                    log(f"  🛑 SELL {sym}: thesis broken — {', '.join(thesis_reasons)}")
                     result = place_stock_order(sym, qty, "sell", "market")
                     if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                         log(f"[OK] SOLD {sym} x{qty} (thesis broken)")
                     continue
+                
+                # 2. OPPORTUNITY COST — Sell to redeploy
+                if opportunity_cost_sell:
+                    log(f"  🔄 SELL {sym}: {opportunity_cost_reason}")
+                    result = place_stock_order(sym, qty, "sell", "market")
+                    if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
+                        log(f"[OK] SOLD {sym} x{qty} (opportunity cost)")
+                    continue
+                
+                # 3. DEFAULT: HOLD — "The best thing to do is usually nothing"
+                log(f"  ✅ HOLD {sym}: thesis intact | P&L: {pnl_pct:+.1f}% | {pos_pct:.1f}% of portfolio | "
+                    f"{'uptrend' if uptrend else 'downtrend' if downtrend else 'sideways'}")
+                positions_reviewed += 1
 
-                # ── DEFAULT: HOLD with dynamic trailing stop awareness ──
-                log(f"  ✅ HOLD {sym}: {qty} shares, {pnl_pct:+.1f}% P&L, {pos_pct:.1f}% of portfolio | "
-                    f"{'uptrend' if uptrend else 'downtrend' if downtrend else 'sideways'} | "
-                    f"thesis {'intact' if thesis_intact else 'at risk'} | "
-                    f"dynamic stop at {dynamic_stop_pct:.1f}% from high (ATR-based)")
+                # Note: ADD TO WINNERS and THESIS-BROKEN SELL are now handled above
+                # in the unified thesis-driven framework. This section is intentionally
+                # empty to avoid duplicate logic.
                 positions_reviewed += 1
 
             log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")

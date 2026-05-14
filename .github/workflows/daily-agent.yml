@@ -125,6 +125,7 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add REPORTS/ HISTORY/ docs/ logs/agent.log
+        git add -f REPORTS/ HISTORY/ docs/
+        git add -f logs/agent.log logs/paper_trades.log 2>/dev/null || true
         git diff --staged --quiet || git commit -m "Agent report: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
         git push

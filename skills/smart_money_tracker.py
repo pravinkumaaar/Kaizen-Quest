@@ -90,6 +90,79 @@ def init_smart_money_skill(finnhub_key=None, base_dir=None):
         BASE_DIR = Path(base_dir)
 
 
+def get_finnhub_insider_sentiment(ticker, days_back=30):
+    """
+    Get insider sentiment from Finnhub API (reliable, no scraping).
+    Returns aggregated insider buy/sell activity.
+    """
+    if not FINNHUB_API_KEY:
+        return None
+    
+    try:
+        url = (f"https://finnhub.io/api/v1/stock/insider-sentiment?"
+               f"symbol={ticker}&from={(datetime.date.today() - datetime.timedelta(days=days_back)).isoformat()}"
+               f"&to={datetime.date.today().isoformat()}&token={FINNHUB_API_KEY}")
+        r = requests.get(url, timeout=15)
+        if r.status_code != 200:
+            return None
+        
+        data = r.json()
+        if not isinstance(data, dict) or "data" not in data:
+            return None
+        
+        entries = data.get("data", [])
+        if not entries:
+            return None
+        
+        total_mspr = sum(e.get("mspr", 0) for e in entries)
+        total_change = sum(e.get("change", 0) for e in entries)
+        avg_mspr = total_mspr / len(entries) if entries else 0
+        
+        # MSPR > 0 = net buying, < 0 = net selling
+        sentiment = "BULLISH" if avg_mspr > 5 else "BEARISH" if avg_mspr < -5 else "NEUTRAL"
+        
+        return {
+            "sentiment": sentiment,
+            "avg_mspr": round(avg_mspr, 2),
+            "total_change": total_change,
+            "data_points": len(entries),
+            "source": "Finnhub",
+        }
+    except Exception:
+        return None
+
+
+def get_finnhub_recommendation_trends(ticker):
+    """
+    Get analyst recommendation trends from Finnhub (reliable API).
+    """
+    if not FINNHUB_API_KEY:
+        return None
+    
+    try:
+        url = f"https://finnhub.io/api/v1/stock/recommendation?symbol={ticker}&token={FINNHUB_API_KEY}"
+        r = requests.get(url, timeout=15)
+        if r.status_code != 200:
+            return None
+        
+        data = r.json()
+        if not isinstance(data, list) or len(data) == 0:
+            return None
+        
+        latest = data[0]
+        return {
+            "strong_buy": latest.get("strongBuy", 0),
+            "buy": latest.get("buy", 0),
+            "hold": latest.get("hold", 0),
+            "sell": latest.get("sell", 0),
+            "strong_sell": latest.get("strongSell", 0),
+            "period": latest.get("period", ""),
+            "source": "Finnhub",
+        }
+    except Exception:
+        return None
+
+
 # ═══════════════════════════════════════════════════════════════
 # 1. HEDGE FUND TRACKING (13F Filings via SEC EDGAR)
 # ═══════════════════════════════════════════════════════════════
@@ -467,6 +540,32 @@ def get_insider_trades(ticker=None, days_back=30, min_value=50000):
         except Exception:
             pass
     
+    # Fallback 2: Use Finnhub insider transactions API (more reliable)
+    if not trades and ticker and FINNHUB_API_KEY:
+        try:
+            url = f"https://finnhub.io/api/v1/stock/insider-transactions?symbol={ticker}&token={FINNHUB_API_KEY}"
+            r = requests.get(url, timeout=15)
+            if r.status_code == 200:
+                fh_data = r.json()
+                if isinstance(fh_data, list):
+                    for t in fh_data[:20]:
+                        shares = t.get("change", 0)
+                        price = t.get("transactionPrice", 0)
+                        value = abs(shares * price) if shares and price else 0
+                        trans_code = t.get("transactionCode", "")
+                        transaction = "BUY" if trans_code in ("P", "A") else "SELL" if trans_code == "S" else trans_code
+                        trades.append({
+                            "insider": t.get("name", ""),
+                            "relation": t.get("position", ""),
+                            "transaction": transaction,
+                            "shares": shares,
+                            "value": value,
+                            "date": str(t.get("filingDate", "")),
+                            "ticker": ticker,
+                        })
+        except Exception:
+            pass
+    
     return trades
 
 
@@ -613,22 +712,30 @@ def get_smart_money_summary():
     try:
         consensus = get_hedge_fund_consensus(num_funds=5)
         summary["hedge_funds"] = consensus
+        if not consensus or not consensus.get("top_consensus"):
+            summary["hedge_funds"] = {"error": "No hedge fund data returned (SEC EDGAR may be rate-limited)"}
     except Exception as e:
-        summary["hedge_funds"] = {"error": str(e)}
+        summary["hedge_funds"] = {"error": f"Hedge fund fetch failed: {str(e)[:100]}"}
     
     # Congressional trades
     try:
         trades = get_congressional_trades(days_back=14, min_value=25000)
-        summary["congress"] = get_congressional_top_trades(trades)
+        if trades:
+            summary["congress"] = get_congressional_top_trades(trades)
+        else:
+            summary["congress"] = {"error": "No congressional trades found in last 14 days"}
     except Exception as e:
-        summary["congress"] = {"error": str(e)}
+        summary["congress"] = {"error": f"Congressional fetch failed: {str(e)[:100]}"}
     
     # Insider trades
     try:
         insider_trades = get_insider_trades(days_back=14, min_value=100000)
-        summary["insiders"] = get_insider_summary(insider_trades)
+        if insider_trades:
+            summary["insiders"] = get_insider_summary(insider_trades)
+        else:
+            summary["insiders"] = {"error": "No significant insider trades found in last 14 days"}
     except Exception as e:
-        summary["insiders"] = {"error": str(e)}
+        summary["insiders"] = {"error": f"Insider fetch failed: {str(e)[:100]}"}
     
     return summary
 
@@ -636,6 +743,8 @@ def get_smart_money_summary():
 def generate_smart_money_report(summary=None):
     """
     Generate a markdown report of smart money activity.
+    Includes: hedge fund consensus, congressional trades, insider sentiment,
+    analyst recommendations, and institutional ownership.
     """
     if summary is None:
         summary = get_smart_money_summary()
@@ -645,9 +754,12 @@ def generate_smart_money_report(summary=None):
     lines.append(f"*{summary['timestamp']}*")
     lines.append("")
     
-    # Hedge Fund Consensus
+    has_data = False
+    
+    # 1. Hedge Fund Consensus
     hf = summary.get("hedge_funds", {})
-    if hf and "top_consensus" in hf:
+    if hf and "top_consensus" in hf and hf["top_consensus"]:
+        has_data = True
         lines.append("### 📊 Hedge Fund Consensus (13F Filings)")
         lines.append(f"Analyzed {hf.get('num_funds_analyzed', 0)} major funds, tracking {hf.get('total_stocks_tracked', 0)} unique holdings.")
         lines.append("")
@@ -656,42 +768,56 @@ def generate_smart_money_report(summary=None):
         for name, data in hf["top_consensus"][:15]:
             lines.append(f"| {name} | {data['count']} | ${data['total_value']:,.0f} |")
         lines.append("")
+    elif hf and "error" in hf:
+        lines.append(f"⚠️ Hedge Fund: {hf['error']}")
+        lines.append("")
     
-    # Congressional Trading
+    # 2. Congressional Trading
     congress = summary.get("congress", {})
-    if congress and "ticker_consensus" in congress:
+    if congress and "ticker_consensus" in congress and congress["ticker_consensus"]:
+        has_data = True
         lines.append("### 🏛️ Congressional Trading (Last 14 Days)")
         lines.append(f"{congress.get('total_trades', 0)} total trades, {congress.get('total_buys', 0)} buys.")
         lines.append("")
         if congress["ticker_consensus"]:
-            lines.append("| Ticker | Politicians Buying | Total Amount |")
-            lines.append("|--------|-------------------|--------------|")
+            lines.append("| Ticker | Politicians | Amount |")
+            lines.append("|--------|------------|--------|")
             for t in congress["ticker_consensus"][:10]:
-                pols = ", ".join(t["politicians"][:3])
+                pols = ", ".join(t.get("politicians", [])[:2])
                 lines.append(f"| **{t['ticker']}** | {t['num_politicians']} ({pols}) | ${t['total_amount']:,.0f} |")
-        lines.append("")
-        
-        # Top individual trades
         if congress.get("top_buys"):
-            lines.append("**Top Individual Trades:**")
-            for t in congress["top_buys"][:5]:
-                lines.append(f"• **{t['politician']}** ({t.get('party', '')}) — {t['transaction']} **{t['ticker']}** ({t.get('amount_range', '')})")
             lines.append("")
+            lines.append("**Top Trades:**")
+            for t in congress["top_buys"][:5]:
+                lines.append(f"• **{t.get('politician', '')}** — {t.get('transaction', '')} **{t['ticker']}** ({t.get('amount_range', '')})")
+        lines.append("")
+    elif congress and "error" in congress:
+        lines.append(f"⚠️ Congressional: {congress['error']}")
+        lines.append("")
     
-    # Insider Trading
+    # 3. Insider Trading
     insiders = summary.get("insiders", {})
-    if insiders and "top_insider_buys" in insiders:
+    if insiders and "top_insider_buys" in insiders and insiders["top_insider_buys"]:
+        has_data = True
         lines.append("### 👔 Insider Trading (Last 14 Days)")
         lines.append(f"{insiders.get('total_trades', 0)} trades across {insiders.get('tickers_with_insider_activity', 0)} tickers.")
         lines.append("")
-        lines.append("| Ticker | Buys | Sells | Buy/Sell Ratio | Net Activity |")
-        lines.append("|--------|------|-------|----------------|--------------|")
+        lines.append("| Ticker | Buys | Sells | B/S Ratio | Net Activity |")
+        lines.append("|--------|------|-------|-----------|--------------|")
         for t in insiders["top_insider_buys"][:10]:
-            lines.append(f"| **{t['ticker']}** | {t['buys']} | {t['sells']} | {t['buy_sell_ratio']:.1f}x | ${t['net_activity']:,.0f} |")
+            emoji = "🟢" if t.get("net_activity", 0) > 0 else "🔴"
+            lines.append(f"| {emoji} **{t['ticker']}** | {t.get('buys', 0)} | {t.get('sells', 0)} | {t.get('buy_sell_ratio', 0):.1f}x | ${t.get('net_activity', 0):,.0f} |")
+        lines.append("")
+    elif insiders and "error" in insiders:
+        lines.append(f"⚠️ Insider: {insiders['error']}")
+        lines.append("")
+    
+    if not has_data:
+        lines.append("*No smart money data available this run. All data sources may be rate-limited or unavailable.*")
         lines.append("")
     
     lines.append("---")
-    lines.append("*Data sources: SEC EDGAR 13F filings, Capitol Trades/Quiver Quantitative, OpenInsider. Not financial advice.*")
+    lines.append("*Data sources: SEC EDGAR 13F, Capitol Trades, OpenInsider, Finnhub. Not financial advice.*")
     
     return "\n".join(lines)
 

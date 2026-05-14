@@ -181,11 +181,24 @@ def get_alpaca_portfolio_snapshot():
 # FUNDAMENTAL DATA FOR POSITION REVIEW
 # ═══════════════════════════════════════════
 def get_position_fundamentals(ticker):
-    """Get fundamental data for sell/hold/buy decisions."""
+    """Get fundamental data for thesis-driven sell/hold/buy decisions.
+    
+    Returns dict with keys used by the thesis-driven framework:
+    - consecutive_misses: 2+ consecutive earnings misses
+    - revenue_declining_2yr: revenue declining for 2+ years
+    - margin_collapse: gross/operating margin deteriorating significantly
+    - balance_sheet_deterioration: debt/equity spike or cash burn
+    - heavy_insider_selling: insiders selling >3x normal volume
+    - sector_structural_decline: sector facing headwinds
+    - below_200ma: price below 200-day moving average
+    - analyst_sell_pct: % of analysts recommending sell
+    - extreme_valuation: P/E > 50
+    - beat_rate: historical earnings beat rate
+    """
     data = {}
 
-    # Earnings surprise history
-    earnings = _finnhub_get("stock/earnings", {"symbol": ticker, "limit": 4})
+    # Earnings surprise history (last 4 quarters)
+    earnings = _finnhub_get("stock/earnings", {"symbol": ticker, "limit": 8})
     if earnings:
         misses = beats = 0
         for e in earnings:
@@ -198,6 +211,53 @@ def get_position_fundamentals(ticker):
         data["consecutive_misses"] = misses >= 2 and beats == 0
         data["beat_rate"] = beats / (beats + misses) * 100 if (beats + misses) > 0 else 50
 
+    # Revenue trend (2-year) via financials
+    financials = _finnhub_get("stock/financials", {"symbol": ticker, "statement": "ic", "freq": "annual"})
+    if financials and isinstance(financials, list) and len(financials) >= 2:
+        try:
+            rev_current = financials[0].get("revenue", 0) or 0
+            rev_prev = financials[1].get("revenue", 0) or 0
+            rev_2yr_ago = financials[2].get("revenue", 0) or 0 if len(financials) > 2 else rev_prev
+            if rev_current > 0 and rev_prev > 0 and rev_2yr_ago > 0:
+                data["revenue_declining_2yr"] = rev_current < rev_prev < rev_2yr_ago
+        except (TypeError, IndexError):
+            pass
+
+    # Margin trend
+    if financials and isinstance(financials, list) and len(financials) >= 2:
+        try:
+            gm_current = financials[0].get("grossProfit", 0) or 0
+            gm_prev = financials[1].get("grossProfit", 0) or 0
+            rev_current = financials[0].get("revenue", 1) or 1
+            rev_prev = financials[1].get("revenue", 1) or 1
+            if rev_current > 0 and rev_prev > 0:
+                gm_pct_current = (gm_current / rev_current) * 100
+                gm_pct_prev = (gm_prev / rev_prev) * 100
+                data["margin_collapse"] = gm_pct_current < gm_pct_prev - 10  # 10+ pct point drop
+        except (TypeError, IndexError):
+            pass
+
+    # Balance sheet health
+    bs = _finnhub_get("stock/financials", {"symbol": ticker, "statement": "bs", "freq": "annual"})
+    if bs and isinstance(bs, list) and len(bs) >= 2:
+        try:
+            debt_current = bs[0].get("totalDebt", 0) or 0
+            equity_current = bs[0].get("totalEquity", 1) or 1
+            debt_prev = bs[1].get("totalDebt", 0) or 0
+            equity_prev = bs[1].get("totalEquity", 1) or 1
+            de_current = debt_current / equity_current
+            de_prev = debt_prev / equity_prev
+            data["balance_sheet_deterioration"] = de_current > de_prev * 1.5  # 50%+ increase
+        except (TypeError, IndexError):
+            pass
+
+    # Insider transactions
+    insider = _finnhub_get("stock/insider-transactions", {"symbol": ticker, "limit": 20})
+    if insider and isinstance(insider, list):
+        sells = sum(1 for t in insider if t.get("transactionCode") == "S")
+        buys = sum(1 for t in insider if t.get("transactionCode") in ("P", "A"))
+        data["heavy_insider_selling"] = sells > 5 and sells > buys * 3
+
     # Analyst recommendations
     rec = _finnhub_get("stock/recommendation", {"symbol": ticker})
     if rec and len(rec) > 0:
@@ -208,6 +268,7 @@ def get_position_fundamentals(ticker):
         if total > 0:
             data["analyst_buy_pct"] = (sb + b) / total * 100
             data["analyst_sell_pct"] = (ss + s) / total * 100
+            data["sector_structural_decline"] = (ss + s) / total > 0.4  # >40% sell rating
 
     # Price target
     pt = _finnhub_get("stock/price-target", {"symbol": ticker})

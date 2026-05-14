@@ -26,8 +26,11 @@ build/
 venv/
 env/
 
-# Logs
-logs/
+# Logs — keep agent.log and paper_trades.log for tracking runs
+logs/*
+!logs/agent.log
+!logs/paper_trades.log
+!logs/
 *.log
 
 # Cache
