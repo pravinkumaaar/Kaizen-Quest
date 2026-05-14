@@ -2,29 +2,37 @@ name: Trading Agent Scheduler
 
 on:
   schedule:
-    # 3 FULL REPORTS PER DAY
-    # Cron is in UTC. During EDT (Mar-Nov): UTC-4. During EST (Nov-Mar): UTC-5.
-    # 8:00 AM ET = 12:00 UTC (EDT) or 13:00 UTC (EST)
-    # We use 12:00 UTC which gives 8:00 AM EDT and 7:00 AM EST (still before market open)
-    - cron: '0 12 * * 1-5'    # Pre-market full report
-    - cron: '30 16 * * 1-5'  # Mid-day full report
-    - cron: '30 20 * * 1-5'  # Post-market full report
+    # 3 FULL REPORTS PER DAY (cron is UTC)
+    # Post-market: 4:30 PM ET = 20:30 UTC (EDT)
+    - cron: '0 12 * * 1-5'    # 8:00 AM EDT — Pre-market full report
+    - cron: '30 16 * * 1-5'   # 12:30 PM EDT — Mid-day full report
+    - cron: '30 20 * * 1-5'   # 4:30 PM EDT — Post-market full report
 
     # MARKET-HOURS RUNS (every 30 min) - Alerts only
-    - cron: '0 13 * * 1-5'   # 9:00 AM EDT
-    - cron: '30 13 * * 1-5'  # 9:30 AM EDT - Market open
-    - cron: '0 14 * * 1-5'   # 10:00 AM EDT
-    - cron: '30 14 * * 1-5'  # 10:30 AM EDT
-    - cron: '0 15 * * 1-5'   # 11:00 AM EDT
-    - cron: '30 15 * * 1-5'  # 11:30 AM EDT
-    - cron: '0 16 * * 1-5'   # 12:00 PM EDT
-    - cron: '0 17 * * 1-5'   # 1:00 PM EDT
-    - cron: '30 17 * * 1-5'  # 1:30 PM EDT
-    - cron: '0 18 * * 1-5'   # 2:00 PM EDT
-    - cron: '30 18 * * 1-5'  # 2:30 PM EDT
-    - cron: '0 19 * * 1-5'   # 3:00 PM EDT
-    - cron: '30 19 * * 1-5'  # 3:30 PM EDT
+    - cron: '0 13 * * 1-5'    # 9:00 AM EDT
+    - cron: '30 13 * * 1-5'   # 9:30 AM EDT - Market open
+    - cron: '0 14 * * 1-5'    # 10:00 AM EDT
+    - cron: '30 14 * * 1-5'   # 10:30 AM EDT
+    - cron: '0 15 * * 1-5'    # 11:00 AM EDT
+    - cron: '30 15 * * 1-5'   # 11:30 AM EDT
+    - cron: '0 16 * * 1-5'    # 12:00 PM EDT
+    - cron: '0 17 * * 1-5'    # 1:00 PM EDT
+    - cron: '30 17 * * 1-5'   # 1:30 PM EDT
+    - cron: '0 18 * * 1-5'    # 2:00 PM EDT
+    - cron: '30 18 * * 1-5'   # 2:30 PM EDT
+    - cron: '0 19 * * 1-5'    # 3:00 PM EDT
+    - cron: '30 19 * * 1-5'   # 3:30 PM EDT
   workflow_dispatch:
+    inputs:
+      run_mode:
+        description: 'Run mode: auto (time-based), full (always report), alerts-only (no report)'
+        required: false
+        default: 'full'
+        type: choice
+        options:
+          - auto
+          - full
+          - alerts-only
 
 jobs:
   run-agent:
@@ -43,17 +51,43 @@ jobs:
     - name: Determine run mode
       id: mode
       run: |
+        # If manually triggered with a specific mode, use that
+        MANUAL_MODE="${{ github.event.inputs.run_mode }}"
+        if [ "$MANUAL_MODE" = "full" ]; then
+          echo "MODE=full" >> $GITHUB_OUTPUT
+          echo "Manual trigger: full mode"
+          exit 0
+        elif [ "$MANUAL_MODE" = "alerts-only" ]; then
+          echo "MODE=alerts-only" >> $GITHUB_OUTPUT
+          echo "Manual trigger: alerts-only mode"
+          exit 0
+        fi
+        
+        # Auto-detect based on Eastern Time
         HOUR=$(TZ='US/Eastern' date +%H)
         MIN=$(TZ='US/Eastern' date +%M)
         DOW=$(TZ='US/Eastern' date +%u)
-        if [ "$DOW" -gt 5 ]; then echo "MODE=skip" >> $GITHUB_OUTPUT; exit 0; fi
-        # Full report at 8:00 AM ET, 12:30 PM ET, 4:30 PM ET
-        if ([ "$HOUR" -eq 8 ] && [ "$MIN" -eq 0 ]) || \
-           ([ "$HOUR" -eq 12 ] && [ "$MIN" -eq 30 ]) || \
-           ([ "$HOUR" -eq 16 ] && [ "$MIN" -eq 30 ]); then
+        
+        # Skip weekends
+        if [ "$DOW" -gt 5 ]; then
+          echo "MODE=skip" >> $GITHUB_OUTPUT
+          echo "Weekend — skipping"
+          exit 0
+        fi
+        
+        # Full report at scheduled times (with 5-min window)
+        if ([ "$HOUR" -eq 8 ] && [ "$MIN" -le 5 ]) || \
+           ([ "$HOUR" -eq 12 ] && [ "$MIN" -ge 25 ] && [ "$MIN" -le 35 ]) || \
+           ([ "$HOUR" -eq 16 ] && [ "$MIN" -ge 25 ] && [ "$MIN" -le 35 ]); then
           echo "MODE=full" >> $GITHUB_OUTPUT
+          echo "Scheduled full report time"
+        # Post-market hours (4 PM - 10 PM ET) always generate a full report
+        elif [ "$HOUR" -ge 16 ] && [ "$HOUR" -lt 22 ]; then
+          echo "MODE=full" >> $GITHUB_OUTPUT
+          echo "Post-market hours — full report"
         else
           echo "MODE=alerts-only" >> $GITHUB_OUTPUT
+          echo "Market hours — alerts only"
         fi
 
     - name: Run agent (full - report + trade + alerts)
@@ -61,6 +95,7 @@ jobs:
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
         ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
@@ -75,6 +110,7 @@ jobs:
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
         ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
@@ -89,6 +125,6 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add REPORTS/ docs/ logs/agent.log
+        git add REPORTS/ HISTORY/ docs/ logs/agent.log
         git diff --staged --quiet || git commit -m "Agent report: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
         git push

@@ -80,6 +80,27 @@ try:
                                            compute_all_metrics, cumulative_return_chart,
                                            metrics_comparison_table, analyze_small_cap_cycle,
                                            analyze_sector_leadership, analyze_macro_indicators)
+    # Financial Analyst (institutional-grade analysis)
+    from skills.stock_analyzer import (
+        analyze_stock, build_comps_analysis, build_dcf_valuation,
+        analyze_earnings_event, analyze_competitive_landscape,
+        sector_overview, valuation_football_field, full_financial_analysis,
+        format_analysis_report, format_comps_report, format_dcf_report,
+        format_earnings_report, format_competitive_report, format_football_field_report,
+    )
+    # Financial Data Providers (MCP-style API integrations)
+    from skills.financial_data_providers import (
+        get_company_profile, get_financial_statements, get_dcf_valuation,
+        get_analyst_estimates, get_institutional_ownership, get_insider_trades,
+        get_earnings_transcripts, get_sector_performance, get_industry_pe,
+        get_news_sentiment, get_social_sentiment, get_supply_chain,
+        get_esg_scores, get_congressional_trading, get_forex_rates,
+        get_crypto_quotes, get_commodity_quotes, get_economic_calendar,
+        get_market_performance, get_technical_indicators, get_bulk_financials,
+        get_comprehensive_analysis, init_financial_data_providers,
+        get_earnings_history, get_financial_ratios, get_company_news,
+        get_treasury_rates, get_aggregate_indicators, get_financial_ratios as get_fmp_ratios,
+    )
     SKILLS_AVAILABLE = True
     print("[✓] Skills modules loaded successfully")
 except ImportError as e:
@@ -3003,6 +3024,10 @@ def main():
     # Check for silent/alerts-only mode (set by __main__ or environment)
     # "alerts-only" = trade + alerts, no report/Telegram report (but still self-reflect)
     # "silent" = minimal run, skip everything non-essential
+    # 
+    # OVERRIDE: If it's pre-market (before 9:30 AM) or post-market (after 4:00 PM)
+    # or weekend, ALWAYS generate a full report regardless of RUN_MODE.
+    # Only market hours (9:30 AM - 4:00 PM) use alerts-only mode.
     global SILENT_MODE
     try:
         SILENT_MODE
@@ -3022,6 +3047,25 @@ def main():
     NOW = now.strftime("%Y-%m-%d %H:%M:%S ET")
     TODAY = now.strftime("%Y-%m-%d")
     RUN_LABEL = now.strftime("%H%M")
+    
+    # Determine if we should force full report mode based on time of day
+    # Pre-market (before 9:30 AM) and post-market (after 4:00 PM) always get full reports
+    # Weekends always get full reports (comprehensive weekly review)
+    _hour = now.hour
+    _minute = now.minute
+    _weekday = now.weekday()  # 0=Monday, 6=Sunday
+    _is_weekend = _weekday >= 5
+    _is_market_hours = (not _is_weekend) and (
+        (_hour == 9 and _minute >= 30) or (10 <= _hour < 16)
+    )
+    _is_pre_market = (not _is_weekend) and (_hour < 9 or (_hour == 9 and _minute < 30))
+    _is_post_market = (not _is_weekend) and (_hour >= 16)
+    
+    # Force full report for pre-market, post-market, and weekends
+    if _is_pre_market or _is_post_market or _is_weekend:
+        if SILENT_MODE:
+            log(f"⏰ Time-based override: {'pre-market' if _is_pre_market else 'post-market' if _is_post_market else 'weekend'} — forcing full report mode")
+            SILENT_MODE = False
     
     # Check if US stock market is open (9:30 AM - 4:00 PM ET, Mon-Fri)
     hour = now.hour
@@ -3067,9 +3111,18 @@ def main():
                               finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_portfolio_manager(finnhub_key=FINNHUB_API_KEY, alpaca_key=ALPACA_API_KEY,
                                    alpaca_secret=ALPACA_SECRET_KEY, base_dir=str(BASE_DIR))
+            # Initialize options executor (for multi-leg options trading)
+            init_options_executor(alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
+                                  base_dir=str(BASE_DIR))
             # Initialize new skills
             init_smart_money_skill(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
             init_sector_skill(finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR))
+            # Initialize financial data providers (FMP + Finnhub)
+            try:
+                init_financial_data_providers(finnhub_key=FINNHUB_API_KEY, fmp_key=os.environ.get("FMP_API_KEY", ""))
+                log("[OK] Financial data providers initialized")
+            except Exception as e:
+                log(f"[!] Financial data providers init failed: {e}")
             log("[OK] All skills initialized with API keys")
         except Exception as e:
             log(f"[!] Skills initialization failed: {e}")
@@ -3240,8 +3293,26 @@ def main():
         thesis_intact = not fundamentals.get("consecutive_misses", False)
         thesis_broken = fundamentals.get("consecutive_misses", False) or fundamentals.get("below_200ma", False) and pnl_pct < -10
         
-        # Trailing stop (dynamic)
-        stop_pct = -10 if uptrend else (-7 if downtrend else -12)
+        # Trailing stop (dynamic, ATR-based) — same logic as Alpaca section
+        try:
+            high = hist["High"]
+            low = hist["Low"]
+            close = hist["Close"]
+            tr1 = high - low
+            tr2 = abs(high - close.shift(1))
+            tr3 = abs(low - close.shift(1))
+            true_range = tr1.combine(tr2, max).combine(tr3, max)
+            atr_14 = true_range.rolling(14).mean().iloc[-1]
+            atr_pct = (atr_14 / current_price) * 100 if current_price > 0 else 2.0
+            if uptrend:
+                stop_pct = -(atr_pct * 3.0)
+            elif downtrend:
+                stop_pct = -(atr_pct * 1.5)
+            else:
+                stop_pct = -(atr_pct * 2.0)
+            stop_pct = max(-25, min(-3, stop_pct))
+        except Exception:
+            stop_pct = -10 if uptrend else (-7 if downtrend else -12)
         
         # Generate action
         action = None
@@ -3250,7 +3321,7 @@ def main():
         # 1. Trailing stop hit
         if pullback <= stop_pct and pnl_pct < 0:
             action = "SELL"
-            reason = f"Trailing stop: pulled back {pullback:.1f}% from 20-day high (stop: {stop_pct}%)"
+            reason = f"Trailing stop: pulled back {pullback:.1f}% from 20-day high (stop: {stop_pct:.1f}%)"
         # 2. Thesis broken
         elif thesis_broken:
             action = "SELL"
@@ -3303,8 +3374,6 @@ def main():
             alert_text += f"Portfolio: ${csv_total:,.0f} | P&L: {csv_pnl_pct:+.1f}%"
             broadcast(alert_text)
             log("[OK] 📈 CSV portfolio action alert sent to Telegram!")
-        except Exception as e:
-            log(f"[!] Failed to send CSV alert: {e}")
         except Exception as e:
             log(f"[!] Failed to send CSV portfolio alert: {e}")
 
@@ -3914,22 +3983,96 @@ def main():
                             log(f"[OK] BOUGHT {sym} x{add_qty} more (averaging down on weakness)")
                         continue
 
-                # ── STRATEGY 6: TRAILING STOP (dynamic, not fixed) ──
-                # In uptrend: trail stop at -10% from recent high (give room to run)
-                # In downtrend: trail stop at -7% from recent high (cut quickly)
-                # In sideways: trail stop at -12% (moderate)
-                if uptrend:
-                    stop_pct = -10  # Give winners room to breathe
-                elif downtrend:
-                    stop_pct = -7   # Cut losers quickly
-                else:
-                    stop_pct = -12  # Moderate for sideways
+                # ── STRATEGY 6: DYNAMIC ATR-BASED TRAILING STOP ──
+                # Uses Average True Range (ATR) for volatility-adjusted stops.
+                # This is NOT a fixed percentage — it adapts to each stock's volatility.
+                # 
+                # Logic:
+                #   - Calculate 14-day ATR from recent price history
+                #   - ATR normalizes volatility across different-priced stocks
+                #   - Stop distance = ATR × multiplier (trend-dependent)
+                #   - Uptrend: 3× ATR (give winners room to breathe)
+                #   - Downtrend: 1.5× ATR (cut losers quickly)
+                #   - Sideways: 2× ATR (moderate)
+                #   - Also factor in: beta, sector volatility, earnings proximity
+                #
+                # This replaces the old hardcoded -10%/-7%/-12% rules.
+                try:
+                    # Calculate ATR from the same 3mo history we already fetched
+                    high = hist["High"]
+                    low = hist["Low"]
+                    close = hist["Close"]
+                    tr1 = high - low
+                    tr2 = abs(high - close.shift(1))
+                    tr3 = abs(low - close.shift(1))
+                    true_range = tr1.combine(tr2, max).combine(tr3, max)
+                    atr_14 = true_range.rolling(14).mean().iloc[-1]
+                    atr_pct = (atr_14 / current) * 100 if current > 0 else 2.0
+                    
+                    # Get beta for volatility context (higher beta = wider stop)
+                    beta = 1.0
+                    try:
+                        import yfinance as yf_ticker
+                        info = yf_ticker.Ticker(sym).info
+                        beta = info.get("beta", 1.0) or 1.0
+                    except Exception:
+                        pass
+                    
+                    # Dynamic ATR multiplier based on trend and beta
+                    if uptrend:
+                        atr_multiplier = 3.0  # Give winners room
+                    elif downtrend:
+                        atr_multiplier = 1.5  # Cut quickly
+                    else:
+                        atr_multiplier = 2.0  # Moderate
+                    
+                    # Adjust for high-beta stocks (wider stops for volatile names)
+                    if beta > 1.5:
+                        atr_multiplier *= 1.2  # 20% wider for high-beta
+                    elif beta < 0.5:
+                        atr_multiplier *= 0.8  # 20% tighter for low-beta
+                    
+                    # Calculate dynamic stop percentage
+                    dynamic_stop_pct = -(atr_pct * atr_multiplier)
+                    
+                    # Sanity bounds: never tighter than -3% or wider than -25%
+                    dynamic_stop_pct = max(-25, min(-3, dynamic_stop_pct))
+                    
+                    # Check if earnings are within 2 weeks — tighten stop before earnings
+                    earnings_soon = False
+                    try:
+                        from skills.earnings_intelligence import get_earnings_date
+                        earn_date = get_earnings_date(sym)
+                        if earn_date:
+                            days_to_earn = (earn_date - datetime.date.today()).days
+                            if 0 < days_to_earn <= 14:
+                                earnings_soon = True
+                                # Tighten stop by 40% before earnings (gamma risk)
+                                dynamic_stop_pct *= 0.6
+                                log(f"  📅 Earnings in {days_to_earn}d for {sym} — tightening stop to {dynamic_stop_pct:.1f}%")
+                    except Exception:
+                        pass
+                    
+                except Exception:
+                    # Fallback: use volatility-based estimate from historical data
+                    try:
+                        volatility = hist["Close"].pct_change().std() * (252 ** 0.5) * 100
+                        # Higher vol = wider stop
+                        if volatility > 50:
+                            dynamic_stop_pct = -15
+                        elif volatility > 30:
+                            dynamic_stop_pct = -10
+                        else:
+                            dynamic_stop_pct = -7
+                    except Exception:
+                        dynamic_stop_pct = -10  # Last resort fallback
 
-                if pullback_from_high <= stop_pct and pnl_pct < 0:
-                    log(f"  🛑 TRAILING STOP {sym}: pulled back {pullback_from_high:.1f}% from high (stop: {stop_pct}%)")
+                if pullback_from_high <= dynamic_stop_pct and pnl_pct < 0:
+                    log(f"  🛑 TRAILING STOP {sym}: pulled back {pullback_from_high:.1f}% from high "
+                        f"(dynamic stop: {dynamic_stop_pct:.1f}%, ATR-based)")
                     result = place_stock_order(sym, qty, "sell", "market")
                     if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
-                        log(f"[OK] SOLD {sym} x{qty} (trailing stop)")
+                        log(f"[OK] SOLD {sym} x{qty} (dynamic trailing stop)")
                     continue
 
                 # ── STRATEGY 7: ADD TO WINNERS (Peter Lynch / Warren Buffett) ──
@@ -3967,11 +4110,11 @@ def main():
                         log(f"[OK] SOLD {sym} x{qty} (thesis broken)")
                     continue
 
-                # ── DEFAULT: HOLD with trailing stop awareness ──
+                # ── DEFAULT: HOLD with dynamic trailing stop awareness ──
                 log(f"  ✅ HOLD {sym}: {qty} shares, {pnl_pct:+.1f}% P&L, {pos_pct:.1f}% of portfolio | "
                     f"{'uptrend' if uptrend else 'downtrend' if downtrend else 'sideways'} | "
                     f"thesis {'intact' if thesis_intact else 'at risk'} | "
-                    f"trailing stop at {stop_pct}% from high")
+                    f"dynamic stop at {dynamic_stop_pct:.1f}% from high (ATR-based)")
                 positions_reviewed += 1
 
             log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")
@@ -4258,8 +4401,6 @@ def main():
                 log(f"[OK] Executed {trades_executed} Alpaca stock trade(s)")
             if options_executed:
                 log(f"[OK] Executed {options_executed} Alpaca options trade(s)")
-            if options_failed:
-                log(f"[!] {options_failed} options trade(s) failed or skipped")
             if options_failed:
                 log(f"[!] {options_failed} options trade(s) failed or skipped")
             if not options_executed and not options_failed and not trades_executed:
