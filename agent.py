@@ -3275,6 +3275,24 @@ def main():
     log(f"[OK] CSV Portfolio: ${csv_total:,.0f} | P&L: ${csv_pnl:+,.0f} ({csv_pnl_pct:+.1f}%) | "
         f"Concentration: {concentration:.1f}% | Positions: {csv_portfolio.get('total_holdings', 0)}")
     
+    # Read watchlist recommendations for opportunity cost analysis
+    # (needed by the thesis-driven framework below)
+    watchlist_lines = []
+    try:
+        recs_content = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
+        in_watchlist = False
+        for rec_line in recs_content.split('\n'):
+            if "## 📋 Watchlist Recommendations" in rec_line:
+                in_watchlist = True
+                continue
+            if "## 🏦 Alpaca Holdings" in rec_line or "## Active Recommendations" in rec_line:
+                in_watchlist = False
+                continue
+            if in_watchlist and rec_line.startswith('- ') and 'Active' in rec_line:
+                watchlist_lines.append(rec_line)
+    except Exception:
+        pass
+
     # Apply the same 8-strategy system to CSV portfolio
     from skills.portfolio_manager import get_position_fundamentals, review_all_positions
     csv_actions = []
@@ -3701,8 +3719,10 @@ def main():
 
 ## PORTFOLIO CONTEXT
 - Total Value: ${portfolio_analysis.get('total_value', 0):,.0f}
-- Current Cash: {portfolio_analysis.get('cash_pct', 0):.1f}%
+- Cost Basis: ${portfolio_analysis.get('cost_basis', 0):,.0f}
+- Unrealized P&L: ${portfolio_analysis.get('total_unrealized_pnl', 0):+,.0f} ({portfolio_analysis.get('total_unrealized_pnl_pct', 0):+.1f}%)
 - Concentration: {portfolio_analysis.get('concentration_ratio', 0):.1f}%
+- Total Holdings: {portfolio_analysis.get('total_holdings', 0)}
 
 ## GLOBAL MARKETS (YTD Performance)
 {global_report if global_report else "No global data available"}
