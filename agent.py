@@ -3715,6 +3715,18 @@ def main():
     if SKILLS_AVAILABLE and (global_report or commodities_report):
         try:
             log("🌍 Running macro allocation analysis (global + commodities)...")
+            # Get cash info from Alpaca snapshot for accurate allocation context
+            _cash_info = ""
+            try:
+                _acct = get_alpaca_portfolio_snapshot()
+                if _acct and "error" not in _acct:
+                    _cash = _acct.get("cash", 0)
+                    _pv = _acct.get("total_value", portfolio_analysis.get('total_value', 0))
+                    _cash_pct = (_cash / _pv * 100) if _pv > 0 else 0
+                    _cash_info = f"- Cash: ${_cash:,.0f} ({_cash_pct:.1f}% of portfolio)"
+            except Exception:
+                _cash_info = "- Cash: (unable to fetch)"
+            
             macro_prompt = f"""You are a macro allocation analyst. Based on the following data, provide specific trading recommendations for the portfolio.
 
 ## PORTFOLIO CONTEXT
@@ -3723,6 +3735,7 @@ def main():
 - Unrealized P&L: ${portfolio_analysis.get('total_unrealized_pnl', 0):+,.0f} ({portfolio_analysis.get('total_unrealized_pnl_pct', 0):+.1f}%)
 - Concentration: {portfolio_analysis.get('concentration_ratio', 0):.1f}%
 - Total Holdings: {portfolio_analysis.get('total_holdings', 0)}
+{_cash_info}
 
 ## GLOBAL MARKETS (YTD Performance)
 {global_report if global_report else "No global data available"}
