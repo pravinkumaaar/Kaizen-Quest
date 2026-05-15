@@ -374,30 +374,4 @@ def format_position_report(positions):
     return "\n".join(lines)
 
 
-if __name__ == "__main__":
-    # Test
-    print("Testing dynamic position sizer...")
-    
-    test_watchlist = [
-        {"ticker": "NVDA", "conviction": 9, "price": 120},
-        {"ticker": "EWY", "conviction": 8, "price": 65},
-        {"ticker": "GLD", "conviction": 7, "price": 180},
-    ]
-    
-    result = compute_position_sizes(
-        available_cash=50000,
-        portfolio_value=250000,
-        existing_positions=[{"symbol": "AAPL", "type": "stock", "market_value": 30000, "sector": "Technology"}],
-        watchlist=test_watchlist,
-    )
-    
-    print(format_position_report(result))
-    print()
-    
-    # Test value opportunities
-    print("Testing value opportunity scanner...")
-    ops = find_value_opportunities(["MSFT", "GOOGL", "AMZN", "META", "TSLA", "JPM", "V", "UNH", "JNJ", "PG"])
-    for op in ops[:5]:
-        print(f"  {op['ticker']}: score={op['score']}, P/E={op['pe']:.1f}, Rev Growth={op['revenue_growth']*100:.0f}%, ROE={op['roe']*100:.0f}%")
-        for r in op['reasons']:
-            print(f"    - {r}")
+

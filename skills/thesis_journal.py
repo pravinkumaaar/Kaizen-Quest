@@ -185,11 +185,4 @@ def format_journal_report():
     return get_journal().format_report()
 
 
-if __name__ == "__main__":
-    # Test
-    journal = ThesisJournal()
-    journal.record_ticker("NVDA", "AI ecosystem leader", ["Data center growth", "CUDA moat"], 120, 9, "Technology")
-    journal.record_ticker("EWY", "Korea semiconductor play", ["Memory cycle", "AI demand"], 65, 8, "Technology")
-    journal.record_outcome("NVDA", "WIN", "AI narrative drove 40% gain", 168)
-    print(journal.format_report())
-    print(json.dumps(journal.get_insights(), indent=2))
+
