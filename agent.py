@@ -4093,10 +4093,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
                 cash_pct = available_cash / portfolio_val if portfolio_val > 0 else 1.0
                 log(f"  Cash available: ${available_cash:,.0f} ({cash_pct:.0%} of portfolio)")
 
-                # Only deploy if cash is excessive (>30%) OR we have very high conviction (>8) ideas
-                should_deploy = cash_pct > 0.30
-
-                # Read watchlist recommendations
+                # Read watchlist recommendations — parse all active recommendations
                 recs_content = read_file(RECOMMENDATIONS_FILE)
                 in_watchlist = False
                 watchlist_lines = []
@@ -4111,6 +4108,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
                         watchlist_lines.append(rec_line)
 
                 trades_executed = 0
+                trades_skipped = 0
                 for line in watchlist_lines:
                     parts = line[2:].split(' | ')
                     if len(parts) >= 5:
@@ -4124,33 +4122,40 @@ Be specific and actionable. The agent will use these recommendations to place ac
                                 entry_price = 0
 
                             if entry_price <= 0:
+                                trades_skipped += 1
                                 continue
 
                             # Skip if already held
                             already_held = any(p['symbol'] == ticker for p in alpaca_positions)
                             if already_held:
+                                log(f"  Skip {ticker}: already held in Alpaca")
+                                trades_skipped += 1
                                 continue
 
-                            # STRICT: Only buy conviction 8+ (same as real trading)
-                            # The agent must believe this will genuinely bring value
-                            if conviction < 8:
-                                log(f"  Skip {ticker}: conviction {conviction}/10 below 8+ threshold — cash is better deployed elsewhere")
+                            # AGGRESSIVE: Buy conviction 7+ (owner is aggressive investor)
+                            # Conviction 7 = 3-5% position, 8 = 5-8%, 9+ = 8-10%
+                            if conviction < 7:
+                                log(f"  Skip {ticker}: conviction {conviction}/10 below 7+ threshold")
+                                trades_skipped += 1
                                 continue
 
-                            # Calculate position size: 5-8% of portfolio for conviction 8-9, 10% for 10/10
+                            # Calculate position size based on conviction
                             if conviction >= 10:
                                 pct = 0.10
                             elif conviction >= 9:
                                 pct = 0.08
-                            else:
-                                pct = 0.05
+                            elif conviction >= 8:
+                                pct = 0.06
+                            else:  # conviction 7
+                                pct = 0.04
                             dollar_amount = portfolio_val * pct
 
-                            # Don't deploy more than 50% of available cash in a single trade
-                            dollar_amount = min(dollar_amount, available_cash * 0.50)
+                            # Don't deploy more than 40% of available cash in a single trade
+                            dollar_amount = min(dollar_amount, available_cash * 0.40)
 
-                            if dollar_amount < 500:
-                                log(f"  Skip {ticker}: allocation ${dollar_amount:.0f} too small (min $500)")
+                            if dollar_amount < 200:
+                                log(f"  Skip {ticker}: allocation ${dollar_amount:.0f} too small (min $200)")
+                                trades_skipped += 1
                                 continue
 
                             qty = max(1, int(dollar_amount / entry_price))
@@ -4162,17 +4167,20 @@ Be specific and actionable. The agent will use these recommendations to place ac
                                 log(f"[OK] Alpaca BUY: {ticker} x{qty} @ ${entry_price:.2f} (status: {trade_result.get('status')})")
                             elif trade_result.get("status") == "REJECTED":
                                 log(f"[!] Alpaca BUY rejected for {ticker}: {trade_result.get('error', 'unknown')}")
+                                trades_skipped += 1
                             else:
                                 log(f"[!] Alpaca BUY uncertain for {ticker}: {trade_result}")
+                                trades_skipped += 1
                         except (ValueError, IndexError):
+                            trades_skipped += 1
                             continue
 
                 if trades_executed == 0:
-                    log(f"  No trades executed — agent didn't find conviction 8+ opportunities worth deploying cash")
+                    log(f"  No trades executed — {trades_skipped} ideas skipped (conviction < 7, already held, or too small)")
                     if cash_pct > 0.50:
-                        log(f"  ⚠️ Cash at {cash_pct:.0%} — agent is being selective, waiting for high-conviction setups")
+                        log(f"  ⚠️ Cash at {cash_pct:.0%} — agent didn't find enough high-conviction opportunities to deploy")
                 else:
-                    log(f"[OK] Executed {trades_executed} Alpaca trade(s) this run")
+                    log(f"[OK] Executed {trades_executed} Alpaca stock trade(s) this run ({trades_skipped} skipped)")
 
             # 10c. Active position management — best-in-class long-term strategies
             # Combines: Buffett's "hold wonderful businesses", Dalio's risk parity,
@@ -4368,6 +4376,11 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     f"{'uptrend' if uptrend else 'downtrend' if downtrend else 'sideways'}")
                 positions_reviewed += 1
 
+                # Note: ADD TO WINNERS and THESIS-BROKEN SELL are now handled above
+                # in the unified thesis-driven framework. This section is intentionally
+                # empty to avoid duplicate logic.
+                positions_reviewed += 1
+
             log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")
             
             # 10c-2. OPPORTUNITY COST ANALYSIS — compare weak positions vs. better opportunities
@@ -4419,20 +4432,20 @@ Be specific and actionable. The agent will use these recommendations to place ac
                 if pos.get('type') == 'stock':
                     option_underlyings.append(pos['symbol'])
             
-            # Add top watchlist recommendations (conviction 8+)
+            # Add top watchlist recommendations (conviction 7+ for aggressive investor)
             for wl_line in watchlist_lines:
                 parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
                 if len(parts) >= 5:
                     try:
                         conv = int(parts[4].split('/')[0].strip())
                         ticker = parts[1].strip()
-                        if conv >= 8 and ticker not in option_underlyings:
+                        if conv >= 7 and ticker not in option_underlyings:
                             option_underlyings.append(ticker)
                     except (ValueError, IndexError):
                         pass
             
-            # Limit to top 5 underlyings to avoid rate limits
-            option_underlyings = option_underlyings[:5]
+            # Limit to top 8 underlyings to get more options coverage
+            option_underlyings = option_underlyings[:8]
             
             all_options_strategies = []
             for underlying in option_underlyings:
