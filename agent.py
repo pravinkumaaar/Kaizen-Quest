@@ -4368,11 +4368,6 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     f"{'uptrend' if uptrend else 'downtrend' if downtrend else 'sideways'}")
                 positions_reviewed += 1
 
-                # Note: ADD TO WINNERS and THESIS-BROKEN SELL are now handled above
-                # in the unified thesis-driven framework. This section is intentionally
-                # empty to avoid duplicate logic.
-                positions_reviewed += 1
-
             log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")
             
             # 10c-2. OPPORTUNITY COST ANALYSIS — compare weak positions vs. better opportunities
