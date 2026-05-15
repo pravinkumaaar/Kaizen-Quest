@@ -24,5 +24,18 @@
       "concentration": 0
     },
     "benchmarks": {}
+  },
+  {
+    "date": "2026-05-14",
+    "model": "free",
+    "rating": 0,
+    "top_recommendations": [],
+    "key_learnings": [],
+    "portfolio_summary": {
+      "total_value": 254779.11333505998,
+      "top_holding": "",
+      "concentration": 62.591481779073845
+    },
+    "benchmarks": {}
   }
 ]
