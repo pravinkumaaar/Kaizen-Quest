@@ -62,7 +62,7 @@ def compute_kelly_fraction(win_prob, win_loss_ratio):
     q = 1 - win_prob
     kelly = (win_prob * win_loss_ratio - q) / win_loss_ratio
     kelly = max(0, kelly)  # Don't bet if no edge
-    return kelly * 0.5  # Use half-Kelly
+    return kelly * 0.75  # Use 75% Kelly for aggressive growth
 
 
 def estimate_volatility(ticker, period="3mo"):
@@ -102,8 +102,9 @@ def get_sector(ticker):
 
 
 def compute_position_sizes(available_cash, portfolio_value, existing_positions, watchlist,
-                            max_single_position_pct=0.12, max_cash_per_trade=0.35,
-                            max_total_deployment=0.70, min_trade_size=200):
+                            max_single_position_pct=0.15, max_cash_per_trade=0.40,
+                            max_total_deployment=0.90, min_trade_size=200,
+                            allow_adding_existing=True, conviction_threshold=8):
     """
     Compute dynamic position sizes using Kelly Criterion + Risk Parity.
     
@@ -152,15 +153,24 @@ def compute_position_sizes(available_cash, portfolio_value, existing_positions, 
             results["skipped"].append({"ticker": ticker, "reason": "No price data"})
             continue
         
-        # Skip if already held
+        # Check if already held — allow adding if conviction is high and cash is ample
         already_held = any(p['symbol'] == ticker for p in existing_positions if p.get('type') == 'stock')
         if already_held:
-            results["skipped"].append({"ticker": ticker, "reason": "Already held"})
-            continue
+            # Only skip if adding is disabled
+            if not allow_adding_existing:
+                results["skipped"].append({"ticker": ticker, "reason": "Already held (adding disabled)"})
+                continue
+            # For already-held: only add if conviction >= 9 and cash > 30% of portfolio
+            if conviction < 9:
+                results["skipped"].append({"ticker": ticker, "reason": f"Already held, conviction {conviction} < 9 for adding"})
+                continue
+            if portfolio_value > 0 and available_cash / portfolio_value < 0.30:
+                results["skipped"].append({"ticker": ticker, "reason": f"Already held, cash {available_cash/portfolio_value*100:.0f}% < 30% for adding"})
+                continue
         
-        # Skip low conviction
-        if conviction < 6:
-            results["skipped"].append({"ticker": ticker, "reason": f"Conviction {conviction}/10 too low"})
+        # Skip low conviction (threshold configurable, default 8 for quality)
+        if conviction < conviction_threshold:
+            results["skipped"].append({"ticker": ticker, "reason": f"Conviction {conviction}/10 below {conviction_threshold} threshold"})
             continue
         
         # Compute Kelly fraction

@@ -101,6 +101,9 @@ try:
         get_earnings_history, get_financial_ratios, get_company_news,
         get_treasury_rates, get_aggregate_indicators, get_financial_ratios as get_fmp_ratios,
     )
+    # Dynamic position sizer and thesis journal
+    from skills.dynamic_position_sizer import compute_position_sizes, find_value_opportunities
+    from skills.thesis_journal import get_journal, record_thesis, record_outcome, format_journal_report
     SKILLS_AVAILABLE = True
     print("[✓] Skills modules loaded successfully")
 except ImportError as e:
