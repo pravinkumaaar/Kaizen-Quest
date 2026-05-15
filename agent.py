@@ -44,7 +44,7 @@ try:
     from skills.market_foresight import get_market_foresight, init_foresight_skill
     from skills.learning_curator import get_or_create_weekly_theme, generate_learning_content
     from skills.recommendation_tracker import clear_active_recommendations as clear_recs, parse_and_store_recommendations, update_recommendation_performance
-    from skills.alpaca_trading import get_account_info, get_positions, get_portfolio_history, get_alpaca_portfolio_snapshot
+    from skills.alpaca_trading import get_account_info, get_positions, get_portfolio_history
     from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary, calculate_portfolio_performance
     from skills.clickup_integration import create_recommendation_task, send_daily_summary, get_active_recommendations
     from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run, update_warm_memory
@@ -3806,14 +3806,19 @@ def main():
             _research_tickers = []
             
             # Add Alpaca holdings (most important — real money)
+            # Try to reuse snapshot already fetched earlier to avoid extra API calls
+            _alpaca_positions = None
             try:
-                _acct = get_alpaca_portfolio_snapshot()
-                if _acct and "positions" in _acct:
-                    for _pos in _acct["positions"]:
-                        if _pos.get("type") == "stock":
-                            _research_tickers.append(_pos["symbol"])
+                _alpaca_positions = alpaca_snapshot.get("positions", [])
             except Exception:
-                pass
+                try:
+                    _alpaca_positions = alpaca_snap.get("positions", [])
+                except Exception:
+                    pass
+            if _alpaca_positions:
+                for _pos in _alpaca_positions:
+                    if isinstance(_pos, dict) and _pos.get("type") == "stock":
+                        _research_tickers.append(_pos["symbol"])
             
             # Add top portfolio tickers by weight
             _top_holdings = portfolio_analysis.get('top_positions', [])[:5]
@@ -3835,8 +3840,9 @@ def main():
             except Exception:
                 pass
             
-            # Limit to top 5 tickers for deep research (token/time budget)
-            _research_tickers = _research_tickers[:5]
+            # Limit tickers: 5 for full mode, 3 for alerts-only (time budget)
+            _max_tickers = 5 if not SILENT_MODE else 3
+            _research_tickers = _research_tickers[:_max_tickers]
             
             if _research_tickers:
                 log(f"🔬 Deep research on {len(_research_tickers)} tickers: {', '.join(_research_tickers)}")
@@ -3853,7 +3859,7 @@ def main():
                             _result = _researcher.quick_update(_rt)
                         
                         if _result and not _result.get("skipped"):
-                            _ctx = _researcher.get_llm_context(_rt, max_chars=2000)
+                            _ctx = _researcher.get_llm_context(_rt, max_chars=1200)
                             deep_research_context += f"\n\n{_ctx}"
                             log(f"  ✅ Deep research complete: {_rt} (depth={_result.get('research_depth', 0)}, facts={len(_result.get('facts', []))}, contrarian={len(_result.get('contrarian_signals', []))})")
                     except Exception as _e:
