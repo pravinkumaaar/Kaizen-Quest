@@ -58,3 +58,6 @@ Track every investment decision, its reasoning, and outcome.
 2026-05-08|MU|BUY|$729.46|$950.00|7/10| Active | +0.0% |Why: Micron is the *only* domestic high-bandwidth memory (HBM) supplier riding t |
 2026-05-08|VRT|BUY|$343.45|$450.00|7/10| Active | +0.0% |Why: Every AI data center needs cooling, power distribution, and thermal managem |
 2026-05-08|AVGO|BUY|$429.70|$575.00|8/10| Active | +0.0% |Why: Broadcom is the most underappreciated AI semiconductor company. While NVIDI |
+| 2026-05-15 | NVDA | BUY | $225.32 | N/A | 7/10 | Active | - | Why: NVDA reports May 20 (5 days). You're up +117% on a 13.6% position. The stoc |
+| 2026-05-15 | NEW | BUY | $370.94 | $475.00 | 8/10 | Active | - | Why: You already own VRT at 4.2% of portfolio (+153.6% gain). This is your highe |
+| 2026-05-15 | NEW | BUY | N/A | $490.00 | 7/10 | Active | - | Why: CRWD reports earnings June 3 (19 days). This is a NEW position for your por |
