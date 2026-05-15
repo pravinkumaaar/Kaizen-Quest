@@ -28,6 +28,7 @@ Formulas reference:
 import json
 import math
 import warnings
+import requests
 from pathlib import Path
 from datetime import datetime, timedelta
 from collections import defaultdict
@@ -1220,26 +1221,93 @@ def detect_yield_curve(fred_api_key: str = None) -> dict:
 # HIGH-LEVEL REPORTING FUNCTIONS
 # ─────────────────────────────────────────────
 
+def _get_index_prices_polygon(symbols: list) -> dict:
+    """Fallback: get index prices from Polygon.io API using daily bars."""
+    import os
+    from dotenv import load_dotenv
+    load_dotenv(override=False)
+    poly_key = os.environ.get("POLYGON_API_KEY", "")
+    if not poly_key:
+        return {}
+
+    prices = {}
+    # Use a 5-day window to ensure we get at least 2 trading days
+    start = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
+    end = datetime.now().strftime('%Y-%m-%d')
+
+    for symbol in symbols:
+        try:
+            # Get last 2 daily bars (most recent 2 trading days)
+            r = requests.get(
+                f"https://api.polygon.io/v2/aggs/ticker/{symbol.upper()}/range/1/day/{start}/{end}?adjusted=true&sort=desc&limit=2&apiKey={poly_key}",
+                timeout=10,
+            )
+            if r.status_code == 200:
+                data = r.json()
+                results = data.get("results", [])
+                if results and len(results) >= 1:
+                    last = float(results[0].get("c", 0))
+                    prev_close = float(results[1].get("c", 0)) if len(results) >= 2 else 0
+                    chg_pct = round(((last - prev_close) / prev_close * 100), 2) if prev_close > 0 else 0
+                    if last > 0:
+                        prices[symbol] = {
+                            "price": round(last, 2),
+                            "prev_close": round(prev_close, 2) if prev_close > 0 else None,
+                            "change_pct": chg_pct,
+                        }
+        except Exception:
+            pass
+
+    return prices
+
+
 def get_index_prices(symbols: list = None) -> dict:
-    """Get current prices for benchmark indices (backward compatible)."""
+    """Get current prices for benchmark indices.
+    Uses yfinance first, falls back to Polygon.io if yfinance fails.
+    All stderr output from yfinance is suppressed.
+    """
     if symbols is None:
         symbols = list(BENCHMARK_INDICES.keys())
 
     prices = {}
-    for symbol in symbols:
-        try:
-            t = yf.Ticker(symbol)
-            info = t.fast_info
-            last = float(info.last_price) if info.last_price else 0
-            prev = float(info.previous_close) if info.previous_close else 0
-            chg_pct = round(((last - prev) / prev * 100), 2) if prev > 0 else 0
-            prices[symbol] = {
-                "price": round(last, 2),
-                "prev_close": round(prev, 2) if prev > 0 else None,
-                "change_pct": chg_pct,
-            }
-        except Exception:
-            prices[symbol] = {"price": 0, "prev_close": None, "change_pct": 0}
+    yfinance_failed = False
+    
+    # Suppress yfinance stderr during price fetching
+    import sys
+    from io import StringIO
+    old_stderr = sys.stderr
+    sys.stderr = StringIO()
+    
+    try:
+        for symbol in symbols:
+            try:
+                t = yf.Ticker(symbol)
+                info = t.fast_info
+                last = float(info.last_price) if info.last_price else 0
+                prev = float(info.previous_close) if info.previous_close else 0
+                if last <= 0:
+                    yfinance_failed = True
+                    break
+                chg_pct = round(((last - prev) / prev * 100), 2) if prev > 0 else 0
+                prices[symbol] = {
+                    "price": round(last, 2),
+                    "prev_close": round(prev, 2) if prev > 0 else None,
+                    "change_pct": chg_pct,
+                }
+            except Exception:
+                yfinance_failed = True
+                break
+    finally:
+        sys.stderr = old_stderr
+
+    # Fallback to Polygon if yfinance failed or returned zeros
+    if yfinance_failed or not prices or all(p.get("price", 0) == 0 for p in prices.values()):
+        poly_prices = _get_index_prices_polygon(symbols)
+        for symbol in symbols:
+            if symbol in poly_prices and poly_prices[symbol].get("price", 0) > 0:
+                prices[symbol] = poly_prices[symbol]
+            elif symbol not in prices:
+                prices[symbol] = {"price": 0, "prev_close": None, "change_pct": 0}
 
     return prices
 

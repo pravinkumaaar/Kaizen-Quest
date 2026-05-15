@@ -44,7 +44,7 @@ try:
     from skills.market_foresight import get_market_foresight, init_foresight_skill
     from skills.learning_curator import get_or_create_weekly_theme, generate_learning_content
     from skills.recommendation_tracker import clear_active_recommendations as clear_recs, parse_and_store_recommendations, update_recommendation_performance
-    from skills.alpaca_trading import get_account_info, get_positions, get_portfolio_history
+    from skills.alpaca_trading import get_account_info, get_positions, get_portfolio_history, get_alpaca_portfolio_snapshot
     from skills.benchmark_tracker import get_index_prices, compare_to_benchmarks, update_benchmark_log, get_performance_summary, calculate_portfolio_performance
     from skills.clickup_integration import create_recommendation_task, send_daily_summary, get_active_recommendations
     from skills.memory_manager import init_memory_system, update_hot_memory, get_memory_for_run, update_warm_memory
@@ -2371,6 +2371,25 @@ Digest (summary):
 
 Generate **3-5 Investment Ideas** using the STRUCTURED TRADE THESIS FRAMEWORK.
 
+## CRITICAL: USE ALL AVAILABLE DATA
+You have been provided with DEEP RESEARCH findings from a comprehensive 7-layer analysis system that gathered data from 15+ sources including:
+- Real-time prices (yfinance + Polygon fallback)
+- Financial statements & DCF valuations
+- Peer comparison & competitive landscape
+- Insider trades, institutional ownership, congressional trading
+- Sector rotation, macro signals, economic calendar
+- Technical indicators (RSI, moving averages, aggregate signals)
+- Contrarian analysis (bear case, short interest, risk factors)
+- Research memory (what was previously known, what changed)
+
+**YOU MUST reference this deep research data in your recommendations.** Do NOT ignore it. Specifically:
+- Reference specific verified facts and their confidence levels
+- Address contrarian signals — explain why you agree or disagree with the bear case
+- Use the DCF valuation, analyst estimates, and price targets in your analysis
+- Consider insider/institutional activity as validation or warning signals
+- Factor in technical position (overbought/oversold, trend direction)
+- Check research memory for thesis evolution — has the investment case changed?
+
 ## MANDATORY TRADE THESIS FRAMEWORK
 
 For EVERY trade idea, provide this structured analysis:
@@ -2702,6 +2721,48 @@ def task_self_reflect(report: str, memory: str, snapshot: dict = None,
     portfolio_summary = read_file(PORTFOLIO_FILE, max_chars=500)
     recs_summary = read_file(RECOMMENDATIONS_FILE, max_chars=500)
     
+    # ── THESIS JOURNAL INSIGHTS ──
+    thesis_context = ""
+    try:
+        _journal = get_journal()
+        _insights = _journal.get_insights()
+        _active = _journal.get_active_theses()
+        if _insights and "message" not in _insights:
+            thesis_context = f"""
+=== THESIS JOURNAL ===
+Total Trades: {_insights.get('total_trades', 0)} | Win Rate: {_insights.get('win_rate', 0)}% | Avg Return: {_insights.get('avg_return', 0)}%
+High Conviction (8+) Accuracy: {_insights.get('high_conviction_accuracy', 0)}%
+Active Theses: {len(_active)}
+"""
+            if _insights.get("sector_performance"):
+                thesis_context += "Sector Performance:\n"
+                for _sec, _data in sorted(_insights["sector_performance"].items(), key=lambda x: -x[1]["win_rate"]):
+                    thesis_context += f"  - {_sec}: {_data['win_rate']}% win rate ({_data['trades']} trades)\n"
+        if _active:
+            thesis_context += "\nActive Theses:\n"
+            for _t in _active[:5]:
+                thesis_context += f"  - {_t['ticker']} ({_t.get('sector', 'N/A')}): {_t['thesis'][:80]}... | Conv: {_t.get('conviction', '?')}/10\n"
+    except Exception as _e:
+        thesis_context = f"\n[Thesis journal unavailable: {_e}]"
+    
+    # ── MEMORY INSIGHTS (hot + warm) ──
+    memory_context = ""
+    try:
+        _hot_file = BASE_DIR / "docs" / "memory" / "hot.json"
+        if _hot_file.exists():
+            _hot = json.loads(_hot_file.read_text())
+            if _hot:
+                memory_context = f"\n=== RECENT RUN MEMORY (last {len(_hot)} runs) ===\n"
+                for _run in _hot[-3:]:
+                    memory_context += f"  {_run.get('date', '?')}: value=${_run.get('portfolio_summary', {}).get('total_value', 0):,.0f}, "
+                    memory_context += f"concentration={_run.get('portfolio_summary', {}).get('concentration', 0):.1f}%, "
+                    memory_context += f"top={_run.get('portfolio_summary', {}).get('top_holding', '?')}\n"
+                    if _run.get("top_recommendations"):
+                        for _rec in _run["top_recommendations"][:2]:
+                            memory_context += f"    → {_rec.get('ticker', '?')}: {_rec.get('action', '?')} conv={_rec.get('conviction', '?')}/10\n"
+    except Exception as _e:
+        memory_context = f"\n[Memory insights unavailable: {_e}]"
+    
     # Portfolio performance context
     portfolio_context = ""
     if snapshot:
@@ -2735,7 +2796,9 @@ Focus areas:
 3. DATA ACCURACY: Were there any stale prices, missing data, or hallucinated facts? How can data quality be improved?
 4. RISK MANAGEMENT: Were stop-losses triggered appropriately? Is the portfolio protected against tail risks?
 5. LEARNING PROGRESSION: Are we getting better over time? What recurring mistakes need systematic fixes?
-6. OPPORTUNITY COST: What did we miss? What should we have bought/sold but didn't?""",
+6. OPPORTUNITY COST: What did we miss? What should we have bought/sold but didn't?
+7. THESIS JOURNAL: Review past theses — were they validated or refuted? Is conviction calibration improving? Which sectors/theses have the best track record?
+8. MEMORY USAGE: Are we building on past analysis? Are we avoiding re-researching the same companies without new insights? Are we tracking what we've learned?""",
         user=f"""=== RUN CONTEXT ===
 Date: {NOW}
 Mode: {improvement_mode} (avg rating: {avg_rating})
@@ -2752,6 +2815,12 @@ Average: {avg_rating}
 {actions_context}
 {foresight_context}
 
+=== THESIS JOURNAL ===
+{thesis_context}
+
+=== MEMORY INSIGHTS ===
+{memory_context}
+
 === ACTIVE RECOMMENDATIONS ===
 {recs_summary}
 
@@ -2759,18 +2828,21 @@ Average: {avg_rating}
 {learnings_history[-1000:]}
 
 === YOUR TASK ===
-Write a comprehensive self-reflection (8-12 bullet points) covering:
+Write a comprehensive self-reflection (10-15 bullet points) covering:
 
 **What Worked Well** (be specific — name tickers, data sources, strategies)
 **What Didn't Work** (be specific — what was wrong and why)
-**Conviction Calibration** (were 8+ conviction picks actually good? any false positives?)
+**Conviction Calibration** (were 8+ conviction picks actually good? any false positives? check thesis journal)
+**Thesis Journal Review** (which past theses were validated? which were refuted? what patterns emerge?)
 **Missed Opportunities** (what should have been recommended but wasn't?)
 **Data Quality Issues** (any stale prices, missing chains, hallucinated facts?)
 **Risk Management** (are stop-losses set correctly? concentration managed?)
-**Cash Deployment** (is idle cash being deployed efficiently? opportunity cost?)
+**Cash Deployment** (is idle cash being deployed efficiently? opportunity cost? 90% target)
+**Memory & Learning** (are we building on past analysis? avoiding redundant research?)
 **Process Improvements** (what systematic changes would improve next run?)
 
 Format: markdown bullets with specific tickers, prices, and data points. Be actionable.
+Reference the thesis journal and memory insights above — build on what we know.
 Today: {NOW}""",
         max_tokens=2500,  # Increased for comprehensive self-reflection
     )
@@ -2882,6 +2954,14 @@ def _extract_benchmark_context():
     except Exception:
         pass
     return "\n".join(lines) if lines else "Benchmark data unavailable."
+
+
+def _format_journal_report_safe() -> str:
+    """Safely format thesis journal for report inclusion."""
+    try:
+        return format_journal_report()
+    except Exception as e:
+        return f"*Thesis journal unavailable: {e}*"
 
 
 def build_and_save_report(market_data, digest, investments, options, learning,
@@ -3024,6 +3104,12 @@ def build_and_save_report(market_data, digest, investments, options, learning,
 {macro_allocation_report}
 
 {rec_section}
+
+---
+
+## 📓 Thesis Journal
+{_format_journal_report_safe()}
+
 ---
 *Generated by personal AI agent using free-tier APIs. Educational only. Not financial advice.*
 *Options: Always sell/close contracts BEFORE expiration. Never let ITM options expire.*
@@ -3701,7 +3787,92 @@ def main():
     if commodities_report:
         investment_context += f"\n\n🥇 COMMODITIES & METALS:\n{commodities_report}\nConsider commodity exposure for portfolio hedging and alpha generation."
 
-    # 4e. Investment ideas with ALL data: portfolio, options, earnings, sentiment, foresight, smart money, sectors, benchmarks
+    # 4d-9. DEEP RESEARCH — Comprehensive multi-source research on key tickers
+    # This runs BEFORE the LLM investment ideas call to ensure the agent
+    # makes decisions based on thorough, verified data from ALL available sources.
+    deep_research_context = ""
+    if SKILLS_AVAILABLE:
+        try:
+            from skills.deep_research import DeepResearcher
+            from skills.research_memory import get_memory
+            
+            _mem = get_memory()
+            _mem.start_run()
+            
+            _researcher = DeepResearcher(verbose=True)
+            
+            # Determine which tickers to research deeply
+            # Priority: Alpaca holdings + top watchlist + high-conviction ideas
+            _research_tickers = []
+            
+            # Add Alpaca holdings (most important — real money)
+            try:
+                _acct = get_alpaca_portfolio_snapshot()
+                if _acct and "positions" in _acct:
+                    for _pos in _acct["positions"]:
+                        if _pos.get("type") == "stock":
+                            _research_tickers.append(_pos["symbol"])
+            except Exception:
+                pass
+            
+            # Add top portfolio tickers by weight
+            _top_holdings = portfolio_analysis.get('top_positions', [])[:5]
+            for _h in _top_holdings:
+                _t = _h.get('ticker', '')
+                if _t and _t not in _research_tickers:
+                    _research_tickers.append(_t)
+            
+            # Add tickers from watchlist recommendations
+            try:
+                _recs = read_file(RECOMMENDATIONS_FILE)
+                for _line in _recs.split('\n'):
+                    if _line.startswith('- ') and 'Active' in _line:
+                        _parts = _line[2:].split(' | ')
+                        if len(_parts) >= 5:
+                            _wt = _parts[1].strip()
+                            if _wt and _wt not in _research_tickers:
+                                _research_tickers.append(_wt)
+            except Exception:
+                pass
+            
+            # Limit to top 5 tickers for deep research (token/time budget)
+            _research_tickers = _research_tickers[:5]
+            
+            if _research_tickers:
+                log(f"🔬 Deep research on {len(_research_tickers)} tickers: {', '.join(_research_tickers)}")
+                
+                # Check if we're in full mode (deep dive) or alerts-only (quick update)
+                _is_full_mode = not SILENT_MODE
+                _layers = [1, 2, 3, 4, 5, 6, 7] if _is_full_mode else [1, 2, 6]
+                
+                for _rt in _research_tickers:
+                    try:
+                        if _is_full_mode:
+                            _result = _researcher.deep_dive(_rt, layers=_layers)
+                        else:
+                            _result = _researcher.quick_update(_rt)
+                        
+                        if _result and not _result.get("skipped"):
+                            _ctx = _researcher.get_llm_context(_rt, max_chars=2000)
+                            deep_research_context += f"\n\n{_ctx}"
+                            log(f"  ✅ Deep research complete: {_rt} (depth={_result.get('research_depth', 0)}, facts={len(_result.get('facts', []))}, contrarian={len(_result.get('contrarian_signals', []))})")
+                    except Exception as _e:
+                        log(f"  [!] Deep research failed for {_rt}: {_e}")
+                
+                # Save research memory state
+                _mem.end_run()
+                
+                if deep_research_context:
+                    deep_research_context = f"\n\n{'='*60}\n🔬 DEEP RESEARCH FINDINGS (Multi-Source Verified)\n{'='*60}" + deep_research_context
+                    log(f"[OK] Deep research context: {len(deep_research_context)} chars")
+        except Exception as e:
+            log(f"[!] Deep research module failed: {e}")
+    
+    # 4e. Investment ideas with ALL data: portfolio, options, earnings, sentiment, foresight, smart money, sectors, benchmarks, DEEP RESEARCH
+    # Inject deep research context into the investment context
+    if deep_research_context:
+        investment_context += deep_research_context
+    
     investments = task_investment_ideas(
         market_data, digest_summary, memory, portfolio_analysis,
         options_context=investment_context
@@ -3799,10 +3970,11 @@ Be specific and actionable. The agent will use these recommendations to place ac
         for pos in alpaca_snapshot["positions"]:
             if pos["type"] == "stock":
                 sym = pos["symbol"]
+                _plpc = float(pos.get('unrealized_plpc', 0) or 0) * 100
                 rec_line = (f"- {TODAY} | {sym} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
-                            f"${pos['current_price']:.2f} | {pos['unrealized_plpc']:+.1f}% | Long-term (Alpaca)")
+                            f"${pos['current_price']:.2f} | {_plpc:+.2f}% | Long-term (Alpaca)")
                 alpaca_rec_lines.append(rec_line)
-                log(f"[OK] Alpaca holding: {sym} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({pos['unrealized_plpc']:+.1f}%)")
+                log(f"[OK] Alpaca holding: {sym} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({_plpc:+.2f}%)")
 
         existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
         all_lines = existing_recs.split('\n') if existing_recs else []
@@ -3848,13 +4020,14 @@ Be specific and actionable. The agent will use these recommendations to place ac
         market_sentiment=market_sentiment
     )
 
-    # 4g. Learning and market reaction
-    learning = task_learning(digest_summary, memory)
-    market_reaction = task_market_reaction(market_data, digest_summary)
-
-    # 5. Write report and send to Telegram (only in full mode — 3x/day)
+    # 4g. Learning and market reaction (only in full mode — skip in alerts-only)
+    learning = ""
+    market_reaction = ""
     _run_mode = os.environ.get("RUN_MODE", "")
     if not SILENT_MODE:
+        log("📝 Generating learning recommendation (weekly theme + daily deep dive)...")
+        learning = task_learning(digest_summary, memory)
+        market_reaction = task_market_reaction(market_data, digest_summary)
         log("📝 Writing report...")
         report = build_and_save_report(
             market_data, digest, investments, options, learning,
@@ -4080,7 +4253,8 @@ Be specific and actionable. The agent will use these recommendations to place ac
             if alpaca_positions:
                 log(f"[OK] Alpaca positions: {len(alpaca_positions)} holdings")
                 for pos in alpaca_positions[:5]:
-                    pl_str = f"{pos.get('unrealized_plpc', 0):+.1f}%" if pos.get('unrealized_plpc') else "N/A"
+                    _plpc = float(pos.get('unrealized_plpc', 0) or 0)
+                    pl_str = f"{_plpc * 100:+.2f}%" if _plpc != 0 else "0.00%"
                     log(f"  → {pos['symbol']}: {pos['qty']} @ ${pos.get('avg_entry', 0):.2f} "
                         f"(current: ${pos.get('current_price', 0):.2f}, P&L: {pl_str}) [{pos['type']}]")
             if alpaca_trades:
@@ -4170,8 +4344,8 @@ Be specific and actionable. The agent will use these recommendations to place ac
                         sizing_result = compute_position_sizes(
                             available_cash=available_cash, portfolio_value=portfolio_val,
                             existing_positions=existing_for_sizer, watchlist=watchlist_with_prices,
-                            max_single_position_pct=0.12, max_cash_per_trade=0.35,
-                            max_total_deployment=0.70, min_trade_size=200,
+                            max_single_position_pct=0.15, max_cash_per_trade=0.40,
+                            max_total_deployment=0.90, min_trade_size=200,
                         )
 
                         log(f"  Position sizing: {sizing_result['summary']['trades_count']} trades, "
@@ -4195,6 +4369,27 @@ Be specific and actionable. The agent will use these recommendations to place ac
                                 trades_executed += 1
                                 total_deployed += cost
                                 log(f"[OK] Alpaca BUY: {ticker} x{qty} @ ${price:.2f} = ${cost:,.0f}")
+                                # Record thesis in journal
+                                try:
+                                    sector = "Unknown"
+                                    try:
+                                        import yfinance as yf
+                                        _stderr = __import__('sys').stderr
+                                        __import__('sys').stderr = __import__('io').StringIO()
+                                        try:
+                                            _info = yf.Ticker(ticker).info
+                                            sector = _info.get('sector', 'Unknown')
+                                        finally:
+                                            __import__('sys').stderr = _stderr
+                                    except Exception:
+                                        pass
+                                    _thesis = f"Kelly-based buy: conviction {trade['conviction']}/10, Kelly {trade['kelly_fraction']:.1%}"
+                                    if trade.get('is_value_op'):
+                                        _thesis = f"GARP value play: score {trade.get('value_score', 0)}, conviction {trade['conviction']}/10"
+                                    record_thesis(ticker, _thesis, ["Dynamic position sizing"], price, trade['conviction'], sector)
+                                    log(f"  📓 Thesis recorded for {ticker}")
+                                except Exception as _e:
+                                    log(f"  [!] Thesis journal failed for {ticker}: {_e}")
                             else:
                                 log(f"[!] Alpaca BUY failed for {ticker}: {trade_result}")
 
@@ -4388,6 +4583,12 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     result = place_stock_order(sym, qty, "sell", "market")
                     if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                         log(f"[OK] SOLD {sym} x{qty} (thesis broken)")
+                        try:
+                            _result = "LOSS" if pnl_pct < 0 else "WIN"
+                            record_outcome(sym, _result, f"Thesis broken: {', '.join(thesis_reasons)}", current)
+                            log(f"  📓 Outcome recorded for {sym}: {_result}")
+                        except Exception as _e:
+                            log(f"  [!] Outcome journal failed for {sym}: {_e}")
                     continue
                 
                 # 2. OPPORTUNITY COST — Sell to redeploy
@@ -4396,6 +4597,12 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     result = place_stock_order(sym, qty, "sell", "market")
                     if result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                         log(f"[OK] SOLD {sym} x{qty} (opportunity cost)")
+                        try:
+                            _result = "LOSS" if pnl_pct < 0 else "WIN"
+                            record_outcome(sym, _result, f"Opportunity cost: {opportunity_cost_reason}", current)
+                            log(f"  📓 Outcome recorded for {sym}: {_result}")
+                        except Exception as _e:
+                            log(f"  [!] Outcome journal failed for {sym}: {_e}")
                     continue
                 
                 # 3. DEFAULT: HOLD — "The best thing to do is usually nothing"
@@ -4406,7 +4613,6 @@ Be specific and actionable. The agent will use these recommendations to place ac
                 # Note: ADD TO WINNERS and THESIS-BROKEN SELL are now handled above
                 # in the unified thesis-driven framework. This section is intentionally
                 # empty to avoid duplicate logic.
-                positions_reviewed += 1
 
             log(f"  Reviewed {positions_reviewed} existing positions with full strategy engine")
             
@@ -4459,14 +4665,14 @@ Be specific and actionable. The agent will use these recommendations to place ac
                 if pos.get('type') == 'stock':
                     option_underlyings.append(pos['symbol'])
             
-            # Add top watchlist recommendations (conviction 7+ for aggressive investor)
+            # Add top watchlist recommendations (conviction 8+ for high-conviction options)
             for wl_line in watchlist_lines:
                 parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
                 if len(parts) >= 5:
                     try:
                         conv = int(parts[4].split('/')[0].strip())
                         ticker = parts[1].strip()
-                        if conv >= 7 and ticker not in option_underlyings:
+                        if conv >= 8 and ticker not in option_underlyings:
                             option_underlyings.append(ticker)
                     except (ValueError, IndexError):
                         pass

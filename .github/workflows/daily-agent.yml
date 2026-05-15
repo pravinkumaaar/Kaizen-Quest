@@ -8,20 +8,13 @@ on:
     - cron: '30 16 * * 1-5'   # 12:30 PM EDT — Mid-day full report
     - cron: '30 20 * * 1-5'   # 4:30 PM EDT — Post-market full report
 
-    # MARKET-HOURS RUNS (every 30 min) - Alerts only
-    - cron: '0 13 * * 1-5'    # 9:00 AM EDT
-    - cron: '30 13 * * 1-5'   # 9:30 AM EDT - Market open
+    # MARKET-HOURS RUNS (every 60 min) - Alerts only
     - cron: '0 14 * * 1-5'    # 10:00 AM EDT
-    - cron: '30 14 * * 1-5'   # 10:30 AM EDT
     - cron: '0 15 * * 1-5'    # 11:00 AM EDT
-    - cron: '30 15 * * 1-5'   # 11:30 AM EDT
     - cron: '0 16 * * 1-5'    # 12:00 PM EDT
     - cron: '0 17 * * 1-5'    # 1:00 PM EDT
-    - cron: '30 17 * * 1-5'   # 1:30 PM EDT
     - cron: '0 18 * * 1-5'    # 2:00 PM EDT
-    - cron: '30 18 * * 1-5'   # 2:30 PM EDT
     - cron: '0 19 * * 1-5'    # 3:00 PM EDT
-    - cron: '30 19 * * 1-5'   # 3:30 PM EDT
   workflow_dispatch:
     inputs:
       run_mode:

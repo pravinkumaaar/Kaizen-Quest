@@ -17,9 +17,23 @@ Setup:
 
 import os
 import json
+import time
 import requests
 from pathlib import Path
 from datetime import datetime, timedelta
+
+
+def _retry(func, max_retries=3, base_delay=2):
+    """Retry a function with exponential backoff."""
+    last_err = None
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except Exception as e:
+            last_err = e
+            if attempt < max_retries - 1:
+                time.sleep(base_delay * (attempt + 1))
+    raise last_err
 
 BASE_DIR = Path(__file__).parent.parent
 TRADES_FILE = BASE_DIR / "docs" / "PAPER_TRADES.md"
@@ -63,12 +77,12 @@ def _alpaca_base():
 # ─────────────────────────────────────────────
 
 def get_account_info() -> dict:
-    """Get paper trading account information."""
+    """Get paper trading account information with retry."""
     api = get_alpaca_client()
     if not api:
         return {"error": "Alpaca not configured"}
     try:
-        account = api.get_account()
+        account = _retry(lambda: api.get_account())
         result = {
             "buying_power": float(account.buying_power),
             "portfolio_value": float(account.portfolio_value),
@@ -81,12 +95,12 @@ def get_account_info() -> dict:
         return {"error": str(e)}
 
 def get_positions() -> list:
-    """Get current stock positions from Alpaca."""
+    """Get current stock positions from Alpaca with retry."""
     api = get_alpaca_client()
     if not api:
         return []
     try:
-        positions = api.list_positions()
+        positions = _retry(lambda: api.list_positions())
         return [{
             "symbol": p.symbol, "qty": int(p.qty),
             "side": getattr(p, 'side', 'long'),
