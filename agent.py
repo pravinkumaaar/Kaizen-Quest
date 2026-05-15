@@ -4085,15 +4085,36 @@ Be specific and actionable. The agent will use these recommendations to place ac
 
             # 10b. Deploy cash into high-conviction opportunities
             # Agent treats paper trading with same discipline as real trading — every dollar matters
-            # Only buys when: conviction >= 8, positive expected value, and opportunity cost of cash > expected return
+            # 10b. Dynamic Trade Execution — Kelly Criterion + Risk Parity + Value Scanning
+            # Research-backed: half-Kelly sizing, conviction-weighted, sector-diversified
+            # Also scans for GARP opportunities: strong fundamentals + stagnant/declining price
             acct = get_account_info()
             if "error" not in acct:
-                available_cash = acct.get('cash', 0)
-                portfolio_val = acct.get('portfolio_value', 100000)
+                available_cash = acct.get("cash", 0)
+                portfolio_val = acct.get("portfolio_value", 100000)
                 cash_pct = available_cash / portfolio_val if portfolio_val > 0 else 1.0
                 log(f"  Cash available: ${available_cash:,.0f} ({cash_pct:.0%} of portfolio)")
 
-                # Read watchlist recommendations — parse all active recommendations
+                # ── Step 1: Scan for GARP value opportunities ──
+                from skills.dynamic_position_sizer import find_value_opportunities, compute_position_sizes
+                
+                value_scan_universe = [
+                    "MSFT", "GOOGL", "AMZN", "META", "TSLA", "NVDA", "AMD", "INTC", "CRM", "NOW",
+                    "JPM", "BAC", "GS", "V", "MA", "AXP", "COIN", "SOFI",
+                    "JNJ", "UNH", "PFE", "ABBV", "LLY", "TMO", "ABT",
+                    "XOM", "CVX", "COP", "SLB", "EOG", "PSX",
+                    "CAT", "DE", "HON", "UPS", "BA", "GE", "LMT",
+                    "NEE", "DUK", "SO", "AEP", "SRE",
+                    "EWY", "EWA", "EIDO", "INDA", "TUR", "KWEB", "GLD", "SLV", "USO",
+                ]
+                
+                value_ops = find_value_opportunities(value_scan_universe)
+                if value_ops:
+                    log(f"  Found {len(value_ops)} value opportunities (strong fundamentals + stagnant/declining price)")
+                    for op in value_ops[:5]:
+                        log(f"    -> {op['ticker']}: score={op['score']}, P/E={op.get('pe', 'N/A')}, Rev Growth={op.get('revenue_growth', 0)*100:.0f}%")
+
+                # ── Step 2: Read watchlist recommendations ──
                 recs_content = read_file(RECOMMENDATIONS_FILE)
                 in_watchlist = False
                 watchlist_lines = []
@@ -4107,80 +4128,83 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     if in_watchlist and rec_line.startswith('- ') and 'Active' in rec_line:
                         watchlist_lines.append(rec_line)
 
-                trades_executed = 0
-                trades_skipped = 0
-                for line in watchlist_lines:
-                    parts = line[2:].split(' | ')
+                # ── Step 3: Build watchlist with prices and conviction ──
+                watchlist_with_prices = []
+                for wl_line in watchlist_lines:
+                    parts = wl_line[2:].split(' | ') if wl_line.startswith('- ') else []
                     if len(parts) >= 5:
+                        ticker = parts[1].strip()
                         try:
                             conviction = int(parts[4].split('/')[0].strip())
-                            ticker = parts[1].strip()
-                            entry_str = parts[2].strip().replace('$', '').replace(',', '')
-                            try:
-                                entry_price = float(entry_str) if entry_str != 'N/A' else 0
-                            except ValueError:
-                                entry_price = 0
+                        except (ValueError, IndexError):
+                            conviction = 5
+                        price_data = _yf_price(ticker)
+                        price = price_data.get('price', 0) if price_data else 0
+                        watchlist_with_prices.append({
+                            'ticker': ticker, 'conviction': conviction, 'price': price,
+                            'change_pct': price_data.get('change_pct', 0) if price_data else 0,
+                            'already_held': any(p['symbol'] == ticker for p in alpaca_positions if p.get('type') == 'stock')
+                        })
 
-                            if entry_price <= 0:
-                                trades_skipped += 1
+                # ── Step 4: Add high-scoring value opportunities to watchlist ──
+                for op in value_ops[:5]:
+                    if not any(w['ticker'] == op['ticker'] for w in watchlist_with_prices):
+                        value_conviction = min(9, max(5, op['score']))
+                        watchlist_with_prices.append({
+                            'ticker': op['ticker'], 'conviction': value_conviction,
+                            'price': op['price'], 'change_pct': 0,
+                            'already_held': any(p['symbol'] == op['ticker'] for p in alpaca_positions if p.get('type') == 'stock'),
+                            'is_value_op': True, 'value_score': op['score']
+                        })
+
+                # ── Step 5: Compute dynamic position sizes using Kelly Criterion ──
+                trades_executed = 0
+                total_deployed = 0
+                if watchlist_with_prices and available_cash > 500:
+                    try:
+                        existing_for_sizer = [{'symbol': pos['symbol'], 'market_value': float(pos.get('market_value', 0)), 'sector': pos.get('sector', 'Unknown')} for pos in alpaca_positions if pos.get('type') == 'stock']
+
+                        sizing_result = compute_position_sizes(
+                            available_cash=available_cash, portfolio_value=portfolio_val,
+                            existing_positions=existing_for_sizer, watchlist=watchlist_with_prices,
+                            max_single_position_pct=0.12, max_cash_per_trade=0.35,
+                            max_total_deployment=0.70, min_trade_size=200,
+                        )
+
+                        log(f"  Position sizing: {sizing_result['summary']['trades_count']} trades, "
+                            f"${sizing_result['summary']['total_deployed']:,.0f} deployed "
+                            f"({sizing_result['summary']['deployment_pct']}% of cash)")
+
+                        for trade in sizing_result.get("trades", []):
+                            ticker = trade['ticker']
+                            qty = trade['qty']
+                            price = trade['price']
+                            cost = trade['cost']
+
+                            if cost > available_cash - total_deployed:
+                                log(f"  Skip {ticker}: cost ${cost:,.0f} exceeds remaining cash")
                                 continue
 
-                            # Skip if already held
-                            already_held = any(p['symbol'] == ticker for p in alpaca_positions)
-                            if already_held:
-                                log(f"  Skip {ticker}: already held in Alpaca")
-                                trades_skipped += 1
-                                continue
-
-                            # AGGRESSIVE: Buy conviction 7+ (owner is aggressive investor)
-                            # Conviction 7 = 3-5% position, 8 = 5-8%, 9+ = 8-10%
-                            if conviction < 7:
-                                log(f"  Skip {ticker}: conviction {conviction}/10 below 7+ threshold")
-                                trades_skipped += 1
-                                continue
-
-                            # Calculate position size based on conviction
-                            if conviction >= 10:
-                                pct = 0.10
-                            elif conviction >= 9:
-                                pct = 0.08
-                            elif conviction >= 8:
-                                pct = 0.06
-                            else:  # conviction 7
-                                pct = 0.04
-                            dollar_amount = portfolio_val * pct
-
-                            # Don't deploy more than 40% of available cash in a single trade
-                            dollar_amount = min(dollar_amount, available_cash * 0.40)
-
-                            if dollar_amount < 200:
-                                log(f"  Skip {ticker}: allocation ${dollar_amount:.0f} too small (min $200)")
-                                trades_skipped += 1
-                                continue
-
-                            qty = max(1, int(dollar_amount / entry_price))
-
-                            log(f"  → BUY {ticker}: conviction {conviction}/10, ${dollar_amount:,.0f} ({pct:.0%} of portfolio), x{qty} @ ${entry_price:.2f}")
+                            log(f"  -> BUY {ticker}: {qty} shares @ ${price:.2f} = ${cost:,.0f} "
+                                f"(conv {trade['conviction']}/10, Kelly {trade['kelly_fraction']:.1%})")
                             trade_result = place_stock_order(ticker, qty, "buy", "market")
                             if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new"]:
                                 trades_executed += 1
-                                log(f"[OK] Alpaca BUY: {ticker} x{qty} @ ${entry_price:.2f} (status: {trade_result.get('status')})")
-                            elif trade_result.get("status") == "REJECTED":
-                                log(f"[!] Alpaca BUY rejected for {ticker}: {trade_result.get('error', 'unknown')}")
-                                trades_skipped += 1
+                                total_deployed += cost
+                                log(f"[OK] Alpaca BUY: {ticker} x{qty} @ ${price:.2f} = ${cost:,.0f}")
                             else:
-                                log(f"[!] Alpaca BUY uncertain for {ticker}: {trade_result}")
-                                trades_skipped += 1
-                        except (ValueError, IndexError):
-                            trades_skipped += 1
-                            continue
+                                log(f"[!] Alpaca BUY failed for {ticker}: {trade_result}")
+
+                        for skip in sizing_result.get("skipped", []):
+                            log(f"  Skip {skip['ticker']}: {skip['reason']}")
+
+                    except Exception as e:
+                        log(f"[!] Dynamic sizing failed: {e}")
 
                 if trades_executed == 0:
-                    log(f"  No trades executed — {trades_skipped} ideas skipped (conviction < 7, already held, or too small)")
+                    log(f"  No trades executed")
                     if cash_pct > 0.50:
                         log(f"  ⚠️ Cash at {cash_pct:.0%} — agent didn't find enough high-conviction opportunities to deploy")
-                else:
-                    log(f"[OK] Executed {trades_executed} Alpaca stock trade(s) this run ({trades_skipped} skipped)")
 
             # 10c. Active position management — best-in-class long-term strategies
             # Combines: Buffett's "hold wonderful businesses", Dalio's risk parity,
@@ -4444,8 +4468,9 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     except (ValueError, IndexError):
                         pass
             
-            # Limit to top 8 underlyings to get more options coverage
-            option_underlyings = option_underlyings[:8]
+            # Limit to top 5 underlyings — focus on quality over quantity
+            # Only trade options when we have high conviction and clear edge
+            option_underlyings = option_underlyings[:5]
             
             all_options_strategies = []
             for underlying in option_underlyings:
