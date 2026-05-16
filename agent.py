@@ -3292,18 +3292,20 @@ def main():
     log("📰 Fetching Finnhub news...")
     fin_news = finnhub_news()
 
-    # Optionally do a Tavily deep-dive on today's top story (conserve credits)
-    # Use Eastern Time for consistency
+    # Tavily deep-dive: Only in full mode, morning/evening (conserve free tier)
+    # Research mode skips Tavily entirely — uses cached news + free data only
     try:
         import pytz
         eastern = pytz.timezone('US/Eastern')
         run_hour = datetime.datetime.now(eastern).hour
     except ImportError:
         run_hour = datetime.datetime.now().hour
-    if run_hour in [11, 17]:  # only 2 of 5 runs use Tavily
-        log("🔍 Tavily deep-dive (morning/evening run only)...")
+    if not RESEARCH_MODE and run_hour in [11, 17]:
+        log("🔍 Tavily deep-dive (full mode, morning/evening only)...")
         extra = tavily_search("latest AI model releases investment implications today", 3)
         fin_news = fin_news + "\n\nDEEP DIVE:\n" + extra
+    elif RESEARCH_MODE:
+        log("📝 RESEARCH mode — skipping Tavily (using cached news + free data)")
 
     # 3. Analyze portfolio and market sentiment
     log("📊 Analyzing portfolio positions by weightage...")
@@ -3657,17 +3659,20 @@ def main():
     digest      = task_news_digest(rss, fin_news, memory)
     digest_summary = summarize_text(digest, "news digest", 300)
 
-    # Fetch options data early with portfolio tickers included
-    # Use skill module's fetch_options_snapshot for better reliability
-    try:
-        from skills.options_intelligence import fetch_options_snapshot as _fetch_options
-        options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL", "PLTR"] + top_portfolio_tickers))
-        options_context = _fetch_options(options_tickers)
-    except Exception:
-        options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL"] + top_portfolio_tickers))
-        options_context = fetch_options_snapshot_yfinance(options_tickers)
-        if not options_context or options_context == "[Options data unavailable]":
-            options_context = "[Options data unavailable — both Polygon and yfinance failed. This may be due to after-hours data delays or API rate limits.]"
+    # Fetch options data — skip entirely in research mode (saves yfinance/Polygon API calls)
+    if RESEARCH_MODE:
+        options_context = "[Research mode — options data skipped to conserve API calls]"
+        log("📝 RESEARCH mode — skipping options data fetch")
+    else:
+        try:
+            from skills.options_intelligence import fetch_options_snapshot as _fetch_options
+            options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL", "PLTR"] + top_portfolio_tickers))
+            options_context = _fetch_options(options_tickers)
+        except Exception:
+            options_tickers = list(set(["SPY", "QQQ", "NVDA", "AAPL"] + top_portfolio_tickers))
+            options_context = fetch_options_snapshot_yfinance(options_tickers)
+            if not options_context or options_context == "[Options data unavailable]":
+                options_context = "[Options data unavailable — both Polygon and yfinance failed. This may be due to after-hours data delays or API rate limits.]"
 
     # Build combined context for investment ideas with ALL data
     investment_context = options_context
