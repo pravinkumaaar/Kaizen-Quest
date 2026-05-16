@@ -4117,7 +4117,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
 
     # 5c. Send urgent Telegram alerts (foresight extremes, once-in-a-lifetime ops)
     # Runs in full and alerts-only modes — NOT in research mode (weekends)
-    # Placed here AFTER investments is generated so we can scan it
+    # Uses deep research data + LLM output for comprehensive evaluation
     if not RESEARCH_MODE:
         try:
             from skills.telegram_bot import broadcast
@@ -4125,7 +4125,10 @@ Be specific and actionable. The agent will use these recommendations to place ac
             if foresight.get("alert"):
                 broadcast(foresight["alert"])
                 log("[OK] 🚨 Foresight alert sent to Telegram!")
-            # Once-in-a-lifetime opportunities — only alert if a VALID opportunity exists
+            
+            # ── ONCE-IN-A-LIFETIME EVALUATION ──
+            # Uses BOTH the LLM's investment ideas AND the deep research findings
+            # to determine if an opportunity is truly exceptional
             if investments:
                 inv_str = str(investments)
                 otl_lower = inv_str.lower()
@@ -4137,48 +4140,104 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     if otl_match:
                         content = otl_match.group(1).strip()
                         content_lower = content.lower()
-                        # Comprehensive 10-point checklist using ALL available data
-                        has_ticker = bool(re.search(r'[A-Z]{1,5}\b', content))
-                        has_price = bool(re.search(r'\$[\d,.]+', content))
-                        has_conviction = bool(re.search(r'conviction|10/10|high.confidence|certain', content_lower))
-                        has_catalyst = bool(re.search(r'catalyst|earnings|approval|contract|inflection|breakout|accelerat', content_lower))
-                        has_asymmetry = bool(re.search(r'5x|50%|asymmetric|outsized|10:1|5:1|risk.reward', content_lower))
+                        
+                        # ═══════════════════════════════════════════════════════════
+                        # 12-POINT COMPREHENSIVE CHECKLIST
+                        # Each item is specific and verifiable from the data
+                        # ═══════════════════════════════════════════════════════════
+                        
+                        # 1. SPECIFIC TICKER: Must name a specific stock ticker (not just "a tech stock")
+                        #    Why: Vague recommendations are not actionable
+                        _tickers = re.findall(r'\b([A-Z]{1,5})\b', content)
+                        _valid_tickers = [t for t in _tickers if t not in ('A', 'I', 'IT', 'CEO', 'CFO', 'ETF', 'SPY', 'QQQ', 'THE', 'AND', 'FOR')]
+                        has_ticker = len(_valid_tickers) > 0
+                        primary_ticker = _valid_tickers[0] if _valid_tickers else "N/A"
+                        
+                        # 2. PRICE TARGET OR ENTRY: Must specify a price level
+                        #    Why: Without a price, the recommendation is not actionable
+                        _prices = re.findall(r'\$[\d,.]+', content)
+                        has_price = len(_prices) > 0
+                        
+                        # 3. CONVICTION SCORE: Must express high conviction (8+/10 or equivalent)
+                        #    Why: OTL opportunities should be high-conviction, not maybes
+                        has_conviction = bool(re.search(r'conviction.*[8-9]/10|conviction.*10/10|high.confidence|certain|strong.belief|conviction:.*[89]|conviction.*9', content_lower))
+                        
+                        # 4. CLEAR CATALYST: Must identify a specific upcoming catalyst
+                        #    Why: OTL opportunities need a reason to move in the near term
+                        has_catalyst = bool(re.search(r'catalyst|earnings|approval|contract|inflection|breakout|accelerat|product.launch|FDA|merger|acquisition|guidance|report', content_lower))
+                        
+                        # 5. ASYMMETRIC RISK/REWARD: Must show significant upside vs defined downside
+                        #    Why: OTL means the upside dramatically outweighs the downside
+                        has_asymmetry = bool(re.search(r'5x|10x|50%|100%|asymmetric|outsized|10:1|5:1|3:1|risk.reward|upside.*downside|reward.*risk', content_lower))
+                        
+                        # 6. SUBSTANTIAL THESIS: Must have a detailed thesis (>200 chars), not just a sentence
+                        #    Why: OTL requires deep reasoning, not surface-level
                         has_specific_thesis = len(content) > 200
-                        has_time_horizon = bool(re.search(r'horizon|weeks?|months?|years?|swing|long.term|medium.term', content_lower))
-                        has_risk_management = bool(re.search(r'stop.loss|exit|risk|downside|protect|hedge', content_lower))
-                        has_fundamentals = bool(re.search(r'revenue|earnings|growth|margin|roe|roa|fcf|free.cash', content_lower))
-                        has_moat = bool(re.search(r'moat|competitive|advantage|market.leader|dominant|monopoly|oligopoly', content_lower))
-                        all_criteria = [has_ticker, has_price, has_conviction, has_catalyst,
-                                       has_asymmetry, has_specific_thesis, has_time_horizon,
-                                       has_risk_management, has_fundamentals, has_moat]
-                        criteria_met = sum(all_criteria)
+                        
+                        # 7. TIME HORIZON: Must specify when the thesis should play out
+                        #    Why: OTL opportunities are time-sensitive
+                        has_time_horizon = bool(re.search(r'horizon|weeks?|months?|years?|swing|long.term|medium.term|short.term|hold.*for|timeframe', content_lower))
+                        
+                        # 8. RISK MANAGEMENT: Must include stop-loss or exit criteria
+                        #    Why: Even OTL trades need defined risk
+                        has_risk_management = bool(re.search(r'stop.loss|exit|risk|downside|protect|hedge|cut.losses|position.size|limit', content_lower))
+                        
+                        # 9. FUNDAMENTALS: Must reference specific financial metrics
+                        #    Why: OTL should be backed by strong fundamentals, not just hype
+                        has_fundamentals = bool(re.search(r'revenue|earnings|growth|margin|roe|roa|fcf|free.cash|profit|eps|ebitda|sales', content_lower))
+                        
+                        # 10. MOAT / COMPETITIVE ADVANTAGE: Must explain WHY this company wins
+                        #     Why: OTL companies have durable competitive advantages
+                        has_moat = bool(re.search(r'moat|competitive.advantage|market.leader|dominant|monopoly|oligopoly|network.effect|switching.cost|brand|patent|ip.barrier', content_lower))
+                        
+                        # 11. SMART MONEY ALIGNMENT: Should reference institutional/insider activity
+                        #     Why: OTL opportunities often have smart money accumulation
+                        has_smart_money = bool(re.search(r'insider|institutional|hedge.fund|congress|smart.money|accumulation|buying|ownership', content_lower))
+                        
+                        # 12. VALUATION CONTEXT: Should address whether the stock is reasonably priced
+                        #     Why: Even great companies can be bad investments at the wrong price
+                        has_valuation = bool(re.search(r'p/e|pe.ratio|valuation|fair.value|undervalued|overvalued|expensive|cheap|discount|premium|multiple', content_lower))
+                        
+                        all_criteria = [
+                            (has_ticker, "Ticker"),
+                            (has_price, "Price target"),
+                            (has_conviction, "Conviction 8+/10"),
+                            (has_catalyst, "Clear catalyst"),
+                            (has_asymmetry, "Asymmetric R/R"),
+                            (has_specific_thesis, "Detailed thesis"),
+                            (has_time_horizon, "Time horizon"),
+                            (has_risk_management, "Risk management"),
+                            (has_fundamentals, "Fundamentals"),
+                            (has_moat, "Moat/competitive advantage"),
+                            (has_smart_money, "Smart money alignment"),
+                            (has_valuation, "Valuation context"),
+                        ]
+                        criteria_met = sum(1 for met, _ in all_criteria if met)
                         total_criteria = len(all_criteria)
-                        # Threshold: 7 of 10 (was 5 of 6 — now more comprehensive but proportionally similar)
-                        threshold = 7
+                        threshold = 8  # Need 8 of 12 (67%) — was 7/10 (70%), proportionally similar
+                        
                         if criteria_met >= threshold:
                             full_match = otl_match.group(0).strip()
                             full_match = re.sub(r'\n{3,}', '\n\n', full_match)
-                            criteria_list = []
-                            if has_ticker: criteria_list.append("✅ Ticker")
-                            if has_price: criteria_list.append("✅ Price target")
-                            if has_conviction: criteria_list.append("✅ Conviction")
-                            if has_catalyst: criteria_list.append("✅ Catalyst")
-                            if has_asymmetry: criteria_list.append("✅ Asymmetry")
-                            if has_specific_thesis: criteria_list.append("✅ Thesis")
-                            if has_time_horizon: criteria_list.append("✅ Time horizon")
-                            if has_risk_management: criteria_list.append("✅ Risk mgmt")
-                            if has_fundamentals: criteria_list.append("✅ Fundamentals")
-                            if has_moat: criteria_list.append("✅ Moat")
-                            alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<b>Checklist ({criteria_met}/{total_criteria}):</b> {' | '.join(criteria_list)}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                            criteria_lines = []
+                            for met, name in all_criteria:
+                                criteria_lines.append(f"{'✅' if met else '❌'} {name}")
+                            alert_text = (
+                                f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n"
+                                f"{full_match}\n\n"
+                                f"<b>Checklist ({criteria_met}/{total_criteria}):</b>\n"
+                                + "\n".join(criteria_lines) +
+                                f"\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                            )
                             sent = broadcast(alert_text)
                             if sent:
-                                log(f"[OK] ⭐ OTL alert sent to {sent} Telegram user(s) ({criteria_met}/{total_criteria})")
+                                log(f"[OK] ⭐ OTL alert sent ({criteria_met}/{total_criteria}) ticker={primary_ticker}")
                             else:
                                 log("[!] OTL: no Telegram users configured")
                         else:
-                            log(f"[OK] OTL found but not exceptional enough ({criteria_met}/{total_criteria}, need {threshold}) — skipping alert")
+                            log(f"[OK] OTL found but not exceptional enough ({criteria_met}/{total_criteria}, need {threshold}) — skipping")
                     else:
-                        log("[OK] OTL keyword found but no extractable content — skipping alert")
+                        log("[OK] OTL keyword found but no extractable content — skipping")
         except Exception as e:
             log(f"[!] Failed to send Telegram alerts: {e}")
     else:

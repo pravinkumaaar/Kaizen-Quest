@@ -2,12 +2,15 @@ name: Trading Agent Scheduler
 
 "on":
   schedule:
-    # WEEKDAY RUNS (Mon-Fri) — Cron is in UTC, agent handles DST mode detection
+    # ═══════════════════════════════════════════════════════════
+    # WEEKDAY RUNS (Mon-Fri) — Cron is in UTC
+    # Agent handles DST detection internally
+    # ═══════════════════════════════════════════════════════════
     
-    # Pre-market research: 6 AM ET
+    # Pre-market research: 6 AM ET (10 UTC EDT / 11 UTC EST)
     - cron: "0 10,11 * * 1-5"
     
-    # Pre-market full report: 8 AM ET
+    # Pre-market full report: 8 AM ET (12 UTC EDT / 13 UTC EST)
     - cron: "0 12,13 * * 1-5"
     
     # Market hours: every hour 9:30 AM - 3:30 PM ET (alerts-only)
@@ -19,10 +22,10 @@ name: Trading Agent Scheduler
     - cron: "30 18,19 * * 1-5"
     - cron: "30 19,20 * * 1-5"
     
-    # Mid-day full report: 12:30 PM ET
+    # Mid-day full report: 12:30 PM ET (16:30 UTC EDT / 17:30 UTC EST)
     - cron: "30 16,17 * * 1-5"
     
-    # Post-market full report: 4:30 PM ET
+    # Post-market full report: 4:30 PM ET (20:30 UTC EDT / 21:30 UTC EST)
     - cron: "30 20,21 * * 1-5"
     
     # Post-market research: 6 PM, 8 PM, 10 PM ET
@@ -30,9 +33,13 @@ name: Trading Agent Scheduler
     - cron: "0 0,1 * * 2-6"
     - cron: "0 2,3 * * 2-6"
     
-    # WEEKEND RESEARCH: Every 3 hours, 24/7
-    - cron: "0 0,3,6,9,12,15,18,21 * * 6"
-    - cron: "0 0,3,6,9,12,15,18,21 * * 0"
+    # ═══════════════════════════════════════════════════════════
+    # WEEKEND RESEARCH RUNS (Sat-Sun) — Every 2 hours, 24/7
+    # 12 runs/day x 2 days = 24 weekend runs
+    # API budget: research mode uses ~0 Tavily searches (no LLM-heavy report gen)
+    # ═══════════════════════════════════════════════════════════
+    - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * 6"
+    - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * 0"
   
   workflow_dispatch:
     inputs:
