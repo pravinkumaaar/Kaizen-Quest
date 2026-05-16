@@ -3145,7 +3145,8 @@ def main():
         SILENT_MODE
     except NameError:
         _run_mode = os.environ.get("RUN_MODE", "")
-        SILENT_MODE = _run_mode in ("silent", "alerts-only")
+        SILENT_MODE = _run_mode in ("silent", "alerts-only", "research")
+        RESEARCH_MODE = _run_mode == "research"
     
     # Initialize run metadata — always use US Eastern Time (owner is in Jersey City, NJ)
     global NOW, TODAY, RUN_LABEL, IS_MARKET_OPEN
@@ -3714,6 +3715,39 @@ def main():
         except Exception as e:
             log(f"[!] Sector rotation analysis failed: {e}")
 
+    # 4b-1. YouTube Channel Analysis — Parse stock picks from ZipTrader, Tom Nash, etc.
+    youtube_context = ""
+    if SKILLS_AVAILABLE:
+        try:
+            log("📺 Parsing YouTube channel recommendations...")
+            from skills.youtube_parser import YouTubeStockParser
+            _yt_parser = YouTubeStockParser()
+            _yt_channels = {
+                "ZipTrader": None,
+                "Tom Nash": None,
+            }
+            _yt_picks = _yt_parser.get_all_channel_picks(_yt_channels, max_videos=5)
+            
+            if _yt_picks and _yt_picks.get("results"):
+                _yt_lines = []
+                _yt_lines.append("## 📺 YouTube Channel Picks")
+                for _pick in _yt_picks["results"][:5]:
+                    _tickers = ", ".join(_pick.get("ticker_list", []))
+                    _yt_lines.append(f"- **{_pick['channel']}**: {_pick['title'][:80]}")
+                    _yt_lines.append(f"  Tickers mentioned: {_tickers}")
+                    _yt_lines.append(f"  URL: {_pick['url']}")
+                
+                if _yt_picks.get("consensus_tickers"):
+                    _consensus = ", ".join(_yt_picks["consensus_tickers"].keys())
+                    _yt_lines.append(f"\n**Consensus** (multiple channels): {_consensus}")
+                
+                youtube_context = "\n".join(_yt_lines)
+                log(f"[OK] YouTube analysis: {len(_yt_picks['results'])} videos, {len(_yt_picks.get('consensus_tickers', {}))} consensus tickers")
+            else:
+                log("  No YouTube picks found (API key may not be configured)")
+        except Exception as e:
+            log(f"[!] YouTube analysis failed: {e}")
+
     # 4c. Benchmark Comparison — Same-timeframe portfolio vs benchmarks + global + commodities
     benchmark_context = ""
     benchmark_report = ""
@@ -3786,6 +3820,8 @@ def main():
         investment_context += f"\n\n🌍 GLOBAL MARKETS:\n{global_report}\nConsider international diversification opportunities."
     if commodities_report:
         investment_context += f"\n\n🥇 COMMODITIES & METALS:\n{commodities_report}\nConsider commodity exposure for portfolio hedging and alpha generation."
+    if youtube_context:
+        investment_context += f"\n\n{youtube_context}\n\n**IMPORTANT:** These are YouTube mentions — NOT recommendations. Use them as a starting point for your OWN due diligence. Verify all claims through your deep research before considering any of these tickers."
 
     # 4d-9. DEEP RESEARCH — Comprehensive multi-source research on key tickers
     # This runs BEFORE the LLM investment ideas call to ensure the agent
@@ -4247,7 +4283,8 @@ Be specific and actionable. The agent will use these recommendations to place ac
             log(f"[!] ClickUp task creation failed: {e}")
 
     # 10. Execute trades on Alpaca for high-conviction recommendations (8+)
-    if SKILLS_AVAILABLE:
+    # Skip trading in research mode (weekends) — only do deep research
+    if SKILLS_AVAILABLE and not RESEARCH_MODE:
         try:
             from skills.alpaca_trading import (place_stock_order, place_option_order,
                                                 get_all_positions_including_options,
@@ -4648,267 +4685,274 @@ Be specific and actionable. The agent will use these recommendations to place ac
                     log(f"  → Consider trimming weak positions even if stop-loss not hit — opportunity cost is real")
 
             # 10d. Advanced options strategies — research-backed, high-return, defined-risk
-            from skills.options_strategies import (
-                generate_options_strategies, format_options_report,
-                get_options_chain, get_option_pricing, analyze_iv_rank, find_mispriced_options
-            )
-            from skills.alpaca_trading import find_option_symbol
-            # Re-init options strategies skill for trading context (already initialized earlier)
-            init_options_strategies_skill(
-                alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
-                finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR)
-            )
+            # Skip entirely in research mode (weekends are for deep research only)
+            if RESEARCH_MODE:
+                log("📝 RESEARCH mode — skipping options strategy generation and trading")
+                options_executed = 0
+                options_failed = 0
+                all_options_strategies = []
+            else:
+                from skills.options_strategies import (
+                    generate_options_strategies, format_options_report,
+                    get_options_chain, get_option_pricing, analyze_iv_rank, find_mispriced_options
+                )
+                from skills.alpaca_trading import find_option_symbol
+                # Re-init options strategies skill for trading context (already initialized earlier)
+                init_options_strategies_skill(
+                    alpaca_key=ALPACA_API_KEY, alpaca_secret=ALPACA_SECRET_KEY,
+                    finnhub_key=FINNHUB_API_KEY, base_dir=str(BASE_DIR)
+                )
             
-            options_executed = 0
-            options_failed = 0
+                options_executed = 0
+                options_failed = 0
             
-            # Generate advanced options strategies for high-conviction names
-            # Focus on: existing Alpaca positions + top watchlist picks
-            option_underlyings = []
+                    # Generate advanced options strategies for high-conviction names
+                # Focus on: existing Alpaca positions + top watchlist picks
+                option_underlyings = []
             
-            # Add existing Alpaca positions
-            for pos in alpaca_positions:
-                if pos.get('type') == 'stock':
-                    option_underlyings.append(pos['symbol'])
+                # Add existing Alpaca positions
+                for pos in alpaca_positions:
+                    if pos.get('type') == 'stock':
+                        option_underlyings.append(pos['symbol'])
             
-            # Add top watchlist recommendations (conviction 8+ for high-conviction options)
-            for wl_line in watchlist_lines:
-                parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
-                if len(parts) >= 5:
+                # Add top watchlist recommendations (conviction 8+ for high-conviction options)
+                for wl_line in watchlist_lines:
+                    parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                    if len(parts) >= 5:
+                        try:
+                            conv = int(parts[4].split('/')[0].strip())
+                            ticker = parts[1].strip()
+                            if conv >= 8 and ticker not in option_underlyings:
+                                option_underlyings.append(ticker)
+                        except (ValueError, IndexError):
+                            pass
+            
+                # Limit to top 5 underlyings — focus on quality over quantity
+                # Only trade options when we have high conviction and clear edge
+                option_underlyings = option_underlyings[:5]
+            
+                all_options_strategies = []
+                for underlying in option_underlyings:
                     try:
-                        conv = int(parts[4].split('/')[0].strip())
-                        ticker = parts[1].strip()
-                        if conv >= 8 and ticker not in option_underlyings:
-                            option_underlyings.append(ticker)
-                    except (ValueError, IndexError):
-                        pass
+                        price = _yf_price(underlying)["price"]
+                        if price <= 0:
+                            continue
+                    
+                        # Analyze IV rank
+                        iv_analysis = analyze_iv_rank(underlying)
+                        iv_rank = iv_analysis["iv_rank"] if iv_analysis else 50
+                    
+                        # Find mispriced options
+                        mispriced = find_mispriced_options(underlying)
+                    
+                        # Determine direction from existing position or watchlist
+                        direction = "neutral"
+                        conviction = 7
+                        for wl_line in watchlist_lines:
+                            parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
+                            if len(parts) >= 5 and parts[1].strip() == underlying:
+                                try:
+                                    conviction = int(parts[4].split('/')[0].strip())
+                                except (ValueError, IndexError):
+                                    pass
+                                # Check if bullish or bearish from the thesis
+                                thesis = str(parts).lower()
+                                if any(w in thesis for w in ['buy', 'bull', 'up', 'growth', 'beat']):
+                                    direction = "bullish"
+                                elif any(w in thesis for w in ['sell', 'bear', 'down', 'miss', 'weak']):
+                                    direction = "bearish"
+                                break
+                    
+                        # If we hold it and it's uptrend, direction is bullish
+                        for pos in alpaca_positions:
+                            if pos['symbol'] == underlying and pos.get('unrealized_plpc', 0) > 0:
+                                direction = "bullish"
+                    
+                        # Generate strategies
+                        strategies = generate_options_strategies(
+                            underlying, conviction, direction, price
+                        )
+                    
+                        if strategies:
+                            all_options_strategies.extend(strategies)
+                            log(f"  {underlying}: {len(strategies)} strategies generated (IV rank: {iv_rank:.0f}, {len(mispriced)} mispriced)")
+                
+                    except Exception as e:
+                        log(f"  [!] Error analyzing options for {underlying}: {e}")
+                        continue
             
-            # Limit to top 5 underlyings — focus on quality over quantity
-            # Only trade options when we have high conviction and clear edge
-            option_underlyings = option_underlyings[:5]
-            
-            all_options_strategies = []
-            for underlying in option_underlyings:
-                try:
-                    price = _yf_price(underlying)["price"]
-                    if price <= 0:
+                # Execute the best options strategies (highest conviction, best risk/reward)
+                for strat in sorted(all_options_strategies, key=lambda s: s.get('conviction', 0), reverse=True)[:3]:
+                    try:
+                        underlying = strat.get('underlying', '')
+                        strategy_name = strat.get('strategy', 'UNKNOWN')
+                    
+                        # ── SINGLE-LEG STRATEGIES (long call, long put, cash-secured put) ──
+                        option_info = strat.get('option', {})
+                        if option_info:
+                            option_symbol = option_info.get('symbol', '')
+                            if not option_symbol:
+                                strike = float(option_info.get('strike_price', 0))
+                                occ_type = 'call' if 'call' in strategy_name.lower() else 'put'
+                                dte = option_info.get('dte', 30)
+                                option_symbol = find_option_symbol(underlying, occ_type, strike, dte)
+                        
+                            if not option_symbol:
+                                log(f"  [!] Could not find OCC symbol for {strategy_name} on {underlying}")
+                                options_failed += 1
+                                continue
+                        
+                            # Position sizing: max 3% of portfolio per options trade
+                            acct = get_account_info()
+                            portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
+                            options_budget = portfolio_val * 0.03
+                        
+                            pricing = get_option_pricing([option_symbol])
+                            opt_price = 0
+                            if pricing.get(option_symbol):
+                                snap = pricing[option_symbol]
+                                opt_price = float(snap.get("latestTrade", {}).get("p", 0) or 
+                                                 snap.get("latestQuote", {}).get("ap", 0))
+                        
+                            if opt_price > 0:
+                                max_contracts = max(1, int(options_budget / (opt_price * 100)))
+                                qty = min(max_contracts, 2)
+                            else:
+                                qty = 1
+                        
+                            log(f"  → EXECUTE: {strategy_name} on {underlying} — {option_symbol} x{qty}")
+                            trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
+                            if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
+                                options_executed += 1
+                                log(f"[OK] Options trade: BUY {option_symbol} x{qty} ({trade_result.get('status')})")
+                            else:
+                                options_failed += 1
+                                log(f"[!] Options trade failed: {option_symbol} — {trade_result}")
+                            continue
+                    
+                        # ── MULTI-LEG STRATEGIES (debit spreads, iron condors, straddles) ──
+                        # These require multiple orders. We execute each leg separately.
+                        legs_to_execute = []
+                    
+                        # Debit spreads: long_leg + short_leg
+                        if strat.get('long_leg') and strat.get('short_leg'):
+                            for leg_type in ['long_leg', 'short_leg']:
+                                leg = strat[leg_type]
+                                leg_symbol = leg.get('symbol', '')
+                                if not leg_symbol:
+                                    strike = float(leg.get('strike_price', 0))
+                                    occ_type = 'call' if 'call' in strategy_name.lower() or leg_type == 'long_leg' and 'CALL' in strategy_name else 'put'
+                                    dte = leg.get('dte', 30)
+                                    leg_symbol = find_option_symbol(underlying, occ_type, strike, dte)
+                                if leg_symbol:
+                                    action = 'buy' if leg_type == 'long_leg' else 'sell'
+                                    legs_to_execute.append((leg_symbol, action))
+                    
+                        # Iron condor: call_spread + put_spread
+                        elif strat.get('call_spread') and strat.get('put_spread'):
+                            call_spread = strat['call_spread']
+                            put_spread = strat['put_spread']
+                            # Call spread: sell lower strike, buy higher strike
+                            for i, leg in enumerate(call_spread):
+                                leg_symbol = leg.get('symbol', '') if isinstance(leg, dict) else ''
+                                if not leg_symbol and isinstance(leg, dict):
+                                    strike = float(leg.get('strike_price', 0))
+                                    leg_symbol = find_option_symbol(underlying, 'call', strike, leg.get('dte', 30))
+                                if leg_symbol:
+                                    action = 'sell' if i == 0 else 'buy'
+                                    legs_to_execute.append((leg_symbol, action))
+                            # Put spread: sell higher strike, buy lower strike
+                            for i, leg in enumerate(put_spread):
+                                leg_symbol = leg.get('symbol', '') if isinstance(leg, dict) else ''
+                                if not leg_symbol and isinstance(leg, dict):
+                                    strike = float(leg.get('strike_price', 0))
+                                    leg_symbol = find_option_symbol(underlying, 'put', strike, leg.get('dte', 30))
+                                if leg_symbol:
+                                    action = 'sell' if i == 0 else 'buy'
+                                    legs_to_execute.append((leg_symbol, action))
+                    
+                        # Straddle/Strangle: buy call + buy put
+                        elif 'STRADDLE' in strategy_name or 'STRANGLE' in strategy_name:
+                            # For straddles, we need to find ATM call and put
+                            chain_data = get_options_chain(underlying, min_dte=14, max_dte=60)
+                            if chain_data:
+                                price = _yf_price(underlying)["price"]
+                                if price > 0:
+                                    # ATM call
+                                    atm_calls = sorted(chain_data.get('calls', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
+                                    # ATM put
+                                    atm_puts = sorted(chain_data.get('puts', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
+                                    if atm_calls:
+                                        call_symbol = atm_calls[0].get('symbol', '')
+                                        if not call_symbol:
+                                            call_symbol = find_option_symbol(underlying, 'call', float(atm_calls[0].get('strike_price', 0)), atm_calls[0].get('dte', 30))
+                                        if call_symbol:
+                                            legs_to_execute.append((call_symbol, 'buy'))
+                                    if atm_puts:
+                                        put_symbol = atm_puts[0].get('symbol', '')
+                                        if not put_symbol:
+                                            put_symbol = find_option_symbol(underlying, 'put', float(atm_puts[0].get('strike_price', 0)), atm_puts[0].get('dte', 30))
+                                        if put_symbol:
+                                            legs_to_execute.append((put_symbol, 'buy'))
+                    
+                        # Execute all legs
+                        if legs_to_execute:
+                            acct = get_account_info()
+                            portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
+                            options_budget = portfolio_val * 0.03
+                            max_legs = max(1, int(options_budget / 500))  # Rough estimate: $500 per leg
+                            qty = min(max_legs, 2)
+                        
+                            all_legs_success = True
+                            for leg_symbol, action in legs_to_execute:
+                                log(f"  → EXECUTE LEG: {action} {leg_symbol} x{qty} ({strategy_name})")
+                                trade_result = place_option_order(underlying, leg_symbol, qty, action, "market")
+                                if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
+                                    log(f"[OK] Leg executed: {action} {leg_symbol} x{qty}")
+                                else:
+                                    all_legs_success = False
+                                    log(f"[!] Leg failed: {action} {leg_symbol} — {trade_result}")
+                        
+                            if all_legs_success:
+                                options_executed += 1
+                                log(f"[OK] Multi-leg options trade: {strategy_name} on {underlying} ({len(legs_to_execute)} legs)")
+                            else:
+                                options_failed += 1
+                                log(f"[!] Multi-leg options trade partially failed: {strategy_name}")
+                        else:
+                            log(f"  [!] Skipping {strategy_name} — could not determine option symbols for legs")
+                            options_failed += 1
+                
+                    except Exception as e:
+                        options_failed += 1
+                        log(f"  [!] Error executing options strategy: {e}")
                         continue
                     
-                    # Analyze IV rank
-                    iv_analysis = analyze_iv_rank(underlying)
-                    iv_rank = iv_analysis["iv_rank"] if iv_analysis else 50
-                    
-                    # Find mispriced options
-                    mispriced = find_mispriced_options(underlying)
-                    
-                    # Determine direction from existing position or watchlist
-                    direction = "neutral"
-                    conviction = 7
-                    for wl_line in watchlist_lines:
-                        parts = wl_line.split(' | ') if wl_line.startswith('- ') else []
-                        if len(parts) >= 5 and parts[1].strip() == underlying:
-                            try:
-                                conviction = int(parts[4].split('/')[0].strip())
-                            except (ValueError, IndexError):
-                                pass
-                            # Check if bullish or bearish from the thesis
-                            thesis = str(parts).lower()
-                            if any(w in thesis for w in ['buy', 'bull', 'up', 'growth', 'beat']):
-                                direction = "bullish"
-                            elif any(w in thesis for w in ['sell', 'bear', 'down', 'miss', 'weak']):
-                                direction = "bearish"
-                            break
-                    
-                    # If we hold it and it's uptrend, direction is bullish
-                    for pos in alpaca_positions:
-                        if pos['symbol'] == underlying and pos.get('unrealized_plpc', 0) > 0:
-                            direction = "bullish"
-                    
-                    # Generate strategies
-                    strategies = generate_options_strategies(
-                        underlying, conviction, direction, price
-                    )
-                    
-                    if strategies:
-                        all_options_strategies.extend(strategies)
-                        log(f"  {underlying}: {len(strategies)} strategies generated (IV rank: {iv_rank:.0f}, {len(mispriced)} mispriced)")
-                
-                except Exception as e:
-                    log(f"  [!] Error analyzing options for {underlying}: {e}")
-                    continue
-            
-            # Execute the best options strategies (highest conviction, best risk/reward)
-            for strat in sorted(all_options_strategies, key=lambda s: s.get('conviction', 0), reverse=True)[:3]:
-                try:
-                    underlying = strat.get('underlying', '')
-                    strategy_name = strat.get('strategy', 'UNKNOWN')
-                    
-                    # ── SINGLE-LEG STRATEGIES (long call, long put, cash-secured put) ──
-                    option_info = strat.get('option', {})
-                    if option_info:
-                        option_symbol = option_info.get('symbol', '')
-                        if not option_symbol:
-                            strike = float(option_info.get('strike_price', 0))
-                            occ_type = 'call' if 'call' in strategy_name.lower() else 'put'
-                            dte = option_info.get('dte', 30)
-                            option_symbol = find_option_symbol(underlying, occ_type, strike, dte)
-                        
-                        if not option_symbol:
-                            log(f"  [!] Could not find OCC symbol for {strategy_name} on {underlying}")
-                            options_failed += 1
-                            continue
-                        
-                        # Position sizing: max 3% of portfolio per options trade
-                        acct = get_account_info()
-                        portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
-                        options_budget = portfolio_val * 0.03
-                        
-                        pricing = get_option_pricing([option_symbol])
-                        opt_price = 0
-                        if pricing.get(option_symbol):
-                            snap = pricing[option_symbol]
-                            opt_price = float(snap.get("latestTrade", {}).get("p", 0) or 
-                                             snap.get("latestQuote", {}).get("ap", 0))
-                        
-                        if opt_price > 0:
-                            max_contracts = max(1, int(options_budget / (opt_price * 100)))
-                            qty = min(max_contracts, 2)
-                        else:
-                            qty = 1
-                        
-                        log(f"  → EXECUTE: {strategy_name} on {underlying} — {option_symbol} x{qty}")
                         trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
+                    
                         if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
                             options_executed += 1
-                            log(f"[OK] Options trade: BUY {option_symbol} x{qty} ({trade_result.get('status')})")
+                            log(f"[OK] Options trade: BUY {option_symbol} x{qty} (status: {trade_result.get('status')})")
+                        elif trade_result.get("status") == "REJECTED":
+                            options_failed += 1
+                            log(f"[!] Options trade REJECTED: {option_symbol} — {trade_result.get('error', 'unknown')}")
                         else:
                             options_failed += 1
-                            log(f"[!] Options trade failed: {option_symbol} — {trade_result}")
+                            log(f"[!] Options trade uncertain: {option_symbol} — {trade_result}")
+                
+                    except Exception as e:
+                        options_failed += 1
+                        log(f"  [!] Error executing options strategy: {e}")
                         continue
-                    
-                    # ── MULTI-LEG STRATEGIES (debit spreads, iron condors, straddles) ──
-                    # These require multiple orders. We execute each leg separately.
-                    legs_to_execute = []
-                    
-                    # Debit spreads: long_leg + short_leg
-                    if strat.get('long_leg') and strat.get('short_leg'):
-                        for leg_type in ['long_leg', 'short_leg']:
-                            leg = strat[leg_type]
-                            leg_symbol = leg.get('symbol', '')
-                            if not leg_symbol:
-                                strike = float(leg.get('strike_price', 0))
-                                occ_type = 'call' if 'call' in strategy_name.lower() or leg_type == 'long_leg' and 'CALL' in strategy_name else 'put'
-                                dte = leg.get('dte', 30)
-                                leg_symbol = find_option_symbol(underlying, occ_type, strike, dte)
-                            if leg_symbol:
-                                action = 'buy' if leg_type == 'long_leg' else 'sell'
-                                legs_to_execute.append((leg_symbol, action))
-                    
-                    # Iron condor: call_spread + put_spread
-                    elif strat.get('call_spread') and strat.get('put_spread'):
-                        call_spread = strat['call_spread']
-                        put_spread = strat['put_spread']
-                        # Call spread: sell lower strike, buy higher strike
-                        for i, leg in enumerate(call_spread):
-                            leg_symbol = leg.get('symbol', '') if isinstance(leg, dict) else ''
-                            if not leg_symbol and isinstance(leg, dict):
-                                strike = float(leg.get('strike_price', 0))
-                                leg_symbol = find_option_symbol(underlying, 'call', strike, leg.get('dte', 30))
-                            if leg_symbol:
-                                action = 'sell' if i == 0 else 'buy'
-                                legs_to_execute.append((leg_symbol, action))
-                        # Put spread: sell higher strike, buy lower strike
-                        for i, leg in enumerate(put_spread):
-                            leg_symbol = leg.get('symbol', '') if isinstance(leg, dict) else ''
-                            if not leg_symbol and isinstance(leg, dict):
-                                strike = float(leg.get('strike_price', 0))
-                                leg_symbol = find_option_symbol(underlying, 'put', strike, leg.get('dte', 30))
-                            if leg_symbol:
-                                action = 'sell' if i == 0 else 'buy'
-                                legs_to_execute.append((leg_symbol, action))
-                    
-                    # Straddle/Strangle: buy call + buy put
-                    elif 'STRADDLE' in strategy_name or 'STRANGLE' in strategy_name:
-                        # For straddles, we need to find ATM call and put
-                        chain_data = get_options_chain(underlying, min_dte=14, max_dte=60)
-                        if chain_data:
-                            price = _yf_price(underlying)["price"]
-                            if price > 0:
-                                # ATM call
-                                atm_calls = sorted(chain_data.get('calls', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
-                                # ATM put
-                                atm_puts = sorted(chain_data.get('puts', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
-                                if atm_calls:
-                                    call_symbol = atm_calls[0].get('symbol', '')
-                                    if not call_symbol:
-                                        call_symbol = find_option_symbol(underlying, 'call', float(atm_calls[0].get('strike_price', 0)), atm_calls[0].get('dte', 30))
-                                    if call_symbol:
-                                        legs_to_execute.append((call_symbol, 'buy'))
-                                if atm_puts:
-                                    put_symbol = atm_puts[0].get('symbol', '')
-                                    if not put_symbol:
-                                        put_symbol = find_option_symbol(underlying, 'put', float(atm_puts[0].get('strike_price', 0)), atm_puts[0].get('dte', 30))
-                                    if put_symbol:
-                                        legs_to_execute.append((put_symbol, 'buy'))
-                    
-                    # Execute all legs
-                    if legs_to_execute:
-                        acct = get_account_info()
-                        portfolio_val = acct.get('portfolio_value', 100000) if "error" not in acct else 100000
-                        options_budget = portfolio_val * 0.03
-                        max_legs = max(1, int(options_budget / 500))  # Rough estimate: $500 per leg
-                        qty = min(max_legs, 2)
-                        
-                        all_legs_success = True
-                        for leg_symbol, action in legs_to_execute:
-                            log(f"  → EXECUTE LEG: {action} {leg_symbol} x{qty} ({strategy_name})")
-                            trade_result = place_option_order(underlying, leg_symbol, qty, action, "market")
-                            if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
-                                log(f"[OK] Leg executed: {action} {leg_symbol} x{qty}")
-                            else:
-                                all_legs_success = False
-                                log(f"[!] Leg failed: {action} {leg_symbol} — {trade_result}")
-                        
-                        if all_legs_success:
-                            options_executed += 1
-                            log(f"[OK] Multi-leg options trade: {strategy_name} on {underlying} ({len(legs_to_execute)} legs)")
-                        else:
-                            options_failed += 1
-                            log(f"[!] Multi-leg options trade partially failed: {strategy_name}")
-                    else:
-                        log(f"  [!] Skipping {strategy_name} — could not determine option symbols for legs")
-                        options_failed += 1
-                
-                except Exception as e:
-                    options_failed += 1
-                    log(f"  [!] Error executing options strategy: {e}")
-                    continue
-                    
-                    trade_result = place_option_order(underlying, option_symbol, qty, "buy", "market")
-                    
-                    if trade_result.get("status") in ["FILLED", "submitted", "accepted", "new", "pending_new"]:
-                        options_executed += 1
-                        log(f"[OK] Options trade: BUY {option_symbol} x{qty} (status: {trade_result.get('status')})")
-                    elif trade_result.get("status") == "REJECTED":
-                        options_failed += 1
-                        log(f"[!] Options trade REJECTED: {option_symbol} — {trade_result.get('error', 'unknown')}")
-                    else:
-                        options_failed += 1
-                        log(f"[!] Options trade uncertain: {option_symbol} — {trade_result}")
-                
-                except Exception as e:
-                    options_failed += 1
-                    log(f"  [!] Error executing options strategy: {e}")
-                    continue
             
-            if trades_executed:
-                log(f"[OK] Executed {trades_executed} Alpaca stock trade(s)")
-            if options_executed:
-                log(f"[OK] Executed {options_executed} Alpaca options trade(s)")
-            if options_failed:
-                log(f"[!] {options_failed} options trade(s) failed or skipped")
-            if not options_executed and not options_failed and not trades_executed:
-                log("  No trades executed this run (no high-conviction recommendations or Alpaca not configured)")
+                if trades_executed:
+                    log(f"[OK] Executed {trades_executed} Alpaca stock trade(s)")
+                if options_executed:
+                    log(f"[OK] Executed {options_executed} Alpaca options trade(s)")
+                if options_failed:
+                    log(f"[!] {options_failed} options trade(s) failed or skipped")
+                if not options_executed and not options_failed and not trades_executed:
+                    log("  No trades executed this run (no high-conviction recommendations or Alpaca not configured)")
 
             # 10d. Read back updated positions after trading
             updated_positions = get_all_positions_including_options()

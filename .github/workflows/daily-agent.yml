@@ -15,6 +15,12 @@ on:
     - cron: '0 17 * * 1-5'    # 1:00 PM EDT
     - cron: '0 18 * * 1-5'    # 2:00 PM EDT
     - cron: '0 19 * * 1-5'    # 3:00 PM EDT
+
+    # WEEKEND RESEARCH RUNS (every 60 min) — Deep research, no reports/trades
+    # Saturday: 10 AM - 4 PM EDT = 14:00 - 20:00 UTC
+    - cron: '0 14,15,16,17,18,19,20 * * 6'  # Saturday hourly
+    # Sunday: 10 AM - 4 PM EDT = 14:00 - 20:00 UTC
+    - cron: '0 14,15,16,17,18,19,20 * * 0'  # Sunday hourly
   workflow_dispatch:
     inputs:
       run_mode:
@@ -61,10 +67,10 @@ jobs:
         MIN=$(TZ='US/Eastern' date +%M)
         DOW=$(TZ='US/Eastern' date +%u)
         
-        # Skip weekends
+        # Weekend = research mode (deep research, no reports, no trades)
         if [ "$DOW" -gt 5 ]; then
-          echo "MODE=skip" >> $GITHUB_OUTPUT
-          echo "Weekend — skipping"
+          echo "MODE=research" >> $GITHUB_OUTPUT
+          echo "Weekend — research mode (deep dive, no reports)"
           exit 0
         fi
         
@@ -113,12 +119,29 @@ jobs:
         RUN_MODE: alerts-only
       run: python3 agent.py
 
-    - name: Commit reports (full mode only)
-      if: steps.mode.outputs.MODE == 'full'
+    - name: Run agent (research - weekend deep dive, no reports/trades)
+      if: steps.mode.outputs.MODE == 'research'
+      env:
+        OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+        ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
+        CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        RUN_MODE: research
+      run: python3 agent.py
+
+    - name: Commit reports and research (full + research modes)
+      if: steps.mode.outputs.MODE == 'full' || steps.mode.outputs.MODE == 'research'
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add -f REPORTS/ HISTORY/ docs/
+        git add -f REPORTS/ HISTORY/ docs/ research/
         git add -f logs/agent.log logs/paper_trades.log 2>/dev/null || true
-        git diff --staged --quiet || git commit -m "Agent report: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
-        git push
+        git diff --staged --quiet || git commit -m "Agent ${{ steps.mode.outputs.MODE }}: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
+        # Fix race condition: pull --rebase before push
+        git pull --rebase origin main || true
+        git push origin main || true

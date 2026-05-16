@@ -533,16 +533,35 @@ class DeepResearcher:
                 "severity": "high" if len(declining) >= 3 else "medium",
             })
         
-        # 4. Valuation risk
+        # 4. Valuation risk — quality-aware
+        # High-quality growth stocks deserve premium valuations.
+        # Only flag as risky if valuation is extreme AND fundamentals don't justify it.
         pe = info.get("trailingPE", 0) or 0
         forward_pe = info.get("forwardPE", 0) or 0
         pb = info.get("priceToBook", 0) or 0
-        if pe > 50 or (forward_pe > 40 and forward_pe > 0):
+        rev_growth = info.get("revenueGrowth", 0) or 0
+        roe = info.get("returnOnEquity", 0) or 0
+        
+        # Assess if the premium is justified by quality
+        _is_high_quality = (rev_growth > 0.15 and roe > 0.15)
+        _is_extreme_pe = pe > 100 or (forward_pe > 80 and forward_pe > 0)
+        _is_moderate_pe = pe > 50 or (forward_pe > 40 and forward_pe > 0)
+        
+        if _is_extreme_pe:
+            # Even for quality stocks, extreme P/E is a risk
             findings["contrarian_signals"].append({
                 "type": "expensive_valuation",
-                "signal": f"Rich valuation: P/E {pe:.0f}, Forward P/E {forward_pe:.0f}, P/B {pb:.1f}",
+                "signal": f"Extreme valuation: P/E {pe:.0f}, Forward P/E {forward_pe:.0f}, P/B {pb:.1f} — even quality stocks can correct at these levels",
                 "severity": "medium",
             })
+        elif _is_moderate_pe and not _is_high_quality:
+            # Moderate P/E is only risky if fundamentals don't justify it
+            findings["contrarian_signals"].append({
+                "type": "expensive_valuation",
+                "signal": f"Rich valuation without quality backing: P/E {pe:.0f}, Rev Growth {rev_growth*100:.0f}%, ROE {roe*100:.0f}%",
+                "severity": "medium",
+            })
+        # If high quality + moderate P/E: NO penalty — this is what we want to own
         
         # 5. Balance sheet risk
         debt_to_equity = info.get("debtToEquity", 0) or 0

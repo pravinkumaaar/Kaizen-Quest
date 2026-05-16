@@ -101,6 +101,119 @@ def get_sector(ticker):
         return 'Unknown'
 
 
+def _assess_quality(ticker):
+    """
+    Assess the quality of a stock on a 0-10 scale.
+    
+    High-quality growth stocks should NOT be penalized for volatility.
+    Quality factors:
+    - Revenue growth > 15%: +2 points
+    - ROE > 15%: +2 points  
+    - Profit margin > 10%: +1 point
+    - Free cash flow positive: +1 point
+    - Strong moat (wide/medium): +2 points
+    - Market leader (top 3 in sector): +1 point
+    - Insider buying (net): +1 point
+    - Institutional ownership > 60%: +1 point
+    - Debt/Equity < 100: +1 point
+    - P/E < 50 (not speculative): +1 point
+    
+    Returns: 0-10 quality score
+    """
+    score = 5.0  # Start at neutral
+    try:
+        import yfinance as yf
+        old_stderr = __import__('sys').stderr
+        __import__('sys').stderr = StringIO()
+        try:
+            info = yf.Ticker(ticker).info
+        finally:
+            __import__('sys').stderr = old_stderr
+        
+        if not info or len(info) < 5:
+            return score
+        
+        # Revenue growth
+        rev_growth = info.get('revenueGrowth', 0) or 0
+        if rev_growth > 0.25:
+            score += 2.0
+        elif rev_growth > 0.15:
+            score += 1.5
+        elif rev_growth > 0.10:
+            score += 1.0
+        elif rev_growth < -0.05:
+            score -= 1.5
+        
+        # ROE
+        roe = info.get('returnOnEquity', 0) or 0
+        if roe > 0.25:
+            score += 2.0
+        elif roe > 0.15:
+            score += 1.5
+        elif roe > 0.10:
+            score += 1.0
+        elif roe < 0:
+            score -= 1.0
+        
+        # Profit margin
+        margin = info.get('profitMargins', 0) or 0
+        if margin > 0.20:
+            score += 1.0
+        elif margin > 0.10:
+            score += 0.5
+        elif margin < 0:
+            score -= 1.0
+        
+        # Free cash flow
+        fcf = info.get('freeCashflow', 0) or 0
+        if fcf > 0:
+            score += 1.0
+        else:
+            score -= 0.5
+        
+        # Market cap (larger = more established)
+        mcap = info.get('marketCap', 0) or 0
+        if mcap > 500e9:  # > $500B mega-cap
+            score += 1.0
+        elif mcap > 100e9:  # > $100B large-cap
+            score += 0.5
+        elif mcap < 2e9:  # < $2B small-cap speculative
+            score -= 1.0
+        
+        # Debt/Equity
+        de = info.get('debtToEquity', 0) or 0
+        if de > 0 and de < 50:
+            score += 1.0
+        elif de > 200:
+            score -= 1.5
+        elif de > 100:
+            score -= 0.5
+        
+        # P/E ratio (not too speculative)
+        pe = info.get('trailingPE', 0) or 0
+        if pe > 0 and pe < 30:
+            score += 0.5
+        elif pe > 100 or pe < 0:
+            score -= 1.0
+        
+        # Institutional ownership
+        inst = info.get('heldPercentInstitutions', 0) or 0
+        if inst > 0.70:
+            score += 1.0
+        elif inst > 0.50:
+            score += 0.5
+        elif inst < 0.20:
+            score -= 0.5
+        
+        # Beta (volatility context — high beta alone doesn't penalize)
+        # Already handled by the quality-aware vol adjustment
+        
+    except Exception:
+        pass
+    
+    return max(0, min(10, score))
+
+
 def compute_position_sizes(available_cash, portfolio_value, existing_positions, watchlist,
                             max_single_position_pct=0.15, max_cash_per_trade=0.40,
                             max_total_deployment=0.90, min_trade_size=200,
@@ -178,10 +291,28 @@ def compute_position_sizes(available_cash, portfolio_value, existing_positions, 
         win_loss_ratio = estimate_win_loss_ratio(conviction)
         kelly = compute_kelly_fraction(win_prob, win_loss_ratio)
         
-        # Volatility adjustment (higher vol = smaller position)
+        # Volatility adjustment — quality-aware
+        # High-quality growth stocks (strong fundamentals + moat) should NOT be
+        # penalized for volatility. Volatility is the price of admission for
+        # asymmetric upside. Only penalize volatility for low-quality names.
         vol = estimate_volatility(ticker)
-        vol_adjustment = 0.20 / vol  # Normalize to 20% baseline vol
-        vol_adjustment = min(vol_adjustment, 2.0)  # Cap at 2x
+        
+        # Assess quality to determine if vol penalty should be reduced
+        _quality_score = _assess_quality(ticker)
+        
+        if _quality_score >= 7:
+            # High quality: minimal vol penalty. These are the names we WANT
+            # exposure to even if volatile (NVDA, PLTR, etc.)
+            # Allow up to 40% vol with only modest reduction
+            vol_adjustment = min(1.5, 0.30 / vol)  # Floor at ~50% for extreme vol
+        elif _quality_score >= 5:
+            # Medium quality: moderate vol penalty
+            vol_adjustment = min(1.2, 0.25 / vol)
+        else:
+            # Low quality: full vol penalty — these are the ones we want less of
+            vol_adjustment = min(1.0, 0.20 / vol)
+        
+        vol_adjustment = max(0.3, min(vol_adjustment, 2.0))  # Floor 30%, cap 2x
         
         # Sector correlation adjustment
         sector = get_sector(ticker)

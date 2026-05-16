@@ -46,24 +46,36 @@ FACTS_DIR = RESEARCH_DIR / "facts"
 STATE_FILE = RESEARCH_DIR / "state.json"
 
 # Confidence half-life by fact type (days)
+# Based on research from SmartVector (arXiv:2604.20598), Prism (arXiv:2604.19795),
+# TradingGPT (arXiv:2309.03736), mem0 production system, and Zep temporal knowledge graphs.
+# Key principle: half-life = time for confidence to decay to 50% without refresh.
 CONFIDENCE_HALF_LIFE = {
-    "price": 1,
-    "news": 1,
-    "sentiment": 2,
-    "earnings": 30,
-    "fundamentals": 14,
-    "guidance": 30,
-    "catalyst": 14,
-    "thesis": 7,
-    "competitive": 60,
-    "insider": 7,
-    "institutional": 14,
-    "technical": 3,
-    "options": 1,
-    "sector": 14,
-    "macro": 7,
-    "risk": 7,
-    "moat": 30,
+    # Ultra-fast decay (minutes to hours) — market-moving data
+    "price": 1,              # 1 day — prices stale after market close; intraday: 15-30 min
+    "options": 1,            # 1 day — IV, OI, Greeks change rapidly
+    "news": 1,               # 1 day — news impact decays 60-80% in first hour (event studies)
+    
+    # Fast decay (1-7 days) — sentiment and flow data
+    "sentiment": 3,          # 3 days — news sentiment fully absorbed by market in ~12 hours, residual fades in 3
+    "technical": 3,          # 3 days — RSI, MACD derived from price; weekly indicators: 5-10 days
+    "insider": 7,            # 7 days — Form 4 filings priced in quickly; 13F: 30 days
+    
+    # Medium decay (7-30 days) — thesis and catalyst data
+    "thesis": 14,            # 14 days — re-evaluate investment case biweekly (was 7, too aggressive)
+    "catalyst": 14,          # 14 days — pre-catalyst slow decay; post-catalyst: immediate drop
+    "risk": 14,              # 14 days — risk factors evolve with news cycle (was 7)
+    "macro": 14,             # 14 days — macro regime changes monthly (was 7)
+    "sector": 14,            # 14 days — sector rotation cycles: 2-8 weeks
+    
+    # Slow decay (30-90 days) — fundamental data
+    "fundamentals": 30,      # 30 days — ratios change quarterly; growth estimates decay faster
+    "institutional": 30,     # 30 days — 13F filings quarterly; monthly estimates: 14 days
+    "earnings": 90,          # 90 days — quarterly earnings valid until next report (was 30, too short)
+    "guidance": 60,          # 60 days — forward guidance valid until next earnings (was 30)
+    
+    # Very slow decay (60-180 days) — structural data
+    "competitive": 90,       # 90 days — competitive landscape shifts quarterly (was 60)
+    "moat": 90,              # 90 days — moat assessment changes slowly (was 30, too short)
 }
 
 # Research depth levels
