@@ -118,24 +118,25 @@ Kaizen-Quest/
 
 The agent runs automatically via GitHub Actions on a comprehensive schedule:
 
-### Weekdays (Mon-Fri)
+### Weekdays (Mon-Fri) — 24 runs/day
 
 | Time (ET) | Mode | What It Does |
 |-----------|------|-------------|
-| 7:00 AM | 🔬 Research | Deep research, no trades/reports |
-| 8:00 AM | 📊 **Full Report** | Research + trade + report + Telegram |
-| 9:30 AM - 3:00 PM (hourly) | ⚡ Alerts | Research + trade, no report |
+| 12 AM, 2 AM, 4 AM | 🔬 Research | Deep research while market closed |
+| 6 AM | 🔬 Research | Pre-market deep dive |
+| 8 AM | 📊 **Full Report** | Research + trade + report + Telegram |
+| 10 AM, 12 PM, 2 PM | ⚡ Alerts | Research + trade, no report |
 | 12:30 PM | 📊 **Full Report** | Research + trade + report + Telegram |
 | 4:30 PM | 📊 **Full Report** | Research + trade + report + Telegram |
-| 6 PM, 8 PM, 10 PM | 🔬 Research | Deep research, no trades/reports |
+| 6 PM, 8 PM, 10 PM | 🔬 Research | Post-market deep dives |
 
-### Weekends (Sat-Sun)
+### Weekends (Sat-Sun) — 24 runs/week
 
 | Time | Mode | What It Does |
 |------|------|-------------|
 | Every 2 hours (24/7) | 🔬 Research | Deep research dives, no trades/reports |
 
-**Total: ~35 runs/week** — the agent never stops learning.
+**Total: ~48 runs/week** — the agent never stops learning, 24/7/365.
 
 ---
 

@@ -1,6 +1,6 @@
 name: Trading Agent Scheduler
 
-"on":
+on:
   schedule:
     # ═══════════════════════════════════════════════════════════
     # ALL RUNS 24/7 — Cron is in UTC, agent handles DST detection
@@ -8,7 +8,7 @@ name: Trading Agent Scheduler
     # Full mode: research + trade + report + Telegram
     # Alerts mode: research + trade, no report
     # ═══════════════════════════════════════════════════════════
-    
+
     # ── WEEKDAY FULL REPORTS (3/day) ──
     # 8 AM ET = 12 UTC EDT / 13 UTC EST
     - cron: "0 12,13 * * 1-5"
@@ -16,13 +16,13 @@ name: Trading Agent Scheduler
     - cron: "30 16,17 * * 1-5"
     # 4:30 PM ET = 20:30 UTC EDT / 21:30 UTC EST
     - cron: "30 20,21 * * 1-5"
-    
+
     # ── WEEKDAY ALERTS-ONLY (market hours) ──
     # Every 2 hours from 10 AM - 2 PM ET
     - cron: "0 14,15 * * 1-5"   # 10 AM ET
     - cron: "0 16,17 * * 1-5"   # 12 PM ET
     - cron: "0 18,19 * * 1-5"   # 2 PM ET
-    
+
     # ── ALL OTHER TIMES: RESEARCH MODE (every 2 hours, 24/7) ──
     # Weekday pre-market: 6 AM ET
     - cron: "0 10,11 * * 1-5"
@@ -36,7 +36,7 @@ name: Trading Agent Scheduler
     # Weekends: every 2 hours, 24/7
     - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * 6"
     - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * 0"
-  
+
   workflow_dispatch:
     inputs:
       run_mode:
