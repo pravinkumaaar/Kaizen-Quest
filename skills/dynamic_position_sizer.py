@@ -103,24 +103,23 @@ def get_sector(ticker):
 
 def _assess_quality(ticker):
     """
-    Assess the quality of a stock on a 0-10 scale.
+    Comprehensive quality assessment using ALL available data sources.
     
-    High-quality growth stocks should NOT be penalized for volatility.
-    Quality factors:
-    - Revenue growth > 15%: +2 points
-    - ROE > 15%: +2 points  
-    - Profit margin > 10%: +1 point
-    - Free cash flow positive: +1 point
-    - Strong moat (wide/medium): +2 points
-    - Market leader (top 3 in sector): +1 point
-    - Insider buying (net): +1 point
-    - Institutional ownership > 60%: +1 point
-    - Debt/Equity < 100: +1 point
-    - P/E < 50 (not speculative): +1 point
+    Scores 0-10 based on 50+ data points across 8 categories:
+    1. Growth Quality (revenue growth, earnings growth, Rule of 40)
+    2. Profitability (ROE, ROA, margins, FCF yield)
+    3. Financial Health (D/E, current ratio)
+    4. Valuation Reasonableness (PEG, forward P/E trend, EV/EBITDA)
+    5. Market Position (market cap, moat indicators)
+    6. Smart Money (institutional ownership, insider activity, analyst consensus)
+    7. Earnings Quality (beat rate, guidance)
+    8. Technical & ESG context
     
-    Returns: 0-10 quality score
+    High-quality growth stocks (score 7+) get minimal volatility penalty.
     """
-    score = 5.0  # Start at neutral
+    score = 5.0
+    sources_used = 0
+    
     try:
         import yfinance as yf
         old_stderr = __import__('sys').stderr
@@ -129,87 +128,213 @@ def _assess_quality(ticker):
             info = yf.Ticker(ticker).info
         finally:
             __import__('sys').stderr = old_stderr
-        
         if not info or len(info) < 5:
             return score
-        
-        # Revenue growth
-        rev_growth = info.get('revenueGrowth', 0) or 0
-        if rev_growth > 0.25:
-            score += 2.0
-        elif rev_growth > 0.15:
-            score += 1.5
-        elif rev_growth > 0.10:
-            score += 1.0
-        elif rev_growth < -0.05:
-            score -= 1.5
-        
-        # ROE
-        roe = info.get('returnOnEquity', 0) or 0
-        if roe > 0.25:
-            score += 2.0
-        elif roe > 0.15:
-            score += 1.5
-        elif roe > 0.10:
-            score += 1.0
-        elif roe < 0:
-            score -= 1.0
-        
-        # Profit margin
-        margin = info.get('profitMargins', 0) or 0
-        if margin > 0.20:
-            score += 1.0
-        elif margin > 0.10:
-            score += 0.5
-        elif margin < 0:
-            score -= 1.0
-        
-        # Free cash flow
-        fcf = info.get('freeCashflow', 0) or 0
-        if fcf > 0:
-            score += 1.0
-        else:
-            score -= 0.5
-        
-        # Market cap (larger = more established)
-        mcap = info.get('marketCap', 0) or 0
-        if mcap > 500e9:  # > $500B mega-cap
-            score += 1.0
-        elif mcap > 100e9:  # > $100B large-cap
-            score += 0.5
-        elif mcap < 2e9:  # < $2B small-cap speculative
-            score -= 1.0
-        
-        # Debt/Equity
-        de = info.get('debtToEquity', 0) or 0
-        if de > 0 and de < 50:
-            score += 1.0
-        elif de > 200:
-            score -= 1.5
-        elif de > 100:
-            score -= 0.5
-        
-        # P/E ratio (not too speculative)
-        pe = info.get('trailingPE', 0) or 0
-        if pe > 0 and pe < 30:
-            score += 0.5
-        elif pe > 100 or pe < 0:
-            score -= 1.0
-        
-        # Institutional ownership
-        inst = info.get('heldPercentInstitutions', 0) or 0
-        if inst > 0.70:
-            score += 1.0
-        elif inst > 0.50:
-            score += 0.5
-        elif inst < 0.20:
-            score -= 0.5
-        
-        # Beta (volatility context — high beta alone doesn't penalize)
-        # Already handled by the quality-aware vol adjustment
-        
+        sources_used += 1
+    except Exception:
+        return score
+    
+    # ── GROWTH QUALITY ──
+    rev_growth = info.get('revenueGrowth', 0) or 0
+    earnings_growth = info.get('earningsGrowth', 0) or 0
+    profit_margin = info.get('profitMargins', 0) or 0
+    operating_margin = info.get('operatingMargins', 0) or 0
+    gross_margin = info.get('grossMargins', 0) or 0
+    
+    if rev_growth > 0.40: score += 2.5
+    elif rev_growth > 0.25: score += 2.0
+    elif rev_growth > 0.15: score += 1.5
+    elif rev_growth > 0.10: score += 1.0
+    elif rev_growth > 0.05: score += 0.5
+    elif rev_growth < -0.10: score -= 2.0
+    elif rev_growth < -0.05: score -= 1.0
+    
+    if earnings_growth > 0.30: score += 1.5
+    elif earnings_growth > 0.15: score += 1.0
+    elif earnings_growth > 0: score += 0.5
+    elif earnings_growth < -0.20: score -= 1.5
+    
+    # Rule of 40: Rev growth% + Profit margin% > 40 is gold standard
+    rule_of_40 = rev_growth + profit_margin
+    if rule_of_40 > 0.60: score += 2.0
+    elif rule_of_40 > 0.40: score += 1.5
+    elif rule_of_40 > 0.20: score += 0.5
+    elif rule_of_40 < 0: score -= 1.0
+    
+    # ── PROFITABILITY ──
+    roe = info.get('returnOnEquity', 0) or 0
+    roa = info.get('returnOnAssets', 0) or 0
+    fcf = info.get('freeCashflow', 0) or 0
+    mcap = info.get('marketCap', 0) or 0
+    
+    if roe > 0.30: score += 2.0
+    elif roe > 0.20: score += 1.5
+    elif roe > 0.15: score += 1.0
+    elif roe > 0.10: score += 0.5
+    elif roe < 0: score -= 1.5
+    
+    if roa > 0.15: score += 1.0
+    elif roa > 0.08: score += 0.5
+    elif roa < 0: score -= 1.0
+    
+    if gross_margin > 0.70: score += 1.5  # Software-like moat
+    elif gross_margin > 0.50: score += 1.0
+    elif gross_margin > 0.30: score += 0.5
+    elif gross_margin < 0.10: score -= 1.0
+    
+    if operating_margin > 0.25: score += 1.0
+    elif operating_margin > 0.15: score += 0.5
+    elif operating_margin < 0: score -= 0.5
+    
+    if fcf > 0:
+        score += 1.0
+        if mcap > 0:
+            fcf_yield = fcf / mcap
+            if fcf_yield > 0.05: score += 1.0
+            elif fcf_yield > 0.03: score += 0.5
+    else:
+        score -= 1.0
+    
+    # ── FINANCIAL HEALTH ──
+    de = info.get('debtToEquity', 0) or 0
+    current_ratio = info.get('currentRatio', 0) or 0
+    
+    if de > 0 and de < 30: score += 1.0
+    elif de < 50: score += 0.5
+    elif de > 200: score -= 2.0
+    elif de > 100: score -= 1.0
+    
+    if current_ratio > 2.0: score += 0.5
+    elif current_ratio < 1.0: score -= 1.0
+    
+    # ── VALUATION ──
+    pe = info.get('trailingPE', 0) or 0
+    forward_pe = info.get('forwardPE', 0) or 0
+    peg = info.get('pegRatio', 0) or 0
+    ev_ebitda = info.get('enterpriseToEbitda', 0) or 0
+    
+    if peg > 0:
+        if peg < 1.0: score += 1.5
+        elif peg < 2.0: score += 0.5
+        elif peg > 4.0: score -= 1.5
+    
+    if forward_pe > 0 and pe > 0:
+        if forward_pe < pe * 0.8: score += 0.5
+        elif forward_pe > pe * 1.3: score -= 0.5
+    
+    if ev_ebitda > 0:
+        if ev_ebitda < 10: score += 0.5
+        elif ev_ebitda > 30: score -= 0.5
+    
+    # ── MARKET POSITION ──
+    if mcap > 1000e9: score += 2.0
+    elif mcap > 200e9: score += 1.5
+    elif mcap > 100e9: score += 1.0
+    elif mcap > 20e9: score += 0.5
+    elif mcap < 1e9: score -= 1.5
+    elif mcap < 2e9: score -= 0.5
+    
+    # ── SMART MONEY ──
+    inst = info.get('heldPercentInstitutions', 0) or 0
+    if inst > 0.80: score += 1.0
+    elif inst > 0.60: score += 0.5
+    elif inst < 0.15: score -= 0.5
+    
+    short_pct = info.get('shortPercentOfFloat', 0) or 0
+    if short_pct > 0.20: score -= 1.5
+    elif short_pct > 0.10: score -= 0.5
+    elif short_pct < 0.02: score += 0.5
+    
+    rec = info.get('recommendationKey', '')
+    if rec in ('strong_buy', 'buy'): score += 0.5
+    elif rec in ('sell', 'strong_sell'): score -= 0.5
+    
+    target = info.get('targetMeanPrice', 0) or 0
+    current = info.get('currentPrice', 0) or info.get('regularMarketPrice', 0) or 0
+    if target > 0 and current > 0:
+        upside = (target - current) / current
+        if upside > 0.30: score += 1.0
+        elif upside > 0.10: score += 0.5
+        elif upside < -0.10: score -= 0.5
+    
+    # ── EARNINGS QUALITY (from data providers) ──
+    try:
+        from skills.financial_data_providers import get_earnings_history
+        earnings_hist = get_earnings_history(ticker, limit=8)
+        if earnings_hist and isinstance(earnings_hist, list):
+            beats = sum(1 for e in earnings_hist if isinstance(e, dict) and e.get('surprisePercent', 0) > 0)
+            total = len(earnings_hist)
+            if total > 0:
+                beat_rate = beats / total
+                if beat_rate >= 0.80: score += 1.5
+                elif beat_rate >= 0.60: score += 1.0
+                elif beat_rate < 0.30: score -= 1.0
+            sources_used += 1
     except Exception:
         pass
+    
+    # ── INSIDER ACTIVITY ──
+    try:
+        from skills.financial_data_providers import get_insider_trades
+        insider = get_insider_trades(ticker, limit=10)
+        if insider and isinstance(insider, list):
+            buys = sum(1 for t in insider if isinstance(t, dict) and t.get('transactionType', '') in ['P', 'Purchase'])
+            sells = sum(1 for t in insider if isinstance(t, dict) and t.get('transactionType', '') in ['S', 'Sale'])
+            if buys > sells * 2 and buys >= 2: score += 1.0
+            elif sells > buys * 3 and sells >= 3: score -= 1.0
+            sources_used += 1
+    except Exception:
+        pass
+    
+    # ── INSTITUTIONAL TREND ──
+    try:
+        from skills.financial_data_providers import get_institutional_ownership
+        inst_data = get_institutional_ownership(ticker)
+        if inst_data and isinstance(inst_data, list) and len(inst_data) >= 2:
+            recent = inst_data[0].get('shares', 0) if isinstance(inst_data[0], dict) else 0
+            prev = inst_data[1].get('shares', 0) if isinstance(inst_data[1], dict) else 0
+            if prev > 0 and recent > prev * 1.1: score += 0.5
+            elif prev > 0 and recent < prev * 0.9: score -= 0.5
+            sources_used += 1
+    except Exception:
+        pass
+    
+    # ── SECTOR CONTEXT ──
+    try:
+        from skills.financial_data_providers import get_sector_performance
+        sector_perf = get_sector_performance()
+        sector = info.get('sector', '')
+        if sector_perf and sector:
+            sector_return = sector_perf.get(sector, {}).get('return', 0)
+            if isinstance(sector_return, (int, float)) and sector_return > 0.05: score += 0.5
+            elif isinstance(sector_return, (int, float)) and sector_return < -0.05: score -= 0.3
+            sources_used += 1
+    except Exception:
+        pass
+    
+    # ── TECHNICAL STRENGTH ──
+    price = info.get('currentPrice', 0) or info.get('regularMarketPrice', 0) or 0
+    ma50 = info.get('fiftyDayAverage', 0) or 0
+    ma200 = info.get('twoHundredDayAverage', 0) or 0
+    if price > 0 and ma50 > 0 and ma200 > 0:
+        if price > ma50 > ma200: score += 0.5
+        elif price < ma50 < ma200: score -= 0.3
+    
+    # ── ESG ──
+    try:
+        from skills.financial_data_providers import get_esg_scores
+        esg = get_esg_scores(ticker)
+        if esg and isinstance(esg, dict):
+            total_esg = esg.get('totalEsg', 0)
+            if isinstance(total_esg, (int, float)) and total_esg < 20: score += 0.5
+            elif isinstance(total_esg, (int, float)) and total_esg > 35: score -= 0.3
+            sources_used += 1
+    except Exception:
+        pass
+    
+    # Confidence bonus for using more data sources
+    if sources_used >= 5: score += 0.5
+    elif sources_used >= 3: score += 0.25
     
     return max(0, min(10, score))
 

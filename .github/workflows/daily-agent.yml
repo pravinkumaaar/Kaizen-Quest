@@ -1,47 +1,84 @@
 name: Trading Agent Scheduler
 
-on:
+"on":
   schedule:
-    # 3 FULL REPORTS PER DAY (cron is UTC)
-    # Post-market: 4:30 PM ET = 20:30 UTC (EDT)
-    - cron: '0 12 * * 1-5'    # 8:00 AM EDT — Pre-market full report
-    - cron: '30 16 * * 1-5'   # 12:30 PM EDT — Mid-day full report
-    - cron: '30 20 * * 1-5'   # 4:30 PM EDT — Post-market full report
-
-    # MARKET-HOURS RUNS (every 60 min) - Alerts only
+    # ═══════════════════════════════════════════════════════════
+    # WEEKDAY RUNS (Mon-Fri)
+    # ═══════════════════════════════════════════════════════════
+    
+    # PRE-MARKET FULL REPORT: 8:00 AM EDT/EST
+    # Full run: research + trade + report + Telegram
+    - cron: '0 12 * * 1-5'    # 8:00 AM EDT (summer/DST)
+    - cron: '0 13 * * 1-5'    # 8:00 AM EST (winter/standard)
+    
+    # PRE-MARKET RESEARCH: 7:00 AM EDT/EST
+    - cron: '0 11 * * 1-5'    # 7:00 AM EDT
+    - cron: '0 12 * * 1-5'    # 7:00 AM EST (note: overlaps with full report cron, mode detection handles it)
+    
+    # MARKET-HOURS: Every hour 9:30 AM - 3:30 PM EDT/EST (alerts-only)
+    - cron: '30 13 * * 1-5'   # 9:30 AM EDT
+    - cron: '30 14 * * 1-5'   # 9:30 AM EST
     - cron: '0 14 * * 1-5'    # 10:00 AM EDT
+    - cron: '0 15 * * 1-5'    # 10:00 AM EST
     - cron: '0 15 * * 1-5'    # 11:00 AM EDT
+    - cron: '0 16 * * 1-5'    # 11:00 AM EST
     - cron: '0 16 * * 1-5'    # 12:00 PM EDT
+    - cron: '0 17 * * 1-5'    # 12:00 PM EST
+    
+    # MID-DAY FULL REPORT: 12:30 PM EDT/EST
+    - cron: '30 16 * * 1-5'   # 12:30 PM EDT
+    - cron: '30 17 * * 1-5'   # 12:30 PM EST
+    
+    # AFTERNOON MARKET-HOURS: 1:00 PM - 3:00 PM EDT/EST
     - cron: '0 17 * * 1-5'    # 1:00 PM EDT
+    - cron: '0 18 * * 1-5'    # 1:00 PM EST
     - cron: '0 18 * * 1-5'    # 2:00 PM EDT
+    - cron: '0 19 * * 1-5'    # 2:00 PM EST
     - cron: '0 19 * * 1-5'    # 3:00 PM EDT
-
-    # WEEKEND RESEARCH RUNS (every 60 min) — Deep research, no reports/trades
-    # Saturday: 10 AM - 4 PM EDT = 14:00 - 20:00 UTC
-    - cron: '0 14,15,16,17,18,19,20 * * 6'  # Saturday hourly
-    # Sunday: 10 AM - 4 PM EDT = 14:00 - 20:00 UTC
-    - cron: '0 14,15,16,17,18,19,20 * * 0'  # Sunday hourly
+    - cron: '0 20 * * 1-5'    # 3:00 PM EST
+    
+    # POST-MARKET FULL REPORT: 4:30 PM EDT/EST
+    - cron: '30 20 * * 1-5'   # 4:30 PM EDT
+    - cron: '30 21 * * 1-5'   # 4:30 PM EST
+    
+    # POST-MARKET RESEARCH: 6 PM, 8 PM, 10 PM EDT/EST (every 2 hours)
+    - cron: '0 22 * * 1-5'    # 6:00 PM EDT
+    - cron: '0 23 * * 1-5'    # 6:00 PM EST
+    - cron: '0 0 * * 2-6'     # 8:00 PM EDT (prev day UTC)
+    - cron: '0 1 * * 2-6'     # 8:00 PM EST
+    - cron: '0 2 * * 2-6'     # 10:00 PM EDT
+    - cron: '0 3 * * 2-6'     # 10:00 PM EST
+    
+    # ═══════════════════════════════════════════════════════════
+    # WEEKEND RESEARCH RUNS (Sat-Sun) — 24/7 every 2 hours
+    # ═══════════════════════════════════════════════════════════
+    - cron: '0 0,2,4,6,8,10,12,14,16,18,20,22 * * 6'  # Saturday
+    - cron: '0 0,2,4,6,8,10,12,14,16,18,20,22 * * 0'  # Sunday
+  
   workflow_dispatch:
     inputs:
       run_mode:
-        description: 'Run mode: auto (time-based), full (always report), alerts-only (no report)'
+        description: 'Run mode'
         required: false
-        default: 'full'
+        default: 'auto'
         type: choice
         options:
           - auto
           - full
           - alerts-only
+          - research
 
 jobs:
   run-agent:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    timeout-minutes: 45
     steps:
     - uses: actions/checkout@v4
       with:
         token: ${{ secrets.PAT_TOKEN }}
+        fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
@@ -50,46 +87,48 @@ jobs:
     - name: Determine run mode
       id: mode
       run: |
-        # If manually triggered with a specific mode, use that
         MANUAL_MODE="${{ github.event.inputs.run_mode }}"
+        
         if [ "$MANUAL_MODE" = "full" ]; then
           echo "MODE=full" >> $GITHUB_OUTPUT
-          echo "Manual trigger: full mode"
           exit 0
         elif [ "$MANUAL_MODE" = "alerts-only" ]; then
           echo "MODE=alerts-only" >> $GITHUB_OUTPUT
-          echo "Manual trigger: alerts-only mode"
+          exit 0
+        elif [ "$MANUAL_MODE" = "research" ]; then
+          echo "MODE=research" >> $GITHUB_OUTPUT
           exit 0
         fi
         
-        # Auto-detect based on Eastern Time
         HOUR=$(TZ='US/Eastern' date +%H)
         MIN=$(TZ='US/Eastern' date +%M)
         DOW=$(TZ='US/Eastern' date +%u)
         
-        # Weekend = research mode (deep research, no reports, no trades)
+        # Weekends = research 24/7
         if [ "$DOW" -gt 5 ]; then
           echo "MODE=research" >> $GITHUB_OUTPUT
-          echo "Weekend — research mode (deep dive, no reports)"
           exit 0
         fi
         
-        # Full report at scheduled times (with 5-min window)
+        # Full reports: 8 AM, 12:30 PM, 4:30 PM
         if ([ "$HOUR" -eq 8 ] && [ "$MIN" -le 5 ]) || \
            ([ "$HOUR" -eq 12 ] && [ "$MIN" -ge 25 ] && [ "$MIN" -le 35 ]) || \
            ([ "$HOUR" -eq 16 ] && [ "$MIN" -ge 25 ] && [ "$MIN" -le 35 ]); then
           echo "MODE=full" >> $GITHUB_OUTPUT
-          echo "Scheduled full report time"
-        # Post-market hours (4 PM - 10 PM ET) always generate a full report
-        elif [ "$HOUR" -ge 16 ] && [ "$HOUR" -lt 22 ]; then
-          echo "MODE=full" >> $GITHUB_OUTPUT
-          echo "Post-market hours — full report"
-        else
+        # Pre-market research: 7 AM
+        elif [ "$HOUR" -eq 7 ] && [ "$MIN" -le 5 ]; then
+          echo "MODE=research" >> $GITHUB_OUTPUT
+        # Post-market research: 6 PM, 8 PM, 10 PM
+        elif [ "$HOUR" -eq 18 ] || [ "$HOUR" -eq 20 ] || [ "$HOUR" -eq 22 ]; then
+          echo "MODE=research" >> $GITHUB_OUTPUT
+        # Market hours: alerts-only
+        elif [ "$HOUR" -ge 9 ] && [ "$HOUR" -lt 16 ]; then
           echo "MODE=alerts-only" >> $GITHUB_OUTPUT
-          echo "Market hours — alerts only"
+        else
+          echo "MODE=research" >> $GITHUB_OUTPUT
         fi
 
-    - name: Run agent (full - report + trade + alerts)
+    - name: Run agent (full)
       if: steps.mode.outputs.MODE == 'full'
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -101,10 +140,11 @@ jobs:
         CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
         CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         RUN_MODE: full
       run: python3 agent.py
 
-    - name: Run agent (alerts-only - trade + alerts, no report)
+    - name: Run agent (alerts-only)
       if: steps.mode.outputs.MODE == 'alerts-only'
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -116,10 +156,11 @@ jobs:
         CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
         CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         RUN_MODE: alerts-only
       run: python3 agent.py
 
-    - name: Run agent (research - weekend deep dive, no reports/trades)
+    - name: Run agent (research)
       if: steps.mode.outputs.MODE == 'research'
       env:
         OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -131,17 +172,19 @@ jobs:
         CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
         CLICKUP_LIST_ID: ${{ secrets.CLICKUP_LIST_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         RUN_MODE: research
       run: python3 agent.py
 
-    - name: Commit reports and research (full + research modes)
-      if: steps.mode.outputs.MODE == 'full' || steps.mode.outputs.MODE == 'research'
+    - name: Commit results
+      if: always()
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add -f REPORTS/ HISTORY/ docs/ research/
         git add -f logs/agent.log logs/paper_trades.log 2>/dev/null || true
-        git diff --staged --quiet || git commit -m "Agent ${{ steps.mode.outputs.MODE }}: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
-        # Fix race condition: pull --rebase before push
-        git pull --rebase origin main || true
-        git push origin main || true
+        if ! git diff --staged --quiet; then
+          git commit -m "Agent ${{ steps.mode.outputs.MODE }}: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
+          git pull --rebase origin main 2>/dev/null || true
+          git push origin main || echo "Push failed — will retry next run"
+        fi
