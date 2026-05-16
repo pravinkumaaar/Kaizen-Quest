@@ -3140,13 +3140,15 @@ def main():
     # OVERRIDE: If it's pre-market (before 9:30 AM) or post-market (after 4:00 PM)
     # or weekend, ALWAYS generate a full report regardless of RUN_MODE.
     # Only market hours (9:30 AM - 4:00 PM) use alerts-only mode.
-    global SILENT_MODE
+    global SILENT_MODE, RESEARCH_MODE
+    _run_mode = os.environ.get("RUN_MODE", "")
+    SILENT_MODE = _run_mode in ("silent", "alerts-only", "research")
+    RESEARCH_MODE = _run_mode == "research"
+    # Ensure SILENT_MODE is set even if it was already defined
     try:
         SILENT_MODE
     except NameError:
-        _run_mode = os.environ.get("RUN_MODE", "")
-        SILENT_MODE = _run_mode in ("silent", "alerts-only", "research")
-        RESEARCH_MODE = _run_mode == "research"
+        pass
     
     # Initialize run metadata — always use US Eastern Time (owner is in Jersey City, NJ)
     global NOW, TODAY, RUN_LABEL, IS_MARKET_OPEN
@@ -3607,8 +3609,11 @@ def main():
             emoji = {"SELL": "🛑", "TRIM": "✂️", "BUY_MORE": "➕"}.get(a["action"], "⚪")
             log(f"  {emoji} {a['action']} {a['ticker']}: {a['reason']}")
     
-    # Telegram alerts for CSV portfolio actions
-    urgent_csv = [a for a in csv_actions if a["action"] in ("SELL", "TRIM")]
+    # Telegram alerts for CSV portfolio actions (skip in research mode)
+    if RESEARCH_MODE:
+        urgent_csv = []
+    else:
+        urgent_csv = [a for a in csv_actions if a["action"] in ("SELL", "TRIM")]
     if urgent_csv:
         try:
             from skills.telegram_bot import broadcast
@@ -4111,57 +4116,73 @@ Be specific and actionable. The agent will use these recommendations to place ac
         report = ""
 
     # 5c. Send urgent Telegram alerts (foresight extremes, once-in-a-lifetime ops)
-    # Runs in BOTH full and alerts-only modes — these are time-sensitive
+    # Runs in full and alerts-only modes — NOT in research mode (weekends)
     # Placed here AFTER investments is generated so we can scan it
-    try:
-        from skills.telegram_bot import broadcast
-        # Foresight crash/bullish alerts
-        if foresight.get("alert"):
-            broadcast(foresight["alert"])
-            log("[OK] 🚨 Foresight alert sent to Telegram!")
-        # Once-in-a-lifetime opportunities — only alert if a VALID opportunity exists
-        # Check that the LLM actually identified a specific opportunity (not just the header)
-        if investments:
-            inv_str = str(investments)
-            otl_lower = inv_str.lower()
-            has_otl = "once-in-a-lifetime" in otl_lower or "once in a lifetime" in otl_lower
-            if has_otl:
-                import re
-                # Extract the full section — must have actual content beyond just the header
-                otl_pattern = r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n#{1,3}\s|\Z)'
-                otl_match = re.search(otl_pattern, inv_str, re.DOTALL | re.IGNORECASE)
-                if otl_match:
-                    content = otl_match.group(1).strip()
-                    content_lower = content.lower()
-                    # STRICT validation: only alert for truly exceptional opportunities
-                    # Must have ALL of these to qualify:
-                    has_ticker = bool(re.search(r'[A-Z]{1,5}\b', content))  # Specific ticker symbol
-                    has_price = bool(re.search(r'\$[\d,.]+', content))  # Price target or entry
-                    has_conviction = bool(re.search(r'conviction|10/10|high.confidence|certain', content_lower))
-                    has_catalyst = bool(re.search(r'catalyst|earnings|approval|contract|inflection|breakout|accelerat', content_lower))
-                    has_asymmetry = bool(re.search(r'5x|50%|asymmetric|outsized|10:1|5:1|risk.reward', content_lower))
-                    has_specific_thesis = len(content) > 200  # Substantial thesis, not just a sentence
-                    # Count how many criteria are met
-                    all_criteria = [has_ticker, has_price, has_conviction, has_catalyst, has_asymmetry, has_specific_thesis]
-                    criteria_met = sum(all_criteria)
-                    total_criteria = len(all_criteria)
-                    # Dynamic threshold: must meet all but one criteria (e.g., 5 of 6, 6 of 7, etc.)
-                    threshold = total_criteria - 1
-                    if criteria_met >= threshold:
-                        full_match = otl_match.group(0).strip()
-                        full_match = re.sub(r'\n{3,}', '\n\n', full_match)
-                        alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<i>Review and act if you agree. Not financial advice.</i>"
-                        sent = broadcast(alert_text)
-                        if sent:
-                            log(f"[OK] ⭐ Once-in-a-lifetime alert sent to {sent} Telegram user(s) (criteria: {criteria_met}/{total_criteria}, threshold: {threshold})")
+    if not RESEARCH_MODE:
+        try:
+            from skills.telegram_bot import broadcast
+            # Foresight crash/bullish alerts
+            if foresight.get("alert"):
+                broadcast(foresight["alert"])
+                log("[OK] 🚨 Foresight alert sent to Telegram!")
+            # Once-in-a-lifetime opportunities — only alert if a VALID opportunity exists
+            if investments:
+                inv_str = str(investments)
+                otl_lower = inv_str.lower()
+                has_otl = "once-in-a-lifetime" in otl_lower or "once in a lifetime" in otl_lower
+                if has_otl:
+                    import re
+                    otl_pattern = r'(?:ONCE-IN-A-LIFETIME|Once-in-a-lifetime)[^\n]*\n(.*?)(?:\n#{1,3}\s|\Z)'
+                    otl_match = re.search(otl_pattern, inv_str, re.DOTALL | re.IGNORECASE)
+                    if otl_match:
+                        content = otl_match.group(1).strip()
+                        content_lower = content.lower()
+                        # Comprehensive 10-point checklist using ALL available data
+                        has_ticker = bool(re.search(r'[A-Z]{1,5}\b', content))
+                        has_price = bool(re.search(r'\$[\d,.]+', content))
+                        has_conviction = bool(re.search(r'conviction|10/10|high.confidence|certain', content_lower))
+                        has_catalyst = bool(re.search(r'catalyst|earnings|approval|contract|inflection|breakout|accelerat', content_lower))
+                        has_asymmetry = bool(re.search(r'5x|50%|asymmetric|outsized|10:1|5:1|risk.reward', content_lower))
+                        has_specific_thesis = len(content) > 200
+                        has_time_horizon = bool(re.search(r'horizon|weeks?|months?|years?|swing|long.term|medium.term', content_lower))
+                        has_risk_management = bool(re.search(r'stop.loss|exit|risk|downside|protect|hedge', content_lower))
+                        has_fundamentals = bool(re.search(r'revenue|earnings|growth|margin|roe|roa|fcf|free.cash', content_lower))
+                        has_moat = bool(re.search(r'moat|competitive|advantage|market.leader|dominant|monopoly|oligopoly', content_lower))
+                        all_criteria = [has_ticker, has_price, has_conviction, has_catalyst,
+                                       has_asymmetry, has_specific_thesis, has_time_horizon,
+                                       has_risk_management, has_fundamentals, has_moat]
+                        criteria_met = sum(all_criteria)
+                        total_criteria = len(all_criteria)
+                        # Threshold: 7 of 10 (was 5 of 6 — now more comprehensive but proportionally similar)
+                        threshold = 7
+                        if criteria_met >= threshold:
+                            full_match = otl_match.group(0).strip()
+                            full_match = re.sub(r'\n{3,}', '\n\n', full_match)
+                            criteria_list = []
+                            if has_ticker: criteria_list.append("✅ Ticker")
+                            if has_price: criteria_list.append("✅ Price target")
+                            if has_conviction: criteria_list.append("✅ Conviction")
+                            if has_catalyst: criteria_list.append("✅ Catalyst")
+                            if has_asymmetry: criteria_list.append("✅ Asymmetry")
+                            if has_specific_thesis: criteria_list.append("✅ Thesis")
+                            if has_time_horizon: criteria_list.append("✅ Time horizon")
+                            if has_risk_management: criteria_list.append("✅ Risk mgmt")
+                            if has_fundamentals: criteria_list.append("✅ Fundamentals")
+                            if has_moat: criteria_list.append("✅ Moat")
+                            alert_text = f"⭐⭐⭐ <b>ONCE-IN-A-LIFETIME OPPORTUNITY</b> ⭐⭐⭐\n\n{full_match}\n\n<b>Checklist ({criteria_met}/{total_criteria}):</b> {' | '.join(criteria_list)}\n\n<i>Review and act if you agree. Not financial advice.</i>"
+                            sent = broadcast(alert_text)
+                            if sent:
+                                log(f"[OK] ⭐ OTL alert sent to {sent} Telegram user(s) ({criteria_met}/{total_criteria})")
+                            else:
+                                log("[!] OTL: no Telegram users configured")
                         else:
-                            log("[!] Once-in-a-lifetime: no Telegram users configured")
+                            log(f"[OK] OTL found but not exceptional enough ({criteria_met}/{total_criteria}, need {threshold}) — skipping alert")
                     else:
-                        log(f"[OK] Once-in-a-lifetime found but not exceptional enough (criteria: {criteria_met}/6) — skipping alert")
-                else:
-                    log("[OK] Once-in-a-lifetime keyword found but no extractable content — skipping alert")
-    except Exception as e:
-        log(f"[!] Failed to send Telegram alerts: {e}")
+                        log("[OK] OTL keyword found but no extractable content — skipping alert")
+        except Exception as e:
+            log(f"[!] Failed to send Telegram alerts: {e}")
+    else:
+        log("📝 RESEARCH mode — skipping Telegram alerts")
 
     # 6. Deep self-reflection & continuous learning (ALWAYS runs — agent must learn from every run)
     log("🪞 Deep self-reflection & learning...")
