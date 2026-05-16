@@ -4163,9 +4163,10 @@ Be specific and actionable. The agent will use these recommendations to place ac
                         _prices = re.findall(r'\$[\d,.]+', content)
                         has_price = len(_prices) > 0
                         
-                        # 3. CONVICTION SCORE: Must express high conviction (8+/10 or equivalent)
-                        #    Why: OTL opportunities should be high-conviction, not maybes
-                        has_conviction = bool(re.search(r'conviction.*[8-9]/10|conviction.*10/10|high.confidence|certain|strong.belief|conviction:.*[89]|conviction.*9', content_lower))
+                        # 3. CONVICTION SCORE: Must express very high conviction (9/10 or 10/10)
+                        #    Why: OTL opportunities should be near-certain, not maybes
+                        #    Note: LLMs rarely output 10/10, so we accept 9/10+ as "best pick"
+                        has_conviction = bool(re.search(r'conviction.*[9]-10|conviction.*10/10|conviction.*9/10|high.confidence|certain|strong.belief|conviction:.*9|conviction:.*10', content_lower))
                         
                         # 4. CLEAR CATALYST: Must identify a specific upcoming catalyst
                         #    Why: OTL opportunities need a reason to move in the near term
@@ -4206,7 +4207,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
                         all_criteria = [
                             (has_ticker, "Ticker"),
                             (has_price, "Price target"),
-                            (has_conviction, "Conviction 8+/10"),
+                            (has_conviction, "Conviction 9+/10"),
                             (has_catalyst, "Clear catalyst"),
                             (has_asymmetry, "Asymmetric R/R"),
                             (has_specific_thesis, "Detailed thesis"),
