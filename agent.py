@@ -3163,9 +3163,7 @@ def main():
     TODAY = now.strftime("%Y-%m-%d")
     RUN_LABEL = now.strftime("%H%M")
     
-    # Determine if we should force full report mode based on time of day
-    # Pre-market (before 9:30 AM) and post-market (after 4:00 PM) always get full reports
-    # Weekends always get full reports (comprehensive weekly review)
+    # Determine time-of-day context
     _hour = now.hour
     _minute = now.minute
     _weekday = now.weekday()  # 0=Monday, 6=Sunday
@@ -3176,10 +3174,11 @@ def main():
     _is_pre_market = (not _is_weekend) and (_hour < 9 or (_hour == 9 and _minute < 30))
     _is_post_market = (not _is_weekend) and (_hour >= 16)
     
-    # Force full report for pre-market, post-market, and weekends
-    if _is_pre_market or _is_post_market or _is_weekend:
+    # Force full report for pre-market and post-market on weekdays only
+    # Weekends stay in research mode (no reports, no Telegram)
+    if (_is_pre_market or _is_post_market) and not _is_weekend:
         if SILENT_MODE:
-            log(f"⏰ Time-based override: {'pre-market' if _is_pre_market else 'post-market' if _is_post_market else 'weekend'} — forcing full report mode")
+            log(f"⏰ Time-based override: {'pre-market' if _is_pre_market else 'post-market'} — forcing full report mode")
             SILENT_MODE = False
     
     # Check if US stock market is open (9:30 AM - 4:00 PM ET, Mon-Fri)
@@ -3848,11 +3847,10 @@ def main():
             _researcher = DeepResearcher(verbose=True)
             
             # Determine which tickers to research deeply
-            # Priority: Alpaca holdings + top watchlist + high-conviction ideas
+            # Priority: Alpaca holdings + CSV portfolio holdings (joint highest) + watchlist
             _research_tickers = []
             
-            # Add Alpaca holdings (most important — real money)
-            # Try to reuse snapshot already fetched earlier to avoid extra API calls
+            # Add Alpaca holdings (real money — highest priority)
             _alpaca_positions = None
             try:
                 _alpaca_positions = alpaca_snapshot.get("positions", [])
@@ -3866,9 +3864,10 @@ def main():
                     if isinstance(_pos, dict) and _pos.get("type") == "stock":
                         _research_tickers.append(_pos["symbol"])
             
-            # Add top portfolio tickers by weight
-            _top_holdings = portfolio_analysis.get('top_positions', [])[:5]
-            for _h in _top_holdings:
+            # Add CSV portfolio holdings (joint highest priority with Alpaca)
+            # These are the user's main portfolio positions from CSV imports
+            _csv_holdings = portfolio_analysis.get('top_positions', [])[:10]
+            for _h in _csv_holdings:
                 _t = _h.get('ticker', '')
                 if _t and _t not in _research_tickers:
                     _research_tickers.append(_t)
@@ -4025,7 +4024,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
                 _qty = int(pos.get('qty', 0))
                 _avg_entry = float(pos.get('avg_entry', 0) or 0)
                 _current = float(pos.get('current_price', 0) or 0)
-                _plpc = float(pos.get('unrealized_plpc', 0) or 0) * 100
+                _plpc = float(pos.get('unrealized_plpc', 0) or 0)
                 rec_line = (f"- {TODAY} | {sym} | ${_avg_entry:.2f} | {_qty} | 8/10 | Active | "
                             f"${_current:.2f} | {_plpc:+.2f}% | Long-term (Alpaca)")
                 alpaca_rec_lines.append(rec_line)

@@ -263,7 +263,7 @@ def parse_and_store_recommendations(investments_text, model_used="unknown"):
                             _avg = float(pos.get('avg_entry', 0) or 0)
                             _qty = int(pos.get('qty', 0) or 0)
                             _cur = float(pos.get('current_price', 0) or 0)
-                            _plpc = float(pos.get('unrealized_plpc', 0) or 0) * 100
+                            _plpc = float(pos.get('unrealized_plpc', 0) or 0)
                             alpaca_rows.append(
                                 f"| **{pos['symbol']}** | {_qty} | "
                                 f"${_avg:.2f} | "
