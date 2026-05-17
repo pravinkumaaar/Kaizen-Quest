@@ -71,3 +71,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-17 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is ground zero for the AI |
 | 2026-05-17 | APLD | BUY | $42.57 | $3.00 | 4/10 | Active | - | Why: APLD is down 9% today and has been in a persistent downtrend. You're still  |
 | 2026-05-17 | GLD | BUY | N/A | $60.00 | 7/10 | Active | - | Why: You have ZERO precious metals exposure. Gold is making new all-time highs d |
+| 2026-05-17 | NVDA | BUY | $225.34 | $270.00 | 9/10 | Active | - | Why: NVDA reports in 72 hours. The stock is down 4.4% today on pre-earnings jitt |
+| 2026-05-17 | CRDO | BUY | $172.19 | $220.00 | 8/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company (optica |
