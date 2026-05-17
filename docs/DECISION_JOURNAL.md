@@ -73,3 +73,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-17 | GLD | BUY | N/A | $60.00 | 7/10 | Active | - | Why: You have ZERO precious metals exposure. Gold is making new all-time highs d |
 | 2026-05-17 | NVDA | BUY | $225.34 | $270.00 | 9/10 | Active | - | Why: NVDA reports in 72 hours. The stock is down 4.4% today on pre-earnings jitt |
 | 2026-05-17 | CRDO | BUY | $172.19 | $220.00 | 8/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company (optica |
+| 2026-05-17 | CRDO | BUY | $172.17 | $225.00 | 7/10 | Active | - | Why: Credo makes the high-speed connectivity chips (SerDes, retimers, AECs) that |
+| 2026-05-17 | AVGO | BUY | N/A | $365.00 | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that nobody gets excited abo |
+| 2026-05-17 | EIDO | BUY | N/A | $25.00 | 7/10 | Active | - | Why: Your portfolio has zero international exposure. This is a blind spot. Indon |
