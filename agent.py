@@ -4022,11 +4022,14 @@ Be specific and actionable. The agent will use these recommendations to place ac
         for pos in alpaca_snapshot["positions"]:
             if pos["type"] == "stock":
                 sym = pos["symbol"]
+                _qty = int(pos.get('qty', 0))
+                _avg_entry = float(pos.get('avg_entry', 0) or 0)
+                _current = float(pos.get('current_price', 0) or 0)
                 _plpc = float(pos.get('unrealized_plpc', 0) or 0) * 100
-                rec_line = (f"- {TODAY} | {sym} | ${pos['avg_entry']:.2f} | N/A | 8/10 | Active | "
-                            f"${pos['current_price']:.2f} | {_plpc:+.2f}% | Long-term (Alpaca)")
+                rec_line = (f"- {TODAY} | {sym} | ${_avg_entry:.2f} | {_qty} | 8/10 | Active | "
+                            f"${_current:.2f} | {_plpc:+.2f}% | Long-term (Alpaca)")
                 alpaca_rec_lines.append(rec_line)
-                log(f"[OK] Alpaca holding: {sym} @ ${pos['avg_entry']:.2f} → ${pos['current_price']:.2f} ({_plpc:+.2f}%)")
+                log(f"[OK] Alpaca holding: {sym} x{_qty} @ ${_avg_entry:.2f} → ${_current:.2f} ({_plpc:+.2f}%)")
 
         existing_recs = read_file(RECOMMENDATIONS_FILE) if RECOMMENDATIONS_FILE.exists() else ""
         all_lines = existing_recs.split('\n') if existing_recs else []
@@ -4055,6 +4058,18 @@ Be specific and actionable. The agent will use these recommendations to place ac
         log(f"[!] Error syncing Alpaca positions: {e}")
 
     # 4f. Options ideas — also gets the full enriched context
+    # Inject existing Alpaca positions so LLM knows what user already owns
+    _existing_positions_context = ""
+    try:
+        if 'alpaca_snapshot' in dir() and alpaca_snapshot and "positions" in alpaca_snapshot:
+            _owned = [f"{p['symbol']} (x{int(p.get('qty',0))}, avg ${p.get('avg_entry',0):.2f}, P&L {p.get('unrealized_plpc',0)*100:+.1f}%)"
+                      for p in alpaca_snapshot["positions"] if p.get("type") == "stock"]
+            if _owned:
+                _existing_positions_context = f"\n\n## 🏦 YOUR EXISTING POSITIONS (Do NOT recommend these as 'new'):\n" + "\n".join(f"- {o}" for o in _owned)
+                log(f"[OK] Options context: {len(_owned)} existing positions injected")
+    except Exception as e:
+        log(f"[!] Failed to inject existing positions into options context: {e}")
+
     combined_earnings = ""
     if earnings_alerts:
         combined_earnings += earnings_alerts
@@ -4067,7 +4082,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
 
     options = task_options_ideas(
         market_data, digest_summary, memory,
-        options_context=investment_context,
+        options_context=investment_context + _existing_positions_context,
         earnings_context=combined_earnings,
         market_sentiment=market_sentiment
     )

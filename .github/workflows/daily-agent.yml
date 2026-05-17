@@ -143,10 +143,15 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add -f REPORTS/ HISTORY/ docs/ research/
+        # Stage outputs (ignore errors for non-existent paths)
+        git add -f REPORTS/ HISTORY/ docs/ 2>/dev/null || true
+        git add -f research/ 2>/dev/null || true
         git add -f logs/agent.log logs/paper_trades.log 2>/dev/null || true
+        # Only commit if there are changes
         if ! git diff --staged --quiet; then
           git commit -m "Agent ${{ steps.mode.outputs.MODE }}: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
           git pull --rebase origin main 2>/dev/null || true
           git push origin main || echo "Push failed -- will retry next run"
+        else
+          echo "No changes to commit"
         fi

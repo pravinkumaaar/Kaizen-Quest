@@ -260,11 +260,15 @@ def parse_and_store_recommendations(investments_text, model_used="unknown"):
                     alpaca_rows = []
                     for pos in positions:
                         if pos.get('type') == 'stock':
+                            _avg = float(pos.get('avg_entry', 0) or 0)
+                            _qty = int(pos.get('qty', 0) or 0)
+                            _cur = float(pos.get('current_price', 0) or 0)
+                            _plpc = float(pos.get('unrealized_plpc', 0) or 0) * 100
                             alpaca_rows.append(
-                                f"| **{pos['symbol']}** | {pos.get('qty', 0)} | "
-                                f"${pos.get('avg_entry_price', 0):.2f} | "
-                                f"${pos.get('current_price', 0):.2f} | "
-                                f"{pos.get('unrealized_plpc', 0)*100:+.1f}% |"
+                                f"| **{pos['symbol']}** | {_qty} | "
+                                f"${_avg:.2f} | "
+                                f"${_cur:.2f} | "
+                                f"{_plpc:+.1f}% |"
                             )
                     if alpaca_rows:
                         alpaca_section = alpaca_header + "\n" + "\n".join(alpaca_rows)
