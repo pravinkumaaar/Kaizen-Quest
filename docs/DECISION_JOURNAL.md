@@ -65,3 +65,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-17 | APLD | BUY | $42.56 | N/A | 7/10 | Active | - | Why: Applied Digital is down 8.88% today, giving back a chunk of its massive run |
 | 2026-05-17 | CRDO | BUY | $172.17 | $220.00 | 7/10 | Active | - | Why: Credo Technology is a high-speed connectivity play (optical DSPs, active el |
 | 2026-05-17 | PLTR | BUY | $133.99 | $10400.00 | 8/10 | Active | - | Why: Palantir is your largest position at 27.9% of portfolio. You're +113.8% unr |
+| 2026-05-17 | TRIM | BUY | $133.99 | N/A | 9/10 | Active | - | THESIS: Take profits on your single largest position to reduce single-stock risk |
