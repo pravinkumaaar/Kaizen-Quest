@@ -730,10 +730,45 @@ class DeepResearcher:
                 except Exception as e:
                     self._errors.append(f"layer{layer_num}: {e}")
         
-        # Calculate research depth score
-        result["research_depth"] = len(result["layers_run"])
+        # Calculate research depth score based on actual data gathered
+        # Each layer gets 1 point only if it returned meaningful data
+        _depth_score = 0
+        if result["data"].get("price", {}).get("price", 0) > 0:
+            _depth_score += 1  # L1: Got price data
+        if result["data"].get("financial_statements") or result["data"].get("dcf"):
+            _depth_score += 1  # L2: Got financials/DCF
+        if result["data"].get("competitive_landscape") or result["data"].get("peer_comparison"):
+            _depth_score += 1  # L3: Got competitive data
+        if result["data"].get("insider_trades") or result["data"].get("institutional_ownership"):
+            _depth_score += 1  # L4: Got smart money data
+        if result["data"].get("sector_performance") or result["data"].get("technicals"):
+            _depth_score += 1  # L5: Got macro/sector/technical data
+        if result["contrarian_signals"]:
+            _depth_score += 1  # L6: Got contrarian analysis
+        if result["data"].get("research_memory") or result["data"].get("changes"):
+            _depth_score += 1  # L7: Got temporal/memory data
+        
+        result["research_depth"] = _depth_score
         result["sources_used"] = list(self._sources_used)
         result["errors"] = self._errors
+        
+        # Extract key catalysts from the data
+        _catalysts = []
+        if result["data"].get("earnings_history"):
+            _catalysts.append("Earnings history available")
+        if result["data"].get("competitive_landscape"):
+            _catalysts.append("Competitive landscape analyzed")
+        if result["data"].get("insider_trades"):
+            _catalysts.append("Insider activity tracked")
+        
+        # Build a simple thesis from the data
+        _thesis = ""
+        _info = result["data"].get("info", {})
+        if _info.get("sector"):
+            _thesis = f"{ticker} operates in {_info['sector']}"
+            if _info.get("revenueGrowth"):
+                growth = float(_info["revenueGrowth"]) * 100
+                _thesis += f" with {growth:.0f}% revenue growth"
         
         # Save to research memory
         try:
@@ -744,6 +779,9 @@ class DeepResearcher:
                 ticker,
                 depth=result["research_depth"],
                 facts=result["facts"],
+                catalysts=_catalysts if _catalysts else None,
+                thesis=_thesis if _thesis else None,
+                conviction=7 if _depth_score >= 5 else 5,
                 price=price,
                 contrarian=result["contrarian_signals"],
                 sources=result["sources_used"],
@@ -751,7 +789,7 @@ class DeepResearcher:
         except Exception:
             pass
         
-        self._log(f"Deep dive complete: {len(result['facts'])} facts, {len(result['contrarian_signals'])} contrarian signals, depth={result['research_depth']}")
+        self._log(f"Deep dive complete: {len(result['facts'])} facts, {len(result['contrarian_signals'])} contrarian signals, depth={result['research_depth']}/7")
         
         self._research_findings[ticker] = result
         return result

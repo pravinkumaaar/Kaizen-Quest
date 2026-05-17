@@ -3885,18 +3885,27 @@ def main():
             except Exception:
                 pass
             
-            # Limit tickers: 5 for full mode, 3 for alerts-only (time budget)
-            _max_tickers = 5 if not SILENT_MODE else 3
-            _research_tickers = _research_tickers[:_max_tickers]
+            # Filter out tickers that were already researched recently (within 12 hours)
+            # This prevents re-researching the same tickers on every 2-hour run
+            _tickers_to_research = []
+            for _rt in _research_tickers:
+                if _mem.needs_research(_rt, min_depth=3, max_age_hours=12):
+                    _tickers_to_research.append(_rt)
+                else:
+                    log(f"  ⏭️ Skipping {_rt}: research is fresh (researched within 12h)")
             
-            if _research_tickers:
-                log(f"🔬 Deep research on {len(_research_tickers)} tickers: {', '.join(_research_tickers)}")
+            # Limit tickers: 5 for full mode, 3 for research mode (time budget)
+            _max_tickers = 5 if not SILENT_MODE else 3
+            _tickers_to_research = _tickers_to_research[:_max_tickers]
+            
+            if _tickers_to_research:
+                log(f"🔬 Deep research on {len(_tickers_to_research)} tickers: {', '.join(_tickers_to_research)}")
                 
-                # Check if we're in full mode (deep dive) or alerts-only (quick update)
+                # Check if we're in full mode (deep dive) or research mode (quick update)
                 _is_full_mode = not SILENT_MODE
                 _layers = [1, 2, 3, 4, 5, 6, 7] if _is_full_mode else [1, 2, 6]
                 
-                for _rt in _research_tickers:
+                for _rt in _tickers_to_research:
                     try:
                         if _is_full_mode:
                             _result = _researcher.deep_dive(_rt, layers=_layers)
