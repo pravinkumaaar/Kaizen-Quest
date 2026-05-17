@@ -3,7 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **TRIM** | $133.99 | TBD | 9/10 |  Active  |  $133.99  |  +0.0%  | Immediate trim, hold core through June 4 | Watchlist |
+| 1 | **NVDA** | $225.34 | $8.00 | 7/10 |  Active  |  $225.34  |  +0.0%  | Swing (earnings catalyst in 3 days) → reassess | Watchlist |
+| 2 | **FCX** | Market | TBD | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium-Long (1-3 years) | Watchlist |
+| 3 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (6-18 months) | Watchlist |
+| 4 | **APLD** | $42.57 | $3.00 | 4/10 |  Active  |  $42.57  |  +0.0%  | Swing (1-4 weeks to reassess) | Watchlist |
+| 5 | **GLD** | Market | $60.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

@@ -66,3 +66,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-17 | CRDO | BUY | $172.17 | $220.00 | 7/10 | Active | - | Why: Credo Technology is a high-speed connectivity play (optical DSPs, active el |
 | 2026-05-17 | PLTR | BUY | $133.99 | $10400.00 | 8/10 | Active | - | Why: Palantir is your largest position at 27.9% of portfolio. You're +113.8% unr |
 | 2026-05-17 | TRIM | BUY | $133.99 | N/A | 9/10 | Active | - | THESIS: Take profits on your single largest position to reduce single-stock risk |
+| 2026-05-17 | NVDA | BUY | $225.34 | $8.00 | 7/10 | Active | - | Why: NVDA reports earnings in 3 days. You own 13.6% of your portfolio here. The  |
+| 2026-05-17 | FCX | BUY | N/A | N/A | 8/10 | Active | - | Why: You have ZERO commodity exposure. Copper is the critical metal for AI data  |
+| 2026-05-17 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is ground zero for the AI |
+| 2026-05-17 | APLD | BUY | $42.57 | $3.00 | 4/10 | Active | - | Why: APLD is down 9% today and has been in a persistent downtrend. You're still  |
+| 2026-05-17 | GLD | BUY | N/A | $60.00 | 7/10 | Active | - | Why: You have ZERO precious metals exposure. Gold is making new all-time highs d |
