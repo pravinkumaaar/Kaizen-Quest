@@ -61,3 +61,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-15 | NVDA | BUY | $225.32 | N/A | 7/10 | Active | - | Why: NVDA reports May 20 (5 days). You're up +117% on a 13.6% position. The stoc |
 | 2026-05-15 | NEW | BUY | $370.94 | $475.00 | 8/10 | Active | - | Why: You already own VRT at 4.2% of portfolio (+153.6% gain). This is your highe |
 | 2026-05-15 | NEW | BUY | N/A | $490.00 | 7/10 | Active | - | Why: CRWD reports earnings June 3 (19 days). This is a NEW position for your por |
+| 2026-05-17 | NVDA | BUY | $225.32 | N/A | 8/10 | Active | - | Why: NVDA reports earnings in 3 days (May 20 AMC). You're sitting on +117% unrea |
+| 2026-05-17 | APLD | BUY | $42.56 | N/A | 7/10 | Active | - | Why: Applied Digital is down 8.88% today, giving back a chunk of its massive run |
+| 2026-05-17 | CRDO | BUY | $172.17 | $220.00 | 7/10 | Active | - | Why: Credo Technology is a high-speed connectivity play (optical DSPs, active el |
+| 2026-05-17 | PLTR | BUY | $133.99 | $10400.00 | 8/10 | Active | - | Why: Palantir is your largest position at 27.9% of portfolio. You're +113.8% unr |

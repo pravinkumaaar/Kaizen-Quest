@@ -1,130 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-checklist of all user feedback items and verify each is addressed in every run. The 4/30 feedback about new stocks and the 5/07 feedback about market foresight scoring are still not resolved. This is unacceptable after 2+ weeks.
-
----
-
-**Bottom Line**: Today's run repeated the two most critical failures from prior runs — no new stock recommendations and no meaningful cash deployment plan — while adding a broken Market Foresight score that undermines credibility. The portfolio analysis and AI narrative identification remain strong, but the agent is not closing the loop on actionable recommendations. The 54% cash position in a rallying AI market is the single most important issue to address in the next run.
-
-## Run: 2026-05-15 16:01:59 ET
-# 🧠 Deep Self-Reflection — Run 1601
-**2026-05-15 16:01:59 ET**
-
----
-
-## What Worked Well
-
-- **Portfolio movers identification was strong**: Correctly flagged the carnage in speculative AI/quantum names — WOLF (-11.19%), QUBT (-10.44%), IONQ (-9.61%), APLD (-9.32%), BE (-9.05%). This is exactly the "biggest movers" view the user requested in their 4/22 feedback. The ordering by magnitude of move is correct and useful.
-- **Active recommendation tracking is functional**: PLTR at $139.47 (entry $133.58, +4.2%), VRT at $370.50 (entry $348.38, +6.3%) — both showing positive returns. SOFI at $15.59 (entry $16.29, -4.3%) and TEM at $43.80 (entry $50.22, -12.8%) are being tracked with honest P&L reporting. This directly addresses the 4/23 feedback about recommendation tracking.
-- **Options/LEAP explanations remain strong**: The 5/7 feedback confirmed the options recommendations with clear thesis and reasoning were "spot on." This is a consistent strength across multiple runs.
-- **Cross-domain analysis and brutally honest state-of-play assessment**: The 5/7 user specifically praised this. The report correctly identified the rotation out of speculative/high-beta tech and AI infrastructure plays.
-- **Earnings risk flag**: Still a valued addition per 5/7 feedback.
-
-## What Didn't Work
-
-- **Market Foresight score of 3/100 is broken and meaningless**: The 5/7 user explicitly said "the market foresight outlook is rated negative out of 100 and the suggestions seem a little vague, mainstream and generic." This score of 3/100 is even WORSE than before. A score this low with no clear methodology explanation destroys credibility. If the market is at SPY $739, VIX 26.9, and the portfolio is only down 0.6%, a 3/100 is incoherent. This needs to be either fixed with a real methodology or removed entirely.
-- **No new stock recommendations — CRITICAL FAILURE**: The 4/30 user explicitly requested: "I would like to see new stocks that I may not have that might present a better opportunity." The Watchlist Recommendations section is EMPTY. This is the THIRD consecutive run where this feedback has been ignored. This is the single most important recurring failure.
-- **Cash deployment plan is absent**: 55% cash ($55,308) sitting idle with no specific deployment plan. The 5/7 user noted suggestions were "vague, mainstream and generic." With VIX at 26.9 and the market selling off, this is precisely when dry powder should be deployed with specific targets and amounts.
-- **Conviction scores are inflated**: Four recommendations all at 8/10 conviction (PLTR, SOFI, TEM, VRT). This is not nuanced differentiation. If all picks are 8/10, the scale has no meaning. The 4/23 user wanted "more specific, nuanced" recommendations — uniform 8/10 scores are the opposite of nuanced.
-
-## Conviction Calibration
-
-- **VRT at 8/10 conviction — CORRECT CALL**: Entry $348.38, current $370.50, +6.3%. This is the best-performing active recommendation. The thesis around VRT (Vertiv) as AI infrastructure play is validated by today's data even in a down market (only -1.41% vs NVDA -4.38%, SMCI -6.07%). This deserves a conviction INCREASE to 9/10.
-- **PLTR at 8/10 conviction — CORRECT CALL**: Entry $133.58, current $139.47, +4.2%. Palantir's resilience in a selloff is notable. Maintain at 8/10.
-- **SOFI at 8/10 conviction — WRONG CALL**: Entry $16.29, current $15.59, -4.3%. In a market where fintech is under pressure, this needs conviction DOWNGRADE to 6/10. The thesis needs reassessment — is the original SOFI thesis broken or is this temporary?
-- **TEM at 8/10 conviction — WRONG CALL**: Entry $50.22, current $43.80, -12.8%. This is a significant underperformance. Conviction should be DOWNGRADED to 5/10. At -12.8%, this is approaching stop-loss territory. The original thesis for TEM (Tempus AI?) needs explicit reassessment.
-- **Missing stop-loss triggers**: No stop-loss levels are defined for any recommendation. With TEM at -12.8%, this is urgent.
-
-## Missed Opportunities
-
-- **NVDA at $225.41, down 4.38%**: This is a MAJOR missed recommendation opportunity. NVDA is the AI bellwether, down 4.38% on the day, and the portfolio already holds it. A specific add-on recommendation with dollar amount should have been generated. With 55% cash, deploying into NVDA weakness is exactly the "dry powder" strategy the report itself recommends.
-- **MU at $724.66, down 6.62%**: Micron is a core AI memory play. Down 6.62% with no recommendation to add. This is a clear buying opportunity that was missed.
-- **CRDO at $172.17, down 6.70%**: Credo Technology, already in the portfolio, down sharply. No add recommendation.
-- **PXLW at $6.83, UP 7.05%**: The only gainer in the top movers. This deserves investigation — why is it up when everything else is down? A contrarian long or momentum play should have been flagged.
-- **SLV at $69.09, down 8.50%**: Silver crashing while gold (GLD -2.32%) held relatively better. A pairs trade (long GLD / short SLV) or a rotation recommendation was missed.
-- **No new ticker recommendations at all**: The watchlist is empty. The user explicitly asked for stocks NOT already in the portfolio. This is a complete failure to act on direct feedback.
-
-## Data Quality Issues
-
-- **Market Foresight 3/100 score**: No methodology provided. This appears to be a hallucinated or broken metric. If VIX is 26.9 (elevated but not extreme), SPY is down 1.21%, and the portfolio is up 0.6%, a 3/100 score is not defensible. This metric needs a transparent calculation methodology or removal.
-- **Portfolio shows 70 total holdings but only 7 positions with $100,561 total**: This discrepancy needs explanation. Are the other 63 positions at $0 value? Closed? This is confusing and potentially misleading.
-- **Options data**: The 5/7 user noted "the options data was broken and that should be fixed." No options chain data is visible in this run. This remains unresolved.
-- **Cost basis vs. current price confusion**: The 4/30 user noted the agent used cost/average price instead of current price. The active recommendations show both entry and current price, which is good, but the portfolio P&L calculation methodology should be verified.
-
-## Risk Management
-
-- **TEM at -12.8% with no stop-loss action**: This is a critical risk management failure. At -12.8%, if no stop-loss was set at recommendation time, that was an error. If a stop-loss was set and not triggered, it was set too wide. Either way, this needs immediate correction.
-- **Concentration risk is misreported as 0.0%**: With 7 positions and 55% cash, the concentration in the 7 holdings is clearly non-zero. A 0.0% concentration figure is mathematically impossible with 45% deployed across 7 positions. This metric is broken.
-- **55% cash in a VIX 26.9 environment**: This is excessively conservative. The report itself says "Have dry powder ready, add to high-conviction on weakness" but then provides NO specific deployment plan. The cash is earning nothing while the market is presenting buying opportunities.
-- **No portfolio-level stop-loss or drawdown protection**: With the portfolio showing speculative names down 7-11%, there's no discussion of portfolio-level risk controls or hedging strategies.
-
-## Cash Deployment
-
-- **$55,308 idle cash (55%)**: This is the OPPOSITY COST problem. In a market with VIX at 26.9 and AI names down 4-11%, sitting on 55% cash while recommending 8/10 conviction buys is contradictory. The cash should be deployed in tranches.
-- **No deployment schedule or tranche plan**: The user wants specific, nuanced recommendations. "Have dry powder ready" is generic. A specific plan would be: "Deploy $10K into NVDA below $220, $8K into MU below $700, $5K into VRT below $360" — concrete levels and amounts.
-- **The 5/7 user explicitly said suggestions were "vague, mainstream and generic"**: This run repeats that exact failure.
-
-## Process Improvements
-
-1. **FIX the Watchlist Recommendations section**: Populate it with 3-5 NEW tickers not in the current portfolio. This is the #1 recurring failure across 3+ runs. Create a systematic scan for opportunities based on today's movers, sector rotation, and earnings calendar.
-
-2. **FIX the Market Foresight score**: Either implement a transparent methodology (e.g., composite of VIX level, SPY trend, breadth, credit spreads) or remove it entirely. A 3/100 with no explanation is worse than no score at all.
-
-3. **Implement differentiated conviction scores**: Not all picks should be 8/10. Use a range: VRT 9/10 (validated), PLTR 8/10 (performing), SOFI 6/10 (underperforming), TEM 5/10 (failing thesis). This is what "nuanced" means.
-
-4. **Add explicit stop-loss levels for every recommendation**: TEM at -12.8% should trigger a stop-loss review. Define stop-loss at recommendation time (e.g., -15% hard stop, -10% thesis review).
-
-5. **Create a cash deployment tranche plan**: With $55K cash, specify: Tranche 1 ($15K) deploy now into highest-conviction names, Tranche 2 ($20K) deploy on further weakness (VIX >28), Tranche 3 ($20K) reserve for earnings season.
-
-6. **Fix the concentration metric**: 0.0% is wrong. Calculate actual concentration: what % is in top 3 holdings? What % is in AI/speculative vs. defensive? Report this correctly.
-
-7. **Fix options data pipeline**: The 5/7 user flagged this. If options chains are broken, either fix the data source or remove the section until fixed. Don't silently omit it.
-
-8. **Resolve the 70 holdings vs. 7 positions discrepancy**: Clarify what the other 63 "holdings" are. If they're closed/zero-value, say so. Don't report misleading numbers.
-
----
-
-**Bottom Line**: This run repeated the two most critical failures from prior runs — no new stock recommendations and no meaningful cash deployment plan — while adding a broken Market Foresight score that undermines credibility. The portfolio analysis and AI narrative identification remain strong, but the agent is not closing the loop on actionable recommendations. The 55% cash position in a market presenting clear buying opportunities (NVDA -4.38%, MU -6.62%) while sitting on empty watchlist recommendations is the single most important issue to address in the next run. The user's trajectory of feedback (4→6→7→8.5→9.2) shows they value improvement, but this run risks reversing that trend by ignoring the same feedback for 3+ consecutive runs.
-
-## Run: 2026-05-15 16:38:51 ET
-## 🧠 Self-Reflection — Run 1638 | 2026-05-15
-
----
-
-### What Worked Well
-
-- **Portfolio-aware analysis**: Correctly identified the 7 active positions (NVDA, PLTR, SOFI, VRT, TEM, etc.) and their P&L. The user's feedback trajectory (4→6→7→8.5→9.2) shows the portfolio-centric approach resonates.
-- **Biggest movers identification**: Surfacing WOLF (-11.19%), QUBT (-10.44%), IONQ (-9.61%) as top decliners gives the user immediate situational awareness.
-- **Conviction scoring consistency**: All 7 active recommendations scored 8/10, showing a uniform high-conviction stance on existing holdings.
-- **Honest data gaps**: Acknowledging broken options data and missing sentiment data maintains credibility.
-
----
-
-### What Didn't Work
-
-- **No new stock recommendations**: Despite 55% cash ($55,321), the report recommended ZERO new tickers. This directly contradicts the user's explicit feedback from 2026-04-30: *"I would like to see new stocks that I may not have that might present a better opportunity."*
-- **Market Foresight score of 5/100**: The user explicitly criticized this on 2026-05-07: *"the market foresight outlook is rated negative out of 100... the rating system could be improved."* A score of 5/100 is meaningless and undermines trust.
-- **70 holdings vs. 7 positions discrepancy**: The report claims 70 total holdings but only 7 active positions. The user flagged this on 2026-05-07: *"Resolve the 70 holdings vs. 7 positions discrepancy."*
-- **Vague, generic suggestions**: The user noted on 2026-05-07: *"the suggestions seem a little vague, mainstream and generic. It can be more specific and nuanced."*
-
----
-
-### Conviction Calibration
-
-- **NVDA at 8/10**: Bought at $207.14, now $225.02 (+8.6%). **Correct call.** NVDA dropped -4.42% today, presenting a buying opportunity. The conviction was justified.
-- **PLTR at 8/10**: Bought at $139.47, now $133.75 (-4.1%). **Underperforming.** Needs reassessment — is the thesis intact or deteriorating?
-- **TEM at 8/10**: Bought at $50.22, now $43.88 (-12.6%). **Significant underperformance.** An 8/10 conviction on a -12.6% position suggests calibration failure. Either lower conviction or provide a clear thesis for why to hold.
-- **SOFI at 8/10**: Bought at $16.29, now $15.58 (-4.4%). **Slight underperformance.** Needs monitoring.
-- **VRT at 8/10**: Bought at $348.38, now $370.20 (+6.3%). **Correct call.**
-
-**Verdict**: 3/5 high-conviction picks are underperforming. The 8/10 score is too uniform — it should range from 5-9 to reflect genuine differentiation in conviction.
-
----
-
-### Missed Opportunities
-
-- **MU (Micron)**: Dropped -6.62% today. With AI infrastructure demand surging, MU at a discount is a clear opportunity. Not mentioned.
-- **AVGO**: Down on the day, strong AI networking thesis. Not recommended.
+.
 - **ARM**: AI chip architecture play, likely down in the selloff. Not mentioned.
 - **SMCI**: Already in portfolio at $31.04 (-6.02%). Could be a double-down opportunity given the AI server demand thesis, but no recommendation was made.
 - **Cash deployment**: With $55,321 idle (55% of portfolio), the opportunity cost is massive. Even a 20% deployment ($11,000) into 2-3 high-conviction names would be better than sitting idle.
@@ -170,3 +46,120 @@ checklist of all user feedback items and verify each is addressed in every run. 
 ---
 
 **Bottom Line**: This run failed on the two most critical user feedback items — no new recommendations and no cash deployment plan — while repeating known issues (broken options data, misleading Market Foresight score, 70 holdings discrepancy). The portfolio analysis remains strong, but the agent is not closing the loop on actionable recommendations. The 55% cash position in a market presenting clear buying opportunities is the single most important issue to address in the next run. The user's trajectory of feedback (4→6→7→8.5→9.2) shows they value improvement, but this run risks reversing that trend by ignoring the same feedback for 3+ consecutive runs.
+
+## Run: 2026-05-17 04:14:16 ET
+# 🔍 Deep Self-Reflection — Run 0414 (2026-05-17)
+
+---
+
+## What Worked Well
+
+- **Portfolio mover identification was directionally correct**: The report correctly flagged WOLF (-11.19%), QUBT (-10.44%), IONQ (-9.61%), BE (-9.05%), and APLD (-8.88%) as the biggest decliners. This aligns with the user's explicit request (from the 6/10 feedback on 2026-04-22) to surface the names that moved the most and need repositioning attention.
+- **Sector rotation diagnosis was accurate**: Identifying the selloff as a "broad de-risking event in the AI/quantum/clean energy complex" with NVDA (-4.42%) as the anchor dragging the sector lower is a sound, specific thesis — not vague hand-waving.
+- **Thesis journal tracking is functional**: Active recommendations are being logged with entry price, shares, conviction, and current P&L. NVDA at $207.14 entry showing +877.60% and VRT at $348.38 showing +647.60% are standout winners that validate the long-term conviction approach.
+- **Cross-referencing multiple data sources**: The report structure shows awareness of Alpaca vs. yfinance data discrepancies, which addresses the stale-price feedback from the 4/10 rating on 2026-04-22.
+
+---
+
+## What Didn't Work
+
+- **No new stock recommendations — again**: This is the THIRD consecutive run failing on the user's explicit 8.5/10 feedback: *"It only considered stocks from my portfolio to recommend buying or selling and not anything new."* The 55% cash position (~$55,350) is sitting idle with zero deployment ideas outside existing holdings. This is the single biggest failure of this run.
+- **Market Foresight score of 5/100 is misleading and unchanged**: The user specifically called this out in the 9.2/10 feedback: *"Not a big fan of how the market foresight outlook is rated negative out of 100... the rating system could be improved."* A score of 5/100 implies near-catastrophic bearishness, which doesn't match a portfolio that's +0.6% with NVDA at $225 and the market in a normal pullback. This scoring methodology is broken and needs recalibration.
+- **Options data still broken**: The learning history notes this has been flagged multiple times. The report silently omits options chains rather than showing them with a clear "data unavailable" banner. The user explicitly said: *"It said the options data was broken and that should be fixed."* This is now a recurring failure across 3+ runs.
+- **70 holdings displayed but portfolio shows 7 positions**: The report header says "70 total holdings" but the portfolio section shows "Positions: 7" with 55% cash. This is a data inconsistency that undermines trust. Either the 70 count includes something else (options? watchlist?) or it's a bug — either way it needs to be resolved and explained.
+- **Average rating of 5.7/10 is a regression from the 9.2 peak**: The trajectory was 4→6→7→8.5→9.2, and this run represents a significant drop. The user warned: *"Don't get complacent and keep learning and improving."* This run ignored that warning.
+
+---
+
+## Conviction Calibration
+
+- **NVDA at 8/10 conviction — VALIDATED**: Entry at $207.14, now at $225.32 (+8.78% from entry, +877.60% total return per the log). This is the highest-conviction pick working as intended. The thesis that NVDA is the "anchor" of the AI trade was validated even in today's selloff — it declined less (-4.42%) than the speculative names.
+- **VRT at 8/10 conviction — VALIDATED**: Entry at $348.38, now at $370.94 (+6.47%). Another strong performer. VRT (Vertiv) as an AI infrastructure play is working.
+- **PLTR at 8/10 conviction — UNDERPERFORMING**: Entry at $139.47, now at $133.99 (-3.93% from entry, though the log shows -392.90% which appears to be a calculation error — likely basis mismatch). PLTR needs a thesis review. Is the original investment thesis still intact?
+- **SOFI at 8/10 conviction — UNDERPERFORMING**: Entry at $16.29, now at $15.61 (-4.17%). The -417.40% figure is clearly a data/calculation bug. SOFI at 8/10 conviction with a declining price needs either a conviction downgrade or a clear explanation of why the thesis is intact.
+- **TEM at 8/10 conviction — SIGNIFICANTLY UNDERPERFORMING**: Entry at $50.22, now at $43.93 (-12.52%). This is the worst-performing high-conviction pick. At 8/10 conviction, a 12.5% drawdown should trigger a thesis review, not silent holding.
+- **Pattern identified**: All active recommendations are rated 8/10 conviction. This is not calibration — this is grade inflation. True conviction differentiation means some picks should be 6/10, some 9/10, some 10/10. Having everything at 8/10 makes the score meaningless as a decision-making tool.
+
+---
+
+## Thesis Journal Review
+
+- **AI Infrastructure thesis (NVDA, VRT) — STRONG**: Both are positive from entry. The thesis that AI infrastructure spending is a multi-year tailwind is validated by earnings trends and capex guidance from hyperscalers.
+- **Speculative AI/Quantum thesis (QUBT, IONQ, RGTI, WULF) — UNDER PRESSURE**: These names dropped 7-11% today. The thesis journal should be tracking whether the quantum computing investment thesis is intact or deteriorating. These are not in the active recommendations list but ARE in the portfolio — suggesting they were bought earlier and are now being held without active thesis review.
+- **PLTR thesis — NEEDS REVIEW**: Palantir's thesis around AI platform adoption and government contracts needs updating. The stock is below entry. Is this a buying opportunity or a broken thesis?
+- **TEM thesis — NEEDS URGENT REVIEW**: Tempus AI at -12.52% from entry with 8/10 conviction is a red flag. Either the conviction is wrong or the entry timing was wrong. The thesis journal should explicitly address this.
+- **Missing thesis entries**: The thesis journal section appears empty in the report. This is a critical gap. Every active recommendation should have a written thesis with: (1) investment rationale, (2) key catalysts, (3) risk factors, (4) price targets, (5) review date.
+
+---
+
+## Missed Opportunities
+
+- **No new recommendations despite 55% cash**: With ~$55,350 in cash and a market pullback creating buying opportunities, the report should have recommended 2-3 new positions. Specific opportunities that should have been flagged:
+  - **MSFT** — AI capex leader, likely declined in the selloff, strong entry point
+  - **AVGO** — Custom AI chip play, often oversold in NVDA-led pullbacks
+  - **NOW** — Enterprise AI workflow play, high-quality compounder
+- **No "buy the dip" recommendations for existing holdings**: WOLF, QUBT, IONQ all dropped 9-11%. If the thesis is intact, these are buying opportunities. If the thesis is broken, they should be sells. The report did neither — it just listed the declines.
+- **No covered call or protective put suggestions**: With 55% cash and a volatile market, the report should have suggested income-generating strategies on existing positions (e.g., covered calls on NVDA at $225, protective puts on TEM at $44).
+
+---
+
+## Data Quality Issues
+
+- **70 holdings vs. 7 positions discrepancy**: This is a critical data integrity issue. The report says "70 total holdings" but the portfolio shows 7 positions. This needs to be investigated and fixed — it could be counting options, watchlist items, or closed positions.
+- **P&L calculation errors**: SOFI showing -417.40% and PLTR showing -392.90% are clearly wrong. SOFI went from $16.29 to $15.61, which is -4.17%, not -417.40%. This is a decimal/percentage calculation bug that makes the entire recommendations table untrustworthy.
+- **Stale price risk**: The user flagged PLTR data as old in the 4/10 feedback. The report should cross-reference Alpaca prices with yfinance or Finnhub and flag any discrepancies >1%.
+- **Options data still unavailable**: This has been flagged for 3+ runs. The report should either fix the data pipeline or clearly state "Options data unavailable — using last known prices as of [date]" rather than silently omitting the section.
+
+---
+
+## Risk Management
+
+- **No stop-losses set on underperformers**: TEM is down 12.5% from entry with no stop-loss mentioned. SOFI is down 4.2% with no stop-loss. The report should have explicit stop-loss levels for every position, especially those below entry.
+- **Concentration risk is misreported**: The report shows "Concentration: 0.0%" which is clearly wrong given that NVDA, VRT, and PLTR are likely the top holdings. This needs to be recalculated properly.
+- **Speculative names are 8 of the 10 biggest losers**: WOLF, QUBT, IONQ, BE, APLD, ARBE, ABAT, WULF — these are all high-beta speculative names that dropped 7-11%. The report should flag whether these positions are appropriately sized for their risk level. If any of these represent >5% of the portfolio, that's a concentration risk.
+- **No tail risk assessment**: With a market selloff of this magnitude in the AI/quantum complex, the report should assess portfolio-level tail risk — e.g., "If NVDA drops another 10%, the portfolio would decline by X%."
+
+---
+
+## Cash Deployment
+
+- **55% cash is the #1 problem**: The user's feedback trajectory shows they want actionable recommendations. With $55,350 in cash and a market creating buying opportunities, the report should include a specific "Cash Deployment Plan" section (as noted in the learning history). This was explicitly requested and is still missing.
+- **Opportunity cost is massive**: At 55% cash, the portfolio is effectively half-invested. In a market where AI infrastructure names are pulling back to attractive levels, this cash is earning near-zero while missing potential gains. Even a money market yield of 4-5% is below the expected return of equities over the long term.
+- **Suggested deployment framework**: Deploy 20-25% of cash ($11,000-14,000) into 2-3 new high-conviction names, keep 30% as dry powder for further pullbacks, and deploy another 10% into adding to existing winners (NVDA, VRT) on weakness.
+
+---
+
+## Memory & Learning
+
+- **Feedback loop is broken**: The user gave specific, actionable feedback across 5 runs (4→6→7→8.5→9.2), and the two biggest items — "recommend new stocks" and "cash deployment plan" — have been ignored for 3+ consecutive runs. The learning history acknowledges this but the behavior hasn't changed.
+- **Memory insights show portfolio value declining**: $254,779 (May 14) → $247,410 (May 15) → $248,171 (May 15). This downward trend should trigger a risk review, but the current report shows $100,636 — suggesting either a portfolio change or a data inconsistency that needs explanation.
+- **The learning section has been praised but is absent from this run**: The user said *"I've also been loving the learning section"* in the 9.2/10 feedback. This run's learning section appears truncated or missing. This is a regression.
+- **No evidence of building on past analysis**: The report doesn't reference previous theses, previous recommendations, or previous mistakes. Each run should explicitly reference what was learned from the last run and how it was applied.
+
+---
+
+## Process Improvements (Actionable)
+
+1. **MANDATORY: Add 2-3 new stock recommendations every run**, regardless of whether the user's existing portfolio has opportunities. Use screeners to find names not in the portfolio. This is the #1 user request and has been ignored for 3+ runs.
+
+2. **MANDATORY: Add a "Cash Deployment Plan" section** that explicitly states: (a) how much cash to deploy this week, (b) into which specific tickers, (c) at what price levels, (d) with what position sizes, and (e) what the expected outcome is.
+
+3. **Fix the P&L calculation bug**: SOFI at -417% and PLTR at -392% are clearly calculation errors. Audit the percentage change formula across all recommendations. This is a data integrity issue that undermines the entire report.
+
+4. **Recalibrate the Market Foresight score**: A score of 5/100 is meaningless. Redesign the scale so that: 0-20 = extreme fear/bearish, 20-40 = cautious, 40-60 = neutral, 60-80 = constructive, 80-100 = bullish. A +0.6% portfolio with NVDA at $225 should score 45-55, not 5.
+
+5. **Differentiate conviction scores**: Stop rating everything 8/10. Use the full 1-10 scale. NVDA and VRT at 9/10 (proven winners), PLTR at 7/10 (underperforming but thesis intact), TEM at 6/10 (broken thesis, needs review), SOFI at 7/10.
+
+6. **Fix the 70 vs. 7 holdings discrepancy**: Audit the position counting logic. Clearly label what counts as a "holding" vs. a "watchlist item" vs. a "closed position."
+
+7. **Add explicit stop-loss levels for every position**: TEM should have a stop-loss at $40 (-20% from entry). SOFI at $14. PLTR at $125. These should be reviewed and adjusted weekly.
+
+8. **Fix or clearly label options data**: Either fix the options data pipeline or add a banner: "Options data unavailable as of [date] — last reliable data from [date]. Recommendations based on underlying price action only."
+
+9. **Restore the learning section**: The user explicitly praised this. Include at least one cross-domain insight, one new concept to learn, and tie it to a specific investment opportunity.
+
+10. **Add a "Run-over-Run Comparison" section**: Show what changed since last run — new recommendations, closed positions, conviction changes, cash deployment. This directly addresses the user's feedback that *"the recommendation tracking part isn't working."*
+
+---
+
+**Bottom Line**: This run represents a significant regression from the 9.2/10 peak. The two most critical user requests — new stock recommendations and cash deployment plan — remain unaddressed after 3+ runs. Data quality issues (P&L calculation errors, 70 vs. 7 discrepancy, broken options data) are eroding trust. The conviction scoring system is broken (everything at 8/10). The next run MUST address items 1, 2, 3, and 5 above or risk further rating declines. The user's patience and constructive feedback trajectory should not be taken for granted.
