@@ -1,12 +1,12 @@
 {
-  "total_runs": 1,
-  "last_run": "2026-05-17T08:27:04.041932",
+  "total_runs": 2,
+  "last_run": "2026-05-17T11:11:28.208433",
   "last_run_tickers": [
-    "MU",
-    "PLTR",
-    "AVGO",
+    "NVDA",
     "SOFI",
-    "NVDA"
+    "MU",
+    "AVGO",
+    "PLTR"
   ],
   "research_queue": [],
   "global_facts": {}
