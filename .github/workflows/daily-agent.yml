@@ -1,42 +1,10 @@
 name: Trading Agent Scheduler
 
-on:
+"on":
   schedule:
-    # ═══════════════════════════════════════════════════════════
-    # ALL RUNS 24/7 — Cron is in UTC, agent handles DST detection
-    # Research mode: deep research only, no trades/reports/Telegram
-    # Full mode: research + trade + report + Telegram
-    # Alerts mode: research + trade, no report
-    # ═══════════════════════════════════════════════════════════
-
-    # ── WEEKDAY FULL REPORTS (3/day) ──
-    # 8 AM ET = 12 UTC EDT / 13 UTC EST
-    - cron: "0 12,13 * * 1-5"
-    # 12:30 PM ET = 16:30 UTC EDT / 17:30 UTC EST
-    - cron: "30 16,17 * * 1-5"
-    # 4:30 PM ET = 20:30 UTC EDT / 21:30 UTC EST
-    - cron: "30 20,21 * * 1-5"
-
-    # ── WEEKDAY ALERTS-ONLY (market hours) ──
-    # Every 2 hours from 10 AM - 2 PM ET
-    - cron: "0 14,15 * * 1-5"   # 10 AM ET
-    - cron: "0 16,17 * * 1-5"   # 12 PM ET
-    - cron: "0 18,19 * * 1-5"   # 2 PM ET
-
-    # ── ALL OTHER TIMES: RESEARCH MODE (every 2 hours, 24/7) ──
-    # Weekday pre-market: 6 AM ET
-    - cron: "0 10,11 * * 1-5"
-    # Weekday post-market: 6 PM, 8 PM, 10 PM ET
-    - cron: "0 22,23 * * 1-5"
-    - cron: "0 0,1 * * 2-6"
-    - cron: "0 2,3 * * 2-6"
-    # Weekday overnight: 12 AM, 2 AM, 4 AM ET (research while market closed)
-    - cron: "0 4,5 * * 2-6"     # 12 AM / 2 AM ET (next day UTC)
-    - cron: "0 6,7 * * 2-6"     # 2 AM / 4 AM ET (next day UTC)
-    # Weekends: every 2 hours, 24/7
-    - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * 6"
-    - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * 0"
-
+    # Run every 2 hours, 24/7. Agent decides mode based on time of day.
+    - cron: "0 */2 * * *"
+  
   workflow_dispatch:
     inputs:
       run_mode:
@@ -76,13 +44,13 @@ jobs:
         fi
         HOUR=$(TZ='US/Eastern' date +%H)
         DOW=$(TZ='US/Eastern' date +%u)
-        # Full reports: 8 AM, 12:30 PM, 4:30 PM
-        if ([ "$HOUR" -eq 8 ]) || ([ "$HOUR" -eq 12 ]) || ([ "$HOUR" -eq 16 ]); then
+        # Full reports: 8 AM, 12 PM, 4 PM
+        if [ "$HOUR" -eq 8 ] || [ "$HOUR" -eq 12 ] || [ "$HOUR" -eq 16 ]; then
           echo "MODE=full" >> $GITHUB_OUTPUT
-        # Market hours: alerts-only (9:30 AM - 4 PM)
+        # Market hours Mon-Fri: alerts-only
         elif [ "$DOW" -le 5 ] && [ "$HOUR" -ge 9 ] && [ "$HOUR" -lt 16 ]; then
           echo "MODE=alerts-only" >> $GITHUB_OUTPUT
-        # Everything else: research mode (24/7)
+        # Everything else: research mode
         else
           echo "MODE=research" >> $GITHUB_OUTPUT
         fi
@@ -143,11 +111,9 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        # Stage outputs (ignore errors for non-existent paths)
         git add -f REPORTS/ HISTORY/ docs/ 2>/dev/null || true
         git add -f research/ 2>/dev/null || true
         git add -f logs/agent.log logs/paper_trades.log 2>/dev/null || true
-        # Only commit if there are changes
         if ! git diff --staged --quiet; then
           git commit -m "Agent ${{ steps.mode.outputs.MODE }}: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
           git pull --rebase origin main 2>/dev/null || true
