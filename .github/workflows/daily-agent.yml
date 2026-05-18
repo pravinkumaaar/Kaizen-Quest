@@ -119,11 +119,10 @@ jobs:
         git config user.email "actions@github.com"
         # Ensure research directory exists (created by agent at runtime)
         mkdir -p docs/research/tickers docs/research/facts
-        # Stage all outputs — use -A to catch all changes including modifications
+        # Stage ALL changes including modifications to tracked files
+        git add -u
+        # Also stage any new untracked files
         git add -A REPORTS/ HISTORY/ docs/ logs/
-        # Explicitly stage research data (in case -A misses nested dirs)
-        git add -f docs/research/state.json docs/research/tickers/*.json docs/research/facts/*.json 2>/dev/null || true
-        git add -f docs/youtube_reviewed.json docs/youtube_watchlist.json 2>/dev/null || true
         # Debug: show what's staged
         echo "=== Staged changes ==="
         git diff --staged --stat

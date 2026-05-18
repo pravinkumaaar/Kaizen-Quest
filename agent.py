@@ -3174,12 +3174,9 @@ def main():
     _is_pre_market = (not _is_weekend) and (_hour < 9 or (_hour == 9 and _minute < 30))
     _is_post_market = (not _is_weekend) and (_hour >= 16)
     
-    # Force full report for pre-market and post-market on weekdays only
-    # Weekends stay in research mode (no reports, no Telegram)
-    if (_is_pre_market or _is_post_market) and not _is_weekend:
-        if SILENT_MODE:
-            log(f"⏰ Time-based override: {'pre-market' if _is_pre_market else 'post-market'} — forcing full report mode")
-            SILENT_MODE = False
+    # No time-based overrides — the workflow controls the mode via RUN_MODE env var
+    # Only 3 scheduled runs per weekday generate full reports (8 AM, 12:30 PM, 4:30 PM)
+    # All other runs (overnight, weekends, post-market) stay in research mode
     
     # Check if US stock market is open (9:30 AM - 4:00 PM ET, Mon-Fri)
     hour = now.hour
