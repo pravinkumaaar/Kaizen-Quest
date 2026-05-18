@@ -3907,10 +3907,7 @@ def main():
                 
                 for _rt in _tickers_to_research:
                     try:
-                        if _is_full_mode:
-                            _result = _researcher.deep_dive(_rt, layers=_layers)
-                        else:
-                            _result = _researcher.quick_update(_rt)
+                        _result = _researcher.deep_dive(_rt, layers=_layers)
                         
                         if _result and not _result.get("skipped"):
                             _ctx = _researcher.get_llm_context(_rt, max_chars=1200)
