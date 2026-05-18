@@ -166,33 +166,95 @@ class YouTubeStockParser:
             return []
     
     def get_channel_videos_scrape(self, channel_handle, max_results=10):
+        """Scrape videos from a YouTube channel page, extracting titles from page HTML."""
         try:
             import requests
             url = f"https://www.youtube.com/@{channel_handle}/videos"
-            headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)", "Accept-Language": "en-US,en;q=0.9"}
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            }
             r = requests.get(url, headers=headers, timeout=15)
             if r.status_code != 200:
                 return []
-            video_ids = re.findall(r'"videoId":"([a-zA-Z0-9_-]{11})"', r.text)
-            seen, unique_ids = set(), []
-            for vid in video_ids:
-                if vid not in seen:
+            
+            # Extract video IDs and titles from the page HTML
+            # YouTube embeds video data in a JSON structure within the page
+            videos = []
+            
+            # Try to find videoRenderer objects in the page source
+            # Pattern: "videoId":"XXXXX","title":{"runs":[{"text":"TITLE"}]}
+            video_patterns = re.findall(
+                r'"videoId":"([a-zA-Z0-9_-]{11})".*?"title":\{"runs":\[\{"text":"([^"]+)"\}\]',
+                r.text
+            )
+            
+            seen = set()
+            for vid, title in video_patterns:
+                if vid not in seen and len(videos) < max_results:
                     seen.add(vid)
-                    unique_ids.append(vid)
-                if len(unique_ids) >= max_results:
-                    break
-            return [{"video_id": vid, "title": self._get_video_title(vid) or "", "description": "", "published_at": ""} for vid in unique_ids]
+                    # Also try to extract published time
+                    pub_match = re.search(
+                        r'"videoId":"' + re.escape(vid) + r'".*?"publishedTimeText":\{"simpleText":"([^"]+)"\}',
+                        r.text
+                    )
+                    published = pub_match.group(1) if pub_match else ""
+                    videos.append({
+                        "video_id": vid,
+                        "title": title,
+                        "description": "",
+                        "published_at": published,
+                    })
+            
+            # Fallback: if no titles found, just get video IDs
+            if not videos:
+                video_ids = re.findall(r'"videoId":"([a-zA-Z0-9_-]{11})"', r.text)
+                seen = set()
+                for vid in video_ids:
+                    if vid not in seen and len(videos) < max_results:
+                        seen.add(vid)
+                        videos.append({
+                            "video_id": vid,
+                            "title": "",
+                            "description": "",
+                            "published_at": "",
+                        })
+            
+            return videos
         except Exception:
             return []
     
     def _get_video_title(self, video_id):
+        """Get video title from YouTube page or oembed API."""
+        try:
+            # Try oembed API first (lightweight, no JS required)
+            import requests
+            oembed_url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={video_id}&format=json"
+            r = requests.get(oembed_url, timeout=10)
+            if r.status_code == 200:
+                import json
+                data = json.loads(r.text)
+                return data.get("title", "")
+        except Exception:
+            pass
+        
+        # Fallback: scrape the video page
         try:
             import requests
-            r = requests.get(f"https://www.youtube.com/watch?v={video_id}", headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+            r = requests.get(
+                f"https://www.youtube.com/watch?v={video_id}",
+                headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"},
+                timeout=10
+            )
             if r.status_code == 200:
-                m = re.search(r'<title>([^<]+)</title>', r.text)
-                if m:
-                    return m.group(1).replace(" - YouTube", "").strip()
+                # Try multiple patterns
+                for pattern in [r'<title>([^<]+)</title>', r'"title":"([^"]+)"']:
+                    m = re.search(pattern, r.text)
+                    if m:
+                        title = m.group(1).replace(" - YouTube", "").strip()
+                        if title:
+                            return title
         except Exception:
             pass
         return ""

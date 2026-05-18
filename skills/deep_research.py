@@ -730,66 +730,117 @@ class DeepResearcher:
                 except Exception as e:
                     self._errors.append(f"layer{layer_num}: {e}")
         
-        # Calculate research depth score based on actual data gathered
-        # Each layer gets 1 point only if it returned meaningful data
+        # Calculate research depth score based on actual meaningful data gathered
         _depth_score = 0
         if result["data"].get("price", {}).get("price", 0) > 0:
-            _depth_score += 1  # L1: Got price data
-        if result["data"].get("financial_statements") or result["data"].get("dcf"):
-            _depth_score += 1  # L2: Got financials/DCF
+            _depth_score += 1  # L1: Price data
+        if result["data"].get("dcf") or result["data"].get("financial_statements"):
+            _depth_score += 1  # L2: Financials/DCF
         if result["data"].get("competitive_landscape") or result["data"].get("peer_comparison"):
-            _depth_score += 1  # L3: Got competitive data
+            _depth_score += 1  # L3: Competitive
         if result["data"].get("insider_trades") or result["data"].get("institutional_ownership"):
-            _depth_score += 1  # L4: Got smart money data
+            _depth_score += 1  # L4: Smart money
         if result["data"].get("sector_performance") or result["data"].get("technicals"):
-            _depth_score += 1  # L5: Got macro/sector/technical data
+            _depth_score += 1  # L5: Macro/sector/technical
         if result["contrarian_signals"]:
-            _depth_score += 1  # L6: Got contrarian analysis
-        if result["data"].get("research_memory") or result["data"].get("changes"):
-            _depth_score += 1  # L7: Got temporal/memory data
+            _depth_score += 1  # L6: Contrarian
+        if result["data"].get("changes") or result["data"].get("research_memory"):
+            _depth_score += 1  # L7: Temporal/memory
         
         result["research_depth"] = _depth_score
         result["sources_used"] = list(self._sources_used)
         result["errors"] = self._errors
         
-        # Extract key catalysts from the data
+        # ── Extract meaningful catalysts from all gathered data ──
         _catalysts = []
-        if result["data"].get("earnings_history"):
-            _catalysts.append("Earnings history available")
-        if result["data"].get("competitive_landscape"):
-            _catalysts.append("Competitive landscape analyzed")
-        if result["data"].get("insider_trades"):
-            _catalysts.append("Insider activity tracked")
-        
-        # Build a simple thesis from the data
-        _thesis = ""
         _info = result["data"].get("info", {})
-        if _info.get("sector"):
-            _thesis = f"{ticker} operates in {_info['sector']}"
-            if _info.get("revenueGrowth"):
-                growth = float(_info["revenueGrowth"]) * 100
-                _thesis += f" with {growth:.0f}% revenue growth"
         
-        # Save to research memory
+        # From earnings/estimates
+        if result["data"].get("analyst_estimates"):
+            _catalysts.append("Analyst estimates available")
+        if result["data"].get("earnings_history"):
+            _catalysts.append("Earnings history tracked")
+        
+        # From competitive landscape
+        if result["data"].get("competitive_landscape"):
+            _comp = result["data"]["competitive_landscape"]
+            if isinstance(_comp, dict):
+                _moat = _comp.get("moat_assessment", {})
+                if _moat.get("rating"):
+                    _catalysts.append(f"Moat: {_moat['rating']}")
+        
+        # From insider/institutional activity
+        if result["data"].get("insider_trades"):
+            _ins = result["data"]["insider_trades"]
+            if isinstance(_ins, list) and len(_ins) > 0:
+                _catalysts.append(f"{len(_ins)} insider transactions found")
+        
+        # From sector/macro
+        if result["data"].get("sector_performance"):
+            _catalysts.append("Sector performance analyzed")
+        
+        # From DCF
+        if result["data"].get("dcf"):
+            _dcf = result["data"]["dcf"]
+            if isinstance(_dcf, dict) and _dcf.get("fair_value"):
+                _catalysts.append(f"DCF fair value: ${_dcf['fair_value']:.2f}")
+        
+        # ── Build investment thesis from gathered data ──
+        _thesis_parts = []
+        if _info.get("sector"):
+            _thesis_parts.append(f"{ticker} operates in {_info['sector']}")
+        if _info.get("revenueGrowth"):
+            growth = float(_info["revenueGrowth"]) * 100
+            _thesis_parts.append(f"{growth:.0f}% revenue growth")
+        if _info.get("roe"):
+            roe = float(_info["roe"]) * 100
+            _thesis_parts.append(f"{roe:.0f}% ROE")
+        if _info.get("recommendation"):
+            _thesis_parts.append(f"Analyst: {_info['recommendation']}")
+        
+        _thesis = " | ".join(_thesis_parts) if _thesis_parts else ""
+        
+        # ── Extract risks from contrarian analysis ──
+        _risks = []
+        for _sig in result.get("contrarian_signals", []):
+            if isinstance(_sig, dict):
+                _risk = _sig.get("signal", "")
+                _sev = _sig.get("severity", "medium")
+                _risks.append(f"[{_sev}] {_risk}")
+        
+        # ── Determine conviction based on data quality ──
+        _conviction = 5  # Default neutral
+        if _depth_score >= 6 and len(_catalysts) >= 3:
+            _conviction = 8
+        elif _depth_score >= 5 and len(_catalysts) >= 2:
+            _conviction = 7
+        elif _depth_score >= 4:
+            _conviction = 6
+        if _risks:
+            _conviction = max(3, _conviction - 1)  # Reduce conviction if risks found
+        
+        # ── Save comprehensive research to memory ──
         try:
             from skills.research_memory import get_memory
             mem = get_memory()
             price = result["data"].get("price", {}).get("price", 0)
             mem.record_research(
                 ticker,
-                depth=result["research_depth"],
+                depth=_depth_score,
                 facts=result["facts"],
                 catalysts=_catalysts if _catalysts else None,
                 thesis=_thesis if _thesis else None,
-                conviction=7 if _depth_score >= 5 else 5,
+                conviction=_conviction,
                 price=price,
-                contrarian=result["contrarian_signals"],
+                risks=_risks if _risks else None,
+                contrarian=result["contrarian_signals"] if result["contrarian_signals"] else None,
+                competitive=result["data"].get("competitive_landscape"),
                 sources=result["sources_used"],
             )
         except Exception:
             pass
         
-        self._log(f"Deep dive complete: {len(result['facts'])} facts, {len(result['contrarian_signals'])} contrarian signals, depth={result['research_depth']}/7")
+        self._log(f"Deep dive complete: depth={_depth_score}/7, facts={len(result['facts'])}, catalysts={len(_catalysts)}, risks={len(_risks)}")
         
         self._research_findings[ticker] = result
         return result
