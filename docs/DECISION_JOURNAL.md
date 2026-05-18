@@ -89,3 +89,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-18 | GLD | BUY | N/A | $345.00 | 8/10 | Active | - | Why: You have ZERO commodity exposure. Gold has been in a structural uptrend dri |
 | 2026-05-18 | INDA | BUY | N/A | $62.00 | 7/10 | Active | - | Why: India is the most compelling EM story for the next decade — demographics (m |
 | 2026-05-18 | PLTR | BUY | $135.14 | N/A | 9/10 | Active | - | Why: PLTR is 28.9% of your portfolio — that's dangerously concentrated for a sin |
+| 2026-05-18 | NVDA | BUY | $222.27 | N/A | 7/10 | Active | - | Why: NVDA is 13.8% of your portfolio and reports earnings in 2 days. The stock i |
+| 2026-05-18 | PLTR | BUY | $135.14 | N/A | 8/10 | Active | - | Why: PLTR is 28.9% of your portfolio — nearly $70K in a single stock. It's up 11 |
+| 2026-05-18 | HIMS | BUY | $22.29 | N/A | 8/10 | Active | - | Why: HIMS is down 45.9% and got crushed again today (-11%). The GLP-1 telehealth |
+| 2026-05-18 | SMCI | BUY | $30.85 | N/A | 7/10 | Active | - | Why: SMCI is down 21.8% and the thesis has deteriorated. The company has faced a |
