@@ -1,11 +1,7 @@
 {
-  "total_runs": 12,
-  "last_run": "2026-05-18T15:27:45.373608",
-  "last_run_tickers": [
-    "AVGO",
-    "NVDA",
-    "MU"
-  ],
+  "total_runs": 0,
+  "last_run": null,
+  "last_run_tickers": [],
   "research_queue": [],
   "global_facts": {}
 }

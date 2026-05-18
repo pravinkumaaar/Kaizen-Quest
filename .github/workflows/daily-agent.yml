@@ -111,9 +111,16 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add -f REPORTS/ HISTORY/ docs/ 2>/dev/null || true
-        git add -f research/ 2>/dev/null || true
-        git add -f logs/agent.log logs/paper_trades.log 2>/dev/null || true
+        # Ensure research directory exists (created by agent at runtime)
+        mkdir -p docs/research/tickers docs/research/facts
+        # Stage all outputs including new/untracked files
+        git add -f REPORTS/ HISTORY/ docs/ logs/ 2>/dev/null || true
+        # Stage research data explicitly
+        git add -f docs/research/state.json docs/research/tickers/ docs/research/facts/ 2>/dev/null || true
+        git add -f docs/youtube_reviewed.json docs/youtube_watchlist.json 2>/dev/null || true
+        # Stage any other new files in docs/
+        git add -f docs/ 2>/dev/null || true
+        # Only commit if there are changes
         if ! git diff --staged --quiet; then
           git commit -m "Agent ${{ steps.mode.outputs.MODE }}: $(TZ='US/Eastern' date '+%Y-%m-%d %H:%M ET')"
           git pull --rebase origin main 2>/dev/null || true
