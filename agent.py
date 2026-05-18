@@ -3901,9 +3901,9 @@ def main():
             if _tickers_to_research:
                 log(f"🔬 Deep research on {len(_tickers_to_research)} tickers: {', '.join(_tickers_to_research)}")
                 
-                # Check if we're in full mode (deep dive) or research mode (quick update)
-                _is_full_mode = not SILENT_MODE
-                _layers = [1, 2, 3, 4, 5, 6, 7] if _is_full_mode else [1, 2, 6]
+                # All modes run full 7-layer research for comprehensive coverage
+                # The difference is in what happens AFTER research (report vs no report)
+                _layers = [1, 2, 3, 4, 5, 6, 7]
                 
                 for _rt in _tickers_to_research:
                     try:
