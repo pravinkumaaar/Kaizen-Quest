@@ -85,3 +85,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-18 | NBIS | BUY | $199.70 | $11507.00 | 8/10 | Active | - | Why: Nebius is an AI cloud infrastructure company (European-based GPU cloud) tha |
 | 2026-05-18 | NVDA | BUY | $219.98 | N/A | 8/10 | Active | - | Why: NVDA reports earnings May 20 AMC. The stock is down 2.4% today as the marke |
 | 2026-05-18 | NVDA | BUY | $222.32 | N/A | 7/10 | Active | - | Why: NVDA is your second-largest position (13.8%) with massive unrealized gains, |
+| 2026-05-18 | NVDA | BUY | $222.32 | N/A | 7/10 | Active | - | Why: NVDA is 13.8% of your portfolio with massive unrealized gains (+114.2%, +$1 |
+| 2026-05-18 | GLD | BUY | N/A | $345.00 | 8/10 | Active | - | Why: You have ZERO commodity exposure. Gold has been in a structural uptrend dri |
+| 2026-05-18 | INDA | BUY | N/A | $62.00 | 7/10 | Active | - | Why: India is the most compelling EM story for the next decade — demographics (m |
+| 2026-05-18 | PLTR | BUY | $135.14 | N/A | 9/10 | Active | - | Why: PLTR is 28.9% of your portfolio — that's dangerously concentrated for a sin |
