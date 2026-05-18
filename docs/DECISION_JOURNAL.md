@@ -83,3 +83,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-18 | NEW | BUY | N/A | $62.00 | 7/10 | Active | - | THESIS: India is the most compelling structural growth story in emerging markets |
 | 2026-05-18 | NVDA | BUY | $223.14 | N/A | 7/10 | Active | - | Why: NVDA reports May 20 AMC — in 2 days. This is the most important earnings ev |
 | 2026-05-18 | NBIS | BUY | $199.70 | $11507.00 | 8/10 | Active | - | Why: Nebius is an AI cloud infrastructure company (European-based GPU cloud) tha |
+| 2026-05-18 | NVDA | BUY | $219.98 | N/A | 8/10 | Active | - | Why: NVDA reports earnings May 20 AMC. The stock is down 2.4% today as the marke |
