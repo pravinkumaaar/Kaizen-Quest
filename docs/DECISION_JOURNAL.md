@@ -76,3 +76,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-17 | CRDO | BUY | $172.17 | $225.00 | 7/10 | Active | - | Why: Credo makes the high-speed connectivity chips (SerDes, retimers, AECs) that |
 | 2026-05-17 | AVGO | BUY | N/A | $365.00 | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that nobody gets excited abo |
 | 2026-05-17 | EIDO | BUY | N/A | $25.00 | 7/10 | Active | - | Why: Your portfolio has zero international exposure. This is a blind spot. Indon |
+| 2026-05-18 | NVDA | BUY | $225.32 | N/A | 9/10 | Active | - | Why: NVDA reports earnings May 20 AMC (2 days). Today's -4.42% dip is a classic  |
+| 2026-05-18 | VERTIV | BUY | $370.94 | N/A | 8/10 | Active | - | Why: Every AI data center needs power, cooling, and electrical infrastructure. V |
