@@ -78,3 +78,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-17 | EIDO | BUY | N/A | $25.00 | 7/10 | Active | - | Why: Your portfolio has zero international exposure. This is a blind spot. Indon |
 | 2026-05-18 | NVDA | BUY | $225.32 | N/A | 9/10 | Active | - | Why: NVDA reports earnings May 20 AMC (2 days). Today's -4.42% dip is a classic  |
 | 2026-05-18 | VERTIV | BUY | $370.94 | N/A | 8/10 | Active | - | Why: Every AI data center needs power, cooling, and electrical infrastructure. V |
+| 2026-05-18 | NVDA | BUY | $225.32 | N/A | 8/10 | Active | - | THESIS: NVDA reports Wednesday. The stock is down 4.4% today on pre-earnings jit |
+| 2026-05-18 | NEW | BUY | N/A | $355.00 | 7/10 | Active | - | THESIS: Gold is the right hedge right now — Iran war, bond rout, Trump-Xi uncert |
+| 2026-05-18 | NEW | BUY | N/A | $62.00 | 7/10 | Active | - | THESIS: India is the most compelling structural growth story in emerging markets |
