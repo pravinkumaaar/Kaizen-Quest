@@ -94,3 +94,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-18 | HIMS | BUY | $22.29 | N/A | 8/10 | Active | - | Why: HIMS is down 45.9% and got crushed again today (-11%). The GLP-1 telehealth |
 | 2026-05-18 | SMCI | BUY | $30.85 | N/A | 7/10 | Active | - | Why: SMCI is down 21.8% and the thesis has deteriorated. The company has faced a |
 | 2026-05-18 | WATCH | BUY | $222.32 | N/A | 10/10 | Active | - | Thesis: NVDA earnings in 2 days is the most important catalyst for your entire p |
+| 2026-05-19 | TRIM | BUY | $135.14 | N/A | 9/10 | Active | - | Why: PLTR is 28.9% of your portfolio — that's nearly $70,000 in a single stock.  |
