@@ -96,3 +96,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-18 | WATCH | BUY | $222.32 | N/A | 10/10 | Active | - | Thesis: NVDA earnings in 2 days is the most important catalyst for your entire p |
 | 2026-05-19 | TRIM | BUY | $135.14 | N/A | 9/10 | Active | - | Why: PLTR is 28.9% of your portfolio — that's nearly $70,000 in a single stock.  |
 | 2026-05-19 | NVDA | BUY | $222.32 | N/A | 7/10 | Active | - | Why: NVDA reports tomorrow AMC. You're up +114.2% on this position. The single b |
+| 2026-05-19 | NVDA | BUY | $220.52 | N/A | 7/10 | Active | - | Why: NVDA reports tomorrow AMC. This is the most important earnings print in the |
+| 2026-05-19 | SLV | BUY | $67.27 | N/A | 7/10 | Active | - | Why: Silver is down 3.82% today in a broad risk-off move, but the structural the |
