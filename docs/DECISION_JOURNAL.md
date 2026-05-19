@@ -98,3 +98,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-19 | NVDA | BUY | $222.32 | N/A | 7/10 | Active | - | Why: NVDA reports tomorrow AMC. You're up +114.2% on this position. The single b |
 | 2026-05-19 | NVDA | BUY | $220.52 | N/A | 7/10 | Active | - | Why: NVDA reports tomorrow AMC. This is the most important earnings print in the |
 | 2026-05-19 | SLV | BUY | $67.27 | N/A | 7/10 | Active | - | Why: Silver is down 3.82% today in a broad risk-off move, but the structural the |
+| 2026-05-19 | NVDA | BUY | $222.62 | N/A | 7/10 | Active | - | Why: NVDA reports tomorrow after the bell. You already own 14% of your portfolio |
+| 2026-05-19 | EWY | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio has ZERO international exposure. South Korea is the most dir |
+| 2026-05-19 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero commodity or precious metal exposure. Gold has been in a stru |
+| 2026-05-19 | HIMS | BUY | $22.25 | N/A | 8/10 | Active | - | Why: HIMS is your worst performer at -46% and represents 1.1% of the portfolio.  |
