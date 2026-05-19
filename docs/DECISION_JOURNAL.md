@@ -102,3 +102,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-19 | EWY | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio has ZERO international exposure. South Korea is the most dir |
 | 2026-05-19 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero commodity or precious metal exposure. Gold has been in a stru |
 | 2026-05-19 | HIMS | BUY | $22.25 | N/A | 8/10 | Active | - | Why: HIMS is your worst performer at -46% and represents 1.1% of the portfolio.  |
+| 2026-05-19 | NVDA | BUY | $222.54 | $250.00 | 7/10 | Active | - | Why: You hold 13.9% of your portfolio in NVDA heading into the most consequentia |
+| 2026-05-19 | CRDO | BUY | $167.89 | $210.00 | 7/10 | Active | - | Why: Credo Technology is up +7.44% today — the biggest gainer in your portfolio  |
+| 2026-05-19 | PLTR | BUY | $134.94 | N/A | 8/10 | Active | - | Why: Palantir is 29.1% of your portfolio. That's not a position — that's a marri |
+| 2026-05-19 | TEM | BUY | $51.44 | $18.00 | 7/10 | Active | - | Why: Tempus AI is down 28.3% from your cost basis and represents 1.2% of your po |
