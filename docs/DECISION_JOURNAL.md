@@ -106,3 +106,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-19 | CRDO | BUY | $167.89 | $210.00 | 7/10 | Active | - | Why: Credo Technology is up +7.44% today — the biggest gainer in your portfolio  |
 | 2026-05-19 | PLTR | BUY | $134.94 | N/A | 8/10 | Active | - | Why: Palantir is 29.1% of your portfolio. That's not a position — that's a marri |
 | 2026-05-19 | TEM | BUY | $51.44 | $18.00 | 7/10 | Active | - | Why: Tempus AI is down 28.3% from your cost basis and represents 1.2% of your po |
+| 2026-05-19 | CRDO | BUY | $168.86 | $225.00 | 7/10 | Active | - | Why: Credo Technology is up +8% today and reports earnings June 1 (13 days). The |
+| 2026-05-19 | PLTR | BUY | $135.66 | N/A | 9/10 | Active | - | Why: Palantir is your largest position at 29.3% of the portfolio — $70,000+ in a |
