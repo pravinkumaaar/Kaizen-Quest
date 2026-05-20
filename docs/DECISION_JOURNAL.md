@@ -108,3 +108,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-19 | TEM | BUY | $51.44 | $18.00 | 7/10 | Active | - | Why: Tempus AI is down 28.3% from your cost basis and represents 1.2% of your po |
 | 2026-05-19 | CRDO | BUY | $168.86 | $225.00 | 7/10 | Active | - | Why: Credo Technology is up +8% today and reports earnings June 1 (13 days). The |
 | 2026-05-19 | PLTR | BUY | $135.66 | N/A | 9/10 | Active | - | Why: Palantir is your largest position at 29.3% of the portfolio — $70,000+ in a |
+| 2026-05-20 | NVDA | BUY | $220.61 | N/A | 9/10 | Active | - | Why: NVDA is the single most important AI infrastructure company on earth. The B |
+| 2026-05-20 | CRDO | BUY | $168.99 | $225.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — activ |
+| 2026-05-20 | MU | BUY | $698.74 | $875.00 | 7/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND memory producer and is the most lever |
