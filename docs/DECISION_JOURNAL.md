@@ -126,3 +126,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | MU | BUY | $731.99 | $900.00 | 8/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND manufacturer and the critical memory  |
 | 2026-05-20 | GLD | BUY | $417.40 | $470.00 | 7/10 | Active | - | Why: You have essentially zero commodity/precious metals exposure in a portfolio |
 | 2026-05-20 | HIMS | BUY | $23.04 | N/A | 9/10 | Active | - | Why: HIMS is down 44% from your cost basis and represents a failed thesis. The t |
+| 2026-05-20 | NVDA | BUY | $223.47 | $255.00 | 7/10 | Active | - | Why: NVDA reports earnings after the bell today. You have a 13.7% position with  |
+| 2026-05-20 | PLTR | BUY | $137.15 | $165.00 | 8/10 | Active | - | Why: PLTR is 29% of your portfolio. Let me put that in perspective: you have mor |
+| 2026-05-20 | CRDO | BUY | $182.98 | $230.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — they  |
+| 2026-05-20 | HIMS | BUY | $23.04 | N/A | 8/10 | Active | - | Why: HIMS is down -44.1% from your cost basis and represents 1.1% of your portfo |
