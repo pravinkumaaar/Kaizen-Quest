@@ -121,3 +121,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | NVDA | BUY | $224.39 | N/A | 9/10 | Active | - | Why: You own 13.8% in NVDA and earnings hit today. This isn't a buy/sell decisio |
 | 2026-05-20 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodities/metals exposure in a market where silver just hit |
 | 2026-05-20 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the "stealth AI play"  |
+| 2026-05-20 | NVDA | BUY | $223.47 | N/A | 7/10 | Active | - | Why: NVDA reports after the bell. You're sitting on +115% gains in your largest  |
+| 2026-05-20 | CRDO | BUY | $182.98 | $230.00 | 8/10 | Active | - | Why: Credo Technology is the critical "picks and shovels" play in AI data center |
+| 2026-05-20 | MU | BUY | $731.99 | $900.00 | 8/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND manufacturer and the critical memory  |
+| 2026-05-20 | GLD | BUY | $417.40 | $470.00 | 7/10 | Active | - | Why: You have essentially zero commodity/precious metals exposure in a portfolio |
+| 2026-05-20 | HIMS | BUY | $23.04 | N/A | 9/10 | Active | - | Why: HIMS is down 44% from your cost basis and represents a failed thesis. The t |
