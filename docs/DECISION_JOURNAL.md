@@ -118,3 +118,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | NVDA | BUY | $224.61 | N/A | 8/10 | Active | - | Why: NVDA reports after the bell. Your position is +116.3% — this is a generatio |
 | 2026-05-20 | CRDO | BUY | $182.03 | $240.00 | 7/10 | Active | - | Why: Credo Technology makes high-speed connectivity solutions (optical DSPs, AEC |
 | 2026-05-20 | PLTR | BUY | $135.92 | N/A | 9/10 | Active | - | Why: Palantir is your best performer (+116.9%) and your largest position by far. |
+| 2026-05-20 | NVDA | BUY | $224.39 | N/A | 9/10 | Active | - | Why: You own 13.8% in NVDA and earnings hit today. This isn't a buy/sell decisio |
+| 2026-05-20 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodities/metals exposure in a market where silver just hit |
+| 2026-05-20 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the "stealth AI play"  |
