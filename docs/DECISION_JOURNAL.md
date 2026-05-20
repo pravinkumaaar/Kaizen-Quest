@@ -111,3 +111,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | NVDA | BUY | $220.61 | N/A | 9/10 | Active | - | Why: NVDA is the single most important AI infrastructure company on earth. The B |
 | 2026-05-20 | CRDO | BUY | $168.99 | $225.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — activ |
 | 2026-05-20 | MU | BUY | $698.74 | $875.00 | 7/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND memory producer and is the most lever |
+| 2026-05-20 | NVDA | BUY | $225.16 | N/A | 8/10 | Active | - | Why: NVDA reports after the bell today. You're sitting on +116.7% unrealized gai |
+| 2026-05-20 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: You have zero international exposure and your portfolio is heavily concentr |
+| 2026-05-20 | PLTR | BUY | $136.38 | N/A | 7/10 | Active | - | Why: PLTR is 28.9% of your portfolio — that's nearly $70,000 in a single name. Y |
+| 2026-05-20 | HIMS | BUY | $22.45 | $20.00 | 8/10 | Active | - | Why: You're down 45.6% on HIMS. The GLP-1 weight-loss drug disruption to their t |
