@@ -115,3 +115,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: You have zero international exposure and your portfolio is heavily concentr |
 | 2026-05-20 | PLTR | BUY | $136.38 | N/A | 7/10 | Active | - | Why: PLTR is 28.9% of your portfolio — that's nearly $70,000 in a single name. Y |
 | 2026-05-20 | HIMS | BUY | $22.45 | $20.00 | 8/10 | Active | - | Why: You're down 45.6% on HIMS. The GLP-1 weight-loss drug disruption to their t |
+| 2026-05-20 | NVDA | BUY | $224.61 | N/A | 8/10 | Active | - | Why: NVDA reports after the bell. Your position is +116.3% — this is a generatio |
+| 2026-05-20 | CRDO | BUY | $182.03 | $240.00 | 7/10 | Active | - | Why: Credo Technology makes high-speed connectivity solutions (optical DSPs, AEC |
+| 2026-05-20 | PLTR | BUY | $135.92 | N/A | 9/10 | Active | - | Why: Palantir is your best performer (+116.9%) and your largest position by far. |
