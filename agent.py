@@ -70,8 +70,9 @@ try:
         execute_calendar_spread, execute_covered_call,
         execute_cash_secured_put, close_option_position,
         get_all_option_positions, get_option_live_price,
-        find_option_symbol, get_options_chain,
+        find_option_symbol,
     )
+    from skills.options_strategies import get_options_chain
     from skills.sector_rotation import (analyze_sector_rotation, analyze_cap_rotation,
                                          detect_emerging_themes, generate_sector_report,
                                          get_macro_rotation_signals, get_sector_momentum_score,
@@ -4978,23 +4979,42 @@ Be specific and actionable. The agent will use these recommendations to place ac
                         elif 'STRADDLE' in strategy_name or 'STRANGLE' in strategy_name:
                             # For straddles, we need to find ATM call and put
                             chain_data = get_options_chain(underlying, min_dte=14, max_dte=60)
-                            if chain_data:
-                                price = _yf_price(underlying)["price"]
-                                if price > 0:
+                            if not chain_data:
+                                log(f"    [DEBUG] No options chain data for {underlying}")
+                            else:
+                                price_info = _yf_price(underlying)
+                                price = price_info.get("price", 0)
+                                if price <= 0:
+                                    log(f"    [DEBUG] Invalid price for {underlying}: {price}")
+                                else:
                                     # ATM call
-                                    atm_calls = sorted(chain_data.get('calls', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
-                                    # ATM put
-                                    atm_puts = sorted(chain_data.get('puts', []), key=lambda c: abs(float(c.get('strike_price', 0)) - price))
+                                    calls = chain_data.get('calls', [])
+                                    puts = chain_data.get('puts', [])
+
+                                    if not calls:
+                                        log(f"    [DEBUG] No calls in chain for {underlying}")
+                                    if not puts:
+                                        log(f"    [DEBUG] No puts in chain for {underlying}")
+
+                                    atm_calls = sorted(calls, key=lambda c: abs(float(c.get('strike_price', 0)) - price)) if calls else []
+                                    atm_puts = sorted(puts, key=lambda c: abs(float(c.get('strike_price', 0)) - price)) if puts else []
+
                                     if atm_calls:
                                         call_symbol = atm_calls[0].get('symbol', '')
                                         if not call_symbol:
-                                            call_symbol = find_option_symbol(underlying, 'call', float(atm_calls[0].get('strike_price', 0)), atm_calls[0].get('dte', 30))
+                                            strike = float(atm_calls[0].get('strike_price', 0))
+                                            call_symbol = find_option_symbol(underlying, 'call', strike, atm_calls[0].get('dte', 30))
+                                            if not call_symbol:
+                                                log(f"    [DEBUG] Could not find call symbol for {underlying} @ ${strike}")
                                         if call_symbol:
                                             legs_to_execute.append((call_symbol, 'buy'))
                                     if atm_puts:
                                         put_symbol = atm_puts[0].get('symbol', '')
                                         if not put_symbol:
-                                            put_symbol = find_option_symbol(underlying, 'put', float(atm_puts[0].get('strike_price', 0)), atm_puts[0].get('dte', 30))
+                                            strike = float(atm_puts[0].get('strike_price', 0))
+                                            put_symbol = find_option_symbol(underlying, 'put', strike, atm_puts[0].get('dte', 30))
+                                            if not put_symbol:
+                                                log(f"    [DEBUG] Could not find put symbol for {underlying} @ ${strike}")
                                         if put_symbol:
                                             legs_to_execute.append((put_symbol, 'buy'))
                     
@@ -5023,7 +5043,7 @@ Be specific and actionable. The agent will use these recommendations to place ac
                                 options_failed += 1
                                 log(f"[!] Multi-leg options trade partially failed: {strategy_name}")
                         else:
-                            log(f"  [!] Skipping {strategy_name} — could not determine option symbols for legs")
+                            log(f"  [!] Skipping {strategy_name} — no legs determined (check logs for DEBUG)")
                             options_failed += 1
                 
                     except Exception as e:

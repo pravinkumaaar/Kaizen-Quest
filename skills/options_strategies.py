@@ -156,9 +156,13 @@ def get_options_chain(underlying, min_dte=14, max_dte=60):
             headers=_alpaca_headers(), timeout=15
         )
         if not r.ok:
+            print(f"[DEBUG] Alpaca options chain API error ({r.status_code}): {r.text[:200]}")
             return None
         contracts = r.json().get("option_contracts", [])
-        
+        if not contracts:
+            print(f"[DEBUG] No option contracts returned for {underlying}")
+            return None
+
         # Filter by DTE range
         today = datetime.date.today()
         filtered = []
@@ -171,12 +175,17 @@ def get_options_chain(underlying, min_dte=14, max_dte=60):
                     filtered.append(c)
             except (ValueError, TypeError):
                 continue
-        
+
+        if not filtered:
+            print(f"[DEBUG] No contracts in DTE range [{min_dte}, {max_dte}] for {underlying}")
+            return None
+
         calls = sorted([c for c in filtered if c['type'] == 'call'], key=lambda x: (x['dte'], float(x['strike_price'])))
         puts = sorted([c for c in filtered if c['type'] == 'put'], key=lambda x: (x['dte'], float(x['strike_price'])))
-        
+
         return {"underlying": underlying.upper(), "calls": calls, "puts": puts, "all": filtered}
-    except Exception:
+    except Exception as e:
+        print(f"[DEBUG] Failed to fetch options chain for {underlying}: {type(e).__name__}: {e}")
         return None
 
 

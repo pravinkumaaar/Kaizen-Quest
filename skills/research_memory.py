@@ -37,7 +37,6 @@ import json
 import datetime
 import math
 from pathlib import Path
-from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 RESEARCH_DIR = BASE_DIR / "docs" / "research"

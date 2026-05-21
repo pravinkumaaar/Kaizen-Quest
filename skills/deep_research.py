@@ -837,8 +837,9 @@ class DeepResearcher:
                 competitive=result["data"].get("competitive_landscape"),
                 sources=result["sources_used"],
             )
-        except Exception:
-            pass
+            self._log(f"✅ Research saved to memory")
+        except Exception as e:
+            self._log(f"⚠️ Failed to save research to memory: {e}")
         
         self._log(f"Deep dive complete: depth={_depth_score}/7, facts={len(result['facts'])}, catalysts={len(_catalysts)}, risks={len(_risks)}")
         

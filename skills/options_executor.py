@@ -82,14 +82,19 @@ def get_options_chain(underlying, min_dte=7, max_dte=60, option_type=None):
         }
         if option_type:
             params["type"] = option_type
-        
+
         r = requests.get(url, headers=_headers(), params=params, timeout=15)
         if not r.ok:
+            print(f"[DEBUG] Alpaca API error ({r.status_code}) for {underlying}")
             return []
-        
+
         contracts = r.json().get("option_contracts", [])
+        if not contracts:
+            print(f"[DEBUG] No contracts returned for {underlying}")
+            return []
+
         today = datetime.date.today()
-        
+
         filtered = []
         for c in contracts:
             try:
@@ -101,9 +106,13 @@ def get_options_chain(underlying, min_dte=7, max_dte=60, option_type=None):
                     filtered.append(c)
             except (ValueError, TypeError):
                 continue
-        
+
+        if not filtered:
+            print(f"[DEBUG] No contracts in DTE range [{min_dte}, {max_dte}] for {underlying}")
+
         return sorted(filtered, key=lambda x: (x['dte'], x['strike_price']))
-    except Exception:
+    except Exception as e:
+        print(f"[DEBUG] Failed to fetch chain for {underlying}: {type(e).__name__}: {e}")
         return []
 
 
@@ -111,12 +120,18 @@ def find_option_symbol(underlying, option_type, strike_price, target_dte, tolera
     """Find the best matching option symbol for given parameters."""
     contracts = get_options_chain(underlying, min_dte=target_dte - tolerance, max_dte=target_dte + tolerance, option_type=option_type)
     if not contracts:
+        print(f"[DEBUG] No contracts found for {underlying} {option_type} ${strike_price} {target_dte}DTE")
         return None
-    
+
     # Find closest strike to target
     target_strike = float(strike_price)
     best = min(contracts, key=lambda c: (abs(c['strike_price'] - target_strike), abs(c['dte'] - target_dte)))
-    return best.get('symbol')
+    symbol = best.get('symbol')
+    if symbol:
+        print(f"[DEBUG] Found symbol for {underlying} {option_type}: {symbol}")
+    else:
+        print(f"[DEBUG] No symbol field in contract: {best}")
+    return symbol
 
 
 def get_option_live_price(option_symbol):
