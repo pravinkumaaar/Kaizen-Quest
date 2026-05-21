@@ -130,3 +130,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | PLTR | BUY | $137.15 | $165.00 | 8/10 | Active | - | Why: PLTR is 29% of your portfolio. Let me put that in perspective: you have mor |
 | 2026-05-20 | CRDO | BUY | $182.98 | $230.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — they  |
 | 2026-05-20 | HIMS | BUY | $23.04 | N/A | 8/10 | Active | - | Why: HIMS is down -44.1% from your cost basis and represents 1.1% of your portfo |
+| 2026-05-21 | TRIM | BUY | $137.15 | N/A | 9/10 | Active | - | Why: Your single largest position at 29% of portfolio ($70,813). Up 118.8%. This |
