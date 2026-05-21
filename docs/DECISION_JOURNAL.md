@@ -131,3 +131,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-20 | CRDO | BUY | $182.98 | $230.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — they  |
 | 2026-05-20 | HIMS | BUY | $23.04 | N/A | 8/10 | Active | - | Why: HIMS is down -44.1% from your cost basis and represents 1.1% of your portfo |
 | 2026-05-21 | TRIM | BUY | $137.15 | N/A | 9/10 | Active | - | Why: Your single largest position at 29% of portfolio ($70,813). Up 118.8%. This |
+| 2026-05-21 | FCX | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Every AI data center needs massive copper wiring. Freeport is the largest p |
+| 2026-05-21 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Why: South Korea is the "hidden" AI play. SK Hynix (HBM memory — critical for Nv |
+| 2026-05-21 | CRDO | BUY | $182.98 | $250.00 | 6/10 | Active | - | Why: CRDO is in your portfolio (not listed in top 15, so likely a smaller positi |
+| 2026-05-21 | GLD | BUY | N/A | $360.00 | 6/10 | Active | - | Why: Your portfolio has ZERO commodity or precious metal exposure. Gold is at/ne |
+| 2026-05-21 | MU | BUY | $731.99 | $1000.00 | 8/10 | Active | - | Why: Micron is your 5th largest position and it's working (+93.2% unrealized). H |
