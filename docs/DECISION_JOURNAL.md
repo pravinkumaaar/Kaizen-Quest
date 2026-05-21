@@ -136,3 +136,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-21 | CRDO | BUY | $182.98 | $250.00 | 6/10 | Active | - | Why: CRDO is in your portfolio (not listed in top 15, so likely a smaller positi |
 | 2026-05-21 | GLD | BUY | N/A | $360.00 | 6/10 | Active | - | Why: Your portfolio has ZERO commodity or precious metal exposure. Gold is at/ne |
 | 2026-05-21 | MU | BUY | $731.99 | $1000.00 | 8/10 | Active | - | Why: Micron is your 5th largest position and it's working (+93.2% unrealized). H |
+| 2026-05-21 | APLD | BUY | $48.02 | N/A | 8/10 | Active | - | Why: Applied Digital just ripped +21.5% today on zero identifiable catalyst in y |
+| 2026-05-21 | PLTR | BUY | $137.41 | N/A | 9/10 | Active | - | Why: Palantir is your single largest position at 28% of the portfolio — that's e |
+| 2026-05-21 | HIMS | BUY | $24.01 | N/A | 7/10 | Active | - | Why: HIMS is down -41.8% from your cost basis. That's -2.8 standard deviations f |
+| 2026-05-21 | FCX | BUY | N/A | $30.00 | 7/10 | Active | - | Why: Copper is the unsung hero of the AI infrastructure build. Every data center |
+| 2026-05-21 | INDA | BUY | N/A | $64.00 | 7/10 | Active | - | Why: You have zero international exposure. India is the world's fastest-growing  |
