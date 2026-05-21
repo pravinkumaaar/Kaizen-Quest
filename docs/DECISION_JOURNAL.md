@@ -141,3 +141,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-21 | HIMS | BUY | $24.01 | N/A | 7/10 | Active | - | Why: HIMS is down -41.8% from your cost basis. That's -2.8 standard deviations f |
 | 2026-05-21 | FCX | BUY | N/A | $30.00 | 7/10 | Active | - | Why: Copper is the unsung hero of the AI infrastructure build. Every data center |
 | 2026-05-21 | INDA | BUY | N/A | $64.00 | 7/10 | Active | - | Why: You have zero international exposure. India is the world's fastest-growing  |
+| 2026-05-21 | NVDA | BUY | $219.51 | $2.00 | 7/10 | Active | - | Why: Already 13% of portfolio with +111.5% gains. Semiconductor supercycle likel |
+| 2026-05-21 | MU | BUY | $762.10 | $2.00 | 7/10 | Active | - | Why: +101% gainer but still has runway in AI memory demand. DRAM pricing stabili |
