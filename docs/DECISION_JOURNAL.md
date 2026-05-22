@@ -147,3 +147,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-22 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: South Korea is the "hidden backbone" of AI. Samsung and SK Hynix manufactur |
 | 2026-05-22 | NBIS | BUY | $219.93 | N/A | 7/10 | Active | - | Why: NBIS is your third-largest position (+312% unrealized) and it surged +14.65 |
 | 2026-05-22 | ACHR | BUY | N/A | N/A | 8/10 | Active | - | Why: Archer is down 32.5% from your cost basis and the thesis has not played out |
+| 2026-05-22 | TRIM | BUY | $136.88 | N/A | 7/10 | Active | - | THESIS: Exceptional company, exceptional run — but 27.9% of portfolio in a singl |
