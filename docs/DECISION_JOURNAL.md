@@ -148,3 +148,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-22 | NBIS | BUY | $219.93 | N/A | 7/10 | Active | - | Why: NBIS is your third-largest position (+312% unrealized) and it surged +14.65 |
 | 2026-05-22 | ACHR | BUY | N/A | N/A | 8/10 | Active | - | Why: Archer is down 32.5% from your cost basis and the thesis has not played out |
 | 2026-05-22 | TRIM | BUY | $136.88 | N/A | 7/10 | Active | - | THESIS: Exceptional company, exceptional run — but 27.9% of portfolio in a singl |
+| 2026-05-22 | PLTR | BUY | $136.88 | $18.00 | 8/10 | Active | - | Why: Your largest position at 27.9% of portfolio with +118% unrealized gains. Co |
+| 2026-05-22 | CRDO | BUY | $218.41 | N/A | 7/10 | Active | - | Why: Components for AI data centers (active electrical cables, SerDes). Earnings |
+| 2026-05-22 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | Why: AVGO owns the custom AI chip (ASIC) networking and connectivity layer. Whil |
+| 2026-05-22 | FCX | BUY | N/A | N/A | 8/10 | Active | - | Why: Every AI data center, every EV, every power grid upgrade needs copper. FCX  |
