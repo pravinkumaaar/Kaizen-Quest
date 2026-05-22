@@ -278,8 +278,11 @@ class ResearchMemory:
 
             existing = {c.get("catalyst", ""): c for c in data.get("catalysts", []) if isinstance(c, dict)}
             for c in catalysts:
+                if isinstance(c, str):
+                    # Convert string to dict format
+                    c = {"catalyst": c, "confidence": 0.8, "source": "research"}
                 if not isinstance(c, dict):
-                    print(f"[ERROR] catalyst is {type(c)}, expected dict")
+                    print(f"[ERROR] catalyst is {type(c)}, expected dict or str")
                     continue
                 c["last_verified"] = now
                 existing[c.get("catalyst", "")] = c
@@ -297,11 +300,23 @@ class ResearchMemory:
         # Update risks
         if risks:
             if isinstance(risks, str):
-                print(f"[ERROR] risks passed as string, skipping")
-            elif isinstance(risks, list):
-                data["risks"] = risks
-            else:
+                print(f"[ERROR] risks passed as string, wrapping: {risks[:100]}")
+                risks = [risks]
+            elif not isinstance(risks, list):
                 print(f"[ERROR] risks is {type(risks)}, expected list")
+                risks = []
+
+            # Convert strings to dict format if needed
+            processed_risks = []
+            for r in risks:
+                if isinstance(r, str):
+                    processed_risks.append({"risk": r, "severity": "medium", "source": "research"})
+                elif isinstance(r, dict):
+                    processed_risks.append(r)
+                else:
+                    print(f"[ERROR] risk is {type(r)}, expected dict or str")
+
+            data["risks"] = processed_risks
 
         # Update competitive position
         if competitive:
