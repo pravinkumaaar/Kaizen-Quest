@@ -1,41 +1,41 @@
 {
-  "ticker": "PLTR",
-  "first_researched": "2026-05-22T14:46:45.684070",
-  "last_researched": "2026-05-22T14:46:45.684070",
+  "ticker": "TEM",
+  "first_researched": "2026-05-22T14:47:56.790842",
+  "last_researched": "2026-05-22T14:47:56.790842",
   "research_count": 1,
   "research_depth_score": 5,
   "last_research_type": "moderate",
-  "last_price": 137.415,
+  "last_price": 46.49,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-22T14:46:45.684070"
+      "last_verified": "2026-05-22T14:47:56.790842"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-22T14:46:45.684070"
+      "last_verified": "2026-05-22T14:47:56.790842"
     }
   ],
   "facts": [
     {
-      "claim": "PLTR trading at $137.41 (+0.19%)",
+      "claim": "TEM trading at $46.49 (+1.33%)",
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
       "first_verified": "2026-05-22T14:46:02.980151",
-      "last_verified": "2026-05-22T14:46:45.684070",
+      "last_verified": "2026-05-22T14:47:56.790842",
       "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
-    "ticker": "PLTR",
-    "timestamp": "2026-05-22 14:46:12",
+    "ticker": "TEM",
+    "timestamp": "2026-05-22 14:47:30",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
