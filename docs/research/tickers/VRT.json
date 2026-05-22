@@ -1,0 +1,76 @@
+{
+  "ticker": "VRT",
+  "first_researched": "2026-05-22T16:39:38.400829",
+  "last_researched": "2026-05-22T16:39:38.400829",
+  "research_count": 1,
+  "research_depth_score": 5,
+  "last_research_type": "moderate",
+  "last_price": 323.4,
+  "catalysts": [
+    {
+      "catalyst": "Analyst estimates available",
+      "confidence": 0.8,
+      "source": "research",
+      "last_verified": "2026-05-22T16:39:38.400829"
+    },
+    {
+      "catalyst": "Earnings history tracked",
+      "confidence": 0.8,
+      "source": "research",
+      "last_verified": "2026-05-22T16:39:38.400829"
+    }
+  ],
+  "facts": [
+    {
+      "claim": "VRT trading at $323.40 (+2.45%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-05-22T16:38:56.309878",
+      "last_verified": "2026-05-22T16:39:38.400829",
+      "verification_count": 1
+    }
+  ],
+  "thesis_history": [],
+  "risks": [],
+  "competitive_position": {
+    "ticker": "VRT",
+    "timestamp": "2026-05-22 16:39:07",
+    "methodology": "Competitive landscape mapping with moat assessment",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "data_sources_used": [
+    "balance_sheet",
+    "cashflow",
+    "market_sentiment",
+    "esg",
+    "supply_chain",
+    "earnings_history",
+    "comps_analysis",
+    "macro_rotation",
+    "treasury_rates",
+    "industry_pe",
+    "insider_trades",
+    "congressional",
+    "sector_rotation",
+    "financial_ratios",
+    "recommendation_trends",
+    "sector_performance",
+    "income_statement",
+    "analyst_estimates",
+    "negative_news",
+    "price_target",
+    "institutional",
+    "insider_trades_contrarian",
+    "aggregate_indicators",
+    "insider_sentiment",
+    "dcf",
+    "competitive_landscape",
+    "technical_indicators",
+    "earnings_momentum",
+    "valuation_multiples",
+    "risk_assessment"
+  ],
+  "research_gaps": [],
+  "contrarian_signals": []
+}
