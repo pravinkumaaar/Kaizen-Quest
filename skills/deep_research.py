@@ -116,6 +116,10 @@ class DeepResearcher:
         # Company info & key metrics
         try:
             info = safe_yf_info(ticker)
+            if not info:
+                self._log(f"  ⚠️ L1: No company info returned for {ticker}")
+            elif len(info) <= 5:
+                self._log(f"  ⚠️ L1: Sparse company info ({len(info)} keys): {list(info.keys())}")
             if info and len(info) > 5:
                 findings["data"]["info"] = {
                     "sector": info.get("sector", "Unknown"),
@@ -754,12 +758,20 @@ class DeepResearcher:
         # ── Extract meaningful catalysts from all gathered data ──
         _catalysts = []
         _info = result["data"].get("info", {})
-        
+
+        # Log what data we actually have
+        data_keys = list(result["data"].keys())
+        self._log(f"  Data collected: {', '.join(data_keys[:10])}")
+
         # From earnings/estimates
         if result["data"].get("analyst_estimates"):
             _catalysts.append("Analyst estimates available")
+        else:
+            self._log(f"    → No analyst_estimates")
         if result["data"].get("earnings_history"):
             _catalysts.append("Earnings history tracked")
+        else:
+            self._log(f"    → No earnings_history")
         
         # From competitive landscape
         if result["data"].get("competitive_landscape"):
@@ -789,6 +801,8 @@ class DeepResearcher:
         _thesis_parts = []
         if _info.get("sector"):
             _thesis_parts.append(f"{ticker} operates in {_info['sector']}")
+        else:
+            self._log(f"  [DEBUG] No sector data for {ticker}")
         if _info.get("revenueGrowth"):
             growth = float(_info["revenueGrowth"]) * 100
             _thesis_parts.append(f"{growth:.0f}% revenue growth")
@@ -797,6 +811,9 @@ class DeepResearcher:
             _thesis_parts.append(f"{roe:.0f}% ROE")
         if _info.get("recommendation"):
             _thesis_parts.append(f"Analyst: {_info['recommendation']}")
+
+        if not _thesis_parts:
+            self._log(f"  [DEBUG] No thesis parts built — info keys: {list(_info.keys())[:10]}")
         
         _thesis = " | ".join(_thesis_parts) if _thesis_parts else ""
         
