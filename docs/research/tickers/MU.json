@@ -1,17 +1,76 @@
 {
   "ticker": "MU",
-  "first_researched": null,
-  "last_researched": null,
-  "research_count": 0,
-  "research_depth_score": 0,
-  "last_research_type": null,
-  "last_price": null,
-  "catalysts": [],
-  "facts": [],
+  "first_researched": "2026-05-22T13:53:52.517248",
+  "last_researched": "2026-05-22T13:53:52.517248",
+  "research_count": 1,
+  "research_depth_score": 5,
+  "last_research_type": "moderate",
+  "last_price": 762.1,
+  "catalysts": [
+    {
+      "catalyst": "Analyst estimates available",
+      "confidence": 0.8,
+      "source": "research",
+      "last_verified": "2026-05-22T13:53:52.517248"
+    },
+    {
+      "catalyst": "Earnings history tracked",
+      "confidence": 0.8,
+      "source": "research",
+      "last_verified": "2026-05-22T13:53:52.517248"
+    }
+  ],
+  "facts": [
+    {
+      "claim": "MU trading at $762.10 (+4.11%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-05-22T13:51:55.810765",
+      "last_verified": "2026-05-22T13:53:52.517248",
+      "verification_count": 1
+    }
+  ],
   "thesis_history": [],
   "risks": [],
-  "competitive_position": null,
-  "data_sources_used": [],
+  "competitive_position": {
+    "ticker": "MU",
+    "timestamp": "2026-05-22 13:53:08",
+    "methodology": "Competitive landscape mapping with moat assessment",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "data_sources_used": [
+    "risk_assessment",
+    "comps_analysis",
+    "earnings_history",
+    "negative_news",
+    "esg",
+    "sector_performance",
+    "balance_sheet",
+    "sector_rotation",
+    "aggregate_indicators",
+    "institutional",
+    "industry_pe",
+    "insider_trades_contrarian",
+    "cashflow",
+    "dcf",
+    "congressional",
+    "analyst_estimates",
+    "insider_trades",
+    "earnings_momentum",
+    "technical_indicators",
+    "price_target",
+    "insider_sentiment",
+    "valuation_multiples",
+    "treasury_rates",
+    "income_statement",
+    "financial_ratios",
+    "macro_rotation",
+    "market_sentiment",
+    "competitive_landscape",
+    "recommendation_trends",
+    "supply_chain"
+  ],
   "research_gaps": [],
   "contrarian_signals": []
 }
