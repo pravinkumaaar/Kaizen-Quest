@@ -143,3 +143,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-21 | INDA | BUY | N/A | $64.00 | 7/10 | Active | - | Why: You have zero international exposure. India is the world's fastest-growing  |
 | 2026-05-21 | NVDA | BUY | $219.51 | $2.00 | 7/10 | Active | - | Why: Already 13% of portfolio with +111.5% gains. Semiconductor supercycle likel |
 | 2026-05-21 | MU | BUY | $762.10 | $2.00 | 7/10 | Active | - | Why: +101% gainer but still has runway in AI memory demand. DRAM pricing stabili |
+| 2026-05-22 | PLTR | BUY | $137.41 | $15.00 | 9/10 | Active | - | Why: Palantir is your best position (+119%) and your biggest risk. At 28% of por |
+| 2026-05-22 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: South Korea is the "hidden backbone" of AI. Samsung and SK Hynix manufactur |
+| 2026-05-22 | NBIS | BUY | $219.93 | N/A | 7/10 | Active | - | Why: NBIS is your third-largest position (+312% unrealized) and it surged +14.65 |
+| 2026-05-22 | ACHR | BUY | N/A | N/A | 8/10 | Active | - | Why: Archer is down 32.5% from your cost basis and the thesis has not played out |
