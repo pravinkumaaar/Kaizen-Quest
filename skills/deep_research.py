@@ -824,6 +824,17 @@ class DeepResearcher:
             from skills.research_memory import get_memory
             mem = get_memory()
             price = result["data"].get("price", {}).get("price", 0)
+
+            # Debug: check types of parameters
+            import pprint
+            self._log(f"[DEBUG] Calling record_research with:")
+            self._log(f"  ticker={ticker} (type: {type(ticker).__name__})")
+            self._log(f"  facts={type(result['facts']).__name__} (len: {len(result['facts']) if isinstance(result['facts'], list) else 'N/A'})")
+            if result["facts"] and isinstance(result["facts"], list) and len(result["facts"]) > 0:
+                self._log(f"    first fact type: {type(result['facts'][0]).__name__}: {str(result['facts'][0])[:100]}")
+            self._log(f"  catalysts={type(_catalysts).__name__}")
+            self._log(f"  contrarian={type(result['contrarian_signals']).__name__} (len: {len(result['contrarian_signals']) if isinstance(result['contrarian_signals'], list) else 'N/A'})")
+
             mem.record_research(
                 ticker,
                 depth=_depth_score,
@@ -839,7 +850,9 @@ class DeepResearcher:
             )
             self._log(f"✅ Research saved to memory")
         except Exception as e:
+            import traceback
             self._log(f"⚠️ Failed to save research to memory: {e}")
+            self._log(f"[DEBUG] Traceback:\n{traceback.format_exc()}")
         
         self._log(f"Deep dive complete: depth={_depth_score}/7, facts={len(result['facts'])}, catalysts={len(_catalysts)}, risks={len(_risks)}")
         

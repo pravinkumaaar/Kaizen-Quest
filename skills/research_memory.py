@@ -251,8 +251,19 @@ class ResearchMemory:
         
         # Add/update facts with timestamps
         if facts:
-            existing_facts = {f.get("claim", ""): f for f in data.get("facts", [])}
+            # Ensure facts is a list of dicts, not a string or malformed data
+            if isinstance(facts, str):
+                print(f"[ERROR] facts passed as string: {facts[:100]}")
+                facts = []
+            elif not isinstance(facts, list):
+                print(f"[ERROR] facts is {type(facts)}, expected list")
+                facts = []
+
+            existing_facts = {f.get("claim", ""): f for f in data.get("facts", []) if isinstance(f, dict)}
             for fact in facts:
+                if not isinstance(fact, dict):
+                    print(f"[ERROR] fact is {type(fact)}, expected dict: {fact}")
+                    continue
                 fact["first_verified"] = fact.get("first_verified", now)
                 fact["last_verified"] = now
                 fact["verification_count"] = fact.get("verification_count", 1)
@@ -261,8 +272,15 @@ class ResearchMemory:
         
         # Update catalysts
         if catalysts:
-            existing = {c.get("catalyst", ""): c for c in data.get("catalysts", [])}
+            if not isinstance(catalysts, list):
+                print(f"[ERROR] catalysts is {type(catalysts)}, expected list")
+                catalysts = []
+
+            existing = {c.get("catalyst", ""): c for c in data.get("catalysts", []) if isinstance(c, dict)}
             for c in catalysts:
+                if not isinstance(c, dict):
+                    print(f"[ERROR] catalyst is {type(c)}, expected dict")
+                    continue
                 c["last_verified"] = now
                 existing[c.get("catalyst", "")] = c
             data["catalysts"] = list(existing.values())
@@ -278,14 +296,22 @@ class ResearchMemory:
         
         # Update risks
         if risks:
-            data["risks"] = risks
-        
+            if isinstance(risks, str):
+                print(f"[ERROR] risks passed as string, skipping")
+            elif isinstance(risks, list):
+                data["risks"] = risks
+            else:
+                print(f"[ERROR] risks is {type(risks)}, expected list")
+
         # Update competitive position
         if competitive:
             data["competitive_position"] = competitive
-        
+
         # Update contrarian signals
         if contrarian:
+            if not isinstance(contrarian, list):
+                print(f"[ERROR] contrarian is {type(contrarian)}, expected list")
+                contrarian = []
             data["contrarian_signals"] = contrarian
         
         # Track data sources
