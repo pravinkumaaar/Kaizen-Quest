@@ -158,3 +158,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-23 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: South Korea is the overlooked AI supply chain beneficiary. Samsung and SK H |
 | 2026-05-23 | RKLB | BUY | $135.76 | $175.00 | 7/10 | Active | - | Why: Rocket Lab is your best AI-adjacent space/mission infra play at 3.4% of por |
 | 2026-05-23 | TRIM | BUY | $136.90 | N/A | 9/10 | Active | - | Why: This is not a bearish call — PLTR remains one of the highest-quality AI sof |
+| 2026-05-23 | GLD | BUY | N/A | $355.00 | 7/10 | Active | - | Why: Your portfolio has zero inflation/rate hedge. Treasury yields are surging,  |
+| 2026-05-23 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Why: Korea is the cheapest way to play the AI semiconductor cycle. SK Hynix (HBM |
+| 2026-05-23 | CRDO | BUY | $218.43 | $285.00 | 7/10 | Active | - | Why: Credo makes the active electrical cables (AECs) and SerDes chips that conne |
+| 2026-05-23 | MU | BUY | $751.02 | $950.00 | 8/10 | Active | - | Why: You already own MU at 5.5% of portfolio with +98.2% gains. I'm recommending |
+| 2026-05-23 | VRT | BUY | $327.48 | $420.00 | 7/10 | Active | - | Why: Vertiv is the "picks and shovels" play of AI that most investors overlook.  |
