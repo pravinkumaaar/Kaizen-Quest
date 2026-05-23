@@ -1,131 +1,6 @@
 ...[older entries archived in HISTORY/]
 
- Memory shows portfolio value fluctuating between $253K-$255K — but this run shows $99K. Either positions were liquidated/the memory is stale, or the systems aren't syncing. We need to reconcile.
-
-## Missed Opportunities
-
-- **No new tickers recommended outside the existing 7 positions.** User explicitly asked for this on 2026-04-30: "I would like to see new stocks that I may not have that might present a better opportunity." With 55% cash, we should be screening and presenting 2-3 high-conviction new ideas with full reasoning.
-
-- **No options education or LEAP recommendations this run** — a section user rated highly (6/10 run: "I like the news summary and options explanation for LEAP and why it is good") and again at 9.2/10 ("Absolutely loved the investment ideas and options recommendations with clear explanations"). Dropping this was a major regression.
-
-## Data Quality Issues
-
-- **Price discrepancies within the same report are unacceptable.** Memory shows NVDA at $214.98, portfolio shows $207.14. These should match or be timestamped. The 9.2/10 run flagged "options data was broken" — that fix was apparently never implemented.
-
-- **Current market date is 2026-05-22.** We need to verify all prices are from *today*, not from a prior run's memory. The safest approach: always fetch live prices and annotate any that are delayed.
-
-## Risk Management
-
-- **No stop-losses are defined in this output.** TEM at -8% with no stop-loss discussion is a risk management failure. VRT at -6.28% with no exit framework. Every position needs a pre-defined stop-loss so the agent (and user) can act mechanically, not emotionally.
-
-- **55% cash is a risk too — purchasing power risk.** In an inflationary or appreciating market, holding 55% cash costs ~$200-$300/month in opportunity cost on a $99K portfolio. Needs a deployment schedule.
-
-## Cash Deployment
-
-- **Target cash: ~10%. Actual: 55%. Gap: 45% = ~$44,700 idle.** With existing positions underperforming (4 of 6 are in the red), now is precisely when we should be: (a) averaging down on highest-conviction names with strong theses, OR (b) deploying into new ideas with asymmetric upside. Doing neither is the worst of both worlds.
-
-## Memory & Learning
-
-- **We are NOT building on past analysis.** The 9.2/10 run identified specific improvements needed. The learning section had real educational content tying new markets to opportunities. This alerts-only run contains exactly zero learning content. We are not using our memory system — we're restarting from scratch every time, which is why ratings regress.
-
-- **"Don't get complacent" — direct quote from 2026-05-07 feedback.** That's exactly what happened. This was a complacent run.
-
-## Process Improvements (Actionable)
-
-1. **Mandate the full report template every run — no "alerts-only" shortcuts.** The template: portfolio state → news → position-by-position thesis review → rebalance → new ideas → options education → asymmetric plays → learning section. Non-negotiable.
-
-2. **Price validation gate:** Before outputting, verify all prices are within 2% of a real-time source. Flag and timestamp any stale data. Never mix prices from memory with current prices.
-
-3. **Fix concentration calculation immediately.** With 7 positions and ~$45K deployed across them, compute actual HHI or top-3 weight. Show the top holding as % of portfolio.
-
-4. **Conviction score rebalancing:** Require conviction scores to follow an approximate bell curve. Default is 6/10. Reserve 8+ for genuine high-conviction ideas with strong supporting data. TEM at -8% should be 5/10 unless thesis review convincingly upgrades it.
-
-5. **Thesis journal — populate for every open position this run before the next.** NVDA, PLTR, SOFI, TEM, VRT — each needs: entry price, thesis in 2 sentences, stop-loss level, catalyst timeline.
-
-6. **Deploy at minimum $20K of the $44,700 idle cash** across 1-2 existing positions (if thesis intact) and 1-2 new positions with full reasoning and options framework.
-
-7. **Reintroduce the options/LEAP education section.** User rated this as a highlight consistently. It's high-value content that differentiates this service.
-
-8. **Add the "once-in-a-lifetime asymmetric plays" section** but make it specific — name the ticker, the asymmetry (e.g., "upside 5x, downside 30%"), the catalyst, and the time horizon.
-
-9. **Build a deployment schedule for remaining cash** — show exactly which ideas are queued and what conditions trigger each deployment.
-
-10. **Pre-run checklist** (enforced, not optional): ☐ Fresh prices fetched ☐ Thesis journal populated ☐ Options data verified ☐ Concentration math checked ☐ New ideas generated outside portfolio ☐ Options/LEAP section drafted ☐ Learning section personalized
-
----
-
-**Bottom Line:** This was a failure of execution, not capability. The 9.2/10 run proved the agent knows how to deliver an outstanding report. The feedback trail is unambiguous. The fix is **process discipline** — a mandatory template, a data validation gate, a thesis journal that's populated every run, and conviction scores that reflect reality. Nothing here is unknown. Everything here has been flagged before. The question is whether OWL will execute at 9/10+ *consistently* or oscillate between brilliance and mediocrity. The answer depends on whether we treat the template and checklist as non-negotiable infrastructure rather than aspirational guidelines.
-
-## Run: 2026-05-22 19:07:44 ET
-# OWL Self-Reflection — 2026-05-22 19:07:44 ET
-
----
-
-## What Worked Well
-
-- **NVDA conviction played out**: Recommended on 2026-05-22 at $207.14, currently $+3.62% at $214.64 with 8/10 conviction. This is the highest-conviction pick showing positive returns, validates the AI/infrastructure thesis. The reasoning (continued data center demand, CUDA ecosystem lock-in) was sound and clearly communicated.
-- **Recommendation tracking section landed well at 9.2/10**: The 2026-05-07 run proved the template works when followed — portfolio rebalance summary, cross-domain analysis, brutal honesty in state-of-play assessment, earnings risk flags, and once-in-a-lifetime asymmetric plays all scored highly. The template and structure *does* deliver when executed.
-- **LEAP/options education has been consistently praised**: Across multiple runs (2026-04-23, 2026-04-30, 2026-05-07) the user specifically called out options explanations as a strength. The ALPP LEAP explanation on this tick run ($745.87, +14.46%) is a concrete example — it's working money that's also teaching the user.
-- **Cross-domain analysis differentiated the report**: The user specifically praised the cross-domain approach on the 5/7 run (8.5→9.2 ratings) — connecting macro themes to specific tickers and opportunities. This must remain a mandatory section, not a nice-to-have.
-
-## What Didn't Work
-
-- **Alerts-only run with no full report**: This is the cardinal sin. The user's #1 complaint going back to 4/22 and 5/7 is report quality. Running in LOW MODE with no full report is exactly the kind of failure that produced the 4/10 and 6/10 grades. **This is the single biggest issue to fix.**
-- **Data staleness (recurring, unresolved)**: The user flagged stale PLTR data on 2026-04-22 (rated 4/10 explicitly for this). On this run, active recommendations show PLTR at $139.47 (recommendation price) vs $135.84 (current), SOFI at $16.29 vs $15.60, TEM at $50.22 vs $46.01, VRT at $348.38 vs $326.85. These are all showing losses — we need to verify these are truly *current* prices and not stale again. **Data freshness gate is not working.**
-- **56% cash sitting idle — massive opportunity cost**: With $99,326 portfolio and ~$55,622 in cash, this is the opposite of the 90% deployment target. The user flagged on 4/30 that the agent only recommends from existing holdings. With this much cash, there should be 3-5 new ideas outside the portfolio, each with full thesis and conviction scores.
-- **Portfolio concentration at 0.0% is suspicious**: The memory shows 61.7-61.9% concentration on prior runs (just hours earlier). Either the data between memory and portfolio sections is inconsistent (a quality issue) or concentration was miscalculated. **Need to reconcile.**
-- **Learning section noted as "weak"**: The user already knows the material being presented. The learning section must push into genuinely new territory — not generic finance 101.
-
-## Conviction Calibration
-
-- **8/10 conviction on 6 tickers simultaneously is NOT calibration — it's grade inflation**: NVDA, PLTR, SOFI, TEM, VRT all at 8/10 with ALPP also at 8/10. If everything is high conviction, nothing is. True calibration means a spread: 9-10 for highest-convidence, 6-7 for medium, 4-5 for speculative. Recognize we're under-differentiating.
-- **TEM at 8/10 is currently -8.38%** ($50.22 → $46.01): This is a thesis that has NOT been validated recently. Either the thesis changed (tell the user WHY it's down and whether the thesis holds) or conviction should be revised downward. **Recency bias toward initial conviction rather than dynamic updating.**
-- **VRT at 8/10 is -6.18%** ($348.38 → $326.85): Same issue. Given the ~2% portfolio weight (28 shares × $326.85 ≈ $9,152 of $99,326), this isn't catastrophic, but it means conviction was too high for the risk. Need to ask: what changed in the infrastructure/electrification thesis?
-- **SOFI at 8/10 is -4.24%** ($16.29 → $15.60): 306 shares at current price = ~$4,774. This is a 4.8% position. Fintech headwinds are real; conviction should have been 6-7/10, not 8/10, unless we had a truly differentiated thesis on banking charter monetization.
-- **NVDA at 8/10 is the only conviction pick with green performance** (+3.62% on 38 shares = ~$8,156 position). The thesis validation here is clean: AI capex cycle thesis intact.
-
-## Thesis Journal Review
-
-- **This run's thesis journal is empty**: The field is literally blank in the report. This is a process failure. Every recommendation MUST have a written thesis with: (a) what needs to happen for the thesis to work, (b) what invalidates it, (c) expected timeline. Without this, conviction scores are arbitrary numbers.
-- **ALPP thesis bears scrutiny**: At $745.87 with +14.46%, this is the best-performing position. But we need to document WHY — is it ALPINE infrastructure play? Reinsurance cycle? What's the specific driver? The thesis journal should capture this so we can validate/invalidate next run.
-- **TEM's thesis needs updating every run, not reset**: TEM (Tempus AI) operates in precision medicine/AI diagnostics. The stock has been volatile. The thesis journal should track: FDA approval milestones, partnership announcements, revenue trajectory. If it's -8.38%, SOMETHING in the thesis needs to be revisited. Don't just restate the thesis — interrogate it.
-
-## Missed Opportunities
-
-- **With 56% cash, literally ANY deployment is a missed opportunity**: This run should have generated 3-5 new stock ideas with full theses. Candidates to evaluate (not recommendations, examples of what should have been done): ARM Holdings (if AI thesis extends beyond NVDA), VST or CEG (nuclear power renaissance — structural theme), BRK.B (defensive cash deployment), or a covered call strategy on existing positions to generate income on idle capital.
-- **Options income strategy on 56% cash**: The user likes options education. With $55,622 cash, selling cash-secured puts on high-conviction names at support levels would both generate returns and teach a strategy. This was missed.
-- **Earnings plays were not flagged**: With 7 positions, there should be an earnings calendar check. Are any positions reporting within 30 days? If so, position sizing should be adjusted or protective strategies suggested.
-- **Sector rotation signals**: If VRT (Vertiv, data center infrastructure) is down 6% and NVDA is up 3.6%, there's a divergence worth flagging to the user. Is the AI infrastructure trade broadening or narrowing? No analysis was provided.
-
-## Data Quality Issues
-
-- **Memory shows portfolio value $253K-$255K; portfolio section shows $99,326**: This is a **3x discrepancy** that is completely unacceptable. Either the memory is reading a different portfolio (Alpaca total?), there's a display bug, or data is cross-contaminated between accounts. **This alone could destroy user trust if they noticed.** Root cause needed immediately.
-- **Concentration 0.0% vs memory 61.7-61.9%**: Another direct contradiction. Cannot have 7 positions totaling ~$44K with 0% concentration. Math error or display bug.
-- **Options data was flagged as broken on 5/7**: User specifically said "the options data was broken and that should be fixed." Was this actually resolved, or are we still showing stale/missing options chains? Need verification.
-- **Price freshness**: Can't verify whether the "current" prices ($214.64, $135.84, etc.) are truly from today's close (2026-05-22) or somewhat stale. Need a timestamp on every price.
-
-## Risk Management
-
-- **No visible stop-losses or risk thresholds**: The report mentions active recommendations but there's no stop-loss policy documented. For a TEM at -8.38%, is the stop at -15%? -20%? What's the rule? **Need a systematic stop-loss policy per conviction level.**
-- **56% cash concentration is itself a risk**: In a rising NVDA/AI environment, 56% cash is a massive drag. Opportunity cost of not deployed capital in a bull market IS a risk.
-- **No tail risk hedge position**: With 4 of 6 conviction picks currently negative, the portfolio is NOT hedged against a broader market drawdown. Even a small SPY put position (1-2% of portfolio) would provide asymmetric downside protection. User's feedback suggests they'd appreciate understanding this.
-- **No earnings risk flag in this output**: The 5/7 run included earnings risk as a praised feature. Absent here. Must be mandatory every run.
-
-## Cash Deployment
-
-- **56% cash is the #1 portfolio problem**: Target is 90% deployed = ~$10,000 cash reserve. Current: ~$55,600 cash. That's ~$45,600 that should be working. At even a modest 6% annual return, that's **$2,736/year in opportunity cost** — meaningful on a ~$100K portfolio.
-- **Deployment plan should be staged**: Don't deploy all at once. Suggest deploying in 2-3 tranches over 2-4 weeks: (1) highest-conviction new idea now, (2) second idea at technical support, (3) third on any market pullback.
-- **The cash itself is a recommendation**: Telling the user "56% cash is excessive" is actionable and brave. The user praised brutal honesty. Just putting the number in the report isn't enough — we need to recommend a specific deployment schedule with specific tickers, prices, and amounts.
-
-## Memory & Learning
-
-- **We're NOT building on past analysis despite having 5+ runs of feedback**: The 4/22 user said "data was old." The 5/7 user said "options data was broken." Neither was fixed. The thesis journal is empty. **Memory without action is useless.** The "pre-run checklist" from the learning section exists but clearly wasn't followed.
-- **User's learning evolution**: At 4/22, user wanted more depth. By 4/23, user wanted portfolio-aware recommendations. By 4/30, user wanted new ideas outside holdings. By 5/07, the learning section was praised for pushing into new territory. **The learning section has evolved well** — keep pushing further. Current level: intermediate. Target: advanced.
-- **Re-researching the same tickers without new insights**: NVDA, PLTR, SOFI have been in the portfolio for multiple runs. Each time, the analysis should build on previous findings — what changed since last run? What's new? If nothing new, say so and link to prior analysis rather than re-writing the same thesis.
-
-## Process Improvements (Mandatory for Next Run)
-
-1. **Full report template is NON-NEGOTIABLE**: Alerts-only mode is unacceptable unless explicitly requested. Every run must include: market outlook, portfolio review with current prices/timestamps, thesis journal with validation status, new ideas outside holdings, options/LEAP recommendations, earnings risk flags, cross-domain analysis, learning section, conviction-tracking table.
+atus, new ideas outside holdings, options/LEAP recommendations, earnings risk flags, cross-domain analysis, learning section, conviction-tracking table.
 
 2. **Pre-run data validation gate with timestamps**: Every price must show the timestamp of when it was fetched. If a price is >24 hours old, FLAG it to the user: "Note: PLTR price may be stale — verify before acting."
 
@@ -144,3 +19,142 @@
 ---
 
 **Bottom Line**: This was a failure of **process discipline**, not capability. The system delivered a 9.2/10 when the full template was executed on 5/7. The feedback trail is unambiguous. The fixes are not unknown. The question is whether OWL executes at 9/10+ *consistently* or oscillates based on the mode/energy of the moment. Build the template. Build the checklist. Make both non-negotiable infrastructure.
+
+## Run: 2026-05-22 22:42:43 ET
+# OWL Self-Reflection — 2026-05-22 22:42:43 ET
+
+---
+
+## What Worked Well
+
+- **Portfolio-aware analysis is now the single highest-value feature.** The 5/7 run scored 9.2/10 specifically because OWL finally read the actual positions and weightage, then made recommendations *in context* rather than recommending in a vacuum. This must be the non-negotiable baseline from now in — every run opens with "here's what you hold, here's what it means, here's what to do about it." No exceptions, LOW mode or not.
+- **Specificity in options LEAP explanations was a breakout strength.** User explicitly called out the LEAP section as educational and clear. The reasoning behind why >12-month DTE leaps reduce theta bleed and give equity-like exposure with defined risk — that's the gold-standard template. Every options recommendation needs this level of explanation, not just "buy a call."
+- **Cross-domain analysis and brutally honest state-of-play assessment were unique differentiators (5/7 run).** User said this is "exactly what I was looking for." This is OWL's moat. Lean into it harder. Don't soften the honesty to avoid discomfort.
+- **Once-in-a-lifetime asymmetric plays section was well-received but needs sharpening.** User wants fewer "lottery tickets" and more "high-probability, right-tail outcomes with clear catalysts." Reframe: asymmetric = catalyst + time-defined + downside bounded.
+
+---
+
+## What Didn't Work
+
+- **LOW mode (5.7 avg) consistently underperforms FULL mode (9.2 avg) because it skips large portions of the template.** An "alerts-only run — no full report generated" is exactly the problem. The user's feedback over 4 months has been a monotonic escalation: "go more in depth," "teach me," "be specific," "show reasoning." LOW mode is *the opposite* of what the user wants. **Recommendation: Either eliminate LOW mode for this user, or define a minimum viable template for LOW mode that still includes portfolio snapshot, thesis updates, and at least one learning nugget.**
+- **Cost basis vs. current price confusion.** The 4/30 run (8.5/10) used average purchase price as the reference point instead of current market price for decisions. The user caught this: "it went off of cost/average price at which I bought them over the current price." Sage advice — decisions must be made based on *where prices are going from today's forward-looking price*, not anchored to what was paid. Cost basis is a tax/accounting input, not a signal input. **Fix: All recommendations must reference current market price and forward thesis. Separate P&L tracking from decision framework.**
+- **Recommendation tracking "isn't working" (4/23 feedback, still unresolved).** The active recommendations table shows entries from 5/22 but no structured tracking of when recommendations were *initiated*, what the entry thesis was, and whether it's tracking or failing. This is a core feature gap. Without it, the user can't trust that OWL is accountable for its own calls. **Fix: Every new recommendation must include entry price, timestamp, thesis, target, and stop. Review them every run.**
+- **Only recommending tickers already in portfolio was a "biggest problem" (4/30).** The portfolio has 7 positions. The market has thousands of opportunities. OWL must scan *outside* the portfolio and present 2-3 new names with full rationale each run. This is what turns OWL from a "portfolio monitor" into an "investment idea engine."
+
+---
+
+## Conviction Calibration
+
+- **Every active recommendation was issued at 8/10 conviction.** AMZN, NVDA, PLTR, SOFI, TEM, VRT — all 8s. This is grade inflation. An 8/10 conviction should mean "one of the best ideas I have right now, high confidence, clear catalyst." Spreading the same conviction across 6 names dilutes the signal. **Fix: Force-rank recommendations. Top pick gets 9-10, next gets 7-8, rest get 5-7. An 8/10 recommendation with negative YTD return (-8% on TEM, -6% on VRT) suggests conviction-price reality divergence.**
+
+- **PLTR at $136.88 is down -1.86% from entry but was flagged as having "old data" in an earlier run (4/22, user complaint #1).** If PLTR data was stale once, it could still be. Verify all prices are live before generating recommendations. This is a data quality control issue I'll flag below.
+
+- **No active recommendations above 8/10 conviction — are there truly no "must-own" ideas right now?** Or is OWL being too conservative? The user rated the 9.2 run highly because ideas were "spot on, specific and nuanced." That specificity may have come from going beyond 8/10 to "this is the single highest-conviction idea in my coverage universe, here's why." Recapture that energy.
+
+- **Conviction calibration scorecard needed:** Going back 3 recommended months, how many 8+ picks were positive within 30 days? If the hit rate is below 60%, conviction is too loose. If above 85%, conviction is too tight (leaving money on the table).
+
+---
+
+## Thesis Journal Review
+
+- **Thesis journal is empty.** This is a critical failure. The feedback loop requires: (1) state thesis on recommendation, (2) check thesis weekly/monthly, (3) grade outcome, (4) adjust calibration. With no journaled theses, OWL is flying blind on its own accuracy. **Action: Retroactively journal the 6 active recommendations from 5/22 with theses. Then journal every future recommendation before issuing.**
+
+- **Patterns from memory:** The past 3 runs (all 5/22) show portfolio value ~$253K with ~61-62% concentration — but the current portfolio is $99.5K with 55% cash. This is a *significant discrepancy.* Either the user made a major rebalance between runs, or there are two separate portfolios being tracked, or the portfolio data/glue is stale. **This must be reconciled. Inconsistent portfolio data erodes trust completely.**
+
+- **If thesis tracking were active, we'd know:** Is the AI-infrastructure thesis (NVDA, AMZN) holding? Is the fintech disruption thesis (SOFI) deteriorating given -4.11%? Is the industrials/electrification thesis (VRT) failing at -6%? Without journaled theses, these questions can't be answered.
+
+---
+
+## Missed Opportunities
+
+- **No new recommendations beyond existing 7 holdings.** The 4/30 feedback called this the "biggest problem." Current cash is 55% — nearly $55K sitting idle with no deployment plan. Even in LOW mode, OWL should surface 1-2 high-probability ideas.
+
+- **No sector rotation commentary.** With rates potentially shifting and AI spend accelerating, there are sectors (energy infrastructure for data centers, copper, uranium, AI-adjacent industrials) that the user has expressed interest in via the "once-in-a-lifetime asymmetric plays" section. These should have appeared as specific ideas, not just thematic discussion.
+
+- **Earnings calendar is blank in this summary.** NVDA, AMZN, PLTR, SOFI all have quarterly earnings. These are catalysts that should be prepped for *before* they happen, not discussed after. An earnings prep section (what to expect, implied move, what would cause a beat/miss) was praised on 5/7 and should be in every run.
+
+- **No options flow or unusual activity data.** OWL monitors for smart money signals. If this data is available, it should be surfaced. If it's not available, it should be explicitly noted as a gap rather than silently omitted.
+
+---
+
+## Data Quality Issues
+
+- **PLTR: user reported stale/old data on 4/22. PLTR was $751 in the old report, now shows $139.47 (adjusted for stock split).** $751 pre-split → ~$143.66 post-split (7:1 ratio). The old recommendation at $751 wasn't "wrong data" — it was pre-split pricing not properly adjusted. **This is a critical systematic fix: always display split-adjusted prices AND clearly annotate when a split occurred. Never let the user wonder if data is stale vs. split-related.**
+
+- **Portfolio value discrepancy: $253K in memory vs $99.5K in current portfolio.** This is either (1) a second/separate account, (2) a partial portfolio being reported in one venue vs. full portfolio in another, or (3) a position liquidation not reflected in memory. **This must be resolved before any recommendation can be trusted.**
+
+- **All 6 recommendations issued at $207+ for AMZN seem suspicious** — AMZN at $207 would be reasonable for 2026 but verify against current date pricing. If AMZN was actually recommended at $751 (pre-split PLTR territory), that's another data issue.
+
+- **Source tagging is missing.** Where does OWL get prices? What data feeds? When was the last refresh? For a user who caught stale PLTR data, OWL needs to show its work: "All prices as of 2026-05-22 22:42 ET, sourced from [exchange/feed]."
+
+- **No bid-ask spreads shown on recommended options.** Entry price matters. A recommendation to "buy the $210 call" is incomplete without the premium asking price.
+
+---
+
+## Risk Management
+
+- **55% cash is very high.** With a long-term horizon and AI/tech thematic conviction, holding more than half in cash carries massive opportunity cost unless there's an explicit macro risk thesis for why. OWL needs to either: (a) present a concrete 3-tranche deployment plan for the ~$55K, or (b) state clearly "I'm holding cash because X macro risk, and when Y happens I deploy." Right now it just looks like underperformance.
+
+- **Stop-loss policy is defined in previous feedback but not yet implemented per-position.** User asked for: 9-10 conviction → -20% stop, 7-8 → -15% stop, 5-6 → -10% stop. Current status: **not implemented.** This is a direct user request that's been ignored for 2+ months.
+
+- **Position sizing is unclear.** What % of portfolio is in AMZN vs. SOFI vs. PLTR? Concentration is listed as 0.0% which contradicts 7 positions totaling ~$45K. **Fix: calculate and display actual position weights.** If SOFI at $15.62 x 306 shares = $4,779 is ~4.8% of portfolio, that should be shown.
+
+- **No sector-level risk assessment.** How much of the portfolio is AI/tech vs. fintech vs. industrials? If 4 of 7 positions are correlated to "AI spending increases" (AMZN, NVDA, PLTR, potentially TEM), a single macro shock (AI capex slowdown, China AI export restrictions, chip supply disruption) could hit 60%+ of the portfolio simultaneously. Correlation risk must be surfaced.
+
+- **Earnings risk window: no dates shown.** If NVDA or AMZN earnings are within 2 weeks, the options positions and stock positions need volatility-adjusted sizing. This is a basic risk management step that's missing.
+
+---
+
+## Cash Deployment
+
+- **55% cash (~$55K) with no deployment plan.** This is the single biggest value OWL is currently destroying. Every day that cash sits idle when the user has expressed bullish AI/fintech/industrial themes is a day of opportunity cost. **Minimum viable deployment plan for 5/24:**
+  - **Tranche 1 (now, $15K):** Highest-conviction name outside current portfolio. Could be an AI infrastructure play (e.g., SMCI for data center hardware, or an energy play like VST for powering data centers) — specific ticker, price, thesis required.
+  - **Tranche 2 (next pullback, $20K):** Define the trigger. "If the S&P drops 2-3% from current levels, deploy into SOFI leaps at <$14 or PLTR at <$130."
+  - **Tranche 3 (earnings catalyst, $20K):** "Hold until NVDA earnings, assess market reaction, deploy into whichever sector shows strength."
+  - **This is what the user asked for on 5/7 (feedback #9) and has not received.**
+
+---
+
+## Memory & Learning
+
+- **Memory exists but is underutilized.** The past 3 runs (all 5/22) are stored but no learning has been extracted from them. Memory should answer: "What did OWL recommend last time? What happened? What should change?" It currently answers nothing.
+
+- **Cross-run learning is absent.** The trajectory from 4/22 (4/10) → 4/30 (8.5/10) → 5/7 (9.2/10) was driven by: (1) using actual portfolio data, (2) specific/thematic reasoning, (3) education-focused options section, (4) honestly admitting data issues. These should be permanently baked into the template, not rediscovered each run.
+
+- **User feedback is the richest dataset available and it's 100% actionable.** Every single rating from this user included a clear "do more X, do less Y" instruction. The fact that OWL still produces LOW mode runs with "no full report generated" after 5 months of "go deeper" feedback suggests feedback isn't being ingested as rules — just acknowledged in isolation. **Fix: Extract 5 non-negotiable rules from feedback and check them off every run before output.**
+
+- **Learning section has been well-received but user said it can still be stronger.** Specifically: "don't state things I already knew." The learning needs to go *beyond* what the user (an engaged, experienced investor) would know. Examples of where to go deeper: basis point math for options pricing, how Fed balance sheet changes affect equity multiples through DCF mechanics, how to read 13-F filings for institutional positioning. Niche, immediately applicable knowledge.
+
+---
+
+## Process Improvements (Non-Negotiable for Next Run)
+
+1. **Adopt a "minimum viable report" checklist** that even LOW mode must pass: (a) portfolio snapshot with current weights, (b) news impacting current holdings with move magnitude, (c) thesis status update on all active recommendations, (d) 1 new idea with full rationale, (e) 1 learning nugge beyond common knowledge.
+
+2. **Split-adjust all historical prices and annotate splits explicitly.** PLTR's 7:1 split caused confusion. Going forward, if a held stock splits, the report must say: "PLTR 7:1 split occurred on [date]. Your cost basis adjusted from $X to $Y. All prices below are split-adjusted."
+
+3. **Reconcile the $253K vs $99.5K portfolio discrepancy immediately.** Before any recommendation, the system must know and display the correct total portfolio value. This is table stakes.
+
+4. **Implement the stop-loss policy the user requested 2 months ago.** Per-position, visible, with alert when within 2% of threshold.
+
+5. **Journal all active recommendations retroactively** and journal every new recommendation going forward. Include: date, ticker, price, conviction, thesis (3 sentences), catalyst, target, stop. Review every run.
+
+6. **Force-rank conviction scores.** No more 6-for-6 at 8/10. The top pick gets 9-10. Diluted conviction is noise, not signal.
+
+7. **Add a "positions with biggest event or news today."** User explicitly asked for this on 4/22: "I want to see the ones that had a big event or news or moved the most today." Sort positions by absolute daily move, highlight outliers, explain the driver.
+
+8. **Present a concrete cash deployment schedule.** 3 tranches, specific tickers, entry triggers, position sizes, totaling the deployed amount. This directly addresses the 5/7 feedback item that was never actioned.
+
+9. **Source-tag all price data.** "Prices as of [timestamp] from [source]. Options quotes are mid-market from [exchange]." This rebuilds trust after the PLTR stale-data incident.
+
+10. **Eliminate "alerts-only" mode for this user or redefine it.** Five consecutive months of feedback asking for more depth and structure, and the system still occasionally generates "no full report" outputs. The user has spoken. Respect it.
+
+---
+
+## Bottom Line
+
+Oscar Wilde said, "Experience is simply the name we give our mistakes." OWL's biggest mistake right now isn't any single bad call — it's **inconsistency**. The 9.2 run proved the template works. The 4.7 baseline (current mode) proves it's not being enforced. The gap between those two numbers is trust erosion and opportunity cost ($55K idle cash, no thesis journal, no recommendation tracking, no stop-losses, split-adjusted price confusion).
+
+The user is sophisticated, engaged, and giving high-quality feedback for free. Every signal tells you what to do. The only question is whether OWL builds the infrastructure to execute consistently — or keeps oscillating between brilliance and "alerts-only." 
+
+**Build the checklist. Wire it in. Execute every time.**

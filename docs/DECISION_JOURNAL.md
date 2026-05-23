@@ -152,3 +152,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-22 | CRDO | BUY | $218.41 | N/A | 7/10 | Active | - | Why: Components for AI data centers (active electrical cables, SerDes). Earnings |
 | 2026-05-22 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | Why: AVGO owns the custom AI chip (ASIC) networking and connectivity layer. Whil |
 | 2026-05-22 | FCX | BUY | N/A | N/A | 8/10 | Active | - | Why: Every AI data center, every EV, every power grid upgrade needs copper. FCX  |
+| 2026-05-23 | TRIM | BUY | $136.88 | N/A | 9/10 | Active | - | THESIS: PLTR at 27.9% of portfolio is a single-stock concentration risk that nee |
