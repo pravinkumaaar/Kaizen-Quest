@@ -163,3 +163,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-23 | CRDO | BUY | $218.43 | $285.00 | 7/10 | Active | - | Why: Credo makes the active electrical cables (AECs) and SerDes chips that conne |
 | 2026-05-23 | MU | BUY | $751.02 | $950.00 | 8/10 | Active | - | Why: You already own MU at 5.5% of portfolio with +98.2% gains. I'm recommending |
 | 2026-05-23 | VRT | BUY | $327.48 | $420.00 | 7/10 | Active | - | Why: Vertiv is the "picks and shovels" play of AI that most investors overlook.  |
+| 2026-05-23 | CRDO | BUY | $218.41 | $275.00 | 7/10 | Active | - | Why: Credo Technology is the purest-play data center connectivity beneficiary in |
+| 2026-05-23 | GLD | BUY | N/A | $350.00 | 7/10 | Active | - | Why: Your portfolio is 100% tech/AI/growth with zero commodity exposure. Gold ha |
+| 2026-05-23 | NVTS | BUY | $29.25 | N/A | 8/10 | Active | - | Why: Navitas Semiconductor is a wide-bandgap semiconductor play (GaN/SiC) for EV |
+| 2026-05-23 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Your portfolio has zero international exposure. India is the world's fastes |
+| 2026-05-23 | PLTR | BUY | $136.88 | N/A | 8/10 | Active | - | Why: Palantir is 27.9% of your entire portfolio — $70,786 in a single position w |
