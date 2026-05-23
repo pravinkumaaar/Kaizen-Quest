@@ -154,3 +154,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-22 | FCX | BUY | N/A | N/A | 8/10 | Active | - | Why: Every AI data center, every EV, every power grid upgrade needs copper. FCX  |
 | 2026-05-23 | TRIM | BUY | $136.88 | N/A | 9/10 | Active | - | THESIS: PLTR at 27.9% of portfolio is a single-stock concentration risk that nee |
 | 2026-05-23 | TRIM | BUY | $136.88 | N/A | 9/10 | Active | - | Why: PLTR is your single largest position at 27.9% — that's 4.5x your recommende |
+| 2026-05-23 | CRDO | BUY | $218.41 | $275.00 | 7/10 | Active | - | Why: Credo Technology reports Monday (June 1 AMC). Already up 13% today on secto |
+| 2026-05-23 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: South Korea is the overlooked AI supply chain beneficiary. Samsung and SK H |
+| 2026-05-23 | RKLB | BUY | $135.76 | $175.00 | 7/10 | Active | - | Why: Rocket Lab is your best AI-adjacent space/mission infra play at 3.4% of por |
