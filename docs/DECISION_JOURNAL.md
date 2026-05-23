@@ -157,3 +157,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-23 | CRDO | BUY | $218.41 | $275.00 | 7/10 | Active | - | Why: Credo Technology reports Monday (June 1 AMC). Already up 13% today on secto |
 | 2026-05-23 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: South Korea is the overlooked AI supply chain beneficiary. Samsung and SK H |
 | 2026-05-23 | RKLB | BUY | $135.76 | $175.00 | 7/10 | Active | - | Why: Rocket Lab is your best AI-adjacent space/mission infra play at 3.4% of por |
+| 2026-05-23 | TRIM | BUY | $136.90 | N/A | 9/10 | Active | - | Why: This is not a bearish call — PLTR remains one of the highest-quality AI sof |
