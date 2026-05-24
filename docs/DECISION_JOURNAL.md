@@ -168,3 +168,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-23 | NVTS | BUY | $29.25 | N/A | 8/10 | Active | - | Why: Navitas Semiconductor is a wide-bandgap semiconductor play (GaN/SiC) for EV |
 | 2026-05-23 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Your portfolio has zero international exposure. India is the world's fastes |
 | 2026-05-23 | PLTR | BUY | $136.88 | N/A | 8/10 | Active | - | Why: Palantir is 27.9% of your entire portfolio — $70,786 in a single position w |
+| 2026-05-24 | CRDO | BUY | $218.41 | $3.50 | 7/10 | Active | - | Why: Credo Technology is the quiet winner in AI data center connectivity — their |
+| 2026-05-24 | GLD | BUY | $413.82 | N/A | 8/10 | Active | - | Why: Gold is pulling back after a massive run. Central bank buying (China, India |
