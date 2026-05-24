@@ -181,3 +181,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-24 | CRDO | BUY | $218.43 | $275.00 | 7/10 | Active | - | Why: Credo Technology (+12.95% today) provides high-speed connectivity solutions |
 | 2026-05-24 | VRT | BUY | $327.48 | $385.00 | 7/10 | Active | - | Why: Vertiv is the critical power and thermal management infrastructure for AI d |
 | 2026-05-24 | EWY | BUY | N/A | $84.00 | 7/10 | Active | - | Why: This is the highest-conviction international allocation I can make. South K |
+| 2026-05-24 | ADD | BUY | N/A | N/A | 7/10 | Active | - | Why: Here's the asymmetric play. HPE reports May 28 after market. The setup: for |
+| 2026-05-24 | REDUCE | BUY | $136.88 | N/A | 8/10 | Active | - | Why: You have $70,542 in a single stock. Even Peter Lynch would tell you this is |
