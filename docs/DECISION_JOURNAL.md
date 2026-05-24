@@ -178,3 +178,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-24 | APLD | BUY | $45.87 | $72.00 | 7/10 | Active | - | Why: Applied Digital is the purest data center infrastructure play you own — and |
 | 2026-05-24 | VRT | BUY | N/A | $22.00 | 8/10 | Active | - | Why: Vertiv is the best-positioned picks-and-shovels AI infrastructure name most |
 | 2026-05-24 | CRDO | BUY | $218.41 | $280.00 | 7/10 | Active | - | Why: Credo makes the high-speed connectivity chips and active electrical cables  |
+| 2026-05-24 | CRDO | BUY | $218.43 | $275.00 | 7/10 | Active | - | Why: Credo Technology (+12.95% today) provides high-speed connectivity solutions |
+| 2026-05-24 | VRT | BUY | $327.48 | $385.00 | 7/10 | Active | - | Why: Vertiv is the critical power and thermal management infrastructure for AI d |
+| 2026-05-24 | EWY | BUY | N/A | $84.00 | 7/10 | Active | - | Why: This is the highest-conviction international allocation I can make. South K |
