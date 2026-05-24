@@ -3,8 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **CRDO** | $218.41 | $3.50 | 7/10 |  Active  |  $218.41  |  +0.0%  | Swing (pre/post-earnings, 2-4 weeks) OR Medium (3-12 months if thesis intact) | Watchlist |
-| 2 | **GLD** | $413.82 | TBD | 8/10 |  Active  |  $413.82  |  +0.0%  | Medium (3-12 months) to Long (1-3 years) | Watchlist |
+| 1 | **NVDA** | $215.33 | TBD | 8/10 |  Active  |  $215.33  |  +0.0%  | Immediate action | Watchlist |
+| 2 | **CRDO** | $218.41 | TBD | 7/10 |  Active  |  $218.41  |  +0.0%  | Swing (8-30 days) — primarily an earnings play | Watchlist |
+| 3 | **HIMS** | $23.75 | TBD | 8/10 |  Active  |  $23.75  |  +0.0%  | Immediate | Watchlist |
+| 4 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 5 | **RR** | $2.68 | $7.00 | 5/10 |  Active  |  $2.68  |  +0.0%  | Long (1-2 years) — this is venture capital in public markets conviction | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

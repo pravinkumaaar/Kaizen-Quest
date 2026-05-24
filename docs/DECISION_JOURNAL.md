@@ -170,3 +170,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-23 | PLTR | BUY | $136.88 | N/A | 8/10 | Active | - | Why: Palantir is 27.9% of your entire portfolio — $70,786 in a single position w |
 | 2026-05-24 | CRDO | BUY | $218.41 | $3.50 | 7/10 | Active | - | Why: Credo Technology is the quiet winner in AI data center connectivity — their |
 | 2026-05-24 | GLD | BUY | $413.82 | N/A | 8/10 | Active | - | Why: Gold is pulling back after a massive run. Central bank buying (China, India |
+| 2026-05-24 | NVDA | BUY | $215.33 | N/A | 8/10 | Active | - | Why: NVDA is your second-largest position (12.7%), up 107.5%. The AI infrastruct |
+| 2026-05-24 | CRDO | BUY | $218.41 | N/A | 7/10 | Active | - | Why: Credo Technology reports earnings June 1 (8 days). Revenue estimate $441M s |
+| 2026-05-24 | HIMS | BUY | $23.75 | N/A | 8/10 | Active | - | Why: HIMS is down 42.4% from your cost basis. This is a -1.08% day on a stock th |
+| 2026-05-24 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Zero international exposure in a $253K portfolio with AI concentration risk |
+| 2026-05-24 | RR | BUY | $2.68 | $7.00 | 5/10 | Active | - | Why: You own RR and it's flat today (+0.00%) while the broader AI/robotics trade |
