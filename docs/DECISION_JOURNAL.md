@@ -175,3 +175,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-24 | HIMS | BUY | $23.75 | N/A | 8/10 | Active | - | Why: HIMS is down 42.4% from your cost basis. This is a -1.08% day on a stock th |
 | 2026-05-24 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Zero international exposure in a $253K portfolio with AI concentration risk |
 | 2026-05-24 | RR | BUY | $2.68 | $7.00 | 5/10 | Active | - | Why: You own RR and it's flat today (+0.00%) while the broader AI/robotics trade |
+| 2026-05-24 | APLD | BUY | $45.87 | $72.00 | 7/10 | Active | - | Why: Applied Digital is the purest data center infrastructure play you own — and |
+| 2026-05-24 | VRT | BUY | N/A | $22.00 | 8/10 | Active | - | Why: Vertiv is the best-positioned picks-and-shovels AI infrastructure name most |
+| 2026-05-24 | CRDO | BUY | $218.41 | $280.00 | 7/10 | Active | - | Why: Credo makes the high-speed connectivity chips and active electrical cables  |
