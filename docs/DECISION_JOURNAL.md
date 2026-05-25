@@ -186,3 +186,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | VRT | BUY | $327.46 | N/A | 6/10 | Active | - | Why: Vertiv is the picks-and-shovels play for AI data centers — cooling, power,  |
 | 2026-05-25 | CRDO | BUY | $218.41 | $10652.00 | 7/10 | Active | - | Why: Credo is an AI connectivity play — high-speed data center connectivity solu |
 | 2026-05-25 | AVGO | BUY | N/A | $12174.00 | 8/10 | Active | - | Why: Broadcom is the "quiet giant" of AI infrastructure. While NVDA gets the hea |
+| 2026-05-25 | CRDO | BUY | $218.41 | $280.00 | 7/10 | Active | - | Why: Credo is the quiet winner in AI data center connectivity — active electrica |
+| 2026-05-25 | PLTR | BUY | $136.88 | N/A | 8/10 | Active | - | Why: This is your largest position at 27.9% of portfolio — up +118%. Palantir is |
+| 2026-05-25 | AVGO | BUY | $320.00 | $400.00 | 8/10 | Active | - | Why: Broadcom is the "adult in the room" of AI infrastructure. While everyone ch |
+| 2026-05-25 | HIMS | BUY | $23.75 | N/A | 9/10 | Active | - | Why: This is a -42.4% loser and the thesis has broken. HIMS built its growth on  |
