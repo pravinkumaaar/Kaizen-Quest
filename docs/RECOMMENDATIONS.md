@@ -3,11 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **CRDO** | $218.43 | $285.00 | 7/10 |  Active  |  $218.43  |  +0.0%  | Swing to Medium (2-12 weeks) | Watchlist |
-| 2 | **VRT** | $327.48 | $410.00 | 8/10 |  Active  |  $327.48  |  +0.0%  | Medium to Long (6-18 months) | Watchlist |
-| 3 | **DELL** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-9 months) | Watchlist |
-| 4 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
-| 5 | **GLD** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
+| 1 | **CRDO** | $218.43 | $265.00 | 8/10 |  Active  |  $218.43  |  +0.0%  | Swing (2-6 weeks through earnings + reaction) | Watchlist |
+| 2 | **VERTIV** | $327.48 | $400.00 | 7/10 |  Active  |  $327.48  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 3 | **SMCI** | $35.59 | $55.00 | 7/10 |  Active  |  $35.59  |  +0.0%  | Medium (3-9 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

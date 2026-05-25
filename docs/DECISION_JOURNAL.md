@@ -195,3 +195,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | DELL | BUY | N/A | N/A | 6/10 | Active | - | Why: Dell reports earnings May 28 (3 days). The market is pricing in $2.98 EPS a |
 | 2026-05-25 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has ZERO international exposure. That's a problem. South Kor |
 | 2026-05-25 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Your portfolio is 100% equities, 100% US, 100% tech/AI. That's a three-conc |
+| 2026-05-25 | CRDO | BUY | $218.43 | $265.00 | 8/10 | Active | - | Why: Credo Technology is an active electrical cable/AEC specialist riding the AI |
+| 2026-05-25 | VERTIV | BUY | $327.48 | $400.00 | 7/10 | Active | - | Why: Vertiv is the "air conditioner of AI" — nobody gets excited about thermal m |
+| 2026-05-25 | SMCI | BUY | $35.59 | $55.00 | 7/10 | Active | - | Why: You own SMCI at a small loss (-9.8%). This is the most controversial name i |
