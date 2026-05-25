@@ -201,3 +201,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | EEM | BUY | N/A | $62.00 | 7/10 | Active | - | Thesis: EM is in the early innings of a multi-year catch-up cycle vs US tech, wi |
 | 2026-05-25 | NVDA | BUY | $215.35 | N/A | 8/10 | Active | - | Thesis: NVDA at 12.7% of portfolio with +107% unrealized gains is your most impo |
 | 2026-05-25 | REDUCE | BUY | $136.90 | $15.00 | 8/10 | Active | - | Why: At 27.9% of your portfolio, PLTR is no longer a position — it's an asset al |
+| 2026-05-25 | CRDO | BUY | $218.43 | $280.00 | 7/10 | Active | - | Why: Credo is the "picks and shovels" play for AI data center connectivity — act |
+| 2026-05-25 | GLD | BUY | N/A | $350.00 | 7/10 | Active | - | Why: Your portfolio has zero commodity exposure and zero international exposure. |
+| 2026-05-25 | HIMS | BUY | $23.76 | N/A | 8/10 | Active | - | Why: This is a thesis-breaking loss. HIMS was a GLP-1/telehealth momentum play,  |
+| 2026-05-25 | PLTR | BUY | $136.90 | N/A | 8/10 | Active | - | Why: This is not a sell — this is risk management. PLTR is your single best perf |
+| 2026-05-25 | NBIS | BUY | $214.79 | N/A | 7/10 | Active | - | Why: Nebius is the European AI cloud/GPU infrastructure play, and it's been your |
