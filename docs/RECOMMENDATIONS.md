@@ -3,9 +3,8 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **CRDO** | $218.43 | $265.00 | 8/10 |  Active  |  $218.43  |  +0.0%  | Swing (2-6 weeks through earnings + reaction) | Watchlist |
-| 2 | **VERTIV** | $327.48 | $400.00 | 7/10 |  Active  |  $327.48  |  +0.0%  | Medium (3-12 months) | Watchlist |
-| 3 | **SMCI** | $35.59 | $55.00 | 7/10 |  Active  |  $35.59  |  +0.0%  | Medium (3-9 months) | Watchlist |
+| 1 | **EEM** | Market | $62.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6-18mo | Watchlist |
+| 2 | **NVDA** | $215.35 | TBD | 8/10 |  Active  |  $215.35  |  +0.0%  | Long 1-3yr | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

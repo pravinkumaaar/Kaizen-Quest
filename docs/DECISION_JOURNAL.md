@@ -198,3 +198,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | CRDO | BUY | $218.43 | $265.00 | 8/10 | Active | - | Why: Credo Technology is an active electrical cable/AEC specialist riding the AI |
 | 2026-05-25 | VERTIV | BUY | $327.48 | $400.00 | 7/10 | Active | - | Why: Vertiv is the "air conditioner of AI" — nobody gets excited about thermal m |
 | 2026-05-25 | SMCI | BUY | $35.59 | $55.00 | 7/10 | Active | - | Why: You own SMCI at a small loss (-9.8%). This is the most controversial name i |
+| 2026-05-25 | EEM | BUY | N/A | $62.00 | 7/10 | Active | - | Thesis: EM is in the early innings of a multi-year catch-up cycle vs US tech, wi |
+| 2026-05-25 | NVDA | BUY | $215.35 | N/A | 8/10 | Active | - | Thesis: NVDA at 12.7% of portfolio with +107% unrealized gains is your most impo |
