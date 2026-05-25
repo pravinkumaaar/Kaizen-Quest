@@ -190,3 +190,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | PLTR | BUY | $136.88 | N/A | 8/10 | Active | - | Why: This is your largest position at 27.9% of portfolio — up +118%. Palantir is |
 | 2026-05-25 | AVGO | BUY | $320.00 | $400.00 | 8/10 | Active | - | Why: Broadcom is the "adult in the room" of AI infrastructure. While everyone ch |
 | 2026-05-25 | HIMS | BUY | $23.75 | N/A | 9/10 | Active | - | Why: This is a -42.4% loser and the thesis has broken. HIMS built its growth on  |
+| 2026-05-25 | CRDO | BUY | $218.43 | $285.00 | 7/10 | Active | - | Why: Credo Technology makes active electrical cables and SerDes chips for AI dat |
+| 2026-05-25 | VRT | BUY | $327.48 | $410.00 | 8/10 | Active | - | Why: Vertiv is the backbone of AI data centers — power, cooling, and IT infrastr |
+| 2026-05-25 | DELL | BUY | N/A | N/A | 6/10 | Active | - | Why: Dell reports earnings May 28 (3 days). The market is pricing in $2.98 EPS a |
+| 2026-05-25 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has ZERO international exposure. That's a problem. South Kor |
+| 2026-05-25 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Your portfolio is 100% equities, 100% US, 100% tech/AI. That's a three-conc |

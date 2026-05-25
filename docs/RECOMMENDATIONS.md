@@ -3,10 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **CRDO** | $218.41 | $280.00 | 7/10 |  Active  |  $218.41  |  +0.0%  | Swing (2-4 weeks, earnings-driven) | Watchlist |
-| 2 | **PLTR** | $136.88 | TBD | 8/10 |  Active  |  $136.88  |  +0.0%  | Immediate (reduce now, reassess post-earnings) | Watchlist |
-| 3 | **AVGO** | $320.00 | $400.00 | 8/10 |  Active  |  $320.00  |  +0.0%  | Medium (3-6 months) | Watchlist |
-| 4 | **HIMS** | $23.75 | TBD | 9/10 |  Active  |  $23.75  |  +0.0%  | Immediate | Watchlist |
+| 1 | **CRDO** | $218.43 | $285.00 | 7/10 |  Active  |  $218.43  |  +0.0%  | Swing to Medium (2-12 weeks) | Watchlist |
+| 2 | **VRT** | $327.48 | $410.00 | 8/10 |  Active  |  $327.48  |  +0.0%  | Medium to Long (6-18 months) | Watchlist |
+| 3 | **DELL** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-9 months) | Watchlist |
+| 4 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
+| 5 | **GLD** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
