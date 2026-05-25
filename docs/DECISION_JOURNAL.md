@@ -200,3 +200,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | SMCI | BUY | $35.59 | $55.00 | 7/10 | Active | - | Why: You own SMCI at a small loss (-9.8%). This is the most controversial name i |
 | 2026-05-25 | EEM | BUY | N/A | $62.00 | 7/10 | Active | - | Thesis: EM is in the early innings of a multi-year catch-up cycle vs US tech, wi |
 | 2026-05-25 | NVDA | BUY | $215.35 | N/A | 8/10 | Active | - | Thesis: NVDA at 12.7% of portfolio with +107% unrealized gains is your most impo |
+| 2026-05-25 | REDUCE | BUY | $136.90 | $15.00 | 8/10 | Active | - | Why: At 27.9% of your portfolio, PLTR is no longer a position — it's an asset al |
