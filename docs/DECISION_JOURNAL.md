@@ -206,3 +206,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | HIMS | BUY | $23.76 | N/A | 8/10 | Active | - | Why: This is a thesis-breaking loss. HIMS was a GLP-1/telehealth momentum play,  |
 | 2026-05-25 | PLTR | BUY | $136.90 | N/A | 8/10 | Active | - | Why: This is not a sell — this is risk management. PLTR is your single best perf |
 | 2026-05-25 | NBIS | BUY | $214.79 | N/A | 7/10 | Active | - | Why: Nebius is the European AI cloud/GPU infrastructure play, and it's been your |
+| 2026-05-25 | REDUCE | BUY | $26.42 | N/A | 8/10 | Active | - | Why: RGTI surged +19.87% today on no specific fundamental catalyst observable in |
+| 2026-05-25 | REDUCE | BUY | $136.88 | N/A | 9/10 | Active | - | Why: PLTR is 27.8% of your portfolio — $70,600 of $253,973. At +118.4% unrealize |
