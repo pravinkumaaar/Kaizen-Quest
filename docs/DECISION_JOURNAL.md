@@ -183,3 +183,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-24 | EWY | BUY | N/A | $84.00 | 7/10 | Active | - | Why: This is the highest-conviction international allocation I can make. South K |
 | 2026-05-24 | ADD | BUY | N/A | N/A | 7/10 | Active | - | Why: Here's the asymmetric play. HPE reports May 28 after market. The setup: for |
 | 2026-05-24 | REDUCE | BUY | $136.88 | N/A | 8/10 | Active | - | Why: You have $70,542 in a single stock. Even Peter Lynch would tell you this is |
+| 2026-05-25 | VRT | BUY | $327.46 | N/A | 6/10 | Active | - | Why: Vertiv is the picks-and-shovels play for AI data centers — cooling, power,  |
+| 2026-05-25 | CRDO | BUY | $218.41 | $10652.00 | 7/10 | Active | - | Why: Credo is an AI connectivity play — high-speed data center connectivity solu |
+| 2026-05-25 | AVGO | BUY | N/A | $12174.00 | 8/10 | Active | - | Why: Broadcom is the "quiet giant" of AI infrastructure. While NVDA gets the hea |
