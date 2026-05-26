@@ -223,3 +223,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-26 | DELL | BUY | $140.00 | $175.00 | 6/10 | Active | - | Why: Dell is the primary server partner for NVIDIA's AI factory deployments. Eve |
 | 2026-05-26 | SLV | BUY | $68.96 | $85.00 | 6/10 | Active | - | Why: You have zero commodity/metal exposure in a portfolio that's 100% tech-heav |
 | 2026-05-26 | CRDO | BUY | $125.00 | $165.00 | 6/10 | Active | - | Why: Credo makes the active electrical cables (AECs) and optical interconnects t |
+| 2026-05-26 | GLD | BUY | N/A | $365.00 | 7/10 | Active | - | Why: Your portfolio has ZERO commodity exposure. With AI capex inflation, potent |
+| 2026-05-26 | EWY | BUY | N/A | $92.00 | 7/10 | Active | - | Why: South Korea is the most direct way to play the AI semiconductor supply chai |
+| 2026-05-26 | DELL | BUY | N/A | $185.00 | 7/10 | Active | - | Why: Dell is the most underappreciated AI infrastructure play. While everyone ch |
+| 2026-05-26 | CRWD | BUY | N/A | $520.00 | 7/10 | Active | - | Why: CrowdStrike is the cybersecurity platform winner. Despite the July 2024 out |
+| 2026-05-26 | PLTR | BUY | $137.27 | N/A | 8/10 | Active | - | Why: I'm recommending you TRIM PLTR from 27.2% to ~18% (see above), but for the  |
