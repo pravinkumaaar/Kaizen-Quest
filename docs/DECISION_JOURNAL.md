@@ -218,3 +218,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-26 | VRT | BUY | $327.46 | $420.00 | 8/10 | Active | - | Why: You already own VRT at 3.6% of portfolio (+124% unrealized). Vertiv is the  |
 | 2026-05-26 | IONQ | BUY | $63.64 | N/A | 7/10 | Active | - | Why: IONQ is up +8% today and +19.87% in the quantum computing surge. You own it |
 | 2026-05-26 | ADD | BUY | $136.88 | N/A | 8/10 | Active | - | Why: PLTR is 27.9% of your portfolio — that's not a position, that's a religion. |
+| 2026-05-26 | MU | BUY | $884.81 | $1150.00 | 8/10 | Active | - | Why: The AI infrastructure buildout is driving unprecedented HBM (High Bandwidth |
+| 2026-05-26 | AVGO | BUY | $310.00 | $380.00 | 7/10 | Active | - | Why: You don't own AVGO, and it's the most underappreciated AI infrastructure pl |
+| 2026-05-26 | DELL | BUY | $140.00 | $175.00 | 6/10 | Active | - | Why: Dell is the primary server partner for NVIDIA's AI factory deployments. Eve |
+| 2026-05-26 | SLV | BUY | $68.96 | $85.00 | 6/10 | Active | - | Why: You have zero commodity/metal exposure in a portfolio that's 100% tech-heav |
+| 2026-05-26 | CRDO | BUY | $125.00 | $165.00 | 6/10 | Active | - | Why: Credo makes the active electrical cables (AECs) and optical interconnects t |
