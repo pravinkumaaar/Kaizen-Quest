@@ -228,3 +228,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-26 | DELL | BUY | N/A | $185.00 | 7/10 | Active | - | Why: Dell is the most underappreciated AI infrastructure play. While everyone ch |
 | 2026-05-26 | CRWD | BUY | N/A | $520.00 | 7/10 | Active | - | Why: CrowdStrike is the cybersecurity platform winner. Despite the July 2024 out |
 | 2026-05-26 | PLTR | BUY | $137.27 | N/A | 8/10 | Active | - | Why: I'm recommending you TRIM PLTR from 27.2% to ~18% (see above), but for the  |
+| 2026-05-26 | MU | BUY | $916.42 | $4.50 | 8/10 | Active | - | Why: Micron just ripped 22% on what appears to be AI memory demand euphoria. You |
+| 2026-05-26 | AVGO | BUY | N/A | $385.00 | 8/10 | Active | - | Why: Broadcom reports earnings in 8 days (June 3 AMC). You don't own it, but it' |
+| 2026-05-26 | CRWD | BUY | N/A | $560.00 | 7/10 | Active | - | Why: Every AI deployment needs cybersecurity. CrowdStrike's Falcon platform is t |
+| 2026-05-26 | HIMS | BUY | $23.43 | N/A | 8/10 | Active | - | Why: You're down 43% on a 1.1% position. The thesis was telehealth/GLP-1 weight  |
+| 2026-05-26 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI is a precision medicine/AI diagnostics company. The thesis was AI |
