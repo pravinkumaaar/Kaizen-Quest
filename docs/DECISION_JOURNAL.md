@@ -233,3 +233,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-26 | CRWD | BUY | N/A | $560.00 | 7/10 | Active | - | Why: Every AI deployment needs cybersecurity. CrowdStrike's Falcon platform is t |
 | 2026-05-26 | HIMS | BUY | $23.43 | N/A | 8/10 | Active | - | Why: You're down 43% on a 1.1% position. The thesis was telehealth/GLP-1 weight  |
 | 2026-05-26 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI is a precision medicine/AI diagnostics company. The thesis was AI |
+| 2026-05-26 | MU | BUY | $895.88 | N/A | 7/10 | Active | - | Why: Your MU position is up 136.4% and represents 6.4% of portfolio — but it jus |
+| 2026-05-26 | PLTR | BUY | $136.60 | N/A | 8/10 | Active | - | Why: PLTR at 27.2% of your portfolio is a position-sizing violation masquerading |
+| 2026-05-26 | NEW | BUY | N/A | $405.00 | 8/10 | Active | - | Why: You don't own AVAV, and it fills a critical gap in your portfolio — pure-pl |
+| 2026-05-26 | NEW | BUY | N/A | $110.00 | 7/10 | Active | - | Why: I know — Intel is the "dog" of semis right. But hear me out. Your portfolio |
