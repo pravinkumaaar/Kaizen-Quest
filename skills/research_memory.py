@@ -145,6 +145,8 @@ class ResearchMemory:
             "data_sources_used": [],
             "research_gaps": [],
             "contrarian_signals": [],
+            "research_data": {},  # Raw layer data (financials, analyst, competitive, etc.)
+            "layers_completed": [],  # Which research layers were run
         }
     
     # ─── Run Lifecycle ──────────────────────────────────────────────
@@ -234,7 +236,8 @@ class ResearchMemory:
     
     def record_research(self, ticker, depth=5, facts=None, catalysts=None,
                          thesis=None, conviction=None, price=None, risks=None,
-                         competitive=None, contrarian=None, sources=None):
+                         competitive=None, contrarian=None, sources=None,
+                         research_data=None, layers_completed=None):
         """Record research findings for a ticker."""
         data = self._load_ticker(ticker)
         now = datetime.datetime.now().isoformat()
@@ -332,7 +335,15 @@ class ResearchMemory:
         # Track data sources
         if sources:
             data["data_sources_used"] = list(set(data.get("data_sources_used", []) + sources))
-        
+
+        # Store raw research data (financials, analyst info, competitive, etc.)
+        if research_data:
+            data["research_data"] = research_data
+
+        # Track which layers were completed
+        if layers_completed:
+            data["layers_completed"] = layers_completed
+
         self._save_ticker(ticker, data)
         self._current_run_tickers.add(ticker.upper())
     

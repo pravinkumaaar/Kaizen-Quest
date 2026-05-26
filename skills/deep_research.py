@@ -842,6 +842,17 @@ class DeepResearcher:
             mem = get_memory()
             price = result["data"].get("price", {}).get("price", 0)
 
+            # Debug: check what data we actually collected
+            self._log(f"[DEBUG] result['data'] keys: {list(result['data'].keys())}")
+            for key in result["data"]:
+                val = result["data"][key]
+                if isinstance(val, dict):
+                    self._log(f"  {key}: dict with {len(val)} keys")
+                elif isinstance(val, list):
+                    self._log(f"  {key}: list with {len(val)} items")
+                else:
+                    self._log(f"  {key}: {type(val).__name__}")
+
             # Debug: check types of parameters
             import pprint
             self._log(f"[DEBUG] Calling record_research with:")
