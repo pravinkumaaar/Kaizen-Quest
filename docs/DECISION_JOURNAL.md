@@ -217,3 +217,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-26 | SNOW | BUY | N/A | N/A | 6/10 | Active | - | Why: Snowflake reports tomorrow. The data cloud platform is benefiting from AI/M |
 | 2026-05-26 | VRT | BUY | $327.46 | $420.00 | 8/10 | Active | - | Why: You already own VRT at 3.6% of portfolio (+124% unrealized). Vertiv is the  |
 | 2026-05-26 | IONQ | BUY | $63.64 | N/A | 7/10 | Active | - | Why: IONQ is up +8% today and +19.87% in the quantum computing surge. You own it |
+| 2026-05-26 | ADD | BUY | $136.88 | N/A | 8/10 | Active | - | Why: PLTR is 27.9% of your portfolio — that's not a position, that's a religion. |
