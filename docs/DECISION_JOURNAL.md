@@ -208,3 +208,12 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-25 | NBIS | BUY | $214.79 | N/A | 7/10 | Active | - | Why: Nebius is the European AI cloud/GPU infrastructure play, and it's been your |
 | 2026-05-25 | REDUCE | BUY | $26.42 | N/A | 8/10 | Active | - | Why: RGTI surged +19.87% today on no specific fundamental catalyst observable in |
 | 2026-05-25 | REDUCE | BUY | $136.88 | N/A | 9/10 | Active | - | Why: PLTR is 27.8% of your portfolio — $70,600 of $253,973. At +118.4% unrealize |
+| 2026-05-26 | PLTR | BUY | $136.88 | N/A | 7/10 | Active | - | Why: PLTR is your largest position at 27.9% of portfolio (+118% unrealized). At  |
+| 2026-05-26 | HIMS | BUY | $23.75 | N/A | 8/10 | Active | - | Why: Down -42.4% and the thesis has broken. Hims & Hers faces GLP-1 competitive  |
+| 2026-05-26 | TEM | BUY | N/A | N/A | 6/10 | Active | - | Why: Down -35.6% and the precision medicine/genomics sequencing business faces h |
+| 2026-05-26 | ACHR | BUY | N/A | N/A | 7/10 | Active | - | Why: Down -29.8%. eARV is a pre-revenue, pre-certification bet with 3-5 year tim |
+| 2026-05-26 | NVDA | BUY | $215.33 | N/A | 9/10 | Active | - | Why: Down -1.9% today in a normal pullback. NVDA at $215 is still the single mos |
+| 2026-05-26 | CRWD | BUY | $218.41 | $280.00 | 7/10 | Active | - | Why: CRDO is up +12.94% today — wait, that's CRDO (Credo Technology), not CRWD.  |
+| 2026-05-26 | SNOW | BUY | N/A | N/A | 6/10 | Active | - | Why: Snowflake reports tomorrow. The data cloud platform is benefiting from AI/M |
+| 2026-05-26 | VRT | BUY | $327.46 | $420.00 | 8/10 | Active | - | Why: You already own VRT at 3.6% of portfolio (+124% unrealized). Vertiv is the  |
+| 2026-05-26 | IONQ | BUY | $63.64 | N/A | 7/10 | Active | - | Why: IONQ is up +8% today and +19.87% in the quantum computing surge. You own it |
