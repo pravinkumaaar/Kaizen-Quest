@@ -251,3 +251,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-27 | AVDX | BUY | N/A | N/A | 7/10 | Active | - | Why: You don't own any fintech infrastructure outside SOFI. AVDX automates accou |
 | 2026-05-27 | INDA | BUY | N/A | N/A | 8/10 | Active | - | Why: Zero international exposure in your portfolio is a structural risk. India i |
 | 2026-05-27 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has ZERO commodity exposure. None. Gold is trading near all- |
+| 2026-05-27 | ADBE | BUY | $355.00 | $410.00 | 7/10 | Active | - | Ticker/Type: Adobe Inc. (ADBE) — Stock | New Position (not currently owned) |
