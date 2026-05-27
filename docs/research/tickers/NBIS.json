@@ -1,29 +1,29 @@
 {
   "ticker": "NBIS",
   "first_researched": "2026-05-22T16:40:15.629640",
-  "last_researched": "2026-05-26T23:24:24.181070",
-  "research_count": 8,
+  "last_researched": "2026-05-27T12:28:36.189740",
+  "research_count": 9,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 214.77,
+  "last_price": 208.06,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-26T23:24:24.181070"
+      "last_verified": "2026-05-27T12:28:36.189740"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-26T23:24:24.181070"
+      "last_verified": "2026-05-27T12:28:36.189740"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-26T23:24:24.181070"
+      "last_verified": "2026-05-27T12:28:36.189740"
     }
   ],
   "facts": [
@@ -44,47 +44,56 @@
       "first_verified": "2026-05-26T23:23:06.141799",
       "last_verified": "2026-05-26T23:24:24.181070",
       "verification_count": 1
+    },
+    {
+      "claim": "NBIS trading at $208.06 (-3.12%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-05-27T12:27:14.492357",
+      "last_verified": "2026-05-27T12:28:36.189740",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "NBIS",
-    "timestamp": "2026-05-26 23:23:57",
+    "timestamp": "2026-05-27 12:28:08",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "congressional",
-    "insider_trades",
-    "macro_rotation",
-    "technical_indicators",
-    "price_target",
+    "earnings_momentum",
+    "sector_performance",
     "treasury_rates",
-    "industry_pe",
-    "competitive_landscape",
+    "macro_rotation",
+    "earnings_history",
+    "price_target",
+    "aggregate_indicators",
+    "income_statement",
+    "dcf",
     "cashflow",
-    "analyst_estimates",
+    "supply_chain",
     "sector_rotation",
+    "analyst_estimates",
     "recommendation_trends",
     "institutional",
-    "supply_chain",
-    "negative_news",
-    "risk_assessment",
-    "insider_sentiment",
-    "market_sentiment",
-    "esg",
-    "financial_ratios",
-    "sector_performance",
     "comps_analysis",
-    "balance_sheet",
-    "earnings_momentum",
-    "dcf",
-    "earnings_history",
+    "market_sentiment",
+    "technical_indicators",
     "insider_trades_contrarian",
     "valuation_multiples",
-    "income_statement",
-    "aggregate_indicators"
+    "negative_news",
+    "insider_trades",
+    "insider_sentiment",
+    "competitive_landscape",
+    "esg",
+    "industry_pe",
+    "balance_sheet",
+    "risk_assessment",
+    "financial_ratios",
+    "congressional"
   ],
   "research_gaps": [],
   "contrarian_signals": []
