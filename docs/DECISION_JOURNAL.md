@@ -248,3 +248,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-27 | ICLR | BUY | N/A | $12.00 | 7/10 | Active | - | Why: Let me be transparent — the deep research data for ICLR was truncated in my |
 | 2026-05-27 | EWY | BUY | N/A | $18.00 | 8/10 | Active | - | Why: This is your international diversification play. South Korea is the world's |
 | 2026-05-27 | GLD | BUY | $408.49 | $12.00 | 7/10 | Active | - | Why: Gold pulled back today after a massive run. This is the buy-the-dip signal. |
+| 2026-05-27 | AVDX | BUY | N/A | N/A | 7/10 | Active | - | Why: You don't own any fintech infrastructure outside SOFI. AVDX automates accou |
+| 2026-05-27 | INDA | BUY | N/A | N/A | 8/10 | Active | - | Why: Zero international exposure in your portfolio is a structural risk. India i |
+| 2026-05-27 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has ZERO commodity exposure. None. Gold is trading near all- |
