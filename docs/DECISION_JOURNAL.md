@@ -242,3 +242,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-27 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Thesis: South Korea is the "stealth AI play" most US investors miss — Samsung an |
 | 2026-05-27 | COP | BUY | N/A | $145.00 | 7/10 | Active | - | Thesis: Best-run major oil company with $15B+ in annual free cash flow, a 3.5%+  |
 | 2026-05-27 | SNOW | BUY | N/A | $270.00 | 7/10 | Active | - | Thesis: Snowflake reports earnings TODAY (May 27, AMC). If the market overreacts |
+| 2026-05-27 | PLTR | BUY | $133.85 | N/A | 9/10 | Active | - | Why: Palantir is your single largest position at 26.4% of portfolio (+113.6% unr |
+| 2026-05-27 | HIMS | BUY | $25.05 | N/A | 7/10 | Active | - | Why: HIMS is down -39.3% from your cost basis and represents 1.2% of portfolio.  |
+| 2026-05-27 | TEM | BUY | N/A | N/A | 6/10 | Active | - | Why: Down -28.3%, 1.1% of portfolio. Tempus AI is in the precision medicine/AI d |
+| 2026-05-27 | ICLR | BUY | N/A | $12.00 | 7/10 | Active | - | Why: Let me be transparent — the deep research data for ICLR was truncated in my |
+| 2026-05-27 | EWY | BUY | N/A | $18.00 | 8/10 | Active | - | Why: This is your international diversification play. South Korea is the world's |
+| 2026-05-27 | GLD | BUY | $408.49 | $12.00 | 7/10 | Active | - | Why: Gold pulled back today after a massive run. This is the buy-the-dip signal. |
