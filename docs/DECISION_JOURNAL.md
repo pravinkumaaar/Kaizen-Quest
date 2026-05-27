@@ -237,3 +237,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-26 | PLTR | BUY | $136.60 | N/A | 8/10 | Active | - | Why: PLTR at 27.2% of your portfolio is a position-sizing violation masquerading |
 | 2026-05-26 | NEW | BUY | N/A | $405.00 | 8/10 | Active | - | Why: You don't own AVAV, and it fills a critical gap in your portfolio — pure-pl |
 | 2026-05-26 | NEW | BUY | N/A | $110.00 | 7/10 | Active | - | Why: I know — Intel is the "dog" of semis right. But hear me out. Your portfolio |
+| 2026-05-27 | TSM | BUY | N/A | $400.00 | 7/10 | Active | - | Thesis: TSM is the irreplaceable bottleneck of the entire AI revolution — every  |
+| 2026-05-27 | CRWD | BUY | N/A | $600.00 | 7/10 | Active | - | Thesis: CrowdStrike reports earnings June 3 — the cybersecurity leader is riding |
+| 2026-05-27 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Thesis: South Korea is the "stealth AI play" most US investors miss — Samsung an |
+| 2026-05-27 | COP | BUY | N/A | $145.00 | 7/10 | Active | - | Thesis: Best-run major oil company with $15B+ in annual free cash flow, a 3.5%+  |
+| 2026-05-27 | SNOW | BUY | N/A | $270.00 | 7/10 | Active | - | Thesis: Snowflake reports earnings TODAY (May 27, AMC). If the market overreacts |
