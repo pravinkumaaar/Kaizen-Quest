@@ -263,3 +263,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | SLV | BUY | $67.50 | $85.00 | 7/10 | Active | - | Why: SLV ran from ~$30 to ~$73 last 6 months. At $67.50, it's pulling back to ~$ |
 | 2026-05-28 | AVGO | BUY | N/A | $275.00 | 8/10 | Active | - | Why: Broadcom reports earnings June 3 (2 days). They're the hidden plumbing of A |
 | 2026-05-28 | CRWD | BUY | N/A | $390.00 | 7/10 | Active | - | Why: CRWD reports June 3 alongside AVGO. They're the fastest-growing large-cap c |
+| 2026-05-28 | GLD | BUY | $413.73 | $465.00 | 6/10 | Active | - | Why: You have zero commodity/international exposure in a portfolio worth $270K.  |
+| 2026-05-28 | CRWD | BUY | N/A | $450.00 | 7/10 | Active | - | Why: CRWD reports in 6 days with EPS est $1.09 on $1.4B rev. You have zero cyber |
