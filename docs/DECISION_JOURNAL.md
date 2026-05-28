@@ -257,3 +257,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI has been a disappointment. Down 28.3% with no clear reacceleratio |
 | 2026-05-28 | CRWD | BUY | N/A | $25.00 | 7/10 | Active | - | Why: CrowdStrike reports earnings June 3. The cybersecurity sector is experienci |
 | 2026-05-28 | AVGO | BUY | N/A | $20.00 | 7/10 | Active | - | Why: Broadcom is the picks-and-shovels play of AI that most investors overlook b |
+| 2026-05-28 | PLTR | BUY | $132.51 | $18.00 | 8/10 | Active | - | Why: PLTR at 26.2% of portfolio is a concentration risk. You have a massive +111 |
+| 2026-05-28 | APLD | BUY | $48.98 | N/A | 7/10 | Active | - | Why: Applied Digital is one of the most explosive AI infrastructure plays — up + |
+| 2026-05-28 | NBIS | BUY | $208.37 | N/A | 7/10 | Active | - | Why: Nebius (+290% from your cost) is one of Europe's premier AI cloud/ GPU infr |
+| 2026-05-28 | SLV | BUY | $67.50 | $85.00 | 7/10 | Active | - | Why: SLV ran from ~$30 to ~$73 last 6 months. At $67.50, it's pulling back to ~$ |
