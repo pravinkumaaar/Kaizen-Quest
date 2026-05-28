@@ -252,3 +252,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-27 | INDA | BUY | N/A | N/A | 8/10 | Active | - | Why: Zero international exposure in your portfolio is a structural risk. India i |
 | 2026-05-27 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has ZERO commodity exposure. None. Gold is trading near all- |
 | 2026-05-27 | ADBE | BUY | $355.00 | $410.00 | 7/10 | Active | - | Ticker/Type: Adobe Inc. (ADBE) — Stock | New Position (not currently owned) |
+| 2026-05-28 | PLTR | BUY | $132.51 | N/A | 9/10 | Active | - | Why: 26.2% of portfolio in a single name is a concentration risk that no longer  |
+| 2026-05-28 | HIMS | BUY | $25.20 | N/A | 8/10 | Active | - | Why: Down 38.9% with no clear near-term catalyst. The GLP-1 telehealth story has |
+| 2026-05-28 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI has been a disappointment. Down 28.3% with no clear reacceleratio |
+| 2026-05-28 | CRWD | BUY | N/A | $25.00 | 7/10 | Active | - | Why: CrowdStrike reports earnings June 3. The cybersecurity sector is experienci |
+| 2026-05-28 | AVGO | BUY | N/A | $20.00 | 7/10 | Active | - | Why: Broadcom is the picks-and-shovels play of AI that most investors overlook b |
