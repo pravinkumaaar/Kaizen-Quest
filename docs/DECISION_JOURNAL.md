@@ -275,3 +275,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | GLD | BUY | $310.00 | $355.00 | 6/10 | Active | - | Thesis: You have zero commodity/inflation hedge exposure. With PCE inflation sti |
 | 2026-05-28 | INDA | BUY | $52.00 | $65.00 | 7/10 | Active | - | Thesis: India is the most compelling structural growth story in emerging markets |
 | 2026-05-28 | SMCI | BUY | $41.30 | $62.00 | 7/10 | Active | - | Thesis: You already own SMCI (1.5% of portfolio, up only 4.6%). This is an ADD r |
+| 2026-05-28 | CRWD | BUY | N/A | $250.00 | 7/10 | Active | - | Why: The elephant in the room. CRWD reports May 26 (already in the books per you |
+| 2026-05-28 | VRTX | BUY | N/A | $600.00 | 8/10 | Active | - | Why: VRTX's VX-548 (sodium channel blocker for acute pain) is on track for FDA a |
+| 2026-05-28 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Why: This is the sleeper AI trade. Samsung and SK Hynix are the memory bottlenec |
+| 2026-05-28 | FCX | BUY | N/A | $72.00 | 7/10 | Active | - | Why: AI data centers are electricity hogs, and electricity requires copper. A si |
+| 2026-05-28 | DLTR | BUY | N/A | $170.00 | 6/10 | Active | - | Why: DLTR is reporting today. Dollar stores are the ultimate consumer sentiment  |
