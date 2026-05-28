@@ -270,3 +270,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | PLTR | BUY | $142.77 | $18.00 | 8/10 | Active | - | Why: You own 27% in PLTR. That's not investing — that's *marrying* a stock. Pala |
 | 2026-05-28 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CrowdStrike reports earnings in 6 days (June 3 AMC). This is a *pre-earning |
 | 2026-05-28 | NVDA | BUY | $214.09 | $18.00 | 9/10 | Active | - | Why: NVDA is only up 0.70% today while the rest of your AI portfolio is ripping. |
+| 2026-05-28 | CRWD | BUY | $235.00 | $310.00 | 8/10 | Active | - | Thesis: Cybersecurity is non-discretionary IT spending in an AI-accelerated thre |
+| 2026-05-28 | AVGO | BUY | $320.00 | $420.00 | 9/10 | Active | - | Thesis: Broadcom is the "picks and shovels" AI play that the market consistently |
+| 2026-05-28 | GLD | BUY | $310.00 | $355.00 | 6/10 | Active | - | Thesis: You have zero commodity/inflation hedge exposure. With PCE inflation sti |
+| 2026-05-28 | INDA | BUY | $52.00 | $65.00 | 7/10 | Active | - | Thesis: India is the most compelling structural growth story in emerging markets |
+| 2026-05-28 | SMCI | BUY | $41.30 | $62.00 | 7/10 | Active | - | Thesis: You already own SMCI (1.5% of portfolio, up only 4.6%). This is an ADD r |
