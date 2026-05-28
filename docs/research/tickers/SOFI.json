@@ -1,29 +1,29 @@
 {
   "ticker": "SOFI",
   "first_researched": "2026-05-22T14:47:21.227593",
-  "last_researched": "2026-05-27T23:28:14.256893",
-  "research_count": 10,
+  "last_researched": "2026-05-28T12:34:47.856051",
+  "research_count": 11,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 15.98,
+  "last_price": 16.17,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-27T23:28:14.256893"
+      "last_verified": "2026-05-28T12:34:47.856051"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-27T23:28:14.256893"
+      "last_verified": "2026-05-28T12:34:47.856051"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-27T23:28:14.256893"
+      "last_verified": "2026-05-28T12:34:47.856051"
     }
   ],
   "facts": [
@@ -53,47 +53,56 @@
       "first_verified": "2026-05-27T23:26:22.197063",
       "last_verified": "2026-05-27T23:28:14.256893",
       "verification_count": 1
+    },
+    {
+      "claim": "SOFI trading at $16.17 (+1.19%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-05-28T12:33:29.347627",
+      "last_verified": "2026-05-28T12:34:47.856051",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "SOFI",
-    "timestamp": "2026-05-27 23:27:37",
+    "timestamp": "2026-05-28 12:34:20",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "congressional",
-    "insider_trades",
-    "competitive_landscape",
-    "macro_rotation",
-    "industry_pe",
-    "insider_sentiment",
-    "earnings_history",
     "balance_sheet",
-    "insider_trades_contrarian",
-    "risk_assessment",
-    "comps_analysis",
-    "technical_indicators",
-    "sector_performance",
-    "treasury_rates",
-    "income_statement",
-    "esg",
-    "supply_chain",
-    "analyst_estimates",
-    "valuation_multiples",
-    "sector_rotation",
-    "recommendation_trends",
-    "financial_ratios",
-    "price_target",
-    "institutional",
-    "market_sentiment",
     "negative_news",
-    "aggregate_indicators",
-    "earnings_momentum",
+    "earnings_history",
+    "sector_performance",
+    "congressional",
     "dcf",
-    "cashflow"
+    "institutional",
+    "valuation_multiples",
+    "comps_analysis",
+    "sector_rotation",
+    "technical_indicators",
+    "macro_rotation",
+    "risk_assessment",
+    "aggregate_indicators",
+    "insider_trades_contrarian",
+    "market_sentiment",
+    "price_target",
+    "insider_trades",
+    "esg",
+    "financial_ratios",
+    "insider_sentiment",
+    "treasury_rates",
+    "competitive_landscape",
+    "analyst_estimates",
+    "supply_chain",
+    "earnings_momentum",
+    "industry_pe",
+    "cashflow",
+    "income_statement",
+    "recommendation_trends"
   ],
   "research_gaps": [],
   "contrarian_signals": []

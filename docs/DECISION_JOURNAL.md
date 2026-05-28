@@ -261,3 +261,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | APLD | BUY | $48.98 | N/A | 7/10 | Active | - | Why: Applied Digital is one of the most explosive AI infrastructure plays — up + |
 | 2026-05-28 | NBIS | BUY | $208.37 | N/A | 7/10 | Active | - | Why: Nebius (+290% from your cost) is one of Europe's premier AI cloud/ GPU infr |
 | 2026-05-28 | SLV | BUY | $67.50 | $85.00 | 7/10 | Active | - | Why: SLV ran from ~$30 to ~$73 last 6 months. At $67.50, it's pulling back to ~$ |
+| 2026-05-28 | AVGO | BUY | N/A | $275.00 | 8/10 | Active | - | Why: Broadcom reports earnings June 3 (2 days). They're the hidden plumbing of A |
+| 2026-05-28 | CRWD | BUY | N/A | $390.00 | 7/10 | Active | - | Why: CRWD reports June 3 alongside AVGO. They're the fastest-growing large-cap c |
