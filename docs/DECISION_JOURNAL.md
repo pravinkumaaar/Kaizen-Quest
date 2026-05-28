@@ -265,3 +265,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | CRWD | BUY | N/A | $390.00 | 7/10 | Active | - | Why: CRWD reports June 3 alongside AVGO. They're the fastest-growing large-cap c |
 | 2026-05-28 | GLD | BUY | $413.73 | $465.00 | 6/10 | Active | - | Why: You have zero commodity/international exposure in a portfolio worth $270K.  |
 | 2026-05-28 | CRWD | BUY | N/A | $450.00 | 7/10 | Active | - | Why: CRWD reports in 6 days with EPS est $1.09 on $1.4B rev. You have zero cyber |
+| 2026-05-28 | GLD | BUY | $413.00 | N/A | 7/10 | Active | - | Why: Your portfolio is 95%+ US tech/AI equities. Gold at $413 (+1.1% today) is i |
+| 2026-05-28 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is home to Samsung and SK Hynix — the two largest HBM (High Ban |
+| 2026-05-28 | PLTR | BUY | $142.77 | $18.00 | 8/10 | Active | - | Why: You own 27% in PLTR. That's not investing — that's *marrying* a stock. Pala |
+| 2026-05-28 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CrowdStrike reports earnings in 6 days (June 3 AMC). This is a *pre-earning |
+| 2026-05-28 | NVDA | BUY | $214.09 | $18.00 | 9/10 | Active | - | Why: NVDA is only up 0.70% today while the rest of your AI portfolio is ripping. |
