@@ -280,3 +280,11 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-28 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Why: This is the sleeper AI trade. Samsung and SK Hynix are the memory bottlenec |
 | 2026-05-28 | FCX | BUY | N/A | $72.00 | 7/10 | Active | - | Why: AI data centers are electricity hogs, and electricity requires copper. A si |
 | 2026-05-28 | DLTR | BUY | N/A | $170.00 | 6/10 | Active | - | Why: DLTR is reporting today. Dollar stores are the ultimate consumer sentiment  |
+| 2026-05-29 | ASTS | BUY | $114.20 | $1.00 | 7/10 | Active | - | Why: AST SpaceMobile is down 14% in a single day on no apparent company-specific |
+| 2026-05-29 | HIMS | BUY | $25.89 | N/A | 8/10 | Active | - | Why: HIMS is your worst performer at -37.2% from cost basis, representing 1.1% o |
+| 2026-05-29 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI is down -28.3% from your cost basis. The precision medicine/genom |
+| 2026-05-29 | PLTR | BUY | $156.48 | N/A | 9/10 | Active | - | Why: Palantir is your crown jewel and today's +9% move shows it's still a moment |
+| 2026-05-29 | NVDA | BUY | $217.52 | N/A | 10/10 | Active | - | Why: NVIDIA is the picks-and-shovels play of the AI revolution. At 11.7% of port |
+| 2026-05-29 | CRWD | BUY | $385.00 | $460.00 | 7/10 | Active | - | Why: CrowdStrike reports earnings in 5 days (June 3, AMC). The cybersecurity sec |
+| 2026-05-29 | MU | BUY | $963.32 | $1200.00 | 8/10 | Active | - | Why: Micron is the purest play on the AI memory supercycle, and today's +4.3% mo |
+| 2026-05-29 | GLD | BUY | $419.66 | $470.00 | 6/10 | Active | - | Why: Gold is breaking out to new all-time highs and your portfolio has zero comm |
