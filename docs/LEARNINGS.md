@@ -1,178 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-purpose of a conviction scale. We need some at 5/10, some at 7/10, a rare 9/10. A 10-point scale where everything clusters at 8 is a 2-point scale.
-
-- **Recommendation tracking "isn't working" per user feedback from 2026-04-23.** That was over a month ago. Is it fixed? If the thesis journal section above is blank (as shown — `=== THESIS JOURNAL ===` with nothing after it), then **no, it's not fixed.** This is the most embarrassing gap in our self-assessment: the thesis journal is literally empty.
-
-## Thesis Journal Review
-
-- **The journal is empty.** Let me say it again: there is no thesis journal. We have active recommendations but no recorded reasoning, no entry price, no catalyst timeline, no exit conditions. This is like a surgeon operating without patient records.
-
-- **What should be in it right now:**
-  - PLTR: Entry $139.47, thesis = AI/software government+commercial adoption, catalyst = earnings + FedRAMP expansion, target = $165-175, stop = $125
-  - SOFI: Entry $16.29, thesis = fintech platform diversification + lending margin expansion, catalyst = earnings + member growth, target = $20-22, stop = $13.50
-  - TEM: Entry $50.22, thesis = AI-enabled healthcare/platform plays, catalyst = to be defined, target = TBD, stop = $44
-  - VRT: Entry $348.38, thesis = electrification/power infrastructure, catalyst = data center buildout, **current status = underwater -8.96%, needs re-evaluation**, stop = $295?
-
-- **Pattern across validated runs:** The stocks with clearest theses (PLTR's AI government pivot, SOFi's fintech margins) outperform. The ones with vaguer catalysts (TEM, VRT) are more volatile. This is obvious but we haven't systematically captured it.
-
-## Missed Opportunities
-
-- **New stock recommendations pipeline is missing.** Per user feedback, we only recommend from existing holdings. With 54% cash, this is costing the user real money. We should be scanning: beaten-down quality names, earnings post-dividend plays, sector rotation beneficiaries. Not a single new ticker appears in the active recommendations.
-
-- **With VRT at -8.96%, we should have either (a) doubled down with a clear averaging thesis, or (b) cut the position with stop-loss discipline.** We appear to have done neither — just held while it bled. That's not a strategy.
-
-- **54% cash in a market where our own recommendations are +3-5% is a massive opportunity cost.** Rough math: $55K idle cash vs. deployed in 2-3 additional positions could have generated $1,500-2,500 in alpha over the same period.
-
-## Data Quality Issues
-
-- **The original April complaint about stale PLTR data** may have recurred — we need to verify all prices are real-time or same-day close. The report shows prices with specific figures ($139.47, $16.29, etc.) but we need to confirm these are current.
-
-- **Options data was flagged as broken in the 9.2 run.** The reflection says "audit the options data pipeline" but there's no evidence this was done. Are we still giving options recommendations on a broken pipeline? If so, this is creating false confidence — worse than no data.
-
-- **The market foresight 2/100 score with no explanation is a data presentation error.** A score without a reasoning breakdown is meaningless. The user wants to know *why* — what factors drive the score? Without that, it's a black box number that undermines trust.
-
-## Risk Management
-
-- **No stop-losses are visible in the active recommendations.** The data shows entry price and current % change but no stop-loss levels. For a -8.96% position (VRT), the absence of a stop-loss discipline is a fundamental failure.
-
-- **Concentration at 0.0% reported is suspicious.** With 7 positions and 54% cash, the actual concentration in the invested portion might be meaningful. If one position is 5%+ of total portfolio, that's a risk that should be flagged. The 0.0% figure suggests either a reporting bug or a calculation error.
-
-- **VRT position risk:** Down 8.96% from $348.38 with no visible stop-loss. If this was an 8/10 conviction, where's the thesis checkpoint? At what point do we admit the thesis is broken? -10%? -15%? Without a pre-commitment, we're just hoping.
-
-## Cash Deployment
-
-- **54% cash is the single biggest drag on portfolio performance.** At a 90% target deployment, this is a 36 percentage point gap. That's $36,000+ sitting on the sidelines.
-
-- **Opportunity cost calculation:** If deployed in a diversified set of 5-6 additional positions averaging similar returns to our existing picks (~3-5%), the incremental annualized return would be significant. This is the easiest alpha available to the user right now.
-
-- **Recommendation:** Identify 3-5 new tickers with clear theses at 7-8/10 conviction and specific entry/stop/target levels. Convert cash to deployed capital over 2-3 tranches.
-
-## Memory & Learning
-
-- **Memory insights show portfolio values of ~$271K from May 28 reports, but current portfolio is $102K.** This is a **major inconsistency.** Either (a) memory is stale/wrong, (b) the user changed accounts, or (c) there's a data merge error. This needs to be flagged — acting on a memory of $271K positions when the actual portfolio is $102K would lead to catastrophic sizing errors.
-
-- **The learning section has been consistently praised and needs to stay.** "Here's something you might not know → why it matters → how to think about it → ticker exemplar" format is non-negotiable. Every run, no exceptions.
-
-- **Cross-run learning is weak.** The April 20 user asked for deeper education. The April 23 user asked for better tracking. The April 30 user asked for new stock ideas. The May 7 user called out the market foresight rating. These are 4 distinct improvement requests. Which are fully addressed? Without a changelog or improvement tracker, we can't self-audit effectively.
-
-## Process Improvements (Actionable, Ranked by Impact)
-
-1. **Populate the thesis journal immediately.** Every active recommendation needs: entry thesis, catalyst timeline, target price, stop-loss, and checkpoint date. This is the highest-leverage fix. Without it, everything else is guesswork.
-
-2. **Add new ticker scanning pipeline.** Not just portfolio monitoring. Dedicate 30% of each run to identifying 2-3 new opportunities outside current holdings. The user has been asking for this since April 30.
-
-3. **Resolve the cash deployment gap.** $55K idle is unacceptable. Develop a tranche-based deployment plan for the next 2 runs.
-
-4. **Reconcile Market Foresight score with conviction scores.** Cannot be 2/100 outlook with 8/10 buys. Either inflate the outlook to 45-55/100 (cautiously constructive) or deflate convictions to 5-6/10.
-
-5. **Set and publish stop-losses for all active positions.** Especially VRT. If we won't put a stop on it, we need to explicitly say why and under what conditions we'd exit.
-
-6. **Fix or disclose the options data issue.** If options chains are unreliable, don't present options recommendations as actionable. Present them as educational only with a disclaimer until the pipeline is fixed.
-
-7. **Reconcile the $271K vs $102K memory discrepancy.** Before any sizing or allocation recommendation, verify we're working with the correct portfolio value. Acting on wrong numbers is worse than no analysis.
-
-8. **Diversify conviction scores.** Stop clustering at 8/10. Use the full scale. If everything is 8/10, nothing is.
-
-9. **Disclose VRT performance honestly.** Don't bury it. The user praised brutal honesty — show them you're applying it to your own picks.
-
-10. **Create a recurring "Last 3 Recommendations Performance" table.** Entry date, entry price, current price, P&L%, thesis validated/refuted, action needed. This closes the feedback loop that has been missing since April 23.
-
-## Run: 2026-05-29 06:04:33 ET
-## OWL Deep Self-Reflection — Run 2026-05-29
-
----
-
-### What Worked Well
-
-- **Portfolio-aware analysis finally clicked.** The 5/7 run scored 9.2/10 because we correctly read the user's $102,636 portfolio, mapped all 7 positions with weightages, and provided thesis-backed reasoning for each. That framework must be replicated every single run — it's the baseline now.
-- **Recommendations with specific reasoning continued to land.** PLTR ($139.47, +4.72%), SOFI ($16.29, +7.67%), TEM ($50.22, +4.26%), and VRT ($348.38) were all supported by clear, nuanced explanations rather than generic calls. The user explicitly praised this in the 4/23 and 5/7 reviews.
-- **Options education (LEAPs) remained strong.** The user repeatedly flagged that the options explanation for LEAPs was a highlight across multiple runs. Keeping this educational angle — explaining *why* we arrived at a recommendation — is the core value proposition.
-- **Cross-domain analysis was unique.** Connecting sectors/themes to new investable opportunities (e.g., linking AI infrastructure to picks) was something the user called out as genuinely new learning.
-- **Brutal honesty about market state-of-play.** The user explicitly asked for blunt truth over flattery, and delivering that earned trust and a 9.2/10.
-
----
-
-### What Didn't Work
-
-- **Portfolio value discrepancy is a critical error.** Memory shows $271,889–$272,199 across recent runs, but the actual portfolio is $102,636. This is a 2.6x inflation. Every sizing, allocation, and concentration calculation has been operating on phantom numbers. This is the single most damaging recurring bug.
-- **Concentration at 60.9% in memory vs. 0.0% in reality.** These are completely incompatible. If we were managing risk, stop-losses, or position sizing off those phantom numbers, every recommendation is suspect.
-- **Options data pipeline is broken (known 5/7 issue).** We recommended options despite flagging the data is unreliable, and even presented specific options trades. That's dangerous. We presented educational options content as if it were actionable data. It isn't.
-- **Recommendations ignored the user's existing positions.** The 4/30 report scored 8.5/10 and the user noted: "only considered stocks from my portfolio to recommend... not anything new." That happened again immediately after — the 5/7 run still seems to have under-weighted new ideas.
-- **Learning section regressed.** The user rated the hobbies/learning part a 4/10 on 4/22 ("weak and something I already knew"). It improved, then regressed. It needs consistent depth tied directly to the thesis/recommendation.
-- **Watchlist section is empty.** The template exists but is never populated. This is a missed opportunity to show forward-looking ideas.
-
----
-
-### Conviction Calibration
-
-- **All four active PLTR, SOFI, TEM, and VRT recommendations are scored 8/10.** This is the exact clustering problem flagged previously. When everything is 8/10, nothing is. The conviction score should differentiate: SOFI at +7.67% P&L might justify 8/10, but VRT at -7.80% being 8/10 signals the rating system isn't working.
-- **VRT at -7.80% should be under review, not 8/10.** If we set that conviction when VRT was higher, we failed to revise it downward as the trade went against us — that's conviction drift, not conviction calibration.
-- **The user suggested the scoring system itself could improve.** A binary pass/fail on thesis validation would be more useful than a subjective 1-10 that everyone clusters around.
-
----
-
-### Thesis Journal Review
-
-- **The thesis journal is empty.** This is a structural failure. We're supposed to be tracking: (1) thesis per ticker, (2) entry conditions, (3) what would invalidate it, (4) whether it's been validated or refuted. Having nothing here means we're not building institutional memory.
-- **We can't evaluate thesis validation or refutation patterns if there's no journal.** This needs to be populated retroactively for PLTR, SOFI, TEM, and VRT before the next recommendations are made.
-
----
-
-### Missed Opportunities
-
-- **New stock ideas were absent.** The user explicitly asked for stocks *not* in their portfolio. With 7 positions and 54% cash ($55,384 idle), there's massive room for new ideas. We didn't present any.
-- **The "once-in-a-lifetime asymmetric plays" section needs improvement.** The user specifically called this out as good-but-sharper. This is precisely where conviction scoring should differentiate — if we see asymmetric plays, they should be rated higher than 8/10 and sized accordingly.
-- **At 54% cash, the opportunity cost is enormous.** In a market environment where we're making 8/10 conviction calls, holding more than half the portfolio in cash is a drag. The user didn't ask for this — it's a structural inefficiency we should flag and address.
-
----
-
-### Data Quality Issues
-
-- **Portfolio value mismatch ($271K vs $102K) is the #1 data integrity issue.** This likely stems from reading a different account, a cached value, or a data pipeline error. Until resolved, every dollar-denominated recommendation is unreliable.
-- **Options chain data is broken.** We know this. We flagged it ourselves. Yet we still presented options recommendations as if they were actionable. This needs a hard rule: **no options recommendations until the pipeline is verified.**
-- **Stale PLTR data was flagged on 4/22.** We need to verify that all prices in this run are current as of 5/29. The fact that this was a recurring complaint means our price verification step is either missing or not being surfaced to the user.
-
----
-
-### Risk Management
-
-- **VRT is down -7.80% and we have no stop-loss discussion.** If we recommended VRT at $321.20 and it's now $348.38, that's actually a gain on paper — but the recommendation shows -7.80%, suggesting the entry was higher. Either way, a position down that much needs an explicit stop-loss or an explicit "why we're holding" thesis. We have neither.
-- **No stop-losses are set on any position.** The user flagged this: "we need to explicitly say why and under what conditions we'd exit." This is still not happening.
-- **Concentration risk is misreported.** 0.0% concentration with 7 positions and $102K is mathematically implausible unless positions are tiny. The real concentration needs to be calculated and disclosed.
-
----
-
-### Cash Deployment
-
-- **54% cash ($55,384) is the elephant in the room.** With 8/10 conviction on multiple ideas, holding this much cash is a significant opportunity cost. We should either: (a) deploy it into the high-conviction ideas we already have, (b) find new ideas to justify deployment, or (c) explicitly explain *why* we're holding cash (e.g., "we see a correction coming in 2 weeks, so we're waiting for better entry").
-- **The user never said "hold cash."** This is our own risk-aversion showing through. We need to either deploy or explain.
-
----
-
-### Memory & Learning
-
-- **We're not building on past analysis.** The memory section shows portfolio values and concentration, but no qualitative insights like "PLTR thesis: AI infrastructure demand → validated by earnings on X date." We're storing numbers, not knowledge.
-- **The learning section needs to be tied to specific recommendations.** Instead of generic "learn about options" content, it should be: "Because we're recommending SOFI, here's what you should understand about fintech lending margins and why they matter for this thesis."
-- **We keep re-researching the same companies without tracking what we learned.** PLTR has been in the portfolio across multiple runs. What did we learn about PLTR last time? What's changed? The memory doesn't tell us.
-
----
-
-### Process Improvements (Actionable)
-
-1. **Fix the portfolio value pipeline immediately.** Verify the $102,636 figure against the brokerage API. The $271K figure is wrong and has contaminated multiple runs. Add a sanity check: if portfolio value changes by >20% between runs without a market move, flag it.
-
-2. **Populate the thesis journal retroactively.** Before the next run, create entries for PLTR, SOFI, TEM, and VRT with: thesis, entry price, entry date, conditions for exit, current status (validated/refuted/uncertain).
-
-3. **Implement a stop-loss framework.** For every active recommendation, set a stop-loss level and disclose it. If we don't want a stop-loss, explicitly state why and under what conditions we'd exit. No exceptions.
-
-4. **Diversify conviction scores.** Use the full 1-10 scale. If a position is down -7.80% and the thesis is intact, maybe it's a 6/10 (conviction reduced but not broken). If a position is up +7.67% and the thesis is playing out, maybe it's a 9/10. Differentiate.
-
-5. **Add a "Last 3 Recommendations Performance" table.** Entry date, entry price, current price, P&L%, thesis status, action needed. This closes the feedback loop the user has been asking for since 4/23.
-
-6. **Hard rule: no options recommendations until the pipeline is fixed.** Present options content as educational only with a clear disclaimer. Do not present specific strikes/expirations as actionable.
-
-7. **Address the 54% cash position explicitly.** Either deploy it or explain why we're waiting. Don't let it sit idle without commentary.
+explain why we're waiting. Don't let it sit idle without commentary.
 
 8. **Generate at least 2-3 new stock ideas not in the current portfolio.** The user has asked for this twice. With $55K in cash, there's room. Use the same thesis-driven, specific, nuanced approach that worked for existing positions.
 
@@ -183,3 +11,156 @@ purpose of a conviction scale. We need some at 5/10, some at 7/10, a rare 9/10. 
 11. **Reconcile VRT honestly.** It's down -7.80%. Either the thesis is broken (say so, recommend exit) or it's intact (say so, explain why, set a stop-loss). Don't hide behind an 8/10 score.
 
 12. **Add a data freshness timestamp.** Show the user when each price was last updated. This directly addresses the stale PLTR data complaint from 4/22 that may still be recurring.
+
+## Run: 2026-05-29 08:14:17 ET
+# 🔍 OWL Self-Reflection — 2026-05-29 08:14 ET
+
+---
+
+## What Worked Well
+
+- **Portfolio-aware recommendations are now the baseline.** The 5/07 run scored 9.2/10 because it actually read the user's positions, weightings, cost basis vs. current price, and built suggestions around what the user *holds*. This is the single biggest improvement trajectory — from 4/22 (4/10) to 5/07 (9.2/10). The user explicitly said: "first report that looks at my portfolio and understands it." This must never regress.
+
+- **Thesis-driven, specific, nuanced explanations are landing.** The user rated 4/23 at 7/10 specifically because "recommendations are more specific, nuanced and I can see the reasoning behind it." The 5/07 run's "brutally honest state-of-play assessment" was called out as "exactly what I was looking for." The user wants to be *taught*, not just told.
+
+- **Options education integrated with recommendations is working.** Multiple runs (4/22, 4/23, 5/07) received positive mentions for options explanations, LEAP rationale, and tying options strategy to portfolio positions. This is a differentiator — keep it.
+
+- **Earnings risk flag (added 5/07) is a valued addition.** Small feature, high perceived value. Keep and expand it.
+
+- **Cross-domain analysis and "once-in-a-lifetime asymmetric plays" section was praised.** The user said it "can be improved a bit but great overall." This is a signature section — refine, don't remove.
+
+---
+
+## What Didn't Work
+
+- **Stale PLTR data is a recurring, unresolved problem.** On 4/22, the user explicitly called out "PLTR data was old and the price isn't current." The learning history says: "Add a data freshness timestamp." Yet here we are on 5/29 and the active recommendation still shows PLTR at $139.47 with a +5.63% gain from $147.32 — wait, that math is *inverted*. If the entry was $147.32 and current is $139.47, that's a **-5.33% loss**, not +5.63%. This is either a data error or a calculation bug. Either way, it's exactly the kind of mistake that erodes trust. **This needs to be fixed immediately.**
+
+- **VRT is down -8.55% and still rated 8/10.** The learning history explicitly flags: "Reconcile VRT honestly. It's down. Either the thesis is broken (say so, recommend exit) or it's intact (say so, explain why, set a stop-loss). Don't hide behind an 8/10 score." An 8/10 conviction on a position that's down nearly 9% with no honest reconciliation is conviction inflation. This is a credibility problem.
+
+- **The 5/07 run only recommended from existing holdings.** The user said: "biggest problem was also that it only considered stocks from my portfolio to recommend buying or selling and not anything new. I would like to see new stocks that I may not have." The learning history says this twice. Yet the current active recommendations are *still only PLTR, SOFI, TEM, VRT* — all existing positions. **No new ticker recommendations have been added.** This is a repeated failure to act on explicit feedback.
+
+- **Market Foresight rated 1/100 (neutral) is confusing and unhelpful.** The user on 5/07 said: "market foresight outlook is rated negative out of 100 and how the suggestions seem a little vague, mainstream and generic. It can be more specific and nuanced and the rating system could be improved." A score of 1/100 labeled "neutral" is internally contradictory. If the scale is 0-100, 1 is not neutral — it's extremely bearish. Either fix the scale, fix the label, or replace this with something the user actually finds useful.
+
+- **Watchlist section is empty.** The learning history says: "Fix the watchlist section. Populate it with 3-5 forward-looking ideas with price levels, thesis, and what would make us buy. This is low-effort, high-value." It's still a blank template. This is a quick win that's been missed for at least 2 runs.
+
+---
+
+## Conviction Calibration
+
+- **8/10 is being used as a default, not a calibrated score.** Four active positions (PLTR, SOFI, TEM, VRT) all have 8/10 conviction. One is up +18% (SOFI), one is up +9.8% (TEM), one is up +3.7% (the first ticker, likely based on Alpaca), and one is **down -8.55%** (VRT). If all four deserve the same conviction score, the score is meaningless. Conviction must reflect *forward-looking* confidence, not just a default "we like this" score.
+
+- **SOFI at +18.23% with 8/10 conviction** — this is actually working. The thesis is validated by price action. Consider whether conviction should be *raised* (to 9/10 with a trailing stop) or whether profits should be partially locked in. The current setup doesn't distinguish between "we were right and it's still a buy" vs. "we were right and it's extended."
+
+- **TEM at +9.80% with 8/10** — also validated. Same question as SOFI.
+
+- **VRT at -8.55% with 8/10** — this is the calibration failure. Either: (a) the thesis has changed and conviction should be lowered to 5-6/10 with a clear stop-loss, or (b) the thesis is intact, the drawdown is within expected range, and we need to *explain why* we're holding an 8/10 conviction through a 9% drawdown. Silence on this is not acceptable.
+
+- **No 9/10 or 10/10 convictions exist.** This suggests the scale is compressed. If we truly believe in asymmetric opportunities, there should be at least one 9/10 pick. The absence of high-conviction picks suggests either (a) we're not finding them, or (b) we're afraid to commit. Both are problems.
+
+---
+
+## Thesis Journal Review
+
+- **The thesis journal is empty in the run context.** This is a critical failure. The thesis journal is supposed to be the living record of "what we believed, what happened, and what we learned." An empty journal means we're not systematically tracking our reasoning over time. We're starting from scratch every run.
+
+- **From the learning history, we can reconstruct partial theses:**
+  - **SOFI thesis** (likely: fintech disruption, student loan refi cycle, banking charter) — **VALIDATED** at +18.23%. But we need to document *what specifically* was predicted and whether the catalyst has played out or has more room.
+  - **TEM thesis** (likely: AI-powered healthcare, telemedicine growth) — **VALIDATED** at +9.80%. Same need for documentation.
+  - **VRT thesis** (likely: electrification, data center power infrastructure) — **CHALLENGED** at -8.55%. We need to document what went wrong: Is it company-specific? Sector rotation? Market-wide? Timing? This is the most important thesis to review because it's the one that's failing.
+  - **PLTR thesis** (likely: AI platform, government + commercial revenue) — The price data appears corrupted (see data quality section). Cannot assess thesis validity until we have clean data.
+
+- **Pattern: We're better at identifying winners than managing losers.** SOFI and TEM are up, and we're comfortable. VRT is down, and we're silent. This is classic disposition effect behavior and the user will lose trust if we don't address it head-on.
+
+---
+
+## Missed Opportunities
+
+- **No new stock recommendations despite $55K (53%) cash.** The user has explicitly asked for this twice. With over half the portfolio in cash, the opportunity cost of not deploying into new ideas is enormous. Even in a neutral market, there are always relative-value opportunities.
+
+- **Specific missed categories based on current market context (May 2026):**
+  - **AI infrastructure beyond PLTR:** If the thesis is "AI adoption accelerates," why only PLTR? What about SMCI, NVDA, or AI-adjacent plays the user doesn't hold?
+  - **Fintech beyond SOFI:** If SOFI is validated, are there correlated or contrarian fintech plays worth exploring?
+  - **Healthcare AI beyond TEM:** Same logic.
+  - **VRT's sector (electrification/power infrastructure):** If VRT is struggling, is there a *better* way to play the same thesis? Eaton (ETN), Quanta Services (PWR)? This would be a "replace VRT with X" recommendation, which is more useful than silently holding a loser.
+
+- **The "once-in-a-lifetime asymmetric plays" section needs concrete tickers.** The user said it was "good but can be improved." Vague asymmetric-play narratives without specific entry points, position sizes, and catalysts are just storytelling.
+
+---
+
+## Data Quality Issues
+
+- **PLTR price data is suspect.** Active recommendation shows entry at $147.32, current at $139.47, yet reports +5.63% gain. $139.47 / $147.32 = 0.9467, which is a **-5.33% loss**. This is either: (a) the entry price is wrong, (b) the current price is wrong, (c) the % change calculation is wrong, or (d) the entry/current labels are swapped. **Any of these is a serious data integrity issue.** This directly echoes the 4/22 complaint about stale PLTR data.
+
+- **No data freshness timestamps anywhere.** The learning history explicitly requested this. The user should see "Price as of 2026-05-29 08:00 ET" next to every ticker. Without this, the user has no way to assess whether they're acting on real-time or stale data.
+
+- **Memory insights show portfolio value discrepancies.** Two entries for 5/26-05-29: one at $272,199 and one at $271,889. The portfolio section shows $103,320. These are wildly different numbers with no explanation. Is $103,320 the Alpaca portfolio and $271K the total? This needs to be clarified or it looks like we don't know what we're tracking.
+
+- **Concentration shows 0.0% which is mathematically impossible** with 7 positions. If the top position is, say, 5% of portfolio, concentration should reflect that. 0.0% suggests a calculation bug or a missing data field.
+
+---
+
+## Risk Management
+
+- **No stop-losses are visible in the active recommendations.** Each recommendation shows conviction, entry, current, and P&L — but no stop-loss level. For VRT at -8.55%, where is the line? For SOFI at +18%, where is the trailing stop? The user needs to know: "We're holding VRT unless it drops below $X, at which point the thesis is broken."
+
+- **VRT needs an explicit stop-loss or an exit recommendation.** -8.55% on a long-term position without a defined risk threshold is not risk management — it's hope. Set a stop-loss (e.g., -15% from entry, or below a key technical level) or recommend trimming/exit with clear reasoning.
+
+- **53% cash is a risk management decision that needs justification.** Is this intentional de-risking? Is it a timing call? Or is it inertia? The user should understand *why* half the portfolio is in cash. If it's a deliberate "waiting for better entry points" strategy, say so and define what "better" looks like. If it's inertia, that's an opportunity cost problem.
+
+- **No tail-risk discussion.** With 7 positions concentrated in tech/fintech/AI, what happens in a risk-off event? Is there any hedge? The cross-domain analysis was praised but needs to include "what could go wrong" scenarios, not just "what could go right."
+
+---
+
+## Cash Deployment
+
+- **$55K (53%) in cash is the single biggest inefficiency in this portfolio.** The learning history says the target is 90% deployed. At 47% deployed, we're significantly underinvested. In a neutral market (Market Foresight 1/100), this *might* be defensible — but only if we have a clear deployment plan.
+
+- **No deployment plan is visible.** The user should see: "We recommend deploying $X into [specific tickers] at [specific price levels] over [specific timeframe]." Instead, there are no new ticker recommendations at all.
+
+- **Opportunity cost calculation:** If the deployed 47% (~$48K) is generating a blended return that produced the overall +3.3% portfolio gain, that's roughly $3,320 in profits. If the $55K cash were deployed at even a conservative 5% annual return, that's an additional $2,750/year in forgone gains. Over a full year, idle cash is costing the user meaningful money.
+
+- **Systematic fix needed:** Every run should include a "Cash Deployment Plan" section that specifies: (1) how much cash to deploy this week/month, (2) into what specific ideas, (3) at what entry prices, (4) with what position sizes, and (5) what catalyst or level would accelerate or delay deployment.
+
+---
+
+## Memory & Learning
+
+- **We are NOT building on past analysis effectively.** The learning history contains 12 explicit improvement items. At least 5 of them are still unresolved: (a) no new stock recommendations, (b) VRT not reconciled, (c) watchlist empty, (d) no data freshness timestamps, (e) market foresight scale broken. This means we're either not reading our own learning history, or we're reading it and not acting on it. Both are unacceptable.
+
+- **The thesis journal is empty.** This is the primary mechanism for building on past analysis. Without it, every run is a cold start. We need to create and maintain a thesis journal that tracks: ticker, thesis date, thesis statement, key catalysts, conviction at time of recommendation, current conviction, outcome, and lessons learned.
+
+- **The learning/education section has improved but needs tighter integration.** The user on 5/07 said they've "been loving the learning section." The learning history says: "Tie the learning section to specific recommendations. Don't teach generic concepts. Teach the concept *because* it's relevant to the recommendation being made." This means: if we recommend a new ticker in the AI infrastructure space, the learning section should teach the user about AI infrastructure economics *in the context of that specific recommendation*, not as a standalone lesson.
+
+- **We're not tracking what the user already knows.** The 4/22 feedback said: "The hobbies/learning part of it was very weak and something I already knew." We need a running model of the user's knowledge level to avoid teaching them things they already understand and to push them into genuinely new territory.
+
+---
+
+## Process Improvements (Action Items for Next Run)
+
+1. **Fix PLTR data immediately.** Verify current price, correct the entry price, and fix the % change calculation. Add a "Price as of [timestamp]" label to every ticker. This is the highest-priority data integrity fix.
+
+2. **Reconcile VRT honestly.** Write a dedicated paragraph: thesis intact or broken? If intact, set a stop-loss and explain the drawdown. If broken, recommend exit or trim. Do not let an 8/10 score mask a -8.55% loss.
+
+3. **Add 3-5 new stock recommendations.** The user has asked twice. With $55K cash, this is the most impactful thing we can do. Use the same thesis-driven, specific, nuanced approach that worked for existing positions. Include entry price targets, position sizes, and catalysts.
+
+4. **Populate the watchlist.** 3-5 forward-looking ideas with price levels, thesis, and trigger conditions. This takes 15 minutes and the user has explicitly asked for it.
+
+5. **Fix the Market Foresight scale.** Either make 1/100 actually mean something (and label it correctly as "extremely bearish"), or replace the 0-100 scale with something more intuitive. Consider: "Market Regime: Neutral / Cautiously Deploying" with a clear explanation.
+
+6. **Create and populate a thesis journal.** Even retroactively. Go back to when each position was recommended, write down the thesis, and track it forward. This is the foundation of learning and the user explicitly values "brutally honest" assessment.
+
+7. **Add stop-loss levels to every active position.** Not optional. Every recommendation needs a "thesis is broken below $X" level. This is basic risk management.
+
+8. **Add a Cash Deployment Plan section.** Specify how much of the $55K to deploy, into what, at what prices, over what timeframe. Tie it to the new stock recommendations.
+
+9. **Reconcile the portfolio value discrepancy.** $103,320 vs. $271,889 vs. $272,199 — these numbers need explanation. Is the user looking at one account or multiple? Clarify this at the top of every report.
+
+10. **Fix the concentration calculation.** 0.0% with 7 positions is wrong. Calculate actual concentration (top position weight, top 3 weight, HHI) and display it correctly.
+
+11. **Audit the learning history before every run.** Read all 12 items, mark which are resolved, and explicitly address any that remain open. The user should see: "Last run you asked for X — here's what we did about it."
+
+12. **Tie the learning section to specific recommendations.** For every new recommendation, include a "What You Should Know" section that teaches the user the *specific* concept, market dynamic, or sector knowledge they need to understand *why* this opportunity exists. No generic lessons.
+
+---
+
+**Bottom line:** The trajectory from 4/22 (4/10) to 5/07 (9.2/10) was excellent. But the last 3 weeks show stagnation on specific, repeated feedback items. The user is telling us exactly what they want: new stock recommendations, honest reconciliation of losers, data freshness, watchlist population, and tighter learning integration. These are not hard problems — they're execution problems. The next run needs to show that we heard the feedback and acted on it, not just acknowledged it.
