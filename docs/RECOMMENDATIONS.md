@@ -3,32 +3,28 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **ASTS** | $114.20 | $1.00 | 7/10 |  Active  |  $114.20  |  +0.0%  | Immediate action, reassess remainder in 4-6 weeks | Watchlist |
-| 2 | **HIMS** | $25.89 | TBD | 8/10 |  Active  |  $25.89  |  +0.0%  | Immediate | Watchlist |
-| 3 | **TEM** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Immediate | Watchlist |
-| 4 | **PLTR** | $156.48 | TBD | 9/10 |  Active  |  $156.48  |  +0.0%  | Long-term hold with mechanical rebalancing rules | Watchlist |
-| 5 | **NVDA** | $217.52 | TBD | 10/10 |  Active  |  $217.52  |  +0.0%  | Long-term (1-3 years) | Watchlist |
-| 6 | **CRWD** | $385.00 | $460.00 | 7/10 |  Active  |  $385.00  |  +0.0%  | Swing (2-6 weeks) — earnings catalyst + post-earnings momentum | Watchlist |
-| 7 | **MU** | $963.32 | $1200.00 | 8/10 |  Active  |  $963.32  |  +0.0%  | Medium-term (6-18 months) — full memory supercycle play | Watchlist |
-| 8 | **GLD** | $419.66 | $470.00 | 6/10 |  Active  |  $419.66  |  +0.0%  | Long-term (1-3 years) — structural allocation | Watchlist |
+| 1 | **PLTR** | $156.35 | $15.00 | 8/10 |  Active  |  $156.35  |  +0.0%  | Immediate action, hold remainder long-term (1-3 yr) | Watchlist |
+| 2 | **VRT** | $311.21 | $385.00 | 7/10 |  Active  |  $311.21  |  +0.0%  | Medium (6-18 months) — full AI infrastructure buildout is a multi-year cycle | Watchlist |
+| 3 | **ASTS** | $110.37 | TBD | 8/10 |  Active  |  $110.37  |  +0.0%  | Immediate | Watchlist |
+| 4 | **TSM** | Market | $230.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) — AI semiconductor cycle is a generational investment thesis | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
 |--------|-----|----------|---------|-----|
-| **AVGO** | 11 | $430.18 | $439.26 | +0.0% |
-| **MU** | 7 | $651.61 | $960.95 | +0.5% |
-| **NVDA** | 38 | $207.14 | $216.88 | +0.0% |
-| **PLTR** | 57 | $139.47 | $155.50 | +0.1% |
-| **SOFI** | 306 | $16.29 | $18.54 | +0.1% |
-| **TEM** | 99 | $50.22 | $49.95 | -0.0% |
-| **VRT** | 28 | $348.38 | $312.80 | -0.1% |
+| **AVGO** | 11 | $430.18 | $436.10 | +0.0% |
+| **MU** | 7 | $651.61 | $951.80 | +0.5% |
+| **NVDA** | 38 | $207.14 | $216.65 | +0.0% |
+| **PLTR** | 57 | $139.47 | $155.42 | +0.1% |
+| **SOFI** | 306 | $16.29 | $18.10 | +0.1% |
+| **TEM** | 99 | $50.22 | $49.80 | -0.0% |
+| **VRT** | 28 | $348.38 | $311.05 | -0.1% |
 
 
 ## 🏦 Alpaca Holdings (Actual Positions)
-- 2026-05-29 | AVGO | $430.18 | 11 | 8/10 | Active | $439.30 | +2.12% | Long-term (Alpaca)
-- 2026-05-29 | MU | $651.61 | 7 | 8/10 | Active | $961.17 | +47.51% | Long-term (Alpaca)
-- 2026-05-29 | NVDA | $207.14 | 38 | 8/10 | Active | $216.81 | +4.67% | Long-term (Alpaca)
-- 2026-05-29 | PLTR | $139.47 | 57 | 8/10 | Active | $155.53 | +11.52% | Long-term (Alpaca)
-- 2026-05-29 | SOFI | $16.29 | 306 | 8/10 | Active | $18.54 | +13.78% | Long-term (Alpaca)
-- 2026-05-29 | TEM | $50.22 | 99 | 8/10 | Active | $49.95 | -0.53% | Long-term (Alpaca)
-- 2026-05-29 | VRT | $348.38 | 28 | 8/10 | Active | $312.82 | -10.21% | Long-term (Alpaca)
+- 2026-05-29 | AVGO | $430.18 | 11 | 8/10 | Active | $436.12 | +1.38% | Long-term (Alpaca)
+- 2026-05-29 | MU | $651.61 | 7 | 8/10 | Active | $951.89 | +46.08% | Long-term (Alpaca)
+- 2026-05-29 | NVDA | $207.14 | 38 | 8/10 | Active | $216.61 | +4.57% | Long-term (Alpaca)
+- 2026-05-29 | PLTR | $139.47 | 57 | 8/10 | Active | $155.41 | +11.43% | Long-term (Alpaca)
+- 2026-05-29 | SOFI | $16.29 | 306 | 8/10 | Active | $18.10 | +11.11% | Long-term (Alpaca)
+- 2026-05-29 | TEM | $50.22 | 99 | 8/10 | Active | $49.81 | -0.82% | Long-term (Alpaca)
+- 2026-05-29 | VRT | $348.38 | 28 | 8/10 | Active | $311.06 | -10.71% | Long-term (Alpaca)

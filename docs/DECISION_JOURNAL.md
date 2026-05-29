@@ -288,3 +288,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-29 | CRWD | BUY | $385.00 | $460.00 | 7/10 | Active | - | Why: CrowdStrike reports earnings in 5 days (June 3, AMC). The cybersecurity sec |
 | 2026-05-29 | MU | BUY | $963.32 | $1200.00 | 8/10 | Active | - | Why: Micron is the purest play on the AI memory supercycle, and today's +4.3% mo |
 | 2026-05-29 | GLD | BUY | $419.66 | $470.00 | 6/10 | Active | - | Why: Gold is breaking out to new all-time highs and your portfolio has zero comm |
+| 2026-05-29 | PLTR | BUY | $156.35 | $15.00 | 8/10 | Active | - | Type/Stock: Software/AI @ $156.35 |
+| 2026-05-29 | VRT | BUY | $311.21 | $385.00 | 7/10 | Active | - | Type/Stock: Electrical Infrastructure / Data Center @ $311.21 |
+| 2026-05-29 | ASTS | BUY | $110.37 | N/A | 8/10 | Active | - | Type/Stock: Aerospace / Satellite @ $110.37 |
+| 2026-05-29 | TSM | BUY | N/A | $230.00 | 7/10 | Active | - | Type/Stock: Semiconductors / Foundry @ Must verify current price (not in portfol |
