@@ -292,3 +292,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-29 | VRT | BUY | $311.21 | $385.00 | 7/10 | Active | - | Type/Stock: Electrical Infrastructure / Data Center @ $311.21 |
 | 2026-05-29 | ASTS | BUY | $110.37 | N/A | 8/10 | Active | - | Type/Stock: Aerospace / Satellite @ $110.37 |
 | 2026-05-29 | TSM | BUY | N/A | $230.00 | 7/10 | Active | - | Type/Stock: Semiconductors / Foundry @ Must verify current price (not in portfol |
+| 2026-05-29 | PLTR | BUY | $156.54 | N/A | 9/10 | Active | - | Why: Palantir is 29.1% of your portfolio with +149.8% unrealized gains. No stock |
+| 2026-05-29 | AVGO | BUY | N/A | $15.50 | 8/10 | Active | - | Why: Broadcom is the other "picks and shovels" AI play that doesn't get the cult |
+| 2026-05-29 | EIDO | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has zero international exposure. Indonesia is the ultimate " |
+| 2026-05-29 | HIMS | BUY | $26.15 | N/A | 7/10 | Active | - | Why: Hims & Hers is a -36.6% loser that's consuming portfolio real estate and me |
+| 2026-05-29 | TEM | BUY | N/A | $20.00 | 5/10 | Active | - | Why: Tempus AI is a hold, not a sell, but only because the position is small (1% |
