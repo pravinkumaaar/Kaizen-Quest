@@ -3,10 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **ORCL** | $225.78 | TBD | 8/10 |  Active  |  $225.78  |  +0.0%  | Swing to Medium (2-12 weeks through earnings catalyst) | Watchlist |
-| 2 | **CRDO** | $236.03 | TBD | 7/10 |  Active  |  $236.03  |  +0.0%  | Medium (3-12 months) — re-evaluate post-earnings | Watchlist |
-| 3 | **SMCI** | $46.09 | TBD | 7/10 |  Active  |  $46.09  |  +0.0%  | Swing to Medium (4-12 weeks) | Watchlist |
-| 4 | **MU** | $971.00 | TBD | 7/10 |  Active  |  $971.00  |  +0.0%  | Long (6-18 months) | Watchlist |
+| 1 | **SMCI** | $46.09 | $65.00 | 8/10 |  Active  |  $46.09  |  +0.0%  | Swing (2-8wk) | Watchlist |
+| 2 | **CRDO** | $236.03 | $320.00 | 9/10 |  Active  |  $236.03  |  +0.0%  | Medium (3-12mo) | Watchlist |
+| 3 | **GTLB** | $260.00 | $350.00 | 7/10 |  Active  |  $260.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

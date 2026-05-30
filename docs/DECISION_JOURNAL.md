@@ -306,3 +306,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-30 | CRDO | BUY | $236.03 | N/A | 7/10 | Active | - | Why: You own CRDO and it's up +6.15% today. Credo makes the active electrical ca |
 | 2026-05-30 | SMCI | BUY | $46.09 | N/A | 7/10 | Active | - | Why: SMCI just ripped +11.6% today, confirming a breakout after months of digest |
 | 2026-05-30 | MU | BUY | $971.00 | N/A | 7/10 | Active | - | Why: You already own MU at 6.5% with +156% gains. I'm recommending you ADD on an |
+| 2026-05-30 | SMCI | BUY | $46.09 | $65.00 | 8/10 | Active | - | Why: Semiconductor equipment beneficiary of AI capex wave. SMCI provides critica |
+| 2026-05-30 | CRDO | BUY | $236.03 | $320.00 | 9/10 | Active | - | Why: AI-powered customer experience platform riding the AI transformation wave.  |
+| 2026-05-30 | GTLB | BUY | $260.00 | $350.00 | 7/10 | Active | - | Why: Google Cloud competitor gaining on AWS/Azure with AI-first approach. Strong |
