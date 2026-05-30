@@ -309,3 +309,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-30 | SMCI | BUY | $46.09 | $65.00 | 8/10 | Active | - | Why: Semiconductor equipment beneficiary of AI capex wave. SMCI provides critica |
 | 2026-05-30 | CRDO | BUY | $236.03 | $320.00 | 9/10 | Active | - | Why: AI-powered customer experience platform riding the AI transformation wave.  |
 | 2026-05-30 | GTLB | BUY | $260.00 | $350.00 | 7/10 | Active | - | Why: Google Cloud competitor gaining on AWS/Azure with AI-first approach. Strong |
+| 2026-05-30 | MU | BUY | $971.00 | N/A | 8/10 | Active | - | Why: Micron is the *picks-and-shovels* play of the AI revolution. Every GPU need |
+| 2026-05-30 | CRDO | BUY | $236.03 | N/A | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — activ |
+| 2026-05-30 | VRT | BUY | $315.71 | N/A | 8/10 | Active | - | Why: Vertiv is the *unglamorous backbone* of the AI data center buildout — power |
+| 2026-05-30 | ASTS | BUY | $113.41 | N/A | 5/10 | Active | - | Why: AST SpaceMobile dropped 15% today — likely profit-taking after its massive  |
