@@ -302,3 +302,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-30 | TSM | BUY | N/A | N/A | 8/10 | Active | - | Why: If you're massively overweight NVDA, NBIS, and PLTR (all AI plays), you're  |
 | 2026-05-30 | AVGO | BUY | $426.58 | N/A | 7/10 | Active | - | You may already own AVGO — check your holdings. If you don't, this is a compelli |
 | 2026-05-30 | MU | BUY | $971.00 | N/A | 8/10 | Active | - | Why: You're already up +156.2% on MU, and it's your 4th largest position at 6.5% |
+| 2026-05-30 | ORCL | BUY | $225.78 | N/A | 8/10 | Active | - | Why: ORCL just ripped +10.8% — the kind of move that signals institutional FOMO  |
+| 2026-05-30 | CRDO | BUY | $236.03 | N/A | 7/10 | Active | - | Why: You own CRDO and it's up +6.15% today. Credo makes the active electrical ca |
+| 2026-05-30 | SMCI | BUY | $46.09 | N/A | 7/10 | Active | - | Why: SMCI just ripped +11.6% today, confirming a breakout after months of digest |
+| 2026-05-30 | MU | BUY | $971.00 | N/A | 7/10 | Active | - | Why: You already own MU at 6.5% with +156% gains. I'm recommending you ADD on an |
