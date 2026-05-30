@@ -313,3 +313,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-30 | CRDO | BUY | $236.03 | N/A | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — activ |
 | 2026-05-30 | VRT | BUY | $315.71 | N/A | 8/10 | Active | - | Why: Vertiv is the *unglamorous backbone* of the AI data center buildout — power |
 | 2026-05-30 | ASTS | BUY | $113.41 | N/A | 5/10 | Active | - | Why: AST SpaceMobile dropped 15% today — likely profit-taking after its massive  |
+| 2026-05-30 | VRT | BUY | $315.73 | N/A | 8/10 | Active | - | Type: Stock @ $315.73 (currently 3.2% of portfolio) |
+| 2026-05-30 | COPX | BUY | N/A | N/A | 7/10 | Active | - | Type: ETF @ ~$48.50 (NEW position) |
+| 2026-05-30 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Type: Stock @ ~$56.20 (NEW position — higher conviction, higher risk than COPX) |
+| 2026-05-30 | RXRX | BUY | N/A | N/A | 6/10 | Active | - | Type: Stock @ ~$7.80 (NEW position) |
