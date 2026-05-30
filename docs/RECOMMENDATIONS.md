@@ -3,10 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **VRT** | $315.73 | TBD | 8/10 |  Active  |  $315.73  |  +0.0%  | Medium (3-12 months) with LEAPS optionality for 18 months | Watchlist |
-| 2 | **COPX** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium-Long (12-24 months) | Watchlist |
-| 3 | **FCX** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium-Long (12-24 months) | Watchlist |
-| 4 | **RXRX** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Medium (6-12 months to Phase 2 data) | Watchlist |
+| 1 | **PLTR** | $156.54 | $18.00 | 9/10 |  Active  |  $156.54  |  +0.0%  | Immediate (execute over 1-2 days) | Watchlist |
+| 2 | **MU** | $971.02 | TBD | 8/10 |  Active  |  $971.02  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 3 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium-Long (6-18 months) | Watchlist |
+| 4 | **CRDO** | $236.05 | TBD | 7/10 |  Active  |  $236.05  |  +0.0%  | Swing to Medium (2 weeks to 6 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

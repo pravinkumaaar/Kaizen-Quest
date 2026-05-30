@@ -317,3 +317,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-30 | COPX | BUY | N/A | N/A | 7/10 | Active | - | Type: ETF @ ~$48.50 (NEW position) |
 | 2026-05-30 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Type: Stock @ ~$56.20 (NEW position — higher conviction, higher risk than COPX) |
 | 2026-05-30 | RXRX | BUY | N/A | N/A | 6/10 | Active | - | Type: Stock @ ~$7.80 (NEW position) |
+| 2026-05-30 | PLTR | BUY | $156.54 | $18.00 | 9/10 | Active | - | Why: This isn't a sell thesis — it's a *risk management* thesis. At 29.1% of por |
+| 2026-05-30 | MU | BUY | $971.02 | N/A | 8/10 | Active | - | Why: Micron is the *picks-and-shovels* play of the AI cycle. Every AI data cente |
+| 2026-05-30 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: This is your *diversification and asymmetric opportunity* play. South Korea |
+| 2026-05-30 | CRDO | BUY | $236.05 | N/A | 7/10 | Active | - | Why: Credo is the *least understood* company in your AI portfolio ecosystem. The |

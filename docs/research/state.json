@@ -1,10 +1,10 @@
 {
-  "total_runs": 97,
-  "last_run": "2026-05-30T15:12:55.966398",
+  "total_runs": 98,
+  "last_run": "2026-05-30T19:18:05.622773",
   "last_run_tickers": [
-    "NVDA",
-    "AVGO",
-    "MU"
+    "SOFI",
+    "TEM",
+    "PLTR"
   ],
   "research_queue": [],
   "global_facts": {}
