@@ -297,3 +297,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-29 | EIDO | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio has zero international exposure. Indonesia is the ultimate " |
 | 2026-05-29 | HIMS | BUY | $26.15 | N/A | 7/10 | Active | - | Why: Hims & Hers is a -36.6% loser that's consuming portfolio real estate and me |
 | 2026-05-29 | TEM | BUY | N/A | $20.00 | 5/10 | Active | - | Why: Tempus AI is a hold, not a sell, but only because the position is small (1% |
+| 2026-05-30 | PLTR | BUY | $156.54 | N/A | 9/10 | Active | - | Why: This is the single biggest risk in your portfolio — not because Palantir is |
+| 2026-05-30 | ASTS | BUY | $113.41 | N/A | 8/10 | Active | - | Why: AST SpaceMobile is a pre-profit satellite company that dropped 15% in a sin |
+| 2026-05-30 | TSM | BUY | N/A | N/A | 8/10 | Active | - | Why: If you're massively overweight NVDA, NBIS, and PLTR (all AI plays), you're  |
+| 2026-05-30 | AVGO | BUY | $426.58 | N/A | 7/10 | Active | - | You may already own AVGO — check your holdings. If you don't, this is a compelli |
+| 2026-05-30 | MU | BUY | $971.00 | N/A | 8/10 | Active | - | Why: You're already up +156.2% on MU, and it's your 4th largest position at 6.5% |
