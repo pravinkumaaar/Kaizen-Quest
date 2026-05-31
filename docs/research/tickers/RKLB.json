@@ -1,8 +1,8 @@
 {
   "ticker": "RKLB",
   "first_researched": "2026-05-22T16:42:14.313795",
-  "last_researched": "2026-05-31T10:23:41.577450",
-  "research_count": 11,
+  "last_researched": "2026-05-31T23:09:24.370308",
+  "research_count": 12,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 143.48,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-31T10:23:41.577450"
+      "last_verified": "2026-05-31T23:09:24.370308"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-31T10:23:41.577450"
+      "last_verified": "2026-05-31T23:09:24.370308"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-05-30T10:05:47.428543"
+      "last_verified": "2026-05-31T23:09:24.370308"
     }
   ],
   "facts": [
@@ -77,41 +77,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "RKLB",
-    "timestamp": "2026-05-31 10:23:10",
+    "timestamp": "2026-05-31 23:08:56",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "analyst_estimates",
-    "income_statement",
-    "insider_trades_contrarian",
-    "competitive_landscape",
-    "industry_pe",
-    "valuation_multiples",
-    "comps_analysis",
     "recommendation_trends",
-    "financial_ratios",
-    "treasury_rates",
     "institutional",
-    "supply_chain",
-    "congressional",
-    "cashflow",
-    "risk_assessment",
     "negative_news",
+    "technical_indicators",
+    "comps_analysis",
+    "analyst_estimates",
+    "cashflow",
     "esg",
+    "sector_rotation",
+    "competitive_landscape",
+    "supply_chain",
+    "earnings_momentum",
+    "aggregate_indicators",
+    "congressional",
+    "sector_performance",
+    "income_statement",
+    "valuation_multiples",
     "dcf",
-    "macro_rotation",
+    "market_sentiment",
+    "treasury_rates",
     "earnings_history",
     "price_target",
     "insider_trades",
-    "market_sentiment",
-    "sector_rotation",
+    "insider_trades_contrarian",
+    "risk_assessment",
     "insider_sentiment",
-    "aggregate_indicators",
-    "technical_indicators",
-    "balance_sheet",
-    "earnings_momentum",
-    "sector_performance"
+    "macro_rotation",
+    "financial_ratios",
+    "industry_pe",
+    "balance_sheet"
   ],
   "research_gaps": [],
   "contrarian_signals": []
