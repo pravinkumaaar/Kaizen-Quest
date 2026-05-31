@@ -329,3 +329,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-31 | MU | BUY | $971.00 | N/A | 8/10 | Active | - | Type: Stock @ $971.00 (+5.14% today) |
 | 2026-05-31 | GLD | BUY | $417.12 | $480.00 | 7/10 | Active | - | Type: ETF @ $417.12 (+1.05% today) |
 | 2026-05-31 | AVGO | BUY | N/A | $340.00 | 6/10 | Active | - | Type: Stock @ TBD (earnings in 3 days, June 3 AMC) |
+| 2026-05-31 | NVDA | BUY | $211.14 | N/A | 6/10 | Active | - | Why: Despite 103.5% gains, still holds 11.4% portfolio weight - above the 10% ma |
+| 2026-05-31 | AVGO | BUY | $1245.00 | N/A | 8/10 | Active | - | Why: Semiconductor consolidation play with massive buyback power and AI networki |
+| 2026-05-31 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued with improving USD dynamics and commodity  |
+| 2026-05-31 | GLD | BUY | $195.00 | $15.00 | 7/10 | Active | - | Why: Safe haven asset with potential inflation hedge as rate cuts become likely. |

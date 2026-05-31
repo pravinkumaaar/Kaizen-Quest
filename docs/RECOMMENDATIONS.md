@@ -3,11 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $156.54 | TBD | 9/10 |  Active  |  $156.54  |  +0.0%  | Immediate trim, redeploy within 2 weeks | Watchlist |
-| 2 | **CRDO** | $236.03 | $310.00 | 7/10 |  Active  |  $236.03  |  +0.0%  | Swing to medium (2 weeks to 3 months) | Watchlist |
-| 3 | **MU** | $971.00 | TBD | 8/10 |  Active  |  $971.00  |  +0.0%  | Swing | Watchlist |
-| 4 | **GLD** | $417.12 | $480.00 | 7/10 |  Active  |  $417.12  |  +0.0%  | Long (1-3 years as strategic holder) | Watchlist |
-| 5 | **AVGO** | Market | $340.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 1 | **NVDA** | $211.14 | TBD | 6/10 |  Active  |  $211.14  |  +0.0%  | Swing (2-8wk) | Watchlist |
+| 2 | **AVGO** | $1245.00 | TBD | 8/10 |  Active  |  $1245.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
+| 3 | **EEM** | $42.50 | TBD | 7/10 |  Active  |  $42.50  |  +0.0%  | Medium (3-12mo) | Watchlist |
+| 4 | **GLD** | $195.00 | $15.00 | 7/10 |  Active  |  $195.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
