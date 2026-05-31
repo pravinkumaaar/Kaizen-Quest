@@ -321,3 +321,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-30 | MU | BUY | $971.02 | N/A | 8/10 | Active | - | Why: Micron is the *picks-and-shovels* play of the AI cycle. Every AI data cente |
 | 2026-05-30 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: This is your *diversification and asymmetric opportunity* play. South Korea |
 | 2026-05-30 | CRDO | BUY | $236.05 | N/A | 7/10 | Active | - | Why: Credo is the *least understood* company in your AI portfolio ecosystem. The |
+| 2026-05-31 | AVGO | BUY | $446.77 | $520.00 | 7/10 | Active | - | Why: Broadcom is the OTHER half of the AI infrastructure story that NVDA tells.  |
+| 2026-05-31 | CRWD | BUY | N/A | $495.00 | 7/10 | Active | - | Why: CrowdShift is the operating system of cloud security, and in the AI era, ev |
+| 2026-05-31 | PLTR | BUY | N/A | N/A | 10/10 | Active | - | --- |
