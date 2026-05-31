@@ -324,3 +324,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-31 | AVGO | BUY | $446.77 | $520.00 | 7/10 | Active | - | Why: Broadcom is the OTHER half of the AI infrastructure story that NVDA tells.  |
 | 2026-05-31 | CRWD | BUY | N/A | $495.00 | 7/10 | Active | - | Why: CrowdShift is the operating system of cloud security, and in the AI era, ev |
 | 2026-05-31 | PLTR | BUY | N/A | N/A | 10/10 | Active | - | --- |
+| 2026-05-31 | PLTR | BUY | $156.54 | N/A | 9/10 | Active | - | Type: Stock @ $156.54 |
+| 2026-05-31 | CRDO | BUY | $236.03 | $310.00 | 7/10 | Active | - | Type: Stock @ $236.03 (+6.15% today) |
+| 2026-05-31 | MU | BUY | $971.00 | N/A | 8/10 | Active | - | Type: Stock @ $971.00 (+5.14% today) |
+| 2026-05-31 | GLD | BUY | $417.12 | $480.00 | 7/10 | Active | - | Type: ETF @ $417.12 (+1.05% today) |
+| 2026-05-31 | AVGO | BUY | N/A | $340.00 | 6/10 | Active | - | Type: Stock @ TBD (earnings in 3 days, June 3 AMC) |
