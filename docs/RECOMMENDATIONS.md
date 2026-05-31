@@ -3,10 +3,7 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NVDA** | $211.14 | TBD | 6/10 |  Active  |  $211.14  |  +0.0%  | Swing (2-8wk) | Watchlist |
-| 2 | **AVGO** | $1245.00 | TBD | 8/10 |  Active  |  $1245.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 3 | **EEM** | $42.50 | TBD | 7/10 |  Active  |  $42.50  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 4 | **GLD** | $195.00 | $15.00 | 7/10 |  Active  |  $195.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
+| 1 | **CRDO** | $236.05 | $275.00 | 7/10 |  Active  |  $236.05  |  +0.0%  | Swing, 1-5 days (this is a tactical earnings play) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

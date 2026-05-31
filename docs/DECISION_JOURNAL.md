@@ -333,3 +333,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-31 | AVGO | BUY | $1245.00 | N/A | 8/10 | Active | - | Why: Semiconductor consolidation play with massive buyback power and AI networki |
 | 2026-05-31 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued with improving USD dynamics and commodity  |
 | 2026-05-31 | GLD | BUY | $195.00 | $15.00 | 7/10 | Active | - | Why: Safe haven asset with potential inflation hedge as rate cuts become likely. |
+| 2026-05-31 | CRDO | BUY | $236.05 | $275.00 | 7/10 | Active | - | Why: CRDO reports earnings TOMORROW (June 1, AMC). The stock is already up +6.16 |
