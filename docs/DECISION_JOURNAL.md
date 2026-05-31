@@ -334,3 +334,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-31 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued with improving USD dynamics and commodity  |
 | 2026-05-31 | GLD | BUY | $195.00 | $15.00 | 7/10 | Active | - | Why: Safe haven asset with potential inflation hedge as rate cuts become likely. |
 | 2026-05-31 | CRDO | BUY | $236.05 | $275.00 | 7/10 | Active | - | Why: CRDO reports earnings TOMORROW (June 1, AMC). The stock is already up +6.16 |
+| 2026-05-31 | CRWD | BUY | N/A | $420.00 | 7/10 | Active | - | Why: Cybersecurity is non-discretionary AI-era infrastructure. Every AI deployme |
+| 2026-05-31 | AVGO | BUY | N/A | $410.00 | 8/10 | Active | - | Why: AVGO is the "picks and shovels" AI play that doesn't get the NVDA hype but  |
+| 2026-05-31 | GLD | BUY | $417.14 | $480.00 | 7/10 | Active | - | Why: Your portfolio has ZERO commodity/inflation hedge exposure. Gold is breakin |
+| 2026-05-31 | DELL | BUY | N/A | $185.00 | 7/10 | Active | - | Why: Dell reported earnings May 28 — check the results. If they beat on AI serve |
+| 2026-05-31 | ORCL | BUY | $225.80 | $265.00 | 7/10 | Active | - | Why: Oracle just popped +10.85% today — something is happening. Earnings June 16 |

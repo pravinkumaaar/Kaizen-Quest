@@ -3,7 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **CRDO** | $236.05 | $275.00 | 7/10 |  Active  |  $236.05  |  +0.0%  | Swing, 1-5 days (this is a tactical earnings play) | Watchlist |
+| 1 | **CRWD** | Market | $420.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing to Medium (2-12 weeks) | Watchlist |
+| 2 | **AVGO** | Market | $410.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-6 months) | Watchlist |
+| 3 | **GLD** | $417.14 | $480.00 | 7/10 |  Active  |  $417.14  |  +0.0%  | Medium to Long (3-12 months) | Watchlist |
+| 4 | **DELL** | Market | $185.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing to Medium (2-12 weeks) | Watchlist |
+| 5 | **ORCL** | $225.80 | $265.00 | 7/10 |  Active  |  $225.80  |  +0.0%  | Medium (2-6 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
