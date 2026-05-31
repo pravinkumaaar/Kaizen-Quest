@@ -339,3 +339,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-31 | GLD | BUY | $417.14 | $480.00 | 7/10 | Active | - | Why: Your portfolio has ZERO commodity/inflation hedge exposure. Gold is breakin |
 | 2026-05-31 | DELL | BUY | N/A | $185.00 | 7/10 | Active | - | Why: Dell reported earnings May 28 — check the results. If they beat on AI serve |
 | 2026-05-31 | ORCL | BUY | $225.80 | $265.00 | 7/10 | Active | - | Why: Oracle just popped +10.85% today — something is happening. Earnings June 16 |
+| 2026-05-31 | PLTR | BUY | $156.54 | N/A | 9/10 | Active | - | Why: PLTR is your portfolio's engine — 29.1% of total value, +149.8% unrealized. |
+| 2026-05-31 | CRDO | BUY | $236.03 | N/A | 7/10 | Active | - | Why: Credo Technology reports earnings TOMORROW (June 1, AMC). The stock is alre |
+| 2026-05-31 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | Why: Broadcom is the "quiet giant" of AI infrastructure. While NVDA gets the hea |
+| 2026-05-31 | HIMS | BUY | $26.15 | N/A | 8/10 | Active | - | Why: HIMS is down 36.6% from your cost basis and represents 1.1% of your portfol |
+| 2026-05-31 | NBIS | BUY | $231.09 | N/A | 7/10 | Active | - | Why: Nebius is your single best performer (+333.1%) at 8.8% of portfolio. This i |
