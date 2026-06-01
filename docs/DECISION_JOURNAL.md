@@ -365,3 +365,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-01 | CRWD | BUY | N/A | N/A | 6/10 | Active | - | Why: CrowdStrike reports same night as AVGO. Cybersecurity is non-discretionary  |
 | 2026-06-01 | RKLB | BUY | $122.39 | N/A | 5/10 | Active | - | Why: Rocket Lab got crushed today — likely profit-taking after the massive run ( |
 | 2026-06-01 | TEM | BUY | N/A | N/A | 8/10 | Active | - | Why: Tempus AI is down 26.4% and you're holding a losing position in a company t |
+| 2026-06-01 | AVGO | BUY | N/A | $355.00 | 7/10 | Active | - | Why: Broadcom reports earnings tomorrow (June 3 AMC). AVGO is the "picks and sho |
+| 2026-06-01 | NBIS | BUY | $264.51 | $320.00 | 6/10 | Active | - | Why: NBIS just ripped +14.5% — do NOT chase this. But NBIS at $264 after a 395%  |
+| 2026-06-01 | CASH | BUY | $1.00 | N/A | 9/10 | Active | - | Why: You have a portfolio up 99% with 11+ positions in the red, one stock at 29% |
