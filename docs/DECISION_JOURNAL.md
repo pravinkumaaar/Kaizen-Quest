@@ -348,3 +348,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-01 | GLD | BUY | $417.12 | $480.00 | 7/10 | Active | - | Why: Your portfolio is 100% equities, 0% commodities. Gold just hit $417 (+1.05% |
 | 2026-06-01 | CRDO | BUY | $236.03 | $290.00 | 7/10 | Active | - | Why: CRDO reports earnings TODAY (June 1, after market). They're in the AI conne |
 | 2026-06-01 | AVGO | BUY | $215.00 | $275.00 | 7/10 | Active | - | Why: Broadcom reports June 3 (2 days). They're the custom AI chip (ASIC) play —  |
+| 2026-06-01 | ORCL | BUY | $225.78 | $285.00 | 7/10 | Active | - | Today's Move: +10.84% on massive volume |
+| 2026-06-01 | CRDO | BUY | $236.03 | $325.00 | 8/10 | Active | - | Today's Move: +6.15% (reporting earnings after close today!) |
+| 2026-06-01 | MU | BUY | $971.00 | $1250.00 | 8/10 | Active | - | Current Unrealized P&L: +$11,000 (+156.2%) |
+| 2026-06-01 | PLTR | BUY | $156.54 | N/A | 8/10 | Active | - | Portfolio Weight: 29.1% — HIGHEST CONCENTRATION RISK |
