@@ -352,3 +352,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-01 | CRDO | BUY | $236.03 | $325.00 | 8/10 | Active | - | Today's Move: +6.15% (reporting earnings after close today!) |
 | 2026-06-01 | MU | BUY | $971.00 | $1250.00 | 8/10 | Active | - | Current Unrealized P&L: +$11,000 (+156.2%) |
 | 2026-06-01 | PLTR | BUY | $156.54 | N/A | 8/10 | Active | - | Portfolio Weight: 29.1% — HIGHEST CONCENTRATION RISK |
+| 2026-06-01 | NBIS | BUY | $271.60 | N/A | 7/10 | Active | - | Why: Nebius Group is an AI cloud/GPU infrastructure play that's up 409% for you. |
+| 2026-06-01 | VRT | BUY | $324.32 | $420.00 | 8/10 | Active | - | Why: Vertiv is the unsexy backbone of AI data centers — power, cooling, and IT i |
+| 2026-06-01 | CRWV | BUY | $126.56 | $176.00 | 7/10 | Active | - | Why: CoreWeave is the AI-native cloud company that just raised $100M Series B. I |
+| 2026-06-01 | HIMS | BUY | $27.95 | N/A | 8/10 | Active | - | Why: Hims & Hers Health is down 32.2% from your cost basis. It's 1.2% of your po |
+| 2026-06-01 | TEM | BUY | $54.39 | N/A | 5/10 | Active | - | Why: Tempus AI is down 24.2% from your cost basis. It's a healthcare AI/data pla |
