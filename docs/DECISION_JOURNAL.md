@@ -357,3 +357,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-01 | CRWV | BUY | $126.56 | $176.00 | 7/10 | Active | - | Why: CoreWeave is the AI-native cloud company that just raised $100M Series B. I |
 | 2026-06-01 | HIMS | BUY | $27.95 | N/A | 8/10 | Active | - | Why: Hims & Hers Health is down 32.2% from your cost basis. It's 1.2% of your po |
 | 2026-06-01 | TEM | BUY | $54.39 | N/A | 5/10 | Active | - | Why: Tempus AI is down 24.2% from your cost basis. It's a healthcare AI/data pla |
+| 2026-06-01 | MU | BUY | $1033.18 | N/A | 8/10 | Active | - | Why: Micron holds ~50% of the HBM (High Bandwidth Memory) market alongside SK Hy |
+| 2026-06-01 | NBIS | BUY | $265.38 | N/A | 7/10 | Active | - | Why: Nebius is your single best performer at +397%, and it's now 9.8% of your po |
+| 2026-06-01 | PLTR | BUY | $160.57 | N/A | 8/10 | Active | - | Why: Palantir is 28.9% of your portfolio — *nearly a third of your net worth in  |
