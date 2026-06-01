@@ -344,3 +344,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-05-31 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | Why: Broadcom is the "quiet giant" of AI infrastructure. While NVDA gets the hea |
 | 2026-05-31 | HIMS | BUY | $26.15 | N/A | 8/10 | Active | - | Why: HIMS is down 36.6% from your cost basis and represents 1.1% of your portfol |
 | 2026-05-31 | NBIS | BUY | $231.09 | N/A | 7/10 | Active | - | Why: Nebius is your single best performer (+333.1%) at 8.8% of portfolio. This i |
+| 2026-06-01 | ORCL | BUY | $225.78 | $280.00 | 7/10 | Active | - | Why: Oracle just ripped +10.84% — likely on AI infrastructure demand signals fro |
+| 2026-06-01 | GLD | BUY | $417.12 | $480.00 | 7/10 | Active | - | Why: Your portfolio is 100% equities, 0% commodities. Gold just hit $417 (+1.05% |
+| 2026-06-01 | CRDO | BUY | $236.03 | $290.00 | 7/10 | Active | - | Why: CRDO reports earnings TODAY (June 1, after market). They're in the AI conne |
+| 2026-06-01 | AVGO | BUY | $215.00 | $275.00 | 7/10 | Active | - | Why: Broadcom reports June 3 (2 days). They're the custom AI chip (ASIC) play —  |
