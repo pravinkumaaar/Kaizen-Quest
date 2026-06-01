@@ -360,3 +360,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-01 | MU | BUY | $1033.18 | N/A | 8/10 | Active | - | Why: Micron holds ~50% of the HBM (High Bandwidth Memory) market alongside SK Hy |
 | 2026-06-01 | NBIS | BUY | $265.38 | N/A | 7/10 | Active | - | Why: Nebius is your single best performer at +397%, and it's now 9.8% of your po |
 | 2026-06-01 | PLTR | BUY | $160.57 | N/A | 8/10 | Active | - | Why: Palantir is 28.9% of your portfolio — *nearly a third of your net worth in  |
+| 2026-06-01 | PLTR | BUY | $160.65 | $19.00 | 9/10 | Active | - | Why: Palantir at 29% of portfolio is a risk management problem, not a conviction |
+| 2026-06-01 | AVGO | BUY | N/A | N/A | 7/10 | Active | - | Why: Broadcom reports in 2 days. AI infrastructure spending is the most durable  |
+| 2026-06-01 | CRWD | BUY | N/A | N/A | 6/10 | Active | - | Why: CrowdStrike reports same night as AVGO. Cybersecurity is non-discretionary  |
+| 2026-06-01 | RKLB | BUY | $122.39 | N/A | 5/10 | Active | - | Why: Rocket Lab got crushed today — likely profit-taking after the massive run ( |
+| 2026-06-01 | TEM | BUY | N/A | N/A | 8/10 | Active | - | Why: Tempus AI is down 26.4% and you're holding a losing position in a company t |
