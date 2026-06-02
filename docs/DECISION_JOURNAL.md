@@ -384,3 +384,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | MU | BUY | $1035.50 | N/A | 7/10 | Active | - | Why you already own it, but here's the update: MU just ripped 6.6% on the day —  |
 | 2026-06-02 | PLTR | BUY | $153.25 | N/A | 8/10 | Active | - | This is your biggest position and it's pulling back. Let me be direct: |
 | 2026-06-02 | HIMS | BUY | $27.36 | N/A | 7/10 | Active | - | This is a 1.2% position losing a third of its value. The telehealth/GLP-1 thesis |
+| 2026-06-02 | MU | BUY | $1042.04 | N/A | 8/10 | Active | - |  |
+| 2026-06-02 | CRDO | BUY | N/A | N/A | 7/10 | Active | - |  |
