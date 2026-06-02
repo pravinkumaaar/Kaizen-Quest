@@ -368,3 +368,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-01 | AVGO | BUY | N/A | $355.00 | 7/10 | Active | - | Why: Broadcom reports earnings tomorrow (June 3 AMC). AVGO is the "picks and sho |
 | 2026-06-01 | NBIS | BUY | $264.51 | $320.00 | 6/10 | Active | - | Why: NBIS just ripped +14.5% — do NOT chase this. But NBIS at $264 after a 395%  |
 | 2026-06-01 | CASH | BUY | $1.00 | N/A | 9/10 | Active | - | Why: You have a portfolio up 99% with 11+ positions in the red, one stock at 29% |
+| 2026-06-02 | PLTR | BUY | $160.65 | $8.00 | 9/10 | Active | - | Thesis: Palantir is a world-class AI company, but at 29% of portfolio it represe |
+| 2026-06-02 | AVGO | BUY | $459.97 | N/A | 7/10 | Active | - | Why: Broadcom reports earnings tomorrow (June 3) after close with estimates at $ |
+| 2026-06-02 | NBIS | BUY | $264.51 | $300.00 | 7/10 | Active | - | Type/price: Stock @ $264.51 (+14.46%) |
+| 2026-06-02 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Type/price: ETF @ ~$310 (estimated; verify current price) |
