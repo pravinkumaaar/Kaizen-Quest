@@ -380,3 +380,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: You don't own this, but you own BBAI (AI), PLTR (data), and NBIS (robotics) |
 | 2026-06-02 | AVGO | BUY | N/A | $430.00 | 8/10 | Active | - | Why: AVGO is the *underowned AI picks-and-shovels play*. While everyone owns NVD |
 | 2026-06-02 | NBIS | BUY | $264.51 | $350.00 | 7/10 | Active | - | Why: You already own 9.8% of your portfolio here and it's your best performer (+ |
+| 2026-06-02 | AVGO | BUY | $459.97 | $540.00 | 7/10 | Active | - | Ticker: AVGO (Broadcom Inc.) |
+| 2026-06-02 | MU | BUY | $1035.50 | N/A | 7/10 | Active | - | Why you already own it, but here's the update: MU just ripped 6.6% on the day —  |
+| 2026-06-02 | PLTR | BUY | $153.25 | N/A | 8/10 | Active | - | This is your biggest position and it's pulling back. Let me be direct: |
+| 2026-06-02 | HIMS | BUY | $27.36 | N/A | 7/10 | Active | - | This is a 1.2% position losing a third of its value. The telehealth/GLP-1 thesis |
