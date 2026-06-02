@@ -372,3 +372,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | AVGO | BUY | $459.97 | N/A | 7/10 | Active | - | Why: Broadcom reports earnings tomorrow (June 3) after close with estimates at $ |
 | 2026-06-02 | NBIS | BUY | $264.51 | $300.00 | 7/10 | Active | - | Type/price: Stock @ $264.51 (+14.46%) |
 | 2026-06-02 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Type/price: ETF @ ~$310 (estimated; verify current price) |
+| 2026-06-02 | NBIS | BUY | $264.51 | $35.00 | 7/10 | Active | - | Why: Nebius is the European AI cloud infrastructure play that's becoming the "th |
+| 2026-06-02 | CRWV | BUY | $124.82 | N/A | 7/10 | Active | - | Why: CoreWeave is the pure-play GPU cloud company that went public and is now be |
+| 2026-06-02 | PLTR | BUY | $160.65 | $24.00 | 8/10 | Active | - | Why: Palantir is your single biggest winner (+156.3%) and your single biggest ri |
+| 2026-06-02 | SLV | BUY | $67.67 | N/A | 7/10 | Active | - | Why: Silver is the most underrated asset in 2026. Industrial demand (solar panel |
+| 2026-06-02 | HIMS | BUY | $27.76 | N/A | 8/10 | Active | - | Why: HIMS has been a losing position for too long. The +6% today is a dead-cat b |
