@@ -377,3 +377,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | PLTR | BUY | $160.65 | $24.00 | 8/10 | Active | - | Why: Palantir is your single biggest winner (+156.3%) and your single biggest ri |
 | 2026-06-02 | SLV | BUY | $67.67 | N/A | 7/10 | Active | - | Why: Silver is the most underrated asset in 2026. Industrial demand (solar panel |
 | 2026-06-02 | HIMS | BUY | $27.76 | N/A | 8/10 | Active | - | Why: HIMS has been a losing position for too long. The +6% today is a dead-cat b |
+| 2026-06-02 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: You don't own this, but you own BBAI (AI), PLTR (data), and NBIS (robotics) |
+| 2026-06-02 | AVGO | BUY | N/A | $430.00 | 8/10 | Active | - | Why: AVGO is the *underowned AI picks-and-shovels play*. While everyone owns NVD |
+| 2026-06-02 | NBIS | BUY | $264.51 | $350.00 | 7/10 | Active | - | Why: You already own 9.8% of your portfolio here and it's your best performer (+ |
