@@ -391,3 +391,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | CRWD | BUY | N/A | $620.00 | 7/10 | Active | - | Why: CrowdStrike reports earnings TODAY after the bell. The cybersecurity thesis |
 | 2026-06-02 | MU | BUY | $1064.10 | $1350.00 | 8/10 | Active | - | Why: You already own MU at 7% of portfolio. I'm recommending an ADD. Micron is t |
 | 2026-06-02 | VRT | BUY | $334.49 | $420.00 | 8/10 | Active | - | Why: Vertiv is the "picks and shovels" play of AI that most investors miss. Ever |
+| 2026-06-02 | REDUCE | BUY | $152.17 | N/A | 5/10 | Active | - | Why: PLTR is up 143% and represents 27.7% of your portfolio. This is no longer a |
+| 2026-06-02 | HIMS | BUY | $27.51 | N/A | 8/10 | Active | - | Why: HIMS is the poster child for thesis erosion. It was built on cheap GLP-1 co |
