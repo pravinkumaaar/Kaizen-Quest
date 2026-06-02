@@ -386,3 +386,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | HIMS | BUY | $27.36 | N/A | 7/10 | Active | - | This is a 1.2% position losing a third of its value. The telehealth/GLP-1 thesis |
 | 2026-06-02 | MU | BUY | $1042.04 | N/A | 8/10 | Active | - |  |
 | 2026-06-02 | CRDO | BUY | N/A | N/A | 7/10 | Active | - |  |
+| 2026-06-02 | GLD | BUY | N/A | $355.00 | 7/10 | Active | - | Why: Gold is the macro hedge you're missing. With 85%+ of your portfolio in US t |
+| 2026-06-02 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: Samsung and SK Hynix are the memory bottleneck for ALL AI training and infe |
+| 2026-06-02 | CRWD | BUY | N/A | $620.00 | 7/10 | Active | - | Why: CrowdStrike reports earnings TODAY after the bell. The cybersecurity thesis |
+| 2026-06-02 | MU | BUY | $1064.10 | $1350.00 | 8/10 | Active | - | Why: You already own MU at 7% of portfolio. I'm recommending an ADD. Micron is t |
+| 2026-06-02 | VRT | BUY | $334.49 | $420.00 | 8/10 | Active | - | Why: Vertiv is the "picks and shovels" play of AI that most investors miss. Ever |
