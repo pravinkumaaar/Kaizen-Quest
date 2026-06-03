@@ -409,3 +409,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-03 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CrowdStrike reported earnings today after the bell. The cybersecurity moat  |
 | 2026-06-03 | MU | BUY | $1079.57 | $9.40 | 7/10 | Active | - | Why: Micron reports June 24 — 21 days out. You already own 7.4% — this is about  |
 | 2026-06-03 | GLD | BUY | $407.87 | N/A | 6/10 | Active | - | Why: Gold is your portfolio's missing hedge. VIX at 23.5, defensive rotation und |
+| 2026-06-03 | PLTR | BUY | $142.20 | $20.30 | 9/10 | Active | - | Why: PLTR is 27.1% of your portfolio with +126.9% unrealized gains. This is a po |
+| 2026-06-03 | NBIS | BUY | $251.68 | $6.90 | 8/10 | Active | - | Why: NBIS is 9.8% of portfolio with a staggering +371.7% gain. At $251.68, this  |
+| 2026-06-03 | GLD | BUY | N/A | $340.00 | 7/10 | Active | - | Why: Your portfolio has ZERO commodity exposure. Gold is the ultimate portfolio  |
+| 2026-06-03 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: India is the most compelling structural growth story in emerging markets —  |
+| 2026-06-03 | CRWD | BUY | N/A | $580.00 | 7/10 | Active | - | Why: CrowdStrike reported earnings today (June 3, AMC). The cybersecurity sector |
