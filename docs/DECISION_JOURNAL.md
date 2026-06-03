@@ -399,3 +399,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-03 | RKLB | BUY | $123.32 | $200.00 | 7/10 | Active | - | Why: I'm recommending you ADD to Rocket Lab because your current position isn't  |
 | 2026-06-03 | AVGO | BUY | $481.57 | $550.00 | 8/10 | Active | - | This is a special situation. AVGO reports earnings in hours. This is NOT pre-ear |
 | 2026-06-03 | ONCE-IN-A | BUY | N/A | N/A | 7/10 | Active | - | Why this is special: ICON is the global clinical trial powerhouse — they run dru |
+| 2026-06-03 | EWY | BUY | $72.00 | $88.00 | 7/10 | Active | - | Type/Stock: iShares MSCI South Korea ETF @ ~$72 |
+| 2026-06-03 | MU | BUY | $1064.00 | $1400.00 | 8/10 | Active | - | Type/Stock: Semiconductors/Memory @ $1,064 |
+| 2026-06-03 | CRWD | BUY | N/A | $520.00 | 7/10 | Active | - | Type/Stock: Cybersecurity @ (check current ~$380-400 range) |
+| 2026-06-03 | COP | BUY | N/A | $130.00 | 6/10 | Active | - | Type/Stock: Energy/Oil & Gas @ ~$95-100 |
