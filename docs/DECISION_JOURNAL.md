@@ -395,3 +395,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | HIMS | BUY | $27.51 | N/A | 8/10 | Active | - | Why: HIMS is the poster child for thesis erosion. It was built on cheap GLP-1 co |
 | 2026-06-03 | GLD | BUY | N/A | $10.00 | 10/10 | Active | - | Type: ETF | Conviction: 5/10 | Position: NEW |
 | 2026-06-03 | TRIM | BUY | $152.17 | N/A | 9/10 | Active | - | Why: I'm not saying Palantir is a bad company — it's arguably the best pure-play |
+| 2026-06-03 | CLS | BUY | $472.40 | $650.00 | 7/10 | Active | - | Why: Celestica is the connective tissue of the AI infrastructure buildout — they |
+| 2026-06-03 | RKLB | BUY | $123.32 | $200.00 | 7/10 | Active | - | Why: I'm recommending you ADD to Rocket Lab because your current position isn't  |
+| 2026-06-03 | AVGO | BUY | $481.57 | $550.00 | 8/10 | Active | - | This is a special situation. AVGO reports earnings in hours. This is NOT pre-ear |
+| 2026-06-03 | ONCE-IN-A | BUY | N/A | N/A | 7/10 | Active | - | Why this is special: ICON is the global clinical trial powerhouse — they run dru |
