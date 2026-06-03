@@ -403,3 +403,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-03 | MU | BUY | $1064.00 | $1400.00 | 8/10 | Active | - | Type/Stock: Semiconductors/Memory @ $1,064 |
 | 2026-06-03 | CRWD | BUY | N/A | $520.00 | 7/10 | Active | - | Type/Stock: Cybersecurity @ (check current ~$380-400 range) |
 | 2026-06-03 | COP | BUY | N/A | $130.00 | 6/10 | Active | - | Type/Stock: Energy/Oil & Gas @ ~$95-100 |
+| 2026-06-03 | PLTR | BUY | $142.20 | $20.00 | 8/10 | Active | - | Why: 27.1% of portfolio in a single name is dangerous regardless of conviction.  |
+| 2026-06-03 | HIMS | BUY | $27.51 | N/A | 7/10 | Active | - | Why: Down 33.3% with no clear catalyst for reversal. Telehealth/GLP-1 competitiv |
+| 2026-06-03 | NBIS | BUY | $251.68 | N/A | 8/10 | Active | - | Why: Up +371.7% — this is your best performer. Nebius is the pure-play AI cloud  |
+| 2026-06-03 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CrowdStrike reported earnings today after the bell. The cybersecurity moat  |
+| 2026-06-03 | MU | BUY | $1079.57 | $9.40 | 7/10 | Active | - | Why: Micron reports June 24 — 21 days out. You already own 7.4% — this is about  |
+| 2026-06-03 | GLD | BUY | $407.87 | N/A | 6/10 | Active | - | Why: Gold is your portfolio's missing hedge. VIX at 23.5, defensive rotation und |
