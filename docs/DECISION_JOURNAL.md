@@ -394,3 +394,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-02 | REDUCE | BUY | $152.17 | N/A | 5/10 | Active | - | Why: PLTR is up 143% and represents 27.7% of your portfolio. This is no longer a |
 | 2026-06-02 | HIMS | BUY | $27.51 | N/A | 8/10 | Active | - | Why: HIMS is the poster child for thesis erosion. It was built on cheap GLP-1 co |
 | 2026-06-03 | GLD | BUY | N/A | $10.00 | 10/10 | Active | - | Type: ETF | Conviction: 5/10 | Position: NEW |
+| 2026-06-03 | TRIM | BUY | $152.17 | N/A | 9/10 | Active | - | Why: I'm not saying Palantir is a bad company — it's arguably the best pure-play |
