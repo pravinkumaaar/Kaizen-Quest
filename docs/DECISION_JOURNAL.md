@@ -439,3 +439,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: CrowdStrike reported earnings yesterday. If the stock sold off on a "sell t |
 | 2026-06-04 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 100% US equities, 62% in 5 AI names. You have zero intern |
 | 2026-06-04 | PLTR | BUY | $141.70 | N/A | 7/10 | Active | - | Why: Palantir is your largest position at 27% of portfolio — that's a single-sto |
+| 2026-06-04 | PLTR | BUY | $141.70 | $20.00 | 7/10 | Active | - | Why: I know this is your baby at +126% gains and 27% of portfolio. But let me pu |
