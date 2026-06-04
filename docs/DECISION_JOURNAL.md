@@ -434,3 +434,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | VRT | BUY | $321.51 | N/A | 8/10 | Active | - | Why: VRT is the picks-and-shovels play on AI that most investors miss. Every AI  |
 | 2026-06-04 | DOCU | BUY | N/A | N/A | 7/10 | Active | - | Why: DocuSign just reported earnings today. The stock has been crushed over the  |
 | 2026-06-04 | TRIM | BUY | $141.65 | N/A | 9/10 | Active | - | Why: This is not a bearish call — PLTR is your best position (+126%) and a core  |
+| 2026-06-04 | MU | BUY | $996.00 | N/A | 7/10 | Active | - | Why: Micron reports June 24. The stock just dropped 8% on the day, suggesting th |
+| 2026-06-04 | VRT | BUY | $323.92 | N/A | 8/10 | Active | - | Why: Vertiv is the picks-and-shovels play of the AI infrastructure buildout — th |
+| 2026-06-04 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: CrowdStrike reported earnings yesterday. If the stock sold off on a "sell t |
+| 2026-06-04 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 100% US equities, 62% in 5 AI names. You have zero intern |
+| 2026-06-04 | PLTR | BUY | $141.70 | N/A | 7/10 | Active | - | Why: Palantir is your largest position at 27% of portfolio — that's a single-sto |
