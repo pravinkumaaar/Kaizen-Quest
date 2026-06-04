@@ -419,3 +419,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | MU | BUY | $1079.57 | $1250.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
 | 2026-06-04 | PLTR | BUY | $142.20 | $20.00 | 9/10 | Active | - | Why: This isn't about the thesis breaking — Palantir's AI platform adoption is r |
 | 2026-06-04 | SLV | BUY | $66.21 | $85.00 | 7/10 | Active | - | Why: Your portfolio has zero commodity exposure. In a world of Middle East tensi |
+| 2026-06-04 | AVGO | BUY | $479.23 | $620.00 | 9/10 | Active | - | Why: AVGO is the *other* infrastructure monopoly alongside ASML. It controls cus |
+| 2026-06-04 | EWY | BUY | N/A | $90.00 | 8/10 | Active | - | Why: South Korea is the *second most important country* for AI infrastructure af |
+| 2026-06-04 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: Your portfolio is 100% long tech/AI with zero hedging. Gold is at structura |
+| 2026-06-04 | CRDO | BUY | N/A | $165.00 | 8/10 | Active | - | Why: Credo makes the *active electrical cables (AECs)* and SerDes chips that con |
+| 2026-06-04 | MU | BUY | $1079.57 | $1350.00 | 8/10 | Active | - | Why: You already own MU at 7.4% of portfolio. This is an *ADD* recommendation ah |
