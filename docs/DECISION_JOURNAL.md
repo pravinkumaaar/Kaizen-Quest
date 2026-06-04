@@ -414,3 +414,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-03 | GLD | BUY | N/A | $340.00 | 7/10 | Active | - | Why: Your portfolio has ZERO commodity exposure. Gold is the ultimate portfolio  |
 | 2026-06-03 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: India is the most compelling structural growth story in emerging markets —  |
 | 2026-06-03 | CRWD | BUY | N/A | $580.00 | 7/10 | Active | - | Why: CrowdStrike reported earnings today (June 3, AMC). The cybersecurity sector |
+| 2026-06-04 | AVGO | BUY | $481.57 | $540.00 | 7/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that doesn't get the NVDA hy |
+| 2026-06-04 | MU | BUY | $1079.57 | $1250.00 | 7/10 | Active | - | Why: Micron is the purest play on the memory supercycle, and the setup into June |
