@@ -424,3 +424,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: Your portfolio is 100% long tech/AI with zero hedging. Gold is at structura |
 | 2026-06-04 | CRDO | BUY | N/A | $165.00 | 8/10 | Active | - | Why: Credo makes the *active electrical cables (AECs)* and SerDes chips that con |
 | 2026-06-04 | MU | BUY | $1079.57 | $1350.00 | 8/10 | Active | - | Why: You already own MU at 7.4% of portfolio. This is an *ADD* recommendation ah |
+| 2026-06-04 | RDDT | BUY | N/A | N/A | 7/10 | Active | - | Why: Reddit just signed a landmark licensing deal with Google — this is the "oil |
+| 2026-06-04 | ICLR | BUY | N/A | N/A | 7/10 | Active | - | Why: ICON reported earnings June 2, and the stock likely pulled back or gyrated. |
+| 2026-06-04 | MU | BUY | $993.82 | N/A | 7/10 | Active | - | Why: You already own 6.9% of your portfolio in MU. Today's -7.94% is a panic sel |
+| 2026-06-04 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure. South Korea is the most direct way to |
