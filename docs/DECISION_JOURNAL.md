@@ -428,3 +428,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | ICLR | BUY | N/A | N/A | 7/10 | Active | - | Why: ICON reported earnings June 2, and the stock likely pulled back or gyrated. |
 | 2026-06-04 | MU | BUY | $993.82 | N/A | 7/10 | Active | - | Why: You already own 6.9% of your portfolio in MU. Today's -7.94% is a panic sel |
 | 2026-06-04 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure. South Korea is the most direct way to |
+| 2026-06-04 | MU | BUY | $1005.82 | $1250.00 | 6/10 | Active | - | Why: You hold MU at 6.9% of portfolio with +164.9% unrealized gains. Down ~7% on |
