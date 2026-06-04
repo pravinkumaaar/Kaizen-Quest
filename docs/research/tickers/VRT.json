@@ -1,29 +1,29 @@
 {
   "ticker": "VRT",
   "first_researched": "2026-05-22T16:39:38.400829",
-  "last_researched": "2026-06-03T17:10:25.038057",
-  "research_count": 21,
+  "last_researched": "2026-06-04T10:13:59.409670",
+  "research_count": 22,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 334.49,
+  "last_price": 331.44,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-03T17:10:25.038057"
+      "last_verified": "2026-06-04T10:13:59.409670"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-03T17:10:25.038057"
+      "last_verified": "2026-06-04T10:13:59.409670"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-03T04:55:51.502136"
+      "last_verified": "2026-06-04T10:13:59.409670"
     }
   ],
   "facts": [
@@ -98,47 +98,56 @@
       "first_verified": "2026-06-03T17:09:44.029276",
       "last_verified": "2026-06-03T17:10:25.038057",
       "verification_count": 1
+    },
+    {
+      "claim": "VRT trading at $331.44 (-0.91%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-06-04T10:13:15.370431",
+      "last_verified": "2026-06-04T10:13:59.409670",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "VRT",
-    "timestamp": "2026-06-03 17:09:54",
+    "timestamp": "2026-06-04 10:13:27",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "sector_rotation",
-    "negative_news",
-    "comps_analysis",
+    "institutional",
+    "macro_rotation",
+    "sector_performance",
+    "earnings_history",
+    "insider_trades",
+    "cashflow",
     "financial_ratios",
-    "insider_sentiment",
     "price_target",
+    "aggregate_indicators",
+    "earnings_momentum",
+    "competitive_landscape",
+    "dcf",
+    "analyst_estimates",
+    "esg",
+    "market_sentiment",
+    "negative_news",
+    "treasury_rates",
+    "balance_sheet",
+    "valuation_multiples",
+    "congressional",
+    "recommendation_trends",
+    "sector_rotation",
+    "insider_trades_contrarian",
+    "comps_analysis",
+    "insider_sentiment",
     "supply_chain",
     "risk_assessment",
-    "income_statement",
-    "cashflow",
-    "earnings_history",
-    "analyst_estimates",
-    "earnings_momentum",
-    "balance_sheet",
-    "institutional",
     "technical_indicators",
-    "recommendation_trends",
-    "industry_pe",
-    "sector_performance",
-    "treasury_rates",
-    "insider_trades",
-    "dcf",
-    "market_sentiment",
-    "congressional",
-    "competitive_landscape",
-    "insider_trades_contrarian",
-    "esg",
-    "valuation_multiples",
-    "macro_rotation",
-    "aggregate_indicators"
+    "income_statement",
+    "industry_pe"
   ],
   "research_gaps": [],
   "contrarian_signals": []
