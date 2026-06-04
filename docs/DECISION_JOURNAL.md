@@ -433,3 +433,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. India is the only EM with a structura |
 | 2026-06-04 | VRT | BUY | $321.51 | N/A | 8/10 | Active | - | Why: VRT is the picks-and-shovels play on AI that most investors miss. Every AI  |
 | 2026-06-04 | DOCU | BUY | N/A | N/A | 7/10 | Active | - | Why: DocuSign just reported earnings today. The stock has been crushed over the  |
+| 2026-06-04 | TRIM | BUY | $141.65 | N/A | 9/10 | Active | - | Why: This is not a bearish call — PLTR is your best position (+126%) and a core  |
