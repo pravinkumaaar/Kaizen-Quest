@@ -416,3 +416,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-03 | CRWD | BUY | N/A | $580.00 | 7/10 | Active | - | Why: CrowdStrike reported earnings today (June 3, AMC). The cybersecurity sector |
 | 2026-06-04 | AVGO | BUY | $481.57 | $540.00 | 7/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that doesn't get the NVDA hy |
 | 2026-06-04 | MU | BUY | $1079.57 | $1250.00 | 7/10 | Active | - | Why: Micron is the purest play on the memory supercycle, and the setup into June |
+| 2026-06-04 | MU | BUY | $1079.57 | $1250.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-06-04 | PLTR | BUY | $142.20 | $20.00 | 9/10 | Active | - | Why: This isn't about the thesis breaking — Palantir's AI platform adoption is r |
+| 2026-06-04 | SLV | BUY | $66.21 | $85.00 | 7/10 | Active | - | Why: Your portfolio has zero commodity exposure. In a world of Middle East tensi |
