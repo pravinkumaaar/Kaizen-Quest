@@ -1,29 +1,29 @@
 {
   "ticker": "TEM",
   "first_researched": "2026-05-22T14:47:56.790842",
-  "last_researched": "2026-06-04T17:54:35.514793",
-  "research_count": 23,
+  "last_researched": "2026-06-05T10:12:39.463011",
+  "research_count": 24,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 47.51,
+  "last_price": 52.26,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-04T17:54:35.514793"
+      "last_verified": "2026-06-05T10:12:39.463011"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-04T17:54:35.514793"
+      "last_verified": "2026-06-05T10:12:39.463011"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-04T04:58:04.603048"
+      "last_verified": "2026-06-05T10:12:39.463011"
     }
   ],
   "facts": [
@@ -98,47 +98,56 @@
       "first_verified": "2026-06-04T04:55:29.677836",
       "last_verified": "2026-06-04T04:58:04.603048",
       "verification_count": 1
+    },
+    {
+      "claim": "TEM trading at $52.26 (+10.00%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-06-05T10:10:42.389396",
+      "last_verified": "2026-06-05T10:12:39.463011",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "TEM",
-    "timestamp": "2026-06-04 17:54:07",
+    "timestamp": "2026-06-05 10:12:12",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "balance_sheet",
     "dcf",
-    "earnings_momentum",
-    "valuation_multiples",
-    "competitive_landscape",
-    "risk_assessment",
-    "comps_analysis",
-    "esg",
     "market_sentiment",
-    "technical_indicators",
-    "sector_rotation",
-    "industry_pe",
-    "sector_performance",
-    "negative_news",
-    "congressional",
-    "income_statement",
+    "esg",
     "price_target",
-    "macro_rotation",
-    "supply_chain",
     "insider_trades",
-    "earnings_history",
-    "cashflow",
     "analyst_estimates",
-    "insider_sentiment",
-    "financial_ratios",
+    "comps_analysis",
     "recommendation_trends",
-    "aggregate_indicators",
     "institutional",
+    "income_statement",
+    "earnings_history",
+    "risk_assessment",
     "insider_trades_contrarian",
-    "treasury_rates"
+    "competitive_landscape",
+    "treasury_rates",
+    "negative_news",
+    "financial_ratios",
+    "aggregate_indicators",
+    "balance_sheet",
+    "earnings_momentum",
+    "industry_pe",
+    "macro_rotation",
+    "sector_performance",
+    "sector_rotation",
+    "supply_chain",
+    "congressional",
+    "insider_sentiment",
+    "valuation_multiples",
+    "technical_indicators",
+    "cashflow"
   ],
   "research_gaps": [],
   "contrarian_signals": []
