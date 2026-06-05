@@ -445,3 +445,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-05 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure in a 67-stock portfolio. That's a blin |
 | 2026-06-05 | VRT | BUY | $323.92 | $390.00 | 7/10 | Active | - | Why: Vertiv is the most underappreciated AI infrastructure play in your portfoli |
 | 2026-06-05 | NBIS | BUY | $259.67 | $330.00 | 7/10 | Active | - | Why: Nebius is the "European AI infrastructure" play — a GPU cloud company benef |
+| 2026-06-05 | PLTR | BUY | $137.82 | N/A | 9/10 | Active | - | Why: 28% portfolio concentration creates extreme single-position risk. 120%+ gai |
+| 2026-06-05 | ORCL | BUY | $52.30 | $62.00 | 7/10 | Active | - | Why: Oracle's database/cloud infrastructure is foundational for AI deployments.  |
+| 2026-06-05 | CHWY | BUY | $45.50 | $55.00 | 6/10 | Active | - | Why: Pet humanization trend is recession-resistant. E-commerce model thriving. E |
+| 2026-06-05 | GLD | BUY | $185.20 | $195.00 | 6/10 | Active | - | Why: Gold provides asymmetric protection if tech bubble deflates. Portfolio 62.5 |
+| 2026-06-05 | NVDA | BUY | $8.50 | $18.50 | 8/10 | Active | - | Why: Semiconductor supercycle intact. Options provide defined risk with 30-90 da |
