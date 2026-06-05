@@ -440,3 +440,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-04 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 100% US equities, 62% in 5 AI names. You have zero intern |
 | 2026-06-04 | PLTR | BUY | $141.70 | N/A | 7/10 | Active | - | Why: Palantir is your largest position at 27% of portfolio — that's a single-sto |
 | 2026-06-04 | PLTR | BUY | $141.70 | $20.00 | 7/10 | Active | - | Why: I know this is your baby at +126% gains and 27% of portfolio. But let me pu |
+| 2026-06-05 | AVGO | BUY | $418.91 | $490.00 | 8/10 | Active | - | Why: Broadcom just got hit with a baseball bat despite strong fundamentals. The  |
+| 2026-06-05 | MU | BUY | $996.00 | N/A | 7/10 | Active | - | Why: Micron reports June 24 — 19 days away. The HBM thesis is intact, but you're |
+| 2026-06-05 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure in a 67-stock portfolio. That's a blin |
+| 2026-06-05 | VRT | BUY | $323.92 | $390.00 | 7/10 | Active | - | Why: Vertiv is the most underappreciated AI infrastructure play in your portfoli |
