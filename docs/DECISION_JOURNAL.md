@@ -444,3 +444,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-05 | MU | BUY | $996.00 | N/A | 7/10 | Active | - | Why: Micron reports June 24 — 19 days away. The HBM thesis is intact, but you're |
 | 2026-06-05 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure in a 67-stock portfolio. That's a blin |
 | 2026-06-05 | VRT | BUY | $323.92 | $390.00 | 7/10 | Active | - | Why: Vertiv is the most underappreciated AI infrastructure play in your portfoli |
+| 2026-06-05 | NBIS | BUY | $259.67 | $330.00 | 7/10 | Active | - | Why: Nebius is the "European AI infrastructure" play — a GPU cloud company benef |
