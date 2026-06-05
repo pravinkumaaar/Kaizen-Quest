@@ -450,3 +450,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-05 | CHWY | BUY | $45.50 | $55.00 | 6/10 | Active | - | Why: Pet humanization trend is recession-resistant. E-commerce model thriving. E |
 | 2026-06-05 | GLD | BUY | $185.20 | $195.00 | 6/10 | Active | - | Why: Gold provides asymmetric protection if tech bubble deflates. Portfolio 62.5 |
 | 2026-06-05 | NVDA | BUY | $8.50 | $18.50 | 8/10 | Active | - | Why: Semiconductor supercycle intact. Options provide defined risk with 30-90 da |
+| 2026-06-05 | ARM | BUY | $65.42 | $95.00 | 8/10 | Active | - | Why: ARM's CPU/GPU architectures power 95% of smartphones and are expanding into |
+| 2026-06-05 | PLTR | BUY | $4.20 | $85.00 | 10/10 | Active | - | Current Position: 28% of portfolio ($70,284 of $249,587) |
