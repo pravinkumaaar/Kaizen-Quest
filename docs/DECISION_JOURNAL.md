@@ -464,3 +464,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-06 | CASH | BUY | $1.00 | N/A | 9/10 | Active | - | Why: This is the most important recommendation I'll make today. Your portfolio i |
 | 2026-06-06 | GLD | BUY | N/A | $375.00 | 6/10 | Active | - | Why: SLV (silver) is down 8% today and is in your portfolio as a watchlist item. |
 | 2026-06-06 | PLTR | BUY | $135.53 | N/A | 8/10 | Active | - | Why: Palantir is your largest position at 28.1% of portfolio. It's down 4.35% to |
+| 2026-06-06 | MU | BUY | $864.01 | N/A | 8/10 | Active | - | Why: Micron reports June 24 (18 days). HBM3E demand from AI accelerators is stru |
+| 2026-06-06 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | Why: Broadcom just reported earnings (June 3). The stock pulled back on "sell th |
+| 2026-06-06 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US tech. That's a concentrated bet on one country, o |
+| 2026-06-06 | PLTR | BUY | $135.53 | N/A | 9/10 | Active | - | Why: You're at 28.1% in one name. That's not investing — that's a leveraged bet. |
+| 2026-06-06 | CASH | BUY | N/A | N/A | 7/10 | Active | - | Why: June is seasonally weak. You have 27 losing positions dragging on returns.  |
