@@ -469,3 +469,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-06 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US tech. That's a concentrated bet on one country, o |
 | 2026-06-06 | PLTR | BUY | $135.53 | N/A | 9/10 | Active | - | Why: You're at 28.1% in one name. That's not investing — that's a leveraged bet. |
 | 2026-06-06 | CASH | BUY | N/A | N/A | 7/10 | Active | - | Why: June is seasonally weak. You have 27 losing positions dragging on returns.  |
+| 2026-06-06 | GLD | BUY | $396.26 | $440.00 | 7/10 | Active | - | Why: Gold is the ultimate hedge in a market that's showing classic risk-off sign |
+| 2026-06-06 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: South Korea is the "stealth AI play" most US investors ignore. Samsung and  |
+| 2026-06-06 | INDA | BUY | N/A | $65.00 | 8/10 | Active | - | Why: India is the most compelling demographic story in global markets for the ne |
+| 2026-06-06 | VRT | BUY | $300.53 | $375.00 | 8/10 | Active | - | Why: You already own VRT and it's +120% unrealized. So why add? Because VRT is t |
+| 2026-06-06 | ORCL | BUY | N/A | $210.00 | 6/10 | Active | - | Why: ORCL reports earnings in 4 days (June 10, after market). Oracle has been on |
