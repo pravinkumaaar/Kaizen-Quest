@@ -3,8 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **VRT** | $300.51 | $425.00 | 8/10 |  Active  |  $300.51  |  +0.0%  | Medium — 3-12 months for the primary thesis to play out; LEAPS held 12-18 months. | Watchlist |
-| 2 | **CCJ** | Market | $2.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Long — 1-3 years. This is a structural supply-demand imbalance play. | Watchlist |
+| 1 | **MU** | $864.01 | $1050.00 | 7/10 |  Active  |  $864.01  |  +0.0%  | Swing to Medium (2-6 weeks through earnings, then reassess) | Watchlist |
+| 2 | **VRT** | $300.51 | $400.00 | 7/10 |  Active  |  $300.51  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 3 | **CASH** | $1.00 | TBD | 9/10 |  Active  |  $1.00  |  +0.0%  | 2-8 weeks | Watchlist |
+| 4 | **GLD** | Market | $375.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
+| 5 | **PLTR** | $135.53 | TBD | 8/10 |  Active  |  $135.53  |  +0.0%  | Long (1-3 years) — but manage the position size actively | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

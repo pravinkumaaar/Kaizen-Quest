@@ -459,3 +459,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-06 | RR | BUY | $2.40 | N/A | 7/10 | Active | - | Why: You're down -14.4% on a position that's been in a persistent downtrend. RR  |
 | 2026-06-06 | VRT | BUY | $300.51 | $425.00 | 8/10 | Active | - | Why: Vertiv picks up yesterday's notes on liquid cooling with the name left blan |
 | 2026-06-06 | CCJ | BUY | N/A | $2.00 | 8/10 | Active | - | Why: You have zero energy exposure and the macro has never been more bullish for |
+| 2026-06-06 | MU | BUY | $864.01 | $1050.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM3E demand is stru |
+| 2026-06-06 | VRT | BUY | $300.51 | $400.00 | 7/10 | Active | - | Why: Vertiv is the unsexy backbone of the AI revolution — they make the cooling  |
+| 2026-06-06 | CASH | BUY | $1.00 | N/A | 9/10 | Active | - | Why: This is the most important recommendation I'll make today. Your portfolio i |
+| 2026-06-06 | GLD | BUY | N/A | $375.00 | 6/10 | Active | - | Why: SLV (silver) is down 8% today and is in your portfolio as a watchlist item. |
+| 2026-06-06 | PLTR | BUY | $135.53 | N/A | 8/10 | Active | - | Why: Palantir is your largest position at 28.1% of portfolio. It's down 4.35% to |
