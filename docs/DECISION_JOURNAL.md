@@ -457,3 +457,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-06 | VRT | BUY | $300.51 | $400.00 | 8/10 | Active | - | Why: Vertiv is the "infrastructure backbone" play of AI that most investors over |
 | 2026-06-06 | GLD | BUY | $396.24 | $440.00 | 6/10 | Active | - | Why: You have ZERO commodity/precious metals exposure in a portfolio that's 100% |
 | 2026-06-06 | RR | BUY | $2.40 | N/A | 7/10 | Active | - | Why: You're down -14.4% on a position that's been in a persistent downtrend. RR  |
+| 2026-06-06 | VRT | BUY | $300.51 | $425.00 | 8/10 | Active | - | Why: Vertiv picks up yesterday's notes on liquid cooling with the name left blan |
+| 2026-06-06 | CCJ | BUY | N/A | $2.00 | 8/10 | Active | - | Why: You have zero energy exposure and the macro has never been more bullish for |
