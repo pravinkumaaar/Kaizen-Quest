@@ -474,3 +474,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-06 | INDA | BUY | N/A | $65.00 | 8/10 | Active | - | Why: India is the most compelling demographic story in global markets for the ne |
 | 2026-06-06 | VRT | BUY | $300.53 | $375.00 | 8/10 | Active | - | Why: You already own VRT and it's +120% unrealized. So why add? Because VRT is t |
 | 2026-06-06 | ORCL | BUY | N/A | $210.00 | 6/10 | Active | - | Why: ORCL reports earnings in 4 days (June 10, after market). Oracle has been on |
+| 2026-06-06 | MU | BUY | $864.01 | N/A | 7/10 | Active | - | Why: MU is your 4th largest position (6.4%) and reports earnings in 18 days (Jun |
+| 2026-06-06 | CASH | BUY | $1.00 | N/A | 9/10 | Active | - | Why: This is the most important recommendation I'll make today. Your portfolio i |
+| 2026-06-06 | ORCL | BUY | N/A | N/A | 6/10 | Active | - | Why: ORCL reports earnings in 4 days (June 10 AMC). This is a high-quality name  |
+| 2026-06-06 | GLD | BUY | $396.26 | N/A | 7/10 | Active | - | Why: Gold is selling off in a liquidity crisis — when margin calls hit, everythi |
+| 2026-06-06 | RR | BUY | $2.41 | N/A | 8/10 | Active | - | Why: This is a broken thesis. RR is down -14.2% from your cost basis and just dr |
