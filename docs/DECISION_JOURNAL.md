@@ -452,3 +452,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-05 | NVDA | BUY | $8.50 | $18.50 | 8/10 | Active | - | Why: Semiconductor supercycle intact. Options provide defined risk with 30-90 da |
 | 2026-06-05 | ARM | BUY | $65.42 | $95.00 | 8/10 | Active | - | Why: ARM's CPU/GPU architectures power 95% of smartphones and are expanding into |
 | 2026-06-05 | PLTR | BUY | $4.20 | $85.00 | 10/10 | Active | - | Current Position: 28% of portfolio ($70,284 of $249,587) |
+| 2026-06-06 | NVDA | BUY | $205.10 | $275.00 | 8/10 | Active | - | Why: NVIDIA is the "picks and shovels" play of AI. Today's -6.20% drop is a tech |
+| 2026-06-06 | MU | BUY | $864.01 | $1050.00 | 7/10 | Active | - | Why: Micron reports earnings June 24 (18 days). This is the memory cycle play —  |
+| 2026-06-06 | VRT | BUY | $300.51 | $400.00 | 8/10 | Active | - | Why: Vertiv is the "infrastructure backbone" play of AI that most investors over |
+| 2026-06-06 | GLD | BUY | $396.24 | $440.00 | 6/10 | Active | - | Why: You have ZERO commodity/precious metals exposure in a portfolio that's 100% |
+| 2026-06-06 | RR | BUY | $2.40 | N/A | 7/10 | Active | - | Why: You're down -14.4% on a position that's been in a persistent downtrend. RR  |
