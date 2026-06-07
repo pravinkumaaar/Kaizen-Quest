@@ -3,8 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **ADD** | $864.01 | $980.00 | 7/10 |  Active  |  $864.01  |  +0.0%  | Swing, 17 days (through earnings) | Watchlist |
-| 2 | **ADD** | $385.73 | $470.00 | 8/10 |  Active  |  $385.73  |  +0.0%  | Swing to medium term, 65 days | Watchlist |
+| 1 | **VRT** | $300.51 | $375.00 | 8/10 |  Active  |  $300.51  |  +0.0%  | Swing to Medium (2-8 weeks for recovery trade) | Watchlist |
+| 2 | **GLD** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing (2-4 weeks, reassess based on geopolitical developments) | Watchlist |
+| 3 | **PLTR** | $135.53 | TBD | 7/10 |  Active  |  $135.53  |  +0.0%  | Long term (but trim on strength) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
