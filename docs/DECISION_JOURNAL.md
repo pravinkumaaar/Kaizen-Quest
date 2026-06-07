@@ -482,3 +482,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-07 | MU | BUY | $864.01 | $1050.00 | 8/10 | Active | - | Why: |
 | 2026-06-07 | HIMS | BUY | $26.19 | N/A | 9/10 | Active | - | Type/SELL: Stock @ $26.19 (-6.50% today, -36.5% from cost) |
 | 2026-06-07 | SUPA | BUY | $300.51 | $400.00 | 8/10 | Active | - |  |
+| 2026-06-07 | ADD | BUY | $864.01 | $980.00 | 7/10 | Active | - | Why: MU dropped 13.25% in a single day despite no company-specific bad news — it |
+| 2026-06-07 | ADD | BUY | $385.73 | $470.00 | 8/10 | Active | - | Why: AVGO is your best-positioned AI infrastructure play behind NVDA, and today' |
