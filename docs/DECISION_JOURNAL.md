@@ -487,3 +487,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-07 | VRT | BUY | $300.51 | $375.00 | 8/10 | Active | - | Why: Vertiv is the backbone of AI data center infrastructure — cooling, power di |
 | 2026-06-07 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Gold is the obvious hedge right now. U.S.-Iran direct conflict = safe haven |
 | 2026-06-07 | PLTR | BUY | $135.53 | N/A | 7/10 | Active | - | Why: PLTR is your largest position at 28.1% of portfolio — that's dangerously co |
+| 2026-06-07 | NVDA | BUY | N/A | $260.00 | 8/10 | Active | - | THESIS: The undisputed king of AI infrastructure just got a 6% haircut on geopol |
+| 2026-06-07 | PLTR | BUY | N/A | N/A | 7/10 | Active | - | THESIS: PLTR at 28.1% of portfolio is dangerously concentrated even if the busin |
+| 2026-06-07 | VRT | BUY | N/A | $375.00 | 7/10 | Active | - | THESIS: Vertiv is the unsexy plumbing of AI — power, cooling, and infrastructure |
