@@ -479,3 +479,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-06 | ORCL | BUY | N/A | N/A | 6/10 | Active | - | Why: ORCL reports earnings in 4 days (June 10 AMC). This is a high-quality name  |
 | 2026-06-06 | GLD | BUY | $396.26 | N/A | 7/10 | Active | - | Why: Gold is selling off in a liquidity crisis — when margin calls hit, everythi |
 | 2026-06-06 | RR | BUY | $2.41 | N/A | 8/10 | Active | - | Why: This is a broken thesis. RR is down -14.2% from your cost basis and just dr |
+| 2026-06-07 | MU | BUY | $864.01 | $1050.00 | 8/10 | Active | - | Why: |
+| 2026-06-07 | HIMS | BUY | $26.19 | N/A | 9/10 | Active | - | Type/SELL: Stock @ $26.19 (-6.50% today, -36.5% from cost) |
+| 2026-06-07 | SUPA | BUY | $300.51 | $400.00 | 8/10 | Active | - |  |
