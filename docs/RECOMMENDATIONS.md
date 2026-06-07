@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NVDA** | Market | $260.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Swing-to-Medium (3-6 months) | Watchlist |
-| 2 | **PLTR** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-2 years) on remaining position | Watchlist |
-| 3 | **VRT** | Market | $375.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing-to-Medium (3-9 months) | Watchlist |
+| 1 | **MU** | $864.03 | $1050.00 | 8/10 |  Active  |  $864.03  |  +0.0%  | Swing (2-3 weeks, through earnings) | Watchlist |
+| 2 | **GLD** | Market | $360.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 months) + permanent hedge allocation | Watchlist |
+| 3 | **FCX** | Market | $80.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

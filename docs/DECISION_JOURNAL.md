@@ -490,3 +490,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-07 | NVDA | BUY | N/A | $260.00 | 8/10 | Active | - | THESIS: The undisputed king of AI infrastructure just got a 6% haircut on geopol |
 | 2026-06-07 | PLTR | BUY | N/A | N/A | 7/10 | Active | - | THESIS: PLTR at 28.1% of portfolio is dangerously concentrated even if the busin |
 | 2026-06-07 | VRT | BUY | N/A | $375.00 | 7/10 | Active | - | THESIS: Vertiv is the unsexy plumbing of AI — power, cooling, and infrastructure |
+| 2026-06-07 | MU | BUY | $864.03 | $1050.00 | 8/10 | Active | - | Why: Micron reports June 24 (17 days). The memory cycle has turned decisively po |
+| 2026-06-07 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: With 27 losing positions, a concentrated tech portfolio, and a market showi |
+| 2026-06-07 | FCX | BUY | N/A | $80.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI era. Every data center, every EV, every g |
