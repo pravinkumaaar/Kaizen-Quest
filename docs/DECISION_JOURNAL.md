@@ -493,3 +493,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-07 | MU | BUY | $864.03 | $1050.00 | 8/10 | Active | - | Why: Micron reports June 24 (17 days). The memory cycle has turned decisively po |
 | 2026-06-07 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: With 27 losing positions, a concentrated tech portfolio, and a market showi |
 | 2026-06-07 | FCX | BUY | N/A | $80.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI era. Every data center, every EV, every g |
+| 2026-06-07 | TRIM | BUY | $135.53 | $18.00 | 9/10 | Active | - | Why: I love Palantir. The AIP platform is genuinely revolutionary, government +  |

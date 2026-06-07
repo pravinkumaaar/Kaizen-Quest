@@ -3,9 +3,7 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **MU** | $864.03 | $1050.00 | 8/10 |  Active  |  $864.03  |  +0.0%  | Swing (2-3 weeks, through earnings) | Watchlist |
-| 2 | **GLD** | Market | $360.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 months) + permanent hedge allocation | Watchlist |
-| 3 | **FCX** | Market | $80.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 1 | **TRIM** | $135.53 | $18.00 | 9/10 |  Active  |  $135.53  |  +0.0%  | Immediate trim, hold core indefinitely | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
