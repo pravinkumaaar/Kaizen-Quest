@@ -494,3 +494,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-07 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: With 27 losing positions, a concentrated tech portfolio, and a market showi |
 | 2026-06-07 | FCX | BUY | N/A | $80.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI era. Every data center, every EV, every g |
 | 2026-06-07 | TRIM | BUY | $135.53 | $18.00 | 9/10 | Active | - | Why: I love Palantir. The AIP platform is genuinely revolutionary, government +  |
+| 2026-06-08 | MU | BUY | $864.01 | N/A | 8/10 | Active | - | Why: MU just had its单日 worst drubbing (-13.25%) on likely sector-wide semis anxi |
+| 2026-06-08 | ADBE | BUY | N/A | $15.00 | 7/10 | Active | - | Why: ADBE reports in 3 days (June 11 AMC). The stock has been under pressure all |
