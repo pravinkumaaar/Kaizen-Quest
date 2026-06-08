@@ -499,3 +499,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-08 | TSM | BUY | N/A | $270.00 | 8/10 | Active | - | Why: Every AI chip — NVIDIA, AMD, Broadcom, Apple, Qualcomm — is manufactured by |
 | 2026-06-08 | LLY | BUY | N/A | $1050.00 | 8/10 | Active | - | Why: Eli Lilly has what might be the most valuable drug franchise in human histo |
 | 2026-06-08 | EWY | BUY | N/A | $100.00 | 7/10 | Active | - | Why: South Korea is the cheapest major market in the world right now. Samsung an |
+| 2026-06-08 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: You have near-zero commodity/metals exposure. FCX is the world's largest pu |
+| 2026-06-08 | EWY | BUY | N/A | N/A | 8/10 | Active | - | Why: South Korea is the most undervalued major semiconductor economy. Samsung an |
