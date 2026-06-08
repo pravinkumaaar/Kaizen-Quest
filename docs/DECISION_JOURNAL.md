@@ -496,3 +496,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-07 | TRIM | BUY | $135.53 | $18.00 | 9/10 | Active | - | Why: I love Palantir. The AIP platform is genuinely revolutionary, government +  |
 | 2026-06-08 | MU | BUY | $864.01 | N/A | 8/10 | Active | - | Why: MU just had its单日 worst drubbing (-13.25%) on likely sector-wide semis anxi |
 | 2026-06-08 | ADBE | BUY | N/A | $15.00 | 7/10 | Active | - | Why: ADBE reports in 3 days (June 11 AMC). The stock has been under pressure all |
+| 2026-06-08 | TSM | BUY | N/A | $270.00 | 8/10 | Active | - | Why: Every AI chip — NVIDIA, AMD, Broadcom, Apple, Qualcomm — is manufactured by |
+| 2026-06-08 | LLY | BUY | N/A | $1050.00 | 8/10 | Active | - | Why: Eli Lilly has what might be the most valuable drug franchise in human histo |
+| 2026-06-08 | EWY | BUY | N/A | $100.00 | 7/10 | Active | - | Why: South Korea is the cheapest major market in the world right now. Samsung an |
