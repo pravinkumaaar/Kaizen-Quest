@@ -506,3 +506,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-08 | ORCL | BUY | N/A | $210.00 | 6/10 | Active | - | Why: Oracle reports earnings tomorrow after the close. The setup is fascinating: |
 | 2026-06-08 | GLD | BUY | N/A | $360.00 | 6/10 | Active | - | Why: Your portfolio is 100% tech/growth equities. Zero commodities, zero interna |
 | 2026-06-08 | EIDO | BUY | N/A | N/A | 5/10 | Active | - | Why: You have ZERO international exposure. Indonesia is the world's 4th most pop |
+| 2026-06-08 | MU | BUY | $949.28 | $1150.00 | 8/10 | Active | - | Why: Micron is the purest AI infrastructure memory play. HBM3E demand is structu |
+| 2026-06-08 | PLTR | BUY | $136.47 | $170.00 | 7/10 | Active | - | Why: Palantir is 27.9% of your portfolio — that's a single position risk no phil |
+| 2026-06-08 | CRDO | BUY | $222.27 | $295.00 | 8/10 | Active | - | Why: Credo Technology makes high-speed connectivity chips for AI datacenters — t |
+| 2026-06-08 | APLD | BUY | $40.95 | $55.00 | 7/10 | Active | - | Why: Applied Digital builds AI-ready datacenter infrastructure — the physical re |
