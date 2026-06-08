@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-05-22)
+## Current Theme (Week of 2026-06-08)
 
-**📌 Theme:** History Repeats: Lessons from Past Bubbles & Crashes
+**📌 Theme:** Human Longevity & Biohacking - Living Longer, Better
 
-**Duration:** Week of 2026-05-22
+**Duration:** Week of 2026-06-08
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: Tulip Mania 1637 - The First Bubble
-- [ ] Day 2: The Dot-Com Crash 2000 - Tech Hubris
-- [ ] Day 3: The 2008 Financial Crisis - Systemic Risk
-- [ ] Day 4: Crypto Winter 2022 - Modern Manias
-- [ ] Day 5: Pattern Recognition - How to Spot Bubbles Early
-- [ ] Day 6: Survivor Bias - Why We Ignore Lessons
-- [ ] Day 7: Building Anti-Fragile Portfolios - Learning from History
+- [ ] Day 1: Why We Age - The Biology of Aging
+- [ ] Day 2: Senescent Cells & Senolytics - Removing the Damage
+- [ ] Day 3: Cellular Reprogramming - Yamanaka Factors & De-Aging
+- [ ] Day 4: Metabolic Health - Glucose, Insulin, Ketones
+- [ ] Day 5: Sleep, Exercise, Fasting - The Unglamorous Basics
+- [ ] Day 6: Supplements & Biomarkers - What Actually Works
+- [ ] Day 7: Biotech Investing - The Companies Racing to Extend Life
 
 ---
 *New theme rotates each week. Archive your learnings.*

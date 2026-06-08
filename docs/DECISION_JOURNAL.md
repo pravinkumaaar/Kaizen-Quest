@@ -501,3 +501,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-08 | EWY | BUY | N/A | $100.00 | 7/10 | Active | - | Why: South Korea is the cheapest major market in the world right now. Samsung an |
 | 2026-06-08 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: You have near-zero commodity/metals exposure. FCX is the world's largest pu |
 | 2026-06-08 | EWY | BUY | N/A | N/A | 8/10 | Active | - | Why: South Korea is the most undervalued major semiconductor economy. Samsung an |
+| 2026-06-08 | MU | BUY | $949.28 | $1100.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-06-08 | CRDO | BUY | $222.27 | $285.00 | 7/10 | Active | - | Why: While everyone fights over GPU stocks, Credo makes the active electrical ca |
+| 2026-06-08 | ORCL | BUY | N/A | $210.00 | 6/10 | Active | - | Why: Oracle reports earnings tomorrow after the close. The setup is fascinating: |
+| 2026-06-08 | GLD | BUY | N/A | $360.00 | 6/10 | Active | - | Why: Your portfolio is 100% tech/growth equities. Zero commodities, zero interna |
+| 2026-06-08 | EIDO | BUY | N/A | N/A | 5/10 | Active | - | Why: You have ZERO international exposure. Indonesia is the world's 4th most pop |
