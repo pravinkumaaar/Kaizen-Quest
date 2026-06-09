@@ -1,10 +1,11 @@
 {
-  "total_runs": 159,
-  "last_run": "2026-06-09T12:59:49.933650",
+  "total_runs": 160,
+  "last_run": "2026-06-09T16:47:21.460275",
   "last_run_tickers": [
-    "RKLB",
-    "SMCI",
-    "ASTS"
+    "TEM",
+    "PLTR",
+    "SOFI",
+    "BBAI"
   ],
   "research_queue": [],
   "global_facts": {}

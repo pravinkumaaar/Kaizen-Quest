@@ -519,3 +519,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-09 | PLTR | BUY | $136.47 | N/A | 5/10 | Active | - | Sector: AI Software / Government + Commercial |
 | 2026-06-09 | NBIS | BUY | $218.00 | N/A | 7/10 | Active | - | Why: Nebius Group is the pure-play European AI infrastructure play benefiting fr |
 | 2026-06-09 | REDUCE | BUY | $132.48 | $20.00 | 7/10 | Active | - | Why: PLTR is your single largest position at 27.4% — nearly 1 in every 3.6 dolla |
+| 2026-06-09 | VRT | BUY | $280.87 | N/A | 8/10 | Active | - | Horizon: Swing-to-Medium (2-12 months) |
+| 2026-06-09 | ADBE | BUY | N/A | N/A | 7/10 | Active | - | Horizon: Swing-to-Medium (4-16 weeks) |
+| 2026-06-09 | NEM | BUY | N/A | N/A | 7/10 | Active | - | Horizon: Medium-to-Long (6-24 months) |
+| 2026-06-09 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Horizon: Medium (6-18 months) |
