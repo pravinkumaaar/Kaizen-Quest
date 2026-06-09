@@ -518,3 +518,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-09 | AVGO | BUY | $396.60 | $475.00 | 8/10 | Active | - | Sector: Semiconductors / AI Networking + Custom Silicon |
 | 2026-06-09 | PLTR | BUY | $136.47 | N/A | 5/10 | Active | - | Sector: AI Software / Government + Commercial |
 | 2026-06-09 | NBIS | BUY | $218.00 | N/A | 7/10 | Active | - | Why: Nebius Group is the pure-play European AI infrastructure play benefiting fr |
+| 2026-06-09 | REDUCE | BUY | $132.48 | $20.00 | 7/10 | Active | - | Why: PLTR is your single largest position at 27.4% — nearly 1 in every 3.6 dolla |
