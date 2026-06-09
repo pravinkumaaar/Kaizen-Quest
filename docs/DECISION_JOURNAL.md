@@ -512,3 +512,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-08 | APLD | BUY | $40.95 | $55.00 | 7/10 | Active | - | Why: Applied Digital builds AI-ready datacenter infrastructure — the physical re |
 | 2026-06-08 | NVDA | BUY | N/A | N/A | 8/10 | Active | - | Why: You're sitting on a 2x bagger at 12.4% of portfolio. The concentration risk |
 | 2026-06-08 | AVGO | BUY | N/A | $470.00 | 8/10 | Active | - | Why: While NVDA gets the headlines, AVGO is the ONLY company that dominates both |
+| 2026-06-09 | TRIM | BUY | $136.47 | N/A | 9/10 | Active | - | Why: PLTR is your largest position at 27.9% of portfolio with a +117.7% gain. Th |
