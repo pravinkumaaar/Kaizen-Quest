@@ -514,3 +514,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-08 | AVGO | BUY | N/A | $470.00 | 8/10 | Active | - | Why: While NVDA gets the headlines, AVGO is the ONLY company that dominates both |
 | 2026-06-09 | TRIM | BUY | $136.47 | N/A | 9/10 | Active | - | Why: PLTR is your largest position at 27.9% of portfolio with a +117.7% gain. Th |
 | 2026-06-09 | TRIM | BUY | $136.47 | N/A | 9/10 | Active | - | Why: Palantir is your best performer and a legitimate AI leader. But at 27.9% of |
+| 2026-06-09 | MU | BUY | $949.28 | $1150.00 | 7/10 | Active | - | Sector: Semiconductors / AI Memory |
+| 2026-06-09 | AVGO | BUY | $396.60 | $475.00 | 8/10 | Active | - | Sector: Semiconductors / AI Networking + Custom Silicon |
+| 2026-06-09 | PLTR | BUY | $136.47 | N/A | 5/10 | Active | - | Sector: AI Software / Government + Commercial |
