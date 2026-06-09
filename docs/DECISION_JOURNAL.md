@@ -531,3 +531,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-09 | MU | BUY | $935.89 | $1150.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. Every GPU needs HBM  |
 | 2026-06-09 | VRT | BUY | $289.52 | $350.00 | 7/10 | Active | - | Why: Vertiv is the "picks and shovels" play of the AI data center buildout. They |
 | 2026-06-09 | FCX | BUY | N/A | $68.00 | 7/10 | Active | - | Why: This is your commodity/AI infrastructure hedge. Copper is the "new oil" of  |
+| 2026-06-09 | PLTR | BUY | $132.07 | N/A | 8/10 | Active | - | Why: Palantir is a phenomenal company and I believe in the long-term AI/governme |
+| 2026-06-09 | SMCI | BUY | $40.64 | N/A | 7/10 | Active | - | Why: Super Micro Computer is down 7.6% today and only up 3% on cost for you. Thi |
+| 2026-06-09 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | You only have 15 days until MU earnings. Micron is your 4th largest position (7% |
