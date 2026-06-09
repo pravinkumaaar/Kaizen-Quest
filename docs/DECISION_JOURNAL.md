@@ -528,3 +528,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-09 | MU | BUY | $935.89 | N/A | 8/10 | Active | - | Horizon: Medium (3-12 months) |
 | 2026-06-09 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | Why: Micron reports June 24. HBM (High Bandwidth Memory) demand from AI accelera |
 | 2026-06-09 | CASH | BUY | $1.00 | N/A | 8/10 | Active | - | Why: I've analyzed your portfolio, the market environment, and the available opp |
+| 2026-06-09 | MU | BUY | $935.89 | $1150.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. Every GPU needs HBM  |
+| 2026-06-09 | VRT | BUY | $289.52 | $350.00 | 7/10 | Active | - | Why: Vertiv is the "picks and shovels" play of the AI data center buildout. They |
+| 2026-06-09 | FCX | BUY | N/A | $68.00 | 7/10 | Active | - | Why: This is your commodity/AI infrastructure hedge. Copper is the "new oil" of  |
