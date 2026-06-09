@@ -526,3 +526,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-09 | SMCI | BUY | $40.64 | N/A | 7/10 | Active | - | Horizon: Swing to Medium (4-12 weeks) |
 | 2026-06-09 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Horizon: Medium to Long (3-18 months) |
 | 2026-06-09 | MU | BUY | $935.89 | N/A | 8/10 | Active | - | Horizon: Medium (3-12 months) |
+| 2026-06-09 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | Why: Micron reports June 24. HBM (High Bandwidth Memory) demand from AI accelera |
+| 2026-06-09 | CASH | BUY | $1.00 | N/A | 8/10 | Active | - | Why: I've analyzed your portfolio, the market environment, and the available opp |
