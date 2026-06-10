@@ -555,3 +555,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-10 | HIMS | BUY | $27.90 | N/A | 8/10 | Active | - | Why: Hims & Hers is down 32% from your cost basis and the competitive landscape  |
 | 2026-06-10 | AVAV | BUY | N/A | N/A | 8/10 | Active | - | Why: AeroVironment is the US military's primary supplier of small unmanned aeria |
 | 2026-06-10 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure. South Korea is the most direct way to |
+| 2026-06-10 | TRIM | BUY | N/A | $20.00 | 8/10 | Active | - | Thesis: Exceptional company, but 28% portfolio concentration is reckless risk ma |
