@@ -534,3 +534,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-09 | PLTR | BUY | $132.07 | N/A | 8/10 | Active | - | Why: Palantir is a phenomenal company and I believe in the long-term AI/governme |
 | 2026-06-09 | SMCI | BUY | $40.64 | N/A | 7/10 | Active | - | Why: Super Micro Computer is down 7.6% today and only up 3% on cost for you. Thi |
 | 2026-06-09 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | You only have 15 days until MU earnings. Micron is your 4th largest position (7% |
+| 2026-06-10 | PLTR | BUY | $132.07 | N/A | 8/10 | Active | - | Why: Palantir is 27.4% of your portfolio. One position. Down 3.2% on a bad day i |
+| 2026-06-10 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | Why: You have 7% of the portfolio in Micron heading into the most important earn |
+| 2026-06-10 | ADBE | BUY | N/A | $380.00 | 7/10 | Active | - | Why: Adobe reports earnings tomorrow (June 11, amc). Here's why I'm flagging it  |
