@@ -545,3 +545,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-10 | MU | BUY | $891.19 | N/A | 7/10 | Active | - | Why: For the longer-haul investor who wants to avoid earnings timing risk, MU Ja |
 | 2026-06-10 | CRWV | BUY | N/A | N/A | 7/10 | Active | - | Why: CoreWeave is down -13.8% from your cost basis and is a speculative AI cloud |
 | 2026-06-10 | HIMS | BUY | $28.22 | N/A | 4/10 | Active | - | Why: HIMS is down -31.6% from your cost basis. The thesis — telehealth + GLP-1 w |
+| 2026-06-10 | MU | BUY | $935.89 | N/A | 8/10 | Active | - | Thesis: Memory cycle inflection meets AI infrastructure demand, with earnings in |
+| 2026-06-10 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Thesis: South Korea is the "picks and shovels" play of the AI revolution, tradin |
+| 2026-06-10 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Thesis: Gold is the portfolio insurance policy you don't own, and with rates pot |
+| 2026-06-10 | ORCL | BUY | N/A | N/A | 7/10 | Active | - | Thesis: Oracle reports earnings TODAY after the bell, and the setup for a post-e |
+| 2026-06-10 | ADBE | BUY | N/A | $8.50 | 7/10 | Active | - | Thesis: Adobe reports earnings TOMORROW (June 11) after the bell, and the AI mon |
