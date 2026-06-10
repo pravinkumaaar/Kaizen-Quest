@@ -541,3 +541,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-10 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | Why: Micron reports earnings June 24 (14 days). Memory cycle is structurally bul |
 | 2026-06-10 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |
 | 2026-06-10 | RR | BUY | $2.30 | N/A | 8/10 | Active | - | Why: You're down -18.1% on this position. It's 1.5% of portfolio, so the dollar  |
+| 2026-06-10 | MU | BUY | $891.19 | $1025.00 | 8/10 | Active | - | Why: Micron is the purest play on the AI memory cycle. HBM (High Bandwidth Memor |
+| 2026-06-10 | MU | BUY | $891.19 | N/A | 7/10 | Active | - | Why: For the longer-haul investor who wants to avoid earnings timing risk, MU Ja |
+| 2026-06-10 | CRWV | BUY | N/A | N/A | 7/10 | Active | - | Why: CoreWeave is down -13.8% from your cost basis and is a speculative AI cloud |
+| 2026-06-10 | HIMS | BUY | $28.22 | N/A | 4/10 | Active | - | Why: HIMS is down -31.6% from your cost basis. The thesis — telehealth + GLP-1 w |
