@@ -550,3 +550,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-10 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Thesis: Gold is the portfolio insurance policy you don't own, and with rates pot |
 | 2026-06-10 | ORCL | BUY | N/A | N/A | 7/10 | Active | - | Thesis: Oracle reports earnings TODAY after the bell, and the setup for a post-e |
 | 2026-06-10 | ADBE | BUY | N/A | $8.50 | 7/10 | Active | - | Thesis: Adobe reports earnings TOMORROW (June 11) after the bell, and the AI mon |
+| 2026-06-10 | NVDA | BUY | $200.50 | $265.00 | 9/10 | Active | - | Why: NVIDIA is experiencing a sympathy selloff from SMCI's crash and broad marke |
+| 2026-06-10 | MU | BUY | $899.36 | $1050.00 | 7/10 | Active | - | Why: Micron reports June 24 (14 days). HBM demand from NVIDIA is the core driver |
+| 2026-06-10 | HIMS | BUY | $27.90 | N/A | 8/10 | Active | - | Why: Hims & Hers is down 32% from your cost basis and the competitive landscape  |
+| 2026-06-10 | AVAV | BUY | N/A | N/A | 8/10 | Active | - | Why: AeroVironment is the US military's primary supplier of small unmanned aeria |
+| 2026-06-10 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You have zero international exposure. South Korea is the most direct way to |
