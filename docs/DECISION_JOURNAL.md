@@ -537,3 +537,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-10 | PLTR | BUY | $132.07 | N/A | 8/10 | Active | - | Why: Palantir is 27.4% of your portfolio. One position. Down 3.2% on a bad day i |
 | 2026-06-10 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | Why: You have 7% of the portfolio in Micron heading into the most important earn |
 | 2026-06-10 | ADBE | BUY | N/A | $380.00 | 7/10 | Active | - | Why: Adobe reports earnings tomorrow (June 11, amc). Here's why I'm flagging it  |
+| 2026-06-10 | PLTR | BUY | $132.07 | N/A | 9/10 | Active | - | Why: Palantir is your single largest position at 27.6% of portfolio (+110.7% unr |
+| 2026-06-10 | MU | BUY | $935.89 | N/A | 7/10 | Active | - | Why: Micron reports earnings June 24 (14 days). Memory cycle is structurally bul |
+| 2026-06-10 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |
+| 2026-06-10 | RR | BUY | $2.30 | N/A | 8/10 | Active | - | Why: You're down -18.1% on this position. It's 1.5% of portfolio, so the dollar  |
