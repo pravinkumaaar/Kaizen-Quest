@@ -558,3 +558,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-10 | TRIM | BUY | N/A | $20.00 | 8/10 | Active | - | Thesis: Exceptional company, but 28% portfolio concentration is reckless risk ma |
 | 2026-06-11 | MU | BUY | $891.88 | $1050.00 | 7/10 | Active | - | Why: MU reports earnings June 24 (13 days). The stock pulled back 5% today on th |
 | 2026-06-11 | NEW | BUY | $372.10 | $450.00 | 7/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that the market is unfairly  |
+| 2026-06-11 | MU | BUY | $988.74 | $12005.00 | 8/10 | Active | - | Why: Micron is the memory bottleneck play of the AI era. Every GPU needs HBM (Hi |
