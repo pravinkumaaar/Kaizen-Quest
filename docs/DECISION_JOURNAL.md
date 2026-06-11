@@ -564,3 +564,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-11 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US equities. That's a concentrated bet on one countr |
 | 2026-06-11 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: You have ZERO commodity exposure. Gold is the ultimate hedge against the th |
 | 2026-06-11 | PLTR | BUY | $131.08 | N/A | 9/10 | Active | - | Why: This is your best performer (+109.1%) and your largest position (27.1%). Th |
+| 2026-06-11 | MU | BUY | $995.87 | $1250.00 | 7/10 | Active | - | Why: Memory is the bottleneck of the AI revolution, and MU is the only major sta |
+| 2026-06-11 | GLD | BUY | $386.32 | $445.00 | 8/10 | Active | - | Why: Gold ripped +3.13% today while silver exploded +5.48% — this is not noise,  |
+| 2026-06-11 | PLTR | BUY | $131.08 | $18.00 | 9/10 | Active | - | Why: Here's the uncomfortable math: PLTR is 27.1% of your portfolio. That means  |
+| 2026-06-11 | RR | BUY | $2.30 | N/A | 8/10 | Active | - | Why: You're down 18.1% on a speculative robotics position that has no near-term  |
+| 2026-06-11 | ADBE | BUY | N/A | $620.00 | 6/10 | Active | - | Why: Adobe is the "picks and shovels" play of the generative AI content economy. |
