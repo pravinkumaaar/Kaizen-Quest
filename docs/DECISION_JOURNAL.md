@@ -569,3 +569,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-11 | PLTR | BUY | $131.08 | $18.00 | 9/10 | Active | - | Why: Here's the uncomfortable math: PLTR is 27.1% of your portfolio. That means  |
 | 2026-06-11 | RR | BUY | $2.30 | N/A | 8/10 | Active | - | Why: You're down 18.1% on a speculative robotics position that has no near-term  |
 | 2026-06-11 | ADBE | BUY | N/A | $620.00 | 6/10 | Active | - | Why: Adobe is the "picks and shovels" play of the generative AI content economy. |
+| 2026-06-11 | MU | BUY | $995.87 | $1150.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-06-11 | GLD | BUY | $386.32 | $420.00 | 7/10 | Active | - | Why: Gold just broke out to all-time highs and today's +3.13% alongside a risk-o |
+| 2026-06-11 | HIMS | BUY | $28.87 | N/A | 8/10 | Active | - | Why: HIMS has been a value trap. The GLP-1 obesity drug revolution (Novo Nordisk |
+| 2026-06-11 | TEM | BUY | $51.44 | N/A | 7/10 | Active | - | Why: Tempus AI is a precision medicine/data analytics company that sounded revol |
+| 2026-06-11 | PLTR | BUY | $131.08 | N/A | 8/10 | Active | - | Why: Palantir is your single largest position at 27.2% of the portfolio. The AIP |
