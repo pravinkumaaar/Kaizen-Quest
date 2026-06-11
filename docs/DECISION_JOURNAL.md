@@ -559,3 +559,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-11 | MU | BUY | $891.88 | $1050.00 | 7/10 | Active | - | Why: MU reports earnings June 24 (13 days). The stock pulled back 5% today on th |
 | 2026-06-11 | NEW | BUY | $372.10 | $450.00 | 7/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that the market is unfairly  |
 | 2026-06-11 | MU | BUY | $988.74 | $12005.00 | 8/10 | Active | - | Why: Micron is the memory bottleneck play of the AI era. Every GPU needs HBM (Hi |
+| 2026-06-11 | MU | BUY | $995.87 | N/A | 7/10 | Active | - | Why: MU is your best performer (+162.8%) and has a catalyst — earnings June 24.  |
+| 2026-06-11 | VST | BUY | N/A | N/A | 8/10 | Active | - | Why: Oracle's $40B AI capex announcement is the single most important signal for |
+| 2026-06-11 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US equities. That's a concentrated bet on one countr |
+| 2026-06-11 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: You have ZERO commodity exposure. Gold is the ultimate hedge against the th |
+| 2026-06-11 | PLTR | BUY | $131.08 | N/A | 9/10 | Active | - | Why: This is your best performer (+109.1%) and your largest position (27.1%). Th |
