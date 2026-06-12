@@ -578,3 +578,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-12 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: You have zero commodity exposure. Gold is making all-time highs and has str |
 | 2026-06-12 | MU | BUY | $1000.31 | N/A | 8/10 | Active | - | Why: MU reports June 24 (12 days). You're sitting on +164% gains at 7.4% of port |
 | 2026-06-12 | NBIS | BUY | $237.57 | N/A | 7/10 | Active | - | Why: Neuberger Berman (wait — NBIS is Nebius Group, the European AI cloud infras |
+| 2026-06-12 | MU | BUY | $995.23 | N/A | 7/10 | Active | - | Why: MU reports earnings June 24 (5 trading days). You're already up 162.6% — do |
+| 2026-06-12 | AVAV | BUY | N/A | N/A | 8/10 | Active | - | Why: AVAV reports earnings June 30 (18 calendar days). Autonomous drones are no  |
+| 2026-06-12 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodity or precious metal exposure in a portfolio of 67 sto |
+| 2026-06-12 | CCL | BUY | N/A | N/A | 7/10 | Active | - | Why: CCL reports earnings June 22 (10 calendar days). Cruise stocks are under pr |
