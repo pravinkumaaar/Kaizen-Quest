@@ -582,3 +582,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-12 | AVAV | BUY | N/A | N/A | 8/10 | Active | - | Why: AVAV reports earnings June 30 (18 calendar days). Autonomous drones are no  |
 | 2026-06-12 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodity or precious metal exposure in a portfolio of 67 sto |
 | 2026-06-12 | CCL | BUY | N/A | N/A | 7/10 | Active | - | Why: CCL reports earnings June 22 (10 calendar days). Cruise stocks are under pr |
+| 2026-06-12 | MU | BUY | $994.42 | $1150.00 | 8/10 | Active | - | Why: Micron reports earnings June 24 (12 days). This is the purest play on the A |
+| 2026-06-12 | VRT | BUY | $301.32 | $375.00 | 8/10 | Active | - | Why: Vertiv is the "picks and shovels" play on AI data centers that actually wor |
+| 2026-06-12 | APLD | BUY | $44.07 | N/A | 5/10 | Active | - | Why: Applied Digital is up 270% for you and rallied 6.3% today. They're an AI da |
