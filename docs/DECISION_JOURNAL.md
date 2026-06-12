@@ -588,3 +588,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-12 | MU | BUY | $981.61 | N/A | 8/10 | Active | - | Why: Micron reports earnings June 24 (12 days). HBM (High Bandwidth Memory) dema |
 | 2026-06-12 | VERTEX | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 90%+ tech. You need a non-correlated asset. Vertex Pharma |
 | 2026-06-12 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Your portfolio has ZERO commodity/precious metal exposure. Gold is at/near  |
+| 2026-06-12 | VRT | BUY | $302.87 | $375.00 | 8/10 | Active | - | Why: Vrt is the "picks and shovels" play of the AI infrastructure buildout. The  |
+| 2026-06-12 | MU | BUY | $981.61 | N/A | 6/10 | Active | - | Why: MU reports earnings June 24 — 12 days away. This is your 4th largest positi |
+| 2026-06-12 | EIDO | BUY | N/A | $29.00 | 7/10 | Active | - | Why: You have zero international exposure. Indonesia is the best combination of  |
+| 2026-06-12 | RR | BUY | $2.13 | N/A | 8/10 | Active | - | Why: RR is down 24.2% from your cost basis and got hammered again today (-7.4%). |
+| 2026-06-12 | GLD | BUY | N/A | $365.00 | 7/10 | Active | - | Why: You have zero commodity/metal exposure. Gold is trading near all-time highs |
