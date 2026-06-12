@@ -576,3 +576,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-11 | PLTR | BUY | $131.08 | N/A | 8/10 | Active | - | Why: Palantir is your single largest position at 27.2% of the portfolio. The AIP |
 | 2026-06-12 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Why: This is your international allocation fix. South Korea is the cheapest majo |
 | 2026-06-12 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: You have zero commodity exposure. Gold is making all-time highs and has str |
+| 2026-06-12 | MU | BUY | $1000.31 | N/A | 8/10 | Active | - | Why: MU reports June 24 (12 days). You're sitting on +164% gains at 7.4% of port |
+| 2026-06-12 | NBIS | BUY | $237.57 | N/A | 7/10 | Active | - | Why: Neuberger Berman (wait — NBIS is Nebius Group, the European AI cloud infras |
