@@ -574,3 +574,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-11 | HIMS | BUY | $28.87 | N/A | 8/10 | Active | - | Why: HIMS has been a value trap. The GLP-1 obesity drug revolution (Novo Nordisk |
 | 2026-06-11 | TEM | BUY | $51.44 | N/A | 7/10 | Active | - | Why: Tempus AI is a precision medicine/data analytics company that sounded revol |
 | 2026-06-11 | PLTR | BUY | $131.08 | N/A | 8/10 | Active | - | Why: Palantir is your single largest position at 27.2% of the portfolio. The AIP |
+| 2026-06-12 | EWY | BUY | N/A | $90.00 | 7/10 | Active | - | Why: This is your international allocation fix. South Korea is the cheapest majo |
+| 2026-06-12 | GLD | BUY | N/A | $360.00 | 7/10 | Active | - | Why: You have zero commodity exposure. Gold is making all-time highs and has str |
