@@ -585,3 +585,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-12 | MU | BUY | $994.42 | $1150.00 | 8/10 | Active | - | Why: Micron reports earnings June 24 (12 days). This is the purest play on the A |
 | 2026-06-12 | VRT | BUY | $301.32 | $375.00 | 8/10 | Active | - | Why: Vertiv is the "picks and shovels" play on AI data centers that actually wor |
 | 2026-06-12 | APLD | BUY | $44.07 | N/A | 5/10 | Active | - | Why: Applied Digital is up 270% for you and rallied 6.3% today. They're an AI da |
+| 2026-06-12 | MU | BUY | $981.61 | N/A | 8/10 | Active | - | Why: Micron reports earnings June 24 (12 days). HBM (High Bandwidth Memory) dema |
+| 2026-06-12 | VERTEX | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 90%+ tech. You need a non-correlated asset. Vertex Pharma |
+| 2026-06-12 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Your portfolio has ZERO commodity/precious metal exposure. Gold is at/near  |
