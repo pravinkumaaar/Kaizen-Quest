@@ -594,3 +594,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-12 | RR | BUY | $2.13 | N/A | 8/10 | Active | - | Why: RR is down 24.2% from your cost basis and got hammered again today (-7.4%). |
 | 2026-06-12 | GLD | BUY | N/A | $365.00 | 7/10 | Active | - | Why: You have zero commodity/metal exposure. Gold is trading near all-time highs |
 | 2026-06-13 | MU | BUY | $981.61 | N/A | 7/10 | Active | - | Why: MU is your 4th largest position (7.4%) with a +159% unrealized gain. It rep |
+| 2026-06-13 | MU | BUY | $981.63 | N/A | 7/10 | Active | - | Why: Micron reports earnings June 24 (11 days). Memory cycle is structurally und |
+| 2026-06-13 | AVGO | BUY | $382.07 | N/A | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that the market consistently |
