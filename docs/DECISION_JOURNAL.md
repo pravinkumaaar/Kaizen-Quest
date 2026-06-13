@@ -597,3 +597,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-13 | MU | BUY | $981.63 | N/A | 7/10 | Active | - | Why: Micron reports earnings June 24 (11 days). Memory cycle is structurally und |
 | 2026-06-13 | AVGO | BUY | $382.07 | N/A | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that the market consistently |
 | 2026-06-13 | TRIM | BUY | $128.01 | N/A | 8/10 | Active | - | Why: This is not a sell — Palantir is a phenomenal company with real AI moats. B |
+| 2026-06-13 | MU | BUY | $981.61 | N/A | 7/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND memory producer, and the AI infrastru |
+| 2026-06-13 | STX | BUY | $931.04 | $150.00 | 7/10 | Active | - | Why: Seagate just ripped 7.25% — the biggest gainer in your portfolio today. Thi |
+| 2026-06-13 | PLTR | BUY | $127.99 | N/A | 8/10 | Active | - | Why: PLTR is your largest position at 26.7% of portfolio — that's dangerously co |
+| 2026-06-13 | ORCL | BUY | N/A | N/A | 8/10 | Active | - | Why: Oracle just reported earnings (June 10 AMC). This is a post-earnings positi |
+| 2026-06-13 | SLV | BUY | $61.29 | N/A | 6/10 | Active | - | Why: Silver is the most undervalued asset in the macro landscape right now. Gold |
