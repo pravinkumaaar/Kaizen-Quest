@@ -610,3 +610,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-14 | WDC | BUY | $562.94 | $700.00 | 7/10 | Active | - | Why: WDC is the most undervalued play in the AI storage chain. While everyone ch |
 | 2026-06-14 | FDX | BUY | N/A | $280.00 | 7/10 | Active | - | Why: FedEx reports earnings in 9 days (June 23 AMC). This is a classic "buy the  |
 | 2026-06-14 | EWY | BUY | N/A | $90.00 | 6/10 | Active | - | Why: Your portfolio is 100% US equities. That's a concentration risk you haven't |
+| 2026-06-14 | NVDA | BUY | $205.21 | $280.00 | 8/10 | Active | - | Why: AI infrastructure leader with 70%+ market share in AI chips. Still consolid |
+| 2026-06-14 | NEW | BUY | $182.94 | $210.00 | 7/10 | Active | - | Why: Undervalued AI play trading at 28x forward earnings with massive cash gener |
+| 2026-06-14 | NEW | BUY | $30.47 | $45.00 | 6/10 | Active | - | Why: Extreme oversold after 80% drawdown. Still the dominant provider of AI serv |
+| 2026-06-14 | NEW | BUY | $120.00 | $145.00 | 6/10 | Active | - | Why: Pure-play semiconductor foundry with 54% global market share. Critical node |
+| 2026-06-14 | NEW | BUY | $195.00 | $215.00 | 5/10 | Active | - | Why: Inflation hedge and safe haven as Fed pivots dovish. Gold breaking out abov |
