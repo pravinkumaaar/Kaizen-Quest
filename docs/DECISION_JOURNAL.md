@@ -606,3 +606,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-14 | AVGO | BUY | $382.07 | $440.00 | 7/10 | Active | - | Why: Broadcom is the most boring and most important company in AI infrastructure |
 | 2026-06-14 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Your portfolio is 100% equities, 100% US, 100% tech-adjacent. The market se |
 | 2026-06-14 | MU | BUY | $981.61 | N/A | 8/10 | Active | - | Swing/medium position (opportunity) |
+| 2026-06-14 | MU | BUY | $981.63 | $12.80 | 8/10 | Active | - | Why: Micron reports earnings in 10 days (June 24 AMC). You already own 7.4% — th |
+| 2026-06-14 | WDC | BUY | $562.94 | $700.00 | 7/10 | Active | - | Why: WDC is the most undervalued play in the AI storage chain. While everyone ch |
+| 2026-06-14 | FDX | BUY | N/A | $280.00 | 7/10 | Active | - | Why: FedEx reports earnings in 9 days (June 23 AMC). This is a classic "buy the  |
+| 2026-06-14 | EWY | BUY | N/A | $90.00 | 6/10 | Active | - | Why: Your portfolio is 100% US equities. That's a concentration risk you haven't |
