@@ -602,3 +602,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-13 | PLTR | BUY | $127.99 | N/A | 8/10 | Active | - | Why: PLTR is your largest position at 26.7% of portfolio — that's dangerously co |
 | 2026-06-13 | ORCL | BUY | N/A | N/A | 8/10 | Active | - | Why: Oracle just reported earnings (June 10 AMC). This is a post-earnings positi |
 | 2026-06-13 | SLV | BUY | $61.29 | N/A | 6/10 | Active | - | Why: Silver is the most undervalued asset in the macro landscape right now. Gold |
+| 2026-06-14 | MU | BUY | $981.61 | $1120.00 | 8/10 | Active | - | Why: Micron reports June 24 (10 days). This is the highest-conviction asymmetric |
+| 2026-06-14 | AVGO | BUY | $382.07 | $440.00 | 7/10 | Active | - | Why: Broadcom is the most boring and most important company in AI infrastructure |
+| 2026-06-14 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Your portfolio is 100% equities, 100% US, 100% tech-adjacent. The market se |
