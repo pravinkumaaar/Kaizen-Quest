@@ -620,3 +620,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-14 | VRT | BUY | $321.75 | $22.00 | 7/10 | Active | - | Why: Vertiv is the invisible backbone of every AI data center. Cooling (liquid c |
 | 2026-06-14 | EIDO | BUY | N/A | $30.00 | 7/10 | Active | - | Why: This is your international diversification play. Indonesia is the world's l |
 | 2026-06-14 | SLV | BUY | $61.29 | $85.00 | 7/10 | Active | - | Why: Silver is the most undervalued asset in the world right now. The gold/silve |
+| 2026-06-14 | MU | BUY | $981.61 | $1250.00 | 7/10 | Active | - | Thesis: Micron is the purest play on the AI memory bottleneck — HBM3E demand fro |
+| 2026-06-14 | STX | BUY | $931.04 | $1200.00 | 7/10 | Active | - | Thesis: Seagate is the overlooked beneficiary of the AI storage boom — while eve |
+| 2026-06-14 | FCX | BUY | N/A | $70.00 | 7/10 | Active | - | Thesis: Copper is the "new oil" of the AI era — every data center, every EV, eve |
+| 2026-06-14 | VRT | BUY | $302.87 | $400.00 | 8/10 | Active | - | Thesis: Vertiv is the "picks and shovels" play of AI infrastructure that the mar |
+| 2026-06-14 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Thesis: South Korea is the most undervalued AI infrastructure play in the world  |
