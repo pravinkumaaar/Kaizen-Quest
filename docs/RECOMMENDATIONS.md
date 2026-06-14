@@ -3,9 +3,7 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **MU** | $981.61 | $1120.00 | 8/10 |  Active  |  $981.61  |  +0.0%  | Swing (1-3 weeks, earnings catalyst) | Watchlist |
-| 2 | **AVGO** | $382.07 | $440.00 | 7/10 |  Active  |  $382.07  |  +0.0%  | Medium (3-12 months) | Watchlist |
-| 3 | **GLD** | Market | $340.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-6 months) | Watchlist |
+| 1 | **MU** | $981.61 | TBD | 8/10 |  Active  |  $981.61  |  +0.0%  | Swing | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

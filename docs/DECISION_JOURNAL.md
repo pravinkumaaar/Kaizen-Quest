@@ -605,3 +605,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-14 | MU | BUY | $981.61 | $1120.00 | 8/10 | Active | - | Why: Micron reports June 24 (10 days). This is the highest-conviction asymmetric |
 | 2026-06-14 | AVGO | BUY | $382.07 | $440.00 | 7/10 | Active | - | Why: Broadcom is the most boring and most important company in AI infrastructure |
 | 2026-06-14 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Your portfolio is 100% equities, 100% US, 100% tech-adjacent. The market se |
+| 2026-06-14 | MU | BUY | $981.61 | N/A | 8/10 | Active | - | Swing/medium position (opportunity) |
