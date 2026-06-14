@@ -615,3 +615,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-14 | NEW | BUY | $30.47 | $45.00 | 6/10 | Active | - | Why: Extreme oversold after 80% drawdown. Still the dominant provider of AI serv |
 | 2026-06-14 | NEW | BUY | $120.00 | $145.00 | 6/10 | Active | - | Why: Pure-play semiconductor foundry with 54% global market share. Critical node |
 | 2026-06-14 | NEW | BUY | $195.00 | $215.00 | 5/10 | Active | - | Why: Inflation hedge and safe haven as Fed pivots dovish. Gold breaking out abov |
+| 2026-06-14 | MU | BUY | $981.61 | $1150.00 | 7/10 | Active | - | Why: Micron is the pure-play memory beneficiary of AI infrastructure buildout. H |
+| 2026-06-14 | AVGO | BUY | $382.07 | $460.00 | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that the market consistently |
+| 2026-06-14 | VRT | BUY | $321.75 | $22.00 | 7/10 | Active | - | Why: Vertiv is the invisible backbone of every AI data center. Cooling (liquid c |
+| 2026-06-14 | EIDO | BUY | N/A | $30.00 | 7/10 | Active | - | Why: This is your international diversification play. Indonesia is the world's l |
+| 2026-06-14 | SLV | BUY | $61.29 | $85.00 | 7/10 | Active | - | Why: Silver is the most undervalued asset in the world right now. The gold/silve |

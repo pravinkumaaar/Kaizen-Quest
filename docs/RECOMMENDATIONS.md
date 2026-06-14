@@ -3,11 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NVDA** | $205.21 | $280.00 | 8/10 |  Active  |  $205.21  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 2 | **NEW** | $182.94 | $210.00 | 7/10 |  Active  |  $182.94  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 3 | **NEW** | $30.47 | $45.00 | 6/10 |  Active  |  $30.47  |  +0.0%  | Swing (2-8wk) | Watchlist |
-| 4 | **NEW** | $120.00 | $145.00 | 6/10 |  Active  |  $120.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 5 | **NEW** | $195.00 | $215.00 | 5/10 |  Active  |  $195.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
+| 1 | **MU** | $981.61 | $1150.00 | 7/10 |  Active  |  $981.61  |  +0.0%  | Swing through earnings (10 days), then reassess for medium-term hold | Watchlist |
+| 2 | **AVGO** | $382.07 | $460.00 | 8/10 |  Active  |  $382.07  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 3 | **VRT** | $321.75 | $22.00 | 7/10 |  Active  |  $321.75  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 4 | **EIDO** | Market | $30.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium-Long 6-18mo | Watchlist |
+| 5 | **SLV** | $61.29 | $85.00 | 7/10 |  Active  |  $61.29  |  +0.0%  | Medium-Long 6-24mo | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
