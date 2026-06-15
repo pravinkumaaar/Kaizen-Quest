@@ -625,3 +625,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-14 | FCX | BUY | N/A | $70.00 | 7/10 | Active | - | Thesis: Copper is the "new oil" of the AI era — every data center, every EV, eve |
 | 2026-06-14 | VRT | BUY | $302.87 | $400.00 | 8/10 | Active | - | Thesis: Vertiv is the "picks and shovels" play of AI infrastructure that the mar |
 | 2026-06-14 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Thesis: South Korea is the most undervalued AI infrastructure play in the world  |
+| 2026-06-15 | MU | BUY | $981.61 | $1150.00 | 6/10 | Active | - | Why: MU reports earnings June 24 (9 days). This is the most important near-term  |
+| 2026-06-15 | VRT | BUY | $302.87 | $375.00 | 7/10 | Active | - | Why: Vertiv is the picks-and-shovels play of the AI infrastructure buildout. The |
+| 2026-06-15 | EWY | BUY | N/A | $92.00 | 8/10 | Active | - | Why: This is your international diversification play, and the timing is compelli |
+| 2026-06-15 | GLD | BUY | N/A | $350.00 | 7/10 | Active | - | Why: Gold is trading near all-time highs, and there are structural reasons it go |
+| 2026-06-15 | NBIS | BUY | $232.36 | N/A | 7/10 | Active | - | Why: Nebius is your best performer (+335.5%) and at 10% of portfolio, it's your  |
