@@ -638,3 +638,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-15 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: You're heavily exposed to AI in the US (NVDA, PLTR, MU, SMCI) but have zero |
 | 2026-06-15 | PLTR | BUY | $133.95 | $15.00 | 8/10 | Active | - | Why: Palantir is your best performer (+114%) and represents 26.4% of your entire |
 | 2026-06-15 | RR | BUY | $2.20 | $15.00 | 7/10 | Active | - | Why: You're down 21.7% on RR at 1.4% of portfolio. This is a micro-cap robotics  |
+| 2026-06-15 | ADD | BUY | $1081.00 | $1250.00 | 7/10 | Active | - | Why: MU is already your 4th largest position (+185.3% unrealized), and it's abou |
+| 2026-06-15 | NEW | BUY | N/A | N/A | 6/10 | Active | - | Why: You don't own this. It's on the earnings watchlist with $1.49 EPS est on $5 |
