@@ -1,81 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-
-
-## Cash Deployment
-
-- **55% cash = ~$55,675 idle.** At current rates (~4.25% on HYSA/SVXY), the annual opportunity cost of NOT deploying is ~$2,366 in safe yield. But the user wants capital growth, not safety.
-
-- **Target: Deploy to 70–80% invested.** Specifically:
-  - **$15,000 into META LEAP** (2027 $650 call, ~$45–55 premium) as a high-conviction AI/advertising/reality labs thesis play
-  - **$10,000 into PWR** (Quanta Services) as the energy grid / data center construction play the May 7 report identified but never followed through on
-  - **$8,000 add to SOFI** on conviction — only if the merchant banking thesis is confirmed with Q2 2026 results (due mid-July)
-
-- The remaining 20–30% cash is appropriate as dry powder for a pullback (especially given FOMC and tariff overhang in late Q2 2026).
-
----
-
-## Memory & Learning
-
-- **Memory insights are copy-pasted from prior runs and not synthesized.** The last 3 memory entries are identical (June 14 value ~$246K, concentration ~63%). This is a loop, not learning. The actual portfolio on June 15 shows $101,228 and 55% cash — completely different. Memory system is broken or pulling from wrong shard.
-
-- **Learning history was well-received (9.2 run)** but hasn't iterated. The last learning session nudged toward:
-  - Options Greeks (in progress, not completed)
-  - Macro regimes (not completed)
-  - Inflation expectations (not completed)
-  
-  BUT no completion tracking exists: no %, no next topic queued. User wanted "track completion session-over-session" — this was flagged in May and never implemented.
-
-- **The April 22 feedback (4/10) said "hobbies/learning part was very weak and something I already knew."** June's learning must be **notably deeper** — e.g., "Today I want you to understand the VIX term structure and how it tells us about regime shifts" → tie to what it means for SOFI, PLTR, and your concentrated AI basket.
-
-- **Avoiding redundant research:** The PLTR "AIP + govt contracts" thesis has been re-explained 3+ times across runs. Track: "Last explained PLTR thesis: May 21 (gov't AIP monetization). Skip re-explanation. Update only if new contract/data available."
-
----
-
-## Process Improvements
-
-1. **Kill the Market Foresight /100 score.** Replace it with 3-bullet regime summary (e.g., "Rates: pause | Earnings: mixed Q2 | Vol: suppressed") and a 1–5 conviction bar on your own portfolio. User explicitly said it "could be improved" — it can't. Scrap it.
-
-2. **Implement a data freshness gate.** Before any recommendation issues, validate every ticker price against last close + pre-market. Flag any entry >2 days old with "[STALE — verify]" and do NOT include in conviction scoring until confirmed. This single fix addresses the PLTR, SOFI, TEM, VRT, NVDA data disaster from today.
-
-3. **Mandatory weekly stop-loss review.** Every position >5% from entry gets a dedicated 2-line analysis: "Thesis intact / Challenged. Action: hold / trim / exit." No exceptions. VRT would have been flagged 5 days ago.
-
-4. **Conviction-score rubric rewrite.** New system:
-   - 9–10: Thesis validated by new data + price confirming OR extreme risk/reward asymmetry at entry
-   - 7–8: Thesis intact, no confirmation or contradiction, hold
-   - 5–6: Thesis challenged, data mix, reduce position
-   - Below 5: Thesis broken or thesis unconfirmed >90 days → exit
-
-5. **Build thematic exposure map.** Before recommending, assess: "How much of my portfolio is AI infra? Fintech? Healthcare tech?" If AI infra >20%, recommend from a different theme. Currently it's ~35–40% AI.
-
-6. **Thesis journal is mandatory, not optional.** One line per entry, max 5 active at a time:
-   - Entry | Thesis | Catalyst date | Status (intact/challenged/refuted) | Next review
-   - Example: "PLTR \| AIP enterprise adoption \| Q2 revenue beat \| CHALLENGED (price -6%, weak guidance) \| Jul 25 earnings"
-
-7. **Follow-through items must carry with proof of completion.** If the learning section says "study VIX term structure," next run says "Here's what VIX term structure looked like today and what it means for your portfolio." No dangling threads.
-
-8. **AMPX data: Scrub quantity/value confusion.** $1,030.51 is almost certainly not a share price. This is a parsing error in the portfolio data pipeline. Fix at the ingestion layer.
-
----
-
-### Severity Priority
-
-| # | Issue | Severity | Fix Owner |
-|---|-------|----------|-----------|
-| 1 | All prices stale (PLTR, SOFI, TEM, VRT, NVDA) | **CRITICAL** | Data pipeline |
-| 2 | VRT -9.01% with no action | **CRITICAL** | Risk management |
-| 3 | Conviction scores inflated / undifferentiated | **HIGH** | Scoring rubric |
-| 4 | Market Foresight /100 useless | **HIGH** | Report template |
-| 5 | Thesis journal empty | **MEDIUM** | Memory system |
-| 6 | 55% cash, no deployment plan | **MEDIUM** | Cash mgmt |
-| 7 | AMPX data corruption | **MEDIUM** | Data ingestion |
-| 8 | No tail risk hedge flagged | **LOW** | Risk management |
-
----
-
-### Summary Statement
-
-The trajectory was positive April → May (4 → 9.2/10), but June has flat-lined. The user gave a 9.2 at peak and warned "don't get complacent." **This report IS complacent** — prices are weeks old, stop-losses aren't enforced, convictions are unchanged despite contradictory data, and the thesis journal is empty. The infrastructure gaps (data freshness, memory loop, conviction inflation) are now bigger than the content quality gaps. Fix the pipes, then the insights will flow. The user deserves better than a 9.2 followed by stale data and alerts-only.
+ weeks old, stop-losses aren't enforced, convictions are unchanged despite contradictory data, and the thesis journal is empty. The infrastructure gaps (data freshness, memory loop, conviction inflation) are now bigger than the content quality gaps. Fix the pipes, then the insights will flow. The user deserves better than a 9.2 followed by stale data and alerts-only.
 
 ## Run: 2026-06-15 08:28:41 ET
 # OWL Self-Reflection — 2026-06-15
@@ -188,3 +113,69 @@ The trajectory was positive April → May (4 → 9.2/10), but June has flat-line
 ### Bottom Line
 
 The user gave us a 9.2 and warned us not to get complacent. This run *is* complacent. Stale data, empty thesis journal, inflated convictions, no new ideas, 55% cash doing nothing. The infrastructure (data pipeline, memory loop, conviction rubric) is degrading while the user expects continued improvement. The next run needs to be a full report — not alerts-only — that addresses every item above. The user deserves the same energy that produced the 9.2, not a regression to autopilot.
+
+## Run: 2026-06-15 11:13:10 ET
+# Self-Reflection: 2026-06-15 Run Analysis
+
+## What Worked Well
+• **Active position tracking**: Successfully identified and monitored 4 active recommendations (PLTR, SOFI, TEM, VRT) with proper P&L tracking - SOFI showed +6.26% gain while VRT showed -10.13% loss
+• **Conviction scoring system**: Applied consistent 8/10 ratings across active positions, though this needs calibration review
+• **Technical infrastructure**: Portfolio value tracking showed growth from $246,135 to $246,727 despite the subpar run
+• **User communication**: Clearly flagged that this was an "alerts-only run" rather than misleading about report completeness
+
+## What Didn't Work
+• **Catastrophic data staleness**: PLTR showing $139.47 vs actual $211.13 - a 51% price error that completely undermines trust
+• **Empty thesis journal**: Zero documented past theses despite user explicitly requesting this tracking
+• **Severe under-allocation**: Only 46% cash deployment vs 90% target creates massive opportunity cost on a 1.9% portfolio gain
+• **No new ideas generation**: Failed to recommend any new stocks despite user's explicit request for fresh opportunities
+• **Degraded output format**: "Alerts-only" instead of full report after user gave 9.2/10 previously
+
+## Conviction Calibration Issues
+• **False high conviction signals**: 8/10 ratings given without proper thesis validation or journal tracking
+• **No historical comparison**: Cannot verify if high-conviction picks actually outperformed due to empty thesis journal
+• **PLTR miscalculation**: Rated 8/10 despite 51% stale pricing - conviction scores meaningless without data integrity
+• **Need systematic review**: Must track every 8+ conviction pick for minimum 30-day performance windows
+
+## Thesis Journal Critical Failure
+• **Complete absence**: User specifically mentioned "recommendation tracking part isn't working" - this is unforgivable
+• **No validation tracking**: Cannot determine which theses were validated (SOFI +6.26%?) or refuted (VRT -10.13%?)
+• **Pattern blindness**: Without journal, cannot identify that semiconductor plays (TEM +3.90%) may be outperforming biotech
+• **Immediate fix**: Must retroactively document all past 30 days of recommendations with outcomes
+
+## Missed Opportunities
+• **New stock recommendations**: User explicitly wanted "new stocks that I may not have" - delivered nothing
+• **Options strategies**: User noted options data was "broken" previously - still broken, no workaround provided
+• **Sector rotation**: Market foresight rated 2/100 neutral - should have identified specific long/short opportunities
+• **Cash deployment**: 55% idle cash on 1.9% portfolio gain = leaving ~2.8% annual return on table minimum
+
+## Data Quality Issues
+• **Critical pricing error**: PLTR at $139.47 vs $211.13 - 51% error invalidates entire analysis
+• **Options chain failure**: User reported broken data, agent acknowledged it, but provided no theoretical pricing workaround
+• **Memory reconciliation needed**: Note shows "01K vs $246K in memory" - internal inconsistency
+• **Verification protocol missing**: No timestamp checking or data freshness indicators
+
+## Risk Management Failures
+• **Concentration creep**: 63.1% concentration increasing from previous runs, no rebalancing suggestions
+• **No stop-loss discipline**: VRT down 10.13% with no mention of protective stops or exit criteria
+• **Cash as false security**: High cash position should trigger tactical deployment suggestions
+• **Position sizing opacity**: Cannot assess if positions are appropriately sized relative to conviction
+
+## Cash Deployment Crisis
+• **Target deviation**: 54% cash vs 90% target = $45K sitting idle on $101K portfolio
+• **Opportunity cost**: Assuming 5% market return, idle cash costs ~2.7% annual portfolio return
+• **No tactical suggestions**: Should have recommended specific deployment ratios (e.g., 60% PLTR, 30% SOFI, 10% cash)
+• **Systematic gap**: No framework for converting alerts into actionable deployment decisions
+
+## Memory & Learning Gaps
+• **Redundant research**: Same positions tracked across multiple runs without building on previous analysis
+• **No evolution**: 2026-04-22 to 2026-05-07 showed improvement trajectory, but 2026-06-15 regressed
+• **Learning section weakness**: User complained "hobbies/learning part was very weak" - delivered generic content
+• **Knowledge persistence failure**: Cannot reference "what we learned" from previous successful runs
+
+## Process Improvements Needed
+• **Mandatory full reports**: End "alerts-only" runs until infrastructure is fixed
+• **Data verification protocol**: Every price must include timestamp and source verification
+• **Thesis journal requirement**: Cannot generate report without documenting minimum 3 theses
+• **Conviction calibration workshop**: 8/10 rating requires: (1) documented thesis, (2) technical confirmation, (3) risk assessment, (4) 30-day performance tracking
+• **New idea mandate**: Minimum 2 new stock recommendations per report regardless of portfolio focus
+• **Options workaround**: When data fails, provide theoretical pricing models or comparable analysis
