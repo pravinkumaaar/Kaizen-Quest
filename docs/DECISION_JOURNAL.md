@@ -633,3 +633,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-15 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: South Korea is the most direct way to play the AI memory and semiconductor  |
 | 2026-06-15 | SLV | BUY | $61.29 | $80.00 | 7/10 | Active | - | Why: Silver is the most underrated asset in the current macro environment. It's  |
 | 2026-06-15 | NVDA | BUY | $205.19 | N/A | 8/10 | Active | - | Why: NVIDIA remains the single most important company in the AI value chain. It' |
+| 2026-06-15 | MU | BUY | $1090.85 | $1250.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-06-15 | GLD | BUY | $397.00 | $460.00 | 8/10 | Active | - | Why: You have essentially zero commodity/inflation exposure in a portfolio that' |
+| 2026-06-15 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: You're heavily exposed to AI in the US (NVDA, PLTR, MU, SMCI) but have zero |
+| 2026-06-15 | PLTR | BUY | $133.95 | $15.00 | 8/10 | Active | - | Why: Palantir is your best performer (+114%) and represents 26.4% of your entire |
+| 2026-06-15 | RR | BUY | $2.20 | $15.00 | 7/10 | Active | - | Why: You're down 21.7% on RR at 1.4% of portfolio. This is a micro-cap robotics  |
