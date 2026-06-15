@@ -630,3 +630,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-15 | EWY | BUY | N/A | $92.00 | 8/10 | Active | - | Why: This is your international diversification play, and the timing is compelli |
 | 2026-06-15 | GLD | BUY | N/A | $350.00 | 7/10 | Active | - | Why: Gold is trading near all-time highs, and there are structural reasons it go |
 | 2026-06-15 | NBIS | BUY | $232.36 | N/A | 7/10 | Active | - | Why: Nebius is your best performer (+335.5%) and at 10% of portfolio, it's your  |
+| 2026-06-15 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: South Korea is the most direct way to play the AI memory and semiconductor  |
+| 2026-06-15 | SLV | BUY | $61.29 | $80.00 | 7/10 | Active | - | Why: Silver is the most underrated asset in the current macro environment. It's  |
+| 2026-06-15 | NVDA | BUY | $205.19 | N/A | 8/10 | Active | - | Why: NVIDIA remains the single most important company in the AI value chain. It' |
