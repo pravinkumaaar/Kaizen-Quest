@@ -648,3 +648,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-16 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: South Korea is the "picks and shovels" play of the AI revolution. Samsung a |
 | 2026-06-16 | SNDK | BUY | $2026.65 | $130.00 | 5/10 | Active | - | Why: Wait — that price looks wrong. Let me flag this. SNDK (Sandisk) was spun of |
 | 2026-06-16 | FDX | BUY | N/A | N/A | 6/10 | Active | - | Why: FDX reports earnings June 23 (7 days). The market is pricing in a consumer  |
+| 2026-06-16 | MU | BUY | $1020.76 | N/A | 7/10 | Active | - | Why: MU reports earnings in 8 days (June 24 AMC). You hold 7.4% of portfolio her |
+| 2026-06-16 | FCX | BUY | N/A | $72.00 | 8/10 | Active | - | Why: Copper is the electrification metal. AI data centers, grid modernization, E |
+| 2026-06-16 | VRT | BUY | $299.60 | $390.00 | 8/10 | Active | - | Why: Vertiv is the critical infrastructure company that powers AI data centers — |
