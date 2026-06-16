@@ -643,3 +643,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-16 | MU | BUY | $1087.99 | $1250.00 | 7/10 | Active | - | Why: Micron reports earnings June 24 (8 days). HBM3E demand from NVIDIA is insat |
 | 2026-06-16 | NEW | BUY | N/A | $75.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI era. Every data center, every EV, every g |
 | 2026-06-16 | NEW | BUY | N/A | $88.00 | 6/10 | Active | - | Why: You have ZERO international exposure. South Korea is the "China+1" benefici |
+| 2026-06-16 | MU | BUY | $1042.53 | $1250.00 | 7/10 | Active | - | Why: Micron reports earnings June 24 (8 days). AI memory demand is structural, n |
+| 2026-06-16 | PLTR | BUY | $131.34 | N/A | 8/10 | Active | - | Why: Palantir is 26.3% of your portfolio. That's a single-position risk that wou |
+| 2026-06-16 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: South Korea is the "picks and shovels" play of the AI revolution. Samsung a |
+| 2026-06-16 | SNDK | BUY | $2026.65 | $130.00 | 5/10 | Active | - | Why: Wait — that price looks wrong. Let me flag this. SNDK (Sandisk) was spun of |
+| 2026-06-16 | FDX | BUY | N/A | N/A | 6/10 | Active | - | Why: FDX reports earnings June 23 (7 days). The market is pricing in a consumer  |
