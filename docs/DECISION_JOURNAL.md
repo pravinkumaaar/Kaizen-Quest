@@ -640,3 +640,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-15 | RR | BUY | $2.20 | $15.00 | 7/10 | Active | - | Why: You're down 21.7% on RR at 1.4% of portfolio. This is a micro-cap robotics  |
 | 2026-06-15 | ADD | BUY | $1081.00 | $1250.00 | 7/10 | Active | - | Why: MU is already your 4th largest position (+185.3% unrealized), and it's abou |
 | 2026-06-15 | NEW | BUY | N/A | N/A | 6/10 | Active | - | Why: You don't own this. It's on the earnings watchlist with $1.49 EPS est on $5 |
+| 2026-06-16 | MU | BUY | $1087.99 | $1250.00 | 7/10 | Active | - | Why: Micron reports earnings June 24 (8 days). HBM3E demand from NVIDIA is insat |
+| 2026-06-16 | NEW | BUY | N/A | $75.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI era. Every data center, every EV, every g |
+| 2026-06-16 | NEW | BUY | N/A | $88.00 | 6/10 | Active | - | Why: You have ZERO international exposure. South Korea is the "China+1" benefici |
