@@ -651,3 +651,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-16 | MU | BUY | $1020.76 | N/A | 7/10 | Active | - | Why: MU reports earnings in 8 days (June 24 AMC). You hold 7.4% of portfolio her |
 | 2026-06-16 | FCX | BUY | N/A | $72.00 | 8/10 | Active | - | Why: Copper is the electrification metal. AI data centers, grid modernization, E |
 | 2026-06-16 | VRT | BUY | $299.60 | $390.00 | 8/10 | Active | - | Why: Vertiv is the critical infrastructure company that powers AI data centers — |
+| 2026-06-16 | MU | BUY | $1020.76 | $1180.00 | 7/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND memory producer, and the AI infrastru |
+| 2026-06-16 | EWY | BUY | N/A | $85.00 | 6/10 | Active | - | Why: You have ZERO international exposure. South Korea is the most direct way to |
+| 2026-06-16 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: You have zero commodity exposure. Gold is trading near all-time highs and h |
