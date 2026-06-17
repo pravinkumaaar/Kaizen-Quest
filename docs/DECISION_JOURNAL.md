@@ -668,3 +668,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-17 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: South Korea is one of the most sensitive plays to North Korean/Japanese geo |
 | 2026-06-17 | PLTR | BUY | $135.04 | N/A | 8/10 | Active | - | Why: PLTR is 26.4% of your portfolio with +115.5% unrealized gains ($37,363). Th |
 | 2026-06-17 | GLD | BUY | $400.01 | $15.00 | 5/10 | Active | - | Why: Your portfolio is 100% US equities with 49.6% in AI-adjacent names. Gold is |
+| 2026-06-17 | PLTR | BUY | $133.85 | $12.00 | 9/10 | Active | - | Why: Palantir is 26.3% of your portfolio with +113.6% unrealized gains. That's n |
+| 2026-06-17 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |
+| 2026-06-17 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: You're down 23.8% on this position. RR is a micro-cap robotics name with a  |
