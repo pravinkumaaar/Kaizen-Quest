@@ -658,3 +658,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-17 | NKE | BUY | N/A | $85.00 | 7/10 | Active | - | Why: Nike reports earnings June 24 AMC (same day as MU). Consensus is $0.12 EPS  |
 | 2026-06-17 | NVDA | BUY | $207.41 | $320.00 | 9/10 | Active | - | Why: This is the single highest-quality compounder in your portfolio and in tech |
 | 2026-06-17 | MU | BUY | $1020.76 | N/A | 7/10 | Active | - | Why: You're up +169% in MU. Earnings in 7 days is a binary event with asymmetric |
+| 2026-06-17 | MU | BUY | $1020.76 | N/A | 7/10 | Active | - | Why: MU reports June 24 (7 days). Memory cycle pricing has been strong but today |
+| 2026-06-17 | CRWV | BUY | $117.03 | N/A | 7/10 | Active | - | Why: CoreWeave is the "picks and shovels" of AI cloud — GPU-as-a-service for ent |
+| 2026-06-17 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: You have zero commodity exposure in a portfolio of 67 holdings. With MU ear |
+| 2026-06-17 | NBIS | BUY | $265.10 | N/A | 6/10 | Active | - | Why: NBIS (Nebius) is your best performer at +396.9% and it's still climbing whi |
+| 2026-06-17 | CASH | BUY | N/A | N/A | 8/10 | Active | - | Why: You're sitting on 67 holdings, many of which are down 20-40% from your cost |
