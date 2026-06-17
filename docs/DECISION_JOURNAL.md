@@ -654,3 +654,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-16 | MU | BUY | $1020.76 | $1180.00 | 7/10 | Active | - | Why: Micron is the sole US-based DRAM/NAND memory producer, and the AI infrastru |
 | 2026-06-16 | EWY | BUY | N/A | $85.00 | 6/10 | Active | - | Why: You have ZERO international exposure. South Korea is the most direct way to |
 | 2026-06-16 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: You have zero commodity exposure. Gold is trading near all-time highs and h |
+| 2026-06-17 | MU | BUY | $1020.76 | N/A | 6/10 | Active | - | Why: MU reports June 24 AMC (7 days). The stock is down 6% today on broad semi w |
+| 2026-06-17 | NKE | BUY | N/A | $85.00 | 7/10 | Active | - | Why: Nike reports earnings June 24 AMC (same day as MU). Consensus is $0.12 EPS  |
+| 2026-06-17 | NVDA | BUY | $207.41 | $320.00 | 9/10 | Active | - | Why: This is the single highest-quality compounder in your portfolio and in tech |
