@@ -676,3 +676,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-17 | NBIS | BUY | $289.64 | N/A | 9/10 | Active | - | Why: NBIS is up +442.9% unrealized and is your third-largest position at 11.7%.  |
 | 2026-06-17 | RR | BUY | $2.11 | N/A | 8/10 | Active | - | Why: RR is down -24.9% and is a micro-cap robotics name with no clear path to pr |
 | 2026-06-17 | PLTR | BUY | $131.99 | N/A | 7/10 | Active | - | Why: Palantir is your largest position at 26.1% — that's dangerously concentrate |
+| 2026-06-17 | MU | BUY | $1043.19 | N/A | 8/10 | Active | - | Why: MU is your 4th largest position (7.5%), up 175%, and reports earnings in 7  |
+| 2026-06-17 | HOOD | BUY | $105.20 | $140.00 | 7/10 | Active | - | Why: HOOD is surging +8.78% on zero obvious news in your data — which means inst |
+| 2026-06-17 | FCX | BUY | $48.00 | $70.00 | 7/10 | Active | - | Why: Copper is the most underappreciated AI infrastructure play. Every GPU clust |
+| 2026-06-17 | RR | BUY | $2.08 | N/A | 10/10 | Active | - | Why: RR is down -26% from your cost and represents a broken thesis. At 1.3% of p |
