@@ -671,3 +671,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-17 | PLTR | BUY | $133.85 | $12.00 | 9/10 | Active | - | Why: Palantir is 26.3% of your portfolio with +113.6% unrealized gains. That's n |
 | 2026-06-17 | EWY | BUY | N/A | $85.00 | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |
 | 2026-06-17 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: You're down 23.8% on this position. RR is a micro-cap robotics name with a  |
+| 2026-06-17 | MU | BUY | $1074.50 | $1250.00 | 7/10 | Active | - | Why: Micron reports June 24 (7 days). The memory cycle is structurally undersupp |
+| 2026-06-17 | VRT | BUY | $321.94 | $420.00 | 8/10 | Active | - | Why: Vertiv is the *picks-and-shovels* play on AI data center buildout — they pr |
+| 2026-06-17 | NBIS | BUY | $289.64 | N/A | 9/10 | Active | - | Why: NBIS is up +442.9% unrealized and is your third-largest position at 11.7%.  |
+| 2026-06-17 | RR | BUY | $2.11 | N/A | 8/10 | Active | - | Why: RR is down -24.9% and is a micro-cap robotics name with no clear path to pr |
+| 2026-06-17 | PLTR | BUY | $131.99 | N/A | 7/10 | Active | - | Why: Palantir is your largest position at 26.1% — that's dangerously concentrate |
