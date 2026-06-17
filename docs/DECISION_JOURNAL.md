@@ -663,3 +663,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-17 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: You have zero commodity exposure in a portfolio of 67 holdings. With MU ear |
 | 2026-06-17 | NBIS | BUY | $265.10 | N/A | 6/10 | Active | - | Why: NBIS (Nebius) is your best performer at +396.9% and it's still climbing whi |
 | 2026-06-17 | CASH | BUY | N/A | N/A | 8/10 | Active | - | Why: You're sitting on 67 holdings, many of which are down 20-40% from your cost |
+| 2026-06-17 | MU | BUY | $1058.24 | N/A | 6/10 | Active | - | Why: MU reports earnings in 7 days (June 24 AMC). You hold 7.4% of portfolio her |
+| 2026-06-17 | FDX | BUY | N/A | N/A | 7/10 | Active | - | Why: FedEx reports June 23 AMC. EPS est $5.98 / Rev est $24.3B. This is a classi |
+| 2026-06-17 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: South Korea is one of the most sensitive plays to North Korean/Japanese geo |
+| 2026-06-17 | PLTR | BUY | $135.04 | N/A | 8/10 | Active | - | Why: PLTR is 26.4% of your portfolio with +115.5% unrealized gains ($37,363). Th |
+| 2026-06-17 | GLD | BUY | $400.01 | $15.00 | 5/10 | Active | - | Why: Your portfolio is 100% US equities with 49.6% in AI-adjacent names. Gold is |
