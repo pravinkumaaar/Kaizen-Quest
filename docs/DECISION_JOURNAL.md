@@ -680,3 +680,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-17 | HOOD | BUY | $105.20 | $140.00 | 7/10 | Active | - | Why: HOOD is surging +8.78% on zero obvious news in your data — which means inst |
 | 2026-06-17 | FCX | BUY | $48.00 | $70.00 | 7/10 | Active | - | Why: Copper is the most underappreciated AI infrastructure play. Every GPU clust |
 | 2026-06-17 | RR | BUY | $2.08 | N/A | 10/10 | Active | - | Why: RR is down -26% from your cost and represents a broken thesis. At 1.3% of p |
+| 2026-06-18 | MU | BUY | $1043.19 | $1200.00 | 7/10 | Active | - | Why: MU reports in 6 days. You hold 7.5% of portfolio here. The setup is strong  |
+| 2026-06-18 | GLD | BUY | N/A | $350.00 | 7/10 | Active | - | Why: Gold is the quiet winner of 2026. Geopolitical uncertainty (Middle East, US |
+| 2026-06-18 | INDA | BUY | N/A | $62.00 | 7/10 | Active | - | Why: India is the most compelling multi-year growth story in emerging markets. 7 |
+| 2026-06-18 | PLTR | BUY | $130.63 | N/A | 8/10 | Active | - | Why: This is your largest position at 26.2% of portfolio with +108% unrealized g |
+| 2026-06-18 | FDX | BUY | N/A | $260.00 | 6/10 | Active | - | Why: FDX reports earnings June 23 (AMC) — just 5 days away. This is a catalyst-d |
