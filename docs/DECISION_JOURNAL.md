@@ -692,3 +692,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-18 | VRTX | BUY | N/A | N/A | 7/10 | Active | - | Why: Replace your losing Chinese micro-cap position (RR, -24.6%) with a cutting- |
 | 2026-06-18 | VRT | BUY | $332.02 | N/A | 8/10 | Active | - | Why: While NVDA gets the headlines, VRT powers the data center. Every $1 of NVID |
 | 2026-06-18 | AMZN | BUY | N/A | N/A | 7/10 | Active | - | Why: Amazon is your missing mega-cap. Your portfolio has zero exposure to the ot |
+| 2026-06-18 | MU | BUY | $1142.00 | N/A | 8/10 | Active | - | Thesis: Lock in profits on 30-40% of MU position before June 24 earnings; buy a  |
+| 2026-06-18 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Thesis: South Korea is the "pick-and-shovel" play of the AI boom — Samsung and S |
+| 2026-06-18 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Thesis: Gold is the portfolio's missing hedge — with AI-driven electricity deman |
+| 2026-06-18 | PLTR | BUY | $128.24 | N/A | 8/10 | Active | - | Thesis: Palantir's AI thesis is intact, but 25.4% of portfolio in a single name  |
+| 2026-06-18 | UUUU | BUY | $16.25 | $22.00 | 6/10 | Active | - | Thesis: Uranium and critical minerals play — UUUU is up 6.2% today and fits the  |
