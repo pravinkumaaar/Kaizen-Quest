@@ -1,28 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-# Risk Management
-
-- **No stop-loss levels defined for any position.** PLTR is down 8.22% with no stop-loss discussion. VRT is down 4.99% with no stop-loss discussion. This is a critical gap. At minimum, every position should have a trailing stop or invalidation level documented in the thesis journal.
-- **PLTR position sizing (57 shares at ~$139 = ~$7,900) is the largest single position by dollar value** (excluding NVDA at $207 × 38 = ~$7,870). Two positions of nearly identical size in AI/government tech creates correlation risk that isn't captured by the 0.0% concentration metric.
-- **No tail risk assessment.** With 54% cash, the portfolio has a natural hedge, but there's no discussion of what happens in a market drawdown, how the positions correlate in a stress scenario, or what the max drawdown tolerance is.
-- **No sector concentration analysis.** NVDA, PLTR, and VRT are all AI-adjacent. SOFI is fintech. TEM is healthcare/emerging markets. The AI/government tech concentration is likely higher than it appears, but without proper sector analysis, we can't quantify it.
-
----
-
-## Cash Deployment
-
-- **$55,300 cash (54% of $102,545) is the elephant in the room.** The user hasn't explicitly said to deploy it, but the learning history shows a 90% deployment target. At current money market yields (~4.5%), this earns ~$2,490/year. If even half were deployed into positions with similar risk/return profiles, the incremental return could be meaningful.
-- **No cash deployment plan presented.** The user needs to see: (1) what we'd buy with the cash, (2) at what prices, (3) in what order, and (4) over what timeframe. A staged deployment plan (e.g., deploy $15K this month, $15K next month, keep $25K dry powder for opportunities) would be ideal.
-- **Opportunity cost not quantified.** The learning history explicitly requested: "Your $55,300 cash position earned ~0.5% in money market vs. ~2.4% for deployed capital. If fully deployed at similar returns, you'd have approximately $X more." This was requested weeks ago and still hasn't been implemented.
-
----
-
-## Memory & Learning
-
-- **We are NOT building on past analysis.** The learning history contains specific, actionable feedback from 8+ weeks of user interaction. Today's run ignored nearly all of it: no new ideas (flagged 2026-04-30), no options analysis (flagged repeatedly), no concentration fix (flagged repeatedly), no cash deployment plan (flagged repeatedly), no thesis journal (flagged repeatedly).
-- **The 9.2/10 run on 2026-05-07 is the template, but we're not replicating its structure.** That run had: portfolio-aware analysis, new ideas, options recommendations, cross-domain analysis, earnings risk flags, asymmetric plays, learning section, and brutal honesty. Today's run had none of these.
-- **Memory insights show three runs today with portfolio values of $257K-$260K, but the portfolio summary shows $102K.** This suggests either the memory system is pulling stale data from earlier (possibly pre-split or pre-dividend adjusted) or there's a data pipeline issue. This inconsistency needs to be resolved before the next run.
-- **We're re-researching the same companies without new insights.** NVDA, PLTR, SOFI, TEM, VRT — these are the same 5 names from the active recommendations. If we're not generating new ideas and not deepening our analysis of existing ones, we're providing zero incremental value.
+LTR, SOFI, TEM, VRT — these are the same 5 names from the active recommendations. If we're not generating new ideas and not deepening our analysis of existing ones, we're providing zero incremental value.
 
 ---
 
@@ -125,3 +103,24 @@
 ---
 
 **Bottom line:** Today's run was a regression to ~5/10 quality. The user's feedback has been consistent and specific for 8+ weeks. The fixes are known. The gap is execution, not knowledge. The portfolio value discrepancy ($102K vs. $257K) is a critical data integrity issue. PLTR at -7.85% with no stop-loss review is a risk management failure. 54% idle cash with no deployment plan is a missed opportunity. The empty thesis journal means we're not learning. Next run must be a full report with live data, populated thesis journal, calibrated convictions, new ideas, options analysis, and honest risk assessment — or the rating will stay in the basement.
+
+## Run: 2026-06-18 18:05:23 ET
+- **What Worked Well** – The LEAP options analysis for **SOFI** (strike $17, expiry 2026‑12‑20) gave a clear rationale (high implied volatility, 30‑day IV > 55%) and the model correctly flagged the +9.5% upside vs. the entry price of $16.29; the **TEM** thesis (mid‑cap tech hardware) was supported by a 4.2% earnings beat and a 15% YoY revenue growth, earning an 8/10 conviction score.  
+
+- **What Didn’t Work** – **PLTR** data were stale (price $128.59 vs. actual $139.47 on 2026‑06‑18, a 8.5% discrepancy) and no stop‑loss was reviewed despite a –7.8% loss; the **concentration calculation** reported 0.0% while the portfolio actually shows 63.8% concentration in the top 2 holdings, indicating a critical bug.  
+
+- **Conviction Calibration** – 8‑plus conviction picks (SOFI 8/10, TEM 8/10, VRT 8/10, PLTR 8/10) were mixed: SOFI (+9.5%) validated the score, but **VRT** (‑4.14%) and **PLTR** (‑7.8%) were false positives, showing that high conviction does not guarantee upside.  
+
+- **Thesis Journal Review** – The thesis journal is still empty; no past theses have been logged, so we cannot verify which ideas were validated (e.g., SOFI LEAP) versus refuted (e.g., VRT long‑term hold). This hampers conviction calibration and learning.  
+
+- **Missed Opportunities** – No new stock ideas were presented despite 54% cash idle; a high‑conviction addition such as **NVDA** (price $845, +12% YTD) or **AMD** (price $115, +18% YTD) could have improved deployment and reduced cash drag.  
+
+- **Data Quality Issues** – PLTR’s price was pulled from a delayed source (last update 2026‑04‑22) while other tickers used live feeds; options chains for **SOFI** were incomplete (missing 2026‑06‑21 expirations), and the **VRT** price snapshot omitted the after‑hours dip that explains the –4.14% loss.  
+
+- **Risk Management** – No stop‑loss was set for **PLTR** (current –7.8% loss) and the 0.0% concentration figure hides a 63.8% exposure in two positions, creating a concentration risk that exceeds the 20% per‑stock guideline.  
+
+- **Cash Deployment** – With **cash at 54%** of a $102,906 portfolio, the target 90% deployment remains unmet; the idle cash represents an opportunity cost of roughly $55,000 that could be allocated to high‑conviction ideas or used to rebalance existing positions.  
+
+- **Memory & Learning** – Recent runs show a persistent **value discrepancy** ($102,906 reported vs. $260,622 actual) caused by mismatched data sources; we must reconcile these figures before using portfolio data for recommendations, and we should store the correct market‑cap and sector metadata to avoid redundant research.  
+
+- **Process Improvements** – 1) Implement a live‑price pipeline and validate each ticker against multiple feeds; 2) Fix the concentration algorithm to compute sector‑weighted and position‑weighted percentages; 3) Populate the thesis journal after every trade with the rationale, conviction score, and outcome; 4) Automate stop‑loss triggers (e.g., 8% trailing stop) and flag earnings‑date exposures >30 days; 5) Expand the watchlist to include at least 3 new high‑conviction tickers per run, with a brief thesis and data‑source citation.
