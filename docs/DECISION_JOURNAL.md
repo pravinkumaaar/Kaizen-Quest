@@ -687,3 +687,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-18 | FDX | BUY | N/A | $260.00 | 6/10 | Active | - | Why: FDX reports earnings June 23 (AMC) — just 5 days away. This is a catalyst-d |
 | 2026-06-18 | MU | BUY | $1043.19 | $4.00 | 8/10 | Active | - | Why: MU reports in 6 days with $20.69 EPS est on $35.9B revenue. HBM (High Bandw |
 | 2026-06-18 | NEW | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |
+| 2026-06-18 | MU | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Micron sits at the epicenter of a multi-year DRAM/HBM supercycle driven  |
+| 2026-06-18 | SNDK | BUY | N/A | N/A | 8/10 | Active | - | Thesis: SanDisk is experiencing the same NAND/DRAM pricing recovery as MU but wi |
