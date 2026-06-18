@@ -689,3 +689,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-18 | NEW | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |
 | 2026-06-18 | MU | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Micron sits at the epicenter of a multi-year DRAM/HBM supercycle driven  |
 | 2026-06-18 | SNDK | BUY | N/A | N/A | 8/10 | Active | - | Thesis: SanDisk is experiencing the same NAND/DRAM pricing recovery as MU but wi |
+| 2026-06-18 | VRTX | BUY | N/A | N/A | 7/10 | Active | - | Why: Replace your losing Chinese micro-cap position (RR, -24.6%) with a cutting- |
+| 2026-06-18 | VRT | BUY | $332.02 | N/A | 8/10 | Active | - | Why: While NVDA gets the headlines, VRT powers the data center. Every $1 of NVID |
+| 2026-06-18 | AMZN | BUY | N/A | N/A | 7/10 | Active | - | Why: Amazon is your missing mega-cap. Your portfolio has zero exposure to the ot |
