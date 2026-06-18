@@ -685,3 +685,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-18 | INDA | BUY | N/A | $62.00 | 7/10 | Active | - | Why: India is the most compelling multi-year growth story in emerging markets. 7 |
 | 2026-06-18 | PLTR | BUY | $130.63 | N/A | 8/10 | Active | - | Why: This is your largest position at 26.2% of portfolio with +108% unrealized g |
 | 2026-06-18 | FDX | BUY | N/A | $260.00 | 6/10 | Active | - | Why: FDX reports earnings June 23 (AMC) — just 5 days away. This is a catalyst-d |
+| 2026-06-18 | MU | BUY | $1043.19 | $4.00 | 8/10 | Active | - | Why: MU reports in 6 days with $20.69 EPS est on $35.9B revenue. HBM (High Bandw |
+| 2026-06-18 | NEW | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is the cheapest major mar |

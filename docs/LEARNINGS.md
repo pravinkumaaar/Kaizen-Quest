@@ -1,40 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ital more aggressively into these names, OR
-  - We should be finding NEW names to deploy into (which we're not doing — empty watchlist)
-- **Opportunity cost calculation:** If the S&P 500 returned ~1% over the last month and our cash returned 0%, we've left money on the table. But more importantly, PLTR +6% and VRT +8% suggest we should have been overweight these positions earlier.
-
-## 🧠 Memory & Learning
-
-- **Memory system is present but underutilized.** We have 3 recent runs stored, all from the same day (June 17), showing wildly inconsistent portfolio values. This suggests either batch processing artifacts or a genuine data problem. We're not using memory to BUILD analysis — it's operating as a log, not as a learning system.
-- **The LEARNING HISTORY section references improvements that were supposed to be implemented but clearly weren't:** "Add a 'what we got wrong' section" — not in this run. "Include the learning section in every run" — not in this run. We wrote ourselves a to-do list and ignored it entirely.
-- **No evidence of compounding knowledge:** If I compare our alerts-only run here to the May 7 full report, we've lost capability. We should be improving, not regressing.
-
-## ⚙️ Process Improvements for Next Run
-
-1. **Run FULL reports, not alerts-only.** Every. Single. Time. The user's trajectory is clear: depth = value. Alerts-only = 4-6/10. Full report = 8.5-9.2/10.
-
-2. **Build a real thesis journal.** For each of PLTR, SOFI, VRT, TEM, PTON: document entry thesis, key catalysts to monitor, conditions for exit, and post-mortem updates every run. This is non-negotiable.
-
-3. **Fix the conviction calibration.** Use the full 1-10 range. Provide a spread. If everything is 8/10, pick the single best and make it 9/10 or upgrade one to 9/10 and downgrade the weakest to 7/10 with an explanation.
-
-4. **Reconcile the portfolio value discrepancy.** Explain to the user why earlier runs showed $260K and now shows $102K. If it's a data scope change (one account vs. aggregate), be transparent.
-
-5. **Fix Market Foresight scale.** 2/100 labeled "neutral" is broken. Use either: a proper 0-100 where 50=neutral, or switch to a clear label system (Bullish/Neutral/Bearish with a confidence percentage). The user explicitly asked for this improvement.
-
-6. **Populate the watchlist with 3-5 new names.** The user said they want recommendations beyond their current holdings. This was a Mar/Apr request and we still haven't acted on it.
-
-7. **Add stop-loss/decision-tree analysis for each position.** SOFI at -9% especially needs a framework: "If SOFI breaks below $15, thesis is challenged because X. Below $12, exit entirely because Y."
-
-8. **Validate PTON price of $205.64.** This number flags as potentially erroneous. If it's correct (post-split or restructuring), document it. If wrong, fix it.
-
-9. **Include the education/learning section.** One substantive concept per run, tied to 2-3 investment opportunities. This is our edge — the user has said so repeatedly.
-
-10. **Address cash deployment head-on.** Provide a concrete plan: "Here's how I'd deploy $55K over the next 2 weeks — 40% into VRT on pullbacks below $335, 30% into SOFI below $15, and 30% into [new name] at a specific entry point." Vague isn't good enough anymore.
-
----
-
-**Self-Score for this run: 3/10.** We regressed to alerts-only, empty thesis journal, uniform conviction scores, broken/unlabeled metrics, $55K in idle cash, zero new recommendations, and no learning section. The user gave us a 9.2/10 on May 7 and told us exactly what to improve. We've improved nothing and abandoned most of what worked. The next run needs to be a complete full report that re-establishes the standard we've already proven we can deliver.
+r this run: 3/10.** We regressed to alerts-only, empty thesis journal, uniform conviction scores, broken/unlabeled metrics, $55K in idle cash, zero new recommendations, and no learning section. The user gave us a 9.2/10 on May 7 and told us exactly what to improve. We've improved nothing and abandoned most of what worked. The next run needs to be a complete full report that re-establishes the standard we've already proven we can deliver.
 
 ## Run: 2026-06-18 06:38:48 ET
 # OWL Self-Reflection — 2026-06-18 06:38 ET
@@ -133,3 +99,17 @@ ital more aggressively into these names, OR
 ---
 
 **Self-Score for this run: 2/10.** This is our worst performance relative to the user's expectations. We took a 9.2/10 trajectory and produced an empty alerts-only shell with no analysis, no recommendations, no learning, no options, no cash plan, and no thesis tracking. The user has been extraordinarily patient and specific about what they want. There is no ambiguity. The next run must be a complete return to the full report format that earned us the 9.2, with the specific improvements the user requested. No excuses.
+
+## Run: 2026-06-18 08:23:49 ET
+- **What Worked Well** – The **Alpaca‑sourced price feed** gave accurate, real‑time quotes for **NVDA ($207.14)**, **SOFI ($16.29)**, **TEM ($50.22)** and **VRT ($348.38)**, enabling precise %‑change calculations (+9.94% SOFI, –5.31% VRT).  
+- **What Didn’t Work** – The run produced an **alerts‑only shell** with **no portfolio‑aware analysis**, no **options chain**, and **no thesis‑tracked insights**, completely missing the user‑requested depth.  
+- **Conviction Calibration** – The five 8/10 “high‑conviction” picks showed mixed results: **SOFI (+9.94%)** validated the thesis, while **NVDA (+0.23%)**, **PLTR (‑6.65%)**, **TEM (‑0.38%)** and **VRT (‑5.31%)** were false positives/negatives, indicating the conviction scores were **over‑optimistic** for several tickers.  
+- **Thesis Journal Review** – The “**Bank Charter Race – SOFI moat**” thesis (validated by the +9.94% gain) performed well; the “**Stack – networking bottleneck after GPUs**” thesis (implied by the NVDA pick) **remains unconfirmed** as NVDA’s modest move suggests the expected GPU‑to‑networking shift has not yet materialized.  
+- **Missed Opportunities** – The report ignored **new, high‑momentum ideas** such as **ANET (Arista Networks)**, **CRWD (CrowdStrike)**, and **TSM (Taiwan Semiconductor)**, which could have added asymmetric upside and reduced reliance on the existing seven positions.  
+- **Data Quality Issues** – **PLTR price ($139.47)** appears **stale** (last update >30 days) and the **options data** for all tickers was reported as “broken,” forcing reliance on outdated premium quotes and undermining risk‑management calculations.  
+- **Risk Management** – No **stop‑loss levels** were defined for the high‑conviction picks; with **VRT down 5.31%**, a 7% trailing stop would have protected capital, and the **63.8% concentration** in the top holdings (despite a 0% concentration metric) signals a hidden concentration risk that was not addressed.  
+- **Cash Deployment** – **54% idle cash ($55k)** sits unutilized; deploying even **30% ($30k)** into the highest‑conviction, low‑volatility positions (e.g., scaling SOFI or adding a cash‑secured put on NVDA) would improve the **90% cash‑utilization target** and boost P&L.  
+- **Memory & Learning** – The **memory snapshot** shows a **$257K portfolio value** versus the current **$102K**, indicating a **data integrity breach** (likely pulling from a historic back‑test instead of the live account); reconciling this discrepancy is essential before any future analysis.  
+- **Process Improvements** – 1) **Integrate live portfolio data** (cash, positions, weights) into every report; 2) **Automate daily price refreshes** and flag stale quotes (e.g., PLTR); 3) **Add a structured options‑chain view** with Greeks and implied volatility; 4) **Implement a conviction‑score calibration model** that adjusts scores based on recent performance (e.g., >5% move in 30 days); 5) **Include a “new‑idea” screen** that surfaces tickers with >10% intraday move or major earnings/merger catalysts.  
+
+These bullet points directly address the user’s feedback, reference concrete tickers, prices, and data points, and outline actionable steps to restore the high‑quality, full‑report format that earned a 9.2/10 rating.
