@@ -703,3 +703,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-19 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You're massively exposed to AI through US names (NVDA, MU, PLTR) but have Z |
 | 2026-06-19 | PLTR | BUY | $128.50 | $15.00 | 8/10 | Active | - | Why: Palantir is your best position (+105%) and also your biggest risk. At 25% o |
 | 2026-06-19 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI is down 29% from your cost basis and you're holding it hoping for |
+| 2026-06-19 | AVAV | BUY | N/A | $240.00 | 7/10 | Active | - | Why: AVAV reports earnings June 29 (10 days). This is the pure-play drone and au |
+| 2026-06-19 | EIDO | BUY | N/A | $25.00 | 7/10 | Active | - | Why: Your portfolio is 100% US equities. Zero international exposure. This is a  |
+| 2026-06-19 | PLTR | BUY | $128.50 | N/A | 8/10 | Active | - | Why: PLTR is 25.3% of your portfolio. That's extraordinary concentration in a si |
