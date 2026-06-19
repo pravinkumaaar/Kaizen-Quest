@@ -715,3 +715,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-19 | TSM | BUY | N/A | $380.00 | 8/10 | Active | - | Why: If you own NVDA, PLTR, and NBIS, you're betting on AI compute demand. But t |
 | 2026-06-19 | EWY | BUY | N/A | $145.00 | 7/10 | Active | - | Why: South Korea is the cheapest major equity market on Earth right now. The KOS |
 | 2026-06-19 | ONCE-IN-A | BUY | $80.66 | $250.00 | 6/10 | Active | - | Why: You already own 3% of your portfolio in ASTS and it's up 120%. But here's w |
+| 2026-06-19 | SNOW | BUY | N/A | $290.00 | 7/10 | Active | - | Why: Snowflake is the picks-and-shovels play on AI data consumption. Every AI mo |
+| 2026-06-19 | EWY | BUY | N/A | $98.00 | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is home to SK Hynix (HBM  |
+| 2026-06-19 | CRDO | BUY | $271.83 | $360.00 | 8/10 | Active | - | Why: You already own CRDO and it's up 9% today — something is happening. Credo T |
+| 2026-06-19 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Your portfolio is 100% long US tech/growth with massive AI concentration. T |
