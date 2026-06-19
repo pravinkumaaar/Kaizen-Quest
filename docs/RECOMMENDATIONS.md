@@ -3,11 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **MU** | $1134.03 | $1350.00 | 7/10 |  Active  |  $1134.03  |  +0.0%  | Swing (2-6 weeks) for options; Medium (3-12 months) for stock | Watchlist |
-| 2 | **INDA** | Market | $65.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 years) | Watchlist |
-| 3 | **GLD** | Market | $340.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Medium-Long (1-3 years) | Watchlist |
-| 4 | **VRT** | $333.09 | $420.00 | 8/10 |  Active  |  $333.09  |  +0.0%  | Medium (3-12 months) | Watchlist |
-| 5 | **NBIS** | $157.08 | TBD | 7/10 |  Active  |  $157.08  |  +0.0%  | Swing | Watchlist |
+| 1 | **MU** | $1133.99 | $1400.00 | 7/10 |  Active  |  $1133.99  |  +0.0%  | Swing (2-6 weeks around earnings) | Watchlist |
+| 2 | **TSM** | Market | $380.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium to Long (6 months - 2 years) | Watchlist |
+| 3 | **EWY** | Market | $145.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (6-18 months) | Watchlist |
+| 4 | **ONCE-IN-A** | $80.66 | $250.00 | 6/10 |  Active  |  $80.66  |  +0.0%  | Long (1-3 years) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

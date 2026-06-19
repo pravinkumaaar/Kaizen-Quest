@@ -711,3 +711,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-19 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Gold is making new all-time highs and the structural case is compelling: ce |
 | 2026-06-19 | VRT | BUY | $333.09 | $420.00 | 8/10 | Active | - | Why: Vertiv is the picks-and-shovels play of AI infrastructure that most investo |
 | 2026-06-19 | NBIS | BUY | $157.08 | N/A | 7/10 | Active | - | Why: Nebius is your biggest winner by percentage and it's a European AI cloud co |
+| 2026-06-19 | MU | BUY | $1133.99 | $1400.00 | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-06-19 | TSM | BUY | N/A | $380.00 | 8/10 | Active | - | Why: If you own NVDA, PLTR, and NBIS, you're betting on AI compute demand. But t |
+| 2026-06-19 | EWY | BUY | N/A | $145.00 | 7/10 | Active | - | Why: South Korea is the cheapest major equity market on Earth right now. The KOS |
+| 2026-06-19 | ONCE-IN-A | BUY | $80.66 | $250.00 | 6/10 | Active | - | Why: You already own 3% of your portfolio in ASTS and it's up 120%. But here's w |
