@@ -706,3 +706,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-19 | AVAV | BUY | N/A | $240.00 | 7/10 | Active | - | Why: AVAV reports earnings June 29 (10 days). This is the pure-play drone and au |
 | 2026-06-19 | EIDO | BUY | N/A | $25.00 | 7/10 | Active | - | Why: Your portfolio is 100% US equities. Zero international exposure. This is a  |
 | 2026-06-19 | PLTR | BUY | $128.50 | N/A | 8/10 | Active | - | Why: PLTR is 25.3% of your portfolio. That's extraordinary concentration in a si |
+| 2026-06-19 | MU | BUY | $1134.03 | $1350.00 | 7/10 | Active | - | Earnings: June 24, 2026 (AMC) — 5 days away |
+| 2026-06-19 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: You have zero international exposure, and India is the single most compelli |
+| 2026-06-19 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Gold is making new all-time highs and the structural case is compelling: ce |
+| 2026-06-19 | VRT | BUY | $333.09 | $420.00 | 8/10 | Active | - | Why: Vertiv is the picks-and-shovels play of AI infrastructure that most investo |
+| 2026-06-19 | NBIS | BUY | $157.08 | N/A | 7/10 | Active | - | Why: Nebius is your biggest winner by percentage and it's a European AI cloud co |
