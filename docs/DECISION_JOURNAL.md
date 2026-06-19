@@ -698,3 +698,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-18 | PLTR | BUY | $128.24 | N/A | 8/10 | Active | - | Thesis: Palantir's AI thesis is intact, but 25.4% of portfolio in a single name  |
 | 2026-06-18 | UUUU | BUY | $16.25 | $22.00 | 6/10 | Active | - | Thesis: Uranium and critical minerals play — UUUU is up 6.2% today and fits the  |
 | 2026-06-19 | FCX | BUY | N/A | $85.00 | 7/10 | Active | - | Why: Every AI data center needs massive copper — for power distribution, cooling |
+| 2026-06-19 | MU | BUY | $1134.03 | N/A | 7/10 | Active | - | Why: Micron is the purest play on the AI memory bottleneck. HBM (High Bandwidth  |
+| 2026-06-19 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodity exposure in a portfolio that's 95% US tech/growth.  |
+| 2026-06-19 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: You're massively exposed to AI through US names (NVDA, MU, PLTR) but have Z |
+| 2026-06-19 | PLTR | BUY | $128.50 | $15.00 | 8/10 | Active | - | Why: Palantir is your best position (+105%) and also your biggest risk. At 25% o |
+| 2026-06-19 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Tempus AI is down 29% from your cost basis and you're holding it hoping for |
