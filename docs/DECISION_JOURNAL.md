@@ -697,3 +697,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-18 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Thesis: Gold is the portfolio's missing hedge — with AI-driven electricity deman |
 | 2026-06-18 | PLTR | BUY | $128.24 | N/A | 8/10 | Active | - | Thesis: Palantir's AI thesis is intact, but 25.4% of portfolio in a single name  |
 | 2026-06-18 | UUUU | BUY | $16.25 | $22.00 | 6/10 | Active | - | Thesis: Uranium and critical minerals play — UUUU is up 6.2% today and fits the  |
+| 2026-06-19 | FCX | BUY | N/A | $85.00 | 7/10 | Active | - | Why: Every AI data center needs massive copper — for power distribution, cooling |
