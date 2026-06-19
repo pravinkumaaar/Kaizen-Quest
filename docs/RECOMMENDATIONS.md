@@ -3,10 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **SNOW** | Market | $290.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 3-12mo | Watchlist |
-| 2 | **EWY** | Market | $98.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 3-12mo | Watchlist |
-| 3 | **CRDO** | $271.83 | $360.00 | 8/10 |  Active  |  $271.83  |  +0.0%  | Swing/Medium 2-6mo | Watchlist |
-| 4 | **GLD** | Market | $340.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Long 1-3yr | Watchlist |
+| 1 | **AVGO** | $411.35 | $500.00 | 8/10 |  Active  |  $411.35  |  +0.0%  | Medium (3-12 months) | Watchlist |
+| 2 | **PLTR** | $128.47 | TBD | 9/10 |  Active  |  $128.47  |  +0.0%  | Immediate action, long-term hold on remainder. | Watchlist |
+| 3 | **RR** | $2.14 | TBD | 8/10 |  Active  |  $2.14  |  +0.0%  | Immediate. | Watchlist |
+| 4 | **TEM** | Market | $15.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Immediate. | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

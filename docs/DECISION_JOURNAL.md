@@ -719,3 +719,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-19 | EWY | BUY | N/A | $98.00 | 7/10 | Active | - | Why: You have ZERO international exposure. South Korea is home to SK Hynix (HBM  |
 | 2026-06-19 | CRDO | BUY | $271.83 | $360.00 | 8/10 | Active | - | Why: You already own CRDO and it's up 9% today — something is happening. Credo T |
 | 2026-06-19 | GLD | BUY | N/A | $340.00 | 6/10 | Active | - | Why: Your portfolio is 100% long US tech/growth with massive AI concentration. T |
+| 2026-06-19 | AVGO | BUY | $411.35 | $500.00 | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that most investors overlook |
+| 2026-06-19 | PLTR | BUY | $128.47 | N/A | 9/10 | Active | - | Why: Palantir is your best performer (+105%) and represents a quarter of your en |
+| 2026-06-19 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: RR is down -23.8% from your cost basis and represents 1.3% of your portfoli |
+| 2026-06-19 | TEM | BUY | N/A | $15.00 | 7/10 | Active | - | Why: Tempus AI is down -29.2% and represents 1.1% of your portfolio. The company |
