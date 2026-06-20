@@ -739,3 +739,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | CRDO | BUY | $271.87 | N/A | 7/10 | Active | - | Why: Credo Technology is the quiet winner in AI data center connectivity. While  |
 | 2026-06-20 | EIDO | BUY | N/A | N/A | 6/10 | Active | - | Why: You have zero international exposure. Indonesia is the world's largest nick |
 | 2026-06-20 | PLTR | BUY | $128.50 | N/A | 9/10 | Active | - | Why: PLTR is your largest position at 25.3% of portfolio, up +105%. It's an extr |
+| 2026-06-20 | MU | BUY | $1133.99 | $1220.00 | 7/10 | Active | - | Why: You're sitting on +199% gains at 8% of portfolio into a binary earnings eve |
+| 2026-06-20 | FCX | BUY | N/A | $78.00 | 7/10 | Active | - | Why: You have ZERO commodity/metal exposure in a portfolio that's 100% tech. Thi |
+| 2026-06-20 | EWZ | BUY | N/A | $42.00 | 6/10 | Active | - | Why: You have ZERO international exposure. Brazil is the anti-China EM play — co |
+| 2026-06-20 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: This is a zombie position. RR is a micro-cap robotics company that has no c |
+| 2026-06-20 | PLTR | BUY | $128.47 | N/A | 8/10 | Active | - | Why: PLTR is your best position and your biggest risk. At 25.3% of portfolio, a  |
