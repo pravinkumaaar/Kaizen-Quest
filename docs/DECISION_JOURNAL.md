@@ -731,3 +731,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | MU | BUY | $1134.03 | $5.00 | 7/10 | Active | - | Why: MU reports June 24 AMC. The stock just surged +8.71% on the day — the marke |
 | 2026-06-20 | AVGO | BUY | $411.35 | $520.00 | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that most investors overlook |
 | 2026-06-20 | NBIS | BUY | $286.73 | $7.00 | 7/10 | Active | - | Why: NBIS (Nebius) is up +437.4% and is 11.6% of your portfolio. This is an extr |
+| 2026-06-20 | MU | BUY | $1134.03 | $1300.00 | 7/10 | Active | - | Why: Micron reports June 24 AMC. HBM3E demand from NVIDIA's Blackwell ramp is th |
+| 2026-06-20 | FCX | BUY | N/A | $78.00 | 7/10 | Active | - | Why: Every AI data center, EV, grid upgrade, and renewable installation needs co |
+| 2026-06-20 | PLTR | BUY | $128.50 | N/A | 8/10 | Active | - | Why: PLTR is 25.3% of your portfolio. That's dangerous concentration in a single |
+| 2026-06-20 | EWY | BUY | N/A | $90.00 | 6/10 | Active | - | Why: Samsung and SK Hynix are 30%+ of EWY. These are the other two legs of the g |
