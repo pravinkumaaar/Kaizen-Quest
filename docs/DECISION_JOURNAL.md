@@ -723,3 +723,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-19 | PLTR | BUY | $128.47 | N/A | 9/10 | Active | - | Why: Palantir is your best performer (+105%) and represents a quarter of your en |
 | 2026-06-19 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: RR is down -23.8% from your cost basis and represents 1.3% of your portfoli |
 | 2026-06-19 | TEM | BUY | N/A | $15.00 | 7/10 | Active | - | Why: Tempus AI is down -29.2% and represents 1.1% of your portfolio. The company |
+| 2026-06-20 | MU | BUY | $1133.99 | N/A | 7/10 | Active | - | Why: Micron reports June 24 AMC. You're up 199%. The AI memory thesis is real —  |
+| 2026-06-20 | GLD | BUY | N/A | $360.00 | 8/10 | Active | - | Why: Your portfolio is 95%+ US tech/growth equities. Zero commodity exposure. Go |
+| 2026-06-20 | EWY | BUY | N/A | $105.00 | 7/10 | Active | - | Why: South Korea is the "picks and shovels" play of the AI revolution. Samsung a |
+| 2026-06-20 | VRT | BUY | $333.05 | $420.00 | 8/10 | Active | - | Why: Vertiv is the most underappreciated AI infrastructure play. Every GPU clust |
+| 2026-06-20 | RR | BUY | $2.14 | N/A | 9/10 | Active | - | Why: You're down 23.8% on a $1,338 position. This is a micro-cap robotics compan |
