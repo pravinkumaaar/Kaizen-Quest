@@ -744,3 +744,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | EWZ | BUY | N/A | $42.00 | 6/10 | Active | - | Why: You have ZERO international exposure. Brazil is the anti-China EM play — co |
 | 2026-06-20 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: This is a zombie position. RR is a micro-cap robotics company that has no c |
 | 2026-06-20 | PLTR | BUY | $128.47 | N/A | 8/10 | Active | - | Why: PLTR is your best position and your biggest risk. At 25.3% of portfolio, a  |
+| 2026-06-20 | MU | BUY | $1133.99 | $1400.00 | 7/10 | Active | - | Why: Micron is the pure-play memory beneficiary of AI infrastructure buildout. H |
