@@ -728,3 +728,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | EWY | BUY | N/A | $105.00 | 7/10 | Active | - | Why: South Korea is the "picks and shovels" play of the AI revolution. Samsung a |
 | 2026-06-20 | VRT | BUY | $333.05 | $420.00 | 8/10 | Active | - | Why: Vertiv is the most underappreciated AI infrastructure play. Every GPU clust |
 | 2026-06-20 | RR | BUY | $2.14 | N/A | 9/10 | Active | - | Why: You're down 23.8% on a $1,338 position. This is a micro-cap robotics compan |
+| 2026-06-20 | MU | BUY | $1134.03 | $5.00 | 7/10 | Active | - | Why: MU reports June 24 AMC. The stock just surged +8.71% on the day — the marke |
+| 2026-06-20 | AVGO | BUY | $411.35 | $520.00 | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play of AI that most investors overlook |
+| 2026-06-20 | NBIS | BUY | $286.73 | $7.00 | 7/10 | Active | - | Why: NBIS (Nebius) is up +437.4% and is 11.6% of your portfolio. This is an extr |
