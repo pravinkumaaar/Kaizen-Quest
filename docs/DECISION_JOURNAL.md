@@ -735,3 +735,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | FCX | BUY | N/A | $78.00 | 7/10 | Active | - | Why: Every AI data center, EV, grid upgrade, and renewable installation needs co |
 | 2026-06-20 | PLTR | BUY | $128.50 | N/A | 8/10 | Active | - | Why: PLTR is 25.3% of your portfolio. That's dangerous concentration in a single |
 | 2026-06-20 | EWY | BUY | N/A | $90.00 | 6/10 | Active | - | Why: Samsung and SK Hynix are 30%+ of EWY. These are the other two legs of the g |
+| 2026-06-20 | MU | BUY | $1134.03 | N/A | 8/10 | Active | - | Why: MU reports Tuesday AMC. You're up +199% in a name that's already priced to  |
+| 2026-06-20 | CRDO | BUY | $271.87 | N/A | 7/10 | Active | - | Why: Credo Technology is the quiet winner in AI data center connectivity. While  |
+| 2026-06-20 | EIDO | BUY | N/A | N/A | 6/10 | Active | - | Why: You have zero international exposure. Indonesia is the world's largest nick |
+| 2026-06-20 | PLTR | BUY | $128.50 | N/A | 9/10 | Active | - | Why: PLTR is your largest position at 25.3% of portfolio, up +105%. It's an extr |
