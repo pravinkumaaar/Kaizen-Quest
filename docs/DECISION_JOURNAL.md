@@ -745,3 +745,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: This is a zombie position. RR is a micro-cap robotics company that has no c |
 | 2026-06-20 | PLTR | BUY | $128.47 | N/A | 8/10 | Active | - | Why: PLTR is your best position and your biggest risk. At 25.3% of portfolio, a  |
 | 2026-06-20 | MU | BUY | $1133.99 | $1400.00 | 7/10 | Active | - | Why: Micron is the pure-play memory beneficiary of AI infrastructure buildout. H |
+| 2026-06-21 | MU | BUY | $1133.99 | $1250.00 | 6/10 | Active | - | Why: Micron reports earnings June 24 (AMC) — in 3 days. Memory cycle is structur |
+| 2026-06-21 | PLTR | BUY | $128.47 | N/A | 8/10 | Active | - | Why: Palantir is 25.3% of your portfolio. That's not investing — that's a concen |
