@@ -747,3 +747,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-20 | MU | BUY | $1133.99 | $1400.00 | 7/10 | Active | - | Why: Micron is the pure-play memory beneficiary of AI infrastructure buildout. H |
 | 2026-06-21 | MU | BUY | $1133.99 | $1250.00 | 6/10 | Active | - | Why: Micron reports earnings June 24 (AMC) — in 3 days. Memory cycle is structur |
 | 2026-06-21 | PLTR | BUY | $128.47 | N/A | 8/10 | Active | - | Why: Palantir is 25.3% of your portfolio. That's not investing — that's a concen |
+| 2026-06-21 | AVGO | BUY | $411.35 | $520.00 | 8/10 | Active | - | Why: While everyone fights over NVDA and PLTR, Broadcom is the picks-and-shovels |
+| 2026-06-21 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is ground zero for the AI memory wars. Samsung and SK Hynix con |
+| 2026-06-21 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Your portfolio is 100% equities, 0% commodities. Gold is trading near all-t |
