@@ -3,11 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **MU** | $1134.03 | TBD | 5/10 |  Active  |  $1134.03  |  +0.0%  | Event-driven (3 days) | Watchlist |
-| 2 | **PLTR** | $128.50 | TBD | 5/10 |  Active  |  $128.50  |  +0.0%  | Rebalancing (execute within 1-2 weeks) | Watchlist |
-| 3 | **GLD** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6-12 months | Watchlist |
-| 4 | **SNDK** | $2184.79 | TBD | 6/10 |  Active  |  $2184.79  |  +0.0%  | Medium 6-12 months | Watchlist |
-| 5 | **FCX** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6-12 months | Watchlist |
+| 1 | **MU** | $1134.03 | TBD | 8/10 |  Active  |  $1134.03  |  +0.0%  | Immediate action, re-evaluate in 3 days | Watchlist |
+| 2 | **FDX** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing 4-8 weeks | Watchlist |
+| 3 | **CNXC** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Swing 6-10 weeks | Watchlist |
+| 4 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 3-6 months | Watchlist |
+| 5 | **TEM** | Market | TBD | 6/10 |  Active  |  Fetching...  |  +0.0%  | Immediate | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

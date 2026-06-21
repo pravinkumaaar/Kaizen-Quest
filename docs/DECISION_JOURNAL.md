@@ -755,3 +755,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-21 | GLD | BUY | N/A | N/A | 5/10 | Active | - | Why: I'm evaluating portfolio macro allocation. You currently have zero commodit |
 | 2026-06-21 | SNDK | BUY | $2184.79 | N/A | 6/10 | Active | - | Why: SNDK is your 13th largest position (+242% unrealized gain) and was up +11.5 |
 | 2026-06-21 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: This is a thesis few retail investors are connecting: AI data centers need  |
+| 2026-06-21 | MU | BUY | $1134.03 | N/A | 8/10 | Active | - | Why: You already own 8% — this is a position management trade. MU reports June 2 |
+| 2026-06-21 | FDX | BUY | N/A | N/A | 7/10 | Active | - | Why: FedEx reports June 23 AMC. This is the single best real-time proxy for glob |
+| 2026-06-21 | CNXC | BUY | N/A | N/A | 6/10 | Active | - | Why: Concentrix reports June 29 AMC. This is the largest customer experience (CX |
+| 2026-06-21 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 95%+ US-listed companies. You have ZERO international exp |
+| 2026-06-21 | TEM | BUY | N/A | N/A | 6/10 | Active | - | Why: You're down -29.1% on Tempus AI (1.1% of portfolio). The precision oncology |
