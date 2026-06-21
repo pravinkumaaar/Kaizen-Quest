@@ -750,3 +750,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-21 | AVGO | BUY | $411.35 | $520.00 | 8/10 | Active | - | Why: While everyone fights over NVDA and PLTR, Broadcom is the picks-and-shovels |
 | 2026-06-21 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is ground zero for the AI memory wars. Samsung and SK Hynix con |
 | 2026-06-21 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Your portfolio is 100% equities, 0% commodities. Gold is trading near all-t |
+| 2026-06-21 | MU | BUY | $1134.03 | N/A | 5/10 | Active | - | Why: MU is your 4th largest position reporting earnings in 3 days (June 24 AMC). |
+| 2026-06-21 | PLTR | BUY | $128.50 | N/A | 5/10 | Active | - | Why: Palantir is your single largest position at 25.2% of portfolio. It's up +10 |
+| 2026-06-21 | GLD | BUY | N/A | N/A | 5/10 | Active | - | Why: I'm evaluating portfolio macro allocation. You currently have zero commodit |
+| 2026-06-21 | SNDK | BUY | $2184.79 | N/A | 6/10 | Active | - | Why: SNDK is your 13th largest position (+242% unrealized gain) and was up +11.5 |
+| 2026-06-21 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: This is a thesis few retail investors are connecting: AI data centers need  |
