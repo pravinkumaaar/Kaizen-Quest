@@ -776,3 +776,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-22 | VRT | BUY | $357.96 | $460.00 | 7/10 | Active | - | Why: Vertiv is the invisible backbone of the AI data center buildout — they make |
 | 2026-06-22 | PLTR | BUY | $119.50 | $150.00 | 6/10 | Active | - | Why: Your largest position at 24% of portfolio just dropped 7% in a day. The tem |
 | 2026-06-22 | NBIS | BUY | $283.61 | $350.00 | 5/10 | Active | - | Why: Nebius is your third-largest position at 11.7% with a +431.6% unrealized ga |
+| 2026-06-22 | MU | BUY | $1211.38 | N/A | 5/10 | Active | - | Why: Micron reports earnings TOMORROW (June 24, AMC). The stock is up 219.7% on  |
+| 2026-06-22 | FCX | BUY | N/A | $80.00 | 7/10 | Active | - | Why: Every megawatt of AI data center capacity requires copper — roughly 5-10x m |
+| 2026-06-22 | PLTR | BUY | $119.50 | N/A | 8/10 | Active | - | Why: I know this is your biggest winner (+90.7%), and the AI/government thesis i |
+| 2026-06-22 | INDA | BUY | N/A | $70.00 | 6/10 | Active | - | Why: India is the most compelling macro story in emerging markets for the next d |
+| 2026-06-22 | GLD | BUY | N/A | $360.00 | 5/10 | Active | - | Why: This isn't about predicting a crash. It's about portfolio insurance. US fed |
