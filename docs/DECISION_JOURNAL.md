@@ -761,3 +761,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-21 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 95%+ US-listed companies. You have ZERO international exp |
 | 2026-06-21 | TEM | BUY | N/A | N/A | 6/10 | Active | - | Why: You're down -29.1% on Tempus AI (1.1% of portfolio). The precision oncology |
 | 2026-06-22 | MU | BUY | $1133.99 | $1280.00 | 7/10 | Active | - | Why: MU is your 4th largest position (+199.3%, $14K unrealized) and earnings are |
+| 2026-06-22 | MU | BUY | $1133.99 | $4.00 | 7/10 | Active | - | Why: MU reports tomorrow AMC (June 24). EPS est $20.69 on $35.9B rev. The stock  |
+| 2026-06-22 | RR | BUY | $2.14 | N/A | 8/10 | Active | - | Why: Down -23.8% from your cost. This is a micro-cap robotics name with no earni |
+| 2026-06-22 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Down -29.2% with 3 sell ratings vs 9 buys — the bears are winning this argu |
+| 2026-06-22 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: You're massively underweight international. South Korea is the purest play  |
+| 2026-06-22 | FCX | BUY | N/A | $68.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI/electrification era. Every GW of data cen |
