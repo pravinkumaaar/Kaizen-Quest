@@ -772,3 +772,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-22 | PLTR | BUY | $120.78 | $165.00 | 7/10 | Active | - | Type/Stock: AI Software / Data Analytics @ $120.78 |
 | 2026-06-22 | CRDO | BUY | $302.92 | $420.00 | 7/10 | Active | - | Type/Stock: Semiconductor (Connectivity/Optical) @ $302.92 |
 | 2026-06-22 | NBIS | BUY | $286.13 | N/A | 6/10 | Active | - | Why: You're up 436.5% — this is your best performer. NBIS (Nebius Group) is an A |
+| 2026-06-22 | MU | BUY | $1211.38 | $1350.00 | 8/10 | Active | - | Why: Micron is the pure-play memory beneficiary of AI infrastructure buildout. H |
+| 2026-06-22 | VRT | BUY | $357.96 | $460.00 | 7/10 | Active | - | Why: Vertiv is the invisible backbone of the AI data center buildout — they make |
+| 2026-06-22 | PLTR | BUY | $119.50 | $150.00 | 6/10 | Active | - | Why: Your largest position at 24% of portfolio just dropped 7% in a day. The tem |
+| 2026-06-22 | NBIS | BUY | $283.61 | $350.00 | 5/10 | Active | - | Why: Nebius is your third-largest position at 11.7% with a +431.6% unrealized ga |
