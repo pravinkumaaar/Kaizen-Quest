@@ -1,55 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-on at all.
-- **We need a "standing knowledge base" per ticker.** Every time we analyze PLTR, we should build on what we already know: Palantir's government vs. commercial revenue split, AIP adoption metrics, competitive landscape vs. C3.ai, Snowflake, etc. The memory system should surface this so we're not re-researching from scratch.
-
-## Process Improvements (Actionable for Next Run)
-
-1. **MANDATORY: Full report format, never alerts-only.** The user has been rated on full reports. An alerts-only run is an automatic 5/10 at best. Implement a hard pre-run check: if the report doesn't contain Portfolio Analysis, Thesis Journal, New Recommendations, Options Section, Cash Deployment Plan, Learning Section, and Market Outlook — do not publish.
-
-2. **Fix the memory data pipeline immediately.** The $262K vs $102K discrepancy and 63% vs 0% concentration mismatch mean memory is either pulling wrong data or not updating. Before the next run, validate memory against the live portfolio snapshot. If memory can't be trusted, disable memory references until fixed.
-
-3. **Populate the thesis journal for all 7 active positions before doing any new analysis.** For each position, document: (a) original thesis/reason for purchase, (b) key catalysts to watch, (c) current status vs. thesis, (d) action (hold/add/trim/exit), (e) conviction 1-10 with specific justification. This takes 15 minutes and transforms the report quality.
-
-4. **Include at least 3 new stock recommendations** that are NOT in the current portfolio. Screen for: (a) high-conviction asymmetric opportunities, (b) sector diversification (current portfolio is tech-heavy — consider healthcare, industrials, or international), (c) specific entry prices and position sizes. The user has asked for this multiple times.
-
-5. **Differentiate conviction scores.** No more five 8/10s. Use the full 1-10 scale. If everything is 8/10, nothing is. Force rank the 7 positions. Be willing to say "this is a 5/10 and here's why I'm not selling yet."
-
-6. **Fix options data or transparently flag it.** The user was told options data was broken. If it's still broken, say so upfront and provide manual analysis. If it's fixed, show the chains. Don't silently omit.
-
-7. **Create a cash deployment matrix.** With $55,515 cash, provide: (a) immediate deployment ideas (what to buy this week), (b) conditional deployment (what to buy if X happens), (c) reserve policy (how much to keep in cash and why). Specific tickers, specific prices, specific amounts.
-
-8. **Improve the Market Foresight score.** A 2/100 is not analysis — it's abstention. Even if the outlook is genuinely uncertain, say so with nuance: "I see X bullish factors and Y bearish factors, with Z as the key variable to watch. My base case is [specific scenario] with a 55% probability." Then map the score to that narrative.
-
-9. **Add a "What Changed Since Last Run" section.** The user wants to know what moved the most, what news matters, and whether they need to reposition. This was explicitly requested in the 6/10 feedback: "I want to see the ones that had a big event or news or moved the most today."
-
-10. **Implement the pre-run checklist from the previous self-reflection.** It was written, it was good, and it was ignored. Print it. Check every box before publishing. No exceptions.
-
----
-
-**Bottom line:** This run was a significant regression driven by process discipline failure, not capability limitation. We know how to deliver 9/10 reports — we've done it. The user has been extraordinarily specific about what they want, and we have a detailed feedback trail showing exactly where we succeed and where we fail. The next run must be a full report that addresses every item above. The user's trust trajectory has been positive (4 → 6 → 7 → 8.5 → 9.2) and this run threatens to reverse that. We need to treat the next run as a "recovery" — over-deliver on specificity, new recommendations, thesis journal quality, and cash deployment planning. No more alerts-only. No more empty sections. No more ignoring our own self-reflection.
-
-## Run: 2026-06-21 19:09:18 ET
-# 🔍 OWL Self-Reflection — Run 2026-06-21 19:09 ET
-
----
-
-## What Worked Well
-
-- **Active recommendations tracked reasonably well**: PLTR ($139.47), SOFI ($16.29), TEM ($50.22), VRT ($348.38) all had active entries with conviction scores (8/10), suggesting the pipeline from prior runs is feeding forward. At least the *tracking mechanism* exists even if the output this run was degraded.
-- **SOFI showing +9.95% unrealized gain** from $17.91 → $16.29 current — wait, that's the reverse. Current price is $16.29, buy was $17.91, so this is actually **-8.99% unrealized loss**, not +9.95%. The P&L column says +9.95% but that directly contradicts price math ($16.29 < $17.91). **This is a data integrity bug — the sign or the reference price is inverted.**
-- **Long-term thesis framework (Alpaca)** applied consistently across positions — at least the structural classification survived into this run.
-
-## What Didn't Work
-
-- **Alerts-only run triggered at LOW mode** (rating 5.7/10 average) — the system self-selected into a degraded mode and produced no full report. Given that the prior 3-4 runs scored 7-9.2/10, the 5.7 average is being dragged down by older poor runs (the 4 and 6), which means the rating-weighting algorithm is **too slow to reflect recent improvement**. The system punished itself into alerts-only mode despite recent excellence. This is a **critical process failure** — the mode selector should use a recency-weighted or trailing-3 average, not all-time average.
-- **Thesis journal is completely empty** (shown as `=== THESIS JOURNALS ===` with nothing beneath). Given that the 9.2/10 run on 2026-05-07 specifically praised the thesis journal and earnings risk flags, this represents a total regression. Whatever thesis journaling system was built after that run was not maintained or not triggered in this execution.
-- **Memory insights show duplicate/contradictory snapshots**: Three memory entries all dated "2026-06-21" with values $263,695 → $262,390 → $262,250 and concentration 63.2% → 63.5% → 63.5%. But the portfolio section currently shows **$102,805 with 54% cash and 0.0% concentration**. Something is severely wrong — either the memory is stale/from a different portfolio, or the portfolio data is from a different account/timestamp, or both. **A ~$160K discrepancy between memory ($262K) and displayed portfolio ($103K) is unacceptable.**
-
-## Conviction Calibration
-
-- **All four active recommendations carry 8/10 conviction** — PLTR, SOFI, TEM, VRT. Having everything at the same conviction is a red flag. Conviction scoring is supposed to differentiate. If four positions are truly all 8/10, either the model has a ceiling/bias problem, or the scoring isn't being differentiated enough. The prior run had "once-in-a lifetime asymmetric plays" — there should be some 9s and 10s for the best ideas and some 6s for middler ones. **Uniform conviction scores are useless for ranking.**
-- **SOFI P&L sign error** (see above) — if the system thinks SOFI is +9.95% when it's actually underwater, that's not just a display bug, it's a conviction-calibration corruption. You can't properly assess conviction quality if performance tracking is wrong.
+if performance tracking is wrong.
 - **No 9/10 or 10/10 conviction picks visible** — the model has nowhere to go but down from 8. This compresses the decision space and makes the "recommendation tracking" section useless for differentiation.
 
 ## Thesis Journal Review
@@ -130,3 +81,56 @@ on at all.
 **Total process failures: 5 (no thesis journal, no new ideas, no options section, no cash plan, no learning section)**
 
 **Confidence that next run can be 8+/10: High — if the mode selector is fixed and the pre-run checklist is followed, all the pieces exist from prior runs. This is not a capability problem. It's a discipline problem.**
+
+## Run: 2026-06-22 01:01:55 ET
+### Self-Reflection: 2026-06-22 01:01 ET Run
+
+1. **What Worked Well — Prior High-Quality Runs Built a Strong Template**
+   - The 2026-05-07 run (9.2/10) demonstrated that deep portfolio-aware analysis with thesis tracking, options recommendations, cross-domain learning, and brutally honest state-of-play assessment is the formula users respond to. That run's structure — specific tickers, clear reasoning, earnings risk flags, asymmetric plays — should be the baseline template, not the exception.
+   - The 2026-04-30 run (8.5/10) correctly read the user's actual holdings and weightings, which was a breakthrough. The system *can* do this — it just doesn't consistently.
+   - Active recommendations like NVDA ($207.14 → $209.40, +1.09%) and SOFI ($16.29 → $17.67, +8.47%) show the system can identify momentum names. The Alpaca-sourced long-term holds are being tracked with live prices.
+
+2. **What Didn't Work — This Run Was an Alerts-Only Shell, Not a Report**
+   - The system flagged "Alerts-only run — no full report generated" which means the user got a fraction of the value they've come to expect. After a 9.2/10 run, delivering an alerts-only output is a massive regression in user experience.
+   - The pre-run checklist identified **3 critical bugs** and **5 process failures** — this means the system *knew* it was deficient before outputting anything, yet still produced a degraded run instead of flagging it to the user or retrying.
+
+3. **Critical Bug: P&L Sign Convention Is Still Broken**
+   - The checklist explicitly flags: "Every P&L sign verified (current > buy = gain)" as unchecked. This has been a recurring issue. If the system is still computing P&L backwards after multiple runs of feedback, this is a systemic logic error that needs a unit test or hardcoded validation layer, not just a checklist reminder.
+
+4. **Critical Bug: Memory/Portfolio Values Don't Reconcile**
+   - Memory shows portfolio value of ~$262k across the last 3 runs, but the current portfolio is $102,615. This is a $159k+ discrepancy. Either the memory is stale, the portfolio was reconfigured without updating memory, or there are two different portfolio states being referenced. This undermines every downstream calculation (concentration, allocation, P&L).
+
+5. **Critical Bug: Mode Selector Uses Recency Weighting, Not All-Time Average**
+   - The current mode is LOW (5.7/10 avg), but recent runs scored 8.5, 9.2, 7.0 — clearly the system is capable of 8+ runs. If the mode selector is recency-weighted and a few old low-score runs are dragging it down, the system is sandbagging itself. The mode should reflect the system's *capability ceiling*, not its historical average including early failures.
+
+6. **Process Failure: No New Stock Ideas Beyond Current Portfolio**
+   - The user explicitly flagged this on 2026-04-30: "only considered stocks from my portfolio...I would like to see new stocks." The checklist confirms this is still unchecked. With 54% cash ($55k+ idle), the system has no excuse for not screening and recommending 3-5 new names outside the current 7 positions.
+
+7. **Process Failure: No Thesis Journal Entries**
+   - The thesis journal section is completely empty in this run. Every active recommendation (NVDA, PLTR, SOFI, TEM, VRT, etc.) should have a thesis entry with entry date, conviction level, key catalysts, and price targets. Without this, there's no accountability mechanism — the system can't track whether its own predictions were right.
+
+8. **Process Failure: No Options Section**
+   - The user has repeatedly praised the options/LEAP analysis (2026-04-22: "liked the options explanation"; 2026-05-07: "loved the options recommendations with clear explanations"). Yet this run has no options section. This is a known strength being dropped.
+
+9. **Process Failure: No Cash Deployment Plan**
+   - 54% cash ($55,412) sitting idle with no deployment plan is a significant opportunity cost, especially in a market where the system is finding 8/10 conviction names. The user needs a specific plan: "Deploy $X into [ticker] at $Y, $Z into [ticker] at $Y, reserve $A for [scenario]."
+
+10. **Process Failure: No Learning/Education Section**
+    - The user has been explicit: "Go more in depth...teach me while recommending...the learning section...nudging me towards learning new topics." The checklist confirms this is unchecked. After a 9.2/10 run that the user *loved* for its learning section, omitting it is ignoring the user's highest-priority request.
+
+11. **Conviction Calibration: All Active Recommendations Are 8/10 — This Is a Red Flag**
+    - NVDA, PLTR, SOFI, TEM, VRT all show 8/10 conviction. The checklist requires "conviction scores span at least a 3-point range." When everything is 8/10, nothing is 8/10. This suggests the conviction model has no discrimination — it's either not differentiating between high- and low-confidence ideas, or it's anchoring to a default. A proper spread would look like: 9/10 for highest-conviction, 6/10 for speculative, 4/10 for watchlist-only.
+
+12. **PLTR Data Staleness — A Recurring User Complaint**
+    - The user flagged on 2026-04-22: "PLTR data was old and the price isn't current." Here, PLTR shows $139.47 with a current price of $126.90 (-9.01%). If the buy price is stale or from a different data source, the P&L is meaningless. This needs a data freshness check: if the price hasn't been updated in 24+ hours, flag it explicitly rather than silently displaying bad data.
+
+13. **Risk Management: No Stop-Losses Visible**
+    - With 7 positions and no visible stop-loss levels, the portfolio has no downside protection. VRT is already down -4.33% from buy. PLTR is down -9.01%. Without stop-losses, the system cannot answer "how much can we lose on any single position?" — which is the most basic risk question.
+
+14. **Missed Opportunity: 54% Cash in a Market with Clear Winners**
+    - SOFI is up +8.47%, NVDA is up +1.09% — there are momentum names in the portfolio already. The system should be screening for similar profiles (fintech momentum, AI infrastructure, etc.) and recommending deployment of idle cash into high-conviction names. Instead, $55k sits idle with no plan.
+
+15. **Systemic Fix Needed: The Checklist Must Be a Gate, Not a Post-Mortem**
+    - The pre-run checklist identified all these problems *before* the run was delivered. The fix is architectural: the system should not generate a report until all checklist items pass, or it should explicitly flag which items are incomplete and let the user decide. Right now, the checklist is a scoring rubric applied after the fact — it should be a pre-flight checklist applied before output.
+
+**Bottom Line:** The system has demonstrated 8.5-9.2/10 capability within the last 6 weeks. This run's failures are not capability gaps — they are discipline and process failures. The three critical bugs (P&L sign, memory mismatch, mode weighting) need code-level fixes. The five process failures need the checklist to become a hard gate. The user's feedback trajectory is clear: they want depth, education, new ideas, options analysis, and honest self-assessment. All of these have been delivered before. The system just needs to deliver them *every time*.

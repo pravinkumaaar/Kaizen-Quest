@@ -760,3 +760,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-21 | CNXC | BUY | N/A | N/A | 6/10 | Active | - | Why: Concentrix reports June 29 AMC. This is the largest customer experience (CX |
 | 2026-06-21 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 95%+ US-listed companies. You have ZERO international exp |
 | 2026-06-21 | TEM | BUY | N/A | N/A | 6/10 | Active | - | Why: You're down -29.1% on Tempus AI (1.1% of portfolio). The precision oncology |
+| 2026-06-22 | MU | BUY | $1133.99 | $1280.00 | 7/10 | Active | - | Why: MU is your 4th largest position (+199.3%, $14K unrealized) and earnings are |
