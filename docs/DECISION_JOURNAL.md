@@ -771,3 +771,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-22 | TSM | BUY | N/A | $50.00 | 8/10 | Active | - | Type/Stock: Semiconductor (Foundry) @ Research needed — est. $280-320 range |
 | 2026-06-22 | PLTR | BUY | $120.78 | $165.00 | 7/10 | Active | - | Type/Stock: AI Software / Data Analytics @ $120.78 |
 | 2026-06-22 | CRDO | BUY | $302.92 | $420.00 | 7/10 | Active | - | Type/Stock: Semiconductor (Connectivity/Optical) @ $302.92 |
+| 2026-06-22 | NBIS | BUY | $286.13 | N/A | 6/10 | Active | - | Why: You're up 436.5% — this is your best performer. NBIS (Nebius Group) is an A |
