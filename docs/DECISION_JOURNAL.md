@@ -766,3 +766,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-22 | TEM | BUY | N/A | N/A | 7/10 | Active | - | Why: Down -29.2% with 3 sell ratings vs 9 buys — the bears are winning this argu |
 | 2026-06-22 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: You're massively underweight international. South Korea is the purest play  |
 | 2026-06-22 | FCX | BUY | N/A | $68.00 | 7/10 | Active | - | Why: Copper is the "new oil" of the AI/electrification era. Every GW of data cen |
+| 2026-06-22 | MU | BUY | $1197.67 | $5.50 | 7/10 | Active | - | Type/Stock: Semiconductor (Memory) @ $1,197.67 |
+| 2026-06-22 | AVGO | BUY | $411.35 | $80.00 | 8/10 | Active | - | Type/Stock: Semiconductor (Custom AI Chips + Networking) @ $411.35 |
+| 2026-06-22 | TSM | BUY | N/A | $50.00 | 8/10 | Active | - | Type/Stock: Semiconductor (Foundry) @ Research needed — est. $280-320 range |
+| 2026-06-22 | PLTR | BUY | $120.78 | $165.00 | 7/10 | Active | - | Type/Stock: AI Software / Data Analytics @ $120.78 |
+| 2026-06-22 | CRDO | BUY | $302.92 | $420.00 | 7/10 | Active | - | Type/Stock: Semiconductor (Connectivity/Optical) @ $302.92 |
