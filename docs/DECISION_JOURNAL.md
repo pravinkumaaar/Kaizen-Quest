@@ -791,3 +791,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | GLD | BUY | N/A | $550.00 | 7/10 | Active | - | Why: You have zero commodity, zero precious metals, and zero inflation hedge exp |
 | 2026-06-23 | VERTIV | BUY | $357.96 | $465.00 | 8/10 | Active | - | Why: VRT is the "picks and shovels" play of AI that the market is just beginning |
 | 2026-06-23 | CRDO | BUY | $302.52 | $400.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — they  |
+| 2026-06-23 | MU | BUY | $1079.48 | N/A | 7/10 | Active | - | Why: MU reports tomorrow AMC. You're already +184.9% on this position. The setup |
+| 2026-06-23 | PLTR | BUY | $119.15 | N/A | 8/10 | Active | - | Why: At 24.6% of portfolio, PLTR is a single-position risk event. You're +90%. T |
+| 2026-06-23 | RR | BUY | $2.11 | N/A | 9/10 | Active | - | Why: Down -24.9% from cost. This is a speculative micro-cap robotics play. At 1. |
+| 2026-06-23 | TSM | BUY | N/A | N/A | 8/10 | Active | - | Why: TSMC is the single most important company in the AI supply chain that you D |
+| 2026-06-23 | SOFI | BUY | $17.45 | N/A | 7/10 | Active | - | Why: You're up 44.5% on SOFI at 2.1% of portfolio. This is your fintech exposure |
