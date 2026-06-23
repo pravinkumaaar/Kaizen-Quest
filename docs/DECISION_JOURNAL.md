@@ -796,3 +796,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | RR | BUY | $2.11 | N/A | 9/10 | Active | - | Why: Down -24.9% from cost. This is a speculative micro-cap robotics play. At 1. |
 | 2026-06-23 | TSM | BUY | N/A | N/A | 8/10 | Active | - | Why: TSMC is the single most important company in the AI supply chain that you D |
 | 2026-06-23 | SOFI | BUY | $17.45 | N/A | 7/10 | Active | - | Why: You're up 44.5% on SOFI at 2.1% of portfolio. This is your fintech exposure |
+| 2026-06-23 | MU | BUY | $1086.06 | N/A | 7/10 | Active | - | Why: Micron reports tomorrow after the close. You're sitting on +186.6% unrealiz |
+| 2026-06-23 | SNDK | BUY | $2006.92 | N/A | 6/10 | Active | - | Why: SanDisk (formerly Western Digital's flash business) dropped nearly 12% toda |
+| 2026-06-23 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 100% long US tech/AI equities. Zero commodity exposure. Z |
+| 2026-06-23 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. India is the world's fastest-growing  |
+| 2026-06-23 | RR | BUY | $2.09 | N/A | 8/10 | Active | - | Why: You're down -25.6% on RR. The stock is a small-cap robotics name that has b |
