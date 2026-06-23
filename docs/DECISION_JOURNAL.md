@@ -781,3 +781,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-22 | PLTR | BUY | $119.50 | N/A | 8/10 | Active | - | Why: I know this is your biggest winner (+90.7%), and the AI/government thesis i |
 | 2026-06-22 | INDA | BUY | N/A | $70.00 | 6/10 | Active | - | Why: India is the most compelling macro story in emerging markets for the next d |
 | 2026-06-22 | GLD | BUY | N/A | $360.00 | 5/10 | Active | - | Why: This isn't about predicting a crash. It's about portfolio insurance. US fed |
+| 2026-06-23 | MU | BUY | $1211.38 | $1400.00 | 8/10 | Active | - | Thesis: Micron reports tomorrow AMC with $20.69 EPS estimate. HBM3E demand from  |
+| 2026-06-23 | GLD | BUY | $384.59 | $420.00 | 6/10 | Active | - | Thesis: Gold is the world's hedge against fiscal irresponsibility. With VIX at 2 |
+| 2026-06-23 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Thesis: South Korea is the "picks and shovels" play of the AI revolution. Samsun |
+| 2026-06-23 | VRT | BUY | $357.96 | N/A | 6/10 | Active | - | Thesis: Vertiv is a fantastic business (data center cooling/power), but it's up  |
+| 2026-06-23 | BE | BUY | $345.85 | $450.00 | 7/10 | Active | - | Thesis: Bloom Energy is the only pure-play clean baseload power for AI data cent |
