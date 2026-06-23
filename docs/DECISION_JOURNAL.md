@@ -801,3 +801,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio is 100% long US tech/AI equities. Zero commodity exposure. Z |
 | 2026-06-23 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. India is the world's fastest-growing  |
 | 2026-06-23 | RR | BUY | $2.09 | N/A | 8/10 | Active | - | Why: You're down -25.6% on RR. The stock is a small-cap robotics name that has b |
+| 2026-06-23 | MU | BUY | N/A | $1350.00 | 7/10 | Active | - | Why: Micron reports earnings tomorrow (June 24 AMC). The stock just got hammered |
+| 2026-06-23 | GLD | BUY | N/A | $430.00 | 6/10 | Active | - | Why: You have zero commodity/metal exposure in a portfolio that's 63% concentrat |
+| 2026-06-23 | PLTR | BUY | N/A | N/A | 8/10 | Active | - | Why: PLTR is your largest position at 24.4% of portfolio — that's enormous singl |
+| 2026-06-23 | RR | BUY | N/A | N/A | 8/10 | Active | - | Why: You're down -26.3% on a $1,400 position. This is a micro-cap robotics name  |
+| 2026-06-23 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: You have zero international exposure. South Korea is the most direct way to |
