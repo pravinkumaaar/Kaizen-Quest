@@ -1,147 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-e losing $4,000-$8,000/year in opportunity cost.
-
-- **Emergency fund assumption is wrong.** We don't know the user's financial situation. We should recommend a SAFE cash allocation (3-6 months expenses in SGOV/MINT) and deploy the REST. If the user has expenses of ~$3K/month, keep $15-18K and deploy $37K+.
-
-- **Prior runs showed 37% cash (63% invested).** We've gone from under-invested to over-invested to under-invested again. This whiplash suggests we're not doing portfolio math correctly or consistently.
-
-- **Dollar-cost averaging plan needed.** Rather than deploying $37K at once (timing risk), recommend: "Deploy in 3 tranches over 6 weeks: Tranche 1 ($12K) in TSM and copper, Tranche 2 ($12K) in rate-cut beneficiaries, Tranche 3 ($13K) opportunistically on any 5%+ market dip."
-
----
-
-## 9. MEMORY & LEARNING
-
-- **We're not building on past analysis.** The thesis journal should record: "On April 23 (7/10 rating), we recommended [X]. On April 30 (8.5/10), we [Y]. On May 7 (9.2/10), we [Z]. This run, we should [build on Z by doing ___]." We're not doing this.
-
-- **The user's explicit asks from the last 2 months:**
-  - ❌ "Recommend new tickers I don't own" (April 30) → Not done
-  - ❌ "Don't rate market foresight negative/100, make it more useful" (May 7) → Not done  
-  - ❌ "Options data was broken, fix it" (May 7) → Unknown if fixed
-  - ❌ "Don't get complacent, keep learning" (May 7) → We clearly got complacent
-  - ❌ Portfolio is not real-time synchronized → Ongoing issue
-
-- **The 5 consecutive ratings show responsiveness matters most:**
-  - 4 → 6 (+2): Added detail and specificity
-  - 6 → 7 (+1): Better portfolio understanding, news quality
-  - 7 → 8.5 (+1.5): Full portfolio awareness, thesis-driven options
-  - 8.5 → 9.2 (+0.7): Cross-domain analysis, honesty, new ticker ideas
-  
-  The MASSIVE gains came from **listening and iterating**. This run regresses to a 4–5 territory because we STOPPED listening.
-
----
-
-## 10. PROCESS IMPROCTIONS (ACTION ITEMS FOR NEXT RUN)
-
-### CRITICAL (Fix before next run):
-1. **Fix the mode classification bug.** Use a recency-weighted average of the last 5 ratings, not all-time. Last 5 ratings are 4, 6, 7, 8.5, 9.2. Weighted toward recent: ~7.5/10 = HIGH mode. This alone would prevent "alerts-only" stub output.
-
-2. **Validate every price against NYSE/NASDAQ real-time feed.** If price is >1 hour old, flag with timestamp. NEVER recommend a ticker with stale pricing.
-
-3. **Rebuild the thesis journal from RECENT data.** Populate it with: each active recommendation, entry price, thesis summary, conviction, stop-loss level, and status. This becomes a MANDATORY section in every report.
-
-### HIGH (Implement within 2 runs):
-4. **Diversify current 8/10 homogeneity.** Review all active picks and re-conviction them on a curve: NVDA stays 8, VRT drops to 7, SOFI stays 7, PLTR downgrades to 5 (thesis not yet playing out), TEM to 6, find ONE new pick at 8/10 conviction that's NOT AI-correlated.
-
-5. **Add a "What You Asked For" section.** Directly reference the last 3 feedback items:
-   - "You asked us to recommend new tickers you don't own → This run we're adding TSM and FCX"
-   - "You asked us to stop using the negative/100 market foresight score → We replaced it with actionable macro scenarios"
-   
-6. **Deploy cash strategy.** Recommend parking cash in SGOV (0-3 month T-bills, ~4.5% yield) immediately, and create a 3-tranche DCA plan for equity deployment.
-
-7. **Add hard stop-loss rules.** Every recommendation >6 conviction gets a 10% trailing stop-loss. If hit, the position gets flagged "UNDER REVIEW" and we assess whether the thesis is broken or it's a buying opportunity.
-
-### MEDIUM (Within 1 month):
-8. **Add sector exposure heatmap.** Show the user what % of their portfolio is AI, financials, healthcare, etc. Flag any sector >35% as concentration risk.
-
-9. **Implement hedge recommendation.** Even a 2-3% VIX call position or SPY collar protects the portfolio. Show the user the cost and the payoff diagram.
-
-10. **Add recurring "lessons learned" module.** Every 4 weeks, do a mini-audit: which picks beat expectations, which missed, why. Show the user we're getting smarter — or admit if we're not.
-
----
-
-**Bottom line: The user gave us a 9.2/10 six weeks ago and explicitly asked us not to get complacent. We got complacent. The infrastructure broke, the data went stale, the thesis journal went empty, and we delivered an alerts-only stub. The user is smart, patient, and giving us exactly the feedback we need. **The next run must be HIGH mode, fully loaded, with rebuilt thesis journal, newly recommended non-AI tickers, proper cash deployment, hard stop-losses, and a direct "here's what you asked for and here's what we did" section.** No excuses. The capability is proven. Now execute.**
-
-## Run: 2026-06-23 00:01:34 ET
-**Self-Reflection: 2026-06-23**
-
----
-
-**What Worked Well**
-
-- **NVDA at $207.14 (38 shares, 8/10 conviction, -0.84%):** This pick was well-timed and the thesis around AI infrastructure demand remains intact. The entry was disciplined and the position is essentially flat, which in the current environment is a win. The 8/10 conviction was appropriate — not overconfident, not tentative.
-- **SOFI at $16.29 (306 shares, 8/10 conviction, +3.50%):** The fintech recovery thesis is playing out. SOFI's banking charter and loan portfolio diversification are being recognized. The position sizing (306 shares) reflects appropriate conviction without overconcentration.
-- **VRT at $348.38 (28 shares, 8/10 conviction, +0.46%):** Vertiv's data center cooling/power thesis is structurally sound. The position is small but correctly sized for a high-priced stock. The thesis around AI-driven data center buildout supporting VRT is validated by continued hyperscaler capex guidance.
-- **User feedback trajectory:** The progression from 4/10 → 9.2/10 showed we were responsive to feedback — adding portfolio-aware recommendations, options analysis, cross-domain learning, and honest state-of-play assessments. The user explicitly valued brutal honesty and specificity.
-
----
-
-**What Didn't Work**
-
-- **PLTR at $139.47 (57 shares, 8/10 conviction, -15.11%):** This is the biggest problem child. An 8/10 conviction that's down 15% demands scrutiny. The thesis around AIP (AI Platform) adoption and government contracts may be correct long-term, but the entry timing was poor and the stop-loss was either not set or not enforced. This is a conviction calibration failure — 8/10 should not lose 15% without a thesis review trigger.
-- **TEM at $50.22 (99 shares, 8/10 conviction, -6.33%):** Another 8/10 pick underperforming. TEM (Tempus AI) is in the AI-driven healthcare diagnostics space, which is promising, but the position is down and the thesis journal is empty — meaning we're not tracking why we were wrong or right. This is a process failure.
-- **Alibaba (BABA) at $117.13 (85 shares, 8/10 conviction, +79.76%):** While the P&L is spectacular, an 8/10 conviction that returns 79.76% suggests we *under-rated* our conviction. This is actually a calibration problem in the other direction — if the thesis was strong enough to hold through volatility, it deserved a 9/10 or we should have added to the position on dips. The lesson: when a thesis is validated early, conviction should be *increased*, not left static.
-- **Alerts-only run delivery:** The user got a stub report. After a 9.2/10 run six weeks ago, this is unacceptable. The infrastructure broke and we didn't catch it. The user explicitly warned: "don't get complacent."
-
----
-
-**Conviction Calibration**
-
-- **Systematic over-rating at 8/10:** Five of seven positions are rated 8/10. This is grade inflation. An 8/10 should mean "strong conviction with clear catalysts and manageable risk." PLTR at -15% and TEM at -6% should have triggered downgrades to 6/10 or exit recommendations. The 8/10 bucket is too wide.
-- **BABA at +79% should be 9/10 or exited with profits taken:** If we were right, we should have either increased conviction or trimmed to lock in gains. Neither happened. This suggests we're not dynamically managing conviction scores.
-- **No 9/10 or 10/10 picks exist:** This is either appropriate conservatism or a sign that we're not identifying truly high-conviction opportunities. Given the user's feedback that they want "once-in-a-lifetime asymmetric plays," we should be finding at least one 9-10/10 idea per run.
-- **No 5/10 or below picks exist either:** The conviction distribution is clustered at 8/10 with nothing below. This means we're either not recommending enough ideas (so we only pick "good" ones) or we're not honestly rating lower-conviction ideas. The user specifically asked for new stock recommendations beyond their current holdings — we're not generating enough ideas.
-
----
-
-**Thesis Journal Review**
-
-- **Thesis journal is EMPTY.** This is the single most damning finding. Every active recommendation should have a written thesis with: (1) entry rationale, (2) key catalysts to watch, (3) invalidation conditions, (4) price targets. Without this, we're flying blind.
-- **PLTR thesis likely refuted short-term:** Down 15% with no journal entry means we don't know if the thesis is broken or if this is a buying opportunity. This is exactly the kind of situation where a thesis journal is critical.
-- **BABA thesis validated but not documented:** A 79% return with no written thesis means we can't learn from our success. What did we get right? Can we replicate it?
-- **Pattern: We're not tracking invalidation conditions.** Every thesis should have a "this thesis is wrong if X happens" statement. PLTR should have had a stop-loss or invalidation condition at -10% or -12%. It didn't, and now we're down 15% with no plan.
-
----
-
-**Missed Opportunities**
-
-- **No new stock recommendations:** The user explicitly asked for this in the 8.5/10 feedback: "I would like to see new stocks that I may not have that might present a better opportunity." The current run has zero new recommendations. This is a direct failure to act on user feedback.
-- **Cash at 54% is massively underdeployed:** With ~$54,963 in cash and a 90% deployment target, we should have ~$49,000 deployed. We're leaving enormous opportunity cost on the table. In a market where AI infrastructure, fintech, and healthcare AI are all trending, there's no excuse for 54% cash.
-- **No hedge recommendations:** The user's own learning history mentions: "Implement hedge recommendation. Even a 2-3% VIX call position or SPY collar protects the portfolio." We haven't done this.
-- **No options strategies beyond LEAPs:** The user liked the LEAP explanation but we haven't expanded to covered calls, cash-secured puts, or spreads on existing positions. With 54% cash, selling puts on high-conviction names would be an efficient deployment strategy.
-
----
-
-**Data Quality Issues**
-
-- **Stale data risk:** The user's earliest complaint (4/10) was about PLTR data being old. The current run shows prices but we need to verify timestamps. If any price is more than 24 hours old, it's a data quality failure.
-- **Memory shows portfolio value of ~$257K-$259K on 2026-06-22 but current portfolio is $101,783.** This is a massive discrepancy. Either the memory is stale/wrong, or there was a portfolio change not reflected in memory. This needs immediate investigation — if we're making recommendations based on a $257K portfolio when the actual portfolio is $102K, every position sizing recommendation is wrong.
-- **Concentration shows 0.0% which is mathematically impossible** with 7 positions. This is a calculation bug. If concentration is truly 0%, the concentration metric is broken and we can't trust any risk management outputs.
-- **Thesis journal is empty** — this is a data completeness issue. Every recommendation should auto-generate a thesis entry.
-
----
-
-**Risk Management**
-
-- **PLTR at -15% with no stop-loss action:** This is a risk management failure. Any position down >10% from entry should trigger an automatic review. Down 15% should trigger either an exit or a formal thesis reaffirmation with written justification. Neither happened.
-- **Concentration metric is broken (0.0%):** We cannot manage concentration risk if the metric is wrong. Need to fix the calculation immediately.
-- **No portfolio-level stop-loss or drawdown protection:** With 54% cash, the portfolio has natural downside protection, but the equity portion could still draw down 20-30% in a correction. No hedging strategy is in place.
-- **No earnings risk flags for upcoming earnings:** The user specifically praised the earnings risk flag in the 9.2/10 run. It's absent now. Need to check which positions have earnings in the next 2-4 weeks and flag them.
-- **Position sizing is inconsistent:** BABA has 85 shares at ~$117 ($9,945 position), SOFI has 306 shares at ~$16 ($4,896 position), PLTR has 57 shares at ~$139 ($7,923 position). The position sizes don't seem to follow a clear sizing methodology (e.g., risk-parity, conviction-weighted, etc.).
-
----
-
-**Cash Deployment**
-
-- **54% cash ($54,963) vs. 90% target:** This is the most actionable problem. We're leaving ~$49,000 in cash that should be deployed. At minimum, we should have 3-5 new positions or additions to existing positions.
-- **Opportunity cost calculation:** If the deployed portion is returning ~1.8% and cash is earning ~4-5% (money market), the cash drag is actually *helping* right now. But in a risk-on environment, this is a massive opportunity cost. The user wants to be invested, not sitting on cash.
-- **Deployment strategy needed:** With $49,000 to deploy, we should: (1) add to highest-conviction existing positions, (2) initiate 2-3 new positions in sectors we're underweight, (3) sell cash-secured puts on names we want to own at lower prices.
-
----
-
-**Memory & Learning**
-
-- **Memory is stale and contradictory:** The last 3 runs all show 2026-06-22 with ~$257K-$259K portfolio value, but today's portfolio is $101,783. This suggests memory hasn't been updated or there's a data source issue. We cannot build on past analysis if the memory is wrong.
+$257K-$259K portfolio value, but today's portfolio is $101,783. This suggests memory hasn't been updated or there's a data source issue. We cannot build on past analysis if the memory is wrong.
 - **Learning history shows good intentions but no execution:** The learning history lists 10 excellent improvement ideas (sector concentration limits, hedge recommendations, lessons learned module, etc.) but none have been implemented. This is a planning-vs-execution gap.
 - **No evidence of building on past analysis:** The thesis journal is empty, meaning we're not referencing past theses, not tracking what we got right/wrong, and not compounding knowledge. Every run is starting from scratch.
 - **User feedback is not being systematically incorporated:** The user gave specific, actionable feedback in every rating. The 9.2/10 run incorporated it. Then we regressed. We need a feedback-to-action tracking system.
@@ -177,3 +36,101 @@ e losing $4,000-$8,000/year in opportunity cost.
 ---
 
 **Bottom Line:** We went from a 9.2/10 to delivering an alerts-only stub with an empty thesis journal, broken concentration metrics, 54% cash, and no new recommendations. The user told us not to get complacent and we did exactly that. The capability is proven — the 9.2/10 run showed we can deliver world-class analysis. The problem is execution consistency and infrastructure reliability. Every item above is actionable and should be completed before the next run. No excuses.
+
+## Run: 2026-06-23 05:53:20 ET
+# OWL — Deep Self-Reflection: 2026-06-23 Run Post-Mortem
+
+**Mode: LOW | Rating: 5.7/10 | Portfolio: $100,749 | Cash: 55%**
+
+---
+
+## What Worked Well
+
+- **Alpaca-sourced recommendations remain the backbone of conviction picks.** NVDA ($207.14, 38 shares, 8/10 conviction), PLTR ($139.47, 57 shares, 8/10), SOFI ($16.29, 306 shares, 8/10), TEM ($50.22, 99 shares, 8/10), and VRT ($348.38, 28 shares, 8/10) all carried high conviction scores. NVDA is already showing a positive unrealized return, validating the thesis that AI-infrastructure demand continues to accelerate post-earnings. SOFI at +2.76% is the strongest short-term performer from this cohort.
+- **User feedback trajectory was genuinely strong before this run.** The 9.2/10 run on 2026-05-07 proved we *can* deliver world-class analysis: detailed position-level reasoning, cross-domain thematic linking, brutally honest state-of-play assessment, and actionable options recommendations. The capability is not in question — it's execution consistency.
+- **The user's specific feedback loop is high-quality and actionable.** They told us to: (a) go deeper and teach, (b) sort by biggest movers/events, (c) understand their existing positions before recommending, (d) recommend *new* stocks not already held, (e) fix the options data pipeline, (f) improve the market foresight rating system. This is a sophisticated user who rewards precision and punishes complacency.
+
+## What Didn't Work
+
+- **This run delivered an alerts-only stub in LOW mode.** No full report was generated. The thesis journal is empty. The memory insights section is empty. This is a catastrophic regression from the 9.2/10 run. The user explicitly warned "don't get complacent" — and we delivered exactly that.
+- **55% cash sitting idle with no deployment thesis.** On a $100,749 portfolio, that's ~$55,400 in cash. The user's own stated target is 90% deployment. We are at 45% deployment. This is the single biggest drag on performance and the most obvious failure of this run.
+- **Concentration metric reads 0.0% — this is clearly broken.** The portfolio holds 7 positions. A 0.0% concentration reading means the calculation is returning a default/null value. This is a data pipeline bug that must be fixed before the next run.
+- **No new stock recommendations.** The user explicitly asked on 2026-04-30: "I would like to see new stocks that I may not have that might present a better opportunity." This run apparently recycled only existing positions. That is a direct failure to implement user feedback.
+- **Thesis journal is completely empty.** This is supposed to be our institutional memory — tracking which theses were validated, which were refuted, conviction calibration accuracy. An empty journal means we are operating with zero self-awareness.
+
+## Conviction Calibration
+
+- **All five active Alpaca picks were rated 8/10 conviction.** Let's audit them:
+  - **NVDA at $207.14:** AI infrastructure thesis. If bought near current levels and already profitable, this conviction appears justified. NVDA's forward P/E, revenue growth rate (60%+ YoY), and data center demand support an 8/10. *However*, we need to verify the entry price — if the position was opened at a much lower cost basis, the 8/10 may be backward-looking, not forward-looking.
+  - **PLTR at $139.47:** Government + commercial AI platform thesis. PLTR has been volatile. At $139, it's trading at a significant premium (forward P/E likely 60x+). An 8/10 conviction here is aggressive. The user's own feedback from 2026-04-22 flagged stale PLTR data — we need to ensure the price feed is current.
+  - **SOFI at $16.29:** Fintech/banking platform thesis. 306 shares at $16.29 = ~$4,985 position. This is a reasonable size. SOFI's deposit growth and first GAAP profitable quarter (if confirmed) could justify conviction. But 8/10 implies high confidence in a fintech that's still proving unit economics.
+  - **TEM at $50.22:** Healthcare/longevity thesis. TEM (Tempus AI) is a high-risk, high-reward play. 99 shares = ~$4,970. An 8/10 conviction on a speculative healthcare AI name is aggressive. This needs a clear stop-loss.
+  - **VRT at $348.38:** Vertiv — data center cooling/power infrastructure. 28 shares = ~$9,755. This is the largest single position. VRT benefits from the same AI capex tailwind as NVDA but at a lower multiple. 8/10 may actually be *under-rated* here — this could be a 9/10 if the thesis is data center capex durability through 2027-2028.
+- **Pattern:** We are clustering at 8/10 across the board. This is lazy calibration. True conviction scoring should produce a distribution — some 6s, some 7s, some 9s. When everything is 8/10, nothing is 8/10. We need to force-rank and differentiate.
+
+## Thesis Journal Review
+
+- **The thesis journal is empty, so I will reconstruct what should be in it based on available data:**
+  - **BABA +79% (referenced in learning history):** This was a validated thesis. Chinese e-commerce recovery + Alibaba's cloud spinoff + regulatory easing. The lesson: macro regime shifts in China can create asymmetric upside when positioned early.
+  - **PLTR -15% (referenced in learning history):** This was a refuted or poorly timed thesis. The lesson: high-conviction AI platform theses need entry price discipline. PLTR's premium valuation means timing matters enormously.
+  - **NVDA thesis:** Ongoing. The AI infrastructure buildout thesis has been one of the most durable of 2025-2026. But at $207, we need to ask: how much is priced in? The thesis should have a price target and a "thesis break" level.
+  - **Missing:** We should have theses on SOFI (fintech profitability inflection), TEM (AI-driven diagnostics adoption), and VRT (data center capex durability) formally logged with entry prices, price targets, thesis-break levels, and conviction scores at time of recommendation.
+
+## Missed Opportunities
+
+- **No new stock recommendations at all.** The user explicitly asked for this. With $55,400 in cash, we should be screening for:
+  - **SMCI (Super Micro Computer):** If the AI infrastructure thesis holds, SMCI is a direct play on server buildout at a more reasonable valuation than NVDA.
+  - **MSFT or GOOGL:** Cloud hyperscaler picks that benefit from AI capex but have diversified revenue streams and strong free cash flow. These are "new portfolio" names that reduce single-stock risk.
+  - **XLY or XLF ETF plays:** If we want thematic exposure without single-stock risk, consumer discretionary or financial ETFs could deploy cash efficiently.
+  - **International diversification:** No international exposure in the portfolio. VXUS or similar could deploy 5-10% of cash immediately.
+- **No options recommendations.** The user has consistently praised our options analysis (LEAPs, covered calls, etc.). This run apparently had none. That's a major gap.
+- **No earnings risk calendar.** The 9.2/10 run flagged earnings risk. This run apparently didn't. With NVDA and SOFI both potentially near earnings, this is a critical miss.
+
+## Data Quality Issues
+
+- **PLTR stale price issue (recurring from 2026-04-22).** The user flagged this two months ago. If the price feed is still pulling delayed or stale data for PLTR, this is a systemic data pipeline issue that needs to be escalated to the data engineering layer.
+- **Concentration metric returning 0.0%.** This is a calculation bug. The portfolio clearly has 7 positions with VRT at ~$9,755 being the largest. A proper concentration metric should show VRT at ~9.7% of portfolio, with the top 3 positions likely at 30-40% combined.
+- **Cash at 55% but no explanation.** Either the cash calculation is wrong, or we genuinely have $55,400 sitting idle with no plan. Both are problems.
+- **Market Foresight at 2/100 labeled "neutral."** A score of 2/100 is not neutral — it's bearish. If the intent is "neutral," the scale is broken. The user flagged this in the 9.2/10 run: "the market foresight outlook is rated negative out of 100... the rating system could be improved." We have not fixed this.
+
+## Risk Management
+
+- **No stop-losses visible on any position.** VRT at $348.38 with 28 shares ($9,755 position) has no visible stop-loss. If VRT drops 15% to ~$296, that's a $1,460 loss on a $100K portfolio — 1.4% drawdown from one position. We need hard stops at -12% to -15% on all speculative positions (TEM, PLTR, SOFI).
+- **NVDA position risk:** 38 shares at $207 = $7,866. If NVDA corrects 20% (to ~$166), that's a $1,560 loss. AI stocks are prone to sharp corrections on any demand-signal weakness. Stop-loss should be at ~$175.
+- **SOFI concentration:** 306 shares is the largest share count in the portfolio. At $16.29, that's $4,985. SOFI is a fintech with real regulatory and competitive risk. Position size is reasonable but needs a stop at ~$13 (-20%).
+- **TEM is the highest-risk position:** Healthcare AI companies can gap down 30-40% on a single failed trial or regulatory setback. 99 shares at $50.22 = $4,970. Hard stop at $40 (-20%) is non-negotiable.
+- **No portfolio-level hedging.** With 45% deployed, we have no puts, no VIX calls, no inverse ETF exposure. If the market corrects 10%, our positions could draw down 15-20% (beta-adjusted). We need at least 1-2% of portfolio in tail-risk hedges.
+
+## Cash Deployment
+
+- **$55,400 in cash on a $100,749 portfolio is the #1 problem.** This is 55% idle. The user's target is 90% deployment (10% cash). We are at 45% deployment. This is not a risk-management decision — it's a failure to find opportunities or a failure in the deployment pipeline.
+- **Opportunity cost calculation:** If the market returns 10% annually (SPY baseline), our $55,400 in cash is costing us ~$5,540/year in foregone returns. On a $100K portfolio, that's 5.5% annual drag. This is the difference between outperforming and underperforming.
+- **Immediate action:** Deploy at least $30,000 of the $55,400 before the next run. Target: 25% cash ($25,000), 75% invested ($75,000). This can be done through:
+  - 2-3 new positions in high-conviction names
+  - 1-2 ETF positions for broad market exposure
+  - Dollar-cost averaging into existing positions if the thesis is intact
+
+## Memory & Learning
+
+- **Memory insights section is empty.** This means we are not building on past analysis. The learning history references specific improvements (items 1-12), but if they're not being logged in memory, they're not being implemented.
+- **We are re-researching the same companies without tracking what we've learned.** NVDA, PLTR, SOFI, TEM, VRT — these are the same names from previous runs. What have we *newly* learned about each since the last report? If the answer is "nothing," we shouldn't be re-researching them — we should be updating the thesis with new data points.
+- **The user's learning requests are not being tracked.** They asked for: (a) deeper explanations, (b) teaching moments, (c) cross-domain analysis, (d) "tiny tit bits" of insight. These should be logged as recurring requirements in memory, not re-discovered each run.
+
+## Process Improvements
+
+1. **Force HIGH mode delivery.** The next run must be a full report. If infrastructure cannot support it, flag it at the start and explain why — don't deliver a stub. The user deserves transparency.
+2. **Fix the concentration metric.** This is a calculation bug. VRT at $9,755 on $100,749 = 9.7% concentration. The top 3 positions should sum to 25-35%. Calculate and display this correctly.
+3. **Fix the Market Foresight scale.** Either use 0-100 where 50 is neutral, or label it correctly. A score of 2/100 is not "neutral" — it's crisis-level bearish. The user flagged this and we haven't fixed it.
+4. **Populate the thesis journal before every run.** Every active position needs: entry price, current price, thesis summary, price target, thesis-break level, conviction score at entry, current conviction score, and P&L. This is non-negotiable.
+5. **Differentiate conviction scores.** No more 8/10 across the board. Force-rank all positions. If NVDA is the highest-conviction name, it should be 9/10 while TEM is 7/10. Differentiation is the point of the scale.
+6. **Recommend at least 2-3 new positions not in the portfolio.** The user explicitly asked for this. With $55K in cash, there is no excuse.
+7. **Set and display stop-losses on every position.** Hard stops at -15% for speculative names (PLTR, TEM, SOFI), -12% for quality names (NVDA, VRT). Display these prominently.
+8. **Deploy at least $30,000 of cash before the next run.** Target 75% invested. If no individual names qualify, use ETFs (QQQ, XLF, VXUS) as deployment vehicles.
+9. **Include an earnings calendar.** Flag any positions with earnings in the next 14 days. NVDA and SOFI may both be approaching earnings — this is critical risk information.
+10. **Include options analysis.** The user consistently rates this as a top-3 feature. LEAPs for new positions, covered calls on existing positions, and protective puts for hedging. This was apparently missing from this run.
+11. **Add a "Lessons Learned" module.** Compare current recommendations to past ones. BABA +79% (validated) vs. PLTR -15% (refuted). What patterns emerge? Be brutally honest.
+12. **Sort positions by impact, not alphabetically.** The user asked on 2026-04-22: "I want to see the ones that had a big event or news or moved the most today." Sort by daily % change or news impact, not by portfolio order.
+
+---
+
+**Bottom Line:** We went from a 9.2/10 to delivering an alerts-only stub with an empty thesis journal, broken concentration metrics, 55% cash, and no new recommendations. The user told us not to get complacent and we did exactly that. The capability is proven — the 9.2/10 run showed we can deliver world-class analysis. The problem is execution consistency and infrastructure reliability. Every item above is actionable and should be completed before the next run. No excuses.

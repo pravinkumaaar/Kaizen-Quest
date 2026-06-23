@@ -786,3 +786,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Thesis: South Korea is the "picks and shovels" play of the AI revolution. Samsun |
 | 2026-06-23 | VRT | BUY | $357.96 | N/A | 6/10 | Active | - | Thesis: Vertiv is a fantastic business (data center cooling/power), but it's up  |
 | 2026-06-23 | BE | BUY | $345.85 | $450.00 | 7/10 | Active | - | Thesis: Bloom Energy is the only pure-play clean baseload power for AI data cent |
+| 2026-06-23 | PRX | BUY | N/A | $1600.00 | 8/10 | Active | - | Why: This is the bottleneck monopoly of the entire AI infrastructure stack. No A |
+| 2026-06-23 | TTSM | BUY | N/A | $420.00 | 7/10 | Active | - | Why: You are already positioned in the AI value chain — but you're positioned in |
+| 2026-06-23 | GLD | BUY | N/A | $550.00 | 7/10 | Active | - | Why: You have zero commodity, zero precious metals, and zero inflation hedge exp |
