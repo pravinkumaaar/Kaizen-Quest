@@ -789,3 +789,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | PRX | BUY | N/A | $1600.00 | 8/10 | Active | - | Why: This is the bottleneck monopoly of the entire AI infrastructure stack. No A |
 | 2026-06-23 | TTSM | BUY | N/A | $420.00 | 7/10 | Active | - | Why: You are already positioned in the AI value chain — but you're positioned in |
 | 2026-06-23 | GLD | BUY | N/A | $550.00 | 7/10 | Active | - | Why: You have zero commodity, zero precious metals, and zero inflation hedge exp |
+| 2026-06-23 | VERTIV | BUY | $357.96 | $465.00 | 8/10 | Active | - | Why: VRT is the "picks and shovels" play of AI that the market is just beginning |
+| 2026-06-23 | CRDO | BUY | $302.52 | $400.00 | 7/10 | Active | - | Why: Credo Technology is a pure-play AI data center connectivity company — they  |
