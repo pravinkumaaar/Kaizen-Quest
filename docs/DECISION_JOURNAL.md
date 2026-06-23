@@ -806,3 +806,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | PLTR | BUY | N/A | N/A | 8/10 | Active | - | Why: PLTR is your largest position at 24.4% of portfolio — that's enormous singl |
 | 2026-06-23 | RR | BUY | N/A | N/A | 8/10 | Active | - | Why: You're down -26.3% on a $1,400 position. This is a micro-cap robotics name  |
 | 2026-06-23 | EWY | BUY | N/A | N/A | 6/10 | Active | - | Why: You have zero international exposure. South Korea is the most direct way to |
+| 2026-06-23 | MU | BUY | $1051.77 | $1350.00 | 8/10 | Active | - | Why: The market just punished a company that reported a blowout quarter — EPS $2 |
+| 2026-06-23 | PLTR | BUY | $116.70 | N/A | 9/10 | Active | - | Why: Your largest position at 24.4% of portfolio. PLTR is the operating system o |
+| 2026-06-23 | EWZ | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US equities with heavy tech concentration. Brazil is |
+| 2026-06-23 | SNDK | BUY | $1963.60 | $2450.00 | 7/10 | Active | - | Why: Same AI memory cycle as MU, but SNDK is the NAND flash play rather than DRA |
