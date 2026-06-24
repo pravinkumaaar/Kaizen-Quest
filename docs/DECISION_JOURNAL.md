@@ -810,3 +810,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-23 | PLTR | BUY | $116.70 | N/A | 9/10 | Active | - | Why: Your largest position at 24.4% of portfolio. PLTR is the operating system o |
 | 2026-06-23 | EWZ | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US equities with heavy tech concentration. Brazil is |
 | 2026-06-23 | SNDK | BUY | $1963.60 | $2450.00 | 7/10 | Active | - | Why: Same AI memory cycle as MU, but SNDK is the NAND flash play rather than DRA |
+| 2026-06-24 | MU | BUY | $1051.77 | $1250.00 | 7/10 | Active | - | Why: Earnings TODAY after close. You hold 7.9% of portfolio here. The stock is d |
+| 2026-06-24 | SNDK | BUY | $1963.60 | $2400.00 | 7/10 | Active | - | Why: Down 13.64% today alongside MU — the entire memory/storage complex is getti |
+| 2026-06-24 | KRE | BUY | N/A | N/A | 8/10 | Active | - | Why: You have zero financial sector exposure despite it being the second-largest |
+| 2026-06-24 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is the most direct play on the global AI memory cycle — Samsung |
