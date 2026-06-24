@@ -817,3 +817,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | GLD | BUY | N/A | $245.00 | 7/10 | Active | - | Why: Gold is the ultimate anti-fragile position when AI narratives fracture. Wit |
 | 2026-06-24 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Why: South Korea is the world's most cyclical, highest-beta play on the global s |
 | 2026-06-24 | JPM | BUY | N/A | $340.00 | 8/10 | Active | - | Why: JPM is the single best-positioned bank for a steepening yield curve + risin |
+| 2026-06-24 | HIMS | BUY | $32.96 | N/A | 4/10 | Active | - | Why: HIMS is your only position with a realized loss (-20.1%) among your top 15  |
