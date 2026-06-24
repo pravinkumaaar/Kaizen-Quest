@@ -818,3 +818,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Why: South Korea is the world's most cyclical, highest-beta play on the global s |
 | 2026-06-24 | JPM | BUY | N/A | $340.00 | 8/10 | Active | - | Why: JPM is the single best-positioned bank for a steepening yield curve + risin |
 | 2026-06-24 | HIMS | BUY | $32.96 | N/A | 4/10 | Active | - | Why: HIMS is your only position with a realized loss (-20.1%) among your top 15  |
+| 2026-06-24 | NBIS | BUY | $258.41 | N/A | 8/10 | Active | - | Why: Your largest unrealized winner at +384% is dominating portfolio risk. It's  |
+| 2026-06-24 | RR | BUY | $1.94 | N/A | 9/10 | Active | - | Why: You've held this position underwater and the unrealized loss confirms the t |
+| 2026-06-24 | ACHR | BUY | N/A | N/A | 9/10 | Active | - | Why: Down -43.7% and thesis is clearly broken. eVTOL names are suffering from a  |
+| 2026-06-24 | GLD | BUY | $288.00 | N/A | 7/10 | Active | - | Why: Your entire $120,000+ equity allocation is in tech/growth/speculative names |
