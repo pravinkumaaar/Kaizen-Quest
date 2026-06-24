@@ -822,3 +822,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | RR | BUY | $1.94 | N/A | 9/10 | Active | - | Why: You've held this position underwater and the unrealized loss confirms the t |
 | 2026-06-24 | ACHR | BUY | N/A | N/A | 9/10 | Active | - | Why: Down -43.7% and thesis is clearly broken. eVTOL names are suffering from a  |
 | 2026-06-24 | GLD | BUY | $288.00 | N/A | 7/10 | Active | - | Why: Your entire $120,000+ equity allocation is in tech/growth/speculative names |
+| 2026-06-24 | MU | BUY | $1043.24 | N/A | 7/10 | Active | - | Why: You hold 8% of portfolio in MU reporting today. Micron is the canary in the |
