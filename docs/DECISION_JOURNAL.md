@@ -823,3 +823,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | ACHR | BUY | N/A | N/A | 9/10 | Active | - | Why: Down -43.7% and thesis is clearly broken. eVTOL names are suffering from a  |
 | 2026-06-24 | GLD | BUY | $288.00 | N/A | 7/10 | Active | - | Why: Your entire $120,000+ equity allocation is in tech/growth/speculative names |
 | 2026-06-24 | MU | BUY | $1043.24 | N/A | 7/10 | Active | - | Why: You hold 8% of portfolio in MU reporting today. Micron is the canary in the |
+| 2026-06-24 | SNX | BUY | $135.00 | $165.00 | 7/10 | Active | - | Earnings: Tomorrow (2026-06-25) BMO — EPS est: $4.16, Rev est: $17.0B |
+| 2026-06-24 | DAL | BUY | $50.00 | $68.00 | 7/10 | Active | - | Earnings: 2026-07-10 (16 days) BMO — EPS est: $1.45, Rev est: $17.8B |
+| 2026-06-24 | NKE | BUY | $85.00 | $110.00 | 6/10 | Active | - | Earnings: TODAY (2026-06-24) AMC — EPS est: $0.12, Rev est: $11.0B |
+| 2026-06-24 | GLD | BUY | $368.03 | $420.00 | 7/10 | Active | - | Why: You have ZERO commodity exposure in a portfolio of 67 holdings. Gold is pul |
+| 2026-06-24 | SMCI | BUY | $32.31 | N/A | 4/10 | Active | - | Why you already own it: This is your problem child. Down 18.1% and falling. The  |
