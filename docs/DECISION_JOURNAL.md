@@ -835,3 +835,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | NBIS | BUY | $259.66 | $7.00 | 8/10 | Active | - | Type/Stock: Nebius Group NV @ $259.66 |
 | 2026-06-24 | NEW | BUY | N/A | $63.00 | 8/10 | Active | - | Type/Stock: Delta Air Lines Inc. @ ~$50-52 (verify current) |
 | 2026-06-24 | NEW | BUY | N/A | $88.00 | 7/10 | Active | - | Type/Stock: ETF @ verify current price (~$70-75 range) |
+| 2026-06-24 | APP | BUY | $420.00 | N/A | 8/10 | Active | - | Why: 2-3 sentences: APP is a sharpshooter in the performance marketing / mobile  |
+| 2026-06-24 | MU | BUY | $1080.00 | N/A | 7/10 | Active | - | Why: MU has completed an extraordinary earnings beat cycle driven by HBM (High B |
+| 2026-06-24 | SOFI | BUY | $17.50 | N/A | 8/10 | Active | - | Type/Stock/ETF: Stock @ $17.50 area |
+| 2026-06-24 | NKE | BUY | N/A | N/A | 7/10 | Active | - | Type/Stock: Stock (estimated $55-60 area based on earnings catalyst) |
