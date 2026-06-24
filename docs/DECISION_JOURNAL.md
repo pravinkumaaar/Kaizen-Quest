@@ -828,3 +828,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | NKE | BUY | $85.00 | $110.00 | 6/10 | Active | - | Earnings: TODAY (2026-06-24) AMC — EPS est: $0.12, Rev est: $11.0B |
 | 2026-06-24 | GLD | BUY | $368.03 | $420.00 | 7/10 | Active | - | Why: You have ZERO commodity exposure in a portfolio of 67 holdings. Gold is pul |
 | 2026-06-24 | SMCI | BUY | $32.31 | N/A | 4/10 | Active | - | Why you already own it: This is your problem child. Down 18.1% and falling. The  |
+| 2026-06-24 | NBIS | BUY | $254.41 | N/A | 6/10 | Active | - | Why: Up 377% unrealized. NBIS is a GPU cloud company — a pure-play AI infrastruc |
+| 2026-06-24 | HIMS | BUY | $32.34 | N/A | 7/10 | Active | - | Why: Down 21.6% on a 1.6% position. You've got $1,072 unrealized AND realized lo |
+| 2026-06-24 | MU | BUY | $1020.22 | N/A | 7/10 | Active | - | Why: MU reports today after market close. EPS est $21.40, Rev est $36.9B. You're |
+| 2026-06-24 | NKE | BUY | N/A | N/A | 7/10 | Active | - | Why: NKE reports today, and the setup is actually interesting from a contrarian  |
