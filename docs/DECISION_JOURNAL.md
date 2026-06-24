@@ -814,3 +814,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | SNDK | BUY | $1963.60 | $2400.00 | 7/10 | Active | - | Why: Down 13.64% today alongside MU — the entire memory/storage complex is getti |
 | 2026-06-24 | KRE | BUY | N/A | N/A | 8/10 | Active | - | Why: You have zero financial sector exposure despite it being the second-largest |
 | 2026-06-24 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is the most direct play on the global AI memory cycle — Samsung |
+| 2026-06-24 | GLD | BUY | N/A | $245.00 | 7/10 | Active | - | Why: Gold is the ultimate anti-fragile position when AI narratives fracture. Wit |
+| 2026-06-24 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Why: South Korea is the world's most cyclical, highest-beta play on the global s |
+| 2026-06-24 | JPM | BUY | N/A | $340.00 | 8/10 | Active | - | Why: JPM is the single best-positioned bank for a steepening yield curve + risin |
