@@ -832,3 +832,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | HIMS | BUY | $32.34 | N/A | 7/10 | Active | - | Why: Down 21.6% on a 1.6% position. You've got $1,072 unrealized AND realized lo |
 | 2026-06-24 | MU | BUY | $1020.22 | N/A | 7/10 | Active | - | Why: MU reports today after market close. EPS est $21.40, Rev est $36.9B. You're |
 | 2026-06-24 | NKE | BUY | N/A | N/A | 7/10 | Active | - | Why: NKE reports today, and the setup is actually interesting from a contrarian  |
+| 2026-06-24 | NBIS | BUY | $259.66 | $7.00 | 8/10 | Active | - | Type/Stock: Nebius Group NV @ $259.66 |
+| 2026-06-24 | NEW | BUY | N/A | $63.00 | 8/10 | Active | - | Type/Stock: Delta Air Lines Inc. @ ~$50-52 (verify current) |
+| 2026-06-24 | NEW | BUY | N/A | $88.00 | 7/10 | Active | - | Type/Stock: ETF @ verify current price (~$70-75 range) |
