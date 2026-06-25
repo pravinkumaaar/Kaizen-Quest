@@ -839,3 +839,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-24 | MU | BUY | $1080.00 | N/A | 7/10 | Active | - | Why: MU has completed an extraordinary earnings beat cycle driven by HBM (High B |
 | 2026-06-24 | SOFI | BUY | $17.50 | N/A | 8/10 | Active | - | Type/Stock/ETF: Stock @ $17.50 area |
 | 2026-06-24 | NKE | BUY | N/A | N/A | 7/10 | Active | - | Type/Stock: Stock (estimated $55-60 area based on earnings catalyst) |
+| 2026-06-25 | PLTR | BUY | $113.50 | $15.00 | 9/10 | Active | - | Why: 24.4% of your portfolio in a single name is a risk management failure, not  |
+| 2026-06-25 | MU | BUY | $1048.51 | N/A | 7/10 | Active | - | Why: MU reported yesterday (EPS est: $21.40, Rev est: $36.9B). You're sitting on |
+| 2026-06-25 | NEW | BUY | $68.01 | $120.00 | 8/10 | Active | - | Why: You already own 2.8% (+85.3%). This is a name worth *adding to*. ASTS is bu |
+| 2026-06-25 | NEW | BUY | N/A | $175.00 | 7/10 | Active | - | Why: SNX reports today and you don't own it. This is the largest IT distributor  |
