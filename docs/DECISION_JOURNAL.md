@@ -848,3 +848,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | MU | BUY | $1048.51 | N/A | 7/10 | Active | - | Why: Reported earnings yesterday ($21.40 EPS est on $36.9B rev). You're sitting  |
 | 2026-06-25 | APLD | BUY | $41.98 | N/A | 5/10 | Active | - | Why: Down -7.27% today, already +252.4% on your cost basis. This is a data cente |
 | 2026-06-25 | RKLB | BUY | $85.41 | N/A | 5/10 | Active | - | Why: Down -10.21% today, but you're still up +121.3% on cost. This is the classi |
+| 2026-06-25 | SNDK | BUY | $2165.00 | $2800.00 | 8/10 | Active | - | Why: Western Digital's revenue trajectory and pricing environment just got valid |
+| 2026-06-25 | INDA | BUY | N/A | $68.00 | 7/10 | Active | - | Why: You have ZERO international exposure in 67 holdings. India is the single mo |
+| 2026-06-25 | PLTR | BUY | $108.37 | $16.50 | 9/10 | Active | - | Why: PLTR is 23.5% of your portfolio. This is a concentration risk problem, not  |
+| 2026-06-25 | RR | BUY | $1.92 | N/A | 8/10 | Active | - | Why: Down -31.7% on your position. This is a microcap robotics story that has no |
+| 2026-06-25 | FCX | BUY | N/A | N/A | 6/10 | Active | - | Why: Copper is the most underpriced commodity in the AI buildout. Every gigawatt |
