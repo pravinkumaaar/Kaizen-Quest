@@ -858,3 +858,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | FCX | BUY | N/A | $4.20 | 7/10 | Active | - | Why: Every AI data center requires 20-40 tons of copper per MW of power capacity |
 | 2026-06-25 | PLTR | BUY | $107.27 | N/A | 8/10 | Active | - | Why: Your single largest position at 23.3% is up +71.2%. Concentration risk is q |
 | 2026-06-25 | EWY | BUY | N/A | $5.50 | 6/10 | Active | - | Why: MU's earnings confirmed the memory supercycle — but you're paying US premiu |
+| 2026-06-25 | FCX | BUY | N/A | $20.00 | 7/10 | Active | - | Why: FCX sits at the intersection of three structural themes: copper deficit fro |
+| 2026-06-25 | DD | BUY | N/A | N/A | 8/10 | Active | - | Why: DD is in the middle of a massive portfolio reshaping — splitting into three |
