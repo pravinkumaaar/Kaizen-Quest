@@ -843,3 +843,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | MU | BUY | $1048.51 | N/A | 7/10 | Active | - | Why: MU reported yesterday (EPS est: $21.40, Rev est: $36.9B). You're sitting on |
 | 2026-06-25 | NEW | BUY | $68.01 | $120.00 | 8/10 | Active | - | Why: You already own 2.8% (+85.3%). This is a name worth *adding to*. ASTS is bu |
 | 2026-06-25 | NEW | BUY | N/A | $175.00 | 7/10 | Active | - | Why: SNX reports today and you don't own it. This is the largest IT distributor  |
+| 2026-06-25 | NBIS | BUY | $259.66 | N/A | 8/10 | Active | - | Why: This is a textbook position management problem. NBIS has mooned on AI-infra |
+| 2026-06-25 | MU | BUY | $1048.51 | N/A | 7/10 | Active | - | Why: MU reported EPS $21.40 on $36.9B revenue — the HBM3E ramp is real and accel |
