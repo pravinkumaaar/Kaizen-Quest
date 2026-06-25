@@ -845,3 +845,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | NEW | BUY | N/A | $175.00 | 7/10 | Active | - | Why: SNX reports today and you don't own it. This is the largest IT distributor  |
 | 2026-06-25 | NBIS | BUY | $259.66 | N/A | 8/10 | Active | - | Why: This is a textbook position management problem. NBIS has mooned on AI-infra |
 | 2026-06-25 | MU | BUY | $1048.51 | N/A | 7/10 | Active | - | Why: MU reported EPS $21.40 on $36.9B revenue — the HBM3E ramp is real and accel |
+| 2026-06-25 | MU | BUY | $1048.51 | N/A | 7/10 | Active | - | Why: Reported earnings yesterday ($21.40 EPS est on $36.9B rev). You're sitting  |
+| 2026-06-25 | APLD | BUY | $41.98 | N/A | 5/10 | Active | - | Why: Down -7.27% today, already +252.4% on your cost basis. This is a data cente |
+| 2026-06-25 | RKLB | BUY | $85.41 | N/A | 5/10 | Active | - | Why: Down -10.21% today, but you're still up +121.3% on cost. This is the classi |
