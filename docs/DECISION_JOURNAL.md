@@ -853,3 +853,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | PLTR | BUY | $108.37 | $16.50 | 9/10 | Active | - | Why: PLTR is 23.5% of your portfolio. This is a concentration risk problem, not  |
 | 2026-06-25 | RR | BUY | $1.92 | N/A | 8/10 | Active | - | Why: Down -31.7% on your position. This is a microcap robotics story that has no |
 | 2026-06-25 | FCX | BUY | N/A | N/A | 6/10 | Active | - | Why: Copper is the most underpriced commodity in the AI buildout. Every gigawatt |
+| 2026-06-25 | MU | BUY | $1213.56 | N/A | 7/10 | Active | - | Why: Post-earnings +15.74% confirms the HBM/memory supercycle is accelerating. M |
+| 2026-06-25 | ABT | BUY | N/A | $4.20 | 7/10 | Active | - | Why: You have zero healthcare exposure in a 67-holding portfolio. That's a struc |
+| 2026-06-25 | FCX | BUY | N/A | $4.20 | 7/10 | Active | - | Why: Every AI data center requires 20-40 tons of copper per MW of power capacity |
+| 2026-06-25 | PLTR | BUY | $107.27 | N/A | 8/10 | Active | - | Why: Your single largest position at 23.3% is up +71.2%. Concentration risk is q |
+| 2026-06-25 | EWY | BUY | N/A | $5.50 | 6/10 | Active | - | Why: MU's earnings confirmed the memory supercycle — but you're paying US premiu |
