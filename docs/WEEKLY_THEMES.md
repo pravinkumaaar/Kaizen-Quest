@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-06-18)
+## Current Theme (Week of 2026-06-25)
 
-**📌 Theme:** Macroeconomics: How the World Economy Really Works
+**📌 Theme:** History Repeats: Lessons from Past Bubbles & Crashes
 
-**Duration:** Week of 2026-06-18
+**Duration:** Week of 2026-06-25
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: Money & Inflation - What Makes Your Savings Worth Less
-- [ ] Day 2: Interest Rates & The Fed - How Central Banks Control Everything
-- [ ] Day 3: Supply & Demand - The Force Behind Every Price
-- [ ] Day 4: Recessions & Business Cycles - Why Booms Turn to Busts
-- [ ] Day 5: Currencies & Trade - Why the Dollar Matters Globally
-- [ ] Day 6: Geopolitics & Economics - When Politics Changes Markets
-- [ ] Day 7: Investment Implications - How to Profit from Economic Cycles
+- [ ] Day 1: Tulip Mania 1637 - The First Bubble
+- [ ] Day 2: The Dot-Com Crash 2000 - Tech Hubris
+- [ ] Day 3: The 2008 Financial Crisis - Systemic Risk
+- [ ] Day 4: Crypto Winter 2022 - Modern Manias
+- [ ] Day 5: Pattern Recognition - How to Spot Bubbles Early
+- [ ] Day 6: Survivor Bias - Why We Ignore Lessons
+- [ ] Day 7: Building Anti-Fragile Portfolios - Learning from History
 
 ---
 *New theme rotates each week. Archive your learnings.*
