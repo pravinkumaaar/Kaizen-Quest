@@ -877,3 +877,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | PLTR | BUY | $113.04 | $12.00 | 9/10 | Active | - | Thesis: At 24.4% of your portfolio and +80.4% unrealized gains, Palantir is your |
 | 2026-06-26 | FCX | BUY | N/A | $85.00 | 7/10 | Active | - | Thesis: Every AI data center needs copper — for power distribution, cooling, and |
 | 2026-06-26 | SLV | BUY | $53.66 | $72.00 | 6/10 | Active | - | Thesis: Silver is the "bipolar metal" — it's both a monetary hedge (like gold, b |
+| 2026-06-26 | NBIS | BUY | $235.74 | N/A | 9/10 | Active | - | Why: A 340% winner that is now -8% today and sitting at 10.6% of your portfolio. |
+| 2026-06-26 | AVAV | BUY | $185.00 | N/A | 8/10 | Active | - | Why: Defense drones are the artillery of the 21st century. The Ukraine/Russia co |
+| 2026-06-26 | ISRG | BUY | $500.00 | N/A | 8/10 | Active | - | Why: Healthcare is the ultimate deflationary sink—robotics is the only way out.  |
+| 2026-06-26 | TEM | BUY | $55.63 | N/A | 9/10 | Active | - | Why: You're down 22.5% on a position taking up 1.3% of your portfolio. The "AI i |
+| 2026-06-26 | RR | BUY | $1.92 | N/A | 10/10 | Active | - | Why: Down 31.7% and sitting at $1.92. This is a micro-cap narrative play in a po |
