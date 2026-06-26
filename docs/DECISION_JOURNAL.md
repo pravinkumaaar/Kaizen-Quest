@@ -860,3 +860,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | EWY | BUY | N/A | $5.50 | 6/10 | Active | - | Why: MU's earnings confirmed the memory supercycle — but you're paying US premiu |
 | 2026-06-25 | FCX | BUY | N/A | $20.00 | 7/10 | Active | - | Why: FCX sits at the intersection of three structural themes: copper deficit fro |
 | 2026-06-25 | DD | BUY | N/A | N/A | 8/10 | Active | - | Why: DD is in the middle of a massive portfolio reshaping — splitting into three |
+| 2026-06-26 | SNDK | BUY | $2335.00 | $2700.00 | 8/10 | Active | - | Why: Seagate just printed +22% on blowout earnings — the AI storage bottleneck i |
+| 2026-06-26 | JPM | BUY | N/A | $330.00 | 7/10 | Active | - | Why: Your portfolio is 85%+ technology/AI asymmetric bets. You need a quality ba |
