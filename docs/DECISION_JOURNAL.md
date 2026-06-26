@@ -882,3 +882,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | ISRG | BUY | $500.00 | N/A | 8/10 | Active | - | Why: Healthcare is the ultimate deflationary sink—robotics is the only way out.  |
 | 2026-06-26 | TEM | BUY | $55.63 | N/A | 9/10 | Active | - | Why: You're down 22.5% on a position taking up 1.3% of your portfolio. The "AI i |
 | 2026-06-26 | RR | BUY | $1.92 | N/A | 10/10 | Active | - | Why: Down 31.7% and sitting at $1.92. This is a micro-cap narrative play in a po |
+| 2026-06-26 | REDUCE | BUY | $241.12 | $5.40 | 8/10 | Active | - | Why: +351.9% unrealized gain at 10.8% of portfolio. Single largest concentration |
