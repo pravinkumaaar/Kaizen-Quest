@@ -873,3 +873,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | ISRG | BUY | N/A | $750.00 | 7/10 | Active | - | Why: In a world demanding AI ROI, ISRG has been delivering robotic-assisted surg |
 | 2026-06-26 | EWY | BUY | N/A | $85.00 | 6/10 | Active | - | Why: Korean stocks trade at 0.3-0.5x book value for good companies — the "Korea  |
 | 2026-06-26 | HIMS | BUY | $34.57 | $55.00 | 6/10 | Active | - | Why: HIMS is down 16.9% in your portfolio but fundamentals are accelerating — co |
+| 2026-06-26 | MU | BUY | $1177.70 | $5.50 | 8/10 | Active | - | Thesis: Micron just reported earnings (June 24 AMC). With current price ~$1,178  |
+| 2026-06-26 | PLTR | BUY | $113.04 | $12.00 | 9/10 | Active | - | Thesis: At 24.4% of your portfolio and +80.4% unrealized gains, Palantir is your |
+| 2026-06-26 | FCX | BUY | N/A | $85.00 | 7/10 | Active | - | Thesis: Every AI data center needs copper — for power distribution, cooling, and |
+| 2026-06-26 | SLV | BUY | $53.66 | $72.00 | 6/10 | Active | - | Thesis: Silver is the "bipolar metal" — it's both a monetary hedge (like gold, b |
