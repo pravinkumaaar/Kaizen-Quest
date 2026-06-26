@@ -891,3 +891,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | EIDO | BUY | N/A | $30.00 | 7/10 | Active | - | Why: While everyone fights over AI stocks trading at 30x sales, Indonesia has 28 |
 | 2026-06-26 | GLD | BUY | N/A | $330.00 | 6/10 | Active | - | Why: Your portfolio has zero commodity exposure. With Oracle's crash signaling A |
 | 2026-06-26 | RR | BUY | $1.94 | $15.00 | 8/10 | Active | - | Why: You're down -31% on RR at 1.4% of portfolio. This is a zombie position — a  |
+| 2026-06-26 | PLTR | BUY | $112.93 | $17.00 | 8/10 | Active | - | Why: 24.8% in a single position is dangerous regardless of conviction. PLTR is u |
+| 2026-06-26 | RR | BUY | $1.94 | N/A | 9/10 | Active | - | Why: Down 31% from cost, $1.94 penny stock with no clear catalyst. This is a val |
+| 2026-06-26 | FCX | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Copper is the most underappreciated AI play. Every data center, every power |
+| 2026-06-26 | GS | BUY | N/A | $680.00 | 7/10 | Active | - | Why: Goldman reports earnings July 18 — just 3 weeks away. Investment banking is |
+| 2026-06-26 | INDA | BUY | N/A | $65.00 | 6/10 | Active | - | Why: Your portfolio is 100% US equities. Zero international exposure. India is t |
