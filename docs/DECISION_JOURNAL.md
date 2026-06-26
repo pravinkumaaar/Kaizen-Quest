@@ -883,3 +883,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | TEM | BUY | $55.63 | N/A | 9/10 | Active | - | Why: You're down 22.5% on a position taking up 1.3% of your portfolio. The "AI i |
 | 2026-06-26 | RR | BUY | $1.92 | N/A | 10/10 | Active | - | Why: Down 31.7% and sitting at $1.92. This is a micro-cap narrative play in a po |
 | 2026-06-26 | REDUCE | BUY | $241.12 | $5.40 | 8/10 | Active | - | Why: +351.9% unrealized gain at 10.8% of portfolio. Single largest concentration |
+| 2026-06-26 | GLD | BUY | $373.63 | $440.00 | 7/10 | Active | - | Why: Gold is breaking out while AI infrastructure gets repriced. Your portfolio  |
+| 2026-06-26 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: You own the picks and shovels (NVDA, MU). Who actually *uses* AI to generat |
+| 2026-06-26 | ISRG | BUY | N/A | $700.00 | 8/10 | Active | - | Why: Earnings in 20 days (July 16). While AI infrastructure burns cash, Intuitiv |
+| 2026-06-26 | PLTR | BUY | $112.93 | N/A | 9/10 | Active | - | Why: Palantir is an exceptional company. It's also 24.7% of your portfolio at an |
