@@ -865,3 +865,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | AVGO | BUY | $378.91 | $520.00 | 7/10 | Active | - | Why: Broadcom isn't building GPU fabs that might not ROI — they own the networki |
 | 2026-06-26 | ISRG | BUY | $550.00 | $750.00 | 7/10 | Active | - | Why: Intuitive Surgical has 0 direct competition in robotic surgery. Their insta |
 | 2026-06-26 | PLTR | BUY | $107.27 | N/A | 8/10 | Active | - | Why: You're up 71.2% on a 23.2% position. That's $55K in a single stock. The com |
+| 2026-06-26 | SNDK | BUY | $2335.00 | $2800.00 | 7/10 | Active | - | Why: Sandisk just ripped +22% on no specific news in our feed, suggesting an exp |
+| 2026-06-26 | FCX | BUY | N/A | $58.00 | 7/10 | Active | - | Yes, this is a NEW pick you don't currently own. |
