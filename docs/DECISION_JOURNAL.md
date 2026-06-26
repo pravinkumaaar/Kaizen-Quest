@@ -867,3 +867,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | PLTR | BUY | $107.27 | N/A | 8/10 | Active | - | Why: You're up 71.2% on a 23.2% position. That's $55K in a single stock. The com |
 | 2026-06-26 | SNDK | BUY | $2335.00 | $2800.00 | 7/10 | Active | - | Why: Sandisk just ripped +22% on no specific news in our feed, suggesting an exp |
 | 2026-06-26 | FCX | BUY | N/A | $58.00 | 7/10 | Active | - | Yes, this is a NEW pick you don't currently own. |
+| 2026-06-26 | SNDK | BUY | $2335.00 | N/A | 7/10 | Active | - | Why: SNDK just ripped +21.97% — confirming the memory cycle thesis that MU's ear |
+| 2026-06-26 | MU | BUY | $1213.56 | N/A | 7/10 | Active | - | Why: You already own MU at 9.5% of portfolio (+220% unrealized). It just explode |
