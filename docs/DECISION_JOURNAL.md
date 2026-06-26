@@ -862,3 +862,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-25 | DD | BUY | N/A | N/A | 8/10 | Active | - | Why: DD is in the middle of a massive portfolio reshaping — splitting into three |
 | 2026-06-26 | SNDK | BUY | $2335.00 | $2700.00 | 8/10 | Active | - | Why: Seagate just printed +22% on blowout earnings — the AI storage bottleneck i |
 | 2026-06-26 | JPM | BUY | N/A | $330.00 | 7/10 | Active | - | Why: Your portfolio is 85%+ technology/AI asymmetric bets. You need a quality ba |
+| 2026-06-26 | AVGO | BUY | $378.91 | $520.00 | 7/10 | Active | - | Why: Broadcom isn't building GPU fabs that might not ROI — they own the networki |
+| 2026-06-26 | ISRG | BUY | $550.00 | $750.00 | 7/10 | Active | - | Why: Intuitive Surgical has 0 direct competition in robotic surgery. Their insta |
+| 2026-06-26 | PLTR | BUY | $107.27 | N/A | 8/10 | Active | - | Why: You're up 71.2% on a 23.2% position. That's $55K in a single stock. The com |
