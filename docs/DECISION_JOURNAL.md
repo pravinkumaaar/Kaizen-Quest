@@ -887,3 +887,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | EWY | BUY | N/A | $88.00 | 7/10 | Active | - | Why: You own the picks and shovels (NVDA, MU). Who actually *uses* AI to generat |
 | 2026-06-26 | ISRG | BUY | N/A | $700.00 | 8/10 | Active | - | Why: Earnings in 20 days (July 16). While AI infrastructure burns cash, Intuitiv |
 | 2026-06-26 | PLTR | BUY | $112.93 | N/A | 9/10 | Active | - | Why: Palantir is an exceptional company. It's also 24.7% of your portfolio at an |
+| 2026-06-26 | AVGO | BUY | $378.91 | $475.00 | 8/10 | Active | - | Why: While NVDA gets all the attention, AVGO is the quiet infrastructure king —  |
+| 2026-06-26 | EIDO | BUY | N/A | $30.00 | 7/10 | Active | - | Why: While everyone fights over AI stocks trading at 30x sales, Indonesia has 28 |
+| 2026-06-26 | GLD | BUY | N/A | $330.00 | 6/10 | Active | - | Why: Your portfolio has zero commodity exposure. With Oracle's crash signaling A |
+| 2026-06-26 | RR | BUY | $1.94 | $15.00 | 8/10 | Active | - | Why: You're down -31% on RR at 1.4% of portfolio. This is a zombie position — a  |
