@@ -902,3 +902,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-27 | NFLX | BUY | N/A | N/A | 7/10 | Active | - | Why: Netflix reports earnings July 16 — 19 days away. This is the dominant strea |
 | 2026-06-27 | JPM | BUY | N/A | N/A | 8/10 | Active | - | Why: JPM reports July 14 — 17 days away. This is the best-run bank in the world, |
 | 2026-06-27 | RR | BUY | $1.92 | N/A | 9/10 | Active | - | Why: You're down 31.7% on a $1.92 stock that's 1.3% of your portfolio. This is a |
+| 2026-06-27 | PLTR | BUY | $112.96 | N/A | 9/10 | Active | - | Why: Palantir at 24.8% of portfolio is a concentration risk that violates sound  |
+| 2026-06-27 | NBIS | BUY | $240.34 | N/A | 8/10 | Active | - | Why: +350% gain. Nebius is an AI cloud GPU company that has gone parabolic. At 1 |
+| 2026-06-27 | ISRG | BUY | N/A | N/A | 8/10 | Active | - | Why: Reports earnings July 16 — 19 days away. This is the pre-earnings setup. IS |
+| 2026-06-27 | EWZ | BUY | N/A | N/A | 7/10 | Active | - | Why: This is the anti-consensus, anti-correlation play. Your portfolio is 95%+ U |
+| 2026-06-27 | MU | BUY | $1132.37 | N/A | 7/10 | Active | - | Why: Just reported earnings June 24. Down 6.69% today. At 8.9% of portfolio with |
