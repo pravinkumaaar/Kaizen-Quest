@@ -896,3 +896,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | FCX | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Copper is the most underappreciated AI play. Every data center, every power |
 | 2026-06-26 | GS | BUY | N/A | $680.00 | 7/10 | Active | - | Why: Goldman reports earnings July 18 — just 3 weeks away. Investment banking is |
 | 2026-06-26 | INDA | BUY | N/A | $65.00 | 6/10 | Active | - | Why: Your portfolio is 100% US equities. Zero international exposure. India is t |
+| 2026-06-27 | REDUCE | BUY | $112.93 | N/A | 9/10 | Active | - | Why: Your largest position at 24.8% of portfolio. Up 80.2% — an incredible gain. |
