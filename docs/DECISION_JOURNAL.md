@@ -897,3 +897,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-26 | GS | BUY | N/A | $680.00 | 7/10 | Active | - | Why: Goldman reports earnings July 18 — just 3 weeks away. Investment banking is |
 | 2026-06-26 | INDA | BUY | N/A | $65.00 | 6/10 | Active | - | Why: Your portfolio is 100% US equities. Zero international exposure. India is t |
 | 2026-06-27 | REDUCE | BUY | $112.93 | N/A | 9/10 | Active | - | Why: Your largest position at 24.8% of portfolio. Up 80.2% — an incredible gain. |
+| 2026-06-27 | MU | BUY | $1132.37 | N/A | 8/10 | Active | - | Why: You're carrying a +198.8% winner that's 8.9% of your portfolio and just dro |
+| 2026-06-27 | SMCI | BUY | $30.65 | N/A | 7/10 | Active | - | Why: You're down 22.3% on a position that's 1.3% of your portfolio. SMCI has bee |
+| 2026-06-27 | NFLX | BUY | N/A | N/A | 7/10 | Active | - | Why: Netflix reports earnings July 16 — 19 days away. This is the dominant strea |
+| 2026-06-27 | JPM | BUY | N/A | N/A | 8/10 | Active | - | Why: JPM reports July 14 — 17 days away. This is the best-run bank in the world, |
+| 2026-06-27 | RR | BUY | $1.92 | N/A | 9/10 | Active | - | Why: You're down 31.7% on a $1.92 stock that's 1.3% of your portfolio. This is a |
