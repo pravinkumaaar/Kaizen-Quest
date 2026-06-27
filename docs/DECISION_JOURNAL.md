@@ -907,3 +907,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-27 | ISRG | BUY | N/A | N/A | 8/10 | Active | - | Why: Reports earnings July 16 — 19 days away. This is the pre-earnings setup. IS |
 | 2026-06-27 | EWZ | BUY | N/A | N/A | 7/10 | Active | - | Why: This is the anti-consensus, anti-correlation play. Your portfolio is 95%+ U |
 | 2026-06-27 | MU | BUY | $1132.37 | N/A | 7/10 | Active | - | Why: Just reported earnings June 24. Down 6.69% today. At 8.9% of portfolio with |
+| 2026-06-27 | NFLX | BUY | $1200.00 | N/A | 7/10 | Active | - | Why: Netflix is two weeks from earnings with the cleanest streaming business mod |
+| 2026-06-27 | FCX | BUY | $50.00 | N/A | 6/10 | Active | - | Why: Freeport-McMoRan is the purest large-cap copper play in the US market. Copp |
