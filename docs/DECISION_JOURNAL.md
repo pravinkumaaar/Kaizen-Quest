@@ -933,3 +933,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-28 | MU | BUY | $1132.33 | N/A | 8/10 | Active | - | Why: Micron is the *only* memory play that's both a cyclical recovery story AND  |
 | 2026-06-28 | GE | BUY | N/A | N/A | 7/10 | Active | - | Why: GE Vernova (the energy spinoff) is one of the best infrastructure plays you |
 | 2026-06-28 | PLTR | BUY | $112.93 | N/A | 9/10 | Active | - | Why: Palantir is a phenomenal company and I'm not bearish on the business. But 2 |
+| 2026-06-28 | FCX | BUY | N/A | N/A | 7/10 | Active | - | Why: Every AI data center is a copper demand sink. FCX is the world's largest pu |
+| 2026-06-28 | EWY | BUY | N/A | N/A | 8/10 | Active | - | Why: South Korea owns the memory oligopoly (Samsung + SK Hynlex = 65% DRAM marke |
+| 2026-06-28 | PLTR | BUY | $192.53 | N/A | 6/10 | Active | - | Why: PLTR is 24.7% of your portfolio and up 80.2%. No Stock should be a quarter  |
+| 2026-06-28 | AVAV | BUY | N/A | N/A | 8/10 | Active | - | Why: Reports earnings TOMORROW (June 29 AMC). AeroVironment is the market leader |
