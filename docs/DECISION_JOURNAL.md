@@ -930,3 +930,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-28 | AVAV | BUY | $148.00 | N/A | 7/10 | Active | - | Why: Geopolitical instability is a secular trend that isn't going away. AVAV rep |
 | 2026-06-28 | EWY | BUY | $62.00 | N/A | 8/10 | Active | - | Why: South Korea is the most overlooked AI/semiconductor proxy in the world, and |
 | 2026-06-28 | GLD | BUY | $215.00 | N/A | 7/10 | Active | - | Why: Your portfolio is massively long the AI/tech carry trade. If the neutral ma |
+| 2026-06-28 | MU | BUY | $1132.33 | N/A | 8/10 | Active | - | Why: Micron is the *only* memory play that's both a cyclical recovery story AND  |
+| 2026-06-28 | GE | BUY | N/A | N/A | 7/10 | Active | - | Why: GE Vernova (the energy spinoff) is one of the best infrastructure plays you |
+| 2026-06-28 | PLTR | BUY | $112.93 | N/A | 9/10 | Active | - | Why: Palantir is a phenomenal company and I'm not bearish on the business. But 2 |
