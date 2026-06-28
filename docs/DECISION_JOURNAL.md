@@ -923,3 +923,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-28 | SLD | BUY | N/A | $420.00 | 7/10 | Active | - | Why: You have essentially zero exposure to industrials/materials. This is a fort |
 | 2026-06-28 | GS | BUY | N/A | $870.00 | 7/10 | Active | - | Why: Financials are about to report earnings (JPM 7/14, GS 7/16), and the entire |
 | 2026-06-28 | RR | BUY | $1.94 | N/A | 4/10 | Active | - | Why: You're down 31% on this automation name, but the gap between winners and lo |
+| 2026-06-28 | PLTR | BUY | $112.93 | N/A | 9/10 | Active | - | Why: You've won this trade decisively. A 24.8% position in a single name — even  |
+| 2026-06-28 | MU | BUY | $1132.33 | $1650.00 | 8/10 | Active | - | Why: Micron is the most strategic position in your portfolio and arguably the mo |
