@@ -3,11 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $112.93 | TBD | 9/10 |  Active  |  $112.93  |  +0.0%  | Immediate (this week) | Watchlist |
-| 2 | **SNDK** | $2090.71 | TBD | 7/10 |  Active  |  $2090.71  |  +0.0%  | Immediate | Watchlist |
-| 3 | **JPM** | Market | $340.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Swing 2-8wk (earnings catalyst) → Medium 3-12mo if thesis intact | Watchlist |
-| 4 | **SOFI** | $17.88 | $24.00 | 8/10 |  Active  |  $17.88  |  +0.0%  | Medium 3-12mo | Watchlist |
-| 5 | **RR** | $1.94 | TBD | 7/10 |  Active  |  $1.94  |  +0.0%  | Immediate | Watchlist |
+| 1 | **PLTR** | $112.93 | $15.00 | 9/10 |  Active  |  $112.93  |  +0.0%  | This week | Watchlist |
+| 2 | **SLD** | Market | $420.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 3-12 months | Watchlist |
+| 3 | **GS** | Market | $870.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing 2-8 weeks (earnings catalyst) | Watchlist |
+| 4 | **RR** | $1.94 | TBD | 4/10 |  Active  |  $1.94  |  +0.0%  | You're now holding hoping — be honest about that | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

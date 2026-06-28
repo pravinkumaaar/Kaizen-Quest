@@ -919,3 +919,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-28 | JPM | BUY | N/A | $340.00 | 8/10 | Active | - | Why: Earnings 7/14 — two weeks out. JPM is the single best bellwether for the US |
 | 2026-06-28 | SOFI | BUY | $17.88 | $24.00 | 8/10 | Active | - | Why: You already own 2.3% — this is a conviction validation. SOFI is becoming th |
 | 2026-06-28 | RR | BUY | $1.94 | N/A | 7/10 | Active | - | Why: -31% from your cost basis. This is a speculative micro-cap robotics play th |
+| 2026-06-28 | PLTR | BUY | $112.93 | $15.00 | 9/10 | Active | - | Why: Risk management, not thesis break. You hold $58,400 in one name. The fundam |
+| 2026-06-28 | SLD | BUY | N/A | $420.00 | 7/10 | Active | - | Why: You have essentially zero exposure to industrials/materials. This is a fort |
+| 2026-06-28 | GS | BUY | N/A | $870.00 | 7/10 | Active | - | Why: Financials are about to report earnings (JPM 7/14, GS 7/16), and the entire |
+| 2026-06-28 | RR | BUY | $1.94 | N/A | 4/10 | Active | - | Why: You're down 31% on this automation name, but the gap between winners and lo |
