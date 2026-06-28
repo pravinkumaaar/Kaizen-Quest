@@ -909,3 +909,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-27 | MU | BUY | $1132.37 | N/A | 7/10 | Active | - | Why: Just reported earnings June 24. Down 6.69% today. At 8.9% of portfolio with |
 | 2026-06-27 | NFLX | BUY | $1200.00 | N/A | 7/10 | Active | - | Why: Netflix is two weeks from earnings with the cleanest streaming business mod |
 | 2026-06-27 | FCX | BUY | $50.00 | N/A | 6/10 | Active | - | Why: Freeport-McMoRan is the purest large-cap copper play in the US market. Copp |
+| 2026-06-28 | SNDK | BUY | $2090.71 | N/A | 8/10 | Active | - | Why: You own SNDK and it's up 227% — but at 1.3% of portfolio, it's a rounding e |
+| 2026-06-28 | JPM | BUY | N/A | $330.00 | 7/10 | Active | - | Why: JPM reports in 16 days and is the bellwether for the entire financial secto |
+| 2026-06-28 | XLF | BUY | N/A | $58.00 | 7/10 | Active | - | Why: If you want financial exposure but don't want single-name risk into the big |
+| 2026-06-28 | PLTR | BUY | $112.93 | $135.00 | 9/10 | Active | - | Why: PLTR is your largest position and your best one. At 24.8% of portfolio, it' |
+| 2026-06-28 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodity, precious metals, or inflation hedge exposure. Your |
