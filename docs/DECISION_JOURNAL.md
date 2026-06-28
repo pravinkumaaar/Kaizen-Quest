@@ -914,3 +914,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-28 | XLF | BUY | N/A | $58.00 | 7/10 | Active | - | Why: If you want financial exposure but don't want single-name risk into the big |
 | 2026-06-28 | PLTR | BUY | $112.93 | $135.00 | 9/10 | Active | - | Why: PLTR is your largest position and your best one. At 24.8% of portfolio, it' |
 | 2026-06-28 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO commodity, precious metals, or inflation hedge exposure. Your |
+| 2026-06-28 | PLTR | BUY | $112.93 | N/A | 9/10 | Active | - | Why: 24.7% of portfolio in a single name at +80% unrealized is a risk management |
+| 2026-06-28 | SNDK | BUY | $2090.71 | N/A | 7/10 | Active | - | Why: -10.5% today, and you're still +227%. Western Digital and Seagate both down |
+| 2026-06-28 | JPM | BUY | N/A | $340.00 | 8/10 | Active | - | Why: Earnings 7/14 — two weeks out. JPM is the single best bellwether for the US |
+| 2026-06-28 | SOFI | BUY | $17.88 | $24.00 | 8/10 | Active | - | Why: You already own 2.3% — this is a conviction validation. SOFI is becoming th |
+| 2026-06-28 | RR | BUY | $1.94 | N/A | 7/10 | Active | - | Why: -31% from your cost basis. This is a speculative micro-cap robotics play th |
