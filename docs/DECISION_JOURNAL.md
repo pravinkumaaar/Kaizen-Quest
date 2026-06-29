@@ -946,3 +946,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-29 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US-concentrated at a time when Asian tech (Samsung,  |
 | 2026-06-29 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: With $143K cost basis in a 67-holding portfolio that's 95%+ equities and he |
 | 2026-06-29 | APP | BUY | $495.39 | N/A | 6/10 | Active | - | Why: You hold a 1.4% position at +168% gain. APP is the best ad-tech company in  |
+| 2026-06-29 | PLTR | BUY | $116.46 | N/A | 9/10 | Active | - | Why: 24.7% of portfolio in a single name is dangerous regardless of conviction.  |
+| 2026-06-29 | NBIS | BUY | $262.07 | N/A | 7/10 | Active | - | Why: +391% unrealized is extraordinary. But at 11.4% of portfolio, adding more w |
+| 2026-06-29 | RR | BUY | $2.00 | N/A | 7/10 | Active | - | Why: Down 29%, micro-cap, no clear catalyst. This is a zombie position. The capi |
+| 2026-06-29 | ASML | BUY | N/A | N/A | 8/10 | Active | - | Why: ASML is the monopoly supplier of EUV lithography machines — the picks-and-s |
+| 2026-06-29 | EIDO | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. Indonesia is the world's 4th most pop |
