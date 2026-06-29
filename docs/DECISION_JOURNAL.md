@@ -951,3 +951,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-29 | RR | BUY | $2.00 | N/A | 7/10 | Active | - | Why: Down 29%, micro-cap, no clear catalyst. This is a zombie position. The capi |
 | 2026-06-29 | ASML | BUY | N/A | N/A | 8/10 | Active | - | Why: ASML is the monopoly supplier of EUV lithography machines — the picks-and-s |
 | 2026-06-29 | EIDO | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO international exposure. Indonesia is the world's 4th most pop |
+| 2026-06-29 | ISRG | BUY | N/A | $620.00 | 8/10 | Active | - | Why: ISRG reports earnings July 16 — same day as your STX holding. Robotic surge |
+| 2026-06-29 | FCX | BUY | N/A | $72.00 | 7/10 | Active | - | Why: Copper is the "electrification metal" — every EV uses 4x more copper than I |
+| 2026-06-29 | NBIS | BUY | $261.15 | $340.00 | 6/10 | Active | - | Why: You're already up +389.5% on NBIS — this is your best position by return. N |
