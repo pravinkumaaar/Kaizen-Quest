@@ -937,3 +937,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-28 | EWY | BUY | N/A | N/A | 8/10 | Active | - | Why: South Korea owns the memory oligopoly (Samsung + SK Hynlex = 65% DRAM marke |
 | 2026-06-28 | PLTR | BUY | $192.53 | N/A | 6/10 | Active | - | Why: PLTR is 24.7% of your portfolio and up 80.2%. No Stock should be a quarter  |
 | 2026-06-28 | AVAV | BUY | N/A | N/A | 8/10 | Active | - | Why: Reports earnings TOMORROW (June 29 AMC). AeroVironment is the market leader |
+| 2026-06-29 | MU | BUY | $1132.33 | $1450.00 | 8/10 | Active | - | Why: Micron is the purest-play beneficiary of the AI memory bottleneck. HBM (Hig |
+| 2026-06-29 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is the "picks and shovels" play on AI that most US investors mi |
+| 2026-06-29 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: At 62.9% concentration in 5 names, all AI/tech, you need a non-correlated h |
+| 2026-06-29 | NBIS | BUY | $240.30 | N/A | 9/10 | Active | - | Why: At 10.8% of portfolio and +350% up, NBIS is your single biggest winner by p |
