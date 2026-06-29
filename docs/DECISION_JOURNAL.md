@@ -941,3 +941,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-29 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: South Korea is the "picks and shovels" play on AI that most US investors mi |
 | 2026-06-29 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: At 62.9% concentration in 5 names, all AI/tech, you need a non-correlated h |
 | 2026-06-29 | NBIS | BUY | $240.30 | N/A | 9/10 | Active | - | Why: At 10.8% of portfolio and +350% up, NBIS is your single biggest winner by p |
+| 2026-06-29 | LMT | BUY | N/A | $3.00 | 7/10 | Active | - | Why: Defense spending is structurally accelerating globally (NATO 2%→3% targets, |
+| 2026-06-29 | SPOT | BUY | N/A | N/A | 8/10 | Active | - | Why: Spotify has crossed the margin inflection point — podcast investments are n |
+| 2026-06-29 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US-concentrated at a time when Asian tech (Samsung,  |
+| 2026-06-29 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: With $143K cost basis in a 67-holding portfolio that's 95%+ equities and he |
+| 2026-06-29 | APP | BUY | $495.39 | N/A | 6/10 | Active | - | Why: You hold a 1.4% position at +168% gain. APP is the best ad-tech company in  |
