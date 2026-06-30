@@ -954,3 +954,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-29 | ISRG | BUY | N/A | $620.00 | 8/10 | Active | - | Why: ISRG reports earnings July 16 — same day as your STX holding. Robotic surge |
 | 2026-06-29 | FCX | BUY | N/A | $72.00 | 7/10 | Active | - | Why: Copper is the "electrification metal" — every EV uses 4x more copper than I |
 | 2026-06-29 | NBIS | BUY | $261.15 | $340.00 | 6/10 | Active | - | Why: You're already up +389.5% on NBIS — this is your best position by return. N |
+| 2026-06-30 | ASTS | BUY | $86.77 | $130.00 | 7/10 | Active | - | Why: AST SpaceMobile is building the only space-based cellular broadband network |
+| 2026-06-30 | PLTR | BUY | $115.70 | $15.00 | 8/10 | Active | - | Why: Palantir is your best performer (+84.6%) and your LARGEST position at 24.6% |
+| 2026-06-30 | FCX | BUY | $57.00 | $85.00 | 7/10 | Active | - | Why: Copper is the most critical mineral for AI infrastructure — data centers, p |
+| 2026-06-30 | RR | BUY | $1.98 | N/A | 8/10 | Active | - | Why: You're down -29.5% on this position. RR is a micro-cap robotics company wit |
