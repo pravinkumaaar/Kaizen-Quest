@@ -961,3 +961,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-30 | ASTS | BUY | $86.77 | $125.00 | 7/10 | Active | - | Why: Satellite-to-smartphone connectivity is the next infrastructure layer after |
 | 2026-06-30 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Why: Korea is the most underowned major market among US investors, yet it's grou |
 | 2026-06-30 | GLD | BUY | $368.58 | $420.00 | 7/10 | Active | - | Why: Gold is pulling back for the first time in what appears to be a strong uptr |
+| 2026-06-30 | ASTS | BUY | $86.77 | N/A | 7/10 | Active | - | Why: +21.44% today on what appears to be a major contract or satellite deploymen |
+| 2026-06-30 | NEW | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO exposure to mega-cap financials despite owning SOFI (fintech) |
+| 2026-06-30 | NEW | BUY | $28.15 | $42.00 | 8/10 | Active | - | Why: You already own this at 1.2% of portfolio, down -28.7%. Today's -8.1% drop  |
