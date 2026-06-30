@@ -958,3 +958,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-30 | PLTR | BUY | $115.70 | $15.00 | 8/10 | Active | - | Why: Palantir is your best performer (+84.6%) and your LARGEST position at 24.6% |
 | 2026-06-30 | FCX | BUY | $57.00 | $85.00 | 7/10 | Active | - | Why: Copper is the most critical mineral for AI infrastructure — data centers, p |
 | 2026-06-30 | RR | BUY | $1.98 | N/A | 8/10 | Active | - | Why: You're down -29.5% on this position. RR is a micro-cap robotics company wit |
+| 2026-06-30 | ASTS | BUY | $86.77 | $125.00 | 7/10 | Active | - | Why: Satellite-to-smartphone connectivity is the next infrastructure layer after |
+| 2026-06-30 | EWY | BUY | N/A | $95.00 | 7/10 | Active | - | Why: Korea is the most underowned major market among US investors, yet it's grou |
+| 2026-06-30 | GLD | BUY | $368.58 | $420.00 | 7/10 | Active | - | Why: Gold is pulling back for the first time in what appears to be a strong uptr |
