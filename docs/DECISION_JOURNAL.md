@@ -967,3 +967,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-30 | CNXC | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Deep‑research DCF and peer‑multiple analysis show CNXC is undervalued at |
 | 2026-06-30 | KARO | BUY | N/A | N/A | 7/10 | Active | - | THESIS: KARO trades at a 12x forward earnings multiple versus a 15x industry med |
 | 2026-06-30 | UNH | BUY | N/A | $48.00 | 9/10 | Active | - | THESIS: A high‑conviction (9/10) bullish option play on UnitedHealth (UNH) with  |
+| 2026-06-30 | FCX | BUY | $33.00 | $55.00 | 9/10 | Active | - | Why: Deep‑research (S&P Capital IQ, Bloomberg) shows copper demand to grow ~12%  |
+| 2026-06-30 | COP | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: Deep‑research (EIA, Bloomberg) indicates oil prices remain above $80/bbl, u |
+| 2026-06-30 | GLD | BUY | $185.00 | N/A | 7/10 | Active | - | Why: Deep‑research (CME Group, Bloomberg) shows gold price target $2,150/oz (≈7. |
