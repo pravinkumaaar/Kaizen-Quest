@@ -964,3 +964,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-30 | ASTS | BUY | $86.77 | N/A | 7/10 | Active | - | Why: +21.44% today on what appears to be a major contract or satellite deploymen |
 | 2026-06-30 | NEW | BUY | N/A | N/A | 7/10 | Active | - | Why: You have ZERO exposure to mega-cap financials despite owning SOFI (fintech) |
 | 2026-06-30 | NEW | BUY | $28.15 | $42.00 | 8/10 | Active | - | Why: You already own this at 1.2% of portfolio, down -28.7%. Today's -8.1% drop  |
+| 2026-06-30 | CNXC | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Deep‑research DCF and peer‑multiple analysis show CNXC is undervalued at |
+| 2026-06-30 | KARO | BUY | N/A | N/A | 7/10 | Active | - | THESIS: KARO trades at a 12x forward earnings multiple versus a 15x industry med |
+| 2026-06-30 | UNH | BUY | N/A | $48.00 | 9/10 | Active | - | THESIS: A high‑conviction (9/10) bullish option play on UnitedHealth (UNH) with  |
