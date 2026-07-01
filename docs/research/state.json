@@ -1,10 +1,10 @@
 {
-  "total_runs": 285,
-  "last_run": "2026-06-30T23:28:01.782407",
+  "total_runs": 286,
+  "last_run": "2026-07-01T04:35:12.327001",
   "last_run_tickers": [
-    "PLTR",
-    "TEM",
-    "SOFI"
+    "APLD",
+    "VRT",
+    "NBIS"
   ],
   "research_queue": [],
   "global_facts": {}
