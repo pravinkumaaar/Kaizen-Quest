@@ -970,3 +970,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-06-30 | FCX | BUY | $33.00 | $55.00 | 9/10 | Active | - | Why: Deep‑research (S&P Capital IQ, Bloomberg) shows copper demand to grow ~12%  |
 | 2026-06-30 | COP | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: Deep‑research (EIA, Bloomberg) indicates oil prices remain above $80/bbl, u |
 | 2026-06-30 | GLD | BUY | $185.00 | N/A | 7/10 | Active | - | Why: Deep‑research (CME Group, Bloomberg) shows gold price target $2,150/oz (≈7. |
+| 2026-07-02 | INDA | BUY | $95.20 | $115.00 | 8/10 | Active | - | Why: The deep‑research macro layer shows India’s GDP growing at 6.5% YoY with fo |
+| 2026-07-02 | AMD | BUY | $115.00 | $165.00 | 9/10 | Active | - | Why: Deep‑research DCF modeling values AMD at $165, implying 44% upside from tod |
+| 2026-07-02 | AVGO | BUY | $800.00 | $850.00 | 7/10 | Active | - | Why: The deep‑research DCF valuation sets AVGO’s fair value at $850, implying 6% |
