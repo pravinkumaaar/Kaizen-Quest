@@ -976,3 +976,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-02 | HON | BUY | N/A | $150.00 | 5/10 | Active | - | Why: Honeywell’s AI‑enabled automation platform (Forge) is capturing high‑margin |
 | 2026-07-02 | KLAC | BUY | $500.00 | $700.00 | 9/10 | Active | - | Why: KLAC provides inspection and metrology tools essential for AI‑driven chip f |
 | 2026-07-02 | ASML | BUY | $700.00 | $950.00 | 8/10 | Active | - | Why: ASML is the sole supplier of EUV lithography machines, a critical bottlenec |
+| 2026-07-02 | INTC | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: Intel is positioned to capture AI‑driven demand for custom silicon and foun |
+| 2026-07-02 | KLAC | BUY | $55.00 | $95.00 | 8/10 | Active | - | Why: KLA Corporation provides leading process‑control metrology and inspection t |
