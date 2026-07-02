@@ -974,3 +974,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-02 | AMD | BUY | $115.00 | $165.00 | 9/10 | Active | - | Why: Deep‑research DCF modeling values AMD at $165, implying 44% upside from tod |
 | 2026-07-02 | AVGO | BUY | $800.00 | $850.00 | 7/10 | Active | - | Why: The deep‑research DCF valuation sets AVGO’s fair value at $850, implying 6% |
 | 2026-07-02 | HON | BUY | N/A | $150.00 | 5/10 | Active | - | Why: Honeywell’s AI‑enabled automation platform (Forge) is capturing high‑margin |
+| 2026-07-02 | KLAC | BUY | $500.00 | $700.00 | 9/10 | Active | - | Why: KLAC provides inspection and metrology tools essential for AI‑driven chip f |
+| 2026-07-02 | ASML | BUY | $700.00 | $950.00 | 8/10 | Active | - | Why: ASML is the sole supplier of EUV lithography machines, a critical bottlenec |
