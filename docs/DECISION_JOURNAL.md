@@ -978,3 +978,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-02 | ASML | BUY | $700.00 | $950.00 | 8/10 | Active | - | Why: ASML is the sole supplier of EUV lithography machines, a critical bottlenec |
 | 2026-07-02 | INTC | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: Intel is positioned to capture AI‑driven demand for custom silicon and foun |
 | 2026-07-02 | KLAC | BUY | $55.00 | $95.00 | 8/10 | Active | - | Why: KLA Corporation provides leading process‑control metrology and inspection t |
+| 2026-07-03 | TICKER | BUY | $27.00 | $16665.00 | 8/10 | Active | - | Why: Deep‑research DCF valuation shows a fair value of $35 (≈29% upside) while a |
+| 2026-07-03 | TICKER | BUY | $200.00 | $11932.00 | 7/10 | Active | - | Why: DCF models a fair value of $260 (≈30% upside) with analyst targets at $280; |
+| 2026-07-03 | TICKER | BUY | $210.00 | $9545.00 | 6/10 | Active | - | Why: DCF valuation yields a fair value of $240 (≈14% upside) and analyst targets |
+| 2026-07-03 | TICKER | BUY | $180.00 | $9545.00 | 6/10 | Active | - | Why: DCF indicates a fair value of $220 (≈22% upside) with analyst targets at $2 |
