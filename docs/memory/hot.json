@@ -6,35 +6,35 @@
     "top_recommendations": [],
     "key_learnings": [],
     "portfolio_summary": {
+      "total_value": 238637.41313506002,
+      "top_holding": "",
+      "concentration": 62.49040242302679
+    },
+    "benchmarks": {}
+  },
+  {
+    "date": "2026-07-02",
+    "model": "free",
+    "rating": 0,
+    "top_recommendations": [],
+    "key_learnings": [],
+    "portfolio_summary": {
+      "total_value": 238637.41313506002,
+      "top_holding": "",
+      "concentration": 62.49040242302679
+    },
+    "benchmarks": {}
+  },
+  {
+    "date": "2026-07-03",
+    "model": "free",
+    "rating": 0,
+    "top_recommendations": [],
+    "key_learnings": [],
+    "portfolio_summary": {
       "total_value": 239754.13313506002,
       "top_holding": "",
       "concentration": 62.19933639934106
-    },
-    "benchmarks": {}
-  },
-  {
-    "date": "2026-07-02",
-    "model": "free",
-    "rating": 0,
-    "top_recommendations": [],
-    "key_learnings": [],
-    "portfolio_summary": {
-      "total_value": 238637.41313506002,
-      "top_holding": "",
-      "concentration": 62.49040242302679
-    },
-    "benchmarks": {}
-  },
-  {
-    "date": "2026-07-02",
-    "model": "free",
-    "rating": 0,
-    "top_recommendations": [],
-    "key_learnings": [],
-    "portfolio_summary": {
-      "total_value": 238637.41313506002,
-      "top_holding": "",
-      "concentration": 62.49040242302679
     },
     "benchmarks": {}
   }
