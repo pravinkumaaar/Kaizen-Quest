@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **FCX** | $12.50 | $18.75 | 7/10 |  Active  |  $12.50  |  +0.0%  | Swing 2‑8 weeks (post‑earnings breakout) | Watchlist |
-| 2 | **LMT** | $440.00 | $495.00 | 8/10 |  Active  |  $440.00  |  +0.0%  | Medium 3‑12 months (defense cycle) | Watchlist |
-| 3 | **UNP** | $210.00 | TBD | 9/10 |  Active  |  $210.00  |  +0.0%  | Swing 2‑8 weeks (around earnings) | Watchlist |
+| 1 | **TICKER** | $55.00 | $78.00 | 9/10 |  Active  |  $55.00  |  +0.0%  | Medium‑term (3‑6 months) | Watchlist |
+| 2 | **TICKER** | $260.00 | $340.00 | 8/10 |  Active  |  $260.00  |  +0.0%  | Medium‑term (4‑8 months) | Watchlist |
+| 3 | **TICKER** | $38.00 | $55.00 | 7/10 |  Active  |  $38.00  |  +0.0%  | Medium‑term (6‑12 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
