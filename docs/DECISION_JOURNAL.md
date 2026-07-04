@@ -986,3 +986,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-03 | GLD | BUY | $210.00 | $240.00 | 8/10 | Active | - | Why: Inflation‑hedge and safe‑haven asset with technical momentum; negative corr |
 | 2026-07-03 | KLAC | BUY | $560.00 | $680.00 | 9/10 | Active | - | Why: Leading semiconductor‑equipment maker with a deep backlog and expanding mar |
 | 2026-07-03 | EEM | BUY | $35.00 | $45.00 | 7/10 | Active | - | Why: Valuation discount versus historical averages, improving commodity backdrop |
+| 2026-07-04 | KLAC | BUY | $66.00 | N/A | 8/10 | Active | - | Why: KLAC supplies critical inspection and metrology tools for advanced‑node chi |
+| 2026-07-04 | LMT | BUY | $450.00 | N/A | 9/10 | Active | - | Why: LMT is a cash‑generative defense contractor with a deep order backlog, bene |
+| 2026-07-04 | COP | BUY | $82.00 | N/A | 7/10 | Active | - | Why: COP offers a low‑breakeven cost structure, a growing dividend, and exposure |

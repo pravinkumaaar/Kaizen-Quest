@@ -1,8 +1,8 @@
 {
   "ticker": "HIMS",
   "first_researched": "2026-06-18T15:49:59.623459",
-  "last_researched": "2026-07-03T11:38:55.367876",
-  "research_count": 19,
+  "last_researched": "2026-07-04T02:42:23.111054",
+  "research_count": 20,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 36.8,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-03T11:38:55.367876"
+      "last_verified": "2026-07-04T02:42:23.111054"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-03T11:38:55.367876"
+      "last_verified": "2026-07-04T02:42:23.111054"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-06-29T04:36:21.840830"
+      "last_verified": "2026-07-04T02:42:23.111054"
     }
   ],
   "facts": [
@@ -122,41 +122,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "HIMS",
-    "timestamp": "2026-07-03 11:38:28",
+    "timestamp": "2026-07-04 02:41:57",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "institutional",
-    "analyst_estimates",
     "negative_news",
-    "recommendation_trends",
-    "congressional",
-    "earnings_momentum",
-    "earnings_history",
-    "comps_analysis",
     "sector_performance",
-    "treasury_rates",
-    "income_statement",
-    "aggregate_indicators",
+    "congressional",
     "technical_indicators",
-    "risk_assessment",
-    "balance_sheet",
-    "sector_rotation",
-    "price_target",
-    "competitive_landscape",
-    "cashflow",
-    "dcf",
-    "industry_pe",
     "insider_trades_contrarian",
-    "supply_chain",
-    "esg",
+    "dcf",
+    "aggregate_indicators",
     "valuation_multiples",
-    "financial_ratios",
+    "cashflow",
+    "supply_chain",
+    "analyst_estimates",
+    "price_target",
+    "earnings_momentum",
+    "treasury_rates",
+    "industry_pe",
     "macro_rotation",
+    "market_sentiment",
+    "esg",
+    "recommendation_trends",
+    "sector_rotation",
     "insider_trades",
     "insider_sentiment",
-    "market_sentiment"
+    "income_statement",
+    "risk_assessment",
+    "balance_sheet",
+    "institutional",
+    "earnings_history",
+    "comps_analysis",
+    "competitive_landscape",
+    "financial_ratios"
   ],
   "research_gaps": [],
   "contrarian_signals": [],
