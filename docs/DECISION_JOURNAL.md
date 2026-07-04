@@ -989,3 +989,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-04 | KLAC | BUY | $66.00 | N/A | 8/10 | Active | - | Why: KLAC supplies critical inspection and metrology tools for advanced‑node chi |
 | 2026-07-04 | LMT | BUY | $450.00 | N/A | 9/10 | Active | - | Why: LMT is a cash‑generative defense contractor with a deep order backlog, bene |
 | 2026-07-04 | COP | BUY | $82.00 | N/A | 7/10 | Active | - | Why: COP offers a low‑breakeven cost structure, a growing dividend, and exposure |
+| 2026-07-04 | FCX | BUY | $12.50 | $18.75 | 7/10 | Active | - | Why: Deep‑research (confidence 85%) shows a multi‑year copper price rally driven |
+| 2026-07-04 | LMT | BUY | $440.00 | $495.00 | 8/10 | Active | - | Why: Deep‑research (confidence 90%) shows a robust defense‑budget backdrop, a $1 |
+| 2026-07-04 | UNP | BUY | $210.00 | N/A | 9/10 | Active | - | Why: Deep‑research (confidence 88%) indicates a sustained freight‑volume rebound |
