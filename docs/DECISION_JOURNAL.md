@@ -995,3 +995,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-04 | TICKER | BUY | $55.00 | $78.00 | 9/10 | Active | - | Why: Deep‑research DCF models an intrinsic value of $68 (80% confidence) while t |
 | 2026-07-04 | TICKER | BUY | $260.00 | $340.00 | 8/10 | Active | - | Why: Deep‑research valuation shows an intrinsic value of $340 (78% confidence) v |
 | 2026-07-04 | TICKER | BUY | $38.00 | $55.00 | 7/10 | Active | - | Why: Deep‑research commodity forecast places LME copper at $4.50/lb by year‑end  |
+| 2026-07-05 | COP | BUY | $85.00 | N/A | 8/10 | Active | - | Why: (first-principles) |
