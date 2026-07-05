@@ -1000,3 +1000,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-05 | R | BUY | N/A | $55.00 | 9/10 | Active | - | Why: R offers a high‑yielding dividend with a solid balance sheet, and recent ea |
 | 2026-07-05 | DOW | BUY | N/A | $70.00 | 8/10 | Active | - | Why: DOW’s diversified chemicals business benefits from a rising oil price envir |
 | 2026-07-05 | BYD | BUY | N/A | $105.00 | 8/10 | Active | - | Why: BYD is scaling affordable EV production with a strong order backlog and nex |
+| 2026-07-05 | TMO | BUY | $540.00 | $12916.00 | 9/10 | Active | - | Why: 7‑layer DCF models give TMO an intrinsic value of $620 (≈15% upside) with 9 |
+| 2026-07-05 | KLAC | BUY | $85.00 | $2.10 | 8/10 | Active | - | Why: 7‑layer models indicate KLAC is undervalued by ~22% (intrinsic $110) with 9 |
+| 2026-07-05 | GLD | BUY | $200.00 | $0.60 | 7/10 | Active | - | Why: Macro‑data shows real‑interest‑rate yields falling (10‑yr Treasury yield do |
