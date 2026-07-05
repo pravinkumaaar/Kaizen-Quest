@@ -996,3 +996,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-04 | TICKER | BUY | $260.00 | $340.00 | 8/10 | Active | - | Why: Deep‑research valuation shows an intrinsic value of $340 (78% confidence) v |
 | 2026-07-04 | TICKER | BUY | $38.00 | $55.00 | 7/10 | Active | - | Why: Deep‑research commodity forecast places LME copper at $4.50/lb by year‑end  |
 | 2026-07-05 | COP | BUY | $85.00 | N/A | 8/10 | Active | - | Why: (first-principles) |
+| 2026-07-05 | KLAC | BUY | N/A | $36.00 | 8/10 | Active | - | Why: KLAC is the dominant supplier of wafer‑testing and inspection tools, a crit |
+| 2026-07-05 | R | BUY | N/A | $55.00 | 9/10 | Active | - | Why: R offers a high‑yielding dividend with a solid balance sheet, and recent ea |
+| 2026-07-05 | DOW | BUY | N/A | $70.00 | 8/10 | Active | - | Why: DOW’s diversified chemicals business benefits from a rising oil price envir |
+| 2026-07-05 | BYD | BUY | N/A | $105.00 | 8/10 | Active | - | Why: BYD is scaling affordable EV production with a strong order backlog and nex |
