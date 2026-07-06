@@ -1003,3 +1003,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-05 | TMO | BUY | $540.00 | $12916.00 | 9/10 | Active | - | Why: 7‑layer DCF models give TMO an intrinsic value of $620 (≈15% upside) with 9 |
 | 2026-07-05 | KLAC | BUY | $85.00 | $2.10 | 8/10 | Active | - | Why: 7‑layer models indicate KLAC is undervalued by ~22% (intrinsic $110) with 9 |
 | 2026-07-05 | GLD | BUY | $200.00 | $0.60 | 7/10 | Active | - | Why: Macro‑data shows real‑interest‑rate yields falling (10‑yr Treasury yield do |
+| 2026-07-06 | LMT | BUY | $480.00 | $2386.00 | 8/10 | Active | - | Why: Deep‑research DCF models show an intrinsic value of $520 (≈8% upside) while |
+| 2026-07-06 | COP | BUY | $95.00 | $2386.00 | 7/10 | Active | - | Why: Oil prices have rallied 12% YTD on OPEC+ cuts, and COP’s low‑cost productio |
+| 2026-07-06 | UHS | BUY | $155.00 | $2386.00 | 6/10 | Active | - | Why: Demographic pressure on U.S. healthcare spending and UHS’s strong free‑cash |
+| 2026-07-06 | FCX | BUY | $27.00 | $2386.00 | 8/10 | Active | - | Why: Copper demand from green‑energy transition is surging, and FCX’s low‑cost o |
