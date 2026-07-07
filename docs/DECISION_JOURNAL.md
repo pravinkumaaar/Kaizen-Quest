@@ -1011,3 +1011,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-07 | ARM | BUY | $58.25 | $72.00 | 7/10 | Active | - | Why: ARM's architecture is foundational to the AI boom, powering both training ( |
 | 2026-07-07 | PLTR | BUY | $132.54 | N/A | 6/10 | Active | - | Why: PLTR has delivered exceptional returns (+111.5%) and become the largest pos |
 | 2026-07-07 | ONDS | BUY | $7.82 | $18.00 | 5/10 | Active | - | Why: Oncology Data Science is an asymmetric biotech play with FDA readout expect |
+| 2026-07-07 | GLD | BUY | $180.00 | $210.00 | 8/10 | Active | - | Why: Gold offers a low‑correlation hedge against the tech‑heavy portfolio and is |
+| 2026-07-07 | NXPI | BUY | $135.00 | $210.00 | 9/10 | Active | - | Why: NXP Semiconductors is positioned to capture AI‑driven automotive and IoT ch |
+| 2026-07-07 | FCX | BUY | $38.00 | $55.00 | 8/10 | Active | - | Why: Freeport McMoRan is leveraged to the rising copper price cycle driven by EV |
