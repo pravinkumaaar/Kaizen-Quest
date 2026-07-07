@@ -1007,3 +1007,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-06 | COP | BUY | $95.00 | $2386.00 | 7/10 | Active | - | Why: Oil prices have rallied 12% YTD on OPEC+ cuts, and COP’s low‑cost productio |
 | 2026-07-06 | UHS | BUY | $155.00 | $2386.00 | 6/10 | Active | - | Why: Demographic pressure on U.S. healthcare spending and UHS’s strong free‑cash |
 | 2026-07-06 | FCX | BUY | $27.00 | $2386.00 | 8/10 | Active | - | Why: Copper demand from green‑energy transition is surging, and FCX’s low‑cost o |
+| 2026-07-07 | GOOGL | BUY | $135.42 | $165.00 | 8/10 | Active | - | Why: Google's retirement of the search box signals a fundamental shift to AI-pow |
+| 2026-07-07 | ARM | BUY | $58.25 | $72.00 | 7/10 | Active | - | Why: ARM's architecture is foundational to the AI boom, powering both training ( |
+| 2026-07-07 | PLTR | BUY | $132.54 | N/A | 6/10 | Active | - | Why: PLTR has delivered exceptional returns (+111.5%) and become the largest pos |
+| 2026-07-07 | ONDS | BUY | $7.82 | $18.00 | 5/10 | Active | - | Why: Oncology Data Science is an asymmetric biotech play with FDA readout expect |

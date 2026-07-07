@@ -1,10 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-g** that weights ideas by recent momentum, news impact, and options liquidity, and add a “new‑idea” flag to pull tickers outside the current watchlist, thereby expanding the opportunity set.  
-
-- **Process Improvements – Rebalancing** – Enforce a **hard 30% max portfolio concentration** and schedule **quarterly rebalances** to bring the 62.4% concentration down, freeing capital for higher‑conviction additions and reducing risk.  
-
-- **Process Improvements – Risk Flags** – Extend the existing **earnings‑risk flag** (added 2026‑05‑07) to also capture **macro‑economic risk** and **options‑expiry risk** for every position, giving a more holistic risk picture before entry.  
+ded 2026‑05‑07) to also capture **macro‑economic risk** and **options‑expiry risk** for every position, giving a more holistic risk picture before entry.  
 
 - **Process Improvements – Learning Log** – Build a **ticker‑specific learning log** that records key insights, thesis statements, and outcome metrics; this will prevent re‑researching the same companies and will feed the memory system for better future recommendations.  
 
@@ -111,3 +107,8 @@ g** that weights ideas by recent momentum, news impact, and options liquidity, a
 - **Process Improvements – Expanded Recommendation Universe** – Broaden the scan to include securities not currently held, using criteria such as >10% earnings surprise, >20% revenue growth, and a clear catalyst (M&A, product launch) to surface new high‑conviction ideas.  
 
 - **Process Improvements – Thesis Tracking** – Build a dynamic thesis journal that logs each recommendation’s rationale, expected return, and actual P&L, enabling post‑trade analysis to validate or refute prior theses and improve future conviction calibration.
+
+## Run: 2026-07-07 03:46:03 ET
+- **What Worked Well:** The LEAP options analysis for **SOFI** (price $16.29, +14.30% gain) used clear volatility and time‑decay metrics, and the portfolio rebalance summary correctly flagged the 55% cash drag, suggesting deployment into low‑correlation ETFs.  
+
+- **What Didn't Work:** The recommendation universe was limited to existing holdings; no new high‑conviction ideas (e.g., a biotech with >20% revenue growth) were surfaced despite a 10% earnings surprise elsewhere, leaving cash
