@@ -1018,3 +1018,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-08 | QCOM | BUY | $130.00 | N/A | 9/10 | Active | - | Why: Deep‑research DCF models price Qualcomm at $140‑$145, implying ~8‑12% upsid |
 | 2026-07-08 | AVGO | BUY | $850.00 | N/A | 8/10 | Active | - | Why: Broadcom’s dominant position in data‑center ASICs and RF solutions, combine |
 | 2026-07-08 | EEM | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Global rotation data (deep‑research) shows emerging‑market equities have ou |
+| 2026-07-08 | QCOM | BUY | $150.00 | $190.00 | 9/10 | Active | - | Thesis: Qualcomm is undervalued and poised to capture AI‑driven 5G/6G demand, wi |
+| 2026-07-08 | ON | BUY | $18.00 | $28.00 | 8/10 | Active | - | Thesis: ON Semiconductor offers compelling upside from AI and automotive electri |
+| 2026-07-08 | TSM | BUY | $120.00 | $155.00 | 9/10 | Active | - | Thesis: TSM, the world’s leading pure‑play foundry, is positioned to capture the |
