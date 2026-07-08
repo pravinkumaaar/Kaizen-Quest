@@ -1021,3 +1021,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-08 | QCOM | BUY | $150.00 | $190.00 | 9/10 | Active | - | Thesis: Qualcomm is undervalued and poised to capture AI‑driven 5G/6G demand, wi |
 | 2026-07-08 | ON | BUY | $18.00 | $28.00 | 8/10 | Active | - | Thesis: ON Semiconductor offers compelling upside from AI and automotive electri |
 | 2026-07-08 | TSM | BUY | $120.00 | $155.00 | 9/10 | Active | - | Thesis: TSM, the world’s leading pure‑play foundry, is positioned to capture the |
+| 2026-07-08 | QCOM | BUY | N/A | $27.00 | 9/10 | Active | - | THESIS: Qualcomm’s upcoming earnings and its 5G/6G roadmap position it for a str |
+| 2026-07-08 | LCID | BUY | N/A | $67.00 | 8/10 | Active | - | THESIS: Lucid’s upcoming earnings and recent production ramp‑up create a high‑as |
