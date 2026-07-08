@@ -1015,3 +1015,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-07 | NXPI | BUY | $135.00 | $210.00 | 9/10 | Active | - | Why: NXP Semiconductors is positioned to capture AI‑driven automotive and IoT ch |
 | 2026-07-07 | FCX | BUY | $38.00 | $55.00 | 8/10 | Active | - | Why: Freeport McMoRan is leveraged to the rising copper price cycle driven by EV |
 | 2026-07-07 | GOOGL | BUY | $300.00 | $300.00 | 8/10 | Active | - | Why: Deep research shows AI ad revenue to grow 30% YoY, strong cash flow, and te |
+| 2026-07-08 | QCOM | BUY | $130.00 | N/A | 9/10 | Active | - | Why: Deep‑research DCF models price Qualcomm at $140‑$145, implying ~8‑12% upsid |
+| 2026-07-08 | AVGO | BUY | $850.00 | N/A | 8/10 | Active | - | Why: Broadcom’s dominant position in data‑center ASICs and RF solutions, combine |
+| 2026-07-08 | EEM | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Global rotation data (deep‑research) shows emerging‑market equities have ou |
