@@ -1023,3 +1023,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-08 | TSM | BUY | $120.00 | $155.00 | 9/10 | Active | - | Thesis: TSM, the world’s leading pure‑play foundry, is positioned to capture the |
 | 2026-07-08 | QCOM | BUY | N/A | $27.00 | 9/10 | Active | - | THESIS: Qualcomm’s upcoming earnings and its 5G/6G roadmap position it for a str |
 | 2026-07-08 | LCID | BUY | N/A | $67.00 | 8/10 | Active | - | THESIS: Lucid’s upcoming earnings and recent production ramp‑up create a high‑as |
+| 2026-07-09 | EEM | BUY | N/A | N/A | 8/10 | Active | - | Why: Your portfolio lacks geographic diversification while EMs are showing relat |
+| 2026-07-09 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Portfolio insurance with inflation hedge characteristics as Fed cuts become |
+| 2026-07-09 | PLTR | BUY | $129.04 | N/A | 7/10 | Active | - | Why: Outstanding 105% gain but now 28% of portfolio creates dangerous concentrat |
+| 2026-07-09 | COIN | BUY | N/A | N/A | 7/10 | Active | - | Why: Crypto winter bottoming with Bitcoin halving cycle + potential approval of  |
