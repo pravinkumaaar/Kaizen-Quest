@@ -1030,3 +1030,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-11 | TSM | BUY | $115.00 | $170.00 | 5/10 | Active | - | Why: Deep‑research DCF values TSM at $135 (≈17% upside) and the company’s domina |
 | 2026-07-11 | AMD | BUY | $130.00 | $190.00 | 5/10 | Active | - | Why: Deep‑research models a fair value of $185 (≈42% upside) and AMD’s roadmap ( |
 | 2026-07-11 | COIN | BUY | $60.00 | $95.00 | 5/10 | Active | - | Why: Deep‑research indicates a fair value of $95 (≈58% upside) and a clear catal |
+| 2026-07-11 | NVDA | BUY | $210.96 | $240.00 | 7/10 | Active | - | Why: Your largest semiconductor position (13.4%) is extended into earnings with  |
+| 2026-07-11 | EEM | BUY | N/A | $55.00 | 9/10 | Active | - | Why: Your portfolio has zero emerging market exposure while EMs show early signs |
+| 2026-07-11 | COIN | BUY | N/A | $320.00 | 8/10 | Active | - | Why: Crypto exchange trading at compelling valuation ahead of July 30 earnings.  |
+| 2026-07-11 | CROX | BUY | N/A | $135.00 | 7/10 | Active | - | Why: Consumer discretionary turnaround story trading at 15x earnings with 30%+ u |
