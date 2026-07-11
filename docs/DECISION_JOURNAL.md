@@ -1027,3 +1027,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-09 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Portfolio insurance with inflation hedge characteristics as Fed cuts become |
 | 2026-07-09 | PLTR | BUY | $129.04 | N/A | 7/10 | Active | - | Why: Outstanding 105% gain but now 28% of portfolio creates dangerous concentrat |
 | 2026-07-09 | COIN | BUY | N/A | N/A | 7/10 | Active | - | Why: Crypto winter bottoming with Bitcoin halving cycle + potential approval of  |
+| 2026-07-11 | TSM | BUY | $115.00 | $170.00 | 5/10 | Active | - | Why: Deep‑research DCF values TSM at $135 (≈17% upside) and the company’s domina |
+| 2026-07-11 | AMD | BUY | $130.00 | $190.00 | 5/10 | Active | - | Why: Deep‑research models a fair value of $185 (≈42% upside) and AMD’s roadmap ( |
+| 2026-07-11 | COIN | BUY | $60.00 | $95.00 | 5/10 | Active | - | Why: Deep‑research indicates a fair value of $95 (≈58% upside) and a clear catal |
