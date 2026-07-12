@@ -1046,3 +1046,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-12 | ABBV | BUY | $152.00 | $190.00 | 9/10 | Active | - | Why: AbbVie’s mature product portfolio and high dividend yield deliver stable ca |
 | 2026-07-12 | GRAB | BUY | $15.00 | N/A | 8/10 | Active | - | Why: Grab’s dominant super‑app position in SE Asia and accelerating fintech reve |
 | 2026-07-12 | COIN | BUY | $70.00 | N/A | 9/10 | Active | - | Why: Coinbase’s recent price consolidation and upcoming earnings present a high‑ |
+| 2026-07-12 | COIN | BUY | $78.00 | N/A | 8/10 | Active | - | Why: Coinbase (COIN) is the leading U.S. crypto‑exchange with dominant network e |
+| 2026-07-12 | DKNG | BUY | $45.00 | N/A | 7/10 | Active | - | Why: DraftKings (DKNG) is a dominant U.S. sports‑betting platform with a clear p |
+| 2026-07-12 | GLP | BUY | $115.00 | N/A | 7/10 | Active | - | Why: GLP (GLP Inc.) is a best‑in‑class logistics REIT with a high‑yield, low‑deb |
