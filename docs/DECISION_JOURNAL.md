@@ -1038,3 +1038,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-12 | TICKER | BUY | $13.00 | N/A | 9/10 | Active | - | Why: Robinhood is poised for a breakout after its July 29 earnings, with robust  |
 | 2026-07-12 | TICKER | BUY | $38.00 | $60.00 | 8/10 | Active | - | Why: FCX is a copper miner with exposure to a sustained copper price rally drive |
 | 2026-07-12 | TICKER | BUY | $13.00 | $22.00 | 9/10 | Active | - | Why: Robinhood is poised for a breakout after its July 29 earnings, with strong  |
+| 2026-07-12 | TEM | BUY | $58.23 | N/A | 8/10 | Active | - | Why: Tempus AI is burning cash ($-0.14 EPS estimate), down 19% in 3 weeks, and r |
+| 2026-07-12 | TEM | BUY | $2.50 | N/A | 7/10 | Active | - | Why: TEM reports July 30th with -$0.14 EPS estimate. Premium decay + high short  |
+| 2026-07-12 | INDA | BUY | $42.85 | N/A | 7/10 | Active | - | Why: Your portfolio has zero emerging market exposure while India's tech infrast |
+| 2026-07-12 | FANG | BUY | $45.20 | N/A | 6/10 | Active | - | Why: Oil & gas exploration trading at 8x P/E while your portfolio is pure tech g |
+| 2026-07-12 | PLTR | BUY | $126.79 | N/A | 6/10 | Active | - | Why: 27.6% portfolio concentration with 102% unrealized gain. Reports no upcomin |
