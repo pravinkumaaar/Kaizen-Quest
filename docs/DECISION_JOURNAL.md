@@ -1034,3 +1034,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-11 | EEM | BUY | N/A | $55.00 | 9/10 | Active | - | Why: Your portfolio has zero emerging market exposure while EMs show early signs |
 | 2026-07-11 | COIN | BUY | N/A | $320.00 | 8/10 | Active | - | Why: Crypto exchange trading at compelling valuation ahead of July 30 earnings.  |
 | 2026-07-11 | CROX | BUY | N/A | $135.00 | 7/10 | Active | - | Why: Consumer discretionary turnaround story trading at 15x earnings with 30%+ u |
+| 2026-07-12 | TICKER | BUY | $15.50 | N/A | 8/10 | Active | - | Why: CL is a leading iron ore miner positioned to benefit from strong global inf |
+| 2026-07-12 | TICKER | BUY | $13.00 | N/A | 9/10 | Active | - | Why: Robinhood is poised for a breakout after its July 29 earnings, with robust  |
+| 2026-07-12 | TICKER | BUY | $38.00 | $60.00 | 8/10 | Active | - | Why: FCX is a copper miner with exposure to a sustained copper price rally drive |
+| 2026-07-12 | TICKER | BUY | $13.00 | $22.00 | 9/10 | Active | - | Why: Robinhood is poised for a breakout after its July 29 earnings, with strong  |
