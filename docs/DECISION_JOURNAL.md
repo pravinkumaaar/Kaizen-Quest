@@ -1049,3 +1049,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-12 | COIN | BUY | $78.00 | N/A | 8/10 | Active | - | Why: Coinbase (COIN) is the leading U.S. crypto‑exchange with dominant network e |
 | 2026-07-12 | DKNG | BUY | $45.00 | N/A | 7/10 | Active | - | Why: DraftKings (DKNG) is a dominant U.S. sports‑betting platform with a clear p |
 | 2026-07-12 | GLP | BUY | $115.00 | N/A | 7/10 | Active | - | Why: GLP (GLP Inc.) is a best‑in‑class logistics REIT with a high‑yield, low‑deb |
+| 2026-07-12 | TICKER | BUY | $53.95 | $70.00 | 9/10 | Active | - | Why: Gold remains a compelling hedge against inflation and currency devaluation, |
+| 2026-07-12 | TICKER | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: India’s economy is expanding at a 6.5% annual rate, driven by a youthful de |
+| 2026-07-12 | TICKER | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Coinbase is the largest U.S. crypto exchange with a dominant market share a |

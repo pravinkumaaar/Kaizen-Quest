@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **COIN** | $78.00 | TBD | 8/10 |  Active  |  $78.00  |  +0.0%  | Medium‑term swing (3‑6 months). | Watchlist |
-| 2 | **DKNG** | $45.00 | TBD | 7/10 |  Active  |  $45.00  |  +0.0%  | Swing (6‑12 weeks). | Watchlist |
-| 3 | **GLP** | $115.00 | TBD | 7/10 |  Active  |  $115.00  |  +0.0%  | Medium‑term swing (3‑6 months). | Watchlist |
+| 1 | **TICKER** | $53.95 | $70.00 | 9/10 |  Active  |  $53.95  |  +0.0%  | Swing 4‑8 weeks | Watchlist |
+| 2 | **TICKER** | $80.00 | $110.00 | 8/10 |  Active  |  $80.00  |  +0.0%  | Medium 3‑6 months | Watchlist |
+| 3 | **TICKER** | $150.00 | $210.00 | 8/10 |  Active  |  $150.00  |  +0.0%  | Medium 2‑4 months | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
