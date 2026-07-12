@@ -1043,3 +1043,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-12 | INDA | BUY | $42.85 | N/A | 7/10 | Active | - | Why: Your portfolio has zero emerging market exposure while India's tech infrast |
 | 2026-07-12 | FANG | BUY | $45.20 | N/A | 6/10 | Active | - | Why: Oil & gas exploration trading at 8x P/E while your portfolio is pure tech g |
 | 2026-07-12 | PLTR | BUY | $126.79 | N/A | 6/10 | Active | - | Why: 27.6% portfolio concentration with 102% unrealized gain. Reports no upcomin |
+| 2026-07-12 | ABBV | BUY | $152.00 | $190.00 | 9/10 | Active | - | Why: AbbVie’s mature product portfolio and high dividend yield deliver stable ca |
+| 2026-07-12 | GRAB | BUY | $15.00 | N/A | 8/10 | Active | - | Why: Grab’s dominant super‑app position in SE Asia and accelerating fintech reve |
+| 2026-07-12 | COIN | BUY | $70.00 | N/A | 9/10 | Active | - | Why: Coinbase’s recent price consolidation and upcoming earnings present a high‑ |
