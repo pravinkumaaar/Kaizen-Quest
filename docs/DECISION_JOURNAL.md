@@ -1052,3 +1052,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-12 | TICKER | BUY | $53.95 | $70.00 | 9/10 | Active | - | Why: Gold remains a compelling hedge against inflation and currency devaluation, |
 | 2026-07-12 | TICKER | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: India’s economy is expanding at a 6.5% annual rate, driven by a youthful de |
 | 2026-07-12 | TICKER | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Coinbase is the largest U.S. crypto exchange with a dominant market share a |
+| 2026-07-12 | CVX | BUY | $165.20 | $215.00 | 8/10 | Active | - | Why: Chevron (CVX) is a vertically integrated oil major with low‑cost upstream a |
+| 2026-07-12 | ABBV | BUY | $155.00 | $210.00 | 8/10 | Active | - | Why: AbbVie (ABBV) offers stable, diversified biotech revenue (Botox, immunology |
+| 2026-07-12 | ON | BUY | $150.00 | $195.00 | 7/10 | Active | - | Why: ON Semiconductor (ON) supplies power‑management and interface devices that  |
+| 2026-07-12 | LULU | BUY | $380.00 | $500.00 | 6/10 | Active | - | Why: Lululemon (LULU) has shown resilient same‑store sales growth (~12% YoY) and |
