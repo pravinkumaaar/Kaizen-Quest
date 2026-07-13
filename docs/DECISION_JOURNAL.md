@@ -1056,3 +1056,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-12 | ABBV | BUY | $155.00 | $210.00 | 8/10 | Active | - | Why: AbbVie (ABBV) offers stable, diversified biotech revenue (Botox, immunology |
 | 2026-07-12 | ON | BUY | $150.00 | $195.00 | 7/10 | Active | - | Why: ON Semiconductor (ON) supplies power‑management and interface devices that  |
 | 2026-07-12 | LULU | BUY | $380.00 | $500.00 | 6/10 | Active | - | Why: Lululemon (LULU) has shown resilient same‑store sales growth (~12% YoY) and |
+| 2026-07-13 | DKNG | BUY | $7.00 | $55.00 | 9/10 | Active | - | Why: DraftKings is poised for an earnings‑driven rally as the July 31 earnings a |
+| 2026-07-13 | CVX | BUY | $3.00 | N/A | 8/10 | Active | - | Why: Chevron’s August 3 earnings are expected to benefit from higher crude price |
+| 2026-07-13 | ABBV | BUY | $4.00 | N/A | 8/10 | Active | - | Why: AbbVie’s upcoming biosimilar launch for Humira and robust pipeline are expe |
+| 2026-07-13 | APPF | BUY | $6.00 | N/A | 9/10 | Active | - | Why: AppFolio is positioned to capture growth in AI‑driven property‑management S |
