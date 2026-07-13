@@ -1,14 +1,14 @@
 [
   {
-    "date": "2026-07-12",
+    "date": "2026-07-13",
     "model": "free",
     "rating": 0,
     "top_recommendations": [],
     "key_learnings": [],
     "portfolio_summary": {
-      "total_value": 237719.75758506,
+      "total_value": 236639.53383506002,
       "top_holding": "",
-      "concentration": 63.11590800201518
+      "concentration": 63.404022594372826
     },
     "benchmarks": {}
   },
