@@ -1060,3 +1060,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-13 | CVX | BUY | $3.00 | N/A | 8/10 | Active | - | Why: Chevron’s August 3 earnings are expected to benefit from higher crude price |
 | 2026-07-13 | ABBV | BUY | $4.00 | N/A | 8/10 | Active | - | Why: AbbVie’s upcoming biosimilar launch for Humira and robust pipeline are expe |
 | 2026-07-13 | APPF | BUY | $6.00 | N/A | 9/10 | Active | - | Why: AppFolio is positioned to capture growth in AI‑driven property‑management S |
+| 2026-07-14 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: Your portfolio has zero international exposure while EM is showing relative |
+| 2026-07-14 | GLD | BUY | $192.80 | N/A | 7/10 | Active | - | Why: With Fed policy uncertainties and geopolitical tensions rising, gold offers |
+| 2026-07-14 | SEDG | BUY | $125.00 | N/A | 7/10 | Active | - | Why: ASML competitor that's undervalued versus the AI narrative. With Railway's  |
+| 2026-07-14 | PLTR | BUY | $130.04 | N/A | 8/10 | Active | - | Why: +107% gain with 29% portfolio weight creates concentration risk. Take parti |
