@@ -1089,3 +1089,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | TICKER | BUY | $133.72 | $170.00 | 8/10 | Active | - | Why: High concentration in PLTR (29.5% of portfolio) combined with strong recent |
 | 2026-07-14 | TICKER | BUY | $28.47 | $155.00 | 8/10 | Active | - | Why: The stock has shown consistent upward momentum with a 6.07% gain today, and |
 | 2026-07-14 | TICKER | BUY | $130.00 | $155.00 | 9/10 | Active | - | Why: The company is a key player in AI and data center computing, with growing d |
+| 2026-07-14 | AMD | BUY | $130.00 | $190.00 | 8/10 | Active | - | Why: Deep research shows AMD's data‑center revenue grew 38% YoY in Q2 2026, driv |
+| 2026-07-14 | COP | BUY | $2.00 | N/A | 9/10 | Active | - | Why: Deep research shows COP's upstream earnings are supported by Brent crude tr |
+| 2026-07-14 | GLD | BUY | $110.00 | N/A | 7/10 | Active | - | Why: Deep research indicates gold price is up 8% YTD on rising inflation expecta |
