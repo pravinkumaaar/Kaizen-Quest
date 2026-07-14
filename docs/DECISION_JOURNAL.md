@@ -1072,3 +1072,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Gold remains a trusted safe‑haven asset, and current macro conditions point |
 | 2026-07-14 | ADTN | BUY | N/A | $5.00 | 7/10 | Active | - | Thesis: ADTN is positioned to capture upside from the AI‑driven data‑center infr |
 | 2026-07-14 | AMD | BUY | N/A | $260.00 | 8/10 | Active | - | Thesis: AMD is poised for accelerated revenue growth as AI‑centric workloads exp |
+| 2026-07-14 | ADTN | BUY | $0.50 | N/A | 9/10 | Active | - | Why: ADTN trades at a deep discount to NAV, has a small float, and recently anno |
+| 2026-07-14 | CAR | BUY | $2.50 | N/A | 8/10 | Active | - | Why: CAR’s same‑store sales grew 7% YoY and inventory days are at a 12‑month low |
+| 2026-07-14 | IDXX | BUY | $5.00 | N/A | 9/10 | Active | - | Why: IDXX’s recurring diagnostic revenue, strong pricing power, and 20% YoY reve |
+| 2026-07-14 | GLD | BUY | $210.00 | $260.00 | 7/10 | Active | - | Why: GLD tracks physical gold, which has broken above $2,000/oz and is supported |
