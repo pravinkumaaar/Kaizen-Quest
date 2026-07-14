@@ -1079,3 +1079,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | BKNG | BUY | $30.50 | N/A | 9/10 | Active | - | Why: BKNG’s Q2 revenue guidance (+12% YoY) and OAG data showing a 15% YoY rise i |
 | 2026-07-14 | IDXX | BUY | $300.00 | N/A | 8/10 | Active | - | Why: IDXX’s Q2 revenue guidance (+18% YoY) and 68% gross margin show robust, rec |
 | 2026-07-14 | COP | BUY | $80.50 | N/A | 8/10 | Active | - | Why: COP’s July 30 earnings are expected to show EPS $0.35 vs. current $0.33, an |
+| 2026-07-14 | AMD | BUY | $155.00 | $210.00 | 9/10 | Active | - | Why: AMD is the only credible challenger to Nvidia in AI GPUs, with MI300 produc |
+| 2026-07-14 | IDXX | BUY | $380.00 | $500.00 | 8/10 | Active | - | Why: IDXX dominates recurring‑revenue pet‑health diagnostics with >80% of revenu |
+| 2026-07-14 | FCX | BUY | $40.00 | $55.00 | 8/10 | Active | - | Why: FCX is a low‑cost copper miner positioned to benefit from the EV‑battery bo |
