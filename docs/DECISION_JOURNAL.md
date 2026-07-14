@@ -1082,3 +1082,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | AMD | BUY | $155.00 | $210.00 | 9/10 | Active | - | Why: AMD is the only credible challenger to Nvidia in AI GPUs, with MI300 produc |
 | 2026-07-14 | IDXX | BUY | $380.00 | $500.00 | 8/10 | Active | - | Why: IDXX dominates recurring‑revenue pet‑health diagnostics with >80% of revenu |
 | 2026-07-14 | FCX | BUY | $40.00 | $55.00 | 8/10 | Active | - | Why: FCX is a low‑cost copper miner positioned to benefit from the EV‑battery bo |
+| 2026-07-14 | FCX | BUY | $38.00 | N/A | 8/10 | Active | - | Why: Freeport‑McMoRan (FCX) is a low‑cost copper producer with a strong balance  |
+| 2026-07-14 | AMD | BUY | $130.00 | N/A | 9/10 | Active | - | Why: Advanced Micro Devices (AMD) is positioned to capture accelerated AI‑driven |
+| 2026-07-14 | INDA | BUY | $85.00 | N/A | 7/10 | Active | - | Why: The India ETF (INDA) offers diversified exposure to a high‑growth emerging  |
+| 2026-07-14 | GLD | BUY | $2000.00 | N/A | 6/10 | Active | - | Why: Persistent inflation expectations and geopolitical uncertainty keep gold pr |
