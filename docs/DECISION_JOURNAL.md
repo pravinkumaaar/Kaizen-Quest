@@ -1064,3 +1064,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | GLD | BUY | $192.80 | N/A | 7/10 | Active | - | Why: With Fed policy uncertainties and geopolitical tensions rising, gold offers |
 | 2026-07-14 | SEDG | BUY | $125.00 | N/A | 7/10 | Active | - | Why: ASML competitor that's undervalued versus the AI narrative. With Railway's  |
 | 2026-07-14 | PLTR | BUY | $130.04 | N/A | 8/10 | Active | - | Why: +107% gain with 29% portfolio weight creates concentration risk. Take parti |
+| 2026-07-14 | GXO | BUY | $30.00 | $45.00 | 9/10 | Active | - | Why: GXO is the recently‑spun‑off leader in e‑commerce fulfillment, a sector poi |
+| 2026-07-14 | AMD | BUY | $115.00 | $140.00 | 8/10 | Active | - | Why: AMD is positioned to capture a larger share of the data‑center AI accelerat |
+| 2026-07-14 | COP | BUY | $80.00 | $95.00 | 7/10 | Active | - | Why: With crude oil prices stabilizing above $85 and the company’s strong upstre |
