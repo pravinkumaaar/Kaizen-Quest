@@ -1076,3 +1076,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | CAR | BUY | $2.50 | N/A | 8/10 | Active | - | Why: CAR’s same‑store sales grew 7% YoY and inventory days are at a 12‑month low |
 | 2026-07-14 | IDXX | BUY | $5.00 | N/A | 9/10 | Active | - | Why: IDXX’s recurring diagnostic revenue, strong pricing power, and 20% YoY reve |
 | 2026-07-14 | GLD | BUY | $210.00 | $260.00 | 7/10 | Active | - | Why: GLD tracks physical gold, which has broken above $2,000/oz and is supported |
+| 2026-07-14 | BKNG | BUY | $30.50 | N/A | 9/10 | Active | - | Why: BKNG’s Q2 revenue guidance (+12% YoY) and OAG data showing a 15% YoY rise i |
+| 2026-07-14 | IDXX | BUY | $300.00 | N/A | 8/10 | Active | - | Why: IDXX’s Q2 revenue guidance (+18% YoY) and 68% gross margin show robust, rec |
+| 2026-07-14 | COP | BUY | $80.50 | N/A | 8/10 | Active | - | Why: COP’s July 30 earnings are expected to show EPS $0.35 vs. current $0.33, an |
