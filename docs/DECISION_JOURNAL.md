@@ -1067,3 +1067,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | GXO | BUY | $30.00 | $45.00 | 9/10 | Active | - | Why: GXO is the recently‑spun‑off leader in e‑commerce fulfillment, a sector poi |
 | 2026-07-14 | AMD | BUY | $115.00 | $140.00 | 8/10 | Active | - | Why: AMD is positioned to capture a larger share of the data‑center AI accelerat |
 | 2026-07-14 | COP | BUY | $80.00 | $95.00 | 7/10 | Active | - | Why: With crude oil prices stabilizing above $85 and the company’s strong upstre |
+| 2026-07-14 | AMD | BUY | N/A | N/A | 9/10 | Active | - | Why: AMD is positioned at the center of the exploding AI compute market, with it |
+| 2026-07-14 | BKNG | BUY | N/A | N/A | 8/10 | Active | - | Why: BKNG is a leading online travel platform poised to benefit from a robust re |
+| 2026-07-14 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Gold remains a trusted safe‑haven asset, and current macro conditions point |

@@ -1,24 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-r new tickers, not just existing holdings.  
-  4. **Dynamic ranking:** Sort recommendations by news‑driven catalysts (earnings, FDA, macro events) and by projected upside to prioritize actionable ideas.  
-  5. **Stop‑loss enforcement:** Auto‑apply an 8% trailing stop to all active positions and monitor breach alerts in real time.  
-
-These points directly address the strengths (nuanced analysis, learning trajectory) and the concrete weaknesses (data staleness, concentration, missing risk controls, idle cash) identified in the recent runs and memory insights. Implementing the listed improvements should push the next run toward the ≥8/10 target and materially enhance portfolio performance.
-
-## Run: 2026-07-13 22:53:02 ET
-- **Specific wins:** SOFI (+11.2% on 306 shares at $16.29 → $18.11) and TEM (+10.6% on 99 shares at $50.22 → $55.52) delivered clear, catalyst‑driven upside; the options LEAP analysis for LEAP (not shown) was well‑reasoned and aligned with earnings expectations.  
-- **Data staleness:** PLTR recommendation used a $128.68 entry price that is >8% below the current $139.47 market price, indicating a 7.7% loss; the price feed was flagged as “old” in the 4/22 feedback, confirming stale data.  
-- **Conviction calibration:** The 8/10 conviction picks (SOFI, TEM, VRT, PLTR) showed mixed outcomes—SOFI and TEM were winners, VRT was a -12.2% loser, and PLTR a -7.7% loser—so high conviction did **not** guarantee positive returns, revealing over‑confidence in a few names.  
-- **Thesis journal gaps:** The Thesis Journal is empty, meaning no historical validation exists to assess whether prior theses (e.g., “AI‑driven cloud growth”) were correct; without this record we cannot calibrate conviction scores or learn from past winners/losers.  
-- **Missed opportunity set:** The report limited suggestions to the existing 7‑stock portfolio, ignoring the 55% cash pile; new high‑impact ideas (e.g., a biotech with upcoming FDA decision or a clean‑energy play with strong policy tailwinds) were not considered, creating an opportunity cost of ~5% annualized return.  
-- **Concentration risk:** Memory insights show concentration at 64% (value $231k) despite a $100k portfolio—far above the 30% “optimal” threshold; this makes the portfolio vulnerable to any single‑stock shock (e.g., VRT’s -12% hit).  
-- **Stop‑loss enforcement:** No trailing‑stop or hard‑stop levels were mentioned; the 8% trailing stop recommendation in the “Learning History” is absent from the current run, leaving downside protection ineffective.  
-- **Cash deployment inefficiency:** With cash at 55% and a target of ~10% idle cash, the agent failed to scan the broad universe for catalysts; the “broad‑universe cash‑deployment sprint” remains unimplemented, leaving a large portion of capital unproductive.  
-- **Dynamic ranking deficiency:** Recommendations were listed in the order they were read rather than sorted by news‑driven catalysts or projected upside; this makes it hard for the user to spot the most actionable ideas (e.g., a stock with an upcoming earnings beat).  
-- **Memory reuse:** The last three runs (2026‑07‑13) show similar portfolio values (~$231k) and concentrations (~64%); the agent repeated the same tickers without integrating new data or learning, indicating redundant research and a lack of progressive memory usage.  
-- **Process improvement – real‑time feed:** Integrate a live price and options chain feed to eliminate stale quotes (e.g., PLTR) and ensure that conviction scores reflect up‑to‑date risk/reward.  
-- **Process improvement – broad‑universe scan:** When cash >10%, automatically run a market‑wide screen for high‑impact catalysts (earnings, FDA, macro) and propose new tickers, expanding beyond the current 7‑stock universe.  
+an:** When cash >10%, automatically run a market‑wide screen for high‑impact catalysts (earnings, FDA, macro) and propose new tickers, expanding beyond the current 7‑stock universe.  
 - **Process improvement – stop‑loss automation:** Implement an 8% trailing stop for all active positions; monitor breaches in real time and trigger alerts, thereby improving risk management and aligning with the 2/100 market foresight rating.  
 - **Process improvement – thesis tracking:** Build a living thesis journal that records each idea, its conviction score, outcome, and post‑mortem analysis; this will enable calibrated conviction scores and reveal which sectors (e.g., cloud AI, fintech) have the highest validation rate.
 
@@ -123,3 +105,31 @@ These concrete actions directly address the feedback, leverage the specific tick
 - **Risk‑management audit:** Verify that **stop‑losses are active** for all active positions; for VRT, a stop at ~$315 (≈ 10% below entry) would have limited the loss, confirming the need for automated stop‑loss logic.  
 
 - **Learning loop reinforcement:** The “learning history” items (conviction‑score refinement, stop‑loss automation, memory persistence) are concrete, measurable upgrades; implementing them will directly raise the average user rating toward the 9‑10 range observed in the 9.2/10 run on 2026‑05‑07.
+
+## Run: 2026-07-14 08:08:56 ET
+- **High‑conviction picks showed mixed results:** NVDA entered at $207.14, now $206.02 (‑0.54%); PLTR at $139.47 vs. a stale $123.80 (‑11.24%); SOFI at $16.29 vs. $18.09 (+11.05%); TEM at $50.22 vs. $55.13 (+9.78%); VRT at $348.38 vs. $312.87 (‑10.19%). The 8/10 conviction scores over‑estimated the upside for PLTR and VRT, indicating a need for tighter conviction calibration.  
+
+- **Data quality issues:** PLTR’s price appears stale (previous feedback noted outdated data), and VRT’s price may also be outdated, causing misleading return calculations. Options chain data were reported broken (2026‑05‑07 feedback), preventing proper LEAP evaluation for SOFI and TEM.  
+
+- **Cash deployment inefficiency:** Portfolio cash sits at 55% ($55k) of the $100,866 total, far above the 90% deployment target. Only ~$45k of idle cash needs to be allocated to 2–3 new high‑conviction positions (e.g., CRWD $350, NVDA $800) to reach the target and reduce opportunity cost.  
+
+- **Concentration risk mismatch:** Reported portfolio concentration is 0%, yet memory logs show a 63.9% concentration in recent runs, suggesting inconsistent reporting. A unified, real‑time concentration metric should be implemented.  
+
+- **Stop‑loss gaps:** VRT’s stop‑loss at ~$315 (≈10% below entry) was not activated, leading to a 10.19% loss; other positions lack explicit stop‑loss levels, exposing the portfolio to tail‑risk events. Automated stop‑loss logic should be added and validated.  
+
+- **Missed new‑stock opportunities:** The recommendation engine only considered tickers already in the portfolio, ignoring fresh catalysts such as CRWD (cloud data platform) and Snowflake (SNOW), which showed strong earnings momentum and could have offered asymmetric upside.  
+
+- **Thesis journal absent:** No thesis entries are logged, making it impossible to track which past theses (e.g., “AI‑driven cloud services will outperform semiconductor peers”) were validated or refuted. A persistent thesis journal will enable conviction calibration over time.  
+
+- **Learning loop not fully utilized:** The “memory” system described in the learning history (persistent vector DB) is not yet operational, resulting in redundant research on NVDA and PLTR without fresh catalysts. Implementing a vector store that records price, return, thesis, and conviction for each recommendation will avoid re‑researching stale ideas.  
+
+- **Rating and outlook system needs refinement:** The market foresight rating (1/100) and negative outlook score conflict with the positive thesis on AI/cloud, suggesting the scoring algorithm is misaligned; a more granular, data‑driven outlook metric should be introduced.  
+
+- **Process improvement priorities:**  
+  1. Integrate real‑time price feeds to eliminate stale data.  
+  2. Auto‑populate stop‑loss orders based on a 10% trailing rule for all active positions.  
+  3. Expand ticker universe to include high‑momentum newcomers beyond the current portfolio.  
+  4. Refine conviction scoring using recent earnings surprises and analyst rating changes.  
+  5. Add a “new opportunity” section that evaluates non‑portfolio ideas with fresh catalysts.  
+
+- **Overall progress:** The 2026‑05‑07 run (9.2/10) demonstrated strong portfolio awareness, detailed thesis explanations, and effective earnings‑risk flags, showing that systematic upgrades (data freshness, stop‑loss automation, thesis logging) can push average user ratings toward the 9‑10 range. Continuing to implement the above concrete changes will close the gaps identified in the lower‑rated runs.
