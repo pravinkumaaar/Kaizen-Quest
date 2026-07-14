@@ -1086,3 +1086,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | AMD | BUY | $130.00 | N/A | 9/10 | Active | - | Why: Advanced Micro Devices (AMD) is positioned to capture accelerated AI‑driven |
 | 2026-07-14 | INDA | BUY | $85.00 | N/A | 7/10 | Active | - | Why: The India ETF (INDA) offers diversified exposure to a high‑growth emerging  |
 | 2026-07-14 | GLD | BUY | $2000.00 | N/A | 6/10 | Active | - | Why: Persistent inflation expectations and geopolitical uncertainty keep gold pr |
+| 2026-07-14 | TICKER | BUY | $133.72 | $170.00 | 8/10 | Active | - | Why: High concentration in PLTR (29.5% of portfolio) combined with strong recent |
+| 2026-07-14 | TICKER | BUY | $28.47 | $155.00 | 8/10 | Active | - | Why: The stock has shown consistent upward momentum with a 6.07% gain today, and |
+| 2026-07-14 | TICKER | BUY | $130.00 | $155.00 | 9/10 | Active | - | Why: The company is a key player in AI and data center computing, with growing d |
