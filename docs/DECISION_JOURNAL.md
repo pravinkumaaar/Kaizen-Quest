@@ -1103,3 +1103,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-15 | LLY | BUY | $200.00 | N/A | 9/10 | Active | - | Why: Eli Lilly is a premier pharmaceutical company with a breakthrough obesity d |
 | 2026-07-15 | LITE | BUY | $814.80 | N/A | 8/10 | Active | - | Why: LITE is a leading solar energy company positioned to benefit from expanding |
 | 2026-07-15 | ACHR | BUY | $4.85 | N/A | 7/10 | Active | - | Why: ACHR is a biotech company with a pipeline focused on oncology therapies, an |
+| 2026-07-15 | GHC | BUY | $115.00 | $26.00 | 9/10 | Active | - | Why: Deep‑research DCF models a fair value of $145, implying 26% upside; revenue |
+| 2026-07-15 | MCHP | BUY | $78.00 | $38.00 | 8/10 | Active | - | Why: DCF analysis from deep research shows a fair value of $108, implying 38% up |
+| 2026-07-15 | VRTX | BUY | $150.00 | $195.00 | 9/10 | Active | - | Why: FDA approval expected for a next‑gen cystic fibrosis therapy; historical da |
+| 2026-07-15 | MUSA | BUY | $120.00 | $155.00 | 8/10 | Active | - | Why: Deep‑research shows revenue grew 12% YoY to $6.1 B with operating margin ex |
