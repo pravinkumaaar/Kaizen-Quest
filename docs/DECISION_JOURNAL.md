@@ -1112,3 +1112,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-15 | VRT | BUY | $297.51 | N/A | 7/10 | Active | - | Why: Up 103% but trading at 18x revenue for water infrastructure. Earnings Augus |
 | 2026-07-15 | GFS | BUY | $12.50 | N/A | 7/10 | Active | - | Why: Digital payment rails for fintech boom. Not in your portfolio but growing 4 |
 | 2026-07-15 | NVDA | BUY | $210.11 | N/A | 9/10 | Active | - | Why: Core holding but earnings August 3rd present binary event. No add at curren |
+| 2026-07-15 | COP | BUY | $45.00 | $68.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) is a leading independent oil & gas explorer with a sol |
+| 2026-07-15 | JAZZ | BUY | $70.00 | $115.00 | 8/10 | Active | - | Why: Jazz Pharmaceuticals (JAZZ) is a mid‑cap biotech with a robust pipeline, in |
+| 2026-07-15 | FICO | BUY | N/A | $800.00 | 7/10 | Active | - | Why: FICO is a leading credit‑scoring and decision‑management software firm with |
