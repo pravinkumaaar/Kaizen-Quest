@@ -1115,3 +1115,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-15 | COP | BUY | $45.00 | $68.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) is a leading independent oil & gas explorer with a sol |
 | 2026-07-15 | JAZZ | BUY | $70.00 | $115.00 | 8/10 | Active | - | Why: Jazz Pharmaceuticals (JAZZ) is a mid‑cap biotech with a robust pipeline, in |
 | 2026-07-15 | FICO | BUY | N/A | $800.00 | 7/10 | Active | - | Why: FICO is a leading credit‑scoring and decision‑management software firm with |
+| 2026-07-15 | TICKER | BUY | $8.00 | $15.00 | 9/10 | Active | - | Why: Deep research shows Railway is a pure AI‑first cloud compute platform with  |
+| 2026-07-15 | TICKER | BUY | $12.00 | $22.00 | 8/10 | Active | - | Why: Deep research indicates C3.ai is a leading enterprise AI software provider  |
+| 2026-07-15 | TICKER | BUY | $15.00 | $25.00 | 8/10 | Active | - | Why: Deep research highlights ON’s strong position in power management and imagi |
