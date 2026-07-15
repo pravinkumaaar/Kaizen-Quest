@@ -1095,3 +1095,11 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-15 | ARBE | BUY | $0.87 | $1.55 | 9/10 | Active | - | Why: ARBE has surged 27% today on speculation of a multi‑million‑dollar logistic |
 | 2026-07-15 | COP | BUY | $80.00 | $130.00 | 8/10 | Active | - | Why: ConocoPhillips (COP) benefits from a 6% YTD rise in crude oil prices and a  |
 | 2026-07-15 | GHC | BUY | $70.00 | $130.00 | 8/10 | Active | - | Why: GHC shows robust revenue growth (+15% YoY to $1.3 B) and an EPS estimate of |
+| 2026-07-15 | MCHP | BUY | $65.00 | N/A | 8/10 | Active | - | Why: Microchip Technology supplies microcontrollers and analog chips that are es |
+| 2026-07-15 | LLY | BUY | $200.00 | N/A | 9/10 | Active | - | Why: Eli Lilly is a premier pharmaceutical company with a breakthrough obesity d |
+| 2026-07-15 | SNDK | BUY | $1750.00 | N/A | 9/10 | Active | - | Why: SNDK supplies advanced semiconductor manufacturing equipment, positioned to |
+| 2026-07-15 | MELI | BUY | $165.00 | N/A | 9/10 | Active | - | Why: Mercado Libre is the leading e‑commerce and fintech platform in Latin Ameri |
+| 2026-07-15 | MCHP | BUY | $65.00 | N/A | 8/10 | Active | - | Why: Microchip Technology supplies microcontrollers and analog chips essential f |
+| 2026-07-15 | LLY | BUY | $200.00 | N/A | 9/10 | Active | - | Why: Eli Lilly is a premier pharmaceutical company with a breakthrough obesity d |
+| 2026-07-15 | LITE | BUY | $814.80 | N/A | 8/10 | Active | - | Why: LITE is a leading solar energy company positioned to benefit from expanding |
+| 2026-07-15 | ACHR | BUY | $4.85 | N/A | 7/10 | Active | - | Why: ACHR is a biotech company with a pipeline focused on oncology therapies, an |
