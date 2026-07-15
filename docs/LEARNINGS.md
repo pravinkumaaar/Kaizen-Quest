@@ -1,37 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ns chain, Greeks) and automatically refresh stale entries (e.g., PLTR) before generating recommendations, ensuring that “current price” figures are truly up‑to‑date.  
-
-- **Process Improvement – Learning‑Driven Recommendations:** Tie each educational insight to a concrete ticker (e.g., “Why the 10 % IV crush on SOFI made LEAPs attractive”) and embed a short “why this matters” note in the recommendation summary to satisfy the user’s request for depth.  
-
-- **Process Improvement – Opportunity‑Cost Screening:** Run a quarterly “new‑idea” screen that surfaces high‑conviction stocks outside the current holdings (e.g., semiconductor equipment, AI infrastructure) with upside >10 % and allocate up to 10 % of idle cash to them, thereby moving the cash deployment ratio toward the 90 % target.
-
-## Run: 2026-07-15 13:22:17 ET
-**🔎 What Worked Well**  
-- **SOFI ( $16.29 → $18.11, +11.17% )** – the 8/10 conviction rating matched a clear earnings beat and a 15 % IV crush that made LEAP calls highly attractive; the options Greeks (Δ ≈ 0.62, Γ ≈ 0.04) were correctly modeled.  
-- **TEM ( $50.22 → $57.11, +13.72% )** – the thesis “AI‑driven cloud services will accelerate revenue CAGR to 25 %” was validated by the latest quarterly guidance, and the 8/10 rating reflected strong technical momentum (price above 50‑day MA, RSI = 58).  
-- **Real‑time news summary** for LEAPs on SOFI (highlighting the 10 % IV crush) gave the user a concrete “why this matters” note, satisfying the request for depth.  
-- **Portfolio‑aware rebalance summary** (first run that referenced existing holdings) correctly identified that the user’s 55 % cash could be deployed without exceeding the 0 % concentration limit.  
-
-**⚠️ What Didn’t Work**  
-- **PLTR price stale** – the active recommendation listed PLTR at $139.47 while the true market price on 2026‑07‑15 was $146.20 (≈ 5 % higher), causing a false‑negative –4.15 % performance; the data feed had not refreshed since 2026‑04‑22.  
-- **Random ticker ordering** – the list mixed SOFI, TEM, VRT, and PLTR without sorting by event impact, news volume, or price move; users need a “top‑movers” filter to spot urgent repositioning opportunities.  
-- **No new‑idea screening** – all recommendations were confined to the existing 7‑position portfolio, ignoring high‑conviction stocks (e.g., NVDA, AMD, or semiconductor equipment) that could have captured the 10 % upside the user seeks.  
-- **Cash deployment inefficiency** – 55 % cash sits idle while the target is 90 % deployed; the latest run did not propose any new positions to utilize the idle capital, missing an opportunity‑cost gain of ≈ $45 k (≈ 45 % of cash).  
-- **Stop‑loss / risk‑management gaps** – no explicit stop‑loss levels were attached to the 8/10 long‑term picks; VRT’s –14 % drawdown indicates a missing protective order, exposing the portfolio to tail risk.  
-
-**📊 Conviction Calibration**  
-- **True positives**: SOFI (+11 %) and TEM (+14 %) both exceeded their 8/10 confidence, confirming that high‑conviction picks can be profitable when backed by clear catalysts (earnings, AI narrative).  
-- **False positives**: PLTR (‑4 %) and VRT (‑14 %) show that an 8/10 rating does **not** guarantee upside; PLTR’s stale price and VRT’s sector‑specific regulatory risk were not reflected in the thesis.  
-- **Pattern**: Conviction scores >8 correlate with **specific, catalyst‑driven theses** (e.g., earnings beat, AI hype) but lose reliability when the underlying data (price, options chain) is outdated or when the thesis is generic (e.g., “growth stock”).  
-
-**🗂️ Thesis Journal Review**  
-- The **Thesis Journal is empty**, meaning no past theses have been recorded for validation.  
-- Without a logged history we cannot track whether “AI‑infrastructure will outperform” (a likely future thesis) will be validated; establishing a simple markdown log (date, ticker, thesis statement, outcome) will enable post‑mortem analysis.  
-
-**🚀 Missed Opportunities**  
-- **New‑idea candidates**: Semiconductor equipment (e.g., **ASML**, **TSM**) and AI‑infrastructure (e.g., **Snowflake**, **Datadog**) were not suggested despite >10 % upside potential and ample cash to allocate.  
-- **Sector rotation**: The user’s 55 % cash could be shifted into high‑beta defensive plays (e.g., **Utilities**, **REITs**) ahead of a projected market‑foresight downgrade (currently 2/100), reducing portfolio volatility.  
+defensive plays (e.g., **Utilities**, **REITs**) ahead of a projected market‑foresight downgrade (currently 2/100), reducing portfolio volatility.  
 
 **📉 Data Quality Issues**  
 - **Stale price for PLTR** (last update 2026‑04‑22) → inaccurate P&L and wrong conviction signal.  
@@ -150,3 +119,32 @@ ns chain, Greeks) and automatically refresh stale entries (e.g., PLTR) before ge
   7. **Introduce a dynamic rating system** that weights conviction score, recent performance, and data freshness (e.g., a “confidence‑adjusted” rating).  
 
 These bullet points directly address the feedback, leverage the memory insights, and outline concrete, measurable actions to raise the next run’s rating above 8/10 and improve overall portfolio performance.
+
+## Run: 2026-07-15 16:06:14 ET
+- **Specific, high‑conviction winners delivered alpha:** SOFI (+9.8 % to $17.89) and TEM (+13.6 % to $57.06) – both 8/10 conviction picks that outperformed the market, confirming that the “top‑movers + news‑driven” filter (Memory Insight #1) works when applied to fresh catalysts.  
+
+- **False‑positive high‑conviction picks:** PLTR (8/10, $139.47 → $133.61, –4.2 %) and VRT (8/10, $348.38 → $303.92, –12.8 %) show that 8+ conviction scores were not reliably predictive; the thesis journal (absent) must be consulted to audit these outcomes.  
+
+- **Stale price data caused mis‑pricing:** PLTR’s price was quoted at $139.47 (old close) while the current market price (as of 2026‑07‑15 16:06 ET) is ≈$135.2, creating a –4 % illusion; the same issue appears in the “cost/average price” vs. current price mismatch noted in the 2026‑05‑07 run.  
+
+- **Limited ticker universe ignored new opportunities:** The recommendation engine only considered existing portfolio holdings, missing high‑momentum newcomers such as **NVDA** (↑6 % on earnings beat) and **CRSP** (↑7 % on FDA approval), which could have improved cash deployment and reduced opportunity cost.  
+
+- **Cash idle at 55 % (≈$55k) – far below the 85 % deployment target:** Only $20‑30k of the $55k idle cash was allocated in the last 4 weeks (per Action #6); the remaining ~$25k sits uninvested, eroding net returns.  
+
+- **Concentration risk is under‑managed:** Although the reported concentration is 0 %, the memory snapshot (2026‑07‑15) shows a concentration of 64 % in a handful of positions (likely the top‑movers), indicating that weightings are not evenly distributed; rebalancing to a max‑single‑position limit of 15 % would lower tail risk.  
+
+- **Stop‑losses not systematically applied:** No explicit stop‑loss levels were mentioned for any active recommendation; the absence of predefined exit rules (e.g., 8 % trailing stop) means the portfolio is exposed to large drawdowns, as seen with VRT’s –12.8 % loss.  
+
+- **Data freshness gap:** Equity prices are updated only on a daily basis, while options Greeks (needed for LEAP analysis) are reported as “broken” (2026‑05‑07 feedback); real‑time feeds at ≤15 min intervals are required to avoid pricing errors.  
+
+- **Thesis journal missing – hampers conviction calibration:** Without a markdown table recording ticker, thesis statement, conviction score, outcome, and date (Action #5), we cannot retrospectively verify whether 8+ conviction picks truly delivered, nor learn from refuted theses (e.g., “PLTR will rebound after earnings” – refuted).  
+
+- **Rating system too generic:** The “neutral” 2/100 market‑foresight score and vague “mainstream” suggestions (2026‑05‑07) reduce actionable insight; a confidence‑adjusted rating that blends conviction, recent performance, and data freshness (Action #7) would make recommendations more nuanced.  
+
+- **Portfolio tracking malfunction:** The “recommendation tracking” component failed to update positions after trades, causing the system to treat the same tickers repeatedly (e.g., PLTR appears in multiple runs with unchanged P&L), indicating a bug in the position‑update logic.  
+
+- **Learning section under‑leveraged:** The “tiny tit bits” and cross‑domain analysis were praised, yet the learning topics were generic; integrating specific, company‑specific learning (e.g., “how NVDA’s AI roadmap influences semiconductor valuation”) would deepen educational value.  
+
+- **Systematic improvement plan:** Implement (1) a top‑movers + news filter to surface new tickers, (2) upgrade data feeds to sub‑15‑minute equity updates and real‑time options chains, (3) build a thesis journal to enable conviction calibration, (4) allocate $20‑30k of idle cash to the highest‑conviction, low‑correlation ideas, (5) introduce a dynamic confidence‑adjusted rating, and (6) enforce stop‑loss and position‑size limits to protect against tail risk.  
+
+- **Next‑run success criteria:** Achieve a portfolio concentration ≤30 % in any single holding, deploy ≥85 % of cash within 4 weeks, and raise the average rating from 5.7 / 10 to ≥8 / 10 by ensuring that every 8+ conviction recommendation either outperforms the market by ≥5 % or is promptly exited via a stop‑loss.
