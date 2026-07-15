@@ -1107,3 +1107,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-15 | MCHP | BUY | $78.00 | $38.00 | 8/10 | Active | - | Why: DCF analysis from deep research shows a fair value of $108, implying 38% up |
 | 2026-07-15 | VRTX | BUY | $150.00 | $195.00 | 9/10 | Active | - | Why: FDA approval expected for a next‑gen cystic fibrosis therapy; historical da |
 | 2026-07-15 | MUSA | BUY | $120.00 | $155.00 | 8/10 | Active | - | Why: Deep‑research shows revenue grew 12% YoY to $6.1 B with operating margin ex |
+| 2026-07-15 | EEM | BUY | N/A | N/A | 8/10 | Active | - | Why: Your entire portfolio is US tech. Emerging markets are trading at 12-year P |
+| 2026-07-15 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Services inflation surprise in July CPI futures implies Fed pivot delayed.  |
+| 2026-07-15 | VRT | BUY | $297.51 | N/A | 7/10 | Active | - | Why: Up 103% but trading at 18x revenue for water infrastructure. Earnings Augus |
+| 2026-07-15 | GFS | BUY | $12.50 | N/A | 7/10 | Active | - | Why: Digital payment rails for fintech boom. Not in your portfolio but growing 4 |
+| 2026-07-15 | NVDA | BUY | $210.11 | N/A | 9/10 | Active | - | Why: Core holding but earnings August 3rd present binary event. No add at curren |
