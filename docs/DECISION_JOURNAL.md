@@ -1092,3 +1092,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-14 | AMD | BUY | $130.00 | $190.00 | 8/10 | Active | - | Why: Deep research shows AMD's data‑center revenue grew 38% YoY in Q2 2026, driv |
 | 2026-07-14 | COP | BUY | $2.00 | N/A | 9/10 | Active | - | Why: Deep research shows COP's upstream earnings are supported by Brent crude tr |
 | 2026-07-14 | GLD | BUY | $110.00 | N/A | 7/10 | Active | - | Why: Deep research indicates gold price is up 8% YTD on rising inflation expecta |
+| 2026-07-15 | ARBE | BUY | $0.87 | $1.55 | 9/10 | Active | - | Why: ARBE has surged 27% today on speculation of a multi‑million‑dollar logistic |
+| 2026-07-15 | COP | BUY | $80.00 | $130.00 | 8/10 | Active | - | Why: ConocoPhillips (COP) benefits from a 6% YTD rise in crude oil prices and a  |
+| 2026-07-15 | GHC | BUY | $70.00 | $130.00 | 8/10 | Active | - | Why: GHC shows robust revenue growth (+15% YoY to $1.3 B) and an EPS estimate of |

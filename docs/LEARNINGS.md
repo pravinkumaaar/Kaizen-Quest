@@ -1,39 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-olio’s 63.8% value in a few stocks), masking true sector exposure and preventing timely rebalancing.
-
-- **Cash Deployment**  
-  - **54% cash** (≈$55,000) sits idle, far above the 90% deployment target; the opportunity cost is evident as the **SOFI** and **TEM** positions generated >10% returns in under two weeks, suggesting cash could have been reallocated to capture similar moves.  
-  - The **rebalance summary** on 2026‑04‑30 correctly identified the cash drag but offered no concrete rebalancing actions (e.g., “rotate 10% cash into a high‑momentum small‑cap”).
-
-- **Memory & Learning**  
-  - Recommendations are not auto‑tagged with **thesis, catalyst date, and data source**, leading to redundant research (e.g., re‑evaluating PLTR fundamentals without new data).  
-  - The **learning history** notes a missed 25% rally in a Russell 2000 stock; without a systematic scan of that universe, the system cannot learn from such events.
-
-- **Process Improvements**  
-  1. **Mandate thesis documentation** for any rating ≥8; link each thesis to the underlying data source and catalyst date.  
-  2. **Integrate live pricing** (Polygon/Tiingo) with real‑time options chain updates (hourly) to eliminate stale price and volatility data.  
-  3. **Deploy automated alerts** for >5% 5‑day price moves or upcoming earnings; trigger a risk‑review workflow to adjust stop‑losses or conviction scores.  
-  4. **Expand daily watchlist scans** to include Russell 2000, SPACs, and high‑beta sectors, feeding the suggestion engine with fresh, high‑impact ideas.  
-  5. **Introduce a risk‑adjusted conviction metric** (e.g., expected return / downside risk) to replace the raw 1‑10 scale, improving calibration and transparency.  
-  6. **Add a “portfolio‑aware” recommendation filter** that allows new‑stock suggestions (outside current holdings) while still respecting my existing weightings, to avoid the “only consider my portfolio” limitation.  
-
-- **Overall Self‑Assessment**  
-  - The **latest run (2026‑07‑14)** improved specificity and nuance, but the **lack of a thesis journal**, **stale data**, and **absence of systematic alerts** still limit the quality and reliability of recommendations.  
-  - By implementing the concrete process changes above, the next iteration should achieve higher conviction accuracy, better risk control, and more efficient cash deployment, ultimately moving the portfolio toward the 90% deployment target and reducing the current 63.8% concentration risk.
-
-## Run: 2026-07-14 18:02:03 ET
-- **High‑conviction winners delivered** – AAI (+49.99% on a $977.33 long‑term position) and TEM (+16.89% on 99 shares) showed that 8‑10 conviction scores (≥8) were well‑calibrated; their returns far outpaced the portfolio’s 1.9% P&L.  
-
-- **Stale price data hurt PLTR** – PLTR was recommended at $139.47 (8/10 conviction) but the actual exit price was $133.40, a 4.35% loss; the feedback from 2026‑04‑22 flagged “old PLTR data,” indicating the pricing feed was not refreshed for at least 2‑3 days.  
-
-- **Concentration risk is mis‑reported** – Memory insights show the latest run (2026‑07‑14) had a 63.9‑64.2% concentration despite the summary claiming 0% concentration; this indicates the system is double‑counting holdings or ignoring cash, creating hidden risk.  
-
-- **Stop‑losses are missing or ineffective** – No explicit stop‑loss levels were attached to the active recommendations (e.g., VRT at $348.38 now $303.90, a 12.77% drop); without predefined exits, tail‑risk exposure remains unmanaged.  
-
-- **Cash deployment is inefficient** – With 54% cash (~$55k) sitting idle, the 90% deployment target is far from reached; the latest run failed to suggest any new‑stock ideas outside the existing 7 holdings, leaving a large opportunity cost.  
-
-- **Recommendation filter is too narrow** – All suggestions were limited to tickers already in the portfolio; the self‑assessment correctly noted the “only consider my portfolio” limitation, preventing discovery of higher‑alpha opportunities such as a high‑growth AI semiconductor or a biotech breakthrough.  
+ted to tickers already in the portfolio; the self‑assessment correctly noted the “only consider my portfolio” limitation, preventing discovery of higher‑alpha opportunities such as a high‑growth AI semiconductor or a biotech breakthrough.  
 
 - **Thesis journal is absent, impairing conviction validation** – The “THESIS JOURNAL” section is empty; without a record of past theses (e.g., “AI‑driven cloud growth”) and their outcomes, it is impossible to see whether the 8‑plus conviction picks were truly thesis‑driven or merely momentum‑based.  
 
@@ -145,3 +112,32 @@ Let's craft bullets:
 - **Log each recommendation’s conviction score, thesis, and outcome** in a structured table so the model can later compute win‑rates per conviction tier and calibrate future scores.  
 
 *These concrete steps will close the data‑quality gaps, tighten risk controls, and turn the strong foundation seen in the 9.2/10 run into a consistently high‑performing system.*
+
+## Run: 2026-07-15 06:08:08 ET
+- **High‑conviction winners delivered mixed results:** The 8/10‑rated picks (NVDA $207.14, PLTR $139.47, SOFI $16.29, TEM $50.22, VRT $348.38) included two clear losers (PLTR ‑3.90%, VRT ‑12.11%) and two strong gainers (SOFI +14.49%, TEM +16.91%). This shows the conviction score was **over‑confident on PLTR and VRT**, indicating a calibration issue.
+
+- **Stale price data caused a false negative:** PLTR’s last‑reported price ($139.47) was based on outdated data; the actual market price at 06:08 ET was ~ $134.03, a 3.9 % drop that the model failed to anticipate because the price feed hadn’t refreshed.
+
+- **Options chain errors limited tactical flexibility:** The report flagged “options data was broken” (see 2026‑05‑07 feedback). Without reliable Greeks or implied volatility, the LEAP recommendation for SOFI could not be stress‑tested, reducing the effectiveness of the options hedge.
+
+- **Cash drag is substantial:** With $54 % cash ($55,068) sitting idle, the portfolio is far from the 90 % deployment target. At current prices, deploying just 10 % of cash weekly ($5,500) would bring cash down to ~85 % in two weeks, but no systematic schedule exists.
+
+- **Concentration risk is hidden:** Although the summary shows “Concentration: 0.0 %,” the memory insight reveals past runs with **63.9 %–64.2 % concentration** (e.g., 2026‑07‑14). This suggests the model may be allocating equally across positions without checking actual weight, creating hidden overexposure to a few tickers (e.g., VRT ‑12.11% loss).
+
+- **Stop‑loss compliance is weak:** No trailing‑stop rules were logged; the model’s “once‑in‑a‑lifetime asymmetric plays” lack defined exit levels, leaving large unrealized losses (VRT ‑12.11%, PLTR ‑3.90%) unchecked.
+
+- **Thesis journal gaps:** The journal is empty, so we cannot verify whether past theses (e.g., “NVDA will outperform on AI catalyst”) were validated or refuted. Without this feedback loop, conviction scores remain uncalibrated.
+
+- **Missed new‑stock opportunities:** The recommendation engine limited suggestions to the existing 7‑position basket, ignoring high‑momentum tickers like **TSLA** (post‑earnings gap +6 % on 2026‑07‑14) or **CRSP** (breakout above 200‑day MA). These could have added alpha and reduced idle cash.
+
+- **Data freshness gaps:** Aside from PLTR, the active list shows VRT at $348.38 with a 12 % decline; the price feed may be delayed, causing the model to mis‑price the risk. Real‑time data validation is needed.
+
+- **Risk‑management lag:** The portfolio’s P&L (+2.1 %) is modest; a 5 % trailing stop on the largest position (VRT) would have cut the loss to ~6 % instead of 12 %, preserving ~ $4,200 of capital.
+
+- **Cash deployment inefficiency:** Deploying cash in a **weekly 10 % schedule** (as proposed in the Learning History) would have turned the $55k idle cash into ~ $46k of invested capital within five weeks, potentially boosting the 2.1 % P&L to >4 % while maintaining diversification.
+
+- **Learning‑loop stagnation:** The “learning” section repeats generic advice (e.g., “introduce trailing‑stops”) without tying it to concrete, recent trade outcomes, indicating a **memory‑usage flaw** — the system isn’t learning from the 2026‑07‑14 high‑concentration run.
+
+- **Process improvement priority:** Implement a **structured log** that records each recommendation’s conviction score, thesis statement, entry price, and exit P&L. This will enable post‑trade win‑rate analysis per conviction tier and refine future scoring.
+
+- **Watchlist expansion:** Automate a filter that surfaces any ticker with **>5 % weekly momentum**, **positive earnings surprise**, or **sector‑rotation signal** (e.g., clean‑energy ETFs, AI‑hardware stocks). This will prevent the “only existing positions” limitation and capture new high‑conviction ideas.
