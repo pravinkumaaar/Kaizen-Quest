@@ -1127,3 +1127,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-16 | COP | BUY | $85.00 | $115.00 | 9/10 | Active | - | Thesis: ConocoPhillips is positioned to capture a multi‑year oil price rally wit |
 | 2026-07-16 | NXST | BUY | $70.00 | $115.00 | 8/10 | Active | - | Thesis: NXST’s upcoming earnings beat and robust guidance in a high‑growth semic |
 | 2026-07-16 | ADP | BUY | $170.00 | $225.00 | 8/10 | Active | - | Thesis: ADP’s stable recurring revenue, strong cash flow, and undervalued valuat |
+| 2026-07-16 | NXST | BUY | $70.00 | N/A | 9/10 | Active | - | Why: NXST provides essential equipment for advanced semiconductor manufacturing, |
+| 2026-07-16 | ADNT | BUY | $30.00 | N/A | 9/10 | Active | - | Why: ADNT is a specialty biotech/tech company with a near‑term catalyst (FDA dec |
+| 2026-07-16 | COP | BUY | $85.00 | N/A | 8/10 | Active | - | Why: COP is an integrated oil company positioned to benefit from rising oil pric |
