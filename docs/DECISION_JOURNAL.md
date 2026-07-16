@@ -1118,3 +1118,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-15 | TICKER | BUY | $8.00 | $15.00 | 9/10 | Active | - | Why: Deep research shows Railway is a pure AI‑first cloud compute platform with  |
 | 2026-07-15 | TICKER | BUY | $12.00 | $22.00 | 8/10 | Active | - | Why: Deep research indicates C3.ai is a leading enterprise AI software provider  |
 | 2026-07-15 | TICKER | BUY | $15.00 | $25.00 | 8/10 | Active | - | Why: Deep research highlights ON’s strong position in power management and imagi |
+| 2026-07-16 | CEG | BUY | $212.50 | N/A | 9/10 | Active | - | Why: Constellation Energy operates the largest nuclear fleet in the US, uniquely |
+| 2026-07-16 | VIAV | BUY | $4.30 | N/A | 8/10 | Active | - | Why: Viavi Solutions provides optical test equipment critical for AI network bui |
+| 2026-07-16 | EEM | BUY | $38.50 | N/A | 7/10 | Active | - | Why: Portfolio lacks emerging market exposure (0%) while EMs trade at 12x P/E vs |
