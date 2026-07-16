@@ -1124,3 +1124,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-16 | ANET | BUY | $115.00 | $180.00 | 8/10 | Active | - | Why: Arista Networks delivers high‑performance, software‑defined networking solu |
 | 2026-07-16 | TSM | BUY | $165.00 | $230.00 | 9/10 | Active | - | Why: Taiwan Semiconductor Manufacturing (TSM) is the world’s leading semiconduct |
 | 2026-07-16 | COP | BUY | $85.00 | N/A | 7/10 | Active | - | Why: ConocoPhillips is a premier upstream oil producer with a strong balance she |
+| 2026-07-16 | COP | BUY | $85.00 | $115.00 | 9/10 | Active | - | Thesis: ConocoPhillips is positioned to capture a multi‑year oil price rally wit |
+| 2026-07-16 | NXST | BUY | $70.00 | $115.00 | 8/10 | Active | - | Thesis: NXST’s upcoming earnings beat and robust guidance in a high‑growth semic |
+| 2026-07-16 | ADP | BUY | $170.00 | $225.00 | 8/10 | Active | - | Thesis: ADP’s stable recurring revenue, strong cash flow, and undervalued valuat |
