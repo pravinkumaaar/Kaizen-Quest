@@ -1121,3 +1121,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-16 | CEG | BUY | $212.50 | N/A | 9/10 | Active | - | Why: Constellation Energy operates the largest nuclear fleet in the US, uniquely |
 | 2026-07-16 | VIAV | BUY | $4.30 | N/A | 8/10 | Active | - | Why: Viavi Solutions provides optical test equipment critical for AI network bui |
 | 2026-07-16 | EEM | BUY | $38.50 | N/A | 7/10 | Active | - | Why: Portfolio lacks emerging market exposure (0%) while EMs trade at 12x P/E vs |
+| 2026-07-16 | ANET | BUY | $115.00 | $180.00 | 8/10 | Active | - | Why: Arista Networks delivers high‑performance, software‑defined networking solu |
+| 2026-07-16 | TSM | BUY | $165.00 | $230.00 | 9/10 | Active | - | Why: Taiwan Semiconductor Manufacturing (TSM) is the world’s leading semiconduct |
+| 2026-07-16 | COP | BUY | $85.00 | N/A | 7/10 | Active | - | Why: ConocoPhillips is a premier upstream oil producer with a strong balance she |
