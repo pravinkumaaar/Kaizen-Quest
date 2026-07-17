@@ -1130,3 +1130,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-16 | NXST | BUY | $70.00 | N/A | 9/10 | Active | - | Why: NXST provides essential equipment for advanced semiconductor manufacturing, |
 | 2026-07-16 | ADNT | BUY | $30.00 | N/A | 9/10 | Active | - | Why: ADNT is a specialty biotech/tech company with a near‑term catalyst (FDA dec |
 | 2026-07-16 | COP | BUY | $85.00 | N/A | 8/10 | Active | - | Why: COP is an integrated oil company positioned to benefit from rising oil pric |
+| 2026-07-17 | COP | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: ConocoPhillips (COP) is a premier upstream oil producer with a diversified  |
+| 2026-07-17 | ABNB | BUY | $85.00 | $130.00 | 7/10 | Active | - | Why: Affirm Holdings (ABNB) is a leading “Buy‑Now‑Pay‑Later” (BNPL) platform exp |
+| 2026-07-17 | PAA | BUY | $10.00 | $13.00 | 7/10 | Active | - | Why: Pan American Silver (PAA) operates low‑cost silver mines with a strong bala |
