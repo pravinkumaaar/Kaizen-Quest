@@ -1136,3 +1136,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-17 | LAMR | BUY | $115.00 | N/A | 5/10 | Active | - | THESIS |
 | 2026-07-17 | CEG | BUY | $210.00 | N/A | 5/10 | Active | - | THESIS |
 | 2026-07-17 | COP | BUY | $80.00 | N/A | 5/10 | Active | - | THESIS |
+| 2026-07-17 | FCX | BUY | $4.00 | N/A | 5/10 | Active | - | Why: Rising copper demand from AI data‑center build‑out and EV production, plus  |
+| 2026-07-17 | GLD | BUY | $4.50 | N/A | 5/10 | Active | - | Why: Persistent inflation expectations and heightened geopolitical risk keep saf |
+| 2026-07-17 | COP | BUY | N/A | N/A | 5/10 | Active | - | Why: Oil prices have risen ~15% YTD amid supply constraints, and FCX‑style upstr |
