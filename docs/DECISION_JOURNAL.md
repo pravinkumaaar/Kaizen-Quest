@@ -1133,3 +1133,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-17 | COP | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: ConocoPhillips (COP) is a premier upstream oil producer with a diversified  |
 | 2026-07-17 | ABNB | BUY | $85.00 | $130.00 | 7/10 | Active | - | Why: Affirm Holdings (ABNB) is a leading “Buy‑Now‑Pay‑Later” (BNPL) platform exp |
 | 2026-07-17 | PAA | BUY | $10.00 | $13.00 | 7/10 | Active | - | Why: Pan American Silver (PAA) operates low‑cost silver mines with a strong bala |
+| 2026-07-17 | LAMR | BUY | $115.00 | N/A | 5/10 | Active | - | THESIS |
+| 2026-07-17 | CEG | BUY | $210.00 | N/A | 5/10 | Active | - | THESIS |
+| 2026-07-17 | COP | BUY | $80.00 | N/A | 5/10 | Active | - | THESIS |
