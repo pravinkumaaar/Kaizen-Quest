@@ -3,9 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **TICKER** | $202.81 | $240.00 | 9/10 |  Active  |  $202.81  |  +0.0%  | Medium-term (3-6 months) | Watchlist |
-| 2 | **TICKER** | $132.38 | $145.00 | 9/10 |  Active  |  $132.38  |  +0.0%  | Medium (3-6 months) | Watchlist |
-| 3 | **TICKER** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | [Swing 2-8wk / Medium 3-12mo / Long 1-3yr] | Watchlist |
+| 1 | **PLTR** | $132.38 | TBD | 9/10 |  Active  |  $132.38  |  +0.0%  | Immediate | Watchlist |
+| 2 | **NVDA** | $202.81 | TBD | 8/10 |  Active  |  $202.81  |  +0.0%  | 1-2 weeks (post-earnings re-evaluation) | Watchlist |
+| 3 | **PANW** | $195.60 | $250.00 | 8/10 |  Active  |  $195.60  |  +0.0%  | Medium 3-12 months | Watchlist |
+| 4 | **GLD** | $192.50 | $210.00 | 7/10 |  Active  |  $192.50  |  +0.0%  | Long 1-3 years | Watchlist |
+| 5 | **EIDO** | $18.40 | $22.00 | 6/10 |  Active  |  $18.40  |  +0.0%  | Medium 6-18 months | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

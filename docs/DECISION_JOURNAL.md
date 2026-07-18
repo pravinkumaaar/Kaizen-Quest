@@ -1155,3 +1155,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-18 | TICKER | BUY | $202.81 | $240.00 | 9/10 | Active | - | Why: NVIDIA's dominance in AI chip demand and its leadership in GPU technology p |
 | 2026-07-18 | TICKER | BUY | $132.38 | $145.00 | 9/10 | Active | - | Why: A leader in AI-driven cloud computing, leveraging its GPU infrastructure an |
 | 2026-07-18 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: 2-3 sentences, first-principles |
+| 2026-07-18 | PLTR | BUY | $132.38 | N/A | 9/10 | Active | - | Why: Your 31.2% position (up 111%) creates dangerous concentration; earnings Aug |
+| 2026-07-18 | NVDA | BUY | $202.81 | N/A | 8/10 | Active | - | Why: 13.9% allocation + Aug 5 earnings timing + recent -2.21% showing fatigue. A |
+| 2026-07-18 | PANW | BUY | $195.60 | $250.00 | 8/10 | Active | - | Why: Digest flags mandatory AI-security legislation within 18 months; PANW's Pri |
+| 2026-07-18 | GLD | BUY | $192.50 | $210.00 | 7/10 | Active | - | Why: Portfolio lacks inflation/risk-odds hedge as concentrated tech faces policy |
+| 2026-07-18 | EIDO | BUY | $18.40 | $22.00 | 6/10 | Active | - | Why: Global rotation theme favoring selective EM exposure; Indonesia offers demo |
