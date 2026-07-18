@@ -1149,3 +1149,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-18 | ADNT | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Deep research shows ADNT is a leading AI‑driven logistics optimization plat |
 | 2026-07-18 | APP | BUY | $420.00 | N/A | 8/10 | Active | - | Why: Deep research indicates APP’s user base of 150 M MAU, 18% YoY growth in mon |
 | 2026-07-18 | COP | BUY | $85.00 | N/A | 8/10 | Active | - | Why: Deep research shows COP is positioned to benefit from a tightening oil mark |
+| 2026-07-18 | COP | BUY | $85.00 | N/A | 10/10 | Active | - | Why: Deep‑research DCF models give COP an intrinsic value of $115 (85% confidenc |
+| 2026-07-18 | PAA | BUY | $22.00 | N/A | 8/10 | Active | - | Why: DCF analysis (80% confidence) values PAA at $30, implying ~36% upside from  |
+| 2026-07-18 | ABNB | BUY | $85.00 | N/A | 8/10 | Active | - | Why: DCF (75% confidence) values ABNB at $115, implying ~59% upside. Recent insi |
