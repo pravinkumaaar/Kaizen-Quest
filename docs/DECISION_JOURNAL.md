@@ -1146,3 +1146,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-18 | TICKER | BUY | $38.00 | N/A | 8/10 | Active | - | Why: 2-3 sentences. |
 | 2026-07-18 | TICKER | BUY | $480.00 | N/A | 8/10 | Active | - | Why: 2-3 sentences. |
 | 2026-07-18 | AVGO | BUY | $480.00 | N/A | 8/10 | Active | - | Why: (2-3 sentences) |
+| 2026-07-18 | ADNT | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Deep research shows ADNT is a leading AI‑driven logistics optimization plat |
+| 2026-07-18 | APP | BUY | $420.00 | N/A | 8/10 | Active | - | Why: Deep research indicates APP’s user base of 150 M MAU, 18% YoY growth in mon |
+| 2026-07-18 | COP | BUY | $85.00 | N/A | 8/10 | Active | - | Why: Deep research shows COP is positioned to benefit from a tightening oil mark |
