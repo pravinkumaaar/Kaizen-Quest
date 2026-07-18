@@ -1152,3 +1152,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-18 | COP | BUY | $85.00 | N/A | 10/10 | Active | - | Why: Deep‑research DCF models give COP an intrinsic value of $115 (85% confidenc |
 | 2026-07-18 | PAA | BUY | $22.00 | N/A | 8/10 | Active | - | Why: DCF analysis (80% confidence) values PAA at $30, implying ~36% upside from  |
 | 2026-07-18 | ABNB | BUY | $85.00 | N/A | 8/10 | Active | - | Why: DCF (75% confidence) values ABNB at $115, implying ~59% upside. Recent insi |
+| 2026-07-18 | TICKER | BUY | $202.81 | $240.00 | 9/10 | Active | - | Why: NVIDIA's dominance in AI chip demand and its leadership in GPU technology p |
+| 2026-07-18 | TICKER | BUY | $132.38 | $145.00 | 9/10 | Active | - | Why: A leader in AI-driven cloud computing, leveraging its GPU infrastructure an |
+| 2026-07-18 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: 2-3 sentences, first-principles |

@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **COP** | $85.00 | TBD | 10/10 |  Active  |  $85.00  |  +0.0%  | Medium‑term swing (6‑10 weeks) | Watchlist |
-| 2 | **PAA** | $22.00 | TBD | 8/10 |  Active  |  $22.00  |  +0.0%  | Swing (4‑8 weeks) | Watchlist |
-| 3 | **ABNB** | $85.00 | TBD | 8/10 |  Active  |  $85.00  |  +0.0%  | Medium‑term swing (5‑9 weeks) | Watchlist |
+| 1 | **TICKER** | $202.81 | $240.00 | 9/10 |  Active  |  $202.81  |  +0.0%  | Medium-term (3-6 months) | Watchlist |
+| 2 | **TICKER** | $132.38 | $145.00 | 9/10 |  Active  |  $132.38  |  +0.0%  | Medium (3-6 months) | Watchlist |
+| 3 | **TICKER** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | [Swing 2-8wk / Medium 3-12mo / Long 1-3yr] | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
