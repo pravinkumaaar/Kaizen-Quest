@@ -1163,3 +1163,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-19 | NXST | BUY | $115.00 | N/A | 5/10 | Active | - | THESIS: NXST is positioned to capture a surge in AI‑driven semiconductor fab exp |
 | 2026-07-19 | CLMT | BUY | $30.00 | N/A | 5/10 | Active | - | THESIS: CLMT offers asymmetric upside through a pending multi‑year contract win  |
 | 2026-07-19 | COP | BUY | N/A | $300.00 | 5/10 | Active | - | THESIS: ConocoPhillips (COP) is positioned to benefit from rising oil prices and |
+| 2026-07-19 | COP | BUY | $78.00 | $115.00 | 9/10 | Active | - | Why: Oil prices have risen ~7% YTD to $85/barrel (Bloomberg, 2026‑07‑19) while C |
+| 2026-07-19 | UAA | BUY | $12.00 | $18.00 | 8/10 | Active | - | Why: Q1 revenue up 12% YoY to $5.1 B with a 45% gross margin; insider purchases  |
+| 2026-07-19 | PAGP | BUY | $10.00 | $18.00 | 9/10 | Active | - | Why: Payment volume grew 35% QoQ in Q1 2026, revenue up 20% YoY to $13.1 B; anal |

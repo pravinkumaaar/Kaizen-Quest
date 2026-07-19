@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NXST** | $115.00 | TBD | 5/10 |  Active  |  $115.00  |  +0.0%  | **Swing (2‑8 weeks)** – around the earnings release and near‑term price momentum. | Watchlist |
-| 2 | **CLMT** | $30.00 | TBD | 5/10 |  Active  |  $30.00  |  +0.0%  | **Medium (4‑6 months)** – allowing time for the contract to commence and margin expansion to materialize. | Watchlist |
-| 3 | **COP** | Market | $300.00 | 5/10 |  Active  |  Fetching...  |  +0.0%  | **Short‑term swing (2‑4 weeks)** – around the earnings release and near‑term oil price movement. | Watchlist |
+| 1 | **COP** | $78.00 | $115.00 | 9/10 |  Active  |  $78.00  |  +0.0%  | 3‑6 months (medium‑term swing) | Watchlist |
+| 2 | **UAA** | $12.00 | $18.00 | 8/10 |  Active  |  $12.00  |  +0.0%  | 4‑8 months (medium‑term) | Watchlist |
+| 3 | **PAGP** | $10.00 | $18.00 | 9/10 |  Active  |  $10.00  |  +0.0%  | 6‑12 months (medium‑to‑long term) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
