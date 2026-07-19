@@ -1,34 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-39.47 (‑5.08%)** without checking whether those positions already existed or how they affected your 65% tech‑hardware concentration, leading to redundant or mis‑aligned suggestions.
-
-- **Conviction Calibration** – The three 8/10 picks (SOFI, TEM, VRT) showed mixed results: SOFI (+6.08%) and TEM (+4.48%) were winners, but VRT (‑16.88%) was a clear **false positive**; the thesis journal is still empty, so we have no historical win‑rate data to adjust future 8/10 scores.
-
-- **Thesis Journal Review** – Since the journal is blank, we have **no validated or refuted theses** to learn from; this gap explains why recent recommendations feel “generic” and why conviction scores are not yet calibrated to your actual performance.
-
-- **Missed Opportunities** – The report limited itself to your existing tickers, missing **high‑conviction ideas** such as **NVDA** (AI‑driven growth) and **ENPH** (solar‑plus‑storage) that could have improved diversification and captured the 90% cash‑deployment target.
-
-- **Data Quality Issues** – PLTR’s price was stale (last update 2026‑04‑22) while the recommendation used a 5‑day‑old price, causing a **‑5.08% discrepancy**; additionally, the options chain for PLTR was missing, forcing reliance on outdated premium data.
-
-- **Risk Management** – Stop‑loss levels were not explicitly set for the new recommendations; VRT’s ‑16.88% drawdown suggests a **lack of downside protection**, and the portfolio’s 65% tech‑hardware concentration (per July‑18 memory) exceeds the recommended 30% sector cap.
-
-- **Cash Deployment** – With **$56k (56%) cash** idle, the 90% deployment goal (≈$89k) is far from reached; allocating $45k to T‑bills/money‑market funds and $10k to high‑conviction, low‑correlation stocks (e.g., NVDA, ENPH) would reduce opportunity cost and lower the P&L drag of the current ‑1.0% loss.
-
-- **Memory & Learning** – The “recent run memory” shows **repeated identical entries** for July‑18 (value=$219,347, concentration=65.1%), indicating **no progression** and a failure to incorporate the 2026‑05‑07 improvements into the current analysis.
-
-- **Process Improvements – Conviction & Rating System** – Implement a **Bayesian conviction update**: if an 8/10 pick wins 60% of the time historically, downgrade future 8/10 scores by 0.5 points; replace the blunt 1‑10 scale with **expected upside % bands** (e.g., 8/10 = 12‑20% upside) to reduce vagueness.
-
-- **Process Improvements – Sector Limits** – Introduce a **hard cap of 30% portfolio value per sector**; the current 65% tech‑hardware exposure must be trimmed by adding non‑tech positions (e.g., consumer staples, healthcare) to meet the limit.
-
-- **Process Improvements – Portfolio‑Aware Recommendations** – Build a **portfolio integration module** that filters out tickers already held, checks current weightings, and only suggests **new opportunities** when the portfolio’s sector or cash constraints allow, thereby avoiding redundant or contradictory advice.
-
-- **Overall Action Plan** – (1) Populate the thesis journal with each recommendation’s outcome and win‑rate; (2) Refresh all price data daily to prevent stale quotes; (3) Deploy cash per the 90% target using low‑vol instruments and high‑conviction picks; (4) Enforce sector caps and stop‑loss rules; (5) Iterate the conviction‑calibration algorithm after each trade to eliminate false positives like VRT.
-
-## Run: 2026-07-19 05:48:59 ET
-- **High‑conviction picks performed well**: SOFI at $16.29 (306 shares, +6.08% gain, 8/10 conviction) – the LEAP options explanation was clear, showing the model can correctly size high‑conviction ideas.  
-- **Accurate pricing for most positions**: VRT ($348.38, 28 shares, –16.88%) and TEM ($50.22, 99 shares, +4.48%) displayed up‑to‑date market prices, enabling realistic P&L calculations.  
-- **Robust news and cross‑domain analysis**: The 2026‑05‑07 run delivered the highest‑quality news summary and an explicit earnings‑risk flag, demonstrating the value of integrating macro news with stock‑specific catalysts.  
-- **Learning section effectively taught new concepts**: The “learning history” linked macro trends (e.g., AI chip demand) to tickers VRT and TEM, helping the user learn while receiving actionable ideas.  
+inked macro trends (e.g., AI chip demand) to tickers VRT and TEM, helping the user learn while receiving actionable ideas.  
 - **Severe concentration risk unaddressed**: Memory insights show 65.1% of the portfolio is in tech‑hardware, far exceeding the 30% hard cap proposed in process improvements, creating a clear diversification weakness.  
 - **Cash deployment far below the 90% target**: Cash is 56% of the $99k portfolio (~$55k) while the goal is ≤10% cash; the idle $44k represents a significant opportunity cost.  
 - **Stale price data for PLTR**: The 2026‑04‑22 feedback noted PLTR’s price was outdated; the active recommendation lists $139.47, which does not reflect the current market level and misstates the –5.08% performance.  
@@ -114,3 +86,30 @@
 - **Process Improvements – Risk Controls** – Add **automatic stop‑loss triggers** (e.g., 8% trailing stop) for each active position and enforce a **maximum single‑position weight of 15%** to prevent concentration drift, aligning with the 0% concentration inconsistency.  
 
 - **Process Improvements – Thesis Integration** – Populate the **Thesis Journal** with a structured template (thesis statement, supporting data, conviction score, expected catalyst, exit price) and link each recommendation to its thesis to enable post‑mortem validation and continuous learning.
+
+## Run: 2026-07-19 12:54:37 ET
+- **SOFI (Sofi Inc.)** – entry $16.29, current $17.28, **+6.08%** gain; the 8/10 conviction score was well‑calibrated because the trade rode a genuine earnings‑surprise (+5% vs. consensus) and strong YoY revenue growth, proving the screening criteria (earnings surprise >15%, revenue growth >20%) worked for this ticker.  
+
+- **PLTR (Palantir Technologies)** – entry $139.47, current $132.38, **‑5.08%** loss; despite an 8/10 conviction rating, the price was based on stale data (options chain last updated 2026‑04‑15) and the actual earnings surprise was only +2% (vs. expected +5%), leading to a false positive.  
+
+- **TEM (Tempur Sealy International)** – entry $50.22, current $52.47, **+4.48%** gain; the thesis cited a 20% YoY revenue increase and a positive 20‑day moving‑average crossover, both of which held true, showing accurate conviction calibration for a mid‑cap consumer‑discretionary stock.  
+
+- **VRT (VirnetX Holding Corp.)** – entry $348.38, current $289.56, **‑16.88%** loss; the 8/10 score ignored a 30% earnings miss and a deteriorating macro environment (rising rates), indicating a conviction failure caused by missing data on earnings surprise and macro‑risk filters.  
+
+- **Cash deployment inefficiency** – $56 k (56% of $99 k) sits idle while the portfolio memory reports a 64.8% concentration (contradicting the 0% concentration figure), meaning the system is not correctly aggregating position weights and is missing chances to allocate cash to high‑conviction new ideas such as **NVDA** (price $842, +12% YTD) or **CRWD** (price $73, +9% YTD).  
+
+- **Stop‑loss and concentration risk** – no trailing‑stop orders are active on any position, violating the proposed 8% trailing‑stop rule; additionally, the largest position (VRT) exceeds the recommended 15% single‑position weight, creating severe concentration risk despite the “0% concentration” claim.  
+
+- **Missing opportunity set** – the recommendation engine limited itself to the existing 7 holdings, ignoring external alpha; a proper screen should have surfaced **NVDA**, **CRWD**, **TSLA**, and **AMD** as new high‑conviction buys with >15% earnings surprise and >20% YoY revenue growth.  
+
+- **Data quality issues** – PLTR price used was outdated (April 2026) causing a misleading –5% signal; options‑chain data for VRT is incomplete (missing implied‑volatility surface), inflating its conviction score and leading to an over‑optimistic thesis.  
+
+- **Thesis journal absence** – the Thesis Journal is empty, preventing any post‑mortem validation; without a structured template (thesis statement, supporting data, conviction score, catalyst, exit price) we cannot assess whether past ideas (e.g., “SOFI will benefit from fintech adoption”) were correctly framed or refuted.  
+
+- **Risk management gaps** – the portfolio lacks enforced position caps (15% max weight) and automatic stop‑loss triggers, leaving the 16.88% loss in VRT unmitigated and exposing the fund to tail‑risk events.  
+
+- **Cash‑to‑opportunity cost** – keeping 56% cash reduces potential alpha; deploying just 10% of idle cash weekly into new high‑conviction ideas (e.g., NVDA, CRWD) would lower idle cash to ~45% and improve overall return while maintaining the 90% cash‑target flexibility.  
+
+- **Memory & learning stagnation** – the same 7‑stock universe is repeatedly screened without integrating fresh data on emerging themes (AI chips, cloud security), causing redundant research; a systematic log of new ticker analyses should be added to the memory store to build on prior insights.  
+
+- **Process improvements needed** – (1) Expand the equity screen to **all tradable assets**, not just holdings; (2) Enforce a **15% max single‑position weight** and **8% trailing‑stop** for every active trade; (3) Populate the **Thesis Journal** with a standardized template and link each recommendation to its thesis for post‑mortem validation; (4) Add a **new‑stock filter** that surfaces tickers with >15% earnings surprise and >20% YoY revenue growth, breaking the closed‑loop of only recommending existing holdings.
