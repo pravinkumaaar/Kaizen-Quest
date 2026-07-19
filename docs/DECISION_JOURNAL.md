@@ -1166,3 +1166,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-19 | COP | BUY | $78.00 | $115.00 | 9/10 | Active | - | Why: Oil prices have risen ~7% YTD to $85/barrel (Bloomberg, 2026‑07‑19) while C |
 | 2026-07-19 | UAA | BUY | $12.00 | $18.00 | 8/10 | Active | - | Why: Q1 revenue up 12% YoY to $5.1 B with a 45% gross margin; insider purchases  |
 | 2026-07-19 | PAGP | BUY | $10.00 | $18.00 | 9/10 | Active | - | Why: Payment volume grew 35% QoQ in Q1 2026, revenue up 20% YoY to $13.1 B; anal |
+| 2026-07-19 | TICKER | BUY | $250.00 | $340.00 | 9/10 | Active | - | Why: CrowdStrike's AI-driven security platform addresses the growing demand for  |
+| 2026-07-19 | TICKER | BUY | $60.00 | $85.00 | 8/10 | Active | - | Why: Microchip Technology is positioned for revenue growth and margin expansion  |
+| 2026-07-19 | TICKER | BUY | $120.00 | $150.00 | 7/10 | Active | - | Why: Taiwan Semiconductor Manufacturing Company (TSM) is a key beneficiary of AI |
+| 2026-07-19 | TICKER | BUY | $35.00 | $50.00 | 8/10 | Active | - | Why: Freeport-McMoRan (FCX) is positioned to capitalize on rising copper prices  |
