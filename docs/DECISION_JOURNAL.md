@@ -1160,3 +1160,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-18 | PANW | BUY | $195.60 | $250.00 | 8/10 | Active | - | Why: Digest flags mandatory AI-security legislation within 18 months; PANW's Pri |
 | 2026-07-18 | GLD | BUY | $192.50 | $210.00 | 7/10 | Active | - | Why: Portfolio lacks inflation/risk-odds hedge as concentrated tech faces policy |
 | 2026-07-18 | EIDO | BUY | $18.40 | $22.00 | 6/10 | Active | - | Why: Global rotation theme favoring selective EM exposure; Indonesia offers demo |
+| 2026-07-19 | NXST | BUY | $115.00 | N/A | 5/10 | Active | - | THESIS: NXST is positioned to capture a surge in AI‑driven semiconductor fab exp |
+| 2026-07-19 | CLMT | BUY | $30.00 | N/A | 5/10 | Active | - | THESIS: CLMT offers asymmetric upside through a pending multi‑year contract win  |
+| 2026-07-19 | COP | BUY | N/A | $300.00 | 5/10 | Active | - | THESIS: ConocoPhillips (COP) is positioned to benefit from rising oil prices and |
