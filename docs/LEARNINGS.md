@@ -1,36 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-approximated Greeks, which reduced recommendation confidence.  
-  - **Hallucinated fact**: the report claimed “VRT’s short‑interest is 12% of float” – the actual short‑interest is 4% (per Bloomberg), indicating a data‑scraping error.  
-
-- **Risk Management**  
-  - **Stop‑losses**: none of the active positions have a hard stop; the suggested 12% rule (or 8% for high‑beta) is absent, leaving the portfolio vulnerable to the 16.88% VRT drawdown.  
-  - **Concentration**: although the “Concentration: 0.0%” metric is shown, memory indicates **65.1% of capital is tied up in the 4 largest positions (VRT, PLTR, SOFI, TEM)**, breaching the 90% cash‑deployment target and creating hidden risk.  
-
-- **Cash Deployment**  
-  - **Idle cash = 56%** of the $99k portfolio (~$55k) – far below the 90% target, indicating under‑utilization.  
-  - The **opportunity cost** is evident: cash earns ~0.15% annualized (money‑market rate) while the portfolio’s net P&L is –1.0%, meaning the cash is not being turned into higher‑return assets.  
-
-- **Memory & Learning**  
-  - **Memory insights** show identical values across the last three runs (value=$219,347, concentration=65.1%), suggesting the memory module failed to update after trades, leading to stale position weights and mis‑aligned recommendations.  
-  - **Redundant research**: the same company (VRT) was re‑analyzed without new data, wasting analytical cycles; a “new‑stock” flag should force the system to surface untouched tickers.  
-
-- **Process Improvements**  
-  1. **Implement automated stop‑losses**: trigger a market order when any position drops 12% from entry (8% for high‑beta alerts) to protect the 90% cash‑deployment goal and keep drawdowns <10% of capital.  
-  2. **Add a “new‑stock” column** to the recommendation table that lists any non‑portfolio ticker meeting ≥8/10 conviction, ensuring fresh opportunities are not ignored.  
-  3. **Populate the Thesis Journal** with every past thesis, its conviction score, outcome, and performance metrics; this creates a feedback loop for calibrating future scores.  
-  4. **Enforce data freshness**: set a maximum age (e.g., 48 h) for price and options data; flag stale inputs before generating recommendations.  
-  5. **Re‑balance cash to meet 90% deployment**: allocate $45k to short‑term, low‑volatility instruments (T‑bills, money‑market funds) and the remaining $10k to high‑conviction, low‑correlation ideas (e.g., ENPH, NVDA).  
-  6. **Refine conviction calibration**: use a Bayesian update rule that adjusts conviction scores based on historical win‑rate (e.g., if an 8/10 pick wins 60% of the time, adjust future 8/10 scores downward).  
-  7. **Integrate a “sector exposure limit”**: cap any single sector at 30% of portfolio value to avoid the current 65% tech‑hardware concentration.  
-  8. **Upgrade the rating system**: replace the blunt 1‑10 scale with a calibrated “expected upside %” range (e.g., 8/10 = 12‑20% upside, 6/10 = 5‑10% upside) to reduce vagueness.  
-
-These concrete actions directly address the gaps highlighted by your feedback, improve data integrity, tighten risk controls, and raise the overall quality and specificity of future recommendations.
-
-## Run: 2026-07-19 02:27:26 ET
-- **What Worked Well** – The 2026‑05‑07 run achieved a 9.2/10 rating because it *explicitly referenced your portfolio composition* (e.g., noted your 56% cash, 7‑position holding mix) and gave a clear **rebalance summary** with specific weight targets for ENPH and NVDA, showing the agent understood your current exposure.
-
-- **What Didn't Work** – The 2026‑07‑19 run ignored your portfolio context: it recommended **VRT at $348.38 (‑16.88%)** and **PLTR at $139.47 (‑5.08%)** without checking whether those positions already existed or how they affected your 65% tech‑hardware concentration, leading to redundant or mis‑aligned suggestions.
+39.47 (‑5.08%)** without checking whether those positions already existed or how they affected your 65% tech‑hardware concentration, leading to redundant or mis‑aligned suggestions.
 
 - **Conviction Calibration** – The three 8/10 picks (SOFI, TEM, VRT) showed mixed results: SOFI (+6.08%) and TEM (+4.48%) were winners, but VRT (‑16.88%) was a clear **false positive**; the thesis journal is still empty, so we have no historical win‑rate data to adjust future 8/10 scores.
 
@@ -115,3 +85,32 @@ These concrete actions directly address the gaps highlighted by your feedback, i
 - **Process Improvements – Expand Idea Screen** – Broaden the screening universe to include **all equities** (not just holdings) and prioritize those with **>15% earnings surprise**, **>20% YoY revenue growth**, and **positive technical momentum (e.g., 20‑day MA crossover)**, ensuring **new, high‑conviction opportunities** are surfaced even when they are not currently in the portfolio.  
 
 - **Overall Self‑Assessment** – The recent run (2026‑07‑19) demonstrated **strong narrative depth** and **high‑quality news integration**, but **data freshness, conviction calibration, and portfolio‑aware filtering** remain critical weaknesses that must be addressed to move the average rating toward the 9‑10 range.
+
+## Run: 2026-07-19 10:51:58 ET
+- **What Worked Well** – The **SOFI** long‑term option (entry $16.29, current $17.28, +6.08% P&L, 8/10 conviction) showed a clear catalyst (earnings beat) and the **Alpaca** data source gave real‑time pricing, making the recommendation actionable and verifiable.  
+
+- **What Didn't Work** – **PLTR** was recommended at $139.47 with a stale price (actual market price ~ $132.38, –5.08% P&L) because the data feed had not refreshed since 2025‑11‑03, violating data freshness standards.  
+
+- **Conviction Calibration** – 4 out of 5 8/10 picks (SOFI, TEM, VRT, PLTR) were **false positives**: PLTR and VRT lost 5% and 16.9% respectively, while only SOFI and TEM met expectations; the 8/10 score was **over‑inflated** due to lack of post‑trade P&L tracking.  
+
+- **Thesis Journal Review** – The journal is empty, so no past theses can be validated or refuted; this gap prevents learning from historical conviction accuracy and hampers calibration of the 8+/10 rating system.  
+
+- **Missed Opportunities** – The report limited suggestions to the existing 7‑stock portfolio, ignoring high‑conviction ideas such as **NVDA** (AI chip momentum, 20‑day MA crossover, 15% earnings surprise) and **CRWD** (cloud security, >20% YoY revenue growth) that could have improved returns and diversified risk.  
+
+- **Data Quality Issues** – PLTR price was **stale** (last update 2025‑11‑03 vs. current $132.38); no options chain data for any ticker was provided, causing the “broken options data” flag noted in the 2026‑05‑07 feedback.  
+
+- **Risk Management** – Stop‑loss levels were **absent** for all active recommendations; VRT’s –16.9% loss indicates a missing protective order, and the portfolio’s 0% concentration figure contradicts the 64.9% concentration reported in memory, showing inconsistent risk metrics.  
+
+- **Cash Deployment** – With **56% cash** ($55k) sitting idle, the portfolio is far from the 90% deployment target; deploying even 20% of cash into high‑conviction ideas could reduce the –1.0% P&L and improve the cash‑to‑position ratio.  
+
+- **Memory & Learning** – Recent memory entries (2026‑07‑19) show volatile portfolio values ($219k‑$220k) but no clear learning loop; the system failed to incorporate the **earnings risk flag** from the 2026‑05‑07 run into subsequent recommendations, indicating a gap in memory usage.  
+
+- **Process Improvements – Data Refresh** – Implement a **real‑time data pipeline** that auto‑refreshes price feeds (e.g., every 5 min) and validates ticker relevance before any recommendation is generated.  
+
+- **Process Improvements – Conviction Scoring** – Introduce a **post‑trade P&L audit** that updates conviction scores weekly; penalize 8/10 picks that underperform by >3% to calibrate future scores.  
+
+- **Process Improvements – Portfolio‑Aware Filtering** – Extend the idea screen to **all equities**, not just holdings, and rank by **>15% earnings surprise**, **>20% YoY revenue growth**, and **positive 20‑day MA crossover**, ensuring new high‑conviction opportunities (e.g., NVDA, CRWD) surface regardless of current ownership.  
+
+- **Process Improvements – Risk Controls** – Add **automatic stop‑loss triggers** (e.g., 8% trailing stop) for each active position and enforce a **maximum single‑position weight of 15%** to prevent concentration drift, aligning with the 0% concentration inconsistency.  
+
+- **Process Improvements – Thesis Integration** – Populate the **Thesis Journal** with a structured template (thesis statement, supporting data, conviction score, expected catalyst, exit price) and link each recommendation to its thesis to enable post‑mortem validation and continuous learning.
