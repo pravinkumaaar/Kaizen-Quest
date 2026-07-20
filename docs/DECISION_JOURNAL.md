@@ -1177,3 +1177,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-20 | GLD | BUY | $218.45 | N/A | 7/10 | Active | - | Why: Portfolio entirely in growth tech with no inflation hedge. With geopolitica |
 | 2026-07-20 | PLTR | BUY | $132.38 | N/A | 6/10 | Active | - | Why: 31.2% portfolio weight with +111% gains is unsustainable. Valuation at 120x |
 | 2026-07-20 | ASTS | BUY | $57.80 | $20.00 | 9/10 | Active | - | Why: Direct-to-device satellite communication represents the next major tech pla |
+| 2026-07-20 | PLTR | BUY | $133.23 | N/A | 9/10 | Active | - | Why: Dangerous 30.7% portfolio weight creates single-name risk exceeding any pla |
+| 2026-07-20 | CEG | BUY | N/A | N/A | 9/10 | Active | - | Why: Nuclear energy is the missing piece in the AI infrastructure story. Constel |
+| 2026-07-20 | DDOG | BUY | N/A | N/A | 8/10 | Active | - | Why: AI workloads create exponential monitoring complexity - Datadog is mission- |
+| 2026-07-20 | GLD | BUY | $51.35 | N/A | 7/10 | Active | - | Why: Portfolio has zero commodities exposure while geopolitical risk (China tens |
