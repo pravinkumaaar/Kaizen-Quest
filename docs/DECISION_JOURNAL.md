@@ -1181,3 +1181,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-20 | CEG | BUY | N/A | N/A | 9/10 | Active | - | Why: Nuclear energy is the missing piece in the AI infrastructure story. Constel |
 | 2026-07-20 | DDOG | BUY | N/A | N/A | 8/10 | Active | - | Why: AI workloads create exponential monitoring complexity - Datadog is mission- |
 | 2026-07-20 | GLD | BUY | $51.35 | N/A | 7/10 | Active | - | Why: Portfolio has zero commodities exposure while geopolitical risk (China tens |
+| 2026-07-20 | COP | BUY | $78.50 | N/A | 9/10 | Active | - | Why: COP is a low‑cost, high‑margin oil producer with a strong balance sheet; oi |
+| 2026-07-20 | DDS | BUY | $45.00 | N/A | 8/10 | Active | - | Why: DDS shows strong earnings momentum, high ROE, and a valuation discount rela |
+| 2026-07-20 | HRB | BUY | $17.50 | N/A | 8/10 | Active | - | Why: HRB is a tax‑services provider poised to benefit from the peak filing seaso |

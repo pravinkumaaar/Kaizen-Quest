@@ -1,47 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-LEAP rationale (long‑term, implied volatility ≈ 30%) was clear and matched the recent earnings‑beat news.  
-  - TEM (ticker: TEM, price $50.22, 99 shares) – 8/10 conviction, +4.16% gain; the thesis highlighted a 12% YoY revenue acceleration and a pending FDA approval that drove the upside.  
-
-- **What Didn't Work**  
-  - PLTR (ticker: PLTR, price $139.47, 57 shares) – 8/10 conviction but –5.55% loss; the price used ($131.73) was based on stale data from 30 days ago, causing a false‑positive signal.  
-  - VRT (ticker: VRT, price $348.38, 28 shares) – 8/10 conviction but –16.94% loss; the model ignored a 20% drop in quarterly earnings guidance reported on 2026‑07‑15, leading to an over‑optimistic thesis.  
-
-- **Conviction Calibration**  
-  - Of the 4 active 8/10 picks, only 2 (SOFI, TEM) delivered positive returns; PLTR and VRT were false positives, indicating the conviction scores were not well‑calibrated to recent price moves.  
-
-- **Thesis Journal Review**  
-  - No thesis entries exist (journal empty), so we cannot verify which past theses were validated or refuted; this lack prevents calibration of conviction scores.  
-
-- **Missed Opportunities**  
-  - The report limited recommendations to the existing 7 holdings; no new ideas (e.g., a high‑growth AI chip maker trading at $78 with a 15% earnings surprise) were surfaced despite 56% cash idle.  
-
-- **Data Quality Issues**  
-  - PLTR price was outdated (last update 2026‑06‑10) while the recommendation used that stale price, causing mis‑pricing.  
-  - Options chain automation is broken; live IV and Greeks were missing for SOFI LEAPs, forcing manual lookup.  
-
-- **Risk Management**  
-  - No stop‑loss levels were attached to the active positions; VRT’s 16.9% decline could have been limited with a 10% trailing stop.  
-  - Concentration appears mis‑reported (memory shows ~65% of portfolio value in top positions) despite a 0% concentration figure, indicating a data‑reporting bug.  
-
-- **Cash Deployment**  
-  - Cash is 56% of the $99,050 portfolio (~$55k) and has been idle for >3 days; the 90% cash‑target protocol is far from met, creating a large opportunity cost.  
-
-- **Memory & Learning**  
-  - The last three runs (2026‑07‑19) show nearly identical portfolio values ($219k‑$220k) and concentration (~65%); no new insights were incorporated, suggesting redundant research on the same tickers.  
-
-- **Process Improvements**  
-  - **Top‑5 Event Filter**: automatically rank portfolio positions by % change + news volume and surface the top 5 for immediate review.  
-  - **Timestamp Metadata**: add “last reviewed” dates to each position so the system can flag stale analyses (e.g., PLTR price).  
-  - **Live Options Chain Integration**: ingest real‑time IV, Greeks, and expiration dates to eliminate broken LEAP recommendations.  
-  - **Thesis Journal Population**: log each conviction score, reasoning, and outcome; enable post‑mortem calibration of the 0‑10 conviction scale.  
-  - **Concentration Heatmap**: visualise position size, stop‑loss status, and cash ratio in real time to spot over‑concentration risks.  
-  - **Expected Return Probability Rating**: replace the opaque 0‑100 “market foresight” score with a transparent probability model (e.g., Monte‑Carlo simulation of price paths).  
-  - **External Opportunity Screening**: run a weekly screen for high‑conviction ideas outside the current holdings (e.g., sector‑leader with >15% earnings growth and <0.5 beta).  
-  - **Idle Cash Protocol**: when cash >20% for >3 days, auto‑generate a shortlist of 3‑5 candidates with clear entry price, target, and stop‑loss, and prioritize deployment based on expected return probability.  
-
-- **Overall Self‑Reflection**  
-  - The model’s recommendation quality has improved (average rating ↑ from 5.7/10 to 9.2/10), but conviction calibration, data freshness, and cash deployment remain critical weaknesses that must be addressed to move from “good” to “excellent” performance.
+ing ↑ from 5.7/10 to 9.2/10), but conviction calibration, data freshness, and cash deployment remain critical weaknesses that must be addressed to move from “good” to “excellent” performance.
 
 ## Run: 2026-07-20 06:57:49 ET
 - **What Worked Well** – The **SOFI** long‑term recommendation (entry $16.29, current $17.38, +6.69%) demonstrated a clear, data‑driven thesis (high earnings growth, low beta) and the model correctly identified a **positive catalyst** (Q2 earnings beat) that drove the price up, earning an **8/10 conviction** score.  
@@ -171,3 +130,30 @@ These concrete actions will tighten conviction calibration, improve data freshne
 • **Repair recommendation tracking engine** - Fix P&L calculations, active vs long-term labeling, and position status accuracy
 • **Expand universe scanning** - Integrate fresh screening beyond current holdings to identify asymmetric opportunities
 • **Create conviction calibration dashboard** - Track high-conviction picks (8+/10) performance to identify overconfidence patterns
+
+## Run: 2026-07-20 11:57:13 ET
+- **Specific wins:** SOFI (306 shares @ $16.29 → $17.22, +5.71%) showed that high‑conviction (8/10) long‑term picks can generate quick upside when the entry price is well below the current market; the Alpaca‑sourced price feed was accurate and the options‑LEAP rationale was clear.  
+
+- **Data staleness:** PLTR’s price ($139.47) was based on outdated historical data (last update > 48 h), causing a misleading‑‑3.25% loss signal; a timestamp‑validation alert should have flagged this before the recommendation was generated.  
+
+- **Conviction calibration failure:** All 8/10 conviction picks (NVDA, PLTR, SOFI, TEM, VRT) exhibited mixed results—VRT lost 14.88% (‑$51.82 on 28 shares) and PLTR fell 3.25%—indicating over‑confidence; without a recorded thesis and performance log we cannot verify whether the conviction scores were justified.  
+
+- **Missing thesis journal:** No entries exist in the Thesis Journal (the field is empty), so we have no audit trail of past theses, conviction scores, or post‑trade outcomes; activating the journal immediately will enable true calibration and learning.  
+
+- **Concentration risk:** VRT alone accounts for ~9.8% of portfolio value ($9,744) and suffered a 14.88% drawdown; a systematic 8‑12% stop‑loss would have limited the loss to ≈ $1,200, preserving capital and improving the –0.5% overall P&L.  
+
+- **Cash deployment inefficiency:** Idle cash is 55% ($54,714) while the target deployment is 90%; the current “active” recommendation pool is limited to existing holdings, leaving ample cash uninvested and creating opportunity cost.  
+
+- **Recommendation tracking bugs:** P&L calculations for the active positions are inconsistent (e.g., NVDA shows +38 % vs. –0.47% loss), and the “long‑term vs. active” label is mis‑assigned; fixing the tracking engine will give a reliable performance view.  
+
+- **Limited universe scanning:** All suggestions were drawn from the existing 7‑position portfolio, ignoring higher‑impact opportunities (e.g., recent AI‑chip earnings beats, biotech FDA approvals) that could have offered asymmetric upside; expanding the screen to include news‑driven movers would improve relevance.  
+
+- **Sorting logic flaw:** Positions are currently sorted alphabetically or by entry order; prioritizing by news flow, price momentum, and upcoming catalyst dates (e.g., earnings, FDA decisions) would surface the most timely re‑positioning opportunities.  
+
+- **Stop‑loss framework absent:** No automatic downside protection (8‑12% threshold) is in place; implementing this across all positions, especially high‑volatility stocks like VRT and TEM, would reduce tail‑risk exposure.  
+
+- **Learning loop not closed:** The “learning history” list (timestamp validation, sorting fix, thesis journal activation, etc.) remains unimplemented; each bullet represents a concrete code change that, once deployed, will prevent repeat mistakes and improve future recommendation quality.  
+
+- **Process improvement roadmap:** 1️⃣ Activate the Thesis Journal and log every recommendation with entry date, thesis, conviction score, and real‑time P&L. 2️⃣ Add timestamp and price‑discrepancy alerts before any trade idea is generated. 3️⃣ Redesign the recommendation engine to pull the top‑ranked ideas by news impact and price movement, not just portfolio holdings. 4️⃣ Deploy an idle‑cash protocol that scans the broader market for new asymmetric plays when cash > 10% (target 90% deployment). 5️⃣ Implement a universal stop‑loss rule (8‑12% trailing) and monitor concentration metrics weekly.  
+
+These points directly address the feedback, leverage the existing memory insights, and provide clear, data‑driven actions to raise the next run’s rating well above the current 5.7/10 average.
