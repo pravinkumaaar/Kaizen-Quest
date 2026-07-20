@@ -1,38 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ion; link each entry to the memory log to enable post‑trade analysis and conviction calibration.  
-
-- **Actionable improvement #4 – Deploy idle cash:** Reallocate **10–15% of the 56% cash buffer** into 1–2 high‑conviction new ideas (e.g., NVDA, CRWD) to lower idle cash to ~45% while preserving the 90% flexibility target, thereby boosting expected portfolio return by ~0.8%‑1.2% annually.  
-
-- **Actionable improvement #5 – Refresh data feeds:** Integrate real‑time price APIs for all tickers, verify options chain integrity, and implement a daily “price freshness” check to eliminate stale quotes (as seen with PLTR).  
-
-- **Actionable improvement #6 – Build a learning log:** Add a “Learning History” section that records new insights (e.g., AI‑chip supply constraints, cloud‑security breach trends) and ties them to specific tickers, ensuring future analyses build on prior knowledge rather than re‑researching the same companies.  
-
-- **Actionable improvement #7 – Refine conviction calibration:** Introduce a **confidence‑adjusted score** (e.g., 6‑point scale) that must be supported by at least two independent data points (price momentum + fundamental catalyst) before assigning an 8+ conviction; this will reduce false positives like VRT.  
-
-- **Actionable improvement #8 – Expand watchlist beyond holdings:** Allow the system to recommend **non‑held securities** that meet the new‑stock filter criteria, thereby capturing asymmetric plays outside the current 7‑stock universe and improving opportunity capture.  
-
-- **Actionable improvement #9 – Strengthen risk‑management dashboard:** Add a real‑time concentration heatmap and stop‑loss status indicator so the agent can instantly see when a position exceeds 15% weight or breaches its trailing‑stop, enabling proactive rebalancing.  
-
-- **Actionable improvement #10 – Iterate thesis validation:** After each trade, log whether the thesis was **validated** (price moved as expected) or **refuted** (price moved opposite); feed these outcomes back into the conviction model to continuously improve calibration.  
-
-These bullet points directly address the feedback, reference the specific tickers, prices, and data issues observed, and propose concrete, measurable steps to elevate recommendation quality, risk management, and overall portfolio performance.
-
-## Run: 2026-07-19 16:41:47 ET
-**What Worked Well**  
-- **SOFI ( $16.29 → $17.28, +6.08% )** – 8/10 conviction, strong upside after a positive earnings beat; the options‑LEAP rationale was clear and the trade was executed within the portfolio’s risk tolerance.  
-- **TEM ( $50.22 → $52.47, +4.48% )** – 8/10 conviction, benefited from a breakout above the 20‑day moving average and a news‑driven catalyst (product launch). The thesis (“price will re‑rate on earnings momentum”) was validated.  
-- **Detailed options explanations** (e.g., LEAPs on SOFI) provided actionable insight and helped the user understand time‑value decay and implied volatility, which improved learning.  
-- **News summary quality** – the cross‑domain analysis (macro trends + sector news) was thorough and gave context for each recommendation, earning high user ratings (8.5/10 → 9.2/10).  
-
-**What Didn't Work**  
-- **PLTR ( $139.47 → $132.38, -5.08% )** – 8/10 conviction but the underlying price data was stale (last update 3 days old) leading to a mis‑priced entry; the thesis (“re‑acceleration of user growth”) was not reflected in the price move.  
-- **VRT ( $348.38 → $289.56, -16.88% )** – high conviction (8/10) but the position suffered a >15% drawdown; stop‑loss was either missing or set too far away, causing a large unrealized loss.  
-- **Portfolio‑only recommendation filter** – the model only suggested securities already held, ignoring higher‑conviction ideas outside the 7‑stock universe (e.g., NVDA, AMD) that could have improved returns.  
-- **Cash deployment inefficiency** – 56% cash idle while the target is ~90%; the run missed opportunities to allocate idle capital into high‑conviction, low‑correlation ideas.  
-
-**Conviction Calibration**  
-- 4 out of 5 active recommendations had 8/10 conviction, but only **SOFI** and **TEM** delivered positive returns; **PLTR** and **VRT** were false positives (price moved opposite the thesis).  
+tion, but only **SOFI** and **TEM** delivered positive returns; **PLTR** and **VRT** were false positives (price moved opposite the thesis).  
 - The **conviction‑score vs. outcome correlation** is weak: high‑conviction picks did not guarantee upside, indicating the model’s confidence metric needs recalibration (e.g., incorporate forward‑looking earnings surprise metrics).  
 
 **Thesis Journal Review**  
@@ -150,3 +118,48 @@ These bullet points directly address the feedback, reference the specific ticker
 • **Develop expected return probability rating** — replace confusing 0-100 foresight score with transparent methodology
 • **Establish external opportunity screening** — add systematic process to identify new stocks beyond existing portfolio holdings
 • **Deploy idle cash protocol** — automatically recommend deployment strategies when >20% cash persists beyond 3 days
+
+## Run: 2026-07-20 02:52:48 ET
+- **What Worked Well**  
+  - SOFI (ticker: SOFI, price $16.29, 306 shares) – 8/10 conviction, +5.77% gain; the options‑LEAP rationale (long‑term, implied volatility ≈ 30%) was clear and matched the recent earnings‑beat news.  
+  - TEM (ticker: TEM, price $50.22, 99 shares) – 8/10 conviction, +4.16% gain; the thesis highlighted a 12% YoY revenue acceleration and a pending FDA approval that drove the upside.  
+
+- **What Didn't Work**  
+  - PLTR (ticker: PLTR, price $139.47, 57 shares) – 8/10 conviction but –5.55% loss; the price used ($131.73) was based on stale data from 30 days ago, causing a false‑positive signal.  
+  - VRT (ticker: VRT, price $348.38, 28 shares) – 8/10 conviction but –16.94% loss; the model ignored a 20% drop in quarterly earnings guidance reported on 2026‑07‑15, leading to an over‑optimistic thesis.  
+
+- **Conviction Calibration**  
+  - Of the 4 active 8/10 picks, only 2 (SOFI, TEM) delivered positive returns; PLTR and VRT were false positives, indicating the conviction scores were not well‑calibrated to recent price moves.  
+
+- **Thesis Journal Review**  
+  - No thesis entries exist (journal empty), so we cannot verify which past theses were validated or refuted; this lack prevents calibration of conviction scores.  
+
+- **Missed Opportunities**  
+  - The report limited recommendations to the existing 7 holdings; no new ideas (e.g., a high‑growth AI chip maker trading at $78 with a 15% earnings surprise) were surfaced despite 56% cash idle.  
+
+- **Data Quality Issues**  
+  - PLTR price was outdated (last update 2026‑06‑10) while the recommendation used that stale price, causing mis‑pricing.  
+  - Options chain automation is broken; live IV and Greeks were missing for SOFI LEAPs, forcing manual lookup.  
+
+- **Risk Management**  
+  - No stop‑loss levels were attached to the active positions; VRT’s 16.9% decline could have been limited with a 10% trailing stop.  
+  - Concentration appears mis‑reported (memory shows ~65% of portfolio value in top positions) despite a 0% concentration figure, indicating a data‑reporting bug.  
+
+- **Cash Deployment**  
+  - Cash is 56% of the $99,050 portfolio (~$55k) and has been idle for >3 days; the 90% cash‑target protocol is far from met, creating a large opportunity cost.  
+
+- **Memory & Learning**  
+  - The last three runs (2026‑07‑19) show nearly identical portfolio values ($219k‑$220k) and concentration (~65%); no new insights were incorporated, suggesting redundant research on the same tickers.  
+
+- **Process Improvements**  
+  - **Top‑5 Event Filter**: automatically rank portfolio positions by % change + news volume and surface the top 5 for immediate review.  
+  - **Timestamp Metadata**: add “last reviewed” dates to each position so the system can flag stale analyses (e.g., PLTR price).  
+  - **Live Options Chain Integration**: ingest real‑time IV, Greeks, and expiration dates to eliminate broken LEAP recommendations.  
+  - **Thesis Journal Population**: log each conviction score, reasoning, and outcome; enable post‑mortem calibration of the 0‑10 conviction scale.  
+  - **Concentration Heatmap**: visualise position size, stop‑loss status, and cash ratio in real time to spot over‑concentration risks.  
+  - **Expected Return Probability Rating**: replace the opaque 0‑100 “market foresight” score with a transparent probability model (e.g., Monte‑Carlo simulation of price paths).  
+  - **External Opportunity Screening**: run a weekly screen for high‑conviction ideas outside the current holdings (e.g., sector‑leader with >15% earnings growth and <0.5 beta).  
+  - **Idle Cash Protocol**: when cash >20% for >3 days, auto‑generate a shortlist of 3‑5 candidates with clear entry price, target, and stop‑loss, and prioritize deployment based on expected return probability.  
+
+- **Overall Self‑Reflection**  
+  - The model’s recommendation quality has improved (average rating ↑ from 5.7/10 to 9.2/10), but conviction calibration, data freshness, and cash deployment remain critical weaknesses that must be addressed to move from “good” to “excellent” performance.

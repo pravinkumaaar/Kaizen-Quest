@@ -1,8 +1,8 @@
 {
   "ticker": "ASTS",
   "first_researched": "2026-05-22T16:41:35.361624",
-  "last_researched": "2026-07-19T14:59:44.447085",
-  "research_count": 77,
+  "last_researched": "2026-07-20T07:00:31.261184",
+  "research_count": 78,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 57.8,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-19T14:59:44.447085"
+      "last_verified": "2026-07-20T07:00:31.261184"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-19T14:59:44.447085"
+      "last_verified": "2026-07-20T07:00:31.261184"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-19T02:31:25.624657"
+      "last_verified": "2026-07-20T07:00:31.261184"
     }
   ],
   "facts": [
@@ -374,8 +374,8 @@
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
-      "first_verified": "2026-07-19T14:59:05.428038",
-      "last_verified": "2026-07-19T14:59:44.447085",
+      "first_verified": "2026-07-20T06:59:46.302485",
+      "last_verified": "2026-07-20T07:00:31.261184",
       "verification_count": 1
     }
   ],
@@ -383,41 +383,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "ASTS",
-    "timestamp": "2026-07-19 14:59:15",
+    "timestamp": "2026-07-20 06:59:56",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
+    "comps_analysis",
     "risk_assessment",
-    "competitive_landscape",
-    "recommendation_trends",
-    "financial_ratios",
-    "supply_chain",
-    "technical_indicators",
-    "aggregate_indicators",
-    "price_target",
-    "insider_sentiment",
+    "macro_rotation",
     "earnings_history",
     "income_statement",
-    "congressional",
-    "macro_rotation",
-    "insider_trades_contrarian",
-    "treasury_rates",
-    "sector_performance",
+    "recommendation_trends",
     "balance_sheet",
-    "negative_news",
-    "institutional",
     "esg",
-    "analyst_estimates",
-    "sector_rotation",
-    "market_sentiment",
     "industry_pe",
-    "insider_trades",
-    "dcf",
-    "cashflow",
-    "valuation_multiples",
     "earnings_momentum",
-    "comps_analysis"
+    "insider_trades_contrarian",
+    "institutional",
+    "competitive_landscape",
+    "dcf",
+    "financial_ratios",
+    "cashflow",
+    "sector_rotation",
+    "sector_performance",
+    "technical_indicators",
+    "congressional",
+    "negative_news",
+    "price_target",
+    "analyst_estimates",
+    "valuation_multiples",
+    "insider_trades",
+    "aggregate_indicators",
+    "treasury_rates",
+    "insider_sentiment",
+    "supply_chain",
+    "market_sentiment"
   ],
   "research_gaps": [],
   "contrarian_signals": []
