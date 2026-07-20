@@ -1184,3 +1184,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-20 | COP | BUY | $78.50 | N/A | 9/10 | Active | - | Why: COP is a low‑cost, high‑margin oil producer with a strong balance sheet; oi |
 | 2026-07-20 | DDS | BUY | $45.00 | N/A | 8/10 | Active | - | Why: DDS shows strong earnings momentum, high ROE, and a valuation discount rela |
 | 2026-07-20 | HRB | BUY | $17.50 | N/A | 8/10 | Active | - | Why: HRB is a tax‑services provider poised to benefit from the peak filing seaso |
+| 2026-07-20 | PLTR | BUY | $135.00 | $175.00 | 7/10 | Active | - | Why: PLTR’s 31.1% portfolio weight creates extreme concentration risk; the stock |
+| 2026-07-20 | COP | BUY | $85.00 | $130.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) offers low‑cost upstream operations, a 2.5% dividend y |
+| 2026-07-20 | FERG | BUY | $70.00 | $100.00 | 8/10 | Active | - | Why: Ferguson (FERG) distributes building materials and benefits from a rebound  |
+| 2026-07-20 | MPC | BUY | $45.00 | $65.00 | 8/10 | Active | - | Why: Phillips 66 (MPC) operates a diversified oil‑and‑gas portfolio with strong  |
