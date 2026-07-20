@@ -1170,3 +1170,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-19 | TICKER | BUY | $60.00 | $85.00 | 8/10 | Active | - | Why: Microchip Technology is positioned for revenue growth and margin expansion  |
 | 2026-07-19 | TICKER | BUY | $120.00 | $150.00 | 7/10 | Active | - | Why: Taiwan Semiconductor Manufacturing Company (TSM) is a key beneficiary of AI |
 | 2026-07-19 | TICKER | BUY | $35.00 | $50.00 | 8/10 | Active | - | Why: Freeport-McMoRan (FCX) is positioned to capitalize on rising copper prices  |
+| 2026-07-20 | COP | BUY | $80.00 | $10967.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) is a premier upstream oil producer trading at a forwar |
+| 2026-07-20 | EEM | BUY | $68.00 | $8774.00 | 8/10 | Active | - | Why: The iShares MSCI Emerging Markets ETF (EEM) offers diversified exposure to  |
