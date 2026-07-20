@@ -1172,3 +1172,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-19 | TICKER | BUY | $35.00 | $50.00 | 8/10 | Active | - | Why: Freeport-McMoRan (FCX) is positioned to capitalize on rising copper prices  |
 | 2026-07-20 | COP | BUY | $80.00 | $10967.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) is a premier upstream oil producer trading at a forwar |
 | 2026-07-20 | EEM | BUY | $68.00 | $8774.00 | 8/10 | Active | - | Why: The iShares MSCI Emerging Markets ETF (EEM) offers diversified exposure to  |
+| 2026-07-20 | MSFT | BUY | $485.35 | N/A | 8/10 | Active | - | Why: As enterprises prioritize "verification era" security with 54% reporting AI |
+| 2026-07-20 | INDA | BUY | $47.20 | N/A | 7/10 | Active | - | Why: India represents the best long-term emerging market story with 7-8% GDP gro |
+| 2026-07-20 | GLD | BUY | $218.45 | N/A | 7/10 | Active | - | Why: Portfolio entirely in growth tech with no inflation hedge. With geopolitica |
+| 2026-07-20 | PLTR | BUY | $132.38 | N/A | 6/10 | Active | - | Why: 31.2% portfolio weight with +111% gains is unsustainable. Valuation at 120x |
+| 2026-07-20 | ASTS | BUY | $57.80 | $20.00 | 9/10 | Active | - | Why: Direct-to-device satellite communication represents the next major tech pla |
