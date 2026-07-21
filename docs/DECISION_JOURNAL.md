@@ -1190,3 +1190,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-20 | MPC | BUY | $45.00 | $65.00 | 8/10 | Active | - | Why: Phillips 66 (MPC) operates a diversified oil‑and‑gas portfolio with strong  |
 | 2026-07-21 | TICKER | BUY | $206.55 | $250.00 | 9/10 | Active | - | Why: Deep research confirms NVDA’s dominance in AI compute demand, with 1.6% dai |
 | 2026-07-21 | TICKER | BUY | $20.85 | $25.00 | 8/10 | Active | - | Why: PAGS (PagSeguro) is a leading Brazilian fintech with 20% YoY revenue growth |
+| 2026-07-21 | VECO | BUY | $12.30 | $22.00 | 8/10 | Active | - | Why: VECO supplies critical equipment for advanced semiconductor manufacturing,  |
+| 2026-07-21 | RPD | BUY | $12.00 | $22.00 | 7/10 | Active | - | Why: RPD offers a cloud‑native cybersecurity platform that aligns with the accel |
+| 2026-07-21 | MNDY | BUY | $5.00 | $9.00 | 7/10 | Active | - | Why: MNDY is a biotech company advancing a novel oral therapy for autoimmune dis |
