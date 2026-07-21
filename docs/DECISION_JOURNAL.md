@@ -1188,3 +1188,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-20 | COP | BUY | $85.00 | $130.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) offers low‑cost upstream operations, a 2.5% dividend y |
 | 2026-07-20 | FERG | BUY | $70.00 | $100.00 | 8/10 | Active | - | Why: Ferguson (FERG) distributes building materials and benefits from a rebound  |
 | 2026-07-20 | MPC | BUY | $45.00 | $65.00 | 8/10 | Active | - | Why: Phillips 66 (MPC) operates a diversified oil‑and‑gas portfolio with strong  |
+| 2026-07-21 | TICKER | BUY | $206.55 | $250.00 | 9/10 | Active | - | Why: Deep research confirms NVDA’s dominance in AI compute demand, with 1.6% dai |
+| 2026-07-21 | TICKER | BUY | $20.85 | $25.00 | 8/10 | Active | - | Why: PAGS (PagSeguro) is a leading Brazilian fintech with 20% YoY revenue growth |
