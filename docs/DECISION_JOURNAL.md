@@ -1193,3 +1193,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-21 | VECO | BUY | $12.30 | $22.00 | 8/10 | Active | - | Why: VECO supplies critical equipment for advanced semiconductor manufacturing,  |
 | 2026-07-21 | RPD | BUY | $12.00 | $22.00 | 7/10 | Active | - | Why: RPD offers a cloud‑native cybersecurity platform that aligns with the accel |
 | 2026-07-21 | MNDY | BUY | $5.00 | $9.00 | 7/10 | Active | - | Why: MNDY is a biotech company advancing a novel oral therapy for autoimmune dis |
+| 2026-07-21 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | THESIS: PAGS is positioned to capture accelerated digital payments adoption in B |
+| 2026-07-21 | TICKER | BUY | N/A | N/A | 9/10 | Active | - | THESIS: ARK’s AI‑driven credit‑scoring platform and expanding fintech ecosystem  |
+| 2026-07-21 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | THESIS: COP’s robust upstream cash flow, elevated oil prices and upcoming earnin |
+| 2026-07-21 | TICKER | BUY | N/A | N/A | 9/10 | Active | - | THESIS: VECO’s position in advanced semiconductor equipment, backed by a strong  |
