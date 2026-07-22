@@ -1201,3 +1201,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-22 | TICKER | BUY | $150.00 | $260.00 | 8/10 | Active | - | Why: Snowflake’s Data Cloud is the de‑facto platform for feeding AI models with  |
 | 2026-07-22 | TICKER | BUY | $30.00 | $48.00 | 8/10 | Active | - | Why: Marvell is a leading supplier of custom silicon and interconnect solutions  |
 | 2026-07-22 | TICKER | BUY | $850.00 | $1200.00 | 9/10 | Active | - | Why: Broadcom dominates the high‑performance networking and storage ASIC market, |
+| 2026-07-22 | FERG | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Ferguson (FERG) is a diversified industrial distributor with exposure to co |
+| 2026-07-22 | SE | BUY | $115.00 | $170.00 | 8/10 | Active | - | Why: Sea Limited (SE) is a leading internet platform in Southeast Asia with domi |
+| 2026-07-22 | CPAY | BUY | $13.00 | $20.00 | 8/10 | Active | - | Why: CPAY offers integrated payment solutions for e‑commerce and embedded financ |
