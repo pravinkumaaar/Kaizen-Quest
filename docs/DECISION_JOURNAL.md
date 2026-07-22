@@ -1197,3 +1197,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-21 | TICKER | BUY | N/A | N/A | 9/10 | Active | - | THESIS: ARK’s AI‑driven credit‑scoring platform and expanding fintech ecosystem  |
 | 2026-07-21 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | THESIS: COP’s robust upstream cash flow, elevated oil prices and upcoming earnin |
 | 2026-07-21 | TICKER | BUY | N/A | N/A | 9/10 | Active | - | THESIS: VECO’s position in advanced semiconductor equipment, backed by a strong  |
+| 2026-07-22 | TICKER | BUY | $720.00 | $1050.00 | 9/10 | Active | - | Why: ASML is the sole supplier of EUV lithography tools, the most advanced chip‑ |
+| 2026-07-22 | TICKER | BUY | $150.00 | $260.00 | 8/10 | Active | - | Why: Snowflake’s Data Cloud is the de‑facto platform for feeding AI models with  |
+| 2026-07-22 | TICKER | BUY | $30.00 | $48.00 | 8/10 | Active | - | Why: Marvell is a leading supplier of custom silicon and interconnect solutions  |
+| 2026-07-22 | TICKER | BUY | $850.00 | $1200.00 | 9/10 | Active | - | Why: Broadcom dominates the high‑performance networking and storage ASIC market, |

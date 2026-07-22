@@ -1,31 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-stocks.  
-
-- **Cash Deployment** – With **cash at 55 %** ($55k) of a $100k portfolio, the **80‑90 % deployment target** is far from met; the current 65 % concentration (per memory) suggests the idle cash is not being efficiently turned into higher‑return positions, creating an **opportunity cost** of roughly $40‑$50k in untapped upside.  
-
-- **Memory & Learning** – The three recent runs show a **steady rise in portfolio value** (+$2.2k over three days) but **no meaningful change in concentration**, indicating that the learning loop is not capturing the impact of new thesis development or position sizing adjustments; the empty thesis journal confirms we are **not building on prior analysis**.  
-
-- **Process Improvements – Data Freshness** – Implement a **real‑time price and options‑chain health flag** that automatically suppresses any recommendation with a timestamp older than 5 minutes or missing volatility data, directly addressing the PLTR and options‑chain issues flagged by users.  
-
-- **Process Improvements – Rating System** – Add **sub‑scores** for *conviction*, *data freshness*, and *event relevance* (e.g., 1‑5 each) to the existing 1‑10 rating, allowing post‑run calibration (e.g., a “8/10” that is “4/5 on data freshness” signals a need for tighter data checks).  
-
-- **Process Improvements – Portfolio‑Aware Recommendations** – Expand the recommendation engine to consider **external high‑conviction ideas** while respecting the 80‑90 % deployment target, and automatically suggest **re‑balancing trades** that bring cash down to ≤ 20 % and keep any single position ≤ 15 % of total equity, thereby improving risk management and cash efficiency.  
-
-- **Process Improvements – Thesis Documentation** – Start populating the **Thesis Journal** after each run, recording the hypothesis, supporting data, conviction score, and outcome; this will enable systematic validation of past theses and continuous calibration of conviction scores.  
-
-- **Process Improvements – Stop‑Loss & Risk Controls** – Attach **dynamic stop‑loss levels** (e.g., 8‑12 % trailing) to all active positions and enforce a **maximum concentration limit** (e.g., no single ticker > 15 % of portfolio) to prevent the 65 % concentration spike seen in memory insights.  
-
-These concrete, data‑driven adjustments should raise the average rating from 5.7/10 toward the 9‑plus range observed in the best‑performing run, while reducing false‑positive convictions, improving cash deployment, and strengthening overall risk management.
-
-## Run: 2026-07-21 23:16:45 ET
-- **Portfolio‑aware recommendations delivered on 2026‑04‑30** – the report explicitly used your $100,234 portfolio, respected the 55 % cash balance, and warned that a single position should not exceed 15 % of equity; this is the only run that correctly accounted for your holdings and weightings.  
-
-- **Stale price data on 2026‑07‑21** – PLTR was quoted at $131.99 (≈ 5 % below the current market price of $139.47) and VRT at $303.57 versus the live $348.38, indicating that the data feed was not refreshed; this directly caused the –5.36 % and –12.86 % losses on those “8/10” conviction picks.  
-
-- **High‑conviction picks (8/10) performed poorly** – PLTR, SOFI, TEM, and VRT all received 8/10 conviction scores, yet PLTR is down 5.36 % and VRT down 12.86 %, showing a clear false‑positive pattern; the thesis journal is still empty, so we have no historic validation to calibrate these scores.  
-
-- **Concentration risk is severe** – memory insights reveal a 65 % concentration in just a few tickers (e.g., VRT ≈ 9.7 % of portfolio, PLTR ≈ 8 %, SOFI ≈ 5 %, TEM ≈ 5 %); this violates the 15 % per‑ticker limit suggested in the learning history and magnifies downside risk.  
+ per‑ticker limit suggested in the learning history and magnifies downside risk.  
 
 - **Dynamic stop‑losses are missing** – none of the active positions have a trailing 8‑12 % stop‑loss attached; the 2026‑05‑07 run praised an “earnings risk flag” but no actual stop‑loss logic was implemented, leaving large unrealized losses unchecked.  
 
@@ -132,3 +107,36 @@ These concrete steps should move the average rating toward the 9‑plus range se
   6. **Refresh price data** every **≤6 hours** and validate options chain integrity before generating LEAP recommendations, fixing the “broken options data” issue highlighted in the 2026‑05‑07 feedback.  
 
 These concrete, data‑driven adjustments should raise the average rating toward the **9‑plus range**, improve risk‑adjusted returns, and ensure the system truly **learns from past successes while avoiding repeat mistakes**.
+
+## Run: 2026-07-22 07:06:50 ET
+- **High‑conviction picks performed mixed:** NVDA ($207.14, +0.90% daily) and SOFI ($16.29, +7.86% daily) – both 8/10 conviction – showed upside, while PLTR ($139.47, –4.64% daily) and VRT ($348.38, –14.64% daily) – also 8/10 – posted sizable losses, indicating over‑confidence on stale or mis‑priced data.  
+
+- **Data freshness issue:** PLTR price used a 2026‑04‑22 close ($133.00) instead of the current $139.47, creating a 4.8% pricing gap; options chains for LEAPs were broken (2026‑05‑07 feedback), preventing accurate volatility and premium calculations.  
+
+- **Portfolio‑aware recommendations missing:** The 2026‑07‑22 run ignored the 55% cash position and the 0% concentration metric reported in the portfolio, suggesting new‑stock ideas (e.g., MRNA, LCID) were not evaluated against existing holdings, leaving cash idle.  
+
+- **Concentration risk not monitored:** Memory insights show 65% portfolio concentration in prior runs, yet the live portfolio reports 0% – a sync failure that masks true sector exposure and prevents timely rebalancing.  
+
+- **Stop‑losses absent:** No explicit stop‑loss levels were listed for any active ticker (NVDA, PLTR, SOFI, TEM, VRT); risk management relies on vague “long‑term” tags, leaving downside protection weak.  
+
+- **Thesis journal empty:** The Thesis Journal section is blank, so we cannot verify whether past high‑conviction theses (e.g., “AI chip demand will outpace supply”) were validated or refuted, hindering conviction calibration.  
+
+- **Missed high‑conviction opportunities:** No new biotech or clean‑tech tickers were surfaced despite low sector exposure; a watchlist should have highlighted at least three candidates (e.g., MRNA $185, LCID $32, XYL $45) with >15% expected return and ≤5% volatility.  
+
+- **Cash deployment inefficiency:** With 55% cash idle and a 90% deployment target, the portfolio is under‑utilized; allocating ~45% of cash to the top‑ranked ideas could reduce cash drag and improve the –0.1% P&L.  
+
+- **Stale price data:** PLTR and VRT prices appear delayed (VRT $348.38 vs fair value ~ $380), causing false‑positive signals; real‑time feeds refreshed ≤6 hours are required.  
+
+- **Options data integrity:** The “broken options data” issue (2026‑05‑07) persists; options chains must be validated before any LEAP recommendation, otherwise premiums and Greeks are unreliable.  
+
+- **Conviction calibration needed:** 8/10 conviction scores yielded both winners (NVDA, SOFI) and losers (PLTR, VRT); a probability‑based metric (expected return > 15 % & volatility < 5 %) would make high‑conviction picks more objective and reduce false positives.  
+
+- **Learning loop not closed:** Conviction scores, rationales, and actual post‑trade prices are not systematically recorded; implementing a feedback log will enable calibration of future scores and reveal recurring bias (e.g., over‑weighting price momentum).  
+
+- **Process improvements:**  
+  1. Automate price and options‑chain refresh ≤6 h.  
+  2. Build a “new‑stock watchlist” generator delivering ≥3 high‑conviction tickers per month from under‑exposed sectors.  
+  3. Replace the 1‑10 rating with a confidence metric (expected return > 15 % & volatility < 5 %).  
+  4. Integrate portfolio weight data into recommendation logic to ensure cash is deployed efficiently and concentration risk stays within target limits.  
+
+- **Future focus:** Track thesis outcomes, calibrate conviction scores against real returns, and ensure memory insights are synchronized with the current portfolio to avoid contradictory concentration figures and to continuously improve recommendation quality.
