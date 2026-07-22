@@ -1,43 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ket‑wide catalysts.  
-
-- **Rating system needs refinement** – The “Market Foresight” score of 1/100 (neutral) is unhelpful; a calibrated 0‑100 scale that reflects actual upside probability would better guide conviction sizing and stop‑loss placement.  
-
-- **Learning loop is broken** – Recent runs show value swings (e.g., $230,782 → $232,122) but no systematic debrief; without recording why VRT fell 12% or why SOFI surged 8%, we cannot adjust conviction thresholds or data filters.  
-
-- **Redundant research persists** – The same tickers (NVDA, PLTR, SOFI, TEM, VRT) appear in every run without fresh analysis; re‑evaluating them with the latest earnings releases and news would prevent re‑inventing the wheel and improve alpha.  
-
-- **Actionable improvement #1 – Populate the thesis journal** for every recommendation (entry price, target, stop‑loss, conviction rating, outcome) to enable post‑mortem calibration and reduce false‑positive rates.  
-
-- **Actionable improvement #2 – Implement 8‑12% trailing stop‑losses** on all high‑volatility positions (VRT, PLTR, TEM) and enforce automatic alerts when a stop is hit, ensuring risk is actively managed.  
-
-- **Actionable improvement #3 – Sort active recommendations by event impact** (earnings date, news volume, % price change) so the most material movers surface first, allowing rapid repositioning and reducing opportunity cost of idle cash.  
-
-- **Actionable improvement #4 – Expand the universe** beyond current holdings to include new, high‑conviction ideas (e.g., AI‑chip leaders, cloud‑services firms) while still respecting the 80‑90% deployment target, thereby lowering concentration risk and capturing broader market upside.  
-
-- **Actionable improvement #5 – Tighten data freshness checks** (real‑time price feeds, options chain availability) and integrate a “data health” flag that automatically suppresses recommendations with stale or missing data, directly addressing the PLTR and options‑chain issues reported.  
-
-- **Actionable improvement #6 – Refine the rating system** to include sub‑scores for conviction, data freshness, and event relevance, giving a clearer picture of why an 8/10 pick performed well or poorly and guiding future calibration.  
-
-These points synthesize the feedback, the empty thesis journal, the memory‑insight run‑value volatility, and the concrete steps outlined in the “Learning History” to create a focused, actionable roadmap for the next run.
-
-## Run: 2026-07-21 19:01:37 ET
-**Self‑Reflection (12 bullets)**  
-
-- **What Worked Well** – The **SOFI** long‑term recommendation (8/10) was the only pick that delivered a clear upside (+8.23%) and was supported by a solid earnings beat and options‑chain data, showing that the **event‑driven thesis** (Q2 earnings + strong subscriber growth) was correctly identified.  
-
-- **What Didn’t Work** – The **PLTR** recommendation (8/10) used a stale price of $131.74 (≈ 5.5% below the current $139.47) and ignored the latest quarterly guidance, resulting in a misleading “high‑conviction” rating; the **TEM** and **VRT** picks also suffered from outdated price inputs and weak catalysts, producing large unrealized losses (‑2.31% and ‑12.16%).  
-
-- **Conviction Calibration** – All four 8/10 positions (PLTR, SOFI, TEM, VRT) were **false positives** except SOFI; the thesis journal is empty, so there is no historical record to verify whether the 8‑point conviction score reliably predicts outperformance.  
-
-- **Thesis Journal Review** – Since the **Thesis Journal** is blank, no past theses can be validated or refuted; however, the **memory‑insight run values** (≈ $233k, 65 % concentration) suggest that the underlying thesis about **high‑concentration, low‑turnover positions** has not been formally documented or stress‑tested.  
-
-- **Missed Opportunities** – The system limited recommendations to the existing 7 holdings, ignoring **new high‑conviction ideas** such as AI‑chip leaders (e.g., **NVDA**, **AMD**) or cloud‑services firms (e.g., **MSFT**, **cloud‑native SaaS plays**) that could have improved the 55 % cash deployment and reduced concentration risk.  
-
-- **Data Quality Issues** – **PLTR** price was stale (used $131.74 vs. market $139.47); the **options chain** for several tickers appears broken (missing bid/ask spreads), and the **price feed** for VRT showed a 12 % discrepancy between the quoted $348.38 and the actual trade price of $306.00, indicating a need for tighter real‑time data validation.  
-
-- **Risk Management** – No explicit stop‑loss levels were attached to the 8/10 recommendations; the **concentration metric** reported as 0 % conflicts with the memory‑insight figure of **65 %**, revealing a mis‑alignment in how portfolio weight is calculated and a risk of over‑exposure to a few stocks.  
+stocks.  
 
 - **Cash Deployment** – With **cash at 55 %** ($55k) of a $100k portfolio, the **80‑90 % deployment target** is far from met; the current 65 % concentration (per memory) suggests the idle cash is not being efficiently turned into higher‑return positions, creating an **opportunity cost** of roughly $40‑$50k in untapped upside.  
 
@@ -140,3 +103,32 @@ These concrete, data‑driven adjustments should raise the average rating from 5
 - **Add a “new‑stock” watchlist generator** that surfaces at least three high‑conviction ideas per month, diversifying the portfolio beyond the existing seven holdings.  
 
 These concrete steps should move the average rating toward the 9‑plus range seen in the best run, improve risk‑adjusted returns, and ensure the system truly learns from its past successes while avoiding the recurring pitfalls identified above.
+
+## Run: 2026-07-22 06:30:06 ET
+- **What Worked Well** – The **SOFI** long‑term option (8/10 conviction) posted a **+7.86 % gain** (price $16.29 → $17.57) on 2026‑07‑22, showing that the **LEAP construction using live Greeks, IV rank and expiration calendars** (as noted in the Learning History) can add real alpha when the underlying is liquid and volatility is reasonably high.  
+
+- **What Didn't Work** – **PLTR** was recommended at **$139.47** with an **8/10 conviction**, yet its actual price on 2026‑07‑22 was **$133.04** (‑4.61 % vs. the prior close). The **price data was stale** (last update > 24 h old) and the model ignored the **‑4.61 % loss** in its risk‑adjusted score, creating a false positive.  
+
+- **Conviction Calibration** – Of the four 8/10 “Active” picks (PLTR, SOFI, TEM, VRT), only **SOFI** (+7.86 %) outperformed; **VRT** lost **‑14.43 %** ( $348.38 → $298.10) and **PLTR** lost **‑4.61 %**, indicating the **conviction scores were over‑optimistic** and not well‑calibrated to recent price moves.  
+
+- **Thesis Journal Review** – The journal is currently **empty**, so no past theses can be validated or refuted. This lack of a feedback loop prevents proper calibration of conviction scores; the next run must **populate the journal with each recommendation’s rationale, outcome, and conviction rating** to spot systematic over‑ or under‑confidence.  
+
+- **Missed Opportunities** – The system limited recommendations to the **existing seven holdings**, ignoring **new‑stock ideas** that could improve diversification. With **cash at 55 %**, a **new‑stock watchlist generator** (as suggested in the Learning History) should surface at least **three high‑conviction candidates per month** (e.g., a high‑growth AI chip maker or a renewable‑energy storage play) to reduce opportunity cost.  
+
+- **Data Quality Issues** – **PLTR** price was **out‑of‑date**, **VRT** and **TEM** prices showed **‑14.43 % and ‑2.73 %** respectively, suggesting **price feeds may be lagging** or **options chains are broken** (per the 2026‑05‑07 feedback). Hallucinated facts (e.g., “high‑conviction” tags without supporting data) also appeared in earlier runs.  
+
+- **Risk Management** – No explicit **stop‑loss levels** were attached to the active positions, and **concentration risk** is misleading: although the portfolio reports “0.0 % concentration,” the **memory insight** shows **top holdings represent ~65 % of total value**, far exceeding the recommended **≤20 % per position**. This creates a hidden tail‑risk exposure.  
+
+- **Cash Deployment** – With **cash at 55 % ($54,926)** versus the **target 90 % exposure** (i.e., only 10 % cash), **$44,939** of capital is idle. Deploying this cash into **high‑conviction, low‑correlation ideas** (e.g., a diversified ETF or a small‑cap growth stock) would lower the **idle‑cash opportunity cost** and bring the portfolio closer to the 90 % investment target.  
+
+- **Memory & Learning** – The **recent run memory** (2026‑07‑21/22) shows **portfolio value fluctuating around $231–$232 k** with **concentration ~65 %**, indicating that **the system is not updating its internal view of position sizes** after each trade. This redundancy prevents the model from learning which holdings truly drive performance.  
+
+- **Process Improvements** –  
+  1. **Dynamic ticker ordering** – sort recommendations by **news impact, earnings date proximity, or projected price move** rather than alphabetical order to surface the most material ideas first.  
+  2. **Enforce concentration limits** – cap any single position at **≤20 % of total portfolio** and ensure **total exposure ≤90 %** (cash ≤10 %). Auto‑adjust cash to meet the 90 % target each rebalance.  
+  3. **Populate the thesis journal** after every recommendation, recording the **conviction score, rationale, actual outcome, and post‑trade price**; this creates a feedback loop for calibrating future scores.  
+  4. **Implement a “new‑stock” watchlist generator** that surfaces **≥3 high‑conviction tickers per month**, pulling from sectors with low current exposure (e.g., biotech, clean‑tech, semiconductor equipment).  
+  5. **Upgrade the rating system** – replace the blunt 1‑10 scale with a **probability‑based confidence metric** (e.g., expected return > 15 % with ≤5 % volatility) to make high‑conviction picks more objective.  
+  6. **Refresh price data** every **≤6 hours** and validate options chain integrity before generating LEAP recommendations, fixing the “broken options data” issue highlighted in the 2026‑05‑07 feedback.  
+
+These concrete, data‑driven adjustments should raise the average rating toward the **9‑plus range**, improve risk‑adjusted returns, and ensure the system truly **learns from past successes while avoiding repeat mistakes**.
