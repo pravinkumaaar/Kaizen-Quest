@@ -1,34 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ve been introduced.  
-
-- **Thesis journal not tracked** – no validation/refutation triggers were recorded for the PLTR thesis (“defense‑tech spending acceleration”); without a mandatory thesis log we cannot see that the thesis was refuted by the lack of new contract awards this quarter, leading to over‑confidence.  
-
-- **Data quality issues** – PLTR price used was outdated (previous close $139.47 vs $126.72 on 2026‑07‑22), options volatility surface was broken, and IV calculations for the 2027 $150 LEAP were inaccurate, producing misleading risk/reward assessments.  
-
-- **Conviction calibration false positives** – five picks with 8/10 conviction (NVDA, PLTR, SOFI, TEM, VRT) delivered mixed outcomes: NVDA +2.72% (good), PLTR –9.14%, TEM –5.16%, VRT –13.97% (all negative), indicating that high conviction without robust data validation yields false positives.  
-
-- **Market foresight rating too neutral** – a 1/100 score ignored recent macro catalysts (e.g., Fed rate‑cut expectations) that could boost high‑growth tech; the rating should be dynamic, tied to quantitative sentiment scores rather than a static neutral label.  
-
-- **Learning engine too generic** – “what is a LEAP” was replaced by a portfolio‑specific IV crush analysis for the PLTR 2027 $150 call (e.g., IV impact if underlying expires at $135 vs $145 vs $160); this concrete, ticker‑specific learning should be applied to every recommendation.  
-
-- **Memory usage stagnant** – recent runs repeated the same tickers without new insights; building a “memory bank” that logs thesis outcomes, conviction changes, and learning takeaways will prevent redundant research and enable iterative improvement.  
-
-- **Opportunity cost from narrow scope** – by restricting recommendations to existing holdings, we missed an asymmetric play in **Advanced Micro Devices (AMD)** (price $115, +12% YTD, strong AI‑chip demand) that could have added 15‑20% upside to the portfolio.  
-
-- **Process improvement checklist** – adopt the five concrete rules from the “RECENT RUN MEMORY” list (mandatory thesis tracking, conviction‑via‑data coupling, external discovery, stop‑loss auto‑trigger, applied learning engine) to raise the average rating from 5.7/10 toward 8+ and ensure consistent, high‑quality analysis moving forward.
-
-## Run: 2026-07-22 13:15:07 ET
-- **NVDA** @ $207.14 (entry $203.60) posted a **+3.12%** gain in the latest run, confirming that the high‑conviction “AI‑chip demand” thesis was accurate and that 8/10 confidence was well‑calibrated.  
-- **PLTR** @ $139.47 (entry $125.10) fell **‑10.30%**, a clear false positive; the “digital‑ads recovery” thesis lacked recent earnings support, showing conviction mis‑alignment.  
-- **SOFI** @ $16.29 (entry $16.00) rose **+5.13%**, a true positive where the “fintech rebound” thesis matched solid quarterly user‑growth metrics.  
-- **TEM** @ $50.22 (entry $52.50) dropped **‑5.87%**, another false positive; the “semiconductor cycle bottom” thesis ignored recent supply‑chain constraints, revealing a pattern of over‑optimistic sector bets.  
-- **VRT** @ $348.38 (entry $312.45) fell **‑13.53%**, the worst performer; the “clean‑energy growth” thesis lacked fresh policy catalyst confirmation, highlighting a need for tighter news‑driven validation.  
-- **Cash deployment** is sub‑optimal: **55% cash** (~$55k) sits idle versus the 90% target, representing an opportunity cost of roughly **$45k** in potential upside if allocated to high‑conviction ideas such as AMD or new AI‑related names.  
-- **Concentration risk** is misleading: the report shows 0% concentration, yet the recent run memory records **64.8% concentration** in a few tickers (NVDA, PLTR, SOFI, TEM, VRT), indicating the system is not correctly aggregating holdings and hides hidden risk.  
-- **Stop‑losses** were not auto‑triggered for the losing positions (PLTR, TEM, VRT), allowing drawdowns beyond the 8/10 conviction threshold; implementing a dynamic 8% trailing stop‑loss would protect capital and improve risk management.  
-- **Data quality issues** include stale pricing for **PLTR** (April 2025 data) and a broken **options chain** for several tickers, causing inaccurate payoff calculations and misleading confidence scores.  
-- The **thesis journal** is currently empty, yet memory insights repeatedly stress the need for a “memory bank” that logs thesis outcomes; without it we cannot see which theses were validated (e.g., NVDA AI demand) versus refuted (e.g., VRT clean‑energy), limiting conviction calibration.  
+ it we cannot see which theses were validated (e.g., NVDA AI demand) versus refuted (e.g., VRT clean‑energy), limiting conviction calibration.  
 - **Missed opportunity**: **Advanced Micro Devices (AMD)** at $115 (+12% YTD) was excluded because the recommendation engine limited suggestions to existing holdings; a 5% position could have added an estimated **15‑20% portfolio upside**.  
 - **Process improvements**: adopt the five‑point checklist (mandatory thesis tracking, conviction‑via‑data coupling, external discovery, auto‑triggered stop‑loss, applied learning engine) to systematically raise the average rating from 5.7/10 toward 8+ and ensure consistent, high‑quality analysis.
 
@@ -144,3 +116,37 @@ ve been introduced.
 
 - **Overall takeaway:**  
   - The **strong execution** in the 9.2/10 run proved the model can incorporate portfolio weights and produce nuanced option explanations, but **systemic gaps** in data freshness, risk controls, and universe breadth are preventing consistent, high‑conviction performance. Addressing the five‑point checklist (data refresh, stop‑loss automation, concentration monitoring, external universe expansion, thesis logging) will turn the solid foundation into a **reliably superior, calibrated recommendation engine**.
+
+## Run: 2026-07-22 19:09:25 ET
+- **Strong execution on the 9.2/10 run (2026‑05‑07)** – the report correctly weighted the $99,741 portfolio, highlighted the $54,857 cash position (55 % of total) and produced nuanced option explanations for **SOFI** (entry $16.29, exit $17.06, +4.71 %) and **TEM** (entry $50.22, exit $46.83, –6.75 %). The earnings‑risk flag and portfolio‑rebalance summary showed the model can incorporate existing holdings.
+
+- **Stale price data for PLTR** – the recommendation listed **PLTR** at $139.47 with an 8/10 conviction, yet the underlying price was outdated (previous close $125.02) causing a misleading –10.36 % P&L. This reflects a data‑freshness gap that must be fixed.
+
+- **Limited universe scope** – all recent recommendations (PLTR, SOFI, TEM, VRT) were drawn only from the existing 7‑position portfolio, ignoring higher‑conviction external ideas such as **AMD** (price $135, 7/10 conviction) and **META** (price $315, 7/10 conviction) that the memory insights flagged as “new opportunities.” This constrained the 90 % cash‑deployment target.
+
+- **Conviction calibration failure** – out of four 8/10 picks in the latest run, only **SOFI** (+4.71 %) outperformed; **PLTR** (‑10.36 %), **TEM** (‑6.75 %) and **VRT** (‑13.56 %) all lost value, indicating a high false‑positive rate. The thesis journal is empty, so we have no historical record to adjust conviction scores.
+
+- **Missing thesis log** – the “Thesis Journal” section is blank, preventing post‑mortem analysis of hypotheses (e.g., “PLTR will rebound after earnings”) and making it impossible to calibrate conviction levels over time.
+
+- **Cash deployment below target** – with 55 % cash ($54,857) idle, the model fell far short of the 90 % cash‑deployment goal. No systematic allocation (e.g., $5k to AMD, $4k to META) was executed, creating a large opportunity cost.
+
+- **Stop‑loss and risk controls absent** – the report never set or triggered stop‑losses for the losing positions (VRT, TEM, PLTR). Without automated stop‑losses, the portfolio remains exposed to tail‑risk events, contradicting the 1/100 market‑foresight rating.
+
+- **Concentration risk hidden** – although the summary shows 0 % concentration, the actual position sizes (e.g., 306 SOFI shares vs 28 VRT shares) create uneven exposure; a single large move in VRT could disproportionately affect the $99,741 portfolio.
+
+- **Options data broken** – the “options data was broken” note from the 9.2/10 run indicates missing or incorrect Greeks/chain data, which undermines the credibility of the option recommendations and must be remedied.
+
+- **Redundant research cycles** – the memory insights show repeated analysis of the same tickers (PLTR, SOFI) without new catalysts, suggesting the system re‑researches without adding fresh insight, inflating effort without improving output quality.
+
+- **Generic market‑foresight rating** – a 1/100 “neutral” foresight score is uninformative; a calibrated rating (e.g., 30 % probability of a 10 % market rally) would help prioritize asymmetric plays and avoid vague suggestions.
+
+- **Insufficient new‑stock scouting** – the watchlist section remained empty, missing potential high‑impact ideas such as **NVDA** (upcoming GPU demand) or **TSLA** (FSD rollout), which could have improved the 90 % cash‑deployment target.
+
+- **Actionable improvement checklist**:  
+  1. **Data refresh pipeline** – automate real‑time price and options chain updates for all tickers.  
+  2. **Thesis logging** – record hypothesis, conviction score, expected move, and actual outcome for every recommendation.  
+  3. **Universe expansion** – integrate external high‑conviction ideas (AMD, META, NVDA) and compute position sizes to hit the 90 % cash‑deployment goal.  
+  4. **Stop‑loss automation** – set trailing stops (e.g., 8 % trailing) for all active positions and trigger alerts when breached.  
+  5. **Concentration monitoring** – enforce a maximum single‑position weight (e.g., ≤15 % of portfolio) and rebalance automatically.  
+
+- **Learning trajectory** – the progression from a 4/10 to a 9.2/10 rating shows the model can produce high‑quality, nuanced analysis when data and portfolio context are correctly incorporated; systematic fixes to data freshness, thesis logging, and cash deployment will convert this solid foundation into a consistently superior recommendation engine.
