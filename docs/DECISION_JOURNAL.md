@@ -1207,3 +1207,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-22 | SE | BUY | $68.00 | $23056.00 | 9/10 | Active | - | Why: Deep‑research DCF and peer‑multiple analysis show Sea Ltd is positioned to  |
 | 2026-07-22 | COMP | BUY | $30.00 | $23056.00 | 8/10 | Active | - | Why: Deep‑research shows Compass is a leading real‑estate technology platform wi |
 | 2026-07-22 | PPL | BUY | $45.00 | $23056.00 | 8/10 | Active | - | Why: Deep‑research indicates Phillips 66 is well‑positioned to benefit from high |
+| 2026-07-22 | PAGS | BUY | $12.50 | $21.00 | 9/10 | Active | - | Why: PAGS is a leading digital‑payments platform in Brazil with an estimated 202 |
+| 2026-07-22 | CPAY | BUY | $45.00 | $78.00 | 8/10 | Active | - | Why: CPAY is a high‑growth digital‑advertising and analytics firm with 2026 reve |
+| 2026-07-22 | TDG | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: TDG is a premier aerospace component supplier with high‑margin products, st |
