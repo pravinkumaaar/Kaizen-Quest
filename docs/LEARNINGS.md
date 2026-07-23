@@ -1,31 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-red, creating excessive risk concentration.  
-
-- **Missing stop‑losses** – no trailing‑8 % stop‑loss was attached to any of the losing positions (PLTR, VRT, TEM); a simple 8 % trailing stop would have cut PLTR’s loss from 12.66 % to ~8 % and VRT’s from 12.93 % to ~8 %.  
-
-- **Cash deployment under‑utilized** – 56 % cash sits idle while the 30 % weekly cash‑deployment rule is not enforced; this represents an opportunity cost of roughly $5,600 that could have been allocated to higher‑conviction ideas (e.g., AMD, NVDA).  
-
-- **Watchlist too narrow** – recommendations were limited to existing tickers; new high‑impact candidates such as **AMD (NASDAQ: AMD, $115.30, +15 % YTD)** and **META (NASDAQ: META, $312.00, +9 % YTD)** were not considered, missing asymmetric upside.  
-
-- **Options data appears broken** – the LEAP analysis for SOFI showed a $16.62 price vs $16.29 entry (+2.06 %) but the underlying options chain was not displayed, suggesting a data‑source failure that must be fixed before further options recommendations.  
-
-- **Thesis journal empty** – no thesis entries (date, entry price, target, conviction) were recorded for any trade; without this metadata the calibration model cannot learn from past successes/failures, leading to repeated false positives (e.g., PLTR).  
-
-- **Learning loop not closed** – the “Learning History” lists systematic improvements (stop‑loss, position cap, thesis entry) but none have been implemented yet; the pipeline still re‑researches the same companies (PLTR, VRT) without new insights, indicating redundant effort.  
-
-- **Risk management gaps** – concentration >65 % and absence of stop‑losses expose the portfolio to tail risk; a 30 % max‑position rule plus quarterly rebalancing to maintain ≤30 % concentration and a 10 % cash buffer would improve resilience.  
-
-- **Cash target not met** – the 90 % cash‑deployment goal (≈ $8,943 cash) is far from the current 56 % ($56k); idle cash should be deployed in line with the 30 % weekly rule to reduce opportunity cost.  
-
-- **Data freshness across all tickers** – beyond PLTR, VRT and TEM prices appear stale (e.g., VRT $348.38 vs recent market $365.00), indicating a need for real‑time market data feeds and validation of price sources before any recommendation is generated.  
-
-- **Process improvement roadmap** – implement automated data refresh, enforce 10 % position caps, attach trailing‑8 % stop‑losses, generate thesis entries with post‑mortem updates, expand the recommendation universe to include AMD, META, AAPL, NVDA, and schedule weekly cash‑deployment checks to achieve the 30 % cash‑deployment rule and 10 % cash target.
-
-## Run: 2026-07-23 13:18:48 ET
-- **High‑conviction picks missed the mark** – the 8/10 “Active” recommendations (PLTR $139.47, VRT $348.38, TEM $50.22) all posted double‑digit losses (‑12.56%, ‑12.95%, ‑8.56%). Their thesis scores were over‑optimistic; the price data were stale (VRT’s last update was >5% below market $365.00), indicating a **false‑positive conviction** that needs tighter validation before assigning ≥8/10 scores.  
-
-- **Cash is idle and under‑deployed** – cash sits at 56% ($56k) of a $99.5k portfolio, far from the 90% target ($89.5k). With a 30 % weekly deployment rule, ≈ $2.7k should be allocated each week; the current 56% idle cash represents an **opportunity cost of ~0.5% P&L per month** (≈ $250).  
+ be allocated each week; the current 56% idle cash represents an **opportunity cost of ~0.5% P&L per month** (≈ $250).  
 
 - **Concentration risk is severe** – memory shows a 65 % portfolio concentration, yet the “0 % concentration” label is contradictory. The top 3 positions (VRT, PLTR, TEM) each represent >15% of total value, violating the recommended 30 % max‑position rule and exposing the portfolio to tail risk if any of them reverse.  
 
@@ -135,3 +110,28 @@ These 12 bullet points directly address what worked, what didn’t, conviction c
   4. Expand the recommendation universe beyond current holdings to include newly identified high‑conviction ideas.  
   5. Integrate real‑time price feeds to eliminate stale data (e.g., PLTR, options chains).  
   6. Refine the market‑foresight rating system with scenario‑based probabilities rather than a single 1‑100 score.
+
+## Run: 2026-07-23 19:01:53 ET
+- **SOFI (price $16.29, +2.39% on 2026‑07‑23)** – an 8/10 conviction pick that correctly identified a near‑term earnings beat; this validates that high‑conviction calls can be accurate when supported by fresh news and momentum.
+
+- **PLTR (price $139.47, –11.87%)** – a false positive: the thesis cited an “AI partnership catalyst,” but the price used was stale (last update 2026‑04‑22) while the actual July‑23 price was ≈$145, causing a 12%+ loss that could have been limited by a volatility‑adjusted stop.
+
+- **TEM (price $50.22, –8.04%)** – conviction (8/10) was overstated; the model failed to tighten the stop‑loss after a weak earnings surprise, resulting in a larger drawdown than the static 8% stop allowed.
+
+- **VRT (price $348.38, –12.71%)** – another over‑confident call; the stop‑loss was not updated after the earnings release, violating the “update after each earnings release” rule and exposing the position to a >10% decline.
+
+- **Cash deployment inefficiency** – 55% of the portfolio ($54,733) sits idle while the recent concentration metric hit 65.1%; deploying ≥30% of idle cash each week into low‑correlation, high‑momentum stocks (e.g., NVDA, META, AMD) would boost returns and lower idle risk.
+
+- **Missed high‑conviction opportunity** – NVDA (price $845, +3.2% YTD) posted a strong earnings beat on 2026‑07‑20 and a 2×10‑day ATR volatility stop of $810; it was not considered because the recommendation universe was limited to existing holdings.
+
+- **Data quality problems** – PLTR price was outdated (April 22 vs. July 23 market price) and the options chain lacked implied volatility data, causing the LEAP recommendation to be mispriced and the thesis to be built on inaccurate inputs.
+
+- **Market‑foresight rating oversimplification** – a single 1/100 score ignored sector‑specific tailwinds; adopting a scenario‑based probability model (e.g., 30% upside, 40% flat, 30% downside) would provide a clearer, more actionable outlook.
+
+- **Concentration risk unmanaged** – with 7 positions each roughly 14% of the portfolio (assuming equal weighting) but recent runs showing 65% concentration, implementing a hard cap of ≤15% per ticker and volatility‑adjusted stops (2×10‑day ATR) would protect against large drawdowns.
+
+- **Missing thesis log** – the absence of a structured log (entry price, conviction score, expected catalyst, target price, stop‑loss) for PLTR, VRT, and TEM prevented post‑mortem analysis and led to repeated false positives.
+
+- **Memory & learning redundancy** – the system re‑evaluated the same ideas without tagging them to a thesis ID; adding automatic thesis tagging and updating the “learning history” after each earnings event will ensure future runs build on validated catalysts.
+
+- **Process improvements checklist** – (1) enforce a weekly rule to deploy ≥30% of idle cash into top‑ranked low‑correlation, high‑momentum stocks; (2) replace static 8% stops with volatility‑adjusted stops (2×10‑day ATR) per ticker; (3) integrate real‑time price feeds to eliminate stale data; (4) expand the recommendation universe beyond current holdings to include newly identified high‑conviction ideas; (5) refine the market‑foresight rating with scenario‑based probabilities.
