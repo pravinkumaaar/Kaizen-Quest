@@ -1214,3 +1214,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-23 | TICKER | BUY | $250.00 | $350.00 | 8/10 | Active | - | Why: Zscalerbenefits from the accelerating wave of AI‑enabled credential breache |
 | 2026-07-23 | TICKER | BUY | $250.00 | $285.00 | 7/10 | Active | - | Why: Gold remains a compelling hedge against persistent inflation and geopolitic |
 | 2026-07-23 | TICKER | BUY | $68.00 | $78.00 | 7/10 | Active | - | Why: Emerging markets are under‑represented in the portfolio and display higher  |
+| 2026-07-23 | AMAT | BUY | $118.00 | $27.00 | 8/10 | Active | - | Why: Applied Materials is the leading supplier of front‑end semiconductor manufa |
+| 2026-07-23 | BILI | BUY | $12.50 | $40.00 | 7/10 | Active | - | Why: BiliBili is a fast‑growing Chinese short‑video platform expanding into Sout |
+| 2026-07-23 | COHR | BUY | $85.00 | $35.00 | 8/10 | Active | - | Why: Coherent Corp supplies precision laser systems essential for advanced semic |
+| 2026-07-23 | EEM | BUY | $38.00 | $26.00 | 7/10 | Active | - | Why: EEM provides diversified exposure to high‑growth emerging economies that ar |
