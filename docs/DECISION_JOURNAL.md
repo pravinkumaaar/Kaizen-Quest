@@ -1221,3 +1221,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-23 | AFYA | BUY | $13.00 | $22.00 | 8/10 | Active | - | Why: Brazilian digital‑health platform AFYA (AFYA) is leveraging AI to modernize |
 | 2026-07-23 | BILI | BUY | $120.00 | $210.00 | 7/10 | Active | - | Why: Bilibili (BILI) is integrating generative AI into its content recommendatio |
 | 2026-07-23 | FCX | BUY | $38.00 | $55.00 | 7/10 | Active | - | Why: Freeport‑McMoRan (FCX) is a low‑cost copper miner positioned to benefit fro |
+| 2026-07-23 | COP | BUY | $115.00 | $165.00 | 5/10 | Active | - | Why: |
+| 2026-07-23 | BILI | BUY | $120.00 | $170.00 | 5/10 | Active | - | Why: |
+| 2026-07-23 | AMAT | BUY | $120.00 | $165.00 | 5/10 | Active | - | Why: |
