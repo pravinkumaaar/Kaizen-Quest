@@ -1210,3 +1210,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-22 | PAGS | BUY | $12.50 | $21.00 | 9/10 | Active | - | Why: PAGS is a leading digital‑payments platform in Brazil with an estimated 202 |
 | 2026-07-22 | CPAY | BUY | $45.00 | $78.00 | 8/10 | Active | - | Why: CPAY is a high‑growth digital‑advertising and analytics firm with 2026 reve |
 | 2026-07-22 | TDG | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: TDG is a premier aerospace component supplier with high‑margin products, st |
+| 2026-07-23 | TICKER | BUY | $70.00 | $105.00 | 9/10 | Active | - | Why: Applied Materials is a leading supplier of semiconductor manufacturing equi |
+| 2026-07-23 | TICKER | BUY | $250.00 | $350.00 | 8/10 | Active | - | Why: Zscalerbenefits from the accelerating wave of AI‑enabled credential breache |
+| 2026-07-23 | TICKER | BUY | $250.00 | $285.00 | 7/10 | Active | - | Why: Gold remains a compelling hedge against persistent inflation and geopolitic |
+| 2026-07-23 | TICKER | BUY | $68.00 | $78.00 | 7/10 | Active | - | Why: Emerging markets are under‑represented in the portfolio and display higher  |
