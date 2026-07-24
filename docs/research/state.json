@@ -1,10 +1,10 @@
 {
-  "total_runs": 445,
-  "last_run": "2026-07-24T10:39:21.723663",
+  "total_runs": 446,
+  "last_run": "2026-07-24T13:48:45.646925",
   "last_run_tickers": [
-    "HIMS",
-    "ASTS",
-    "RKLB"
+    "PLTR",
+    "SOFI",
+    "TEM"
   ],
   "research_queue": [],
   "global_facts": {}
