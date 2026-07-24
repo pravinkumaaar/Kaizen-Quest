@@ -1234,3 +1234,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-24 | ARW | BUY | $150.00 | $175.00 | 8/10 | Active | - | Why: Arw is a diversified industrial manufacturer with exposure to high‑growth e |
 | 2026-07-24 | PAGP | BUY | $13.00 | $19.00 | 9/10 | Active | - | Why: PAGP is a royalty‑based trust that directly benefits from rising commodity  |
 | 2026-07-24 | NTES | BUY | $110.00 | $165.00 | 7/10 | Active | - | Why: NetEase (NTES) is a leading Chinese internet services provider with a massi |
+| 2026-07-24 | STNE | BUY | $13.00 | $21600.00 | 9/10 | Active | - | Why: StoneCo (STNE) dominates Brazil’s QR‑code payment ecosystem and is expandin |
+| 2026-07-24 | AFYA | BUY | $12.00 | $21600.00 | 8/10 | Active | - | Why: Afya Ltd (AFYA) is rapidly adding private hospital beds and telehealth serv |
+| 2026-07-24 | BILI | BUY | $30.00 | $21600.00 | 8/10 | Active | - | Why: Bilibili (BILI) combines video, e‑sports, and AI‑enhanced recommendation en |
