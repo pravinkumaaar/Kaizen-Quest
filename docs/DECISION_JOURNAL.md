@@ -1224,3 +1224,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-23 | COP | BUY | $115.00 | $165.00 | 5/10 | Active | - | Why: |
 | 2026-07-23 | BILI | BUY | $120.00 | $170.00 | 5/10 | Active | - | Why: |
 | 2026-07-23 | AMAT | BUY | $120.00 | $165.00 | 5/10 | Active | - | Why: |
+| 2026-07-24 | NTES | BUY | $155.00 | N/A | 9/10 | Active | - | Why: NetEase (NTES) is a leading Chinese internet technology company with domina |
+| 2026-07-24 | AFYA | BUY | $12.00 | N/A | 8/10 | Active | - | Why: Afya Ltd. (AFYA) is a Brazilian health‑care provider benefiting from digita |
+| 2026-07-24 | AMAT | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Applied Materials (AMAT) supplies essential semiconductor manufacturing equ |
+| 2026-07-24 | BILI | BUY | $210.00 | N/A | 7/10 | Active | - | Why: Bilibili (BILI) is a leading Chinese short‑video and gaming platform with s |
