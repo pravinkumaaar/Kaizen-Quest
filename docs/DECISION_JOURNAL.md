@@ -1228,3 +1228,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-24 | AFYA | BUY | $12.00 | N/A | 8/10 | Active | - | Why: Afya Ltd. (AFYA) is a Brazilian health‑care provider benefiting from digita |
 | 2026-07-24 | AMAT | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Applied Materials (AMAT) supplies essential semiconductor manufacturing equ |
 | 2026-07-24 | BILI | BUY | $210.00 | N/A | 7/10 | Active | - | Why: Bilibili (BILI) is a leading Chinese short‑video and gaming platform with s |
+| 2026-07-24 | AFYA | BUY | $11.50 | $33.00 | 8/10 | Active | - | Why: AFYA is a leading Brazilian health‑care services firm with $1.0 B revenue a |
+| 2026-07-24 | NTES | BUY | $150.00 | $33.00 | 7/10 | Active | - | Why: NTES is a dominant Chinese internet technology and gaming company with $30  |
+| 2026-07-24 | PAGS | BUY | $15.00 | $40.00 | 8/10 | Active | - | Why: PAGS is a fast‑growing Brazilian fintech with $5.3 B revenue and $2.03 EPS  |
