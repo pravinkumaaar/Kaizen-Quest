@@ -1,26 +1,6 @@
 ...[older entries archived in HISTORY/]
 
- be allocated each week; the current 56% idle cash represents an **opportunity cost of ~0.5% P&L per month** (≈ $250).  
-
-- **Concentration risk is severe** – memory shows a 65 % portfolio concentration, yet the “0 % concentration” label is contradictory. The top 3 positions (VRT, PLTR, TEM) each represent >15% of total value, violating the recommended 30 % max‑position rule and exposing the portfolio to tail risk if any of them reverse.  
-
-- **Stop‑losses are absent** – none of the active recommendations list trailing‑8 % stop‑losses or any explicit exit rule. Without predefined stops, the portfolio remains vulnerable to the observed 10‑15% drawdowns in VRT and PLTR.  
-
-- **Data freshness is inconsistent** – beyond PLTR (old price), VRT ($348.38 vs $365.00) and TEM ($50.22 vs $53.00) prices are outdated by 3‑7 days. This stale‑price issue propagates to all valuation calculations, inflating risk and reducing recommendation accuracy.  
-
-- **Recommendation universe is too narrow** – the system only suggests securities already held (7 positions). No new ideas such as **AMD, META, AAPL, NVDA** were evaluated, missing asymmetric plays that could improve the 90 % cash‑deployment goal and diversify concentration.  
-
-- **Thesis journal is empty** – no past theses are recorded, so we cannot verify whether prior high‑conviction ideas (e.g., “PLTR will rebound after earnings”) were validated or refuted. The lack of a journal prevents learning from past successes/failures and calibrating conviction scores.  
-
-- **Portfolio rebalance summary is missing** – the latest run did not produce a rebalancing plan despite a 65 % concentration. A systematic quarterly rebalance to cap each position at 30 % and trim cash to the 10 % target would reduce risk and free capital for higher‑conviction ideas.  
-
-- **Learning section is superficial** – the recent “Learning History” notes generic fixes (30 % max‑position rule, 10 % cash buffer) without linking them to the specific tickers that violated those rules (VRT, PLTR). Future learning bullets should cite exact position breaches and tie them to actionable steps.  
-
-- **Process improvement roadmap needs automation** – implement a real‑time data feed (e.g., Alpaca/NASDAQ streaming) to eliminate stale prices, and schedule an automated weekly cash‑deployment check that allocates at least 30 % of idle cash to the highest‑conviction, low‑correlation stocks (e.g., NVDA, META).  
-
-- **Risk‑management checklist should be enforced** – enforce a 30 % max‑position cap, attach trailing‑8 % stop‑losses to every active recommendation, and require a minimum 10 % cash buffer before any new entry. This will protect against tail events and keep the portfolio within the target risk envelope.  
-
-- **Opportunity cost of “only‑from‑portfolio” logic** – by restricting recommendations to existing holdings, the model missed a **high‑beta, high‑growth opportunity in NVDA** (price $420, +12% YTD) that could have been added with a 5 % position size, improving the overall Sharpe ratio and moving the cash deployment metric closer to 90 %.  
+sition size, improving the overall Sharpe ratio and moving the cash deployment metric closer to 90 %.  
 
 These 12 bullet points directly address what worked, what didn’t, conviction calibration, data quality, risk management, cash deployment, memory/learning, and concrete process improvements for the next run.
 
@@ -135,3 +115,18 @@ These 12 bullet points directly address what worked, what didn’t, conviction c
 - **Memory & learning redundancy** – the system re‑evaluated the same ideas without tagging them to a thesis ID; adding automatic thesis tagging and updating the “learning history” after each earnings event will ensure future runs build on validated catalysts.
 
 - **Process improvements checklist** – (1) enforce a weekly rule to deploy ≥30% of idle cash into top‑ranked low‑correlation, high‑momentum stocks; (2) replace static 8% stops with volatility‑adjusted stops (2×10‑day ATR) per ticker; (3) integrate real‑time price feeds to eliminate stale data; (4) expand the recommendation universe beyond current holdings to include newly identified high‑conviction ideas; (5) refine the market‑foresight rating with scenario‑based probabilities.
+
+## Run: 2026-07-23 23:17:43 ET
+- **High‑conviction picks (8/10) under‑performed:** PLTR ($139.47, –11.97%), VRT ($348.38, –13.29%), TEM ($50.22, –8.38%) all showed negative returns despite “Active” 8/10 conviction scores, indicating poor conviction calibration.  
+- **Stale price data:** PLTR price used in the recommendation was outdated (feedback 2026‑04‑22‑2119), causing the –11.97% loss; the same issue appears in the “value” snapshot where PLTR’s price is not current.  
+- **Cash idle at 56%:** With $99,187 portfolio and $56% cash (~$55,500), only ~30% of idle cash was deployed in the last week, missing the target 30% weekly deployment rule and leaving ~$16.5k uninvested.  
+- **Concentration risk mis‑report:** Portfolio summary lists “Concentration: 0.0%,” yet memory shows 65.3% concentration on a few holdings, revealing a data‑reporting bug that masks true exposure.  
+- **Static stop‑losses too tight:** All active positions use a fixed 8% stop‑loss; VRT’s –13.29% loss breached this level, suggesting stops should be volatility‑adjusted (e.g., 2×10‑day ATR) rather than flat percentages.  
+- **Missing thesis log:** No structured thesis entry (entry price, conviction, catalyst, target, stop‑loss) exists for PLTR, VRT, TEM; this prevents post‑mortem analysis and repeats false positives.  
+- **Redundant research cycles:** The system re‑evaluated the same ideas (e.g., PLTR) without tagging them to a thesis ID, wasting analyst time and inflating memory usage.  
+- **Limited recommendation universe:** Recommendations only considered tickers already in the portfolio; no new high‑conviction ideas (e.g., emerging AI or clean‑energy plays) were introduced despite 90% cash‑deployment goal.  
+- **Options chain data broken:** Feedback on 2026‑05‑07 noted “options data was broken,” causing vague LEAP suggestions; fixing the options feed will improve specificity of option recommendations.  
+- **Market‑foresight rating too blunt:** A –1/100 rating is neutral but provides no scenario nuance; adding probability‑weighted scenarios (e.g., bull/bear/neutral) would give clearer forward‑looking insight.  
+- **Learning section under‑utilized:** The “learning” component was weak in early runs (4/10 rating) but improved later; still, it often repeats generic advice rather than linking new knowledge directly to specific tickers or catalysts.  
+- **Opportunity cost from narrow universe:** By excluding non‑portfolio stocks, the model missed a potential high‑momentum, low‑correlation addition (e.g., a cloud‑services firm with >20% YTD gain) that could have boosted returns and reduced cash drag.  
+- **Process improvement checklist needed:** Implement (1) weekly ≥30% cash deployment into top‑ranked low‑correlation, high‑momentum stocks; (2) volatility‑adjusted stops; (3) real‑time price feeds to eliminate stale data; (4) automatic thesis tagging and update “learning history” after each earnings event; (5) refine market‑foresight rating with scenario probabilities.
