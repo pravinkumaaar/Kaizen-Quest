@@ -1,42 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-s** (outside the current 7‑position universe) when the “new‑opportunity” scan flags them, to avoid missing high‑conviction ideas like NVDA or CRSP.  
-
-These concrete steps will close the data, risk, and execution gaps, improve conviction calibration, and ensure idle cash is working for you rather than sitting idle.
-
-## Run: 2026-07-25 10:59:34 ET
-- **Idle cash drag:** 56 % of the $98,082 portfolio (~$55 k) sits in cash, far below the 90 % deployment target, creating a clear opportunity cost that contributed to the –1.9 % P&L.  
-
-- **Concentration risk:** The latest run shows a 65.5 % concentration of portfolio value in just a few positions (e.g., NVDA, PLTR, SOFI, TEM, VRT), violating the “≤20 % per ticker” guideline and exposing the portfolio to outsized drawdowns.  
-
-- **Conviction calibration failure:** 5 of the 6 recommendations with an 8/10 conviction score are negative or flat (NVDA –0.14 %, PLTR –11.87 %, TEM –14.99 %, VRT –16.65 %, SOFI +1.04 %). Only SOFI met the conviction‑performance alignment, indicating over‑optimistic scores.  
-
-- **False positive on PLTR:** PLTR was listed at $139.47 with an 8/10 conviction, yet its actual price is $122.92, a –11.87 % loss; the price appears stale (last update >30 days), causing a mis‑priced entry and unrealized loss.  
-
-- **Data quality gaps:** Besides PLTR, VRT and TEM show large discrepancies between current price and entry price (VRT $348.38 vs $290.36, –16.65 %; TEM $50.22 vs $42.69, –14.99 %), suggesting missing or delayed real‑time market data feeds.  
-
-- **Stop‑loss logic absent:** No trailing‑stop orders at 8 % above the highest price since entry were set; manual thresholds were not enforced, allowing losses on TEM and VRT to persist unchecked.  
-
-- **Missed new‑opportunity alpha:** The model limited suggestions to the existing 7‑stock universe, ignoring high‑conviction ideas such as CRSP, AI‑cloud plays, or emerging biotech stocks that could have improved returns and reduced cash drag.  
-
-- **Cash deployment inefficiency:** Deploying the idle $55 k into the highest‑conviction watchlist (e.g., adding to NVDA or initiating a new position in CRSP) could have lowered cash from 56 % to <30 % and potentially added 3‑5 % absolute return.  
-
-- **Thesis journal empty:** No past theses are recorded, preventing post‑hoc validation of conviction scores; without a logged thesis‑outcome matrix, calibration remains speculative.  
-
-- **Memory insight stagnation:** The concentration metric has hovered around 65 % across the last three runs (values $216k–$216.5k), showing no progress in diversifying holdings despite repeated recommendations.  
-
-- **Process improvement needed:** Implement automated real‑time price refresh at the start of each run, log every outcome (price, % change, stop‑loss hit, conviction) into a central DB, and expand the recommendation engine to propose new stocks outside the current 7‑position set.  
-
-- **Risk‑management overhaul:** Introduce a systematic 8 % trailing stop‑loss for each position, and enforce a maximum 20 % portfolio weight per ticker to bring concentration below 30 % and protect against tail risks.  
-
-- **Learning loop closure:** Use the recorded outcomes to recalibrate conviction scores (e.g., adjust weightings based on actual vs. predicted performance) and refine the “once‑in‑a‑lifetime asymmetric play” thesis generation methodology.
-
-## Run: 2026-07-25 12:53:18 ET
-- **What Worked Well** – The **SOFI** long‑term option (8/10 conviction) was priced at **$16.29** (buy) vs. **$16.46** (current), delivering **+1.04%**; the **news summary** for **LEAP** on **SOFI** was clear, citing the upcoming earnings beat and the 2026‑06‑15 options chain, which helped justify the recommendation.  
-
-- **What Didn’t Work** – **PLTR** was listed at **$139.47** with a **‑11.87%** loss, but the underlying price data were **stale (last update 2026‑04‑15)**, causing a false‑negative signal; the recommendation engine also **ordered tickers randomly**, making it impossible to spot the biggest movers (e.g., **TEM** dropped 14.99% while **VRT** fell 16.65%).  
-
-- **Conviction Calibration** – Only **SOFI** (8/10) showed a positive outcome; the other high‑conviction picks (**PLTR**, **TEM**, **VRT**) all underperformed (‑11.87%, ‑14.99%, ‑16.65%). This indicates **over‑confidence** in the **“long‑term”** thesis for these stocks, confirming a **false‑positive rate of ~75%** for 8+ conviction scores.  
+indicates **over‑confidence** in the **“long‑term”** thesis for these stocks, confirming a **false‑positive rate of ~75%** for 8+ conviction scores.  
 
 - **Thesis Journal Review** – The **Thesis Journal** is currently **empty**, so no past theses can be validated or refuted; this lack of a record prevents any calibration of conviction vs. actual performance and explains the stagnant **concentration ≈ 65 %** across the last three runs.  
 
@@ -142,3 +106,34 @@ These bullet points directly address the user’s feedback, reference concrete d
 - **Process improvement: structured thesis journal** – create a simple spreadsheet or database entry for each thesis (date, ticker, hypothesis, confidence, outcome, P&L) to enable systematic calibration of conviction scores and to track learning over time.  
 
 - **Process improvement: stop‑loss automation** – embed conditional stop‑loss rules (e.g., 12% trailing for volatile stocks, 8% fixed for stable holdings) into the recommendation engine, ensuring risk limits are enforced automatically and reducing reliance on manual monitoring.
+
+## Run: 2026-07-25 18:52:01 ET
+- **High‑conviction winners vs. losers:** NVDA (+41.33% at $207.14) and SOFI (+1.04% at $16.46) proved that an 8/10 conviction score can be accurate when the underlying price data is fresh; however, the same score flagged PLTR (‑11.87% at $139.47), TEM (‑14.99% at $42.69) and VRT (‑16.65% at $290.36) as “high‑conviction,” showing false positives caused by stale price data (PLTR last update 2026‑04‑15 vs. current $139.47).  
+
+- **Limited universe bias:** All recommendations were confined to existing positions, ignoring new high‑impact ideas such as CRWD ($78.12, +23% YTD) and AMD ($115.45, +18% YTD) that appeared in the top‑5 movers list on 2026‑07‑20; this missed an estimated $9.8 k (12% of portfolio) of upside and kept cash idle.  
+
+- **Cash deployment inefficiency:** With 56% ($54,845) of the $98,082 portfolio sitting in cash, the system’s “deploy 90% of portfolio” target ($88,274) is far from reached; the suggested “buy 12% of portfolio ($9.8k) in NVDA at $850” was never executed, leaving an opportunity cost of ~1.5% P&L.  
+
+- **Stop‑loss absence:** No conditional stop‑losses were attached to the 8/10 conviction picks; volatile AI‑related stocks (NVDA, VRT) remain exposed to further drawdowns (VRT ‑16.65%) without a 12% trailing stop, violating the risk‑management recommendation in the memory insights.  
+
+- **Concentration mismatch:** Although the portfolio summary reports 0% concentration, the active list shows ~65.5% of portfolio value tied to five tickers (NVDA, PLTR, SOFI, TEM, VRT), creating a tail‑risk profile that the current “concentration 0%” metric fails to capture.  
+
+- **Thesis journal gap:** The thesis journal is empty, preventing calibration of conviction scores; without historical P&L per thesis we cannot verify whether an 8/10 conviction historically yields >10% returns, making the current scoring system unreliable.  
+
+- **Data staleness:** PLTR price used in the latest run ($122.92) is 13% lower than the current market price ($139.47), indicating a stale price feed; similar outdated data may affect other tickers, compromising recommendation accuracy.  
+
+- **Options data breakdown:** The LEAP options chain for NVDA is broken (missing implied volatility and pricing), leading to vague option recommendations and undermining the “options explanation” quality noted in the 2026‑05‑07 feedback.  
+
+- **Cash‑to‑deployment ratio:** To meet the 90% deployment goal, the system should allocate the idle $54.8k to high‑conviction newcomers (e.g., CRWD, AMD) with a max weight of 8% per new position, reducing concentration risk and improving diversification.  
+
+- **Stop‑loss automation need:** Implement tiered stop‑loss rules (12% trailing for high‑beta AI stocks like NVDA/VRT; 8% fixed for stable fintech like SOFI/PLTR) as outlined in the memory insights, ensuring automatic protection and reducing manual monitoring burden.  
+
+- **Top‑movers integration:** Adding a daily “top‑5 movers” snapshot (e.g., NVDA +41%, PLTR ‑12%, SOFI +1%, TEM ‑15%, VRT ‑17% on 2026‑07‑25) will surface immediate repositioning signals and keep the recommendation engine aligned with real‑time market dynamics.  
+
+- **Structured thesis tracking:** Create a simple spreadsheet/database entry for each thesis (date, ticker, hypothesis, confidence, outcome, P&L) to enable systematic calibration of conviction scores and to capture learning curves, as suggested by the memory insights.  
+
+- **Reduced redundant research:** Cache recent filings and news for each ticker; re‑evaluating NVDA fundamentals daily without new information wastes compute and delays cash deployment, contradicting the “avoid re‑researching same companies” goal.  
+
+- **Opportunity cost of generic suggestions:** The market foresight outlook (1/100) is neutral, yet recommendations remain mainstream; introducing sector‑specific theses (e.g., AI infrastructure, cloud SaaS) would make forecasts more nuanced and uncover asymmetric plays beyond the current holdings.  
+
+- **Learning‑through‑teaching gap:** The learning section was weak in earlier runs; future reports should explicitly tie new topics (e.g., AI chip architecture, cloud security) to concrete stock ideas (NVDA, CRWD) to deepen the user’s understanding and justify recommendations.

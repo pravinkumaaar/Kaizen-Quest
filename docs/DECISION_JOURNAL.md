@@ -1245,3 +1245,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-25 | BBAI | BUY | $2.76 | N/A | 7/10 | Active | - | Why: Baidu reinvents itself as AI-native mobile platform in China. Down 25% but  |
 | 2026-07-25 | EEM | BUY | $38.00 | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US-centric. EEM provides diversification into underv |
 | 2026-07-25 | TICKER | BUY | $122.92 | $20.00 | 8/10 | Active | - | Why: The stock is trading at a significant discount to its intrinsic value, with |
+| 2026-07-25 | COHR | BUY | $12.00 | $22.00 | 9/10 | Active | - | Why: Coherus Biosciences is developing low‑cost biosimilars targeting high‑margi |
+| 2026-07-25 | SALM | BUY | $12.00 | $18.00 | 8/10 | Active | - | Why: Sally Beauty (SALM) sits at the intersection of discretionary spending and  |
+| 2026-07-25 | GLD | BUY | $210.00 | $235.00 | 8/10 | Active | - | Why: Gold remains a compelling inflation hedge as CPI expectations stay elevated |
