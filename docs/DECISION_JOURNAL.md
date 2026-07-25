@@ -1237,3 +1237,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-24 | STNE | BUY | $13.00 | $21600.00 | 9/10 | Active | - | Why: StoneCo (STNE) dominates Brazil’s QR‑code payment ecosystem and is expandin |
 | 2026-07-24 | AFYA | BUY | $12.00 | $21600.00 | 8/10 | Active | - | Why: Afya Ltd (AFYA) is rapidly adding private hospital beds and telehealth serv |
 | 2026-07-24 | BILI | BUY | $30.00 | $21600.00 | 8/10 | Active | - | Why: Bilibili (BILI) combines video, e‑sports, and AI‑enhanced recommendation en |
+| 2026-07-25 | CRWD | BUY | $340.00 | N/A | 9/10 | Active | - | Why: CrowdStrike delivers a cloud‑native XDR platform that uses AI to provide re |
+| 2026-07-25 | AMAT | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Applied Materials supplies the essential equipment for semiconductor fabric |
+| 2026-07-25 | PAGS | BUY | $30.00 | N/A | 7/10 | Active | - | Why: PAGS is a high‑growth payment‑processing platform that enables merchants to |
