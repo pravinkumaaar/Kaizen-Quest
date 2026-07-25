@@ -1240,3 +1240,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-25 | CRWD | BUY | $340.00 | N/A | 9/10 | Active | - | Why: CrowdStrike delivers a cloud‑native XDR platform that uses AI to provide re |
 | 2026-07-25 | AMAT | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Applied Materials supplies the essential equipment for semiconductor fabric |
 | 2026-07-25 | PAGS | BUY | $30.00 | N/A | 7/10 | Active | - | Why: PAGS is a high‑growth payment‑processing platform that enables merchants to |
+| 2026-07-25 | COHR | BUY | $56.00 | N/A | 8/10 | Active | - | Why: Coherent Inc. makes laser/optical systems critical for semiconductor lithog |
+| 2026-07-25 | KLAC | BUY | $480.00 | N/A | 8/10 | Active | - | Why: KLA Corporation provides process control and yield management systems for c |
+| 2026-07-25 | BBAI | BUY | $2.76 | N/A | 7/10 | Active | - | Why: Baidu reinvents itself as AI-native mobile platform in China. Down 25% but  |
+| 2026-07-25 | EEM | BUY | $38.00 | N/A | 7/10 | Active | - | Why: Your portfolio is 100% US-centric. EEM provides diversification into underv |

@@ -3,9 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **CRWD** | $340.00 | TBD | 9/10 |  Active  |  $340.00  |  +0.0%  | Medium (3‑6 months) until post‑earnings momentum stabilizes | Watchlist |
-| 2 | **AMAT** | $115.00 | TBD | 8/10 |  Active  |  $115.00  |  +0.0%  | Medium (4‑8 weeks) around earnings and guidance release | Watchlist |
-| 3 | **PAGS** | $30.00 | TBD | 7/10 |  Active  |  $30.00  |  +0.0%  | Medium (2‑4 months) until earnings and guidance materialize | Watchlist |
+| 1 | **COHR** | $56.00 | TBD | 8/10 |  Active  |  $56.00  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 2 | **KLAC** | $480.00 | TBD | 8/10 |  Active  |  $480.00  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 3 | **BBAI** | $2.76 | TBD | 7/10 |  Active  |  $2.76  |  +0.0%  | Swing 2-8wk | Watchlist |
+| 4 | **EEM** | $38.00 | TBD | 7/10 |  Active  |  $38.00  |  +0.0%  | Medium 3-12mo | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
