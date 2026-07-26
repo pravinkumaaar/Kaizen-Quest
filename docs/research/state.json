@@ -1,10 +1,10 @@
 {
-  "total_runs": 456,
-  "last_run": "2026-07-25T23:07:22.813624",
+  "total_runs": 457,
+  "last_run": "2026-07-26T02:35:24.442594",
   "last_run_tickers": [
-    "NBIS",
-    "APLD",
-    "VRT"
+    "RKLB",
+    "ASTS",
+    "HIMS"
   ],
   "research_queue": [],
   "global_facts": {}
