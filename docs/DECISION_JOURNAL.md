@@ -1252,3 +1252,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-26 | COHR | BUY | $35.00 | $65.00 | 8/10 | Active | - | Why: Coherent (COHR) supplies ultra‑precise laser and optics systems that are es |
 | 2026-07-26 | TSM | BUY | $150.00 | $240.00 | 8/10 | Active | - | Why: TSMC remains the world’s leading foundry with a 35% market share in advance |
 | 2026-07-26 | AMAT | BUY | $115.00 | $190.00 | 8/10 | Active | - | Why: Applied Materials (AMAT) is the premier supplier of equipment for depositio |
+| 2026-07-26 | AFYA | BUY | N/A | $21.00 | 9/10 | Active | - | THESIS: Afya is positioned to capture accelerated digital‑health adoption in Bra |
+| 2026-07-26 | BILI | BUY | N/A | $250.00 | 8/10 | Active | - | THESIS: Bilibili’s robust user growth and improving monetization, together with  |
+| 2026-07-26 | NTES | BUY | N/A | $250.00 | 8/10 | Active | - | THESIS: NetEase’s sustained gaming revenue growth, AI‑driven cloud services, and |
+| 2026-07-26 | DOCU | BUY | N/A | $110.00 | 7/10 | Active | - | THESIS: DocuSign’s upcoming earnings beat and strong enterprise demand for e‑sig |
