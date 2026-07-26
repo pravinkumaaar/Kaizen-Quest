@@ -1248,3 +1248,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-25 | COHR | BUY | $12.00 | $22.00 | 9/10 | Active | - | Why: Coherus Biosciences is developing low‑cost biosimilars targeting high‑margi |
 | 2026-07-25 | SALM | BUY | $12.00 | $18.00 | 8/10 | Active | - | Why: Sally Beauty (SALM) sits at the intersection of discretionary spending and  |
 | 2026-07-25 | GLD | BUY | $210.00 | $235.00 | 8/10 | Active | - | Why: Gold remains a compelling inflation hedge as CPI expectations stay elevated |
+| 2026-07-26 | IONQ | BUY | $12.00 | $30.00 | 9/10 | Active | - | Why: IonQ is the only publicly‑traded company with a commercially‑available trap |
+| 2026-07-26 | COHR | BUY | $35.00 | $65.00 | 8/10 | Active | - | Why: Coherent (COHR) supplies ultra‑precise laser and optics systems that are es |
+| 2026-07-26 | TSM | BUY | $150.00 | $240.00 | 8/10 | Active | - | Why: TSMC remains the world’s leading foundry with a 35% market share in advance |
+| 2026-07-26 | AMAT | BUY | $115.00 | $190.00 | 8/10 | Active | - | Why: Applied Materials (AMAT) is the premier supplier of equipment for depositio |
