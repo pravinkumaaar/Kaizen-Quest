@@ -1259,3 +1259,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-27 | AMAT | BUY | $920.95 | N/A | 8/10 | Active | - | Why: Deep research shows Applied Materials is positioned to capture AI‑driven se |
 | 2026-07-27 | PANW | BUY | $350.00 | N/A | 8/10 | Active | - | Why: PANW is poised to benefit from accelerating AI‑driven cybersecurity spendin |
 | 2026-07-27 | GLD | BUY | $210.00 | N/A | 7/10 | Active | - | Why: Persistent inflation expectations and potential Fed rate cuts are expected  |
+| 2026-07-27 | ACM | BUY | N/A | $55.00 | 5/10 | Active | - | Why: Deep research shows ACM has delivered ~12% YoY same‑store sales growth and  |
+| 2026-07-27 | BILI | BUY | N/A | $110.00 | 5/10 | Active | - | Why: Deep research indicates BILI is gaining 18% YoY user growth and expanding a |
+| 2026-07-27 | INDA | BUY | N/A | $130.00 | 5/10 | Active | - | Why: Deep research shows Indian equities are benefiting from a demographic divid |
+| 2026-07-27 | AFYA | BUY | N/A | $50.00 | 5/10 | Active | - | Why: Deep research shows AFYA delivering ~22% YoY revenue growth and expanding E |
