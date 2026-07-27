@@ -1266,3 +1266,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-27 | PANW | BUY | $380.00 | N/A | 9/10 | Active | - | Why: Palo Alto Networks (PANW) is a pure‑play cybersecurity platform that enjoys |
 | 2026-07-27 | GLP | BUY | $120.00 | N/A | 8/10 | Active | - | Why: GLP Realty (GLP) is a leading industrial‑logistics REIT that benefits from  |
 | 2026-07-27 | SE | BUY | $150.00 | N/A | 9/10 | Active | - | Why: Sea Ltd (SE) operates a diversified internet platform covering e‑commerce,  |
+| 2026-07-27 | AMAT | BUY | $135.00 | $210.00 | 8/10 | Active | - | Why: Applied Materials sits at the core of the AI‑driven semiconductor build‑out |
+| 2026-07-27 | RGTI | BUY | $5.00 | $12.00 | 9/10 | Active | - | Why: Rigel Pharmaceuticals is poised for a near‑term catalyst with the Phase 3 r |
+| 2026-07-27 | IONQ | BUY | $10.00 | $45.00 | 9/10 | Active | - | Why: IonQ is a leader in trapped‑ion quantum computing, and a recent $100 M cont |
