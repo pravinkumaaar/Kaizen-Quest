@@ -1256,3 +1256,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-26 | BILI | BUY | N/A | $250.00 | 8/10 | Active | - | THESIS: Bilibili’s robust user growth and improving monetization, together with  |
 | 2026-07-26 | NTES | BUY | N/A | $250.00 | 8/10 | Active | - | THESIS: NetEase’s sustained gaming revenue growth, AI‑driven cloud services, and |
 | 2026-07-26 | DOCU | BUY | N/A | $110.00 | 7/10 | Active | - | THESIS: DocuSign’s upcoming earnings beat and strong enterprise demand for e‑sig |
+| 2026-07-27 | AMAT | BUY | $920.95 | N/A | 8/10 | Active | - | Why: Deep research shows Applied Materials is positioned to capture AI‑driven se |
+| 2026-07-27 | PANW | BUY | $350.00 | N/A | 8/10 | Active | - | Why: PANW is poised to benefit from accelerating AI‑driven cybersecurity spendin |
+| 2026-07-27 | GLD | BUY | $210.00 | N/A | 7/10 | Active | - | Why: Persistent inflation expectations and potential Fed rate cuts are expected  |
