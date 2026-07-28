@@ -1269,3 +1269,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-27 | AMAT | BUY | $135.00 | $210.00 | 8/10 | Active | - | Why: Applied Materials sits at the core of the AI‑driven semiconductor build‑out |
 | 2026-07-27 | RGTI | BUY | $5.00 | $12.00 | 9/10 | Active | - | Why: Rigel Pharmaceuticals is poised for a near‑term catalyst with the Phase 3 r |
 | 2026-07-27 | IONQ | BUY | $10.00 | $45.00 | 9/10 | Active | - | Why: IonQ is a leader in trapped‑ion quantum computing, and a recent $100 M cont |
+| 2026-07-28 | NTES | BUY | $150.00 | $250.00 | 8/10 | Active | - | Why: NetEase is a leading Chinese internet and gaming platform with a strong por |
+| 2026-07-28 | FUTU | BUY | $70.00 | $120.00 | 7/10 | Active | - | Why: Futu is a fast‑growing Chinese online brokerage that is integrating AI‑driv |
+| 2026-07-28 | AIG | BUY | $55.00 | $85.00 | 7/10 | Active | - | Why: AIG is a global insurer with a improving underwriting cycle and a growing i |
