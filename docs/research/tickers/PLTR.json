@@ -1,29 +1,29 @@
 {
   "ticker": "PLTR",
   "first_researched": "2026-05-22T14:46:45.684070",
-  "last_researched": "2026-07-27T19:51:24.647592",
-  "research_count": 112,
+  "last_researched": "2026-07-28T10:58:12.642971",
+  "research_count": 113,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 122.92,
+  "last_price": 131.53,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-27T19:51:24.647592"
+      "last_verified": "2026-07-28T10:58:12.642971"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-27T19:51:24.647592"
+      "last_verified": "2026-07-28T10:58:12.642971"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-07-27T19:51:24.647592"
+      "last_verified": "2026-07-28T10:58:12.642971"
     }
   ],
   "facts": [
@@ -422,47 +422,56 @@
       "first_verified": "2026-07-27T19:50:37.849883",
       "last_verified": "2026-07-27T19:51:24.647592",
       "verification_count": 1
+    },
+    {
+      "claim": "PLTR trading at $131.53 (+7.00%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-07-28T10:57:11.349501",
+      "last_verified": "2026-07-28T10:58:12.642971",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "PLTR",
-    "timestamp": "2026-07-27 19:50:51",
+    "timestamp": "2026-07-28 10:57:27",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "insider_sentiment",
-    "macro_rotation",
-    "technical_indicators",
-    "insider_trades_contrarian",
-    "price_target",
-    "market_sentiment",
-    "valuation_multiples",
+    "dcf",
     "income_statement",
-    "earnings_momentum",
-    "supply_chain",
-    "earnings_history",
-    "negative_news",
-    "competitive_landscape",
-    "analyst_estimates",
-    "industry_pe",
-    "cashflow",
-    "financial_ratios",
-    "sector_performance",
-    "insider_trades",
-    "congressional",
-    "aggregate_indicators",
-    "balance_sheet",
-    "comps_analysis",
-    "institutional",
-    "esg",
-    "treasury_rates",
     "risk_assessment",
-    "recommendation_trends",
+    "financial_ratios",
+    "cashflow",
+    "balance_sheet",
+    "treasury_rates",
+    "analyst_estimates",
+    "macro_rotation",
+    "earnings_momentum",
+    "insider_sentiment",
+    "congressional",
+    "technical_indicators",
+    "negative_news",
+    "insider_trades",
+    "comps_analysis",
+    "earnings_history",
+    "aggregate_indicators",
     "sector_rotation",
-    "dcf"
+    "competitive_landscape",
+    "institutional",
+    "sector_performance",
+    "supply_chain",
+    "industry_pe",
+    "esg",
+    "insider_trades_contrarian",
+    "valuation_multiples",
+    "market_sentiment",
+    "recommendation_trends",
+    "price_target"
   ],
   "research_gaps": [],
   "contrarian_signals": []
