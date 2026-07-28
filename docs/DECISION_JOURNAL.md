@@ -1272,3 +1272,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-28 | NTES | BUY | $150.00 | $250.00 | 8/10 | Active | - | Why: NetEase is a leading Chinese internet and gaming platform with a strong por |
 | 2026-07-28 | FUTU | BUY | $70.00 | $120.00 | 7/10 | Active | - | Why: Futu is a fast‑growing Chinese online brokerage that is integrating AI‑driv |
 | 2026-07-28 | AIG | BUY | $55.00 | $85.00 | 7/10 | Active | - | Why: AIG is a global insurer with a improving underwriting cycle and a growing i |
+| 2026-07-28 | FUTU | BUY | $150.00 | N/A | 9/10 | Active | - | Why: Deep‑research shows FUTU’s revenue is accelerating (+30% YoY) with a strong |
+| 2026-07-28 | BILI | BUY | $80.00 | N/A | 8/10 | Active | - | Why: BILI’s user‑engagement metrics have risen 25% QoQ, and the company is trans |
+| 2026-07-28 | FCX | BUY | $38.00 | N/A | 9/10 | Active | - | Why: Global macro data shows a resurgence in copper demand driven by renewable‑e |

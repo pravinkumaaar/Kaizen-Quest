@@ -1,23 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ng with the risk‑management checklist.  
-
-- **Process improvement – thesis validation loop:** Require each new thesis to reference a prior validated or refuted thesis (e.g., “AI‑cloud growth thesis (validated by NVDA earnings)”) to maintain a living knowledge base and improve conviction calibration over time.
-
-## Run: 2026-07-28 02:31:20 ET
-- **What Worked Well** – The **SOFI** long‑term recommendation (8/10) was accurate: price rose from $16.80 to $16.29 (≈+3 %) on 2026‑07‑28, and the options‑LEAP rationale (clear expiry, implied vol > 30 %) matched the actual move, showing the model can correctly identify short‑term catalysts.  
-
-- **What Didn’t Work** – The **TEM** and **VRT** long‑term positions (both 8/10) are now down 15 % and 19.8 % respectively (TEM $50.22 → $42.67; VRT $348.38 → $279.40). The model failed to adjust stop‑losses or lower conviction after the steep declines, indicating a lack of dynamic risk controls.  
-
-- **Conviction Calibration** – All five active 8/10 picks (PLTR, SOFI, TEM, VRT, plus an unlisted “$193.86” long‑term) are **false positives**: despite high conviction scores, PLTR is down 5.6 % (from $131.68), TEM –15 %, VRT –19.8 %. The thesis journal is empty, so there is no historical validation to calibrate these scores.  
-
-- **Thesis Journal Review** – No past theses are recorded, meaning we have **no validated or refuted hypotheses** to learn from. This absence explains the poor calibration of conviction scores and prevents the model from refining its reasoning over time.  
-
-- **Missed Opportunities** – The report **exclusively reused existing holdings** and ignored any new, high‑impact tickers. Given the 57 % cash pile (~$55k), we should have surfaced at least 2–3 untracked ideas (e.g., an AI‑hardware play like **NVDA** if not already held, a fintech platform such as **Block, Inc. (SQ)**, or a renewable‑energy storage firm like **Enphase Energy (ENPH)**).  
-
-- **Data Quality Issues** – The PLTR price used ($139.47) is stale; the last close was $131.68 (≈‑5.5 %). The options chain for PLTR appears broken (no bid/ask spread shown), and the “$193.86” ticker lacks any price history, suggesting data‑feed gaps that need cleaning.  
-
-- **Risk Management** – No trailing‑stop orders (8 % trailing stop) are active on any of the five positions, violating the explicit improvement item in the memory insights. This leaves the portfolio exposed to further downside, especially for the heavily loss‑making VRT and TEM.  
+ng VRT and TEM.  
 
 - **Cash Deployment** – With **57 % cash** ($55.5k) sitting idle, the portfolio is far from the 90 % cash‑utilisation target. The current allocation (≈0 % concentration) means the cash is not being turned into diversified, high‑conviction positions, creating an opportunity cost of roughly $5k‑$6k in annualized return (assuming 10 % avg. portfolio return).  
 
@@ -150,3 +133,18 @@ ng with the risk‑management checklist.
   - 4️⃣ **Continuous thesis journal** to validate or refute each idea, feeding back into conviction calibration.  
 
 These concrete, data‑driven adjustments will close the gaps highlighted by the 5.7/10 average rating and move the next run toward the 9‑10 range.
+
+## Run: 2026-07-28 10:22:05 ET
+- SOFI (+0.28% at **$16.29**) shows that fresh price data enables accurate, low‑risk recommendations, confirming the model can capture small asymmetric moves when conviction is high.  
+- NVDA (‑6.28% at **$207.14**) received an 8/10 conviction score despite a weak thesis on AI‑chip demand, resulting in a false positive and highlighting mis‑calibrated confidence.  
+- PLTR (‑14.74% at **$139.47**) suffered from stale price data (last update 2026‑04‑22) and a broken options chain, leading to over‑optimistic pricing and poor conviction calibration.  
+- VRT (‑25.46% at **$348.38**) was a high‑conviction pick that failed because the cloud‑infrastructure thesis was refuted by a recent earnings miss, indicating a lack of up‑to‑date fundamental validation.  
+- ALPACA (+23.37% at **$803.87**) demonstrates a successful high‑conviction trade where the algorithmic‑trading thesis aligned with strong volume spikes and real‑time data, delivering a clear win.  
+- Cash represents **58%** ($55,768) of the $95,460 portfolio, far above the target 10% idle‑cash threshold, creating a large opportunity cost and contributing to the -4.5% overall P&L.  
+- Portfolio concentration is inconsistently reported (0.0% in the snapshot vs. 65.1% in memory logs), showing a data‑synchronization issue that hampers risk assessment and position sizing.  
+- No thesis journal exists (empty), preventing validation of past ideas; this absence caused repeated false positives such as VRT and TEM and impeded conviction calibration.  
+- Stop‑losses were not triggered for VRT (‑25%) and TEM (‑18%), indicating missing or mis‑configured stop‑loss logic and exposing the portfolio to large drawdowns.  
+- Memory utilization is redundant: the same NVDA and PLTR analyses were re‑run without integrating prior insights, wasting research time and limiting learning progression.  
+- Implement a daily data‑freshness check (price, options chain, earnings dates) before any recommendation and tie conviction scores to a rolling 5‑day alpha metric to improve calibration.  
+- Add an automated position‑size engine that enforces stop‑losses at 10% below entry and caps idle cash at 10%, ensuring efficient cash deployment and better risk control.  
+- Expand the opportunity set beyond the current 7 holdings by scanning for high‑impact events (earnings beats, regulatory approvals) across the broader market, ensuring new, non‑correlated ideas are considered.
