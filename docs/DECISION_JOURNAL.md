@@ -1285,3 +1285,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-29 | LITE | BUY | $651.93 | N/A | 8/10 | Active | - | Why: Lattice Semiconductor (LITE) is a leading low‑power FPGA provider positione |
 | 2026-07-29 | STX | BUY | $747.30 | N/A | 8/10 | Active | - | Why: Seagate Technology (STX) is a major data‑storage provider positioned to cap |
 | 2026-07-29 | OSCR | BUY | $31.40 | N/A | 9/10 | Active | - | Why: Oscar Health (OSCR) is a fast‑growing health‑insurance platform with a smal |
+| 2026-07-29 | AMAT | BUY | $82.50 | $115.00 | 9/10 | Active | - | Thesis: Applied Materials is positioned to capture the upside of AI‑driven semic |
+| 2026-07-29 | FUTU | BUY | $28.10 | $55.00 | 8/10 | Active | - | Thesis: Futu Holdings is poised for a breakout as its AI‑enhanced trading platfo |
