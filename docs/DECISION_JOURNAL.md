@@ -1279,3 +1279,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-29 | PAGS | BUY | N/A | $50.00 | 5/10 | Active | - | Why: Deep‑research shows PAGS processes > $30 B in annual payment volume with 30 |
 | 2026-07-29 | BZ | BUY | N/A | $27.00 | 5/10 | Active | - | Why: BZ Digital is a fast‑growing Brazilian neobank with 45% YoY user growth and |
 | 2026-07-29 | CSCO | BUY | N/A | $75.00 | 5/10 | Active | - | Why: Cisco is a networking hardware leader positioned to benefit from AI‑driven  |
+| 2026-07-29 | OSCR | BUY | $31.40 | N/A | 9/10 | Active | - | Why: Oscar Health (OSCR) is a fast‑growing health‑insurance platform with a smal |
+| 2026-07-29 | LITE | BUY | $651.93 | N/A | 8/10 | Active | - | Why: Lattice Semiconductor (LITE) is a leading low‑power FPGA provider positione |
+| 2026-07-29 | OSCR | BUY | $31.40 | N/A | 9/10 | Active | - | Why: Oscar Health (OSCR) is a fast‑growing health‑insurance platform with a smal |
+| 2026-07-29 | LITE | BUY | $651.93 | N/A | 8/10 | Active | - | Why: Lattice Semiconductor (LITE) is a leading low‑power FPGA provider positione |
+| 2026-07-29 | STX | BUY | $747.30 | N/A | 8/10 | Active | - | Why: Seagate Technology (STX) is a major data‑storage provider positioned to cap |
+| 2026-07-29 | OSCR | BUY | $31.40 | N/A | 9/10 | Active | - | Why: Oscar Health (OSCR) is a fast‑growing health‑insurance platform with a smal |
