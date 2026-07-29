@@ -1287,3 +1287,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-29 | OSCR | BUY | $31.40 | N/A | 9/10 | Active | - | Why: Oscar Health (OSCR) is a fast‑growing health‑insurance platform with a smal |
 | 2026-07-29 | AMAT | BUY | $82.50 | $115.00 | 9/10 | Active | - | Thesis: Applied Materials is positioned to capture the upside of AI‑driven semic |
 | 2026-07-29 | FUTU | BUY | $28.10 | $55.00 | 8/10 | Active | - | Thesis: Futu Holdings is poised for a breakout as its AI‑enhanced trading platfo |
+| 2026-07-29 | FUTU | BUY | $120.00 | $20401.00 | 9/10 | Active | - | Why: Futu is a leading Chinese fintech platform that’s positioned to benefit fro |
+| 2026-07-29 | SE | BUY | $70.00 | $20401.00 | 8/10 | Active | - | Why: Sea Ltd operates a diversified digital ecosystem (digital services, gaming, |
+| 2026-07-29 | GLBE | BUY | $20.00 | $20401.00 | 9/10 | Active | - | Why: GLBE is a niche semiconductor‑equipment provider whose patented packaging t |
