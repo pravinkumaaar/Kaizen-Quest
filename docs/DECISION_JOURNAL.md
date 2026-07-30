@@ -1290,3 +1290,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-29 | FUTU | BUY | $120.00 | $20401.00 | 9/10 | Active | - | Why: Futu is a leading Chinese fintech platform that’s positioned to benefit fro |
 | 2026-07-29 | SE | BUY | $70.00 | $20401.00 | 8/10 | Active | - | Why: Sea Ltd operates a diversified digital ecosystem (digital services, gaming, |
 | 2026-07-29 | GLBE | BUY | $20.00 | $20401.00 | 9/10 | Active | - | Why: GLBE is a niche semiconductor‑equipment provider whose patented packaging t |
+| 2026-07-30 | TICKER | BUY | $440.00 | $9.00 | 9/10 | Active | - | Why: Deep research shows INTU is a high‑margin SaaS‑driven financial software fi |
+| 2026-07-30 | TICKER | BUY | $80.00 | $11.00 | 8/10 | Active | - | Why: Deep research indicates MRVL is positioned to benefit from AI‑driven memory |
+| 2026-07-30 | TICKER | BUY | $210.00 | $8.70 | 8/10 | Active | - | Why: Research shows ADI’s high‑performance analog and mixed‑signal chips are ess |
+| 2026-07-30 | TICKER | BUY | $371.08 | N/A | 7/10 | Active | - | Why: Deep research highlights a rising inflation environment and potential Fed r |
