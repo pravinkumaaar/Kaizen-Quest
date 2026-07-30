@@ -1299,3 +1299,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-30 | FUTU | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Futu Holdings is a fast‑growing Chinese fintech platform offering wealth ma |
 | 2026-07-30 | CSCO | BUY | $55.00 | N/A | 8/10 | Active | - | Why: Cisco Systems provides essential networking infrastructure for AI data‑cent |
 | 2026-07-30 | GLD | BUY | $195.00 | N/A | 7/10 | Active | - | Why: SPDR Gold Trust offers a liquid, low‑correlation hedge against inflation an |
+| 2026-07-30 | AMAT | BUY | $120.00 | $225.00 | 8/10 | Active | - | Why: AMAT is a leading provider of semiconductor manufacturing equipment, positi |
+| 2026-07-30 | FUTU | BUY | $45.00 | $95.00 | 7/10 | Active | - | Why: Futu Holdings is a fast‑growing Chinese online brokerage with a high‑margin |
+| 2026-07-30 | MRVL | BUY | $85.00 | $150.00 | 8/10 | Active | - | Why: Micron Technology is a leading memory chip maker poised to benefit from AI  |
+| 2026-07-30 | INTU | BUY | $475.00 | $620.00 | 7/10 | Active | - | Why: Intuit’s digital financial ecosystem (QuickBooks, TurboTax, Mint) delivers  |
