@@ -1303,3 +1303,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-30 | FUTU | BUY | $45.00 | $95.00 | 7/10 | Active | - | Why: Futu Holdings is a fast‑growing Chinese online brokerage with a high‑margin |
 | 2026-07-30 | MRVL | BUY | $85.00 | $150.00 | 8/10 | Active | - | Why: Micron Technology is a leading memory chip maker poised to benefit from AI  |
 | 2026-07-30 | INTU | BUY | $475.00 | $620.00 | 7/10 | Active | - | Why: Intuit’s digital financial ecosystem (QuickBooks, TurboTax, Mint) delivers  |
+| 2026-07-30 | AFRM | BUY | $30.00 | $60.00 | 8/10 | Active | - | Why: Affirm (AFRM) is a fast‑growing AI‑driven credit underwriting platform that |
+| 2026-07-30 | INTU | BUY | $440.00 | $580.00 | 7/10 | Active | - | Why: Intuit (INTU) is the market‑leading financial‑software company integrating  |
+| 2026-07-30 | AMAT | BUY | $70.00 | $125.00 | 8/10 | Active | - | Why: Applied Materials (AMAT) supplies the semiconductor equipment essential for |
+| 2026-07-30 | INDA | BUY | $100.00 | $115.00 | 6/10 | Active | - | Why: The iShares India ETF (INDA) offers exposure to high‑growth Indian equities |
