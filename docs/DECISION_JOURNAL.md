@@ -1310,3 +1310,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-31 | TSM | BUY | $125.00 | N/A | 9/10 | Active | - | Why: |
 | 2026-07-31 | AMAT | BUY | $150.00 | N/A | 8/10 | Active | - | Why: |
 | 2026-07-31 | ON | BUY | $150.00 | N/A | 7/10 | Active | - | Why: |
+| 2026-07-31 | AMAT | BUY | $152.00 | $240.00 | 8/10 | Active | - | Why: Deep‑research DCF models AMAT’s intrinsic value at $185 (80% confidence) wh |
+| 2026-07-31 | MRVL | BUY | $45.00 | $68.00 | 9/10 | Active | - | Why: DCF valuation gives MRVL an intrinsic value of $62 (80% confidence); shares |
+| 2026-07-31 | BIDU | BUY | $148.50 | $225.00 | 8/10 | Active | - | Why: DCF models BIDU’s intrinsic value at $210 (80% confidence); the share price |

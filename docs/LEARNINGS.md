@@ -1,24 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-. Portfolio concentration is reported as 0% in the summary but memory shows 64‑65 % (likely due to a bug), indicating **concentration risk** is unmonitored.  
-
-- **Cash Deployment** – With **57 % cash** ($54,860) sitting idle, the system failed to allocate even a portion of this cash to the high‑conviction **SOFI** position (already 306 shares) or to new ideas, violating the 90 % cash‑utilization target.  
-
-- **Memory & Learning** – The memory engine reports contradictory concentration metrics (64‑65 % vs. 0 % in the portfolio view), showing **memory corruption**. Additionally, the same tickers (PLTR, TEM, VRT) appear in multiple recent runs without fresh insights, indicating **redundant research** and a lack of learning from prior outcomes.  
-
-- **Process Improvements** –  
-  1. **Standardize memory storage** to capture true weightings (shares × price) and reconcile the concentration discrepancy.  
-  2. **Automate stop‑loss & position‑size logic**: enforce a 12 % trailing stop and cap each position at ≤5 % of portfolio value, adjusting automatically when cash or holdings change.  
-  3. **Add a “top‑movers” view** that ranks recommendations by daily % price change or volume surge, enabling rapid repositioning decisions.  
-  4. **Implement a new‑idea filter** that surfaces any non‑portfolio ticker with conviction ≥7/10 and a concrete catalyst (earnings, product launch, macro event).  
-  5. **Integrate real‑time data validation** for all tickers and options chains to eliminate stale price reliance.  
-
-- **Overall** – The recent run (9.2/10) demonstrated strong portfolio awareness and high‑quality news, but **data freshness**, **conviction mis‑calibration**, and **memory inconsistencies** undermined performance. Addressing these systematic issues will move the average rating toward the 9‑10 range and deliver a truly learning‑driven, risk‑aware service.
-
-## Run: 2026-07-31 06:44:46 ET
-- **What Worked Well** – The July 31 run correctly identified high‑conviction, long‑term ideas such as **NVDA ($207.14 → $197.63, 8/10)**, **SOFI ($16.29 → $16.50, +1.3%)**, and **TEM ($50.22 → $44.90, 8/10)**, and it supplied a clear thesis with a catalyst (AI‑driven earnings beat) and a LEAP option rationale; the news summary for **LEAP** on **NVDA** was timely and added concrete context.
-
-- **What Didn’t Work** – The recommendation engine still treats the portfolio as a static list: it only suggested **existing tickers** (e.g., re‑suggesting **PLTR** at a stale price of $123.01 vs. the current $139.47) and ignored **new opportunities** like **AMD** or **META** that could have improved the -3.4% P&L.
+* (e.g., re‑suggesting **PLTR** at a stale price of $123.01 vs. the current $139.47) and ignored **new opportunities** like **AMD** or **META** that could have improved the -3.4% P&L.
 
 - **Conviction Calibration** – All 8/10 “high‑conviction” picks (**NVDA, PLTR, TEM, VRT**) were **down 4.6% to 31%** while the only positive mover was **SOFI (+1.3%)**, showing a clear false‑positive pattern; the thesis journal is empty, so we cannot verify prior validation, but the data indicate the 8/10 score is **mis‑calibrated**.
 
@@ -116,3 +98,17 @@
 - **Process Improvements – Thesis & Feedback Loop:** Populate the **thesis journal** with tags (“validated”, “refuted”, “in‑progress”) and track conviction drift over time; incorporate a **post‑trade review module** that logs P&L, conviction accuracy, and stop‑loss effectiveness for each recommendation, enabling continuous calibration.
 
 - **Process Improvements – Watchlist Generation:** Expand the watchlist to pull **external high‑conviction tickers** with recent catalysts (e.g., FDA approvals, earnings beats) and automatically rank them by expected impact, ensuring new opportunities are never overlooked.
+
+## Run: 2026-07-31 12:03:00 ET
+- **High‑conviction picks under‑performed:** the 8/10 “active” recommendations (NVDA $196.51, PLTR $122.45, SOFI $16.18, TEM $43.29, VRT $242.49) all posted negative returns (‑5.13% to ‑30.39%), showing conviction was mis‑calibrated.  
+- **Portfolio concentration is excessive:** memory logs show 65.6 % of portfolio value tied to a few positions, far above the 5 % max‑weight rule proposed in the memory insights, creating outsized idiosyncratic risk.  
+- **Idle cash is under‑utilized:** cash represents ~58 % of the $95,725 portfolio (~$55.9 k), yet the system only suggests securities already held, leaving ~90 % of cash undeployed and missing asymmetric upside.  
+- **Data staleness caused loss:** PLTR price was quoted at $139.47 (last update >12 h old) while the market had moved to $122.45, a 12.20% decline; this stale price inflated the reported loss and highlights a critical data‑quality flaw.  
+- **Options chain data is broken:** the 2026‑05‑07 run flagged “options data was broken,” preventing accurate LEAP pricing and leading to vague or generic option recommendations.  
+- **No new‑ticker opportunities captured:** the recommendation list was limited to existing holdings, so high‑conviction external ideas (e.g., a biotech with a recent FDA approval and 15 % upside) were never considered.  
+- **Thesis journal empty:** without tags (“validated”, “refuted”, “in‑progress”) we cannot track conviction drift; past false positives like VRT’s 30 % drop remain opaque.  
+- **Position‑sizing rule not enforced:** the 5 % max‑weight auto‑rebalance described in memory insights has not been implemented, allowing the 65.6 % concentration to persist.  
+- **Stop‑losses undefined:** none of the active recommendations list stop‑loss levels, leaving the portfolio exposed to deep drawdowns (e.g., VRT’s 30 % fall).  
+- **Portfolio‑aware analysis proved valuable:** the 9.2/10 run excelled by incorporating the user’s actual holdings and weightings, improving relevance; this capability should be standard across all runs.  
+- **Implement price‑staleness flag:** block any recommendation whose last quote is >12 h old (as suggested in memory insights) to avoid trading on outdated prices.  
+- **Add external, catalyst‑ranked watchlist:** pull in high‑conviction tickers with recent news (earnings beats, FDA approvals, M&A) and rank them by expected impact, ensuring new opportunities are never missed.
