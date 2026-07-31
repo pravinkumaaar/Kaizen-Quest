@@ -1316,3 +1316,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-31 | KLA | BUY | $560.00 | $720.00 | 8/10 | Active | - | Why: KLA is a leading provider of semiconductor metrology and inspection equipme |
 | 2026-07-31 | FCX | BUY | $38.00 | $65.00 | 7/10 | Active | - | Why: FCX is a major copper miner with direct exposure to the AI and EV supply ch |
 | 2026-07-31 | SQ | BUY | $70.00 | $100.00 | 7/10 | Active | - | Why: SQ (Block Inc.) is a high‑growth fintech platform with robust payment‑volum |
+| 2026-07-31 | ADI | BUY | N/A | N/A | 5/10 | Active | - | Why: Analog Devices is a leading supplier of high‑performance analog and mixed‑s |
+| 2026-07-31 | SE | BUY | N/A | N/A | 5/10 | Active | - | Why: Sea Ltd is transitioning from a pure e‑commerce platform to a diversified d |
