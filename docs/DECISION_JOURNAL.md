@@ -1307,3 +1307,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-30 | INTU | BUY | $440.00 | $580.00 | 7/10 | Active | - | Why: Intuit (INTU) is the market‑leading financial‑software company integrating  |
 | 2026-07-30 | AMAT | BUY | $70.00 | $125.00 | 8/10 | Active | - | Why: Applied Materials (AMAT) supplies the semiconductor equipment essential for |
 | 2026-07-30 | INDA | BUY | $100.00 | $115.00 | 6/10 | Active | - | Why: The iShares India ETF (INDA) offers exposure to high‑growth Indian equities |
+| 2026-07-31 | TSM | BUY | $125.00 | N/A | 9/10 | Active | - | Why: |
+| 2026-07-31 | AMAT | BUY | $150.00 | N/A | 8/10 | Active | - | Why: |
+| 2026-07-31 | ON | BUY | $150.00 | N/A | 7/10 | Active | - | Why: |
