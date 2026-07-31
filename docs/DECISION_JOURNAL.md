@@ -1313,3 +1313,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-31 | AMAT | BUY | $152.00 | $240.00 | 8/10 | Active | - | Why: Deep‑research DCF models AMAT’s intrinsic value at $185 (80% confidence) wh |
 | 2026-07-31 | MRVL | BUY | $45.00 | $68.00 | 9/10 | Active | - | Why: DCF valuation gives MRVL an intrinsic value of $62 (80% confidence); shares |
 | 2026-07-31 | BIDU | BUY | $148.50 | $225.00 | 8/10 | Active | - | Why: DCF models BIDU’s intrinsic value at $210 (80% confidence); the share price |
+| 2026-07-31 | KLA | BUY | $560.00 | $720.00 | 8/10 | Active | - | Why: KLA is a leading provider of semiconductor metrology and inspection equipme |
+| 2026-07-31 | FCX | BUY | $38.00 | $65.00 | 7/10 | Active | - | Why: FCX is a major copper miner with direct exposure to the AI and EV supply ch |
+| 2026-07-31 | SQ | BUY | $70.00 | $100.00 | 7/10 | Active | - | Why: SQ (Block Inc.) is a high‑growth fintech platform with robust payment‑volum |
