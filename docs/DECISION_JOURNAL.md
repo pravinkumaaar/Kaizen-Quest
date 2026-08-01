@@ -1324,3 +1324,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-01 | CRWV | BUY | $12.00 | $35.00 | 9/10 | Active | - | Why: CRWV is a low‑float, high‑short‑interest cloud‑services provider with a che |
 | 2026-08-01 | LITE | BUY | $45.00 | $80.00 | 8/10 | Active | - | Why: LITE builds and operates data‑center capacity that is directly tied to the  |
 | 2026-08-01 | ADI | BUY | N/A | N/A | 8/10 | Active | - | Why: ADI is a leading semiconductor‑equipment maker with strong AI‑chip demand a |
+| 2026-08-01 | TSM | BUY | N/A | $30.00 | 9/10 | Active | - | Thesis: AI‑driven demand for advanced‑node chips is set to accelerate, and TSM – |
+| 2026-08-01 | AMD | BUY | N/A | $44.00 | 8/10 | Active | - | Thesis: AMD’s MI300 AI accelerator and Zen 4 CPU roadmaps are poised to capture  |
