@@ -1326,3 +1326,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-01 | ADI | BUY | N/A | N/A | 8/10 | Active | - | Why: ADI is a leading semiconductor‑equipment maker with strong AI‑chip demand a |
 | 2026-08-01 | TSM | BUY | N/A | $30.00 | 9/10 | Active | - | Thesis: AI‑driven demand for advanced‑node chips is set to accelerate, and TSM – |
 | 2026-08-01 | AMD | BUY | N/A | $44.00 | 8/10 | Active | - | Thesis: AMD’s MI300 AI accelerator and Zen 4 CPU roadmaps are poised to capture  |
+| 2026-08-01 | COP | BUY | $80.00 | N/A | 9/10 | Active | - | Why: COP is a leading integrated oil producer with a low breakeven cost (~$45/ba |
+| 2026-08-01 | INDA | BUY | $70.00 | N/A | 8/10 | Active | - | Why: INDA tracks a basket of Indian equities with an average P/E of 18×, reflect |
+| 2026-08-01 | HD | BUY | $380.00 | N/A | 9/10 | Active | - | Why: HD enjoys a dominant US home‑improvement retail market share, a 2.5% divide |
+| 2026-08-01 | SLV | BUY | $52.36 | N/A | 8/10 | Active | - | Why: SLV tracks silver mining companies with an average cash‑flow yield of 8%, b |
