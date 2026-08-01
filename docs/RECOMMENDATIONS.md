@@ -3,10 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **COP** | $80.00 | TBD | 9/10 |  Active  |  $80.00  |  +0.0%  | Medium (2‑3 months) – around the earnings window and next OPEC meeting. | Watchlist |
-| 2 | **INDA** | $70.00 | TBD | 8/10 |  Active  |  $70.00  |  +0.0%  | Medium (3‑6 months) | Watchlist |
-| 3 | **HD** | $380.00 | TBD | 9/10 |  Active  |  $380.00  |  +0.0%  | Medium (2‑4 months) – around the earnings date and next quarterly guidance. | Watchlist |
-| 4 | **SLV** | $52.36 | TBD | 8/10 |  Active  |  $52.36  |  +0.0%  | Short‑to‑Medium (1‑3 months) – around the next Fed policy meeting and silver price momentum. | Watchlist |
+| 1 | **GLBE** | $8.00 | $12.00 | 9/10 |  Active  |  $8.00  |  +0.0%  | Swing (2‑8 weeks) | Watchlist |
+| 2 | **BIDU** | $150.00 | $200.00 | 8/10 |  Active  |  $150.00  |  +0.0%  | Medium (3‑6 months) | Watchlist |
+| 3 | **ADI** | $210.00 | $250.00 | 8/10 |  Active  |  $210.00  |  +0.0%  | Medium (4‑8 weeks to 3 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

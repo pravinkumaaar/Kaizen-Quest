@@ -1330,3 +1330,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-01 | INDA | BUY | $70.00 | N/A | 8/10 | Active | - | Why: INDA tracks a basket of Indian equities with an average P/E of 18×, reflect |
 | 2026-08-01 | HD | BUY | $380.00 | N/A | 9/10 | Active | - | Why: HD enjoys a dominant US home‑improvement retail market share, a 2.5% divide |
 | 2026-08-01 | SLV | BUY | $52.36 | N/A | 8/10 | Active | - | Why: SLV tracks silver mining companies with an average cash‑flow yield of 8%, b |
+| 2026-08-01 | GLBE | BUY | $8.00 | $12.00 | 9/10 | Active | - | Why: Deep‑research DCF models give GLBE a fair value of $15 (≈58% upside) and th |
+| 2026-08-01 | BIDU | BUY | $150.00 | $200.00 | 8/10 | Active | - | Why: BIDU’s AI‑enhanced search and advertising platform is projected to lift ad  |
+| 2026-08-01 | ADI | BUY | $210.00 | $250.00 | 8/10 | Active | - | Why: ADI is a market leader in analog and mixed‑signal semiconductors with diver |
