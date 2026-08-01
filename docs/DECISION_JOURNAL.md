@@ -1321,3 +1321,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-01 | BIDU | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Baidu’s dominant position in Chinese AI‑driven advertising and cloud servic |
 | 2026-08-01 | GLBE | BUY | $11.00 | $18.00 | 7/10 | Active | - | Why: Globe New Energy is positioned at the intersection of policy‑driven renewab |
 | 2026-08-01 | FUTU | BUY | $21.00 | $45.00 | 9/10 | Active | - | Why: Future FinTech’s rapid user growth in digital payments and strong revenue t |
+| 2026-08-01 | CRWV | BUY | $12.00 | $35.00 | 9/10 | Active | - | Why: CRWV is a low‑float, high‑short‑interest cloud‑services provider with a che |
+| 2026-08-01 | LITE | BUY | $45.00 | $80.00 | 8/10 | Active | - | Why: LITE builds and operates data‑center capacity that is directly tied to the  |
+| 2026-08-01 | ADI | BUY | N/A | N/A | 8/10 | Active | - | Why: ADI is a leading semiconductor‑equipment maker with strong AI‑chip demand a |
