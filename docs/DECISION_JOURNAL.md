@@ -1318,3 +1318,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-07-31 | SQ | BUY | $70.00 | $100.00 | 7/10 | Active | - | Why: SQ (Block Inc.) is a high‑growth fintech platform with robust payment‑volum |
 | 2026-07-31 | ADI | BUY | N/A | N/A | 5/10 | Active | - | Why: Analog Devices is a leading supplier of high‑performance analog and mixed‑s |
 | 2026-07-31 | SE | BUY | N/A | N/A | 5/10 | Active | - | Why: Sea Ltd is transitioning from a pure e‑commerce platform to a diversified d |
+| 2026-08-01 | BIDU | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Baidu’s dominant position in Chinese AI‑driven advertising and cloud servic |
+| 2026-08-01 | GLBE | BUY | $11.00 | $18.00 | 7/10 | Active | - | Why: Globe New Energy is positioned at the intersection of policy‑driven renewab |
+| 2026-08-01 | FUTU | BUY | $21.00 | $45.00 | 9/10 | Active | - | Why: Future FinTech’s rapid user growth in digital payments and strong revenue t |
