@@ -1336,3 +1336,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-02 | TICKER | BUY | $118.00 | $180.00 | 9/10 | Active | - | Why: Applied Materials (AMAT) is the leading supplier of front‑end semiconductor |
 | 2026-08-02 | TICKER | BUY | $70.00 | $115.00 | 8/10 | Active | - | Why: Micron Technology (MRVL) produces DRAM and NAND, the memory categories most |
 | 2026-08-02 | TICKER | BUY | $210.00 | $260.00 | 9/10 | Active | - | Why: Analog Devices (ADI) is a high‑quality analog‑chip leader whose AI‑related  |
+| 2026-08-02 | MRVL | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Deep‑research DCF models place fair value at $35‑$38, while recent analyst  |
+| 2026-08-02 | GLBE | BUY | $13.00 | N/A | 8/10 | Active | - | Why: Global research places fair value at $18‑$20 based on a 12‑month DCF; analy |
+| 2026-08-02 | SE | BUY | $70.00 | N/A | 8/10 | Active | - | Why: Sea Ltd. is a leading internet platform in Southeast Asia with dominant e‑c |
