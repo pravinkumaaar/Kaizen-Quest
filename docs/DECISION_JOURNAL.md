@@ -1339,3 +1339,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-02 | MRVL | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Deep‑research DCF models place fair value at $35‑$38, while recent analyst  |
 | 2026-08-02 | GLBE | BUY | $13.00 | N/A | 8/10 | Active | - | Why: Global research places fair value at $18‑$20 based on a 12‑month DCF; analy |
 | 2026-08-02 | SE | BUY | $70.00 | N/A | 8/10 | Active | - | Why: Sea Ltd. is a leading internet platform in Southeast Asia with dominant e‑c |
+| 2026-08-02 | TICKER | BUY | $12.50 | N/A | 8/10 | Active | - | Why: Deep‑research DCF models (15‑source consensus) value GLBE at $18.2, implyin |
+| 2026-08-02 | TICKER | BUY | $8.00 | N/A | 7/10 | Active | - | Why: Deep‑research valuation (EV/FCF) suggests fair value $18‑$20, implying ~150 |
+| 2026-08-02 | TICKER | BUY | $210.00 | N/A | 8/10 | Active | - | Why: Deep‑research shows ADI trades at a 15% discount to its intrinsic value ($2 |

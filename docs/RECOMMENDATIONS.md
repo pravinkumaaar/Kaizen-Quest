@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **MRVL** | $30.00 | TBD | 9/10 |  Active  |  $30.00  |  +0.0%  | Medium‑term swing (3‑9 months). | Watchlist |
-| 2 | **GLBE** | $13.00 | TBD | 8/10 |  Active  |  $13.00  |  +0.0%  | Medium‑term swing (4‑8 weeks to 4 months). | Watchlist |
-| 3 | **SE** | $70.00 | TBD | 8/10 |  Active  |  $70.00  |  +0.0%  | Medium‑term swing (2‑6 months). | Watchlist |
+| 1 | **TICKER** | $12.50 | TBD | 8/10 |  Active  |  $12.50  |  +0.0%  | Swing (6‑10 weeks) | Watchlist |
+| 2 | **TICKER** | $8.00 | TBD | 7/10 |  Active  |  $8.00  |  +0.0%  | Medium‑term swing (4‑8 weeks) | Watchlist |
+| 3 | **TICKER** | $210.00 | TBD | 8/10 |  Active  |  $210.00  |  +0.0%  | Medium‑term swing (6‑12 weeks) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
