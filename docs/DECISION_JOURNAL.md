@@ -1333,3 +1333,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-01 | GLBE | BUY | $8.00 | $12.00 | 9/10 | Active | - | Why: Deep‑research DCF models give GLBE a fair value of $15 (≈58% upside) and th |
 | 2026-08-01 | BIDU | BUY | $150.00 | $200.00 | 8/10 | Active | - | Why: BIDU’s AI‑enhanced search and advertising platform is projected to lift ad  |
 | 2026-08-01 | ADI | BUY | $210.00 | $250.00 | 8/10 | Active | - | Why: ADI is a market leader in analog and mixed‑signal semiconductors with diver |
+| 2026-08-02 | TICKER | BUY | $118.00 | $180.00 | 9/10 | Active | - | Why: Applied Materials (AMAT) is the leading supplier of front‑end semiconductor |
+| 2026-08-02 | TICKER | BUY | $70.00 | $115.00 | 8/10 | Active | - | Why: Micron Technology (MRVL) produces DRAM and NAND, the memory categories most |
+| 2026-08-02 | TICKER | BUY | $210.00 | $260.00 | 9/10 | Active | - | Why: Analog Devices (ADI) is a high‑quality analog‑chip leader whose AI‑related  |
