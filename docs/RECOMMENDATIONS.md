@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **TICKER** | $12.50 | TBD | 8/10 |  Active  |  $12.50  |  +0.0%  | Swing (6‑10 weeks) | Watchlist |
-| 2 | **TICKER** | $8.00 | TBD | 7/10 |  Active  |  $8.00  |  +0.0%  | Medium‑term swing (4‑8 weeks) | Watchlist |
-| 3 | **TICKER** | $210.00 | TBD | 8/10 |  Active  |  $210.00  |  +0.0%  | Medium‑term swing (6‑12 weeks) | Watchlist |
+| 1 | **ADI** | Market | $15050.00 | 9/10 |  Active  |  Fetching...  |  +0.0%  | Swing trade, **4‑8 weeks** after earnings momentum unfolds. | Watchlist |
+| 2 | **BZ** | Market | $10750.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium‑term swing, **8‑12 weeks** to capture post‑earnings price action and quarterly guidance. | Watchlist |
+| 3 | **FUTU** | Market | $12900.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium‑term swing, **10‑14 weeks** to allow the earnings reaction and subsequent price momentum to develop. | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
