@@ -1348,3 +1348,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-03 | AMAT | BUY | $118.00 | $175.00 | 8/10 | Active | - | Why: Applied Materials supplies the advanced equipment needed for cutting‑edge s |
 | 2026-08-03 | BILI | BUY | $120.00 | $190.00 | 9/10 | Active | - | Why: Bilibili operates a leading Chinese video platform with rapidly expanding u |
 | 2026-08-03 | PDD | BUY | $115.00 | $180.00 | 7/10 | Active | - | Why: Pinduoduo’s low‑price e‑commerce model is well‑suited to the expanding rura |
+| 2026-08-03 | FUTU | BUY | $115.00 | $250.00 | 9/10 | Active | - | Why: Deep‑research shows Chinese K‑12 education demand is accelerating, digital‑ |
+| 2026-08-03 | PDD | BUY | $150.00 | $300.00 | 8/10 | Active | - | Why: PDD dominates China’s online education and commerce ecosystem, with revenue |
+| 2026-08-03 | GRAB | BUY | $45.00 | $100.00 | 7/10 | Active | - | Why: GRAB’s digital payment ecosystem in Southeast Asia is expanding rapidly (32 |
