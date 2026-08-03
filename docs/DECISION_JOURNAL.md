@@ -1354,3 +1354,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-03 | BILI | BUY | $115.00 | $56.50 | 8/10 | Active | - | Why: Deep‑research DCF models a fair value of $180‑$190, implying ~55‑65% upside |
 | 2026-08-03 | ACM | BUY | $150.00 | $40.00 | 7/10 | Active | - | Why: AI‑driven data‑center demand is expanding at ~30% YoY; ACM’s high‑margin sw |
 | 2026-08-03 | PANW | BUY | $400.00 | $40.00 | 7/10 | Active | - | Why: AI‑enhanced cybersecurity is a fast‑growing niche; PANW’s platform revenue  |
+| 2026-08-03 | TICKER | BUY | $720.00 | $15500.00 | 9/10 | Active | - | Why: Deep‑research DCF shows a fair value of $950 (≈32% upside) while the compan |
+| 2026-08-03 | TICKER | BUY | $400.00 | $17800.00 | 8/10 | Active | - | Why: Deep‑research shows recurring‑revenue model with >80% free‑cash‑flow conver |
+| 2026-08-03 | TICKER | BUY | $38.00 | $19990.00 | 8/10 | Active | - | Why: Deep‑research indicates copper price up 12% YTD, FCX’s cost‑per‑pound down  |
+| 2026-08-03 | TICKER | BUY | $15.00 | $17800.00 | 7/10 | Active | - | Why: Deep‑research shows Q2 earnings beat (+15%) with revenue up 28% YoY, gross  |
