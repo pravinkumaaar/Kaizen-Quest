@@ -1351,3 +1351,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-03 | FUTU | BUY | $115.00 | $250.00 | 9/10 | Active | - | Why: Deep‑research shows Chinese K‑12 education demand is accelerating, digital‑ |
 | 2026-08-03 | PDD | BUY | $150.00 | $300.00 | 8/10 | Active | - | Why: PDD dominates China’s online education and commerce ecosystem, with revenue |
 | 2026-08-03 | GRAB | BUY | $45.00 | $100.00 | 7/10 | Active | - | Why: GRAB’s digital payment ecosystem in Southeast Asia is expanding rapidly (32 |
+| 2026-08-03 | BILI | BUY | $115.00 | $56.50 | 8/10 | Active | - | Why: Deep‑research DCF models a fair value of $180‑$190, implying ~55‑65% upside |
+| 2026-08-03 | ACM | BUY | $150.00 | $40.00 | 7/10 | Active | - | Why: AI‑driven data‑center demand is expanding at ~30% YoY; ACM’s high‑margin sw |
+| 2026-08-03 | PANW | BUY | $400.00 | $40.00 | 7/10 | Active | - | Why: AI‑enhanced cybersecurity is a fast‑growing niche; PANW’s platform revenue  |
