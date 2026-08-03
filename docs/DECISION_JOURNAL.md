@@ -1345,3 +1345,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-02 | ADI | BUY | N/A | $15050.00 | 9/10 | Active | - | Why: First‑principles – Analog Devices is a premier analog‑chip maker whose prod |
 | 2026-08-02 | BZ | BUY | N/A | $10750.00 | 8/10 | Active | - | Why: First‑principles – BZ operates a fast‑growing digital services ecosystem in |
 | 2026-08-02 | FUTU | BUY | N/A | $12900.00 | 8/10 | Active | - | Why: First‑principles – Futu is a leading Chinese fintech platform with rapid us |
+| 2026-08-03 | AMAT | BUY | $118.00 | $175.00 | 8/10 | Active | - | Why: Applied Materials supplies the advanced equipment needed for cutting‑edge s |
+| 2026-08-03 | BILI | BUY | $120.00 | $190.00 | 9/10 | Active | - | Why: Bilibili operates a leading Chinese video platform with rapidly expanding u |
+| 2026-08-03 | PDD | BUY | $115.00 | $180.00 | 7/10 | Active | - | Why: Pinduoduo’s low‑price e‑commerce model is well‑suited to the expanding rura |
