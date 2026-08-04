@@ -1375,3 +1375,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-04 | BIDU | BUY | $152.50 | $240.00 | 9/10 | Active | - | Why: Deep research confirms BIDU is the dominant Chinese search engine with a $3 |
 | 2026-08-04 | AFRM | BUY | $28.40 | $55.00 | 8/10 | Active | - | Why: Deep research shows AFRM is a US‑listed BNPL platform with $1.1 B revenue a |
 | 2026-08-04 | FUTU | BUY | $30.00 | $65.00 | 9/10 | Active | - | Why: Deep research indicates FUTU is a leading Chinese online brokerage with $6. |
+| 2026-08-04 | FUTU | BUY | $20.50 | N/A | 9/10 | Active | - | Why: AI‑driven brokerage poised to benefit from rising retail trading activity a |
+| 2026-08-04 | FCX | BUY | $38.00 | N/A | 8/10 | Active | - | Why: Major copper producer positioned to gain from AI‑driven demand for green en |
+| 2026-08-04 | DDOG | BUY | $70.00 | N/A | 8/10 | Active | - | Why: Leading AI‑focused monitoring platform with strong recurring revenue; upcom |
+| 2026-08-04 | BZ | BUY | $12.00 | N/A | 7/10 | Active | - | Why: E‑commerce logistics platform with improving margins; upcoming earnings cou |
