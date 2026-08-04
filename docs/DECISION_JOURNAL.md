@@ -1372,3 +1372,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-04 | FUTU | BUY | $30.00 | $60.00 | 9/10 | Active | - | Why: Futu combines an AI‑enhanced trading platform with a expanding internationa |
 | 2026-08-04 | SE | BUY | $70.00 | $120.00 | 8/10 | Active | - | Why: Sea Ltd’s diversified digital ecosystem (e‑commerce, digital services, digi |
 | 2026-08-04 | OPENW | BUY | $0.44 | $0.88 | 7/10 | Active | - | Why: OPENW is a micro‑cap biotech with a pending Phase 2 trial readout that coul |
+| 2026-08-04 | BIDU | BUY | $152.50 | $240.00 | 9/10 | Active | - | Why: Deep research confirms BIDU is the dominant Chinese search engine with a $3 |
+| 2026-08-04 | AFRM | BUY | $28.40 | $55.00 | 8/10 | Active | - | Why: Deep research shows AFRM is a US‑listed BNPL platform with $1.1 B revenue a |
+| 2026-08-04 | FUTU | BUY | $30.00 | $65.00 | 9/10 | Active | - | Why: Deep research indicates FUTU is a leading Chinese online brokerage with $6. |
