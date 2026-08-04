@@ -1358,3 +1358,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-03 | TICKER | BUY | $400.00 | $17800.00 | 8/10 | Active | - | Why: Deep‑research shows recurring‑revenue model with >80% free‑cash‑flow conver |
 | 2026-08-03 | TICKER | BUY | $38.00 | $19990.00 | 8/10 | Active | - | Why: Deep‑research indicates copper price up 12% YTD, FCX’s cost‑per‑pound down  |
 | 2026-08-03 | TICKER | BUY | $15.00 | $17800.00 | 7/10 | Active | - | Why: Deep‑research shows Q2 earnings beat (+15%) with revenue up 28% YoY, gross  |
+| 2026-08-04 | TICKER | BUY | $6.00 | N/A | 5/10 | Active | - | Why: AMAT is the leading provider of semiconductor manufacturing equipment, posi |
+| 2026-08-04 | TICKER | BUY | $4.50 | N/A | 5/10 | Active | - | Why: Sea Ltd dominates Southeast Asia’s digital economy with rapid GMV growth an |
+| 2026-08-04 | TICKER | BUY | $4.00 | N/A | 5/10 | Active | - | Why: CRWV is a cloud services provider with $2.6 B revenue and a recent 19% intr |
+| 2026-08-04 | TICKER | BUY | $3.00 | N/A | 5/10 | Active | - | Why: Futu is a leading Chinese fintech platform with EPS $21.30 expected, revenu |
