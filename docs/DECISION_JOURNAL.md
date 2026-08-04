@@ -1379,3 +1379,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-04 | FCX | BUY | $38.00 | N/A | 8/10 | Active | - | Why: Major copper producer positioned to gain from AI‑driven demand for green en |
 | 2026-08-04 | DDOG | BUY | $70.00 | N/A | 8/10 | Active | - | Why: Leading AI‑focused monitoring platform with strong recurring revenue; upcom |
 | 2026-08-04 | BZ | BUY | $12.00 | N/A | 7/10 | Active | - | Why: E‑commerce logistics platform with improving margins; upcoming earnings cou |
+| 2026-08-04 | AMAT | BUY | $892.67 | $1200.00 | 9/10 | Active | - | Why: AMAT supplies the leading‑edge equipment needed for AI‑driven semiconductor |
+| 2026-08-04 | FUTU | BUY | $150.00 | $250.00 | 8/10 | Active | - | Why: Futu is a fast‑growing Chinese online brokerage with a rapidly expanding us |
+| 2026-08-04 | PDD | BUY | $150.00 | $250.00 | 9/10 | Active | - | Why: PDD dominates China’s value‑oriented e‑commerce market; its upcoming earnin |
