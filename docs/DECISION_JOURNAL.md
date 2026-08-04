@@ -1365,3 +1365,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-04 | COIN | BUY | $84.20 | $130.00 | 8/10 | Active | - | Why: Deep‑research DCF modeling (confidence 80 %) values COIN at $115, implying  |
 | 2026-08-04 | CRWD | BUY | $210.00 | N/A | 9/10 | Active | - | Why: Deep‑research DCF (confidence 85 %) values CRWD at $285, implying ~35 % ups |
 | 2026-08-04 | AMD | BUY | $130.00 | N/A | 8/10 | Active | - | Why: Deep‑research DCF (confidence 80 %) values AMD at $155, implying ~20 % upsi |
+| 2026-08-04 | FUTU | BUY | $30.00 | $55.00 | 9/10 | Active | - | Why: Deep research shows FUTU’s revenue is projected to grow 30% YoY to $7.5 B i |
+| 2026-08-04 | PDD | BUY | $90.00 | $150.00 | 8/10 | Active | - | Why: Deep research indicates FY 2026 revenue is projected at $120 B, a 25% YoY i |
+| 2026-08-04 | INTU | BUY | $500.00 | $720.00 | 9/10 | Active | - | Why: Deep research shows INTU’s subscription revenue is >95% of total, providing |
+| 2026-08-04 | BILI | BUY | $150.00 | $260.00 | 8/10 | Active | - | Why: Deep research shows BILI’s monthly active users are projected to grow 18% Y |
