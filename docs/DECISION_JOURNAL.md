@@ -1362,3 +1362,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-04 | TICKER | BUY | $4.50 | N/A | 5/10 | Active | - | Why: Sea Ltd dominates Southeast Asia’s digital economy with rapid GMV growth an |
 | 2026-08-04 | TICKER | BUY | $4.00 | N/A | 5/10 | Active | - | Why: CRWV is a cloud services provider with $2.6 B revenue and a recent 19% intr |
 | 2026-08-04 | TICKER | BUY | $3.00 | N/A | 5/10 | Active | - | Why: Futu is a leading Chinese fintech platform with EPS $21.30 expected, revenu |
+| 2026-08-04 | COIN | BUY | $84.20 | $130.00 | 8/10 | Active | - | Why: Deep‑research DCF modeling (confidence 80 %) values COIN at $115, implying  |
+| 2026-08-04 | CRWD | BUY | $210.00 | N/A | 9/10 | Active | - | Why: Deep‑research DCF (confidence 85 %) values CRWD at $285, implying ~35 % ups |
+| 2026-08-04 | AMD | BUY | $130.00 | N/A | 8/10 | Active | - | Why: Deep‑research DCF (confidence 80 %) values AMD at $155, implying ~20 % upsi |
