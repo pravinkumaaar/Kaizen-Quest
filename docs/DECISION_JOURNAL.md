@@ -1382,3 +1382,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-04 | AMAT | BUY | $892.67 | $1200.00 | 9/10 | Active | - | Why: AMAT supplies the leading‑edge equipment needed for AI‑driven semiconductor |
 | 2026-08-04 | FUTU | BUY | $150.00 | $250.00 | 8/10 | Active | - | Why: Futu is a fast‑growing Chinese online brokerage with a rapidly expanding us |
 | 2026-08-04 | PDD | BUY | $150.00 | $250.00 | 9/10 | Active | - | Why: PDD dominates China’s value‑oriented e‑commerce market; its upcoming earnin |
+| 2026-08-05 | FUTU | BUY | N/A | $173.00 | 9/10 | Active | - | THESIS: FUTU is positioned for a breakout after its upcoming earnings report, as |
+| 2026-08-05 | FCX | BUY | N/A | $57.00 | 8/10 | Active | - | THESIS: FCX stands to benefit from a sustained surge in copper demand driven by  |
+| 2026-08-05 | BIDU | BUY | N/A | $55.00 | 8/10 | Active | - | THESIS: BIDU’s AI‑enhanced search and cloud services are poised for accelerated  |
