@@ -1394,3 +1394,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-05 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | THESIS |
 | 2026-08-05 | SNPS | BUY | N/A | N/A | 8/10 | Active | - | THESIS |
 | 2026-08-05 | PDD | BUY | N/A | N/A | 7/10 | Active | - | THESIS |
+| 2026-08-05 | AFYA | BUY | $13.50 | $23.00 | 8/10 | Active | - | Why: AFYA is a Brazilian health‑tech platform scaling digital care, with revenue |
+| 2026-08-05 | CRWD | BUY | $300.00 | $420.00 | 9/10 | Active | - | Why: CrowdStrike’s cloud‑native AI security platform is benefiting from accelera |
+| 2026-08-05 | PDD | BUY | $85.00 | $135.00 | 8/10 | Active | - | Why: PDD dominates China’s low‑price e‑commerce market with accelerating user gr |
