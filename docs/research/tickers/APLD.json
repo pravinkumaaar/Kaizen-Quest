@@ -1,29 +1,29 @@
 {
   "ticker": "APLD",
   "first_researched": "2026-05-22T16:40:57.853888",
-  "last_researched": "2026-08-05T06:41:10.382572",
-  "research_count": 120,
+  "last_researched": "2026-08-05T19:57:20.213421",
+  "research_count": 121,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 29.49,
+  "last_price": 31.27,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-05T06:41:10.382572"
+      "last_verified": "2026-08-05T19:57:20.213421"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-05T06:41:10.382572"
+      "last_verified": "2026-08-05T19:57:20.213421"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-04T03:23:07.066963"
+      "last_verified": "2026-08-05T19:57:20.213421"
     }
   ],
   "facts": [
@@ -422,47 +422,56 @@
       "first_verified": "2026-08-04T16:57:45.132621",
       "last_verified": "2026-08-04T16:59:48.967870",
       "verification_count": 1
+    },
+    {
+      "claim": "APLD trading at $31.27 (+6.04%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-08-05T19:54:43.919464",
+      "last_verified": "2026-08-05T19:57:20.213421",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "APLD",
-    "timestamp": "2026-08-05 06:40:44",
+    "timestamp": "2026-08-05 19:56:44",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "financial_ratios",
-    "valuation_multiples",
-    "institutional",
-    "industry_pe",
+    "aggregate_indicators",
     "insider_trades",
-    "income_statement",
     "negative_news",
-    "competitive_landscape",
+    "price_target",
+    "earnings_history",
+    "comps_analysis",
+    "dcf",
     "insider_trades_contrarian",
+    "esg",
+    "valuation_multiples",
     "treasury_rates",
-    "insider_sentiment",
-    "cashflow",
-    "supply_chain",
-    "market_sentiment",
+    "industry_pe",
     "congressional",
-    "balance_sheet",
-    "sector_performance",
-    "macro_rotation",
     "recommendation_trends",
+    "competitive_landscape",
+    "supply_chain",
+    "insider_sentiment",
+    "institutional",
+    "financial_ratios",
+    "market_sentiment",
+    "cashflow",
+    "earnings_momentum",
+    "sector_rotation",
+    "income_statement",
+    "macro_rotation",
+    "sector_performance",
     "risk_assessment",
     "technical_indicators",
-    "dcf",
-    "earnings_momentum",
-    "price_target",
-    "comps_analysis",
-    "esg",
-    "analyst_estimates",
-    "earnings_history",
-    "sector_rotation",
-    "aggregate_indicators"
+    "balance_sheet",
+    "analyst_estimates"
   ],
   "research_gaps": [],
   "contrarian_signals": []
