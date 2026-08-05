@@ -1385,3 +1385,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-05 | FUTU | BUY | N/A | $173.00 | 9/10 | Active | - | THESIS: FUTU is positioned for a breakout after its upcoming earnings report, as |
 | 2026-08-05 | FCX | BUY | N/A | $57.00 | 8/10 | Active | - | THESIS: FCX stands to benefit from a sustained surge in copper demand driven by  |
 | 2026-08-05 | BIDU | BUY | N/A | $55.00 | 8/10 | Active | - | THESIS: BIDU’s AI‑enhanced search and cloud services are poised for accelerated  |
+| 2026-08-05 | FUTU | BUY | N/A | $68.00 | 5/10 | Active | - | THESIS: FUTU’s AI‑powered trading platform and rapidly expanding user base in Ch |
+| 2026-08-05 | AMAT | BUY | N/A | $160.00 | 5/10 | Active | - | THESIS: AMAT’s leadership in AI‑optimized semiconductor equipment, robust order  |
+| 2026-08-05 | CRWD | BUY | N/A | N/A | 5/10 | Active | - | THESIS: CrowdStrike’s AI‑enhanced cloud security platform is poised for accelera |
