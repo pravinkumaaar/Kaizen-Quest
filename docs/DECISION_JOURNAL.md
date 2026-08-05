@@ -1388,3 +1388,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-05 | FUTU | BUY | N/A | $68.00 | 5/10 | Active | - | THESIS: FUTU’s AI‑powered trading platform and rapidly expanding user base in Ch |
 | 2026-08-05 | AMAT | BUY | N/A | $160.00 | 5/10 | Active | - | THESIS: AMAT’s leadership in AI‑optimized semiconductor equipment, robust order  |
 | 2026-08-05 | CRWD | BUY | N/A | N/A | 5/10 | Active | - | THESIS: CrowdStrike’s AI‑enhanced cloud security platform is poised for accelera |
+| 2026-08-05 | FUTU | BUY | $12.00 | $22.00 | 9/10 | Active | - | Why: Deep‑research shows FUTU is the leading AI‑powered credit‑scoring and digit |
+| 2026-08-05 | SNPS | BUY | $500.00 | $620.00 | 8/10 | Active | - | Why: Analysts project SNPS FY2026 revenue of $2.5 B (≈22% YoY growth) with EPS o |
+| 2026-08-05 | CRWD | BUY | $300.00 | $460.00 | 8/10 | Active | - | Why: CRWD’s SaaS model delivers recurring revenue with >30% YoY growth (FY2026 r |
