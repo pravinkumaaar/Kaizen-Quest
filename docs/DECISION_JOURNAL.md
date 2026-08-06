@@ -1400,3 +1400,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-06 | CRWD | BUY | $150.00 | N/A | 9/10 | Active | - | Why: Cloudflare is positioned at the intersection of AI‑driven security and edge |
 | 2026-08-06 | AMAT | BUY | $78.00 | N/A | 8/10 | Active | - | Why: Applied Materials is a key beneficiary of the AI‑chip manufacturing boom, w |
 | 2026-08-06 | GLD | BUY | $200.00 | $3.00 | 8/10 | Active | - | Why: Persistent inflation expectations and heightened geopolitical risk are driv |
+| 2026-08-06 | FUTU | BUY | $45.00 | $120.00 | 9/10 | Active | - | Why: FUTU trades at a discount to its growth trajectory, with revenue expanding  |
+| 2026-08-06 | BILL | BUY | $70.00 | $110.00 | 8/10 | Active | - | Why: Bill.com benefits from the secular shift to digital payments for SMBs, and  |
+| 2026-08-06 | XPEV | BUY | $15.00 | $25.00 | 8/10 | Active | - | Why: XPeng is transitioning to higher‑margin vehicle segments and expanding its  |
