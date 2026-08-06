@@ -1397,3 +1397,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-05 | AFYA | BUY | $13.50 | $23.00 | 8/10 | Active | - | Why: AFYA is a Brazilian health‑tech platform scaling digital care, with revenue |
 | 2026-08-05 | CRWD | BUY | $300.00 | $420.00 | 9/10 | Active | - | Why: CrowdStrike’s cloud‑native AI security platform is benefiting from accelera |
 | 2026-08-05 | PDD | BUY | $85.00 | $135.00 | 8/10 | Active | - | Why: PDD dominates China’s low‑price e‑commerce market with accelerating user gr |
+| 2026-08-06 | CRWD | BUY | $150.00 | N/A | 9/10 | Active | - | Why: Cloudflare is positioned at the intersection of AI‑driven security and edge |
+| 2026-08-06 | AMAT | BUY | $78.00 | N/A | 8/10 | Active | - | Why: Applied Materials is a key beneficiary of the AI‑chip manufacturing boom, w |
+| 2026-08-06 | GLD | BUY | $200.00 | $3.00 | 8/10 | Active | - | Why: Persistent inflation expectations and heightened geopolitical risk are driv |
