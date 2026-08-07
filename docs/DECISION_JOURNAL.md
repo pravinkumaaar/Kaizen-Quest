@@ -1413,3 +1413,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-07 | COTY | BUY | $10.00 | N/A | 7/10 | Active | - | Why: COTY’s $1.2B revenue and EPS estimate of $-0.01 reflect a low‑cost base. Th |
 | 2026-08-07 | PDD | BUY | $120.00 | N/A | 9/10 | Active | - | Why: PDD operates a massive e‑commerce ecosystem with $117.5B revenue and EPS $1 |
 | 2026-08-07 | CRWD | BUY | $350.00 | N/A | 8/10 | Active | - | Why: CrowdStrike’s cloud‑native security platform shows subscription ARR growing |
+| 2026-08-07 | BABA | BUY | $80.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF and peer‑multiple analysis show Alibaba is undervalued re |
+| 2026-08-07 | ADSK | BUY | $300.00 | N/A | 5/10 | Active | - | Why: Deep‑research shows Autodesk’s transition to a subscription model, AI‑enhan |
+| 2026-08-07 | FCX | BUY | $38.00 | N/A | 5/10 | Active | - | Why: Deep‑research indicates Freeport‑McMoRan is well‑positioned to capture secu |
