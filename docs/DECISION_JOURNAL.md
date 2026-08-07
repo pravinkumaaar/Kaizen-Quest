@@ -1403,3 +1403,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-06 | FUTU | BUY | $45.00 | $120.00 | 9/10 | Active | - | Why: FUTU trades at a discount to its growth trajectory, with revenue expanding  |
 | 2026-08-06 | BILL | BUY | $70.00 | $110.00 | 8/10 | Active | - | Why: Bill.com benefits from the secular shift to digital payments for SMBs, and  |
 | 2026-08-06 | XPEV | BUY | $15.00 | $25.00 | 8/10 | Active | - | Why: XPeng is transitioning to higher‑margin vehicle segments and expanding its  |
+| 2026-08-07 | TICKER | BUY | $150.00 | $11950.00 | 8/10 | Active | - | Why: Alibaba is transitioning to an AI‑first commerce model (Gemini‑style search |
+| 2026-08-07 | TICKER | BUY | $80.00 | $9574.00 | 7/10 | Active | - | Why: PDD’s low‑cost ecosystem, rapid user‑base growth, and AI‑enabled logistics  |
+| 2026-08-07 | TICKER | BUY | $120.00 | $11967.00 | 8/10 | Active | - | Why: Futu’s AI‑enhanced trading platform and expanding wealth‑management suite a |
