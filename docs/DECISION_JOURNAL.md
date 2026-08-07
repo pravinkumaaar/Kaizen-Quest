@@ -1409,3 +1409,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-07 | BABA | BUY | $78.20 | $180.00 | 9/10 | Active | - | Why: Alibaba is transitioning from a pure e‑commerce platform to an AI‑driven ec |
 | 2026-08-07 | FUTU | BUY | $30.45 | $150.00 | 8/10 | Active | - | Why: Futu operates a leading AI‑powered trading and wealth‑management platform i |
 | 2026-08-07 | GLD | BUY | $210.00 | N/A | 7/10 | Active | - | Why: Gold is entering a structural uptrend driven by persistent inflation, geopo |
+| 2026-08-07 | FUTU | BUY | $30.00 | N/A | 8/10 | Active | - | Why: FUTU is a high‑growth Chinese digital wealth‑management platform with reven |
+| 2026-08-07 | COTY | BUY | $10.00 | N/A | 7/10 | Active | - | Why: COTY’s $1.2B revenue and EPS estimate of $-0.01 reflect a low‑cost base. Th |
+| 2026-08-07 | PDD | BUY | $120.00 | N/A | 9/10 | Active | - | Why: PDD operates a massive e‑commerce ecosystem with $117.5B revenue and EPS $1 |
+| 2026-08-07 | CRWD | BUY | $350.00 | N/A | 8/10 | Active | - | Why: CrowdStrike’s cloud‑native security platform shows subscription ARR growing |
