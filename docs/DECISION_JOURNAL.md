@@ -1419,3 +1419,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-07 | ADSK | BUY | $346.80 | $425.00 | 8/10 | Active | - | Why: Autodesk is a market‑leader in cloud‑based design software that is actively |
 | 2026-08-07 | CRWD | BUY | $300.00 | $420.00 | 9/10 | Active | - | Why: CrowdStrike is a pure‑play, cloud‑native cybersecurity leader with >90% ren |
 | 2026-08-07 | GLD | BUY | $205.00 | $265.00 | 6/10 | Active | - | Why: Persistent inflation metrics and heightened geopolitical tension are reinfo |
+| 2026-08-08 | ASML | BUY | $750.00 | $1000.00 | 9/10 | Active | - | Why: ASML dominates the EUV lithography market, a critical enabler for the AI‑dr |
+| 2026-08-08 | FUTU | BUY | $70.00 | $115.00 | 8/10 | Active | - | Why: FUTU is a fast‑growing Chinese fintech platform with a clear catalyst in it |
