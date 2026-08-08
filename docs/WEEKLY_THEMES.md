@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-06-25)
+## Current Theme (Week of 2026-08-08)
 
-**📌 Theme:** History Repeats: Lessons from Past Bubbles & Crashes
+**📌 Theme:** Artificial Intelligence: The Technology Reshaping Everything
 
-**Duration:** Week of 2026-06-25
+**Duration:** Week of 2026-08-08
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: Tulip Mania 1637 - The First Bubble
-- [ ] Day 2: The Dot-Com Crash 2000 - Tech Hubris
-- [ ] Day 3: The 2008 Financial Crisis - Systemic Risk
-- [ ] Day 4: Crypto Winter 2022 - Modern Manias
-- [ ] Day 5: Pattern Recognition - How to Spot Bubbles Early
-- [ ] Day 6: Survivor Bias - Why We Ignore Lessons
-- [ ] Day 7: Building Anti-Fragile Portfolios - Learning from History
+- [ ] Day 1: From Narrow AI to General AI - The Holy Grail
+- [ ] Day 2: Deep Learning Explosion - How Neural Networks Work
+- [ ] Day 3: AI in Medicine - Cancer Detection & Drug Discovery
+- [ ] Day 4: AI in Finance - Algorithmic Trading & Risk Management
+- [ ] Day 5: AI Alignment - The Problem of Values & Control
+- [ ] Day 6: The AI Arms Race - Geopolitical Implications
+- [ ] Day 7: Investment Plays - How to Profit from the AI Revolution
 
 ---
 *New theme rotates each week. Archive your learnings.*
