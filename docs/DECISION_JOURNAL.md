@@ -1421,3 +1421,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-07 | GLD | BUY | $205.00 | $265.00 | 6/10 | Active | - | Why: Persistent inflation metrics and heightened geopolitical tension are reinfo |
 | 2026-08-08 | ASML | BUY | $750.00 | $1000.00 | 9/10 | Active | - | Why: ASML dominates the EUV lithography market, a critical enabler for the AI‑dr |
 | 2026-08-08 | FUTU | BUY | $70.00 | $115.00 | 8/10 | Active | - | Why: FUTU is a fast‑growing Chinese fintech platform with a clear catalyst in it |
+| 2026-08-08 | PDD | BUY | $84.30 | $130.00 | 9/10 | Active | - | Why: Deep research shows PDD trades at a discount to its DCF intrinsic value of  |
+| 2026-08-08 | BILI | BUY | $68.00 | $110.00 | 8/10 | Active | - | Why: Deep research indicates BILI is undervalued relative to its DCF intrinsic v |
+| 2026-08-08 | FUTU | BUY | $48.00 | $80.00 | 8/10 | Active | - | Why: Deep research shows FUTU trades at a discount to its DCF intrinsic value of |
