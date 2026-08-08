@@ -1,3 +1,22 @@
+# 📊 Recommendation Tracking & Decision Journal
+
+## 📋 Watchlist Recommendations
+| # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
+|---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
+| 1 | **FUTU** | $22.00 | $35.00 | 9/10 |  Active  |  $22.00  |  +0.0%  | Swing 4‑6 weeks (around earnings). | Watchlist |
+| 2 | **BZ** | $10.00 | $18.00 | 8/10 |  Active  |  $10.00  |  +0.0%  | Medium 2‑4 weeks (around earnings). | Watchlist |
+| 3 | **COP** | $70.00 | $85.00 | 7/10 |  Active  |  $70.00  |  +0.0%  | Medium 6‑8 weeks (post‑earnings momentum). | Watchlist |
+
+## 🏦 Alpaca Paper Trading Holdings
+| Ticker | Qty | Avg Cost | Current | P&L |
+|--------|-----|----------|---------|-----|
+| **AVGO** | 11 | $430.18 | $427.76 | -0.0% |
+| **MU** | 7 | $651.61 | $877.57 | +0.3% |
+| **NVDA** | 38 | $207.14 | $223.96 | +0.1% |
+| **PLTR** | 57 | $139.47 | $172.01 | +0.2% |
+| **SOFI** | 306 | $16.29 | $18.38 | +0.1% |
+| **TEM** | 99 | $50.22 | $52.05 | +0.0% |
+| **VRT** | 28 | $348.38 | $272.40 | -0.2% |
 
 
 ## 🏦 Alpaca Holdings (Actual Positions)
@@ -8,6 +27,3 @@
 - 2026-08-08 | SOFI | $16.29 | 306 | 8/10 | Active | $18.38 | +12.83% | Long-term (Alpaca)
 - 2026-08-08 | TEM | $50.22 | 99 | 8/10 | Active | $52.05 | +3.64% | Long-term (Alpaca)
 - 2026-08-08 | VRT | $348.38 | 28 | 8/10 | Active | $272.40 | -21.81% | Long-term (Alpaca)
-
-## 📋 Watchlist Recommendations
-<!-- Agent will update this section with current recommendations -->
