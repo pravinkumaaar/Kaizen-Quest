@@ -1427,3 +1427,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-08 | FUTU | BUY | $22.00 | $35.00 | 9/10 | Active | - | Why: FUTU is a leading Chinese online education and fintech platform that is sca |
 | 2026-08-08 | BZ | BUY | $10.00 | $18.00 | 8/10 | Active | - | Why: BZ is a fast‑growing Chinese fintech platform with a expanding user base an |
 | 2026-08-08 | COP | BUY | $70.00 | $85.00 | 7/10 | Active | - | Why: COP is a premier independent oil and gas explorer benefiting from a sustain |
+| 2026-08-09 | AFRM | BUY | $70.00 | $12580.00 | 8/10 | Active | - | Why: Deep‑research shows AFRM trades at a forward P/E of ~22× versus the sector  |
+| 2026-08-09 | FUTU | BUY | $70.00 | $12580.00 | 9/10 | Active | - | Why: Deep‑research indicates FUTU trades at a forward P/E of ~12× versus the ind |
+| 2026-08-09 | EEM | BUY | $68.00 | $10064.00 | 7/10 | Active | - | Why: The portfolio is 67.3% concentrated in U.S. equities (high correlation). De |
