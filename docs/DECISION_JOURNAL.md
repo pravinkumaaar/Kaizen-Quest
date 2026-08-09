@@ -1430,3 +1430,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-09 | AFRM | BUY | $70.00 | $12580.00 | 8/10 | Active | - | Why: Deep‑research shows AFRM trades at a forward P/E of ~22× versus the sector  |
 | 2026-08-09 | FUTU | BUY | $70.00 | $12580.00 | 9/10 | Active | - | Why: Deep‑research indicates FUTU trades at a forward P/E of ~12× versus the ind |
 | 2026-08-09 | EEM | BUY | $68.00 | $10064.00 | 7/10 | Active | - | Why: The portfolio is 67.3% concentrated in U.S. equities (high correlation). De |
+| 2026-08-09 | BILL | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Bill.com is positioned to capture accelerated digital‑payment adoption b |
+| 2026-08-09 | FUTU | BUY | N/A | N/A | 9/10 | Active | - | Thesis: Futu Holdings is poised for a strong rebound as Chinese retail‑trading p |
