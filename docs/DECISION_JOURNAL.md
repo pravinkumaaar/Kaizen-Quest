@@ -1435,3 +1435,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | TICKER | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: BIDU is positioned to capture the shift toward AI‑driven search advertising |
 | 2026-08-10 | TICKER | BUY | $720.00 | $860.00 | 8/10 | Active | - | Why: ASML’s monopoly‑like position in EUV lithography equipment, essential for p |
 | 2026-08-10 | TICKER | BUY | $150.00 | $180.00 | 7/10 | Active | - | Why: DG’s defensive discount‑retail model, resilient same‑store sales growth, an |
+| 2026-08-10 | BZ | BUY | $12.50 | $37.50 | 9/10 | Active | - | Why: BZ is a small‑cap biotech with a high‑margin pipeline and an upcoming catal |
+| 2026-08-10 | AFYA | BUY | $13.00 | $28.00 | 8/10 | Active | - | Why: AFYA is a fast‑growing Brazilian health‑care provider with robust revenue e |
+| 2026-08-10 | PDD | BUY | $85.00 | $180.00 | 8/10 | Active | - | Why: PDD is a dominant Chinese e‑commerce platform with massive revenue scale, t |
