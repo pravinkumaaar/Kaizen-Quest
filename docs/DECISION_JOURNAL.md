@@ -1447,3 +1447,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | BABA | BUY | N/A | $41.00 | 5/10 | Active | - | Why: Deep‑research DCF models value BABA at $110 (≈ 41 % upside) despite a tempo |
 | 2026-08-10 | FUTU | BUY | N/A | $170.00 | 5/10 | Active | - | Why: Deep‑research DCF models set FUTU’s intrinsic value at $165, implying ≈ 38  |
 | 2026-08-10 | GLD | BUY | N/A | N/A | 5/10 | Active | - | Why: Deep‑research indicates gold is entering a bullish phase as real yields tur |
+| 2026-08-10 | BABA | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Deep‑research DCF valuation places fair value at $180 (≈20% upside) with 85 |
+| 2026-08-10 | FUTU | BUY | $110.00 | $170.00 | 7/10 | Active | - | Why: DCF model from deep research values FUTU at $130 (≈18% upside) with 80% con |
+| 2026-08-10 | NTES | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: DCF valuation from deep research indicates a fair value of $200 (≈33% upsid |
