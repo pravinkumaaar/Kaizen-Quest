@@ -1432,3 +1432,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-09 | EEM | BUY | $68.00 | $10064.00 | 7/10 | Active | - | Why: The portfolio is 67.3% concentrated in U.S. equities (high correlation). De |
 | 2026-08-09 | BILL | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Bill.com is positioned to capture accelerated digital‑payment adoption b |
 | 2026-08-09 | FUTU | BUY | N/A | N/A | 9/10 | Active | - | Thesis: Futu Holdings is poised for a strong rebound as Chinese retail‑trading p |
+| 2026-08-10 | TICKER | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: BIDU is positioned to capture the shift toward AI‑driven search advertising |
+| 2026-08-10 | TICKER | BUY | $720.00 | $860.00 | 8/10 | Active | - | Why: ASML’s monopoly‑like position in EUV lithography equipment, essential for p |
+| 2026-08-10 | TICKER | BUY | $150.00 | $180.00 | 7/10 | Active | - | Why: DG’s defensive discount‑retail model, resilient same‑store sales growth, an |
