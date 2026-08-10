@@ -1450,3 +1450,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | BABA | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Deep‑research DCF valuation places fair value at $180 (≈20% upside) with 85 |
 | 2026-08-10 | FUTU | BUY | $110.00 | $170.00 | 7/10 | Active | - | Why: DCF model from deep research values FUTU at $130 (≈18% upside) with 80% con |
 | 2026-08-10 | NTES | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: DCF valuation from deep research indicates a fair value of $200 (≈33% upsid |
+| 2026-08-10 | INTU | BUY | $600.00 | $10.00 | 9/10 | Active | - | Why: Intuit’s AI‑driven product roadmap (QuickBooks AI, TurboTax AI) is expected |
+| 2026-08-10 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CrowdStrike’s AI‑enhanced Falcon platform shows >120% net revenue retention |
+| 2026-08-10 | ASML | BUY | $750.00 | $1050.00 | 8/10 | Active | - | Why: ASML’s monopoly in EUV lithography and the relentless scaling of chip nodes |
