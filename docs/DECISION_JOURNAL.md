@@ -1444,3 +1444,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | NVTS | BUY | $13.89 | $22.00 | 8/10 | Active | - | Why: NVTS is a niche semiconductor‑equipment provider that benefits from the rap |
 | 2026-08-10 | ADSK | BUY | $31.13 | N/A | 8/10 | Active | - | Why: Autodesk is a market‑leading design‑software company integrating AI (Autode |
 | 2026-08-10 | GLD | BUY | $215.00 | $260.00 | 7/10 | Active | - | Why: Gold serves as a proven inflation hedge and safe‑haven asset. The recent +2 |
+| 2026-08-10 | BABA | BUY | N/A | $41.00 | 5/10 | Active | - | Why: Deep‑research DCF models value BABA at $110 (≈ 41 % upside) despite a tempo |
+| 2026-08-10 | FUTU | BUY | N/A | $170.00 | 5/10 | Active | - | Why: Deep‑research DCF models set FUTU’s intrinsic value at $165, implying ≈ 38  |
+| 2026-08-10 | GLD | BUY | N/A | N/A | 5/10 | Active | - | Why: Deep‑research indicates gold is entering a bullish phase as real yields tur |
