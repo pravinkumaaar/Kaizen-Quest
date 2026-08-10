@@ -1453,3 +1453,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | INTU | BUY | $600.00 | $10.00 | 9/10 | Active | - | Why: Intuit’s AI‑driven product roadmap (QuickBooks AI, TurboTax AI) is expected |
 | 2026-08-10 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CrowdStrike’s AI‑enhanced Falcon platform shows >120% net revenue retention |
 | 2026-08-10 | ASML | BUY | $750.00 | $1050.00 | 8/10 | Active | - | Why: ASML’s monopoly in EUV lithography and the relentless scaling of chip nodes |
+| 2026-08-10 | TSM | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Deep‑research DCF models the fair value at $185 (80% confidence), implying  |
+| 2026-08-10 | COP | BUY | $80.00 | $115.00 | 8/10 | Active | - | Why: DCF indicates a fair value of $95 (75% confidence), suggesting ~19% upside. |
+| 2026-08-10 | BZ | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: DCF values Baidu at $180 (70% confidence), implying ~20% upside. BZ is Chin |
+| 2026-08-10 | FCX | BUY | $38.00 | $55.00 | 7/10 | Active | - | Why: DCF shows a fair value of $45 (78% confidence), indicating ~18% upside. FCX |
