@@ -1438,3 +1438,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | BZ | BUY | $12.50 | $37.50 | 9/10 | Active | - | Why: BZ is a small‑cap biotech with a high‑margin pipeline and an upcoming catal |
 | 2026-08-10 | AFYA | BUY | $13.00 | $28.00 | 8/10 | Active | - | Why: AFYA is a fast‑growing Brazilian health‑care provider with robust revenue e |
 | 2026-08-10 | PDD | BUY | $85.00 | $180.00 | 8/10 | Active | - | Why: PDD is a dominant Chinese e‑commerce platform with massive revenue scale, t |
+| 2026-08-10 | CRWD | BUY | $210.00 | $260.00 | 8/10 | Active | - | Why: Deep research shows CrowdStrike’s AI‑driven zero‑trust platform is capturin |
+| 2026-08-10 | DG | BUY | $150.00 | $200.00 | 7/10 | Active | - | Why: Deep research shows Dollar General’s discount model is resilient in inflati |
+| 2026-08-10 | ADSK | BUY | $350.00 | $440.00 | 8/10 | Active | - | Why: Deep research indicates Autodesk’s cloud‑based design suite is experiencing |
