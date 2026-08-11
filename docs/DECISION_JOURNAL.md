@@ -1466,3 +1466,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-11 | CRWD | BUY | N/A | N/A | 9/10 | Active | - | Thesis |
 | 2026-08-11 | BILI | BUY | N/A | N/A | 8/10 | Active | - | Thesis |
 | 2026-08-11 | PLAB | BUY | N/A | N/A | 7/10 | Active | - | Thesis |
+| 2026-08-11 | PANW | BUY | $150.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF valuation shows a fair value of $185 (≈23% upside) while  |
+| 2026-08-11 | CRWD | BUY | $210.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF gives a fair value of $260 (≈24% upside) while the stock  |
+| 2026-08-11 | ADSK | BUY | $300.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF indicates a fair value of $380 (≈27% upside) while the st |
