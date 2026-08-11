@@ -1457,3 +1457,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-10 | COP | BUY | $80.00 | $115.00 | 8/10 | Active | - | Why: DCF indicates a fair value of $95 (75% confidence), suggesting ~19% upside. |
 | 2026-08-10 | BZ | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: DCF values Baidu at $180 (70% confidence), implying ~20% upside. BZ is Chin |
 | 2026-08-10 | FCX | BUY | $38.00 | $55.00 | 7/10 | Active | - | Why: DCF shows a fair value of $45 (78% confidence), indicating ~18% upside. FCX |
+| 2026-08-11 | BIDU | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Baidu is China’s leading AI‑powered search engine with strong monetization  |
+| 2026-08-11 | COP | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: ConocoPhillips is a high‑margin upstream player positioned to benefit from  |
+| 2026-08-11 | GDX | BUY | $50.00 | $65.00 | 8/10 | Active | - | Why: GDX offers leveraged exposure to gold miners, which benefit from rising gol |
