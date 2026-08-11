@@ -1469,3 +1469,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-11 | PANW | BUY | $150.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF valuation shows a fair value of $185 (≈23% upside) while  |
 | 2026-08-11 | CRWD | BUY | $210.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF gives a fair value of $260 (≈24% upside) while the stock  |
 | 2026-08-11 | ADSK | BUY | $300.00 | N/A | 5/10 | Active | - | Why: Deep‑research DCF indicates a fair value of $380 (≈27% upside) while the st |
+| 2026-08-11 | CRWD | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Deep research shows CRWD’s revenue grew 22% YoY to $2.5B in Q1 2026, ARR >  |
+| 2026-08-11 | PDD | BUY | $12.00 | N/A | 8/10 | Active | - | Why: Deep research shows PDD’s revenue $117.5B and EPS $18.40, with YoY growth > |
+| 2026-08-11 | BABA | BUY | $12.00 | N/A | 8/10 | Active | - | Why: Deep research shows BABA’s revenue $274.3B and EPS $10.62, with AI/cloud se |
