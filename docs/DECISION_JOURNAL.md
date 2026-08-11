@@ -1472,3 +1472,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-11 | CRWD | BUY | $30.00 | N/A | 9/10 | Active | - | Why: Deep research shows CRWD’s revenue grew 22% YoY to $2.5B in Q1 2026, ARR >  |
 | 2026-08-11 | PDD | BUY | $12.00 | N/A | 8/10 | Active | - | Why: Deep research shows PDD’s revenue $117.5B and EPS $18.40, with YoY growth > |
 | 2026-08-11 | BABA | BUY | $12.00 | N/A | 8/10 | Active | - | Why: Deep research shows BABA’s revenue $274.3B and EPS $10.62, with AI/cloud se |
+| 2026-08-11 | BIDU | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Baidu is the dominant AI‑enabled search platform in China, generating $32.8 |
+| 2026-08-11 | FCX | BUY | $38.00 | $55.00 | 8/10 | Active | - | Why: Freeport‑McMoRan (FCX) is a low‑cost copper miner positioned to benefit fro |
+| 2026-08-11 | ADI | BUY | $200.00 | $300.00 | 8/10 | Active | - | Why: Analog Devices (ADI) is a leading analog semiconductor supplier with divers |
