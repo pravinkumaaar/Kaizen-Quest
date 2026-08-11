@@ -1463,3 +1463,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-11 | CRWD | BUY | N/A | N/A | 10/10 | Active | - | Why: CRWD is a market‑leading cloud‑native endpoint security platform with >70%  |
 | 2026-08-11 | AMD | BUY | N/A | N/A | 9/10 | Active | - | Why: AMD’s upcoming Zen 5 CPU and RDNA 4 GPU launches, together with expanding A |
 | 2026-08-11 | SE | BUY | N/A | $76.00 | 8/10 | Active | - | Why: Sea Ltd is positioned to capture the accelerating digital commerce and fint |
+| 2026-08-11 | CRWD | BUY | N/A | N/A | 9/10 | Active | - | Thesis |
+| 2026-08-11 | BILI | BUY | N/A | N/A | 8/10 | Active | - | Thesis |
+| 2026-08-11 | PLAB | BUY | N/A | N/A | 7/10 | Active | - | Thesis |
