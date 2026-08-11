@@ -1460,3 +1460,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-11 | BIDU | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Baidu is China’s leading AI‑powered search engine with strong monetization  |
 | 2026-08-11 | COP | BUY | $80.00 | $110.00 | 8/10 | Active | - | Why: ConocoPhillips is a high‑margin upstream player positioned to benefit from  |
 | 2026-08-11 | GDX | BUY | $50.00 | $65.00 | 8/10 | Active | - | Why: GDX offers leveraged exposure to gold miners, which benefit from rising gol |
+| 2026-08-11 | CRWD | BUY | N/A | N/A | 10/10 | Active | - | Why: CRWD is a market‑leading cloud‑native endpoint security platform with >70%  |
+| 2026-08-11 | AMD | BUY | N/A | N/A | 9/10 | Active | - | Why: AMD’s upcoming Zen 5 CPU and RDNA 4 GPU launches, together with expanding A |
+| 2026-08-11 | SE | BUY | N/A | $76.00 | 8/10 | Active | - | Why: Sea Ltd is positioned to capture the accelerating digital commerce and fint |
