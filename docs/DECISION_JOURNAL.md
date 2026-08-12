@@ -1485,3 +1485,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-12 | AVGO | BUY | $1725.00 | N/A | 7/10 | Active | - | Why: You have an earnings catalyst in 21 days. Broadcom is the essential play fo |
 | 2026-08-12 | GLD | BUY | $245.00 | N/A | 8/10 | Active | - | Why: Your portfolio has zero non-equity hedges. Gold acts as your "ballast" agai |
 | 2026-08-12 | AS | BUY | $24.00 | N/A | 6/10 | Active | - | Why: While you play the "hardware" side of AI (NVDA/MU), you lack the "SaaS util |
+| 2026-08-12 | ADI | BUY | $225.00 | $292.00 | 9/10 | Active | - | Why: Analog Devices is a leading producer of precision analog and mixed‑signal c |
+| 2026-08-12 | DY | BUY | $170.00 | $240.00 | 8/10 | Active | - | Why: Dover is a diversified industrial conglomerate with exposure to automation, |
+| 2026-08-12 | AFYA | BUY | $30.00 | $39.00 | 8/10 | Active | - | Why: Afya is a fast‑growing Brazilian fintech that provides digital banking and  |
+| 2026-08-12 | GLD | BUY | $190.00 | $215.00 | 7/10 | Active | - | Why: Gold remains a potent hedge against inflation and geopolitical uncertainty. |
