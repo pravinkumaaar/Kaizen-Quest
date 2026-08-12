@@ -1482,3 +1482,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-12 | NTAP | BUY | $200.00 | $260.00 | 9/10 | Active | - | Why: Our DCF model (5‑year forecast, 10% discount) yields a fair value of $260,  |
 | 2026-08-12 | AFRM | BUY | $70.00 | $110.00 | 8/10 | Active | - | Why: AFRM is capitalizing on rising consumer credit demand and digital payment a |
 | 2026-08-12 | PDD | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: PDD dominates China’s e‑commerce landscape with massive revenue growth and  |
+| 2026-08-12 | AVGO | BUY | $1725.00 | N/A | 7/10 | Active | - | Why: You have an earnings catalyst in 21 days. Broadcom is the essential play fo |
+| 2026-08-12 | GLD | BUY | $245.00 | N/A | 8/10 | Active | - | Why: Your portfolio has zero non-equity hedges. Gold acts as your "ballast" agai |
+| 2026-08-12 | AS | BUY | $24.00 | N/A | 6/10 | Active | - | Why: While you play the "hardware" side of AI (NVDA/MU), you lack the "SaaS util |
