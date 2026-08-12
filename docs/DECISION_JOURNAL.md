@@ -1479,3 +1479,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-12 | PDD | BUY | N/A | N/A | 9/10 | Active | - | Why: PDD reports $117.5 B revenue and $18.40 EPS, with ~28 % YoY revenue growth  |
 | 2026-08-12 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Why: CRWD is a leading cloud‑security platform with >30 % YoY revenue growth, >7 |
 | 2026-08-12 | INDA | BUY | $80.00 | $115.00 | 7/10 | Active | - | Why: India’s economy is expanding at 6‑7 % YoY, driven by a youthful demographic |
+| 2026-08-12 | NTAP | BUY | $200.00 | $260.00 | 9/10 | Active | - | Why: Our DCF model (5‑year forecast, 10% discount) yields a fair value of $260,  |
+| 2026-08-12 | AFRM | BUY | $70.00 | $110.00 | 8/10 | Active | - | Why: AFRM is capitalizing on rising consumer credit demand and digital payment a |
+| 2026-08-12 | PDD | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: PDD dominates China’s e‑commerce landscape with massive revenue growth and  |
