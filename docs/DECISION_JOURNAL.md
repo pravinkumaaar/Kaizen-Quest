@@ -1499,3 +1499,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-13 | SLV | BUY | $59.06 | $48.00 | 7/10 | Active | - | Why: Silver has broken out of a 6‑month base, backed by rising industrial demand |
 | 2026-08-13 | EEM | BUY | $45.20 | $30.00 | 7/10 | Active | - | Why: Emerging markets are trading at a historic discount to the US (forward P/E  |
 | 2026-08-13 | ASML | BUY | $820.00 | $28.00 | 8/10 | Active | - | Why: ASML is the sole producer of extreme‑ultraviolet (EUV) lithography machines |
+| 2026-08-13 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | Why: Broadcom is the dominant provider of custom ASICs and networking silicon fo |
+| 2026-08-13 | DELL | BUY | N/A | N/A | 7/10 | Active | - | Why: Dell is benefiting from a dual‑tailwind: (1) enterprise PC refresh driven b |
+| 2026-08-13 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Real‑interest rates remain negative (10‑yr TIPS yield ≈ ‑0.4 %), and centra |
