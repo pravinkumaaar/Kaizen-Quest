@@ -1507,3 +1507,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-13 | PLTR | BUY | $179.12 | N/A | 9/10 | Active | - | Why: You are up 185.8% on a 34.3% position. This is no longer a trade; it is aSl |
 | 2026-08-13 | AVGO | BUY | $200.00 | N/A | 7/10 | Active | - | Why: You are heavily into the "plumbing" (GBufarly earnings data for SMCI/NVDA), |
 | 2026-08-13 | GLD | BUY | $235.00 | N/A | 5/10 | Active | - | Why: Your portfolio is 100% "Risk-On." You have 0% hedge against geopolitical vo |
+| 2026-08-13 | INDA | BUY | $68.20 | $100.00 | 8/10 | Active | - | Why: India’s structural growth story is accelerating – GDP growth >7% YoY, manuf |
