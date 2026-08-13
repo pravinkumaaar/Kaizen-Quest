@@ -1504,3 +1504,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-13 | GLD | BUY | N/A | N/A | 6/10 | Active | - | Why: Real‑interest rates remain negative (10‑yr TIPS yield ≈ ‑0.4 %), and centra |
 | 2026-08-13 | AVGO | BUY | $160.00 | N/A | 8/10 | Active | - | Why: Broadcom is the "hidden" king of the AI data center. As Google and others s |
 | 2026-08-13 | AS | BUY | $135.00 | N/A | 7/10 | Active | - | Why: Amidst the massive CapEx of the giants, there is a massive need for high-pr |
+| 2026-08-13 | PLTR | BUY | $179.12 | N/A | 9/10 | Active | - | Why: You are up 185.8% on a 34.3% position. This is no longer a trade; it is aSl |
+| 2026-08-13 | AVGO | BUY | $200.00 | N/A | 7/10 | Active | - | Why: You are heavily into the "plumbing" (GBufarly earnings data for SMCI/NVDA), |
+| 2026-08-13 | GLD | BUY | $235.00 | N/A | 5/10 | Active | - | Why: Your portfolio is 100% "Risk-On." You have 0% hedge against geopolitical vo |
