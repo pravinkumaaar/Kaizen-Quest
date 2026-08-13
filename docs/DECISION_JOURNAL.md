@@ -1495,3 +1495,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-13 | GOLD | BUY | $13.00 | N/A | 9/10 | Active | - | Why: Gold Fields is a low‑cost South African miner trading at a ~15% discount to |
 | 2026-08-13 | BIDU | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Baidu is the leading Chinese search engine with a fast‑growing AI‑driven ad |
 | 2026-08-13 | CIEN | BUY | $55.00 | N/A | 8/10 | Active | - | Why: Ciena is a premier optical‑networking provider benefiting from the accelera |
+| 2026-08-13 | PLTR | BUY | $171.04 | N/A | 8/10 | Active | - | Why: PLTR is the portfolio’s largest holding (33.5% of equity) and has risen +17 |
+| 2026-08-13 | SLV | BUY | $59.06 | $48.00 | 7/10 | Active | - | Why: Silver has broken out of a 6‑month base, backed by rising industrial demand |
+| 2026-08-13 | EEM | BUY | $45.20 | $30.00 | 7/10 | Active | - | Why: Emerging markets are trading at a historic discount to the US (forward P/E  |
+| 2026-08-13 | ASML | BUY | $820.00 | $28.00 | 8/10 | Active | - | Why: ASML is the sole producer of extreme‑ultraviolet (EUV) lithography machines |
