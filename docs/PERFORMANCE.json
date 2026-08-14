@@ -56458,5 +56458,63 @@
       "period": "1D"
     },
     "recommendations_count": 0
+  },
+  {
+    "date": "2026-08-14",
+    "portfolio": {
+      "total_return_pct": 86.48,
+      "total_return_dollar": 124192.01,
+      "portfolio_value": 267800.04,
+      "cost_basis": 143608.03
+    },
+    "benchmarks": {
+      "portfolio_return": 86.48,
+      "indices": {
+        "SPY": {
+          "name": "S&P 500",
+          "return": 0,
+          "diff": 86.48,
+          "price": 0,
+          "prev_close": null
+        },
+        "QQQ": {
+          "name": "Nasdaq 100",
+          "return": 0,
+          "diff": 86.48,
+          "price": 0,
+          "prev_close": null
+        },
+        "IWM": {
+          "name": "Russell 2000",
+          "return": 0.26,
+          "diff": 86.22,
+          "price": 303.5,
+          "prev_close": 302.71
+        },
+        "VTI": {
+          "name": "Total Stock Market",
+          "return": 0.65,
+          "diff": 85.83,
+          "price": 384.3,
+          "prev_close": 381.83
+        },
+        "DIA": {
+          "name": "Dow Jones",
+          "return": 0.14,
+          "diff": 86.34,
+          "price": 537.91,
+          "prev_close": 537.15
+        }
+      },
+      "outperformed": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "VTI",
+        "DIA"
+      ],
+      "period": "1D"
+    },
+    "recommendations_count": 0
   }
 ]
