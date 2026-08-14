@@ -1514,3 +1514,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-14 | ADSK | BUY | N/A | $500.00 | 5/10 | Active | - | Thesis: AI‑enhanced design software demand will accelerate, driving Autodesk’s s |
 | 2026-08-14 | PDD | BUY | N/A | $120.00 | 5/10 | Active | - | Thesis: Pinduoduo’s rapid revenue expansion and improving profitability will con |
 | 2026-08-14 | BABA | BUY | N/A | $150.00 | 5/10 | Active | - | Thesis: Alibaba’s cloud services and revitalized core commerce will deliver earn |
+| 2026-08-14 | PATH | BUY | $1.15 | $2.00 | 8/10 | Active | - | Why: PATH has fallen 22.8% today (▼22.82%) and is heavily oversold; earnings are |
+| 2026-08-14 | ADI | BUY | $255.00 | N/A | 7/10 | Active | - | Why: Analog Devices (ADI) reports earnings in 5 days (Sept 2) with EPS est $3.37 |
