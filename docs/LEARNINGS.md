@@ -1,38 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-e to maintain concentration ≤20% per ticker.  
-
-These focused, data‑driven adjustments will close the gaps identified in the recent 9.2/10 run, improve risk‑adjusted returns, and ensure the model learns from each iteration rather than repeating past oversights.
-
-## Run: 2026-08-14 11:47:59 ET
-- **Stale price data on PLTR** – the last update was on 2026‑04‑22 (price $135.12) while the current price on 2026‑08‑14 is $139.47; using outdated data inflated the +27.44% upside thesis. Implement a memory‑check that flags any ticker without a price/volume refresh in the past 7 days.  
-
-- **Conviction vs actual performance** – the four 8/10 picks (PLTR, SOFI, TEM, VRT) showed mixed outcomes: PLTR (+27.44%) and SOFI (+13.25%) met expectations, but VRT (‑16.44%) was a false positive, indicating the thesis for a high‑beta, low‑liquidity stock was over‑optimistic.  
-
-- **Missing thesis documentation** – no formal thesis (catalyst, price target, confidence level) was recorded for VRT, while PLTR, SOFI, and TEM had theses only in the 9.2/10 run; this hampers post‑mortem validation and conviction calibration.  
-
-- **Stop‑loss not enforced** – the checklist calls for a 15 % trailing stop on PLTR, SOFI, and TEM and a 10 % fixed stop on lower‑conviction trades, yet no stop‑losses are currently attached, leaving the portfolio exposed to deeper drawdowns.  
-
-- **Concentration risk mismatch** – memory snapshots show 68 % portfolio value concentrated in a few tickers, contradicting the reported 0.0 % concentration; this indicates position‑sizing rules are not being applied, risking >20 % per‑ticker exposure.  
-
-- **Cash deployment inefficiency** – cash represents 53 % of the $103,954 portfolio (~$55k). The target cash ratio is ≤15 % (~$15.6k), meaning $39k of idle cash is not being deployed, creating a material opportunity cost.  
-
-- **No new‑stock opportunity analysis** – all recommendations were limited to existing holdings; no evaluation of fresh high‑conviction ideas (e.g., a biotech with an upcoming FDA decision) was performed, violating the “look beyond portfolio” requirement.  
-
-- **Options chain data quality** – the options data for PLTR and SOFI was flagged as broken in the 9.2/10 run, resulting in incomplete premium analysis and potentially mis‑priced LEAP strategies.  
-
-- **Inconsistent market foresight rating** – a “neutral” 3/100 score conflicts with the positive earnings‑risk flag; a more granular 0‑100 rating would better align foresight with conviction and avoid contradictory signals.  
-
-- **Learning loop stagnation** – the “memory‑check” action item was noted in the recent checklist but not yet implemented, causing redundant research on stale tickers (PLTR, VRT) and wasting analytical capacity.  
-
-- **Quarterly rebalance absent** – the last portfolio rebalance occurred after the 2026‑04‑30 run; without quarterly rebalancing, VRT’s weight has drifted to ~68 % of portfolio value, breaching the ≤20 % per‑ticker concentration limit.  
-
-- **Risk‑adjusted return opportunity** – applying the 15 % trailing stops to PLTR, SOFI, and TEM and trimming VRT exposure to ≤5 % ($5.2k) would reduce downside volatility and improve the portfolio’s Sharpe ratio while preserving upside capture.  
-
-- **Actionable next‑run checklist (synthesized)**  
-  1) Refresh all price and options data to real‑time before any recommendation.  
-  2) Write a concise thesis (catalyst, target price, confidence) for each 8+/10 pick.  
-  3) Set 15 % trailing stops on PLTR, SOFI, TEM and 10 % fixed stops on lower‑conviction positions.  
+ on lower‑conviction positions.  
   4) Deploy cash to bring the cash ratio ≤15 % (≈$15.6k) by adding two new high‑conviction ideas from the weekly scan.  
   5) Cap VRT exposure at ≤5 % of portfolio (~$5.2k) or consider exit if downside risk persists.  
   6) Conduct a quarterly rebalance to enforce ≤20 % concentration per ticker.  
@@ -123,3 +91,24 @@ These focused, data‑driven adjustments will close the gaps identified in the r
 - **Missed fresh ideas:** The report only considered securities already in the portfolio, ignoring new high‑conviction opportunities such as a cloud‑AI chip maker that could have added 5‑10% incremental return without breaching the 20% concentration cap.  
 - **Learning & memory gaps:** No timestamps are logged for data refreshes, causing the agent to re‑evaluate the same tickers (PLTR, SOFI) with outdated information and preventing true “learning from past analysis.”  
 - **Systematic improvements needed:** (1) enforce real‑time price/options/news refresh before any recommendation; (2) store a concise thesis (catalyst, target, confidence %) for every 8+/10 pick in the thesis journal; (3) apply 15% trailing stops on all 8+/10 positions and 10% fixed stops on lower‑conviction holdings; (4) cap any single ticker at 20% of portfolio and VRT at ≤5% ($5.2k); (5) allocate cash until cash ≤15% of total assets; (6) upgrade rating to include forward‑looking metrics (earnings surprise, IV rank); (7) build an independent new‑stock watchlist to capture fresh high‑conviction ideas.
+
+## Run: 2026-08-14 16:27:47 ET
+- **What Worked Well** – The LEAP option thesis on **VRT** (price $348.38, 28 shares, 8/10 conviction) gave a clear catalyst (Railway AI cloud raise) and a concrete target ($293.90) with a documented 15.6 % downside risk; the explanation was detailed and the trade aligned with the AI‑thematic rally that lifted **NBIS** (+8.9 %) and **SNDK** (+7.4 %).  
+
+- **What Didn't Work** – **PLTR** was recommended at $139.47 with an 8/10 conviction, yet the underlying price used was stale (last update > 2 weeks old) and the +24.7 % upside was based on outdated data; similarly, the watchlist order was random, ignoring the fact that **VERI** (‑22.8 %) and **OPENZ** (‑6.0 %) were the biggest losers and should have triggered immediate review.  
+
+- **Conviction Calibration** – The four 8+/10 picks (PLTR, SOFI, TEM, VRT) showed mixed results: PLTR (+24.7 %) and SOFI (+12.2 %) validated the confidence, TEM (+3.6 %) was modest, but **VRT** lost 15.6 % despite the high conviction, indicating a false positive and the need for tighter confidence‑target alignment.  
+
+- **Thesis Journal Review** – No thesis entries exist for any 8+/10 pick in the journal (section is empty), so we cannot verify whether catalysts, targets, or confidence percentages were recorded; this gap explains why VRT’s loss was not anticipated and why learning from past trades is impossible.  
+
+- **Missed Opportunities** – The report ignored a high‑conviction AI‑chip maker (e.g., **AMD** or a specialized GPU‑AI ticker) that could have added 5‑10 % incremental return without breaching the 20 % concentration cap, and it failed to surface fresh ideas such as **COIN** (crypto‑AI exposure) or **MSFT** (AI‑infused cloud services).  
+
+- **Data Quality Issues** – **PLTR** price ($139.47) is stale (no timestamp), the options chain for **VRT** was missing, and the report hallucinated a “$173.88” target for PLTR that does not match any current market data; these gaps erode trust in the recommendation engine.  
+
+- **Risk Management** – No stop‑losses were defined for any 8+/10 position; **VRT** exceeds the 5 % portfolio cap (≈8 % of total assets) and sits at a 15.6 % loss, violating the 15 % trailing‑stop rule proposed in the improvement list.  
+
+- **Cash Deployment** – Cash remains at 53 % ($54.9 k) of the $103.7 k portfolio, far above the target ≤15 %; idle cash is not being used to capture the AI‑chip opportunity or to rebalance the large‑cap **SNDK** ($1.64 k) position, creating a material opportunity cost.  
+
+- **Memory & Learning** – No timestamps are logged for data refreshes, causing the agent to re‑evaluate **PLTR** and **SOFI** with outdated prices; the lack of a concise thesis entry for each high‑conviction pick prevents true “learning from past analysis” and hampers systematic improvement.  
+
+- **Process Improvements** – 1) Enforce real‑time price/options/news refresh before any recommendation; 2) Log a concise thesis (catalyst, target price, confidence %) for every 8+/10 pick in the thesis journal; 3) Apply a 15 % trailing stop on all 8+/10 positions and a 10 % fixed stop on lower‑conviction holdings; 4) Cap any single ticker at 20 % of portfolio and enforce the VRT ≤5 % ($5.2 k) limit; 5) Reduce cash to ≤15 % by allocating to high‑conviction AI‑chip or cloud‑AI stocks; 6) Upgrade rating metrics to include earnings surprise, IV rank, and forward‑looking sentiment; 7) Build an independent new‑stock watchlist to capture fresh high‑conviction ideas beyond the current 7 holdings.
