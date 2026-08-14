@@ -1511,3 +1511,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-14 | TICKER | BUY | $162.00 | $210.00 | 9/10 | Active | - | Why: Deep‑research DCF valuation shows a fair value of $210 (85% confidence). Re |
 | 2026-08-14 | TICKER | BUY | $210.00 | $260.00 | 8/10 | Active | - | Why: Deep‑research indicates AI‑driven CRM revenue acceleration of ~12% YoY and  |
 | 2026-08-14 | TICKER | BUY | $120.00 | $135.00 | 7/10 | Active | - | Why: Macro data shows rising inflation expectations and heightened geopolitical  |
+| 2026-08-14 | ADSK | BUY | N/A | $500.00 | 5/10 | Active | - | Thesis: AI‑enhanced design software demand will accelerate, driving Autodesk’s s |
+| 2026-08-14 | PDD | BUY | N/A | $120.00 | 5/10 | Active | - | Thesis: Pinduoduo’s rapid revenue expansion and improving profitability will con |
+| 2026-08-14 | BABA | BUY | N/A | $150.00 | 5/10 | Active | - | Thesis: Alibaba’s cloud services and revitalized core commerce will deliver earn |
