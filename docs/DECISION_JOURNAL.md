@@ -1523,3 +1523,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-15 | CRWD | BUY | N/A | $60.00 | 9/10 | Active | - | THESIS: CrowdStrike’s cloud‑native XDR platform is primed to capture the acceler |
 | 2026-08-15 | DELL | BUY | N/A | $37.50 | 8/10 | Active | - | THESIS: Dell is positioned to capture the AI‑infrastructure spend surge; a stron |
 | 2026-08-15 | SNOW | BUY | N/A | $75.00 | 8/10 | Active | - | THESIS: Snowflake’s cloud data platform is set to benefit from AI‑driven analyti |
+| 2026-08-15 | ADI | BUY | N/A | N/A | 9/10 | Active | - | Thesis: Analog Devices is positioned to capture sustained demand for analog semi |
+| 2026-08-15 | BIDU | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Baidu’s dominance in AI‑driven search and its expanding AI‑coding ecosys |
