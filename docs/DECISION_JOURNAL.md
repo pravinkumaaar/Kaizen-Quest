@@ -1525,3 +1525,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-15 | SNOW | BUY | N/A | $75.00 | 8/10 | Active | - | THESIS: Snowflake’s cloud data platform is set to benefit from AI‑driven analyti |
 | 2026-08-15 | ADI | BUY | N/A | N/A | 9/10 | Active | - | Thesis: Analog Devices is positioned to capture sustained demand for analog semi |
 | 2026-08-15 | BIDU | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Baidu’s dominance in AI‑driven search and its expanding AI‑coding ecosys |
+| 2026-08-15 | CRWD | BUY | $340.00 | N/A | 9/10 | Active | - | Why: CrowdStrike is a market‑leading cloud security platform with rapid revenue  |
+| 2026-08-15 | PDD | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Pinduoduo is a high‑growth Chinese e‑commerce platform expanding into lifes |
+| 2026-08-15 | BIDU | BUY | $120.00 | N/A | 8/10 | Active | - | Why: Baidu is a leading Chinese internet company with strong AI integration (ERN |
