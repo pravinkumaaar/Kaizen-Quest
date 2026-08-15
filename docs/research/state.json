@@ -1,10 +1,8 @@
 {
-  "total_runs": 606,
-  "last_run": "2026-08-15T08:31:46.512790",
+  "total_runs": 607,
+  "last_run": "2026-08-15T10:30:23.586762",
   "last_run_tickers": [
-    "NBIS",
-    "VRT",
-    "APLD"
+    "SMCI"
   ],
   "research_queue": [],
   "global_facts": {}
