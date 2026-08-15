@@ -1516,3 +1516,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-14 | BABA | BUY | N/A | $150.00 | 5/10 | Active | - | Thesis: Alibaba’s cloud services and revitalized core commerce will deliver earn |
 | 2026-08-14 | PATH | BUY | $1.15 | $2.00 | 8/10 | Active | - | Why: PATH has fallen 22.8% today (▼22.82%) and is heavily oversold; earnings are |
 | 2026-08-14 | ADI | BUY | $255.00 | N/A | 7/10 | Active | - | Why: Analog Devices (ADI) reports earnings in 5 days (Sept 2) with EPS est $3.37 |
+| 2026-08-15 | SNOW | BUY | $420.00 | $560.00 | 9/10 | Active | - | Why: Snowflake is the leading cloud‑native data platform with a subscription mod |
+| 2026-08-15 | CRWD | BUY | $300.00 | $420.00 | 8/10 | Active | - | Why: CrowdStrike’s cloud‑native endpoint security platform is positioned to capt |
+| 2026-08-15 | FCX | BUY | $38.00 | $60.00 | 8/10 | Active | - | Why: Freeport‑McMoRan provides exposure to copper, a critical metal for the ener |
+| 2026-08-15 | INTU | BUY | $400.00 | $520.00 | 7/10 | Active | - | Why: Intuit’s integrated financial ecosystem (Turbo, QuickBooks, Payments) is po |
