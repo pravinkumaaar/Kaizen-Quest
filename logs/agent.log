@@ -131526,3 +131526,127 @@
 [2026-08-15 12:44:40] INFO:    Report: REPORTS/2026-08-15-0830.md
 [2026-08-15 12:44:40] INFO:    Skills: ✅ All active
 [2026-08-15 12:44:40] INFO:    Rate this run: add_rating(score, 'optional notes') in Python
+[2026-08-15 14:18:06] INFO: ============================================================
+[2026-08-15 14:18:06] INFO: 🤖 Agent v2.2 starting — Run 1018
+[2026-08-15 14:18:06] INFO:    Model Priority: Free (Qwen/Llama) → DeepSeek Chat
+[2026-08-15 14:18:06] INFO:    Watchlist: Dynamic (portfolio) + Indices + Crypto
+[2026-08-15 14:18:06] INFO: ✓ Cleared active recommendations
+[2026-08-15 14:18:06] INFO:    Learning: Rotating weekly themes with daily deep dives
+[2026-08-15 14:18:06] INFO: ============================================================
+[2026-08-15 14:18:06] INFO: [OK] Tiered memory initialized
+[2026-08-15 14:18:06] INFO: [OK] Financial data providers initialized
+[2026-08-15 14:18:06] INFO: [OK] All skills initialized with API keys
+[2026-08-15 14:18:06] INFO: ✓ Loaded 4 portfolios: 67 unique holdings, $143,608 total cost basis
+[2026-08-15 14:18:06] INFO:   → 19 tickers consolidated from multiple portfolios
+[2026-08-15 14:18:07] INFO: [OK] Paper trading account: $103,757.44 equity
+[2026-08-15 14:18:07] INFO: 📚 Loading memory...
+[2026-08-15 14:18:07] INFO: [OK] Memory loaded: 201 chars
+[2026-08-15 14:18:07] INFO: 📈 Updating recommendation tracking...
+[2026-08-15 14:18:07] INFO: 📡 Fetching RSS feeds...
+[2026-08-15 14:18:13] INFO: Cached fresh RSS feeds
+[2026-08-15 14:18:13] INFO: 💹 Fetching market data...
+[2026-08-15 14:19:24] INFO: 📰 Fetching Finnhub news...
+[2026-08-15 14:19:24] INFO: 📝 RESEARCH mode — skipping Tavily (using cached news + free data)
+[2026-08-15 14:19:24] INFO: 📊 Analyzing portfolio positions by weightage...
+[2026-08-15 14:20:13] INFO: ✓ Portfolio analysis: Live: 55, Stale: 12, Errors: 12 (of 67 tickers)
+[2026-08-15 14:20:13] INFO: 🌡️  Analyzing market sentiment (fear/greed)...
+[2026-08-15 14:20:13] INFO:   → Analyzing market sentiment...
+[2026-08-15 14:20:18] INFO: 📅 Running comprehensive earnings intelligence (full universe + forward analysis)...
+[2026-08-15 14:20:20] INFO: ✓ Portfolio earnings: **📅 Earnings — Your Portfolio Holdings:**
+  🔔 PATH — Earnings in 19d (2026-09-03) (amc) EPS est: $0.
+[2026-08-15 14:20:20] INFO: ✓ Related/supply chain earnings: **📅 Earnings — Related / Supply Chain Companies:**
+  🔔 S — Earnings in 12d (2026-08-27) EPS est: $0.
+[2026-08-15 14:20:20] INFO: ✓ Sector earnings: **📅 Earnings — Comprehensive Sector Coverage:**
+  🔔 ABM — Earnings in 20d (2026-09-04) EPS est: $1.0
+[2026-08-15 14:20:20] INFO: 🔮 Running market foresight predictor...
+[2026-08-15 14:20:45] INFO: [OK] Market Foresight Score: 3/100 (neutral)
+[2026-08-15 14:20:45] INFO:   → Earnings Revisions (1-3mo): Earnings revisions strongly positive (8 up, 0 down, net +40%) — leads market by 1-3mo
+[2026-08-15 14:20:47] INFO: 📊 Advanced CSV portfolio management (8-strategy system)...
+[2026-08-15 14:21:27] INFO: ✓ Portfolio analysis: Live: 60, Stale: 7, Errors: 7 (of 67 tickers)
+[2026-08-15 14:21:27] INFO: [OK] CSV Portfolio: $270,621 | P&L: $+127,013 (+88.4%) | Concentration: 67.5% | Positions: 67
+[2026-08-15 14:21:32] INFO:   ✅ HOLD NVDA: Thesis intact, no better opportunity, position size appropriate | P&L: +117.0% | 12.5% of portfolio
+[2026-08-15 14:21:34] INFO:   ✅ HOLD NBIS: Thesis intact, no better opportunity, position size appropriate | P&L: +420.5% | 10.9% of portfolio
+[2026-08-15 14:21:52] INFO:   ✅ HOLD SMCI: Thesis intact, no better opportunity, position size appropriate | P&L: +0.9% | 1.5% of portfolio
+[2026-08-15 14:21:56] INFO:   ✅ HOLD BBAI: Thesis intact, no better opportunity, position size appropriate | P&L: -11.4% | 1.2% of portfolio
+[2026-08-15 14:22:08] INFO:   ✅ HOLD CRWV: Thesis intact, no better opportunity, position size appropriate | P&L: -5.0% | 0.9% of portfolio
+[2026-08-15 14:22:32] INFO:   ✅ HOLD HOOD: Thesis intact, no better opportunity, position size appropriate | P&L: +9.2% | 0.5% of portfolio
+[2026-08-15 14:22:37] INFO:   ✅ HOLD SHOP: Thesis intact, no better opportunity, position size appropriate | P&L: -3.1% | 0.3% of portfolio
+[2026-08-15 14:22:40] INFO:   ✅ HOLD ORCL: Thesis intact, no better opportunity, position size appropriate | P&L: -8.1% | 0.3% of portfolio
+[2026-08-15 14:22:46] INFO:   ✅ HOLD MP: Thesis intact, no better opportunity, position size appropriate | P&L: +6.7% | 0.3% of portfolio
+[2026-08-15 14:22:48] INFO:   ✅ HOLD VST: Thesis intact, no better opportunity, position size appropriate | P&L: -14.2% | 0.3% of portfolio
+[2026-08-15 14:22:50] INFO:   ✅ HOLD KMDA: Thesis intact, no better opportunity, position size appropriate | P&L: -0.9% | 0.2% of portfolio
+[2026-08-15 14:23:05] INFO:   ✅ HOLD IONQ: Thesis intact, no better opportunity, position size appropriate | P&L: -15.7% | 0.2% of portfolio
+[2026-08-15 14:23:09] INFO:   ✅ HOLD OCUL: Thesis intact, no better opportunity, position size appropriate | P&L: -1.1% | 0.2% of portfolio
+[2026-08-15 14:24:06] INFO:   ✅ HOLD SPAXX: Thesis intact, no better opportunity, position size appropriate | P&L: +0.0% | 0.0% of portfolio
+[2026-08-15 14:24:06] INFO: [OK] CSV portfolio actions generated: 53 items
+[2026-08-15 14:24:06] INFO:   ✂️ TRIM PLTR: Concentration: 33.2% of portfolio exceeds 20% max — trimming to manage risk
+[2026-08-15 14:24:06] INFO:   ➕ BUY_MORE MU: Uptrend +156.4%, thesis intact, only 6.7% of portfolio — adding to winner
+[2026-08-15 14:24:06] INFO:   ➕ BUY_MORE APLD: Uptrend +161.9%, thesis intact, only 4.3% of portfolio — adding to winner
+[2026-08-15 14:24:06] INFO:   ➕ BUY_MORE VRT: Uptrend +100.9%, thesis intact, only 3.0% of portfolio — adding to winner
+[2026-08-15 14:24:06] INFO:   ➕ BUY_MORE ASTS: Uptrend +93.3%, thesis intact, only 2.6% of portfolio — adding to winner
+[2026-08-15 14:24:06] INFO: 📊 Monitoring Alpaca paper trading account...
+[2026-08-15 14:24:07] INFO: [OK] Alpaca: $103,757 | Cash: 53% | Positions: 7
+[2026-08-15 14:24:07] INFO:   💰 CASH DRAG: 53% cash ($55,174). Excess: $39,611. Est. daily opportunity cost: $15.84
+[2026-08-15 14:24:07] INFO:   → Agent should deploy excess cash into high-conviction picks to reduce drag
+[2026-08-15 14:24:07] INFO: 💼 Alpaca paper trading — buy/sell decisions handled by conviction-based trading in section 10
+[2026-08-15 14:24:07] INFO: ✍️  Running sub-agents...
+[2026-08-15 14:24:07] INFO:   → Generating news digest...
+[2026-08-15 14:24:07] WARN: ⚠ owl-alpha: Model not available (404)
+[2026-08-15 14:24:22] INFO: ✓ Model nemotron-3-nano-omni-30b-a3b-reasoning:free succeeded (after 1 attempt(s))
+[2026-08-15 14:24:36] INFO: 📝 RESEARCH mode — skipping options data fetch
+[2026-08-15 14:24:36] INFO: 🏦 Analyzing smart money activity...
+[2026-08-15 14:24:39] INFO: [OK] Smart money analysis complete
+[2026-08-15 14:24:39] INFO: 🔄 Analyzing sector rotation & emerging themes...
+[2026-08-15 14:29:23] INFO: [OK] Sector rotation analysis complete
+[2026-08-15 14:29:23] INFO: 📺 Parsing YouTube channel recommendations...
+[2026-08-15 14:29:24] INFO:   No YouTube picks found (API key may not be configured)
+[2026-08-15 14:29:24] INFO: 📊 Running benchmark comparison (multi-period, global, commodities)...
+[2026-08-15 14:30:39] INFO: [OK] Benchmark comparison complete (US + Global + Commodities)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping PLTR: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping SOFI: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping TEM: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping VRT: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping NBIS: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping APLD: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping ASTS: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping RKLB: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO:   ⏭️ Skipping SMCI: research is fresh (researched within 12h)
+[2026-08-15 14:30:39] INFO: 🔬 Deep research on 3 tickers: AVGO, MU, NVDA
+[2026-08-15 14:31:43] INFO:   ✅ Deep research complete: AVGO (depth=6, facts=1, contrarian=0)
+[2026-08-15 14:32:38] INFO:   ✅ Deep research complete: MU (depth=6, facts=1, contrarian=0)
+[2026-08-15 14:33:32] INFO:   ✅ Deep research complete: NVDA (depth=6, facts=1, contrarian=0)
+[2026-08-15 14:33:32] INFO: [OK] Deep research context: 3922 chars
+[2026-08-15 14:33:32] INFO:   → Generating investment ideas...
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: AVGO x11 @ $430.18 → $392.99 (-8.64%)
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: MU x7 @ $651.61 → $971.66 (+49.12%)
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: NVDA x38 @ $207.14 → $225.16 (+8.70%)
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: PLTR x57 @ $139.47 → $174.04 (+24.79%)
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: SOFI x306 @ $16.29 → $18.29 (+12.28%)
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: TEM x99 @ $50.22 → $52.10 (+3.74%)
+[2026-08-15 14:34:43] INFO: [OK] Alpaca holding: VRT x28 @ $348.38 → $293.84 (-15.65%)
+[2026-08-15 14:34:43] INFO: [OK] Recommendations synced: 7 Alpaca holdings + watchlist separated
+[2026-08-15 14:34:43] INFO: [OK] Options context: 7 existing positions injected
+[2026-08-15 14:34:43] INFO:   → Generating options ideas...
+[2026-08-15 14:35:56] INFO: 📝 RESEARCH mode — skipping report generation and Telegram report
+[2026-08-15 14:35:56] INFO: 📝 RESEARCH mode — skipping Telegram alerts
+[2026-08-15 14:35:56] INFO: 🪞 Deep self-reflection & learning...
+[2026-08-15 14:35:56] INFO:   → Deep self-reflection & learning...
+[2026-08-15 14:44:08] INFO: [OK] Tiered memory updated (hot + warm)
+[2026-08-15 14:44:12] INFO: [OK] Portfolio: $269,561 value / $143,608 cost = +87.71% total return
+[2026-08-15 14:44:12] INFO:   Today's return: +0.00%
+[2026-08-15 14:44:12] INFO:   vs SPY (S&P 500): +0.00% today @ $0.00 → diff: +0.00%
+[2026-08-15 14:44:12] INFO:   vs QQQ (Nasdaq 100): +0.00% today @ $0.00 → diff: +0.00%
+[2026-08-15 14:44:12] INFO:   vs IWM (Russell 2000): +0.00% today @ $0.00 → diff: +0.00%
+[2026-08-15 14:44:12] INFO:   vs VTI (Total Stock Market): +0.00% today @ $0.00 → diff: +0.00%
+[2026-08-15 14:44:12] INFO:   vs DIA (Dow Jones): +0.00% today @ $0.00 → diff: +0.00%
+[2026-08-15 14:44:14] INFO:   Total return comparison:
+[2026-08-15 14:44:14] INFO:     vs SPY: portfolio +87.71% vs index +0.00% → diff: +87.71%
+[2026-08-15 14:44:14] INFO:     vs QQQ: portfolio +87.71% vs index +0.00% → diff: +87.71%
+[2026-08-15 14:44:14] INFO:     vs IWM: portfolio +87.71% vs index +0.00% → diff: +87.71%
+[2026-08-15 14:44:14] INFO:     vs VTI: portfolio +87.71% vs index +0.00% → diff: +87.71%
+[2026-08-15 14:44:14] INFO:     vs DIA: portfolio +87.71% vs index +0.00% → diff: +87.71%
+[2026-08-15 14:44:15] INFO: [OK] Benchmark log updated
+[2026-08-15 14:44:17] INFO: ✅ Agent run complete.
+[2026-08-15 14:44:17] INFO:    Report: REPORTS/2026-08-15-1018.md
+[2026-08-15 14:44:17] INFO:    Skills: ✅ All active
+[2026-08-15 14:44:17] INFO:    Rate this run: add_rating(score, 'optional notes') in Python
