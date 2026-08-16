@@ -1540,3 +1540,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-16 | CRWD | BUY | $350.00 | $500.00 | 9/10 | Active | - | Why: CrowdStrike is a market‑leading, cloud‑native cybersecurity platform with > |
 | 2026-08-16 | AFRM | BUY | $80.00 | $130.00 | 8/10 | Active | - | Why: Affirm Holdings is a fast‑growing “buy‑now‑pay‑later” fintech with a 2026 r |
 | 2026-08-16 | PDD | BUY | $130.00 | $200.00 | 8/10 | Active | - | Why: Pinduoduo is China’s rapidly growing e‑commerce platform with a 2026 revenu |
+| 2026-08-16 | TICKER | BUY | N/A | $500.00 | 9/10 | Active | - | THESIS: CrowdStrike’s AI‑driven cybersecurity platform is poised to capture acce |
+| 2026-08-16 | TICKER | BUY | N/A | $210.00 | 8/10 | Active | - | THESIS: Snowflake’s cloud‑native data platform is positioned to monetize the exp |
+| 2026-08-16 | TICKER | BUY | N/A | $525.00 | 9/10 | Active | - | THESIS: MongoDB’s flexible NoSQL database is benefiting from rapid enterprise ad |
+| 2026-08-16 | TICKER | BUY | N/A | $150.00 | 8/10 | Active | - | THESIS: Coinbase’s platform is poised to capture a resurgence in crypto trading  |
