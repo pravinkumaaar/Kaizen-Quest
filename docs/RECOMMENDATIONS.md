@@ -3,10 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **TICKER** | Market | $500.00 | 9/10 |  Active  |  Fetching...  |  +0.0%  | Swing | Watchlist |
-| 2 | **TICKER** | Market | $210.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Swing | Watchlist |
-| 3 | **TICKER** | Market | $525.00 | 9/10 |  Active  |  Fetching...  |  +0.0%  | Swing | Watchlist |
-| 4 | **TICKER** | Market | $150.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Swing | Watchlist |
+| 1 | **CRWD** | $12.00 | TBD | 8/10 |  Active  |  $12.00  |  +0.0%  | Swing (2‑8 weeks). | Watchlist |
+| 2 | **CRDO** | $5.00 | TBD | 7/10 |  Active  |  $5.00  |  +0.0%  | Swing (2‑8 weeks). | Watchlist |
+| 3 | **ADI** | $8.00 | TBD | 8/10 |  Active  |  $8.00  |  +0.0%  | Swing (2‑8 weeks). | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

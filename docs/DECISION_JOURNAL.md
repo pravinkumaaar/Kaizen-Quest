@@ -1544,3 +1544,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-16 | TICKER | BUY | N/A | $210.00 | 8/10 | Active | - | THESIS: Snowflake’s cloud‑native data platform is positioned to monetize the exp |
 | 2026-08-16 | TICKER | BUY | N/A | $525.00 | 9/10 | Active | - | THESIS: MongoDB’s flexible NoSQL database is benefiting from rapid enterprise ad |
 | 2026-08-16 | TICKER | BUY | N/A | $150.00 | 8/10 | Active | - | THESIS: Coinbase’s platform is poised to capture a resurgence in crypto trading  |
+| 2026-08-16 | CRWD | BUY | $12.00 | N/A | 8/10 | Active | - | Why: CrowdStrike (CRWD) is a market‑leading cloud‑security platform with >30% Yo |
+| 2026-08-16 | CRDO | BUY | $5.00 | N/A | 7/10 | Active | - | Why: Coherent Corp (CRDO) supplies laser and photonics equipment for semiconduct |
+| 2026-08-16 | ADI | BUY | $8.00 | N/A | 8/10 | Active | - | Why: Analog Devices (ADI) is a premier analog and mixed‑signal semiconductor mak |
