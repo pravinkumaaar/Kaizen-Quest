@@ -1537,3 +1537,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-16 | ADI | BUY | $10.00 | N/A | 8/10 | Active | - | Why: ADI trades at a forward P/E of 22× versus industry 25× (confidence: high),  |
 | 2026-08-16 | GLD | BUY | $100.00 | N/A | 7/10 | Active | - | Why: Gold has risen 8% YTD, central banks purchased 200 tonnes in Q2 2026 (confi |
 | 2026-08-16 | AFRM | BUY | $30.00 | N/A | 7/10 | Active | - | Why: AFRM is a leading point‑of‑sale financing platform benefiting from robust c |
+| 2026-08-16 | CRWD | BUY | $350.00 | $500.00 | 9/10 | Active | - | Why: CrowdStrike is a market‑leading, cloud‑native cybersecurity platform with > |
+| 2026-08-16 | AFRM | BUY | $80.00 | $130.00 | 8/10 | Active | - | Why: Affirm Holdings is a fast‑growing “buy‑now‑pay‑later” fintech with a 2026 r |
+| 2026-08-16 | PDD | BUY | $130.00 | $200.00 | 8/10 | Active | - | Why: Pinduoduo is China’s rapidly growing e‑commerce platform with a 2026 revenu |
