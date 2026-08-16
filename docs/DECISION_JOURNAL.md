@@ -1531,3 +1531,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-16 | TICKER | BUY | $8.00 | N/A | 9/10 | Active | - | Why: ASML is the sole provider of EUV lithography tools, giving it a quasi‑monop |
 | 2026-08-16 | TICKER | BUY | $12.00 | N/A | 8/10 | Active | - | Why: CrowdStrike is the leading cloud‑native endpoint security platform with >$5 |
 | 2026-08-16 | TICKER | BUY | $5.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers diversified analog and mixed‑signal solutions across  |
+| 2026-08-16 | TICKER | BUY | $215.00 | $26.00 | 8/10 | Active | - | Why: Deep‑research DCF models give a fair‑value of $245, implying ~13% upside; A |
+| 2026-08-16 | TICKER | BUY | $180.00 | $15.00 | 7/10 | Active | - | Why: Snowflake’s AI‑enhanced Data Cloud is positioned to capture the exploding m |
+| 2026-08-16 | TICKER | BUY | $300.00 | $17.00 | 8/10 | Active | - | Why: CrowdStrike’s cloud‑native endpoint security platform benefits from acceler |
