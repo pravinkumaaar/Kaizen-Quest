@@ -1528,3 +1528,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-15 | CRWD | BUY | $340.00 | N/A | 9/10 | Active | - | Why: CrowdStrike is a market‑leading cloud security platform with rapid revenue  |
 | 2026-08-15 | PDD | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Pinduoduo is a high‑growth Chinese e‑commerce platform expanding into lifes |
 | 2026-08-15 | BIDU | BUY | $120.00 | N/A | 8/10 | Active | - | Why: Baidu is a leading Chinese internet company with strong AI integration (ERN |
+| 2026-08-16 | TICKER | BUY | $8.00 | N/A | 9/10 | Active | - | Why: ASML is the sole provider of EUV lithography tools, giving it a quasi‑monop |
+| 2026-08-16 | TICKER | BUY | $12.00 | N/A | 8/10 | Active | - | Why: CrowdStrike is the leading cloud‑native endpoint security platform with >$5 |
+| 2026-08-16 | TICKER | BUY | $5.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers diversified analog and mixed‑signal solutions across  |
