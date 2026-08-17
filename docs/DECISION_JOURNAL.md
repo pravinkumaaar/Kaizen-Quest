@@ -1571,3 +1571,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: MDB powers AI‑driven data pipelines and is poised for accelerated growth as |
 | 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: CRWD is a pure‑play cloud security leader whose AI‑enhanced threat detectio |
 | 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: BIDU operates China’s leading search and AI‑driven advertising platform. It |
+| 2026-08-17 | CRWD | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Cloud‑native AI cybersecurity leader poised to capture accelerated enter |
+| 2026-08-17 | PDD | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Chinese e‑commerce giant positioned to benefit from a rebound in consume |
+| 2026-08-17 | GME | BUY | N/A | N/A | 5/10 | Active | - | Thesis: GameStop’s heavily shorted float and upcoming earnings present a high‑as |
