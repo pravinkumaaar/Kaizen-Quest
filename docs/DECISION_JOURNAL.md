@@ -1554,3 +1554,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | TICKER | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Deep‑research indicates Snowflake’s Data Cloud is the de‑facto platform for |
 | 2026-08-17 | TICKER | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Deep‑research shows a macro rotation favoring emerging markets as US inflat |
 | 2026-08-17 | TICKER | BUY | $38.00 | N/A | 8/10 | Active | - | Why: Deep‑research indicates a strong up‑trend in copper demand driven by EV bat |
+| 2026-08-17 | MRVL | BUY | $68.50 | N/A | 8/10 | Active | - | Why: As AI moves from training (Nvidia) to inference and large-scale data center |
+| 2026-08-17 | SMCI | BUY | $39.84 | N/A | 7/10 | Active | - | Why: You currently hold 1.5% (nearly break-even). With the massive demand for Bl |
+| 2026-08-17 | EWY | BUY | $32.50 | N/A | 6/10 | Active | - | Why: Your portfolio is heavy on US tech, but the backbone of the AI world is the |
