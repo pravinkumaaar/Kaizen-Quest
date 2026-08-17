@@ -1567,3 +1567,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | CRWD | BUY | $370.00 | $520.00 | 8/10 | Active | - | Why: CrowdStrike (CRWD) is a market‑leading cloud‑security platform with robust  |
 | 2026-08-17 | AFYA | BUY | $30.00 | $45.00 | 8/10 | Active | - | Why: Afya Ltd (AFYA) is a high‑growth Brazilian health‑tech company with strong  |
 | 2026-08-17 | WDAY | BUY | $150.00 | $210.00 | 7/10 | Active | - | Why: Workday (WDAY) offers resilient recurring‑revenue enterprise software with  |
+| 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: ADI is a leading analog‑mixed‑signal semiconductor supplier with a growing  |
+| 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: MDB powers AI‑driven data pipelines and is poised for accelerated growth as |
+| 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: CRWD is a pure‑play cloud security leader whose AI‑enhanced threat detectio |
+| 2026-08-17 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Why: BIDU operates China’s leading search and AI‑driven advertising platform. It |
