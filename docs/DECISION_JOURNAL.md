@@ -1560,3 +1560,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | TICKER | BUY | $39.84 | $250.00 | 10/10 | Active | - | Why: NTAP is a semiconductor company with strong AI-driven demand, and its upcom |
 | 2026-08-17 | TICKER | BUY | $3.27 | $50.00 | 10/10 | Active | - | Why: NTRB is a biotech company with a drug approval expected in 21 days, which c |
 | 2026-08-17 | TICKER | BUY | $70.98 | $150.00 | 9/10 | Active | - | Why: PATH is a cloud infrastructure company with a serverless AI platform, and i |
+| 2026-08-17 | BILI | BUY | $15.00 | N/A | 9/10 | Active | - | Why: BILI trades at a discount to its DCF intrinsic value of $22 (deep research) |
+| 2026-08-17 | AFYA | BUY | $30.00 | N/A | 8/10 | Active | - | Why: AFYA trades near its DCF intrinsic value of $38 (deep research) and benefit |
+| 2026-08-17 | AFRM | BUY | $12.00 | N/A | 8/10 | Active | - | Why: AFRM trades below its DCF intrinsic value of $18 (deep research) and is pos |
