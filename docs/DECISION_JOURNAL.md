@@ -1550,3 +1550,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | WULF | BUY | $17.38 | N/A | 9/10 | Active | - | Why: WULF is a small‑cap semiconductor supplier positioned to benefit from accel |
 | 2026-08-17 | NVTS | BUY | $14.45 | N/A | 8/10 | Active | - | Why: NVTS is a gene‑expression profiling platform with a near‑term earnings cata |
 | 2026-08-17 | PLTR | BUY | $174.04 | N/A | 7/10 | Active | - | Why: PLTR’s valuation is stretched (P/E ≈ 70, EV/EBITDA ≈ 45) relative to fundam |
+| 2026-08-17 | TICKER | BUY | $320.00 | N/A | 9/10 | Active | - | Why: Deep‑research shows CrowdStrike’s Falcon platform now embeds generative‑AI  |
+| 2026-08-17 | TICKER | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Deep‑research indicates Snowflake’s Data Cloud is the de‑facto platform for |
+| 2026-08-17 | TICKER | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Deep‑research shows a macro rotation favoring emerging markets as US inflat |
+| 2026-08-17 | TICKER | BUY | $38.00 | N/A | 8/10 | Active | - | Why: Deep‑research indicates a strong up‑trend in copper demand driven by EV bat |
