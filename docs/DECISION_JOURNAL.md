@@ -1563,3 +1563,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | BILI | BUY | $15.00 | N/A | 9/10 | Active | - | Why: BILI trades at a discount to its DCF intrinsic value of $22 (deep research) |
 | 2026-08-17 | AFYA | BUY | $30.00 | N/A | 8/10 | Active | - | Why: AFYA trades near its DCF intrinsic value of $38 (deep research) and benefit |
 | 2026-08-17 | AFRM | BUY | $12.00 | N/A | 8/10 | Active | - | Why: AFRM trades below its DCF intrinsic value of $18 (deep research) and is pos |
+| 2026-08-17 | AFRM | BUY | $13.00 | $30.00 | 9/10 | Active | - | Why: Affirm (AFRM) is trading at a deep discount to its DCF‑derived fair value a |
+| 2026-08-17 | CRWD | BUY | $370.00 | $520.00 | 8/10 | Active | - | Why: CrowdStrike (CRWD) is a market‑leading cloud‑security platform with robust  |
+| 2026-08-17 | AFYA | BUY | $30.00 | $45.00 | 8/10 | Active | - | Why: Afya Ltd (AFYA) is a high‑growth Brazilian health‑tech company with strong  |
+| 2026-08-17 | WDAY | BUY | $150.00 | $210.00 | 7/10 | Active | - | Why: Workday (WDAY) offers resilient recurring‑revenue enterprise software with  |
