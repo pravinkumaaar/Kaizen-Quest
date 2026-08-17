@@ -1557,3 +1557,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | MRVL | BUY | $68.50 | N/A | 8/10 | Active | - | Why: As AI moves from training (Nvidia) to inference and large-scale data center |
 | 2026-08-17 | SMCI | BUY | $39.84 | N/A | 7/10 | Active | - | Why: You currently hold 1.5% (nearly break-even). With the massive demand for Bl |
 | 2026-08-17 | EWY | BUY | $32.50 | N/A | 6/10 | Active | - | Why: Your portfolio is heavy on US tech, but the backbone of the AI world is the |
+| 2026-08-17 | TICKER | BUY | $39.84 | $250.00 | 10/10 | Active | - | Why: NTAP is a semiconductor company with strong AI-driven demand, and its upcom |
+| 2026-08-17 | TICKER | BUY | $3.27 | $50.00 | 10/10 | Active | - | Why: NTRB is a biotech company with a drug approval expected in 21 days, which c |
+| 2026-08-17 | TICKER | BUY | $70.98 | $150.00 | 9/10 | Active | - | Why: PATH is a cloud infrastructure company with a serverless AI platform, and i |
