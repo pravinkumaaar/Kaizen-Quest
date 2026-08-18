@@ -1,41 +1,6 @@
 ...[older entries archived in HISTORY/]
 
- capital to the highest‑conviction, low‑beta opportunities identified in the screening step.  
-
-- **Process Improvements – Stop‑Loss & Trailing‑Stop Logic**  
-  - Add a default 10% trailing‑stop for all active positions, with a hard 15% stop‑loss for high‑volatility stocks (e.g., *VRT*), ensuring false‑positive high‑conviction picks are exited promptly and portfolio downside is capped.  
-
-- **Process Improvements – Thesis Journal Creation**  
-  - Launch a structured Thesis Journal (e.g., Google Sheet or database) that records: ticker, entry price, conviction score, catalyst, expected upside, actual outcome, and post‑trade analytics; this will enable systematic conviction calibration and post‑mortem reviews.  
-
-- **Process Improvements – Portfolio Concentration Monitoring**  
-  - Introduce a real‑time concentration dashboard that alerts when any single holding exceeds 15% of total equity, prompting automatic rebalancing or hedging actions.  
-
-These bullet points directly address the feedback, leverage the specific tickers and data points from the recent run, and propose concrete, measurable improvements for the next iteration.
-
-## Run: 2026-08-18 07:22:20 ET
-**What Worked Well**  
-- **PLTR (Planet Labs) – 8/10 conviction, $139.47 entry, +23.43% to $172.15** – The thesis identified a clear catalyst (Q2 earnings beat) and the long‑term outlook was supported by strong revenue growth, delivering a solid winner.  
-- **SOFI (SoFi Technologies) – 8/10 conviction, $16.29 entry, +11.36% to $18.14** – The “fintech rebound” thesis captured the impact of new credit‑card launches and user‑growth acceleration, resulting in a timely gain.  
-- **TEM (Tattooed Chef) – 8/10 conviction, $50.22 entry, +1.16% to $50.80** – The “plant‑based food scaling” thesis was validated by a recent partnership announcement, showing the model can spot niche growth stories.  
-- **Clear options framing (LEAPs) for SOFI** – The detailed explanation of why a long‑dated call was optimal (time value + implied volatility) added educational value and reinforced the thesis.  
-
-**What Didn't Work**  
-- **VRT (Vertiv) – 8/10 conviction, $348.38 entry, –18.91% to $282.50** – The thesis over‑estimated upside; no material catalyst materialized and the stock was hit by a sudden earnings miss, making the high conviction a false positive.  
-- **Stale price data for PLTR** – The recommendation used an outdated price (≈$130) while the current market price was $139+, causing the % gain to be understated and the risk/reward calculation inaccurate.  
-- **Portfolio‑only recommendation scope** – All suggestions were limited to existing holdings; no new ticker ideas were presented despite a sizable cash pile (≈$55k, 54% of equity).  
-- **Missing real‑time concentration monitoring** – The memory insight shows a 67.9% concentration in a few positions (likely VRT, PLTR, SOFI), yet no alert or automatic rebalancing was triggered.  
-
-**Conviction Calibration**  
-- **8/10 picks (PLTR, SOFI, TEM, VRT)** – 3 out of 4 (75%) were true winners; VRT was the only clear false positive, indicating the conviction score was not perfectly calibrated.  
-- **Thesis journal absent** – No structured record of entry price, catalyst, expected upside, or actual outcome exists, preventing systematic calibration of conviction scores for future picks.  
-
-**Thesis Journal Review**  
-- **No entries** – The “THESIS JOURNAL” section is empty, so we cannot assess which past theses were validated or refuted.  
-- **Pattern emerging** – High‑conviction picks (≥8) tended to involve clear, near‑term catalysts (earnings beats, product launches); however, the lack of a journal makes it impossible to quantify success rates or refine the scoring model.  
-
-**Missed Opportunities**  
-- **New high‑conviction ideas** – With 54% cash on hand, we should have screened for high‑beta, high‑growth tickers (e.g., AI‑related chips, renewable energy storage) that were not part of the current 7‑position portfolio.  
+gh‑growth tickers (e.g., AI‑related chips, renewable energy storage) that were not part of the current 7‑position portfolio.  
 - **Sector rotation** – The portfolio is heavily weighted toward technology/finance; a tactical tilt toward industrials or healthcare could have captured upside in sectors showing stronger momentum in Q2 2026.  
 
 **Data Quality Issues**  
@@ -155,3 +120,26 @@ These bullet points directly address the feedback, leverage the specific tickers
 - **Automate cash‑allocation rules** (e.g., deploy 5% of cash per week into the highest‑conviction new idea, while keeping a 10% buffer for opportunistic dips).  
 
 *These concrete, data‑driven adjustments should raise the average rating toward the 9‑10 range, improve risk‑adjusted returns, and deliver a richer learning experience.*
+
+## Run: 2026-08-18 09:39:52 ET
+- **What Worked Well** – The NVDA ( $207.14 → $220.04 , +6.23 %) and PLTR ( $139.47 → $174.08 , +24.82 %) 8/10 conviction picks delivered solid upside, confirming that the underlying data (earnings momentum for NVDA, product‑launch pipeline for PLTR) were correctly sourced from the Alpaca feed and market‑news APIs.  
+
+- **What Didn't Work** – The VRT recommendation ( $348.38 → $276.79 , ‑20.55 %) suffered a large loss; no stop‑loss was attached and the thesis relied on a short‑term technical breakout that quickly reversed, indicating a false‑positive conviction.  
+
+- **Conviction Calibration** – Of the six 8/10 picks, four (NVDA, PLTR, SOFI, TEM) were profitable, but VRT was a clear false positive. The lack of a validated thesis in the Thesis Journal (currently empty) prevented pre‑run verification, leading to over‑confidence in VRT.  
+
+- **Thesis Journal Review** – No thesis entries exist yet, so we have zero validated vs. refuted theses. This gap means we cannot calibrate conviction scores or learn from past errors; a systematic entry of each thesis with supporting data and post‑run P&L is required.  
+
+- **Missed Opportunities** – The engine limited suggestions to the existing seven holdings, ignoring high‑conviction external ideas (e.g., a cloud‑AI infrastructure play at $45 with 9/10 conviction and 15 % upside). Adding a macro‑trend watchlist would surface such untapped alpha.  
+
+- **Data Quality Issues** – PLTR’s price in the April‑22 feedback was flagged as stale; the current active list shows $139.47, but the target $174.08 reflects an older price level, suggesting delayed data refreshes. Options‑chain data for VRT and TEM appears broken (no Greeks or implied volatility), limiting precise stop‑loss/target sizing.  
+
+- **Risk Management** – VRT’s –20.55 % drawdown reveals missing stop‑loss logic; a rule‑based stop at 2 × ATR (≈ $30) would have capped the loss. Portfolio concentration remains at 0 % (equal weighting) but cash at 54 % creates a hidden liquidity bias; rebalancing to a max 30 % cash buffer would improve capital efficiency.  
+
+- **Cash Deployment** – With $55 k cash (≈ 54 % of the $102.6 k portfolio), the 5 %‑per‑week rule (≈ $2.7 k) is barely being used. Deploying cash into the highest‑conviction new idea each week while keeping a 10 % opportunistic buffer would raise the cash‑turnover rate from ~0 % to ~5 % of portfolio value per week, reducing opportunity cost.  
+
+- **Memory & Learning** – Recent memory snapshots show a 67.9 % concentration metric in the last three runs, indicating that the portfolio’s effective exposure is heavily weighted in a few positions despite the “0 % concentration” label. This inconsistency points to a bug in the concentration calculation that must be fixed to accurately assess risk.  
+
+- **Process Improvements** – 1) **Populate the Thesis Journal** with each recommendation, its data sources, conviction score, and a post‑run win/loss flag; 2) **Add explicit stop‑loss and target levels** tied to ATR and earnings dates for every ticker; 3) **Sort recommendations by news impact or event magnitude** (e.g., earnings beat, FDA approval) rather than alphabetical order; 4) **Automate cash‑allocation**: deploy 5 % of cash weekly into the top new‑idea ticker while retaining a 10 % cash buffer; 5) **Introduce a learning recap** that highlights VRT’s earnings miss, PLTR’s product launch, and any data‑quality fixes needed.  
+
+- **Systematic Change for Next Run** – Implement a “macro‑trend screen” that pulls the top 2–3 external tickers with >8/10 conviction and >10 % upside, validates each with a fresh thesis entry, attaches ATR‑based stop‑loss/target, and logs the outcome in the Thesis Journal; this will close the loop on conviction calibration, improve risk management, and eliminate stale‑price hallucinations.

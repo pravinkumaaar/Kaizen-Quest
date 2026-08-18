@@ -1589,3 +1589,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | CRWD | BUY | N/A | $4500.00 | 9/10 | Active | - | THESIS: CrowdStrike’s dominant cloud‑security platform, strong revenue growth an |
 | 2026-08-18 | SNOW | BUY | N/A | $210.00 | 8/10 | Active | - | THESIS: Snowflake’s AI‑driven cloud data platform is poised for accelerated grow |
 | 2026-08-18 | ADI | BUY | N/A | $1750.00 | 8/10 | Active | - | THESIS: Analog Devices trades at a discount to its intrinsic value and is poised |
+| 2026-08-18 | CRWD | BUY | $250.00 | N/A | 9/10 | Active | - | Why: CrowdStrike is a market‑leading cloud‑native cybersecurity platform that le |
+| 2026-08-18 | ADI | BUY | $210.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers a diversified analog and mixed‑signal semiconductor p |
+| 2026-08-18 | EEM | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Emerging markets are experiencing faster GDP growth than the U.S., and the  |
