@@ -1597,3 +1597,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | COIN | BUY | $80.00 | $130.00 | 9/10 | Active | - | Why: Our DCF model values COIN at $125, implying a 56% upside from today’s price |
 | 2026-08-18 | FUBO | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: Our DCF indicates a fair value of $55, implying an 83% upside, while recent |
 | 2026-08-18 | RIVN | BUY | $15.00 | $30.00 | 7/10 | Active | - | Why: Our DCF values Rivian at $27, implying an 80% upside, while a newly announc |
+| 2026-08-18 | BIDU | BUY | $150.00 | N/A | 10/10 | Active | - | Thesis: BIDU is undervalued and positioned for AI‑driven revenue acceleration. |
+| 2026-08-18 | LULU | BUY | $350.00 | N/A | 9/10 | Active | - | Thesis: LULU is poised for continued same‑store sales growth and margin expansio |
+| 2026-08-18 | ADSK | BUY | $350.00 | N/A | 9/10 | Active | - | Thesis: ADSK is positioned for AI‑driven product enhancement and subscription gr |
