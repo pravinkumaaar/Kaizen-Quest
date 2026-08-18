@@ -1594,3 +1594,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | EEM | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Emerging markets are experiencing faster GDP growth than the U.S., and the  |
 | 2026-08-18 | CLOUDFLARE | BUY | $70.00 | $115.00 | 9/10 | Active | - | Why: Deep‑research DCF models the stock at a fair value of $95, implying ~36% up |
 | 2026-08-18 | SNOWFLAKE | BUY | $80.00 | $130.00 | 9/10 | Active | - | Why: Snowflake’s cloud data platform is uniquely positioned to monetize the expl |
+| 2026-08-18 | COIN | BUY | $80.00 | $130.00 | 9/10 | Active | - | Why: Our DCF model values COIN at $125, implying a 56% upside from today’s price |
+| 2026-08-18 | FUBO | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: Our DCF indicates a fair value of $55, implying an 83% upside, while recent |
+| 2026-08-18 | RIVN | BUY | $15.00 | $30.00 | 7/10 | Active | - | Why: Our DCF values Rivian at $27, implying an 80% upside, while a newly announc |
