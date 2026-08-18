@@ -1592,3 +1592,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | CRWD | BUY | $250.00 | N/A | 9/10 | Active | - | Why: CrowdStrike is a market‑leading cloud‑native cybersecurity platform that le |
 | 2026-08-18 | ADI | BUY | $210.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers a diversified analog and mixed‑signal semiconductor p |
 | 2026-08-18 | EEM | BUY | $68.00 | N/A | 7/10 | Active | - | Why: Emerging markets are experiencing faster GDP growth than the U.S., and the  |
+| 2026-08-18 | CLOUDFLARE | BUY | $70.00 | $115.00 | 9/10 | Active | - | Why: Deep‑research DCF models the stock at a fair value of $95, implying ~36% up |
+| 2026-08-18 | SNOWFLAKE | BUY | $80.00 | $130.00 | 9/10 | Active | - | Why: Snowflake’s cloud data platform is uniquely positioned to monetize the expl |
