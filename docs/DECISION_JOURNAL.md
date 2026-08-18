@@ -1603,3 +1603,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | TICKER | BUY | $70.00 | $115.00 | 9/10 | Active | - | Why: Market‑leading cloud‑native XDR platform with >30% YoY revenue growth, expa |
 | 2026-08-18 | TICKER | BUY | $860.00 | $1050.00 | 8/10 | Active | - | Why: Dominant provider of semiconductor infrastructure and broadband connectivit |
 | 2026-08-18 | TICKER | BUY | $250.00 | $285.00 | 7/10 | Active | - | Why: Gold remains a compelling inflation hedge as U.S. CPI stays above 3% and ge |
+| 2026-08-18 | COIN | BUY | $210.00 | $320.00 | 9/10 | Active | - | Why: Coinbase is positioned to capture the upside from the impending approval of |
+| 2026-08-18 | ADSK | BUY | $380.00 | $525.00 | 8/10 | Active | - | Why: Autodesk’s shift to AI‑enhanced design software and its high‑margin recurri |
+| 2026-08-18 | CRWD | BUY | $380.00 | $525.00 | 8/10 | Active | - | Why: CrowdStrike’s AI‑driven security platform and accelerating ARR growth provi |
