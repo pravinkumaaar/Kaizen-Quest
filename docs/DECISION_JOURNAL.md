@@ -1582,3 +1582,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | AFRM | BUY | $15.00 | N/A | 8/10 | Active | - | Why: Affirm Holdings is a consumer‑finance platform using AI to automate point‑o |
 | 2026-08-18 | ADI | BUY | $155.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers high‑margin, diversified analog semiconductor exposur |
 | 2026-08-18 | BIDU | BUY | $150.00 | N/A | 7/10 | Active | - | Why: Baidu is China’s leading AI software platform, with rapid growth in AI clou |
+| 2026-08-18 | ADSK | BUY | $38.28 | $55.00 | 9/10 | Active | - | Why: Autodesk is the leading cloud‑based design and construction software provid |
+| 2026-08-18 | BIDU | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Baidu dominates China’s search market and is aggressively integrating large |
+| 2026-08-18 | CRWD | BUY | $250.00 | $300.00 | 8/10 | Active | - | Why: CrowdStrike delivers cloud‑native cybersecurity with AI‑enhanced threat det |
+| 2026-08-18 | INDA | BUY | $100.00 | $115.00 | 7/10 | Active | - | Why: INDA offers diversified exposure to Indian equities, which have been outper |
