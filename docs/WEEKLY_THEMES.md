@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-08-08)
+## Current Theme (Week of 2026-08-18)
 
-**📌 Theme:** Artificial Intelligence: The Technology Reshaping Everything
+**📌 Theme:** Human Longevity & Biohacking - Living Longer, Better
 
-**Duration:** Week of 2026-08-08
+**Duration:** Week of 2026-08-18
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: From Narrow AI to General AI - The Holy Grail
-- [ ] Day 2: Deep Learning Explosion - How Neural Networks Work
-- [ ] Day 3: AI in Medicine - Cancer Detection & Drug Discovery
-- [ ] Day 4: AI in Finance - Algorithmic Trading & Risk Management
-- [ ] Day 5: AI Alignment - The Problem of Values & Control
-- [ ] Day 6: The AI Arms Race - Geopolitical Implications
-- [ ] Day 7: Investment Plays - How to Profit from the AI Revolution
+- [ ] Day 1: Why We Age - The Biology of Aging
+- [ ] Day 2: Senescent Cells & Senolytics - Removing the Damage
+- [ ] Day 3: Cellular Reprogramming - Yamanaka Factors & De-Aging
+- [ ] Day 4: Metabolic Health - Glucose, Insulin, Ketones
+- [ ] Day 5: Sleep, Exercise, Fasting - The Unglamorous Basics
+- [ ] Day 6: Supplements & Biomarkers - What Actually Works
+- [ ] Day 7: Biotech Investing - The Companies Racing to Extend Life
 
 ---
 *New theme rotates each week. Archive your learnings.*
