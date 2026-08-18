@@ -1574,3 +1574,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-17 | CRWD | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Cloud‑native AI cybersecurity leader poised to capture accelerated enter |
 | 2026-08-17 | PDD | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Chinese e‑commerce giant positioned to benefit from a rebound in consume |
 | 2026-08-17 | GME | BUY | N/A | N/A | 5/10 | Active | - | Thesis: GameStop’s heavily shorted float and upcoming earnings present a high‑as |
+| 2026-08-18 | ADI | BUY | $210.00 | $285.00 | 9/10 | Active | - | Why: Deep‑dive DCF analysis shows an intrinsic value of $240 vs. current $210 (≈ |
+| 2026-08-18 | BIDU | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Baidu is the leading Chinese AI‑driven search engine with a rapidly expandi |
+| 2026-08-18 | GLD | BUY | $210.00 | $225.00 | 7/10 | Active | - | Why: Gold remains a compelling inflation hedge amid persisting high inflation ex |
+| 2026-08-18 | VNET | BUY | $10.00 | $13.00 | 6/10 | Active | - | Why: VNET is a leading Chinese cloud infrastructure provider with AI‑optimized d |
