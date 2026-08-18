@@ -1578,3 +1578,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | BIDU | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Baidu is the leading Chinese AI‑driven search engine with a rapidly expandi |
 | 2026-08-18 | GLD | BUY | $210.00 | $225.00 | 7/10 | Active | - | Why: Gold remains a compelling inflation hedge amid persisting high inflation ex |
 | 2026-08-18 | VNET | BUY | $10.00 | $13.00 | 6/10 | Active | - | Why: VNET is a leading Chinese cloud infrastructure provider with AI‑optimized d |
+| 2026-08-18 | CRDO | BUY | $282.82 | N/A | 7/10 | Active | - | Why: Cirrus Logic is a small‑cap semiconductor focused on automotive audio and I |
+| 2026-08-18 | AFRM | BUY | $15.00 | N/A | 8/10 | Active | - | Why: Affirm Holdings is a consumer‑finance platform using AI to automate point‑o |
+| 2026-08-18 | ADI | BUY | $155.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers high‑margin, diversified analog semiconductor exposur |
+| 2026-08-18 | BIDU | BUY | $150.00 | N/A | 7/10 | Active | - | Why: Baidu is China’s leading AI software platform, with rapid growth in AI clou |
