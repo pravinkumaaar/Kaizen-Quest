@@ -1608,3 +1608,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | CRWD | BUY | $380.00 | $525.00 | 8/10 | Active | - | Why: CrowdStrike’s AI‑driven security platform and accelerating ARR growth provi |
 | 2026-08-19 | AFYA | BUY | N/A | N/A | 9/10 | Active | - | Thesis: AFYA is positioned to capture the accelerating digital‑health adoption i |
 | 2026-08-19 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Thesis: CrowdStrike’s market‑leading cloud‑security platform continues to benefi |
+| 2026-08-19 | ADI | BUY | $215.00 | N/A | 9/10 | Active | - | Why: Analog Devices is a leading analog semiconductor manufacturer with a strong |
+| 2026-08-19 | FUTU | BUY | $20.00 | N/A | 8/10 | Active | - | Why: Futu Holdings is a fast‑growing Chinese fintech platform with expanding dig |
+| 2026-08-19 | COST | BUY | $600.00 | N/A | 8/10 | Active | - | Why: Costco Wholesale benefits from a resilient membership model, strong same‑st |
