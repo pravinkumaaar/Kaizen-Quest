@@ -1614,3 +1614,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-19 | GLD | BUY | $195.00 | $240.00 | 7/10 | Active | - | Why: Gold’s price is driven by real‑rate expectations and central‑bank balance‑s |
 | 2026-08-19 | EEM | BUY | $44.00 | $52.00 | 8/10 | Active | - | Why: Emerging markets trade at a steep discount to US equities (forward P/E ~11. |
 | 2026-08-19 | AVGO | BUY | $205.00 | $260.00 | 8/10 | Active | - | Why: AVGO is a leader in AI‑optimized networking (Tomahawk 5, Jericho3) and broa |
+| 2026-08-19 | AFYA | BUY | $8.00 | $12.00 | 9/10 | Active | - | Why: Afya Ltd is a leading Brazilian health‑tech platform that connects patients |
+| 2026-08-19 | TSM | BUY | $130.00 | $180.00 | 9/10 | Active | - | Why: Taiwan Semiconductor Manufacturing Company (TSM) is the world’s premier ind |
+| 2026-08-19 | ADSK | BUY | $350.00 | N/A | 8/10 | Active | - | Why: Autodesk is transitioning to a high‑margin subscription model and is poised |
