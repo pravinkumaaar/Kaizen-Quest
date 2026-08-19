@@ -1606,3 +1606,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-18 | COIN | BUY | $210.00 | $320.00 | 9/10 | Active | - | Why: Coinbase is positioned to capture the upside from the impending approval of |
 | 2026-08-18 | ADSK | BUY | $380.00 | $525.00 | 8/10 | Active | - | Why: Autodesk’s shift to AI‑enhanced design software and its high‑margin recurri |
 | 2026-08-18 | CRWD | BUY | $380.00 | $525.00 | 8/10 | Active | - | Why: CrowdStrike’s AI‑driven security platform and accelerating ARR growth provi |
+| 2026-08-19 | AFYA | BUY | N/A | N/A | 9/10 | Active | - | Thesis: AFYA is positioned to capture the accelerating digital‑health adoption i |
+| 2026-08-19 | CRWD | BUY | N/A | N/A | 8/10 | Active | - | Thesis: CrowdStrike’s market‑leading cloud‑security platform continues to benefi |
