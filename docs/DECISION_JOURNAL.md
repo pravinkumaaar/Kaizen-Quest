@@ -1623,3 +1623,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-20 | CRWD | BUY | $95.00 | N/A | 9/10 | Active | - | Why: CrowdStrike’s AI‑enhanced security platform addresses the accelerating dema |
 | 2026-08-20 | SNOW | BUY | $120.00 | N/A | 8/10 | Active | - | Why: Snowflake’s cloud data platform is positioned to capture the exploding dema |
 | 2026-08-20 | MDB | BUY | $150.00 | N/A | 9/10 | Active | - | Why: MongoDB’s cloud‑native database services are poised to benefit from AI‑driv |
+| 2026-08-20 | CRWD | BUY | $250.00 | N/A | 9/10 | Active | - | Why: Cloudflare is positioned to capture accelerated AI‑driven demand for edge s |
+| 2026-08-20 | ADSK | BUY | $350.00 | N/A | 8/10 | Active | - | Why: Autodesk's shift to AI‑enhanced subscription design tools drives margin exp |
+| 2026-08-20 | ZS | BUY | $300.00 | N/A | 8/10 | Active | - | Why: Zscaler is a leading cloud security platform benefiting from AI‑driven thre |
