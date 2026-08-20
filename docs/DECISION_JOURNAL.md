@@ -1617,3 +1617,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-19 | AFYA | BUY | $8.00 | $12.00 | 9/10 | Active | - | Why: Afya Ltd is a leading Brazilian health‑tech platform that connects patients |
 | 2026-08-19 | TSM | BUY | $130.00 | $180.00 | 9/10 | Active | - | Why: Taiwan Semiconductor Manufacturing Company (TSM) is the world’s premier ind |
 | 2026-08-19 | ADSK | BUY | $350.00 | N/A | 8/10 | Active | - | Why: Autodesk is transitioning to a high‑margin subscription model and is poised |
+| 2026-08-20 | CRWD | BUY | $95.00 | N/A | 9/10 | Active | - | Why: CrowdStrike’s AI‑enhanced security platform addresses the accelerating dema |
+| 2026-08-20 | SNOW | BUY | $120.00 | N/A | 8/10 | Active | - | Why: Snowflake’s cloud data platform is positioned to capture the exploding dema |
+| 2026-08-20 | MDB | BUY | $150.00 | N/A | 9/10 | Active | - | Why: MongoDB’s cloud‑native database services are poised to benefit from AI‑driv |
+| 2026-08-20 | CRWD | BUY | $95.00 | N/A | 9/10 | Active | - | Why: CrowdStrike’s AI‑enhanced security platform addresses the accelerating dema |
+| 2026-08-20 | SNOW | BUY | $120.00 | N/A | 8/10 | Active | - | Why: Snowflake’s cloud data platform is positioned to capture the exploding dema |
+| 2026-08-20 | MDB | BUY | $150.00 | N/A | 9/10 | Active | - | Why: MongoDB’s cloud‑native database services are poised to benefit from AI‑driv |
