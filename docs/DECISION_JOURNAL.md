@@ -1626,3 +1626,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-20 | CRWD | BUY | $250.00 | N/A | 9/10 | Active | - | Why: Cloudflare is positioned to capture accelerated AI‑driven demand for edge s |
 | 2026-08-20 | ADSK | BUY | $350.00 | N/A | 8/10 | Active | - | Why: Autodesk's shift to AI‑enhanced subscription design tools drives margin exp |
 | 2026-08-20 | ZS | BUY | $300.00 | N/A | 8/10 | Active | - | Why: Zscaler is a leading cloud security platform benefiting from AI‑driven thre |
+| 2026-08-20 | PLTR | BUY | $173.19 | N/A | 7/10 | Active | - | Thesis: PLTR’s valuation has become stretched relative to its growth trajectory, |
+| 2026-08-20 | ADSK | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Autodesk (ADSK) is undervalued with strong recurring revenue, an upcomin |
+| 2026-08-20 | COST | BUY | $560.00 | N/A | 9/10 | Active | - | Thesis: Costco (COST) offers a high‑conviction, low‑volatility upside with a dur |
