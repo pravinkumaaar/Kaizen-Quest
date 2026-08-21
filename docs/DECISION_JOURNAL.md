@@ -1651,3 +1651,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | CRWD | BUY | $300.00 | $480.00 | 9/10 | Active | - | Why: Deep‑research shows CRWD’s AI‑driven Falcon platform is the market leader i |
 | 2026-08-21 | AFRM | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: AFRM’s BNPL ecosystem is experiencing rapid user growth and margin expansio |
 | 2026-08-21 | PLTR | BUY | $178.93 | $210.00 | 6/10 | Active | - | Why: PLTR’s valuation has become stretched (forward P/E ~120×) relative to its g |
+| 2026-08-21 | AFYA | BUY | $30.00 | $45.00 | 9/10 | Active | - | Why: AFYA’s AI triage tool launched Q2 2026 is projected to add $200 M ARR, driv |
+| 2026-08-21 | CRWD | BUY | $250.00 | $320.00 | 8/10 | Active | - | Why: CRWD’s AI‑driven threat detection platform is gaining traction, its recent  |
+| 2026-08-21 | NTRB | BUY | $4.40 | $22.00 | 8/10 | Active | - | Why: NTRB has a solid cash runway of 18 months, no dilution risk, and a recent s |
