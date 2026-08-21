@@ -1639,3 +1639,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | PDD | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Pinduoduo (PDD) offers a high‑upside, asymmetric play as its post‑earnin |
 | 2026-08-21 | MDB | BUY | N/A | N/A | 8/10 | Active | - | THESIS: MongoDB (MDB) is poised for a bullish move after its upcoming earnings b |
 | 2026-08-21 | CRWD | BUY | N/A | N/A | 9/10 | Active | - | THESIS: CrowdStrike (CRWD) is likely to rally after its upcoming earnings, drive |
+| 2026-08-21 | TICKER | BUY | $140.00 | $250.00 | 9/10 | Active | - | Why: PDD (Pinduoduo) is a fast‑growing Chinese e‑commerce platform with a proven |
+| 2026-08-21 | TICKER | BUY | $300.00 | $480.00 | 8/10 | Active | - | Why: CRWD (CrowdStrike) is a market‑leading cloud‑security provider with >25% Yo |
+| 2026-08-21 | TICKER | BUY | $120.00 | $180.00 | 7/10 | Active | - | Why: BABA (Alibaba) dominates China’s e‑commerce landscape with a massive user b |
