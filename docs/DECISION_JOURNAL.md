@@ -1658,3 +1658,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | AFYA | BUY | $30.00 | N/A | 8/10 | Active | - | Why: Deep‑research indicates AFYA trades at ~14× forward earnings versus a peer  |
 | 2026-08-21 | GLD | BUY | $225.00 | N/A | 7/10 | Active | - | Why: Deep‑research shows persistent inflation expectations (CPI > 3%) and negati |
 | 2026-08-21 | TSM | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Deep‑research shows AI chip demand is driving >20% YoY revenue growth for a |
+| 2026-08-21 | TICKER | BUY | $650.00 | N/A | 9/10 | Active | - | Why: ASML is the sole supplier of EUV lithography tools required to fabricate su |
+| 2026-08-21 | TICKER | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Snowflake’s Data Cloud is purpose‑built for the massive, AI‑driven data wor |
+| 2026-08-21 | TICKER | BUY | $80.00 | N/A | 7/10 | Active | - | Why: India’s demographic dividend (over 50% under 25) and accelerating GDP growt |
