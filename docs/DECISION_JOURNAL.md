@@ -1635,3 +1635,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-20 | TICKER | BUY | $238.50 | N/A | 6/10 | Active | - | Why: Deep‑research indicates gold’s fair value is $260 (70% confidence) as infla |
 | 2026-08-21 | ADSK | BUY | $36.50 | $58.00 | 8/10 | Active | - | Why: Autodesk is the leading SaaS design platform that is rapidly integrating ge |
 | 2026-08-21 | COO | BUY | $1.13 | $1.80 | 7/10 | Active | - | Why: Cooper Companies is a high‑margin medical‑device firm with a strong recurri |
+| 2026-08-21 | AFYA | BUY | N/A | N/A | 9/10 | Active | - | THESIS: Affirm (AFYA) is positioned to capture sustained growth in point‑of‑sale |
+| 2026-08-21 | PDD | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Pinduoduo (PDD) offers a high‑upside, asymmetric play as its post‑earnin |
+| 2026-08-21 | MDB | BUY | N/A | N/A | 8/10 | Active | - | THESIS: MongoDB (MDB) is poised for a bullish move after its upcoming earnings b |
+| 2026-08-21 | CRWD | BUY | N/A | N/A | 9/10 | Active | - | THESIS: CrowdStrike (CRWD) is likely to rally after its upcoming earnings, drive |
