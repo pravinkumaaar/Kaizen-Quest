@@ -1645,3 +1645,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | COP | BUY | $85.00 | $130.00 | 8/10 | Active | - | Why: Deep research shows oil prices have risen 12% YTD, with WTI at $81 per barr |
 | 2026-08-21 | CRWD | BUY | $310.00 | $460.00 | 7/10 | Active | - | Why: CrowdStrike (CRWD) is a market leader in cloud‑native endpoint security wit |
 | 2026-08-21 | AFYA | BUY | $21.50 | $35.00 | 6/10 | Active | - | Why: Afya Ltd (AFYA) is a fast‑growing Brazilian healthtech platform connecting  |
+| 2026-08-21 | CRWD | BUY | $260.00 | N/A | 9/10 | Active | - | Why: CrowdStrike’s AI‑native Falcon platform dominates cloud security, deliverin |
+| 2026-08-21 | ADI | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers diversified exposure to high‑margin analog and mixed‑ |
+| 2026-08-21 | COST | BUY | $700.00 | N/A | 7/10 | Active | - | Why: Costco’s membership model delivers stable, recurring revenue with a 95% ren |
