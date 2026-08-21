@@ -1648,3 +1648,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | CRWD | BUY | $260.00 | N/A | 9/10 | Active | - | Why: CrowdStrike’s AI‑native Falcon platform dominates cloud security, deliverin |
 | 2026-08-21 | ADI | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Analog Devices offers diversified exposure to high‑margin analog and mixed‑ |
 | 2026-08-21 | COST | BUY | $700.00 | N/A | 7/10 | Active | - | Why: Costco’s membership model delivers stable, recurring revenue with a 95% ren |
+| 2026-08-21 | CRWD | BUY | $300.00 | $480.00 | 9/10 | Active | - | Why: Deep‑research shows CRWD’s AI‑driven Falcon platform is the market leader i |
+| 2026-08-21 | AFRM | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: AFRM’s BNPL ecosystem is experiencing rapid user growth and margin expansio |
+| 2026-08-21 | PLTR | BUY | $178.93 | $210.00 | 6/10 | Active | - | Why: PLTR’s valuation has become stretched (forward P/E ~120×) relative to its g |
