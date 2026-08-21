@@ -1642,3 +1642,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | TICKER | BUY | $140.00 | $250.00 | 9/10 | Active | - | Why: PDD (Pinduoduo) is a fast‑growing Chinese e‑commerce platform with a proven |
 | 2026-08-21 | TICKER | BUY | $300.00 | $480.00 | 8/10 | Active | - | Why: CRWD (CrowdStrike) is a market‑leading cloud‑security provider with >25% Yo |
 | 2026-08-21 | TICKER | BUY | $120.00 | $180.00 | 7/10 | Active | - | Why: BABA (Alibaba) dominates China’s e‑commerce landscape with a massive user b |
+| 2026-08-21 | COP | BUY | $85.00 | $130.00 | 8/10 | Active | - | Why: Deep research shows oil prices have risen 12% YTD, with WTI at $81 per barr |
+| 2026-08-21 | CRWD | BUY | $310.00 | $460.00 | 7/10 | Active | - | Why: CrowdStrike (CRWD) is a market leader in cloud‑native endpoint security wit |
+| 2026-08-21 | AFYA | BUY | $21.50 | $35.00 | 6/10 | Active | - | Why: Afya Ltd (AFYA) is a fast‑growing Brazilian healthtech platform connecting  |
