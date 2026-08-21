@@ -1633,3 +1633,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-20 | TICKER | BUY | $18.10 | N/A | 8/10 | Active | - | Why: Deep‑research DCF values FUTU at $30 (80% confidence) and the firm is a fas |
 | 2026-08-20 | TICKER | BUY | $100.20 | N/A | 7/10 | Active | - | Why: Deep‑research valuation indicates a fair value of $130 (75% confidence) and |
 | 2026-08-20 | TICKER | BUY | $238.50 | N/A | 6/10 | Active | - | Why: Deep‑research indicates gold’s fair value is $260 (70% confidence) as infla |
+| 2026-08-21 | ADSK | BUY | $36.50 | $58.00 | 8/10 | Active | - | Why: Autodesk is the leading SaaS design platform that is rapidly integrating ge |
+| 2026-08-21 | COO | BUY | $1.13 | $1.80 | 7/10 | Active | - | Why: Cooper Companies is a high‑margin medical‑device firm with a strong recurri |
