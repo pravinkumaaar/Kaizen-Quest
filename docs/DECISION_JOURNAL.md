@@ -1654,3 +1654,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | AFYA | BUY | $30.00 | $45.00 | 9/10 | Active | - | Why: AFYA’s AI triage tool launched Q2 2026 is projected to add $200 M ARR, driv |
 | 2026-08-21 | CRWD | BUY | $250.00 | $320.00 | 8/10 | Active | - | Why: CRWD’s AI‑driven threat detection platform is gaining traction, its recent  |
 | 2026-08-21 | NTRB | BUY | $4.40 | $22.00 | 8/10 | Active | - | Why: NTRB has a solid cash runway of 18 months, no dilution risk, and a recent s |
+| 2026-08-21 | CRWD | BUY | $260.00 | N/A | 9/10 | Active | - | Why: Deep‑research shows AI‑driven cybersecurity spend will grow >30% CAGR to 20 |
+| 2026-08-21 | AFYA | BUY | $30.00 | N/A | 8/10 | Active | - | Why: Deep‑research indicates AFYA trades at ~14× forward earnings versus a peer  |
+| 2026-08-21 | GLD | BUY | $225.00 | N/A | 7/10 | Active | - | Why: Deep‑research shows persistent inflation expectations (CPI > 3%) and negati |
+| 2026-08-21 | TSM | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Deep‑research shows AI chip demand is driving >20% YoY revenue growth for a |
