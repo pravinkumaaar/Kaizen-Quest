@@ -1670,3 +1670,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-22 | NTRB | BUY | N/A | N/A | 9/10 | Active | - | THESIS: NTRB is poised for a breakout ahead of its earnings on 2026‑09‑07, with  |
 | 2026-08-22 | IONQ | BUY | N/A | N/A | 8/10 | Active | - | THESIS: IONQ is positioned to capture significant upside from upcoming earnings  |
 | 2026-08-22 | ABAT | BUY | N/A | N/A | 9/10 | Active | - | THESIS: ABAT shows strong momentum and is poised for a breakout after upcoming c |
+| 2026-08-22 | ADSK | BUY | $380.00 | $500.00 | 8/10 | Active | - | Why: Autodesk is transitioning to a fully subscription‑based model (>90% recurri |
+| 2026-08-22 | CRWD | BUY | $260.00 | $420.00 | 9/10 | Active | - | Why: CrowdStrike delivers a cloud‑native, AI‑enhanced security platform that has |
+| 2026-08-22 | AFRM | BUY | $70.00 | $130.00 | 7/10 | Active | - | Why: Affirm Holdings operates a buy‑now‑pay‑later (BNPL) platform that can captu |
+| 2026-08-22 | MDB | BUY | $320.00 | $560.00 | 8/10 | Active | - | Why: MongoDB’s NoSQL platform is well‑suited for the surge in AI model training  |
