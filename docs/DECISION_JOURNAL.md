@@ -1667,3 +1667,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-22 | TICKER | BUY | $300.00 | $450.00 | 9/10 | Active | - | Why: CrowdStrike is a cloud‑native endpoint security leader with >30% YoY revenu |
 | 2026-08-22 | TICKER | BUY | $350.00 | $465.00 | 8/10 | Active | - | Why: Autodesk is transitioning from legacy desktop CAD to a subscription‑based S |
 | 2026-08-22 | TICKER | BUY | $10.00 | $18.00 | 7/10 | Active | - | Why: NIO is a fast‑growing Chinese EV manufacturer benefiting from accelerating  |
+| 2026-08-22 | NTRB | BUY | N/A | N/A | 9/10 | Active | - | THESIS: NTRB is poised for a breakout ahead of its earnings on 2026‑09‑07, with  |
+| 2026-08-22 | IONQ | BUY | N/A | N/A | 8/10 | Active | - | THESIS: IONQ is positioned to capture significant upside from upcoming earnings  |
+| 2026-08-22 | ABAT | BUY | N/A | N/A | 9/10 | Active | - | THESIS: ABAT shows strong momentum and is poised for a breakout after upcoming c |
