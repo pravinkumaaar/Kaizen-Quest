@@ -1661,3 +1661,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-21 | TICKER | BUY | $650.00 | N/A | 9/10 | Active | - | Why: ASML is the sole supplier of EUV lithography tools required to fabricate su |
 | 2026-08-21 | TICKER | BUY | $150.00 | N/A | 8/10 | Active | - | Why: Snowflake’s Data Cloud is purpose‑built for the massive, AI‑driven data wor |
 | 2026-08-21 | TICKER | BUY | $80.00 | N/A | 7/10 | Active | - | Why: India’s demographic dividend (over 50% under 25) and accelerating GDP growt |
+| 2026-08-22 | AVGO | BUY | $950.00 | $1250.00 | 9/10 | Active | - | Why: Broadcom is a leading semiconductor supplier with a strong position in high |
+| 2026-08-22 | CRWD | BUY | $300.00 | $460.00 | 8/10 | Active | - | Why: CrowdStrike offers a cloud‑native XDR platform that is seeing rapid enterpr |
+| 2026-08-22 | COIN | BUY | $210.00 | $300.00 | 8/10 | Active | - | Why: Coinbase is a leading crypto exchange poised to benefit from institutional  |
