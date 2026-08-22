@@ -1664,3 +1664,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-22 | AVGO | BUY | $950.00 | $1250.00 | 9/10 | Active | - | Why: Broadcom is a leading semiconductor supplier with a strong position in high |
 | 2026-08-22 | CRWD | BUY | $300.00 | $460.00 | 8/10 | Active | - | Why: CrowdStrike offers a cloud‑native XDR platform that is seeing rapid enterpr |
 | 2026-08-22 | COIN | BUY | $210.00 | $300.00 | 8/10 | Active | - | Why: Coinbase is a leading crypto exchange poised to benefit from institutional  |
+| 2026-08-22 | TICKER | BUY | $300.00 | $450.00 | 9/10 | Active | - | Why: CrowdStrike is a cloud‑native endpoint security leader with >30% YoY revenu |
+| 2026-08-22 | TICKER | BUY | $350.00 | $465.00 | 8/10 | Active | - | Why: Autodesk is transitioning from legacy desktop CAD to a subscription‑based S |
+| 2026-08-22 | TICKER | BUY | $10.00 | $18.00 | 7/10 | Active | - | Why: NIO is a fast‑growing Chinese EV manufacturer benefiting from accelerating  |
