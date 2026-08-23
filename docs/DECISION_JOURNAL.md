@@ -1677,3 +1677,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-23 | HOOD | BUY | $108.13 | $150.00 | 8/10 | Active | - | Why: Robinhood’s retail‑trading platform is benefitting from a resurgence in ret |
 | 2026-08-23 | FCX | BUY | $45.00 | $70.00 | 7/10 | Active | - | Why: Copper is entering a structural deficit as green‑energy demand (EVs, grid u |
 | 2026-08-23 | EIDO | BUY | $30.20 | $45.00 | 7/10 | Active | - | Why: Indonesia is poised to benefit from a combination of commodity boom (nickel |
+| 2026-08-23 | AFYA | BUY | $9.00 | $13.00 | 8/10 | Active | - | Why: AFYA is a Brazilian healthtech company using AI to enhance telemedicine del |
+| 2026-08-23 | CIEN | BUY | $35.00 | $45.00 | 9/10 | Active | - | Why: CIEN supplies optical networking equipment that is critical for AI data cen |
+| 2026-08-23 | BILI | BUY | $12.00 | $18.00 | 7/10 | Active | - | Why: BILI runs China’s leading short‑video platform, with massive user growth an |
