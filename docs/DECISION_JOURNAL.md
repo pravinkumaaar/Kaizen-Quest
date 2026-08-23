@@ -1680,3 +1680,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-23 | AFYA | BUY | $9.00 | $13.00 | 8/10 | Active | - | Why: AFYA is a Brazilian healthtech company using AI to enhance telemedicine del |
 | 2026-08-23 | CIEN | BUY | $35.00 | $45.00 | 9/10 | Active | - | Why: CIEN supplies optical networking equipment that is critical for AI data cen |
 | 2026-08-23 | BILI | BUY | $12.00 | $18.00 | 7/10 | Active | - | Why: BILI runs China’s leading short‑video platform, with massive user growth an |
+| 2026-08-23 | CRWD | BUY | $260.00 | N/A | 9/10 | Active | - | Why: Our deep‑research DCF model (10‑year cash‑flow forecast) yields a fair valu |
+| 2026-08-23 | ADBE | BUY | $560.00 | N/A | 8/10 | Active | - | Why: DCF analysis (10‑year free‑cash‑flow discount at 9%) produces a fair value  |
+| 2026-08-23 | ZS | BUY | $370.00 | N/A | 7/10 | Active | - | Why: Our DCF valuation (9% discount rate) yields a fair value of $440, implying  |
