@@ -1683,3 +1683,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-23 | CRWD | BUY | $260.00 | N/A | 9/10 | Active | - | Why: Our deep‑research DCF model (10‑year cash‑flow forecast) yields a fair valu |
 | 2026-08-23 | ADBE | BUY | $560.00 | N/A | 8/10 | Active | - | Why: DCF analysis (10‑year free‑cash‑flow discount at 9%) produces a fair value  |
 | 2026-08-23 | ZS | BUY | $370.00 | N/A | 7/10 | Active | - | Why: Our DCF valuation (9% discount rate) yields a fair value of $440, implying  |
+| 2026-08-24 | AFRM | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Affirm is positioned to capture accelerated growth in the “buy‑now‑pay‑l |
+| 2026-08-24 | PDD | BUY | N/A | N/A | 9/10 | Active | - | THESIS: Pinduoduo’s dominant marketplace position and rapid user growth present  |
+| 2026-08-24 | AVGO | BUY | N/A | N/A | 7/10 | Active | - | THESIS: Broadcom’s diversified semiconductor and infrastructure‑software franchi |
