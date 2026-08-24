@@ -1697,3 +1697,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-24 | PDD | BUY | $120.00 | $240.00 | 8/10 | Active | - | Why: Pinduoduo is a fast‑growing Chinese e‑commerce platform with robust revenue |
 | 2026-08-24 | BILI | BUY | $80.00 | $115.00 | 7/10 | Active | - | Why: Bilibili operates a leading Chinese video platform with strong user engagem |
 | 2026-08-24 | INDA | BUY | $80.00 | $128.00 | 7/10 | Active | - | Why: The Indian equity market is underweight relative to the US and shows signs  |
+| 2026-08-24 | DKS | BUY | N/A | N/A | 5/10 | Active | - | Why: DKS is a large‑cap U.S. consumer‑discretionary retailer with a strong Q2 ea |
+| 2026-08-24 | PDD | BUY | N/A | N/A | 5/10 | Active | - | Why: PDD’s Q2 earnings are expected to beat expectations with strong revenue gro |
+| 2026-08-24 | XPEV | BUY | N/A | N/A | 5/10 | Active | - | Why: XPeng’s Q2 earnings beat, robust delivery growth, and battery‑cost reductio |
