@@ -1703,3 +1703,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-24 | AFYA | BUY | N/A | $2.19 | 5/10 | Active | - | Why: Afya Ltd. is a leading Brazilian health‑tech platform poised to capture the |
 | 2026-08-24 | CRWD | BUY | N/A | N/A | 5/10 | Active | - | Why: CrowdStrike’s cloud‑security platform is benefiting from a 18% CAGR TAM for |
 | 2026-08-24 | PDD | BUY | N/A | N/A | 5/10 | Active | - | Why: Pinduoduo is scheduled to report earnings today with a strong revenue base  |
+| 2026-08-24 | TICKER | BUY | $130.00 | N/A | 9/10 | Active | - | Why: DKS reports earnings today with a strong earnings beat history (4/5 quarter |
+| 2026-08-24 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | Why: CRWD’s cybersecurity moat, strong earnings momentum, and increasing institu |
+| 2026-08-24 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | Why: PDD’s earnings release today offers a high‑impact catalyst; the stock is he |
