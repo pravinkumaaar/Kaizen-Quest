@@ -1692,3 +1692,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-24 | PDD | BUY | N/A | $210.00 | 5/10 | Active | - | Why: PDD is a fast‑growing Chinese e‑commerce platform with a market‑cap ≈ $70 B |
 | 2026-08-24 | DKS | BUY | N/A | $85.00 | 5/10 | Active | - | Why: DKS trades at a forward P/E of ~9.5×, well below the sector median (~13×) a |
 | 2026-08-24 | NTRB | BUY | N/A | $8.00 | 5/10 | Active | - | Why: NTRB is a niche biotech focused on next‑generation nutraceuticals with a pi |
+| 2026-08-24 | ZSCALER | BUY | $150.00 | $250.00 | 7/10 | Active | - | Why: ZS is a market‑leading cloud‑native security platform that is rapidly gaini |
