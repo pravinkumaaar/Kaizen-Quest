@@ -1693,3 +1693,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-24 | DKS | BUY | N/A | $85.00 | 5/10 | Active | - | Why: DKS trades at a forward P/E of ~9.5×, well below the sector median (~13×) a |
 | 2026-08-24 | NTRB | BUY | N/A | $8.00 | 5/10 | Active | - | Why: NTRB is a niche biotech focused on next‑generation nutraceuticals with a pi |
 | 2026-08-24 | ZSCALER | BUY | $150.00 | $250.00 | 7/10 | Active | - | Why: ZS is a market‑leading cloud‑native security platform that is rapidly gaini |
+| 2026-08-24 | CRDO | BUY | $70.00 | $115.00 | 9/10 | Active | - | Why: Credo Technology is a semiconductor equipment provider positioned to benefi |
+| 2026-08-24 | PDD | BUY | $120.00 | $240.00 | 8/10 | Active | - | Why: Pinduoduo is a fast‑growing Chinese e‑commerce platform with robust revenue |
+| 2026-08-24 | BILI | BUY | $80.00 | $115.00 | 7/10 | Active | - | Why: Bilibili operates a leading Chinese video platform with strong user engagem |
+| 2026-08-24 | INDA | BUY | $80.00 | $128.00 | 7/10 | Active | - | Why: The Indian equity market is underweight relative to the US and shows signs  |
