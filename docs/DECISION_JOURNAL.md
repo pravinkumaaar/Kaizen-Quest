@@ -1686,3 +1686,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-24 | AFRM | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Affirm is positioned to capture accelerated growth in the “buy‑now‑pay‑l |
 | 2026-08-24 | PDD | BUY | N/A | N/A | 9/10 | Active | - | THESIS: Pinduoduo’s dominant marketplace position and rapid user growth present  |
 | 2026-08-24 | AVGO | BUY | N/A | N/A | 7/10 | Active | - | THESIS: Broadcom’s diversified semiconductor and infrastructure‑software franchi |
+| 2026-08-24 | AVGO | BUY | $368.45 | $500.00 | 9/10 | Active | - | Why: Deep‑research DCF modeling indicates a fair‑value range of $470‑$500, and e |
+| 2026-08-24 | DKS | BUY | $130.00 | $240.00 | 8/10 | Active | - | Why: DKS trades at a deep discount to peers (P/E ~9) with a solid balance sheet  |
+| 2026-08-24 | PDD | BUY | $180.00 | $300.00 | 7/10 | Active | - | Why: PDD’s earnings today forecast robust revenue growth and a beat on EPS, whil |
