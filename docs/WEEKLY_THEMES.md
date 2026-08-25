@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-08-18)
+## Current Theme (Week of 2026-08-25)
 
-**📌 Theme:** Human Longevity & Biohacking - Living Longer, Better
+**📌 Theme:** Macroeconomics: How the World Economy Really Works
 
-**Duration:** Week of 2026-08-18
+**Duration:** Week of 2026-08-25
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: Why We Age - The Biology of Aging
-- [ ] Day 2: Senescent Cells & Senolytics - Removing the Damage
-- [ ] Day 3: Cellular Reprogramming - Yamanaka Factors & De-Aging
-- [ ] Day 4: Metabolic Health - Glucose, Insulin, Ketones
-- [ ] Day 5: Sleep, Exercise, Fasting - The Unglamorous Basics
-- [ ] Day 6: Supplements & Biomarkers - What Actually Works
-- [ ] Day 7: Biotech Investing - The Companies Racing to Extend Life
+- [ ] Day 1: Money & Inflation - What Makes Your Savings Worth Less
+- [ ] Day 2: Interest Rates & The Fed - How Central Banks Control Everything
+- [ ] Day 3: Supply & Demand - The Force Behind Every Price
+- [ ] Day 4: Recessions & Business Cycles - Why Booms Turn to Busts
+- [ ] Day 5: Currencies & Trade - Why the Dollar Matters Globally
+- [ ] Day 6: Geopolitics & Economics - When Politics Changes Markets
+- [ ] Day 7: Investment Implications - How to Profit from Economic Cycles
 
 ---
 *New theme rotates each week. Archive your learnings.*
