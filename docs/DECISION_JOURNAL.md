@@ -1712,3 +1712,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-25 | EEM | BUY | $42.10 | $53.50 | 8/10 | Active | - | Why: After a prolonged period of US‑centric outperformance, leading‑indicator da |
 | 2026-08-25 | GLD | BUY | $185.30 | $215.00 | 7/10 | Active | - | Why: Real‑interest‑rate expectations are flattening as the 2‑year Treasury yield |
 | 2026-08-25 | MU | BUY | $910.43 | $970.00 | 6/10 | Active | - | Why: Micron has delivered extraordinary gains (+140 % unrealized) on the back of |
+| 2026-08-25 | SNOW | BUY | $350.00 | $500.00 | 9/10 | Active | - | Why: Snowflake is the leading data‑cloud platform that enables enterprises to in |
+| 2026-08-25 | MDB | BUY | $340.00 | $470.00 | 8/10 | Active | - | Why: MongoDB provides a flexible, document‑oriented database that is the de‑fact |
+| 2026-08-25 | DDOG | BUY | $70.00 | $105.00 | 8/10 | Active | - | Why: Datadog delivers unified observability (metrics, logs, traces) for cloud‑na |
