@@ -1715,3 +1715,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-25 | SNOW | BUY | $350.00 | $500.00 | 9/10 | Active | - | Why: Snowflake is the leading data‑cloud platform that enables enterprises to in |
 | 2026-08-25 | MDB | BUY | $340.00 | $470.00 | 8/10 | Active | - | Why: MongoDB provides a flexible, document‑oriented database that is the de‑fact |
 | 2026-08-25 | DDOG | BUY | $70.00 | $105.00 | 8/10 | Active | - | Why: Datadog delivers unified observability (metrics, logs, traces) for cloud‑na |
+| 2026-08-25 | STX | BUY | $794.65 | N/A | 8/10 | Active | - | Why: Seagate is leveraging a rebound in enterprise HDD demand fueled by AI‑drive |
+| 2026-08-25 | NTRB | BUY | $5.11 | N/A | 8/10 | Active | - | Why: Nutribullet is showing improving margins and a new product pipeline ahead o |
+| 2026-08-25 | SLV | BUY | $62.20 | N/A | 7/10 | Active | - | Why: Silver is poised for a breakout as industrial demand (solar, EVs, 5G) rises |
