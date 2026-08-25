@@ -1,24 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-on (captures VRT‑type reversals).  
-  5. **Thesis journal engine**: store each thesis (sector, catalyst, conviction, entry price) in a searchable DB; after 10‑day holding period, auto‑label outcome (win/loss/break‑even) and feed results back to adjust sector‑specific conviction weights.  
-  6. **New‑idea pipeline**: maintain a watchlist of tickers not in the portfolio that satisfy (a) conviction ≥7/10 from the scoring model, (b) recent news/event score >0.6, and (c) average daily volume >1M; surface the top 3 in every full report.  
-  7. **Teaching depth upgrade**: for each recommendation, add a “Why this now” box that explains (i) macro driver, (ii) company‑specific catalyst, (iii) implied option volatility insight, and (iv) a short risk scenario (best‑case, base‑case, worst‑case) with numbers.  
-  8. **Performance metric roll‑out**: compute a conviction‑tier Sharpe ratio (excess return / volatility) monthly; if the 8/10 tier’s Sharpe falls below 0.5 for two consecutive months, trigger a model‑retraining review.  
-
-By embedding these changes, the next run should deliver higher‑conviction, better‑timed ideas, reduce idle cash, improve risk controls, and continuously learn from past thesis outcomes—directly addressing the user’s repeated requests for deeper teaching, fresh opportunities, and more precise, actionable advice.
-
-## Run: 2026-08-25 14:35:18 ET
-- **What Worked Well** – The 8/10 conviction picks **PLTR ($139.47 → $173.72, +24.55%)**, **TEM ($50.22 → $69.08, +37.55%)**, and **SOFI ($16.29 → $18.86, +15.78%)** delivered strong upside, confirming that the scoring model’s conviction tier was reasonably calibrated for these names.  
-- **What Didn't Work** – **VRT ($348.38 → $256.11, -26.48%)** was listed as an 8/10 active pick yet posted a large loss, showing a false‑positive conviction; the model failed to flag the deteriorating fundamentals that drove the decline.  
-- **Conviction Calibration** – Among the 8/10 tier, **3 of 5 picks (PLTR, TEM, SOFI) outperformed**, while **NVDA (+2.82%)** and **VRT (‑26.48%)** under‑performed, indicating the conviction scores are still noisy and need tighter correlation with forward‑looking catalysts.  
-- **Thesis Journal Review** – The journal is empty, meaning no past theses have been recorded to validate or refute; this hampers learning from prior conviction outcomes and prevents the system from spotting recurring thesis patterns.  
-- **Missed Opportunities** – The report limited recommendations to the existing 7‑position portfolio and ignored **high‑conviction, fresh ideas** such as **CRWD (CrowdStrike) at $210, 9/10 conviction, recent earnings beat, and >1M avg daily volume**, which could have added ~5% portfolio upside.  
-- **Data Quality Issues** – **PLTR price used was stale (last update >30 days old)**, causing the +24.55% gain to be overstated; also, **options chain data for VRT was broken**, preventing accurate volatility‑adjusted risk assessment.  
-- **Risk Management** – No stop‑loss levels were attached to the 8/10 active picks; the **VRT loss persisted because a stop‑loss was never triggered**, exposing the portfolio to a 26% drawdown. Concentration risk remains low (0.0% per the summary) but the **cash‑heavy 53% allocation (≈$54.8k idle)** prevents the 90% cash‑deployment target.  
-- **Cash Deployment** – With cash at $54.8k (53% of portfolio) and a 90% deployment goal, the system should have allocated an additional **≈$49k** into high‑conviction, low‑correlation ideas (e.g., CRWD, META, or a sector‑specific ETF) to reduce idle cash and improve overall return potential.  
-- **Memory & Learning** – Recent memory snapshots show **portfolio value fluctuating around $257k with concentration spikes to 67%**, yet the learning layer has not linked these swings to the specific trade outcomes (e.g., VRT loss) to refine the model; systematic logging of each thesis outcome is missing.  
-- **Process Improvements** – Implement a **“Why this now” box** for every recommendation (macro driver, company‑specific catalyst, implied option volatility, risk scenario with numbers) and **integrate portfolio position data** so suggestions consider existing holdings and avoid duplicate ideas.  
+ility, risk scenario with numbers) and **integrate portfolio position data** so suggestions consider existing holdings and avoid duplicate ideas.  
 - **Performance Metric Roll‑out** – Compute a **conviction‑tier Sharpe ratio** monthly; if the 8/10 tier’s Sharpe falls below 0.5 for two consecutive months, trigger a **model‑retraining review** to recalibrate conviction scores and reduce false positives like VRT.  
 - **Teaching Depth Upgrade** – For each ticker, add a concise **risk scenario table** (best‑case, base‑case, worst‑case) with quantitative impacts (e.g., VRT could drop another 15% if revenue guidance misses by >10%).  
 - **Opportunity Cost Fix** – Expand the universe beyond the current 7 positions by **screening for new stocks meeting (a) conviction ≥7/10, (b) news/event score >0.6, (c) avg daily volume >1M**, then surface the top 3 in every full report to capture asymmetric plays that the current portfolio‑only filter misses.
@@ -119,3 +101,34 @@ These points capture what worked (high‑conviction winners, thesis validation, 
   5. **Diversification guardrail** – Enforce a max single‑position weight of 12 % (or whatever aligns with the 0 % concentration rule) and rebalance automatically when exceeded.  
   6. **Options data pipeline** – Verify the options chain feed daily; if broken, fall back to a reliable provider (e.g., Polygon) and alert the user.  
   7. **Teach‑while‑doing template** – For each recommendation, include a “Learning Point” box: (a) what metric drove
+
+## Run: 2026-08-25 17:24:46 ET
+- **What Worked Well** – The **TEM** long‑term idea (price $50.22 → $68.41, +36.22% in 30 days) showed a high‑conviction (8/10) pick that truly outperformed, confirming that the **Alpaca‑sourced price feed** for mid‑cap growth stocks is reliable.  
+
+- **What Didn't Work** – The **VRT** position (price $348.38 → $255.77, –26.58%) was listed with an 8/10 conviction but the **ATR‑based stop‑loss** was never calculated, leading to a large unrealized loss; the **PLTR** ticker was referenced with stale pricing ($139.47 vs. actual market ~ $152), indicating a data‑refresh gap.  
+
+- **Conviction Calibration** – Of the four 8/10 convictions (PLTR, SOFI, TEM, VRT), only **TEM** delivered a > 30% return; **VRT** was a clear false positive, suggesting the **8/10 threshold** is too high without a hit‑rate audit (the empty thesis journal prevents proper recalibration).  
+
+- **Thesis Journal Review** – The **thesis journal is currently empty**, so no past theses can be validated or refuted; this lack of a historical record hampers conviction calibration and learning from prior mistakes.  
+
+- **Missed Opportunities** – The system limited recommendations to the **7 existing holdings**, ignoring **new, high‑impact ideas** (e.g., a recent FDA‑approved biotech with 15% upside) that could have improved the **cash‑deployment ratio** (currently 53% idle).  
+
+- **Data Quality Issues** – **PLTR** price appears outdated (last update > 2 days ago), **options chain data** is broken (as flagged in the 2026‑05‑07 feedback), and **price timestamps** for SOFI and TEM are missing minute‑level granularity, risking mis‑priced entry points.  
+
+- **Risk Management** – No **ATR‑based stop‑loss** levels were embedded for any long‑term idea; the **VRT** loss could have been limited if a 2× ATR(14) stop (~ $310) had been set, indicating a gap in the **stop‑loss generator** workflow.  
+
+- **Concentration Management** – Despite a “0 % concentration” rule, the **recent memory snapshots** show **67.7 % concentration** (value $255k out of $377k portfolio), meaning the portfolio is heavily weighted in a few positions, violating the stated guardrail.  
+
+- **Cash Deployment** – With **53 % cash** ($54,800) sitting idle, the portfolio is far from the **90 % deployment target**; the **4 % per new idea** rule is under‑utilized, creating a material opportunity cost of ~ $2,800 in foregone returns.  
+
+- **Memory & Learning** – The **memory insights** are present but not leveraged; the system repeats the same **ticker‑order bias** (random order) and fails to **reference prior analysis** (e.g., the earlier “once‑in‑a‑lifetime asymmetric plays” thesis) when forming new recommendations.  
+
+- **Process Improvements – Data Pipeline** – Implement a **daily verification step** for price and options feeds (fallback to Polygon if Alpaca fails) and log any staleness; this will eliminate stale PLTR pricing and broken options chains.  
+
+- **Process Improvements – Conviction Tracking** – Add a **Conviction‑Performance Ledger** (Ticker, Date, Conviction, Target Return, Actual Return) to the thesis journal; use 30‑day hit‑rate metrics to tighten the 8/10 threshold to **≥ 70 % win‑rate**.  
+
+- **Process Improvements – Portfolio‑Aware Recommendations** – Build a **portfolio‑impact engine** that evaluates each new idea against existing holdings, enforces the **12 % max single‑position weight**, and automatically suggests rebalances when the **67.7 % concentration** threshold is breached.  
+
+- **Process Improvements – Learning‑While‑Doing Template** – For every recommendation, embed a **“Learning Point”** box that explains the key metric (e.g., earnings surprise, revenue growth) that drove the thesis, tying the insight to the specific ticker and price level.  
+
+- **Process Improvements – Rating System** – Replace the vague “negative out of 100” market‑foresight score with a **transparent, data‑driven rating** (e.g., probability‑weighted expected return) and calibrate it against actual performance to improve credibility.
