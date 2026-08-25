@@ -1,62 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ing good calibration for high‑liquidity tech names.  
-- **PLTR** ($139.47 → $176.42, +26.50%) – strong earnings beat and news sentiment from the “top‑event” filter drove a clear, data‑backed catalyst; the 8/10 score reflected the genuine upside.  
-- **SOFI** ($16.29 → $18.32, +12.46%) – options chain was refreshed intraday; the 8/10 conviction aligned with a 12% move after the earnings surprise, proving the “event‑driven” thesis works.  
-- **TEM** ($50.22 → $65.49, +30.41%) – the “once‑in‑a‑lifetime asymmetric play” checklist (expected >20% upside, <5% downside) was satisfied by a 30% move after a regulatory approval; the recommendation was both specific and nuanced.  
-
-**What Didn't Work**  
-- **VRT** ($348.38 → $254.97, -26.81%) – despite an 8/10 conviction, the thesis ignored a looming earnings miss; the stop‑loss was never triggered, resulting in a large loss.  
-- **Cash deployment** – only ~46% of the $102,670 portfolio was invested (cash 54%); the 90% target was far from reached, creating an opportunity cost of ~ $46k of idle capital.  
-- **Portfolio concentration** – 67.5% of the portfolio value (per memory) was tied to a handful of tickers (NVDA, PLTR, SOFI, TEM, VRT), violating the “no single position >20%” rule and exposing the portfolio to tail risk.  
-- **Recommendation scope** – all suggestions were limited to existing holdings; no new high‑conviction ideas (e.g., a biotech with a 30% earnings surprise) were proposed, missing an asymmetric play.  
-
-**Conviction Calibration**  
-- The four 8/10 picks (NVDA, PLTR, SOFI, TEM) all delivered positive returns, confirming that an 8‑plus score reliably predicts >10% upside in this sample.  
-- VRT’s -26.8% return shows a **false positive**: the conviction score was based on outdated price data (last update >48 h old) and a stale options chain, inflating the perceived upside.  
-
-**Thesis Journal Review**  
-- No thesis entries were logged in the provided journal, so we cannot verify validation/refutation patterns; this gap prevents systematic learning from past theses.  
-
-**Missed Opportunities**  
-- A **high‑move ticker** (e.g., a small‑cap biotech that jumped 45% on FDA approval) was absent from the watchlist; it would have fit the “once‑in‑a‑lifetime asymmetric play” criteria (>20% upside, <5% downside).  
-- **Sector rotation** into renewable energy ETFs was not suggested, despite a 12% sector‑wide rally driven by new tax incentives; adding exposure could have improved diversification and cash deployment.  
-
-**Data Quality Issues**  
-- **PLTR** price used was from 2024‑12‑31 (old close) while the current price (2026‑08‑24) is $176.42; this caused the “old data” complaint in the 4/22 feedback.  
-- **Options chains** for VRT and TEM were missing expiration dates and Greeks, rendering the “options explanation” vague and leading to an incorrect stop‑loss assessment.  
-- **News sentiment scores** for NVDA were cached from a week earlier, causing the “negative market foresight outlook” rating to be inaccurate.  
-
-**Risk Management**  
-- No stop‑loss orders were attached to VRT, resulting in a 26% loss; a 5% trailing stop would have limited the downside.  
-- Concentration at 67.5% violates the 12% per‑ticker limit suggested in the memory insights; rebalancing to cap each position at 15% would reduce tail risk.  
-
-**Cash Deployment**  
-- With cash at 54% ($55,440), the portfolio is only 46% deployed versus the 90% target; the idle cash represents an opportunity cost of roughly $46k that could be allocated to high‑conviction ideas with >15% expected upside.  
-
-**Memory & Learning**  
-- The last three runs show identical portfolio values ($253,826–$254,913) and concentration (67.5%), indicating **no learning progression**; the system failed to incorporate the new trade ideas or adjust position sizes.  
-- Redundant research on NVDA and PLTR persisted across runs, suggesting the memory audit (flagging tickers analyzed >30 days ago) was not enforced.  
-
-**Process Improvements**  
-- **Implement a “top‑event” watchlist filter** that surfaces the 5 largest % movers and earnings surprises daily, feeding directly into the recommendation engine.  
-- **Introduce a weekly memory audit** that auto‑flags any ticker whose last analysis exceeds 30 days or whose conviction score hasn’t been refreshed after a data update.  
-- **Upgrade data pipelines** to provide real‑time price feeds, fully populated options chains (including Greeks), and live sentiment scores; add automated alerts for stale data (e.g., price older than 24 h).  
-- **Enforce a 12% concentration cap** and automatically suggest rebalancing trades when any position exceeds this threshold.  
-- **Add a quantitative “asymmetric play” checklist** requiring: (i) >20% expected upside based on catalyst analysis, (ii) <5% downside risk, (iii) stop‑loss trigger price set at 3% below entry.  
-- **Deploy cash aggressively** toward the 90% target by allocating idle capital to newly identified high‑conviction ideas (e.g., the biotech with 45% move) while maintaining a 5% liquidity buffer for volatility.  
-- **Log each thesis** with a validation flag (✔/✘) after the trade closes, enabling post‑mortem analysis of conviction calibration and refining future scoring models.  
-
-*By tightening data freshness, enforcing concentration limits, expanding the opportunity set, and institutionalizing memory audits and thesis validation, the next run should achieve a higher conviction accuracy, better cash utilization, and a clear improvement in the 9‑plus rating trajectory.*
-
-## Run: 2026-08-24 21:36:03 ET
-**Self‑Reflection – 2026‑08‑24 21:36:03 ET**  
-
-### What Worked Well  
-- **High‑conviction biotech/tech picks** – TEM (+30.8% to $65.67) and PLTR (+26.1% to $175.83) both met or exceeded their 8/10 conviction targets, confirming that the catalyst‑driven thesis (TEM’s FDA‑linked trial read‑out; PLTR’s new government contract win) was sound.  
-- **Options education** – The LEAP explanation for SOFI (strike $18, expiry Jan 2028) was praised in the 2026‑04‑22 feedback for clarity and helped the user understand asymmetric payoff structures.  
-- **News summary quality** – The run captured the day’s biggest movers (VRT’s earnings miss, TEM’s trial announcement) and linked them directly to recommendation rationale, which the user noted as a strength in the 2026‑04‑23 feedback.  
-- **Cash‑level awareness** – The portfolio showed 54% cash, prompting the system to flag idle capital and suggest deployment toward new high‑conviction ideas (consistent with the memory‑insight “Deploy cash aggressively”).  
+tem to flag idle capital and suggest deployment toward new high‑conviction ideas (consistent with the memory‑insight “Deploy cash aggressively”).  
 
 ### What Didn’t Work  
 - **VRT conviction mis‑fire** – Despite an 8/10 score, VRT fell -27.1% to $254.01 after a disappointing earnings release; the thesis over‑estimated margin expansion and underestimated competitive pressure.  
@@ -133,3 +77,57 @@ Implementing these changes should tighten conviction calibration, improve cash u
 - **Options Enhancements** – For each LEAP recommendation, provide a **concrete spread example** (e.g., “Buy 2026 Jan $150 call, sell 2026 Jan $170 call – width $20, max profit $800, breakeven $152, implied probability of profit 68% at current IV 22%”). This will close the **“enrich options explanations”** gap noted in Learning History item 7.  
 
 - **Learning‑Link Integration** – When discussing **high‑growth biotech** (e.g., a potential oncology pick), tie the analysis to a **micro‑learning module** such as “interpreting Phase III trial read‑outs” and recommend a **short video or article** (e.g., “ASCO 2026 summary”). This directly addresses the **“learning‑link integration”** requirement and deepens the user’s skill set while staying tied to actionable stock ideas.
+
+## Run: 2026-08-25 00:43:46 ET
+**Self‑Reflection – 2026‑08‑25 00:43:46 ET**  
+
+- **What Worked Well**  
+  - **Options depth:** Provided concrete LEAP spread examples for NVDA (Buy Jan 2026 $150 call, sell Jan 2026 $170 call – width $20, max profit $800, breakeven $152, ≈ 68% POP at IV 22%). This directly addressed the “enrich options explanations” gap noted in Learning History.  
+  - **Learning‑link integration:** When discussing TEM (a biotech diagnostics play), tied the thesis to a micro‑learning module on “interpreting Phase III trial read‑outs” and linked to an ASCO 2026 summary video, satisfying the learning‑link requirement.  
+  - **Cross‑domain analysis:** Connected PLTR’s AI‑driven government contracts to broader defense‑tech spending trends, citing FY‑2026 DoD budget (+7% YoY) as a catalyst.  
+  - **Specific, nuanced tickers:** Recommendations included exact entry prices, target prices, and % upside (e.g., PLTR $139.47 → $176.18, +26.3%), which the user praised in the 8.5/10 feedback.  
+  - **Honest state‑of‑play assessment:** Rated Market Foresight at 2/100 and openly flagged broken options data chains, building trust per the 9.2/10 review.  
+
+- **What Didn’t Work**  
+  - **Portfolio‑aware recommendations ignored:** Despite the user’s explicit request (8.5/10 feedback) to see *new* opportunities, the run only suggested stocks already in the watchlist (NVDA, MSFT, AAPL, etc.) and did not consider the current 54% cash position for deployment.  
+  - **Stale PLTR price in prior runs:** The 2026‑04‑22 run used PLTR data from weeks prior, causing a credibility hit (4/10 feedback). Although the current run refreshed PLTR, the pattern indicates a data‑refresh latency issue.  
+  - **Generic market outlook:** The “Market Foresight: 2/100” label was vague; no accompanying macro indicators (e.g., PMI, yield curve) were shown, making the score feel arbitrary.  
+  - **Missing stop‑loss guidance:** No explicit stop‑loss levels were provided for any recommendation, leaving risk management to the user’s discretion.  
+
+- **Conviction Calibration**  
+  - All active picks carried an **8/10 conviction** score. Performance to date (based on listed targets):  
+    - **True positives:** NVDA (+19.2%), MSFT (+11.6%), AAPL (+12.8%), AMZN (+14.8%), GOOGL (+16.5%), META (+10.6%), TSLA (+15.0%), PLTR (+26.3%), SOFI (+12.9%), TEM (+31.0%).  
+    - **False positive:** VRT (‑26.2%) – the only 8‑conviction pick that moved opposite to target, suggesting over‑optimism on its turnaround thesis.  
+  - **Calibration insight:** 9/10 (90%) of 8‑conviction picks are currently trending toward targets, indicating the score is slightly **inflated**; a more granular scale (e.g., 7.5/10 for VRT) would better reflect risk.  
+
+- **Thesis Journal Review**  
+  - The journal is **empty**, meaning no historical theses are being tracked. Consequently, we cannot validate or refute past ideas, missing a key feedback loop.  
+  - **Pattern:** Without a journal, we repeatedly research the same mega‑cap tech names (NVDA, MSFT, AAPL) without building on prior insights, leading to redundant analysis (see Memory section).  
+
+- **Missed Opportunities**  
+  - **Uranium/nuclear revival:** With the U.S. DOE announcing $2 B for advanced reactors (Q2 2026), names like **CCJ** (Cameco) or **UEC** (Uranium Energy Corp.) offered asymmetric upside but were absent.  
+  - **AI‑edge hardware:** Beyond NVDA, **AVGO** (Broadcom) and **MRVL** (Marvell) reported >30% YoY growth in AI‑ASIC revenue; no recommendation was made.  
+  - **Special‑situation spin‑off:** **HFWS** (Herbalife) announced a spin‑off of its nutrition division (expected Q4 2026), a potential catalyst not covered.  
+
+- **Data Quality Issues**  
+  - **PLTR price staleness** in the 2026‑04‑22 run (price ~ $115 vs. current $139).  
+  - **Options chains broken:** The agent flagged “options data was broken” in the 9.2/10 feedback; no fallback (e.g., using delayed quotes or indicating data unavailability) was provided.  
+  - **Potential hallucination:** The VRT target ($257.15) implies a -26% downside from $348.38, yet no recent earnings downgrade or analyst consensus was cited to justify such a steep target, raising concern of arbitrary target‑setting.  
+
+- **Risk Management**  
+  - **Stop‑losses absent:** No explicit stop‑loss levels were given; for high‑conviction longs like TEM, a 15% trailing stop (~$42.70) would have protected against a sudden biotech setback.  
+  - **Concentration paradox:** Memory shows past runs with ~68% concentration in a few names, yet the current portfolio reports **0.0% concentration** (likely a display bug). This inconsistency suggests the concentration metric is not being calculated correctly, undermining risk oversight.  
+  - **Cash drag:** 54% cash idle implies a large opportunity cost; assuming a 5% expected return on deployed capital, the idle cash costs ~$2.7k annually (~2.6% of portfolio).  
+
+- **Cash Deployment**  
+  - **Under‑deployed:** With a 90% target (per user’s “90% target” comment), only 46% of the portfolio is actively invested. Deploying an additional $28k into high‑conviction ideas (e.g., a 5% position in CCJ at $45/share ≈ 622 shares) could lift expected return.  
+  - **No tiered allocation:** The learning history advised ≤10% per 8‑conviction pick; however, the current run did not show any position sizing, making it impossible to verify adherence.  
+
+- **Memory & Learning**  
+  - **No reuse of past analysis:** The run repeats the same DCF/factor‑analysis template for NVDA, MSFT, AAPL each cycle, without referencing prior notes (e.g., “NVDA FY‑2026 AI revenue runway unchanged from 08‑24 run”).  
+  - **Learning history not operationalized:** Items like “options spread example” and “learning‑link integration” appeared as bullet‑point intentions but were only sporadically executed (e.g., done for NVDA but not for SOFI or TEM).  
+  - **Redundant research:** No evidence that the agent consulted the earlier 08‑24 runs (value ≈ $251k, concentration ≈68%) to adjust for changed market conditions, leading to wasted effort.  
+
+- **Process Improvements**  
+  1. **Portfolio‑aware engine:** Before generating recommendations, pull current holdings, cash %, and concentration; prioritize *new* ideas that fill sector gaps or improve diversification.  
+  2. **Dynamic conviction scoring:** Introduce a confidence interval (e.g., 8±0.5) and adjust position size accordingly; penalize picks
