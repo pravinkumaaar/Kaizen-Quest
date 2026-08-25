@@ -1725,3 +1725,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-25 | RXRX | BUY | $3.55 | $6.00 | 7/10 | Active | - | Why: Recursion’s AI‑driven drug‑discovery platform just announced a Phase‑2 read |
 | 2026-08-25 | GLD | BUY | $425.32 | $470.00 | 6/10 | Active | - | Why: Gold is flat today but the macro backdrop shows widening credit spreads and |
 | 2026-08-25 | UUUU | BUY | $16.07 | $22.00 | 7/10 | Active | - | Why: Uranium prices have crept up ~8 % today as utilities restart long‑term cont |
+| 2026-08-25 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Broadcom is positioned to capture significant AI‑driven semiconductor de |
+| 2026-08-25 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | THESIS: CrowdStrike’s AI‑enhanced security platform is poised for accelerated gr |
+| 2026-08-25 | NIO | BUY | N/A | N/A | 6/10 | Active | - | THESIS: NIO’s aggressive expansion in the Chinese EV market, combined with upcom |
