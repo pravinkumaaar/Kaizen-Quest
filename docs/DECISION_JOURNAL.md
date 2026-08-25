@@ -1709,3 +1709,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-24 | CRWD | BUY | N/A | $390.00 | 5/10 | Active | - | Why: CrowdStrike is a market‑leading cloud‑native cybersecurity platform that is |
 | 2026-08-24 | DKS | BUY | N/A | $84.00 | 5/10 | Active | - | Why: DKS is a high‑margin consumer‑discretionary retailer with a strong Q4 seaso |
 | 2026-08-24 | INTU | BUY | N/A | $575.00 | 5/10 | Active | - | Why: INTU dominates the robotic‑assisted surgical market, with a pipeline of nex |
+| 2026-08-25 | EEM | BUY | $42.10 | $53.50 | 8/10 | Active | - | Why: After a prolonged period of US‑centric outperformance, leading‑indicator da |
+| 2026-08-25 | GLD | BUY | $185.30 | $215.00 | 7/10 | Active | - | Why: Real‑interest‑rate expectations are flattening as the 2‑year Treasury yield |
+| 2026-08-25 | MU | BUY | $910.43 | $970.00 | 6/10 | Active | - | Why: Micron has delivered extraordinary gains (+140 % unrealized) on the back of |
