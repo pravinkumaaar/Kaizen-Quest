@@ -1718,3 +1718,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-25 | STX | BUY | $794.65 | N/A | 8/10 | Active | - | Why: Seagate is leveraging a rebound in enterprise HDD demand fueled by AI‑drive |
 | 2026-08-25 | NTRB | BUY | $5.11 | N/A | 8/10 | Active | - | Why: Nutribullet is showing improving margins and a new product pipeline ahead o |
 | 2026-08-25 | SLV | BUY | $62.20 | N/A | 7/10 | Active | - | Why: Silver is poised for a breakout as industrial demand (solar, EVs, 5G) rises |
+| 2026-08-25 | INTU | BUY | $503.00 | $620.00 | 9/10 | Active | - | Why: Intuit is the dominant small‑business financial software platform with high |
+| 2026-08-25 | GOLD | BUY | $2040.00 | $2350.00 | 8/10 | Active | - | Why: Gold offers a compelling inflation hedge and safe‑haven appeal as the dolla |
+| 2026-08-25 | ADBE | BUY | $520.00 | $680.00 | 9/10 | Active | - | Why: Adobe’s shift to a subscription model and integration of generative‑AI crea |
