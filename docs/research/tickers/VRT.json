@@ -1,8 +1,8 @@
 {
   "ticker": "VRT",
   "first_researched": "2026-05-22T16:39:38.400829",
-  "last_researched": "2026-08-25T15:48:23.132309",
-  "research_count": 158,
+  "last_researched": "2026-08-26T05:07:34.089256",
+  "research_count": 159,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 254.97,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-25T15:48:23.132309"
+      "last_verified": "2026-08-26T05:07:34.089256"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-25T15:48:23.132309"
+      "last_verified": "2026-08-26T05:07:34.089256"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-25T03:11:22.400525"
+      "last_verified": "2026-08-26T05:07:34.089256"
     }
   ],
   "facts": [
@@ -608,41 +608,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "VRT",
-    "timestamp": "2026-08-25 15:47:46",
+    "timestamp": "2026-08-26 05:06:29",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "congressional",
     "sector_performance",
-    "market_sentiment",
-    "earnings_history",
-    "analyst_estimates",
+    "cashflow",
     "sector_rotation",
+    "risk_assessment",
+    "analyst_estimates",
     "insider_sentiment",
-    "income_statement",
-    "comps_analysis",
-    "insider_trades",
     "dcf",
     "valuation_multiples",
-    "technical_indicators",
-    "recommendation_trends",
-    "cashflow",
-    "negative_news",
-    "competitive_landscape",
-    "balance_sheet",
-    "aggregate_indicators",
-    "earnings_momentum",
-    "supply_chain",
-    "price_target",
-    "esg",
-    "institutional",
-    "financial_ratios",
-    "risk_assessment",
-    "insider_trades_contrarian",
     "treasury_rates",
+    "price_target",
+    "congressional",
+    "balance_sheet",
+    "earnings_history",
+    "insider_trades",
+    "supply_chain",
+    "technical_indicators",
+    "comps_analysis",
+    "income_statement",
+    "earnings_momentum",
     "industry_pe",
-    "macro_rotation"
+    "financial_ratios",
+    "negative_news",
+    "aggregate_indicators",
+    "esg",
+    "recommendation_trends",
+    "insider_trades_contrarian",
+    "macro_rotation",
+    "institutional",
+    "market_sentiment",
+    "competitive_landscape"
   ],
   "research_gaps": [],
   "contrarian_signals": []

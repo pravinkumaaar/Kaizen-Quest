@@ -1728,3 +1728,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-25 | AVGO | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Broadcom is positioned to capture significant AI‑driven semiconductor de |
 | 2026-08-25 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | THESIS: CrowdStrike’s AI‑enhanced security platform is poised for accelerated gr |
 | 2026-08-25 | NIO | BUY | N/A | N/A | 6/10 | Active | - | THESIS: NIO’s aggressive expansion in the Chinese EV market, combined with upcom |
+| 2026-08-26 | HOOD | BUY | $112.09 | $165.00 | 8/10 | Active | - | Why: HOOD trades at $112.09 after an 8.17% surge today, with earnings in 8 days  |
+| 2026-08-26 | LITE | BUY | $885.57 | $1200.00 | 7/10 | Active | - | Why: LITE trades at $885.57, up 6.67% today, and is a data‑center REIT with $1.5 |
+| 2026-08-26 | ADSK | BUY | $360.00 | $560.00 | 8/10 | Active | - | Why: ADSK reports EPS $3.18 and revenue $2.1B, with a subscription model that ca |
