@@ -1,8 +1,8 @@
 {
   "ticker": "ASTS",
   "first_researched": "2026-05-22T16:41:35.361624",
-  "last_researched": "2026-08-26T07:06:03.231043",
-  "research_count": 141,
+  "last_researched": "2026-08-26T20:06:33.300675",
+  "research_count": 142,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 62.01,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-26T07:06:03.231043"
+      "last_verified": "2026-08-26T20:06:33.300675"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-26T07:06:03.231043"
+      "last_verified": "2026-08-26T20:06:33.300675"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-25T04:52:02.315405"
+      "last_verified": "2026-08-26T20:06:33.300675"
     }
   ],
   "facts": [
@@ -617,8 +617,8 @@
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
-      "first_verified": "2026-08-26T07:04:46.258289",
-      "last_verified": "2026-08-26T07:06:03.231043",
+      "first_verified": "2026-08-26T20:05:13.814637",
+      "last_verified": "2026-08-26T20:06:33.300675",
       "verification_count": 1
     }
   ],
@@ -626,41 +626,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "ASTS",
-    "timestamp": "2026-08-26 07:05:37",
+    "timestamp": "2026-08-26 20:06:05",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "cashflow",
-    "earnings_momentum",
+    "competitive_landscape",
+    "recommendation_trends",
     "macro_rotation",
     "risk_assessment",
-    "congressional",
-    "esg",
+    "dcf",
+    "earnings_history",
+    "sector_performance",
+    "sector_rotation",
+    "supply_chain",
     "aggregate_indicators",
+    "analyst_estimates",
+    "esg",
+    "institutional",
+    "financial_ratios",
+    "insider_sentiment",
+    "earnings_momentum",
+    "insider_trades_contrarian",
+    "income_statement",
+    "price_target",
+    "cashflow",
+    "treasury_rates",
+    "valuation_multiples",
+    "comps_analysis",
+    "market_sentiment",
     "industry_pe",
     "balance_sheet",
-    "financial_ratios",
-    "comps_analysis",
-    "technical_indicators",
-    "negative_news",
-    "price_target",
-    "sector_rotation",
-    "treasury_rates",
-    "insider_trades_contrarian",
-    "valuation_multiples",
-    "earnings_history",
-    "income_statement",
-    "market_sentiment",
-    "recommendation_trends",
-    "dcf",
-    "institutional",
-    "insider_sentiment",
-    "supply_chain",
-    "sector_performance",
     "insider_trades",
-    "competitive_landscape",
-    "analyst_estimates"
+    "congressional",
+    "negative_news",
+    "technical_indicators"
   ],
   "research_gaps": [],
   "contrarian_signals": []

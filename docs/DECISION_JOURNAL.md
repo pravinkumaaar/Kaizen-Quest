@@ -1734,3 +1734,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-26 | TICKER | BUY | $70.00 | N/A | 8/10 | Active | - | Why: Okta is the market‑leading cloud identity‑and‑access‑management (IAM) platf |
 | 2026-08-26 | TICKER | BUY | $9.50 | N/A | 7/10 | Active | - | Why: Afya Ltd. is a fast‑growing Brazilian health‑tech platform that benefits fr |
 | 2026-08-26 | TICKER | BUY | $520.00 | N/A | 8/10 | Active | - | Why: Synopsys Inc. is a premier semiconductor‑design‑automation (EDA) house pois |
+| 2026-08-26 | CRWD | BUY | $210.00 | $340.00 | 9/10 | Active | - | Why: CrowdStrike is a market‑leading cloud‑native endpoint security platform wit |
+| 2026-08-26 | SNOW | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Snowflake provides a cloud‑data platform that enables enterprises to store, |
+| 2026-08-26 | ZS | BUY | $370.00 | $470.00 | 8/10 | Active | - | Why: Zscaler is a pure‑play cloud security provider specializing in zero‑trust n |
