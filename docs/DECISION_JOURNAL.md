@@ -1737,3 +1737,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-26 | CRWD | BUY | $210.00 | $340.00 | 9/10 | Active | - | Why: CrowdStrike is a market‑leading cloud‑native endpoint security platform wit |
 | 2026-08-26 | SNOW | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Snowflake provides a cloud‑data platform that enables enterprises to store, |
 | 2026-08-26 | ZS | BUY | $370.00 | $470.00 | 8/10 | Active | - | Why: Zscaler is a pure‑play cloud security provider specializing in zero‑trust n |
+| 2026-08-27 | ADBE | BUY | $520.00 | $680.00 | 8/10 | Active | - | Why: Adobe is leveraging its Creative Cloud suite to embed generative AI (Firefl |
+| 2026-08-27 | INDA | BUY | $45.20 | $70.00 | 7/10 | Active | - | Why: India is experiencing a structural shift: manufacturing incentives (PLI sch |
+| 2026-08-27 | GLD | BUY | N/A | N/A | 9/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, geopolitical t |
