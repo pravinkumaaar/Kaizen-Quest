@@ -1742,3 +1742,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-27 | GLD | BUY | N/A | N/A | 9/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, geopolitical t |
 | 2026-08-27 | ADBE | BUY | $520.00 | $650.00 | 8/10 | Active | - | Why: Adobe is transitioning from a perpetual‑license model to a cloud‑subscripti |
 | 2026-08-27 | EWY | BUY | $70.20 | $85.00 | 7/10 | Active | - | Why: South Korea’s export‑driven economy is positioned to benefit from a rebound |
+| 2026-08-28 | TICKER | BUY | N/A | $45.00 | 8/10 | Active | - | THESIS: Adobe’s AI‑enhanced Creative Cloud platform is positioned to accelerate  |
+| 2026-08-28 | TICKER | BUY | N/A | $40.00 | 7/10 | Active | - | THESIS: Snowflake’s market‑leading cloud‑native data platform is set to benefit  |
+| 2026-08-28 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Salesforce’s AI‑enhanced CRM suite and strong recurring‑revenue base pre |
