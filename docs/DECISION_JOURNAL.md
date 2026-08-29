@@ -1752,3 +1752,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-29 | AVGO | BUY | $368.79 | $12872.00 | 5/10 | Active | - | Why: Deep‑research DCF valuation shows an intrinsic value of $500+ (≈ 36 % upsid |
 | 2026-08-29 | INDA | BUY | $100.00 | $10300.00 | 5/10 | Active | - | Why: India’s economy is accelerating (≈ 8 % GDP growth) and earnings revisions a |
 | 2026-08-29 | ZS | BUY | $150.00 | $10300.00 | 5/10 | Active | - | Why: Zscaler is a leading cloud‑security platform benefiting from AI‑driven remo |
+| 2026-08-29 | DELL | BUY | N/A | $55.00 | 5/10 | Active | - | Why: Dell is a core hardware play that can capture the accelerating demand for A |
+| 2026-08-29 | CRWD | BUY | N/A | $320.00 | 5/10 | Active | - | Why: CrowdStrike’s cloud‑native XDR platform aligns with the deep‑research theme |
+| 2026-08-29 | AVGO | BUY | N/A | $650.00 | 5/10 | Active | - | Why: Broadcom (AVGO) offers diversified semiconductor solutions with a strong fr |
