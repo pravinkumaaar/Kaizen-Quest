@@ -1745,3 +1745,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-28 | TICKER | BUY | N/A | $45.00 | 8/10 | Active | - | THESIS: Adobe’s AI‑enhanced Creative Cloud platform is positioned to accelerate  |
 | 2026-08-28 | TICKER | BUY | N/A | $40.00 | 7/10 | Active | - | THESIS: Snowflake’s market‑leading cloud‑native data platform is set to benefit  |
 | 2026-08-28 | TICKER | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Salesforce’s AI‑enhanced CRM suite and strong recurring‑revenue base pre |
+| 2026-08-29 | TSM | BUY | $165.00 | $215.00 | 9/10 | Active | - | Why: TSMC is the world’s leading advanced‑node foundry, capturing >60% of 5nm/4n |
+| 2026-08-29 | SLV | BUY | $24.20 | $31.50 | 8/10 | Active | - | Why: Silver sits at the intersection of monetary inflation hedge and industrial  |
+| 2026-08-29 | PLTR | BUY | $186.29 | $160.00 | 6/10 | Active | - | Why: PLTR has delivered stellar AI‑software growth, but at 37% of the portfolio  |
+| 2026-08-29 | EEM | BUY | $48.70 | $63.30 | 7/10 | Active | - | Why: Emerging markets (EM) are pricing in a soft‑landing scenario for the US, wi |
