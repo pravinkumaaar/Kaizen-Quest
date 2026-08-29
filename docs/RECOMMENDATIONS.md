@@ -3,10 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **TSM** | $165.00 | $215.00 | 9/10 |  Active  |  $165.00  |  +0.0%  | Medium 3‑12 mo (swing to capture AI‑capex ramp) | Watchlist |
-| 2 | **SLV** | $24.20 | $31.50 | 8/10 |  Active  |  $24.20  |  +0.0%  | Swing 2‑8 wk (to capture near‑term inflation/industrial data releases) | Watchlist |
-| 3 | **PLTR** | $186.29 | $160.00 | 6/10 |  Active  |  $186.29  |  +0.0%  | Swing 2‑8 wk (to avoid eating into long‑term upside while reducing concentration) | Watchlist |
-| 4 | **EEM** | $48.70 | $63.30 | 7/10 |  Active  |  $48.70  |  +0.0%  | Medium 3‑12 mo (to capture macro cycle turn) | Watchlist |
+| 1 | **AVGO** | $368.79 | $12872.00 | 5/10 |  Active  |  $368.79  |  +0.0%  | Medium‑term (3‑6 months) | Watchlist |
+| 2 | **INDA** | $100.00 | $10300.00 | 5/10 |  Active  |  $100.00  |  +0.0%  | Medium‑term (4‑8 months) | Watchlist |
+| 3 | **ZS** | $150.00 | $10300.00 | 5/10 |  Active  |  $150.00  |  +0.0%  | Medium‑term (3‑6 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

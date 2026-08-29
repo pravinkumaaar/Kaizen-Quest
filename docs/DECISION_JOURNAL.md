@@ -1749,3 +1749,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-29 | SLV | BUY | $24.20 | $31.50 | 8/10 | Active | - | Why: Silver sits at the intersection of monetary inflation hedge and industrial  |
 | 2026-08-29 | PLTR | BUY | $186.29 | $160.00 | 6/10 | Active | - | Why: PLTR has delivered stellar AI‑software growth, but at 37% of the portfolio  |
 | 2026-08-29 | EEM | BUY | $48.70 | $63.30 | 7/10 | Active | - | Why: Emerging markets (EM) are pricing in a soft‑landing scenario for the US, wi |
+| 2026-08-29 | AVGO | BUY | $368.79 | $12872.00 | 5/10 | Active | - | Why: Deep‑research DCF valuation shows an intrinsic value of $500+ (≈ 36 % upsid |
+| 2026-08-29 | INDA | BUY | $100.00 | $10300.00 | 5/10 | Active | - | Why: India’s economy is accelerating (≈ 8 % GDP growth) and earnings revisions a |
+| 2026-08-29 | ZS | BUY | $150.00 | $10300.00 | 5/10 | Active | - | Why: Zscaler is a leading cloud‑security platform benefiting from AI‑driven remo |
