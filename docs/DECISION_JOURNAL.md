@@ -1755,3 +1755,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-29 | DELL | BUY | N/A | $55.00 | 5/10 | Active | - | Why: Dell is a core hardware play that can capture the accelerating demand for A |
 | 2026-08-29 | CRWD | BUY | N/A | $320.00 | 5/10 | Active | - | Why: CrowdStrike’s cloud‑native XDR platform aligns with the deep‑research theme |
 | 2026-08-29 | AVGO | BUY | N/A | $650.00 | 5/10 | Active | - | Why: Broadcom (AVGO) offers diversified semiconductor solutions with a strong fr |
+| 2026-08-30 | AMD | BUY | $150.20 | $210.00 | 9/10 | Active | - | Why: AMD is a leading semiconductor designer with a clear roadmap for AI‑centric |
