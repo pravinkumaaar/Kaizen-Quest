@@ -1756,3 +1756,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-29 | CRWD | BUY | N/A | $320.00 | 5/10 | Active | - | Why: CrowdStrike’s cloud‑native XDR platform aligns with the deep‑research theme |
 | 2026-08-29 | AVGO | BUY | N/A | $650.00 | 5/10 | Active | - | Why: Broadcom (AVGO) offers diversified semiconductor solutions with a strong fr |
 | 2026-08-30 | AMD | BUY | $150.20 | $210.00 | 9/10 | Active | - | Why: AMD is a leading semiconductor designer with a clear roadmap for AI‑centric |
+| 2026-08-30 | AVGO | BUY | $360.00 | $460.00 | 9/10 | Active | - | Why: 1. Analyst consensus shows 34 buys vs 0 sells (deep‑research confidence 100 |
+| 2026-08-30 | PANW | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: 1. Cybersecurity spending is growing >12% YoY, and AI‑driven threat detecti |
+| 2026-08-30 | ADBE | BUY | $560.00 | $770.00 | 8/10 | Active | - | Why: 1. Adobe’s Creative Cloud and Document Cloud revenues are growing >15% YoY, |
