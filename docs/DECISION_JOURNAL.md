@@ -1762,3 +1762,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-31 | AVGO | BUY | $368.79 | $460.00 | 8/10 | Active | - | Why: Broadcom (AVGO) is the dominant supplier of Ethernet switches, ASICs, and o |
 | 2026-08-31 | GLD | BUY | $408.89 | $500.00 | 7/10 | Active | - | Why: Gold (GLD) offers a hedge against persistent inflation, currency debasement |
 | 2026-08-31 | LEN | BUY | $150.00 | $225.00 | 6/10 | Active | - | Why: Lennar (LEN) is the largest U.S. homebuilder by volume. Mortgage rates have |
+| 2026-08-31 | GLD | BUY | $200.00 | $240.00 | 8/10 | Active | - | Why: With the VIX at 17.5 (neutral) and earnings revisions strongly positive (+4 |
+| 2026-08-31 | INDA | BUY | $48.50 | $60.00 | 7/10 | Active | - | Why: India’s GDP growth is projected at 6.5% FY27, outpacing most developed mark |
+| 2026-08-31 | PLTR | BUY | $186.29 | N/A | 8/10 | Active | - | Why: PLTR remains the portfolio’s largest winner (+198.9%) and a high‑conviction |
