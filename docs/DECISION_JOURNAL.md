@@ -1759,3 +1759,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-30 | AVGO | BUY | $360.00 | $460.00 | 9/10 | Active | - | Why: 1. Analyst consensus shows 34 buys vs 0 sells (deep‑research confidence 100 |
 | 2026-08-30 | PANW | BUY | $150.00 | $225.00 | 8/10 | Active | - | Why: 1. Cybersecurity spending is growing >12% YoY, and AI‑driven threat detecti |
 | 2026-08-30 | ADBE | BUY | $560.00 | $770.00 | 8/10 | Active | - | Why: 1. Adobe’s Creative Cloud and Document Cloud revenues are growing >15% YoY, |
+| 2026-08-31 | AVGO | BUY | $368.79 | $460.00 | 8/10 | Active | - | Why: Broadcom (AVGO) is the dominant supplier of Ethernet switches, ASICs, and o |
+| 2026-08-31 | GLD | BUY | $408.89 | $500.00 | 7/10 | Active | - | Why: Gold (GLD) offers a hedge against persistent inflation, currency debasement |
+| 2026-08-31 | LEN | BUY | $150.00 | $225.00 | 6/10 | Active | - | Why: Lennar (LEN) is the largest U.S. homebuilder by volume. Mortgage rates have |
