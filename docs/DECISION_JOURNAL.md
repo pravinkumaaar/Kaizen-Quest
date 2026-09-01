@@ -1777,3 +1777,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-01 | DELL | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Dell is a leading provider of servers and storage for AI data centers, with |
 | 2026-09-01 | PANW | BUY | $380.00 | N/A | 9/10 | Active | - | Why: Palo Alto Networks is a pure‑play cloud‑security leader with recurring‑reve |
 | 2026-09-01 | CIEN | BUY | $70.00 | N/A | 7/10 | Active | - | Why: Ciena provides optical networking solutions that are essential for the AI d |
+| 2026-09-01 | TICKER | BUY | N/A | $250.00 | 5/10 | Active | - | Thesis: Snowflake is positioned to capture the exploding AI data workloads, with |
+| 2026-09-01 | TICKER | BUY | N/A | $560.00 | 5/10 | Active | - | Thesis: Palo Alto Networks’ AI‑driven security platform is gaining traction, del |
+| 2026-09-01 | TICKER | BUY | N/A | $570.00 | 5/10 | Active | - | Thesis: MongoDB is poised to capture AI data workloads, with strong revenue grow |
