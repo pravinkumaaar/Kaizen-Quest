@@ -1774,3 +1774,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-01 | CIEN | BUY | $55.00 | $68.00 | 8/10 | Active | - | Why: Ciena delivers network infrastructure and software solutions that ride the  |
 | 2026-09-01 | DELL | BUY | $85.00 | $110.00 | 7/10 | Active | - | Why: Dell Technologies combines client hardware, infrastructure, and services wi |
 | 2026-09-01 | UNFI | BUY | $7.00 | $9.00 | 8/10 | Active | - | Why: United Natural Foods is positioned in the fast‑growing specialty‑food segme |
+| 2026-09-01 | DELL | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Dell is a leading provider of servers and storage for AI data centers, with |
+| 2026-09-01 | PANW | BUY | $380.00 | N/A | 9/10 | Active | - | Why: Palo Alto Networks is a pure‑play cloud‑security leader with recurring‑reve |
+| 2026-09-01 | CIEN | BUY | $70.00 | N/A | 7/10 | Active | - | Why: Ciena provides optical networking solutions that are essential for the AI d |
