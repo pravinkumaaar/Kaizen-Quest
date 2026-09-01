@@ -1765,3 +1765,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-08-31 | GLD | BUY | $200.00 | $240.00 | 8/10 | Active | - | Why: With the VIX at 17.5 (neutral) and earnings revisions strongly positive (+4 |
 | 2026-08-31 | INDA | BUY | $48.50 | $60.00 | 7/10 | Active | - | Why: India’s GDP growth is projected at 6.5% FY27, outpacing most developed mark |
 | 2026-08-31 | PLTR | BUY | $186.29 | N/A | 8/10 | Active | - | Why: PLTR remains the portfolio’s largest winner (+198.9%) and a high‑conviction |
+| 2026-09-01 | AVGO | BUY | N/A | $300.00 | 9/10 | Active | - | THESIS: AVGO’s robust earnings beat and dominant position in semiconductor infra |
+| 2026-09-01 | DELL | BUY | N/A | N/A | 8/10 | Active | - | THESIS: DELL’s upcoming earnings beat, driven by strong data‑center and PC deman |
+| 2026-09-01 | SNOW | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Snowflake’s market‑leading data‑cloud platform, combined with strongly p |
