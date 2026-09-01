@@ -1771,3 +1771,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-01 | CRDO | BUY | $226.19 | $300.00 | 8/10 | Active | - | Why: CRDO is a semiconductor equipment provider with exposure to the AI‑chip dem |
 | 2026-09-01 | MDB | BUY | $350.00 | $500.00 | 7/10 | Active | - | Why: MongoDB’s dominant position in the NoSQL market, high net‑revenue retention |
 | 2026-09-01 | ZS | BUY | $250.00 | $300.00 | 7/10 | Active | - | Why: Zscaler is a market leader in cloud security with recurring revenue, high n |
+| 2026-09-01 | CIEN | BUY | $55.00 | $68.00 | 8/10 | Active | - | Why: Ciena delivers network infrastructure and software solutions that ride the  |
+| 2026-09-01 | DELL | BUY | $85.00 | $110.00 | 7/10 | Active | - | Why: Dell Technologies combines client hardware, infrastructure, and services wi |
+| 2026-09-01 | UNFI | BUY | $7.00 | $9.00 | 8/10 | Active | - | Why: United Natural Foods is positioned in the fast‑growing specialty‑food segme |
