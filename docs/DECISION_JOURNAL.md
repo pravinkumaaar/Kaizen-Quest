@@ -1768,3 +1768,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-01 | AVGO | BUY | N/A | $300.00 | 9/10 | Active | - | THESIS: AVGO’s robust earnings beat and dominant position in semiconductor infra |
 | 2026-09-01 | DELL | BUY | N/A | N/A | 8/10 | Active | - | THESIS: DELL’s upcoming earnings beat, driven by strong data‑center and PC deman |
 | 2026-09-01 | SNOW | BUY | N/A | N/A | 8/10 | Active | - | THESIS: Snowflake’s market‑leading data‑cloud platform, combined with strongly p |
+| 2026-09-01 | CRDO | BUY | $226.19 | $300.00 | 8/10 | Active | - | Why: CRDO is a semiconductor equipment provider with exposure to the AI‑chip dem |
+| 2026-09-01 | MDB | BUY | $350.00 | $500.00 | 7/10 | Active | - | Why: MongoDB’s dominant position in the NoSQL market, high net‑revenue retention |
+| 2026-09-01 | ZS | BUY | $250.00 | $300.00 | 7/10 | Active | - | Why: Zscaler is a market leader in cloud security with recurring revenue, high n |
