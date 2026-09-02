@@ -1783,3 +1783,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-02 | LITE | BUY | $868.95 | N/A | 8/10 | Active | - | Why: LITE is a semiconductor maker positioned to benefit from AI‑driven data‑cen |
 | 2026-09-02 | ORCL | BUY | $141.32 | N/A | 7/10 | Active | - | Why: ORCL is a leading enterprise‑software firm with strong cash flows; the curr |
 | 2026-09-02 | CRDO | BUY | $206.63 | N/A | 8/10 | Active | - | Why: CRDO is trading lower after a sharp decline and reports EPS $1.19 with $480 |
+| 2026-09-02 | AVGO | BUY | $370.34 | N/A | 9/10 | Active | - | Why: AVGO is a leading semiconductor‑equipment provider with a massive backlog a |
+| 2026-09-02 | MDB | BUY | $350.00 | N/A | 8/10 | Active | - | Why: MDB is a high‑growth cloud‑database platform with recurring‑revenue model a |
+| 2026-09-02 | PLTR | BUY | $179.92 | N/A | 7/10 | Active | - | Why: PLTR has delivered a massive 187% gain and now represents nearly 37% of the |
