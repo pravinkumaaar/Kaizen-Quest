@@ -1796,3 +1796,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-02 | MRNA | BUY | $6.00 | N/A | 8/10 | Active | - | Why: Deep research shows MRNA trading around $150 with a strong oncology pipelin |
 | 2026-09-02 | GLD | BUY | $180.00 | N/A | 7/10 | Active | - | Why: Deep research indicates gold price has risen 6% YTD and safe‑haven demand i |
 | 2026-09-02 | INDA | BUY | $95.00 | N/A | 8/10 | Active | - | Why: Deep research shows Indian GDP growing 6.5% YoY with accelerating corporate |
+| 2026-09-02 | COO | BUY | N/A | N/A | 7/10 | Active | - | Thesis: COO’s upcoming earnings and bullish guidance signal a near‑term upside b |
+| 2026-09-02 | CIEN | BUY | N/A | N/A | 8/10 | Active | - | Thesis: CIEN is positioned to capture a 20% YoY surge in AI‑driven data‑center n |
+| 2026-09-02 | SLV | BUY | N/A | N/A | 6/10 | Active | - | Thesis: Silver’s price is poised to outperform gold amid rising inflation expect |
