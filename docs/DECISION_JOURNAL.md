@@ -1780,3 +1780,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-01 | TICKER | BUY | N/A | $250.00 | 5/10 | Active | - | Thesis: Snowflake is positioned to capture the exploding AI data workloads, with |
 | 2026-09-01 | TICKER | BUY | N/A | $560.00 | 5/10 | Active | - | Thesis: Palo Alto Networks’ AI‑driven security platform is gaining traction, del |
 | 2026-09-01 | TICKER | BUY | N/A | $570.00 | 5/10 | Active | - | Thesis: MongoDB is poised to capture AI data workloads, with strong revenue grow |
+| 2026-09-02 | LITE | BUY | $868.95 | N/A | 8/10 | Active | - | Why: LITE is a semiconductor maker positioned to benefit from AI‑driven data‑cen |
+| 2026-09-02 | ORCL | BUY | $141.32 | N/A | 7/10 | Active | - | Why: ORCL is a leading enterprise‑software firm with strong cash flows; the curr |
+| 2026-09-02 | CRDO | BUY | $206.63 | N/A | 8/10 | Active | - | Why: CRDO is trading lower after a sharp decline and reports EPS $1.19 with $480 |
