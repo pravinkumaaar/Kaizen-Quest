@@ -1,29 +1,29 @@
 {
   "ticker": "SMCI",
   "first_researched": "2026-06-08T20:19:57.045621",
-  "last_researched": "2026-09-01T16:39:09.838641",
-  "research_count": 20,
+  "last_researched": "2026-09-02T19:30:58.091023",
+  "research_count": 21,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 37.28,
+  "last_price": 36.71,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-01T16:39:09.838641"
+      "last_verified": "2026-09-02T19:30:58.091023"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-01T16:39:09.838641"
+      "last_verified": "2026-09-02T19:30:58.091023"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-31T21:53:45.847684"
+      "last_verified": "2026-09-02T19:30:58.091023"
     }
   ],
   "facts": [
@@ -134,47 +134,56 @@
       "first_verified": "2026-09-01T16:36:19.828167",
       "last_verified": "2026-09-01T16:39:09.838641",
       "verification_count": 1
+    },
+    {
+      "claim": "SMCI trading at $36.71 (-1.53%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-09-02T19:30:14.017428",
+      "last_verified": "2026-09-02T19:30:58.091023",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "SMCI",
-    "timestamp": "2026-09-01 16:38:31",
+    "timestamp": "2026-09-02 19:30:24",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "financial_ratios",
-    "valuation_multiples",
-    "esg",
-    "insider_trades_contrarian",
-    "balance_sheet",
-    "technical_indicators",
-    "supply_chain",
     "treasury_rates",
-    "congressional",
+    "macro_rotation",
+    "institutional",
+    "income_statement",
+    "financial_ratios",
+    "risk_assessment",
+    "price_target",
+    "negative_news",
+    "earnings_history",
+    "technical_indicators",
+    "market_sentiment",
     "insider_sentiment",
-    "dcf",
+    "valuation_multiples",
+    "competitive_landscape",
+    "balance_sheet",
+    "earnings_momentum",
+    "supply_chain",
+    "esg",
     "aggregate_indicators",
+    "recommendation_trends",
+    "insider_trades",
+    "sector_performance",
+    "congressional",
+    "cashflow",
     "analyst_estimates",
     "comps_analysis",
-    "earnings_momentum",
-    "risk_assessment",
+    "insider_trades_contrarian",
     "sector_rotation",
     "industry_pe",
-    "negative_news",
-    "sector_performance",
-    "market_sentiment",
-    "institutional",
-    "competitive_landscape",
-    "cashflow",
-    "income_statement",
-    "insider_trades",
-    "recommendation_trends",
-    "price_target",
-    "earnings_history",
-    "macro_rotation"
+    "dcf"
   ],
   "research_gaps": [],
   "contrarian_signals": [],
