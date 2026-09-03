@@ -1799,3 +1799,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-02 | COO | BUY | N/A | N/A | 7/10 | Active | - | Thesis: COO’s upcoming earnings and bullish guidance signal a near‑term upside b |
 | 2026-09-02 | CIEN | BUY | N/A | N/A | 8/10 | Active | - | Thesis: CIEN is positioned to capture a 20% YoY surge in AI‑driven data‑center n |
 | 2026-09-02 | SLV | BUY | N/A | N/A | 6/10 | Active | - | Thesis: Silver’s price is poised to outperform gold amid rising inflation expect |
+| 2026-09-03 | COST | BUY | $850.00 | $977.50 | 8/10 | Active | - | Why: Costco’s membership model delivers sticky, recurring revenue and pricing po |
+| 2026-09-03 | ADBE | BUY | $603.00 | $723.60 | 9/10 | Active | - | Why: Adobe’s Creative Cloud suite is integrating generative AI (Firefly) across  |
+| 2026-09-03 | GLD | BUY | $402.78 | $450.00 | 7/10 | Active | - | Why: Gold remains a proven hedge against persistent inflation and currency depre |
+| 2026-09-03 | PLTR | BUY | $169.46 | N/A | 6/10 | Active | - | Why: Palantir remains a leading AI‑driven data‑platform provider with expanding  |
