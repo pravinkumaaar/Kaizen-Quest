@@ -1803,3 +1803,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-03 | ADBE | BUY | $603.00 | $723.60 | 9/10 | Active | - | Why: Adobe’s Creative Cloud suite is integrating generative AI (Firefly) across  |
 | 2026-09-03 | GLD | BUY | $402.78 | $450.00 | 7/10 | Active | - | Why: Gold remains a proven hedge against persistent inflation and currency depre |
 | 2026-09-03 | PLTR | BUY | $169.46 | N/A | 6/10 | Active | - | Why: Palantir remains a leading AI‑driven data‑platform provider with expanding  |
+| 2026-09-04 | PATH | BUY | $15.90 | $24.00 | 7/10 | Active | - | Why: After a sharp 12.7 % intraday pull‑back, PATH is trading near multi‑month l |
+| 2026-09-04 | NNOX | BUY | $0.78 | $1.50 | 8/10 | Active | - | Why: NNOX’s AI‑driven Nanox.ARC platform is poised for a commercial inflection p |
+| 2026-09-04 | SNDK | BUY | $1655.24 | $2100.00 | 7/10 | Active | - | Why: After a 6.5 % intraday rally, SNDK is trading near the upper end of its 6‑m |
