@@ -1,29 +1,29 @@
 {
   "ticker": "NVDA",
   "first_researched": "2026-05-22T13:54:38.930823",
-  "last_researched": "2026-09-03T13:30:11.529891",
-  "research_count": 180,
+  "last_researched": "2026-09-04T04:03:56.248329",
+  "research_count": 181,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 224.41,
+  "last_price": 228.45,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-03T13:30:11.529891"
+      "last_verified": "2026-09-04T04:03:56.248329"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-03T13:30:11.529891"
+      "last_verified": "2026-09-04T04:03:56.248329"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-02T22:38:48.618566"
+      "last_verified": "2026-09-04T04:03:56.248329"
     }
   ],
   "facts": [
@@ -638,47 +638,56 @@
       "first_verified": "2026-09-03T13:27:30.693347",
       "last_verified": "2026-09-03T13:30:11.529891",
       "verification_count": 1
+    },
+    {
+      "claim": "NVDA trading at $228.45 (+1.80%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-09-04T04:02:01.788219",
+      "last_verified": "2026-09-04T04:03:56.248329",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "NVDA",
-    "timestamp": "2026-09-03 13:29:34",
+    "timestamp": "2026-09-04 04:03:29",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
     "technical_indicators",
-    "sector_rotation",
-    "income_statement",
-    "insider_trades_contrarian",
-    "treasury_rates",
-    "analyst_estimates",
-    "sector_performance",
-    "supply_chain",
-    "price_target",
-    "congressional",
-    "recommendation_trends",
-    "risk_assessment",
-    "competitive_landscape",
-    "macro_rotation",
-    "dcf",
-    "earnings_momentum",
-    "cashflow",
-    "aggregate_indicators",
-    "market_sentiment",
     "financial_ratios",
-    "esg",
+    "sector_performance",
     "comps_analysis",
+    "valuation_multiples",
+    "congressional",
+    "sector_rotation",
+    "risk_assessment",
     "industry_pe",
+    "insider_trades_contrarian",
     "institutional",
     "negative_news",
-    "valuation_multiples",
+    "analyst_estimates",
+    "competitive_landscape",
+    "dcf",
+    "aggregate_indicators",
     "insider_sentiment",
+    "earnings_momentum",
+    "supply_chain",
+    "cashflow",
+    "macro_rotation",
     "earnings_history",
+    "recommendation_trends",
+    "treasury_rates",
+    "price_target",
     "insider_trades",
-    "balance_sheet"
+    "income_statement",
+    "balance_sheet",
+    "market_sentiment",
+    "esg"
   ],
   "research_gaps": [],
   "contrarian_signals": []
