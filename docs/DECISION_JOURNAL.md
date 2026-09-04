@@ -1806,3 +1806,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-04 | PATH | BUY | $15.90 | $24.00 | 7/10 | Active | - | Why: After a sharp 12.7 % intraday pull‑back, PATH is trading near multi‑month l |
 | 2026-09-04 | NNOX | BUY | $0.78 | $1.50 | 8/10 | Active | - | Why: NNOX’s AI‑driven Nanox.ARC platform is poised for a commercial inflection p |
 | 2026-09-04 | SNDK | BUY | $1655.24 | $2100.00 | 7/10 | Active | - | Why: After a 6.5 % intraday rally, SNDK is trading near the upper end of its 6‑m |
+| 2026-09-04 | TICKER | BUY | $357.16 | $460.00 | 9/10 | Active | - | Why: Broadcom is a dominant supplier of networking and storage semiconductors th |
+| 2026-09-04 | TICKER | BUY | $770.00 | $950.00 | 8/10 | Active | - | Why: ASML holds a near‑monopoly on EUV lithography, the only technology capable  |
+| 2026-09-04 | TICKER | BUY | $620.00 | $850.00 | 7/10 | Active | - | Why: Snowflake operates a cloud‑native data platform that enables enterprises to |
