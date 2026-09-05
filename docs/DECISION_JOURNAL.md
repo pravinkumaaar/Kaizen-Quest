@@ -1812,3 +1812,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-05 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: While US Tech faces valuation gravity, India is the primary global benefici |
 | 2026-09-05 | GLD | BUY | N/A | N/A | 9/10 | Active | - | Why: September is historically weak for equities. With AI safety concerns (OpenA |
 | 2026-09-05 | VRT | BUY | $280.53 | N/A | 8/10 | Active | - | Why: Deep research confirms VRT is a critical infrastructure play (cooling/power |
+| 2026-09-05 | PATH | BUY | $15.19 | $22.00 | 7/10 | Active | - | Why: UiPath is the leader in robotic‑process‑automation, a secular‑growth niche  |
+| 2026-09-05 | NNOX | BUY | $0.83 | $1.50 | 8/10 | Active | - | Why: Nanox is deploying a novel, low‑cost digital‑x‑ray system powered by AI‑bas |
+| 2026-09-05 | GLD | BUY | $406.77 | $460.00 | 7/10 | Active | - | Why: Your portfolio is 68% concentrated in five tech names. Gold offers a low‑co |
