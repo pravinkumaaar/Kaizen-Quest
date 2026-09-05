@@ -1809,3 +1809,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-04 | TICKER | BUY | $357.16 | $460.00 | 9/10 | Active | - | Why: Broadcom is a dominant supplier of networking and storage semiconductors th |
 | 2026-09-04 | TICKER | BUY | $770.00 | $950.00 | 8/10 | Active | - | Why: ASML holds a near‑monopoly on EUV lithography, the only technology capable  |
 | 2026-09-04 | TICKER | BUY | $620.00 | $850.00 | 7/10 | Active | - | Why: Snowflake operates a cloud‑native data platform that enables enterprises to |
+| 2026-09-05 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: While US Tech faces valuation gravity, India is the primary global benefici |
+| 2026-09-05 | GLD | BUY | N/A | N/A | 9/10 | Active | - | Why: September is historically weak for equities. With AI safety concerns (OpenA |
+| 2026-09-05 | VRT | BUY | $280.53 | N/A | 8/10 | Active | - | Why: Deep research confirms VRT is a critical infrastructure play (cooling/power |
