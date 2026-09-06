@@ -1815,3 +1815,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-05 | PATH | BUY | $15.19 | $22.00 | 7/10 | Active | - | Why: UiPath is the leader in robotic‑process‑automation, a secular‑growth niche  |
 | 2026-09-05 | NNOX | BUY | $0.83 | $1.50 | 8/10 | Active | - | Why: Nanox is deploying a novel, low‑cost digital‑x‑ray system powered by AI‑bas |
 | 2026-09-05 | GLD | BUY | $406.77 | $460.00 | 7/10 | Active | - | Why: Your portfolio is 68% concentrated in five tech names. Gold offers a low‑co |
+| 2026-09-06 | ADBE | BUY | N/A | $650.00 | 5/10 | Active | - | THESIS: Adobe’s AI‑driven product roadmap and upcoming earnings beat present a h |
+| 2026-09-06 | CHWY | BUY | N/A | $45.00 | 5/10 | Active | - | THESIS: Chewy’s accelerating e‑commerce pet‑food growth and an upcoming earnings |
+| 2026-09-06 | INDA | BUY | N/A | $115.00 | 5/10 | Active | - | THESIS: Rotating into Indian equities offers diversification and upside as India |

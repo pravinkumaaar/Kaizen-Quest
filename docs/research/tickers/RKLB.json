@@ -1,8 +1,8 @@
 {
   "ticker": "RKLB",
   "first_researched": "2026-05-22T16:42:14.313795",
-  "last_researched": "2026-09-05T16:40:53.483294",
-  "research_count": 150,
+  "last_researched": "2026-09-06T20:04:51.466284",
+  "research_count": 151,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 64.26,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-05T16:40:53.483294"
+      "last_verified": "2026-09-06T20:04:51.466284"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-05T16:40:53.483294"
+      "last_verified": "2026-09-06T20:04:51.466284"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-31T21:53:08.476369"
+      "last_verified": "2026-09-06T20:04:51.466284"
     }
   ],
   "facts": [
@@ -662,8 +662,8 @@
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
-      "first_verified": "2026-09-05T16:37:48.041347",
-      "last_verified": "2026-09-05T16:40:53.483294",
+      "first_verified": "2026-09-06T20:03:36.396259",
+      "last_verified": "2026-09-06T20:04:51.466284",
       "verification_count": 1
     }
   ],
@@ -671,41 +671,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "RKLB",
-    "timestamp": "2026-09-05 16:40:26",
+    "timestamp": "2026-09-06 20:04:24",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "insider_trades_contrarian",
-    "recommendation_trends",
+    "esg",
     "industry_pe",
-    "market_sentiment",
-    "dcf",
-    "balance_sheet",
-    "macro_rotation",
-    "treasury_rates",
     "sector_rotation",
-    "income_statement",
-    "competitive_landscape",
+    "insider_trades_contrarian",
     "negative_news",
-    "financial_ratios",
+    "risk_assessment",
+    "cashflow",
+    "sector_performance",
+    "treasury_rates",
+    "macro_rotation",
+    "income_statement",
+    "supply_chain",
+    "recommendation_trends",
+    "insider_sentiment",
+    "institutional",
+    "valuation_multiples",
+    "balance_sheet",
     "insider_trades",
     "congressional",
-    "esg",
-    "technical_indicators",
-    "valuation_multiples",
-    "analyst_estimates",
-    "institutional",
-    "sector_performance",
-    "risk_assessment",
-    "price_target",
     "aggregate_indicators",
-    "earnings_momentum",
+    "price_target",
     "comps_analysis",
-    "insider_sentiment",
-    "supply_chain",
-    "earnings_history",
-    "cashflow"
+    "technical_indicators",
+    "earnings_momentum",
+    "dcf",
+    "market_sentiment",
+    "financial_ratios",
+    "analyst_estimates",
+    "competitive_landscape",
+    "earnings_history"
   ],
   "research_gaps": [],
   "contrarian_signals": []
