@@ -1818,3 +1818,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-06 | ADBE | BUY | N/A | $650.00 | 5/10 | Active | - | THESIS: Adobe’s AI‑driven product roadmap and upcoming earnings beat present a h |
 | 2026-09-06 | CHWY | BUY | N/A | $45.00 | 5/10 | Active | - | THESIS: Chewy’s accelerating e‑commerce pet‑food growth and an upcoming earnings |
 | 2026-09-06 | INDA | BUY | N/A | $115.00 | 5/10 | Active | - | THESIS: Rotating into Indian equities offers diversification and upside as India |
+| 2026-09-08 | STX | BUY | $849.28 | $1200.00 | 7/10 | Active | - | Why: Seagate Technology (STX) is a leading hard drive manufacturer poised to ben |
