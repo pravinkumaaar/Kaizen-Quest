@@ -1819,3 +1819,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-06 | CHWY | BUY | N/A | $45.00 | 5/10 | Active | - | THESIS: Chewy’s accelerating e‑commerce pet‑food growth and an upcoming earnings |
 | 2026-09-06 | INDA | BUY | N/A | $115.00 | 5/10 | Active | - | THESIS: Rotating into Indian equities offers diversification and upside as India |
 | 2026-09-08 | STX | BUY | $849.28 | $1200.00 | 7/10 | Active | - | Why: Seagate Technology (STX) is a leading hard drive manufacturer poised to ben |
+| 2026-09-08 | COST | BUY | $600.00 | $850.00 | 9/10 | Active | - | Why: Costco’s membership model delivers sticky, high‑margin revenue, and its sam |
+| 2026-09-08 | ADBE | BUY | $600.00 | $850.00 | 9/10 | Active | - | Why: Adobe’s AI‑enhanced Creative Cloud suite and strong subscription momentum p |
+| 2026-09-08 | ASTS | BUY | $62.31 | $85.00 | 8/10 | Active | - | Why: Recent technical breakout above $60, insider buying, and a strong governmen |
+| 2026-09-08 | COP | BUY | $80.00 | $115.00 | 8/10 | Active | - | Why: Rising oil prices and strong cash flow generation make ConocoPhillips a hig |
