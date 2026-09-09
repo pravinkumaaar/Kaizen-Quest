@@ -1834,3 +1834,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-09 | GLD | BUY | $403.35 | $460.00 | 7/10 | Active | - | Why: Gold is reacting to falling real yields and renewed central‑bank buying; de |
 | 2026-09-09 | INDA | BUY | $44.80 | $55.00 | 8/10 | Active | - | Why: India’s GDP growth is projected at 6.4% FY27, manufacturing PMI >58 for 4 s |
 | 2026-09-09 | PLTR | BUY | $169.53 | N/A | 6/10 | Active | - | Why: PLTR now represents 34% of the portfolio, far above the 15‑20% per‑position |
+| 2026-09-09 | GLD | BUY | $403.35 | $500.00 | 8/10 | Active | - | Why: Gold tends to rise when real rates are negative, geopolitical tension spike |
+| 2026-09-09 | SLV | BUY | $60.72 | $80.00 | 7/10 | Active | - | Why: Silver blends monetary demand (inflation hedge) with industrial demand (sol |
+| 2026-09-09 | IWM | BUY | $290.64 | $340.00 | 7/10 | Active | - | Why: Small‑caps have lagged mega‑caps YTD but tend to outperform when the econom |
