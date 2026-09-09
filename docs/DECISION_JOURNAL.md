@@ -1831,3 +1831,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-09 | ADBE | BUY | $500.00 | $650.00 | 7/10 | Active | - | Why: Adobe’s Creative Cloud and Document Cloud franchises are benefiting from AI |
 | 2026-09-09 | GLD | BUY | $180.00 | $234.00 | 6/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, currency debas |
 | 2026-09-09 | EEM | BUY | $45.00 | $58.50 | 6/10 | Active | - | Why: Emerging markets are poised for a relative‑value rebound as USD strength pe |
+| 2026-09-09 | GLD | BUY | $403.35 | $460.00 | 7/10 | Active | - | Why: Gold is reacting to falling real yields and renewed central‑bank buying; de |
+| 2026-09-09 | INDA | BUY | $44.80 | $55.00 | 8/10 | Active | - | Why: India’s GDP growth is projected at 6.4% FY27, manufacturing PMI >58 for 4 s |
+| 2026-09-09 | PLTR | BUY | $169.53 | N/A | 6/10 | Active | - | Why: PLTR now represents 34% of the portfolio, far above the 15‑20% per‑position |
