@@ -1823,3 +1823,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-08 | ADBE | BUY | $600.00 | $850.00 | 9/10 | Active | - | Why: Adobe’s AI‑enhanced Creative Cloud suite and strong subscription momentum p |
 | 2026-09-08 | ASTS | BUY | $62.31 | $85.00 | 8/10 | Active | - | Why: Recent technical breakout above $60, insider buying, and a strong governmen |
 | 2026-09-08 | COP | BUY | $80.00 | $115.00 | 8/10 | Active | - | Why: Rising oil prices and strong cash flow generation make ConocoPhillips a hig |
+| 2026-09-09 | TICKER | BUY | $800.00 | $15.00 | 9/10 | Active | - | Why: Deep‑research (confidence > 95%) shows ASML commands ~90 % of the EUV litho |
+| 2026-09-09 | TICKER | BUY | $200.00 | $30.00 | 8/10 | Active | - | Why: Deep‑research (confidence > 90 %) indicates ENPH is positioned to benefit f |
+| 2026-09-09 | TICKER | BUY | $35.00 | $43.00 | 8/10 | Active | - | Why: Deep‑research (confidence > 92 %) shows copper prices are rallying on EV‑ba |
+| 2026-09-09 | TICKER | BUY | $85.00 | $20.00 | 7/10 | Active | - | Why: Deep‑research (confidence > 88 %) highlights India’s demographic dividend ( |
