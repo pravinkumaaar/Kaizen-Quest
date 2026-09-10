@@ -1840,3 +1840,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-10 | TICKER | BUY | $750.00 | $1050.00 | 9/10 | Active | - | Why: The deep research on VRT (confidence 100%) shows a clear AI‑driven surge in |
 | 2026-09-10 | TICKER | BUY | $100.00 | $130.00 | 8/10 | Active | - | Why: Rising oil prices and strong cash flow generation, combined with an upcomin |
 | 2026-09-10 | TICKER | BUY | $45.00 | $55.00 | 7/10 | Active | - | Why: Emerging markets trade at a substantial discount to U.S. equities, and rece |
+| 2026-09-10 | MP | BUY | $51.30 | N/A | 8/10 | Active | - | Why: MP is the only US‑based rare‑earth miner with integrated mining‑to‑magnets  |
+| 2026-09-10 | NNOX | BUY | $0.73 | N/A | 7/10 | Active | - | Why: NNOX’s proprietary nano‑tube imaging platform promises dramatically lower‑c |
