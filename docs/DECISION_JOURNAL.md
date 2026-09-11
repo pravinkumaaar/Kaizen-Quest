@@ -1846,3 +1846,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-11 | NVDA | BUY | $218.36 | N/A | 6/10 | Active | - | Why: NVIDIA remains the leader in AI hardware, but its valuation (PE ~70x) is st |
 | 2026-09-11 | EEM | BUY | $44.50 | N/A | 7/10 | Active | - | Why: Emerging markets (EM) are undervalued relative to developed markets, with p |
 | 2026-09-11 | PLTR | BUY | $165.86 | N/A | 7/10 | Active | - | Why: Palantir has been a top performer (+164.6%), but its position size (34.5% o |
+| 2026-09-11 | ADBE | BUY | $621.41 | N/A | 9/10 | Active | - | Why: Adobe is a leading creative‑software company shifting to AI‑enhanced cloud  |
+| 2026-09-11 | FDX | BUY | $64.16 | N/A | 8/10 | Active | - | Why: FedEx leverages a growing e‑commerce parcel network and a solid dividend, o |
+| 2026-09-11 | SMCI | BUY | $38.93 | N/A | 7/10 | Active | - | Why: SMCI manufactures semiconductor equipment that is critical for AI‑driven ch |
