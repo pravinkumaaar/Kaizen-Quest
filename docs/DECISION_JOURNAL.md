@@ -1849,3 +1849,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-11 | ADBE | BUY | $621.41 | N/A | 9/10 | Active | - | Why: Adobe is a leading creative‑software company shifting to AI‑enhanced cloud  |
 | 2026-09-11 | FDX | BUY | $64.16 | N/A | 8/10 | Active | - | Why: FedEx leverages a growing e‑commerce parcel network and a solid dividend, o |
 | 2026-09-11 | SMCI | BUY | $38.93 | N/A | 7/10 | Active | - | Why: SMCI manufactures semiconductor equipment that is critical for AI‑driven ch |
+| 2026-09-11 | AVGO | BUY | $360.83 | $460.00 | 9/10 | Active | - | Thesis: AVGO is fundamentally undervalued with strong cash flow and upcoming AI‑ |
+| 2026-09-11 | GLD | BUY | N/A | $25013.00 | 8/10 | Active | - | Thesis: Gold is entering a bullish phase amid inflation concerns and geopolitica |
+| 2026-09-11 | AVGO | BUY | N/A | $25013.00 | 8/10 | Active | - | Thesis: AVGO’s strong fundamentals and AI tailwinds make a defined‑risk bullish  |
