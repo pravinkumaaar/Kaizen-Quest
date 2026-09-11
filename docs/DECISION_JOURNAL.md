@@ -1842,3 +1842,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-10 | TICKER | BUY | $45.00 | $55.00 | 7/10 | Active | - | Why: Emerging markets trade at a substantial discount to U.S. equities, and rece |
 | 2026-09-10 | MP | BUY | $51.30 | N/A | 8/10 | Active | - | Why: MP is the only US‑based rare‑earth miner with integrated mining‑to‑magnets  |
 | 2026-09-10 | NNOX | BUY | $0.73 | N/A | 7/10 | Active | - | Why: NNOX’s proprietary nano‑tube imaging platform promises dramatically lower‑c |
+| 2026-09-11 | MU | BUY | $977.41 | N/A | 7/10 | Active | - | Why: Micron is set to report earnings in 19 days, with analyst estimates at $32. |
+| 2026-09-11 | NVDA | BUY | $218.36 | N/A | 6/10 | Active | - | Why: NVIDIA remains the leader in AI hardware, but its valuation (PE ~70x) is st |
+| 2026-09-11 | EEM | BUY | $44.50 | N/A | 7/10 | Active | - | Why: Emerging markets (EM) are undervalued relative to developed markets, with p |
+| 2026-09-11 | PLTR | BUY | $165.86 | N/A | 7/10 | Active | - | Why: Palantir has been a top performer (+164.6%), but its position size (34.5% o |
