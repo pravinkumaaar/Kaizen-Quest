@@ -1,51 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ndations list; the only risk control noted was the static conviction‑tier guideline (5%/10%/15%) from the learning history, which was not enforced.  
-  - Concentration is reported as **0.0%** (likely a placeholder), but with seven positions and 51% cash the portfolio is effectively **under‑diversified** and exposed to idiosyncratic risk (see VRT’s ‑26% move).  
-  - The lack of automated stop‑losses meant the VRT loss ran unchecked until the report’s generation time.  
-
-- **Cash Deployment**  
-  - With **$102,305 total** and **$52,176 cash (51%)**, the idle‑cash drag cost roughly **≈1.15% of total portfolio value** (assuming a 2.3% return on the invested half).  
-  - The learning history prescribed “re‑balance cash to keep idle cash ≤30% and aim for the 90% deployment target,” yet no action was taken to deploy the excess into new high‑conviction ideas or to increase existing positions proportionally.  
-
-- **Memory & Learning**  
-  - The recent **Learning History** contains concrete, actionable items (real‑time price validation, thesis logging, sector‑neutral watchlist, automated stop‑losses, cash‑deployment rules, portfolio‑aware engine).  
-  - However, none of these items appear to have been implemented in the current run, indicating a gap between insight capture and execution—likely due to missing integration hooks in the recommendation engine.  
-
-- **Process Improvements (Actionable)**  
-  1. **Enable real‑time price validation** and automatically flag any quote >24 h old (e.g., PLTR) for manual refresh before use in target‑price calculations.  
-  2. **Institutionalize thesis logging**: every recommendation must create a journal entry with ticker, entry price, conviction, expected return, and a stop‑loss level; review weekly to calibrate conviction scores.  
-  3. **Deploy a sector‑neutral watchlist** (CRWD, ROKU, MNDO, plus two semiconductor and two clean‑energy names) that is scored against the same conviction model used for existing holdings.  
-  4. **Apply conviction‑tier stop‑losses**: 5% for 8+ conviction, 10% for 6‑7, 15% for ≤5; attach these to each active position and trigger automated sell alerts.  
-  5. **Cash‑deployment rule**: if cash >30% of portfolio value, automatically allocate the excess to the top‑ranked watchlist ideas until cash ≤20% or the watchlist is exhausted.  
-  6. **Integrate portfolio‑aware recommendation engine** that outputs three actions per idea: *Add* (new), *Increase* (existing), or *Replace* (sell a lower‑conviction holding). This will stop the engine from recycling only current tickers.  
-  7. **Run a nightly data‑quality health check** (price freshness, options‑chain completeness, options‑Greek validity) and surface any failures in the run header so users know instantly when to distrust a suggestion.  
-  8. **Post‑run performance attribution**: compute return contribution of each conviction tier and each sector; feed these metrics back into the conviction‑scoring model to improve calibration over time.  
-
-Implementing the above steps should convert the persistent 50%+ cash drag into disciplined, high‑conviction exposure, reduce false‑positives like VRT, and give the user the fresh, educational, and actionable recommendations they have repeatedly requested.
-
-## Run: 2026-09-11 22:57:12 ET
-- **High‑conviction winners**: NVDA rose from $207.14 to $218.29 (+5.38%) and PLTR from $139.47 to $167.23 (+19.90%) – both 8/10 scores delivered clear outperformance versus the market, showing the conviction model was reasonably calibrated.  
-
-- **False positive**: VRT fell from $348.38 to $257.06 (‑26.21%) despite an 8/10 conviction rating; the AI‑infrastructure thesis was not backed by recent earnings, indicating a drift in conviction calibration.  
-
-- **Cash drag**: $51,662 (≈51% of the $102,324 portfolio) sits idle; deploying the “Add” action to new high‑conviction ideas (e.g., a cloud‑AI play with a 9/10 score) could push cash below the 90% target and boost overall returns.  
-
-- **Concentration risk**: Memory shows 68.4% portfolio concentration in the latest run, meaning a few stocks (VRT, TEM, SOFI) dominate; rebalancing to cap any single holding at ≤15% would reduce tail‑risk exposure.  
-
-- **Missing stop‑losses**: No explicit stop‑loss levels were defined for any active position; the VRT loss could have been limited with a 15% trailing stop, highlighting a gap in risk‑management implementation.  
-
-- **Static “Alpaca” labeling**: All recommendations carry a “Long‑term (Alpaca)” tag, suggesting a fixed holding period; introducing a dynamic exit rule (e.g., trim 15% below entry price) would improve risk control.  
-
-- **Data freshness issue**: The 2026‑04‑22 feedback used an outdated PLTR price (~$132) while the current price is $139.47, demonstrating that price feeds were not refreshed before generating recommendations.  
-
-- **Options data breakdown**: The 2026‑05‑07 run flagged broken options chains and invalid Greeks for LEAP contracts, preventing precise pricing and hedging; a nightly data‑quality health check (price freshness, chain completeness, Greeks validity) is needed.  
-
-- **Missed asymmetric opportunity**: No new stock suggestions were made despite a 9/10 conviction watchlist idea (e.g., Rivian (RIVN) after its battery‑partner announcement); adding such ideas would diversify the portfolio and reduce reliance on existing tickers.  
-
-- **Thesis validation pattern**: Recent runs show “AI infrastructure” theses (VRT) were refuted by price decline, while “cloud‑AI platform” theses (NVDA, PLTR) were validated; future theses must be vetted against earnings beats and forward guidance before assigning high conviction.  
-
-- **Redundant research**: The system repeatedly analyzes the same tickers (VRT, TEM, SOFI) without new insights; storing a “last‑analysis timestamp” per ticker and only re‑evaluating when fresh data (earnings, guidance) appears will avoid redundant work.  
+oring a “last‑analysis timestamp” per ticker and only re‑evaluating when fresh data (earnings, guidance) appears will avoid redundant work.  
 
 - **Recommendation format**: Implement the three‑action framework (Add, Increase, Replace) per idea as suggested in memory insight #6; this forces the engine to surface new opportunities and to replace low‑conviction holdings rather than merely recycling existing positions.  
 
@@ -143,3 +98,30 @@ These concrete, data‑driven adjustments will address the recurring redundancie
   8. **Run a monthly “Lessons Learned” review** that aggregates conviction accuracy, thesis‑journal outcomes, and cash‑deployment efficiency; feed the insights back into the scoring model and process checklist.  
 
 By systematically applying these changes, we should see higher conviction precision, better use of idle cash, fresher idea generation, and a more reliable data pipeline—directly addressing the recurring themes in user feedback and the current run’s shortcomings.
+
+## Run: 2026-09-12 12:43:02 ET
+- **What Worked Well – Conviction Picks (Mostly):** The 8/10 conviction recommendations from the 2026-09-12 run have generally held up. TEM (+17.50% to $59.01), PLTR (+19.90% to $167.23), SOFI (+6.32% to $17.32), and NVDA (+5.38% to $218.29) all moved toward or beyond their targets, validating the underlying thesis on AI infrastructure, fintech disruption, and software platform momentum. The learning section that tied hobbies/macro trends to specific equity opportunities was repeatedly praised in user feedback and remains a high‑value differentiator.
+
+- **What Didn’t Work Well – The VRT Black Swan:** VRT was issued at 8/10 conviction on 2026-09-12 at $348.38 and is now down 26.21% to $257.06. This is a textbook false positive—likely a broken or stale data point that triggered a bad entry. The position severely damaged the portfolio’s relative performance and exposed a critical gap in pre‑recommendation data validation. No stop‑loss was triggered, so the loss compounded.
+
+- **Conviction Calibration – Mixed Record:** All five active recommendations carried an 8/10 score, but the dispersion is wide: four winners (average +9.8%) and one severe loser (-26.2%). The 8/10 tier is not granular enough; it should be split into “high‑conviction core” (8‑9) and “speculative edge” (6‑7) to prevent a single name from dominating the book. The current calibration over‑weights conviction and under‑weights risk‑adjusted position sizing.
+
+- **Thesis Journal Review – Completely Empty:** The thesis journal contains zero entries. Without a written record of entry rationales, target prices, and exit triggers, it is impossible to validate or refute past theses. This is a process failure. The VRT loss, for example, cannot be dissected because there is no original thesis to compare against. Immediate action: log every new recommendation with entry thesis, catalysts, time‑horizon, and invalidation levels.
+
+- **Missed Opportunities – New Ideas & Cash Deployment:** The portfolio sits at 51% cash, yet the recommendation engine only recycled existing holdings. The user explicitly asked for “new stocks that I may not have that might present a better opportunity.” No fresh, high‑conviction, low‑ownership ideas were surfaced. The 51% idle cash represents a massive opportunity cost—assuming a 7% market return, that’s ~$3,600 in forgone gains annualized. A systematic “New‑Opportunity Scan” (as noted in the learning history) has not been implemented.
+
+- **Data Quality Issues – Stale Prices & Broken Chains:** User feedback on 2026-04-22 called out “PLTR data was old and the price isn’t current.” The options chain feed was reported as broken on 2026-05-07. The current portfolio shows “Concentration: 0.0%” while recent runs show 67‑68%, indicating a data inconsistency or a metric that is not being updated. Without reliable real‑time data, recommendations are built on sand. The VRT blowup is almost certainly a data‑feed artifact.
+
+- **Risk Management – No Stop‑Losses, No Tail Protection:** None of the active recommendations have documented stop‑loss levels. VRT’s 26% drawdown could have been limited to an 8% loss with a simple stop. The learning history explicitly called for “mandatory stop‑loss guidance” (e.g., 8% below entry for longs) but this has not been codified into the process. The portfolio also lacks any hedge or tail‑risk protection despite a 51% cash buffer that could have been used for protective puts or uncorrelated assets.
+
+- **Cash Deployment – 51% Idle Is a Structural Leak:** The 51% cash allocation is far above the 90% deployment target. This is not a risk decision; it is a failure to find sufficient investable ideas. The opportunity cost is twofold: missed market upside and missed compounding. The process must be redesigned to force cash deployment—either through a wider opportunity universe or smaller position sizes across more names.
+
+- **Memory & Learning – Not Building on Past Analysis:** The memory insights and recent run memory contain only portfolio aggregates (value, concentration) with no qualitative learnings. The learning history lists excellent action items (stop‑loss guidance, new‑opportunity scan, monthly lessons review) but none appear to have been executed. We are re‑researching the same companies without accumulating institutional knowledge. The system is amnesiac.
+
+- **Process Improvement – Fix the Data Pipeline First:** Before any strategy changes, the real‑time data feed must be repaired. Validate every price against at least two independent sources; flag any ticker with a >5% discrepancy for manual review. Implement a “data confidence score” that is printed alongside every recommendation. If the options chain remains broken, all options‑based recommendations should be suspended until the feed is healthy.
+
+- **Process Improvement – Institutionalize the Thesis Journal & Stop‑Losses:** Create a mandatory template for every recommendation: entry thesis, catalyst, target, invalidation price, and stop‑loss (8% for longs, 8% for shorts). The stop‑loss must be entered into the portfolio management system as a hard order. The thesis journal should be reviewed weekly—any position that moves >15% against the thesis must be re‑evaluated and documented.
+
+- **Process Improvement – Launch the New‑Opportunity Scan:** Build a daily screen that filters the investable universe for: (1) market cap > $5B, (2) institutional ownership < 50%, (3) news momentum score > 70th percentile, (4) technical breakout (price > 50‑day MA), and (5) not already in the portfolio. Surface the top 3 candidates with one‑page summaries. This directly addresses the user’s most repeated request for fresh ideas.
+
+- **Process Improvement – Fix the Concentration Metric & Reporting
