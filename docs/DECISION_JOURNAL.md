@@ -1852,3 +1852,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-11 | AVGO | BUY | $360.83 | $460.00 | 9/10 | Active | - | Thesis: AVGO is fundamentally undervalued with strong cash flow and upcoming AI‑ |
 | 2026-09-11 | GLD | BUY | N/A | $25013.00 | 8/10 | Active | - | Thesis: Gold is entering a bullish phase amid inflation concerns and geopolitica |
 | 2026-09-11 | AVGO | BUY | N/A | $25013.00 | 8/10 | Active | - | Thesis: AVGO’s strong fundamentals and AI tailwinds make a defined‑risk bullish  |
+| 2026-09-12 | INDA | BUY | $95.00 | $150.00 | 8/10 | Active | - | Why: India's demographic dividend, accelerating digital adoption, and supportive |
+| 2026-09-12 | FCX | BUY | $38.00 | $58.00 | 9/10 | Active | - | Why: Copper demand for the energy transition and FCX's low‑cost assets position  |
+| 2026-09-12 | NEE | BUY | $80.00 | $120.00 | 8/10 | Active | - | Why: NextEra's contracted renewable capacity and policy tailwinds support stable |
