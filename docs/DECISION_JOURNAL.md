@@ -1859,3 +1859,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-12 | COST | BUY | $560.00 | $660.00 | 8/10 | Active | - | Why: COST is a dominant warehouse club with resilient consumer demand, low valua |
 | 2026-09-12 | ADBE | BUY | $560.00 | $680.00 | 8/10 | Active | - | Why: Adobe is a leading SaaS provider with high‑margin recurring revenue and a r |
 | 2026-09-12 | GLD | BUY | $250.00 | $285.00 | 7/10 | Active | - | Why: GLD tracks physical gold, which benefits from inflation expectations and sa |
+| 2026-09-13 | AVGO | BUY | $361.99 | $600.00 | 9/10 | Active | - | Why: Broadcom provides essential networking and infrastructure software for AI d |
+| 2026-09-13 | COST | BUY | $540.00 | $720.00 | 8/10 | Active | - | Why: Costco’s membership model delivers stable, recurring revenue and resilient  |
+| 2026-09-13 | FDX | BUY | $225.00 | $285.00 | 8/10 | Active | - | Why: FedEx’s expanding parcel volume driven by e‑commerce, combined with cost‑co |
