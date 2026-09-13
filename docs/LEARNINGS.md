@@ -1,23 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ntain only portfolio aggregates (value, concentration) with no qualitative learnings. The learning history lists excellent action items (stop‑loss guidance, new‑opportunity scan, monthly lessons review) but none appear to have been executed. We are re‑researching the same companies without accumulating institutional knowledge. The system is amnesiac.
-
-- **Process Improvement – Fix the Data Pipeline First:** Before any strategy changes, the real‑time data feed must be repaired. Validate every price against at least two independent sources; flag any ticker with a >5% discrepancy for manual review. Implement a “data confidence score” that is printed alongside every recommendation. If the options chain remains broken, all options‑based recommendations should be suspended until the feed is healthy.
-
-- **Process Improvement – Institutionalize the Thesis Journal & Stop‑Losses:** Create a mandatory template for every recommendation: entry thesis, catalyst, target, invalidation price, and stop‑loss (8% for longs, 8% for shorts). The stop‑loss must be entered into the portfolio management system as a hard order. The thesis journal should be reviewed weekly—any position that moves >15% against the thesis must be re‑evaluated and documented.
-
-- **Process Improvement – Launch the New‑Opportunity Scan:** Build a daily screen that filters the investable universe for: (1) market cap > $5B, (2) institutional ownership < 50%, (3) news momentum score > 70th percentile, (4) technical breakout (price > 50‑day MA), and (5) not already in the portfolio. Surface the top 3 candidates with one‑page summaries. This directly addresses the user’s most repeated request for fresh ideas.
-
-- **Process Improvement – Fix the Concentration Metric & Reporting
-
-## Run: 2026-09-12 16:08:18 ET
-- **What Worked Well** – The **LEAP options write‑up for SOFI** (entry price $16.29, target $17.32, 6.3% upside, 8/10 conviction) used the **Alpaca options chain** and clearly explained the “buy‑write” catalyst (upcoming earnings and low implied volatility).  
-- **What Worked Well** – The **2026‑05‑07 run** successfully **matched portfolio holdings** (e.g., recognized the 57 PLTR shares at $139.47) and produced a **portfolio‑rebalance summary**, showing the model can ingest position data when available.  
-- **What Worked Well** – **News‑driven momentum scores** (e.g., TEM’s +17.5% move after the “AI‑chip” press release) were tied to concrete catalysts, giving the recommendations a solid fundamental backdrop.  
-- **What Didn’t Work** – **PLTR price was stale** ($139.47 vs. actual $152‑$155 range on 2026‑09‑12), causing the +19.9% upside claim to be misleading; the data source (Yahoo Finance delayed feed) was not refreshed.  
-- **What Didn’t Work** – **Recommendation tracking failed** – the system listed “218.29 | +5.38% | Long‑term (Alpaca)” without linking it to any ticker or thesis, leaving the user unable to see which positions were being referenced.  
-- **Conviction Calibration** – The four 8/10 picks (PLTR, SOFI, TEM, VRT) **did not all validate the thesis**: VRT’s –26.2% decline (price $348.38 → $257.06) shows a **false positive**; PLTR’s 19.9% gain was based on outdated price, also questionable. Only SOFI and TEM demonstrated **real‑time price alignment** with their thesis.  
-- **Thesis Journal Review** – No thesis entries are present in the journal for the last three 2026‑09‑12 runs (values $251k‑$251k, concentration 67.8‑68.4%). Without documented entry theses, **conviction scores cannot be calibrated** and we cannot determine which ideas were validated vs. refuted.  
+l Review** – No thesis entries are present in the journal for the last three 2026‑09‑12 runs (values $251k‑$251k, concentration 67.8‑68.4%). Without documented entry theses, **conviction scores cannot be calibrated** and we cannot determine which ideas were validated vs. refuted.  
 - **Missed Opportunities** – The **daily “new‑opportunity scan”** (market‑cap > $5B, institutional ownership < 50%, news momentum > 70th percentile, technical breakout) was never executed, so **potential buys** such as **NVDA (high momentum, low ownership)** or **COIN (breakout after earnings)** were not surfaced.  
 - **Data Quality Issues** – **Stale PLTR price**, **missing options chain data for VRT** (the –26% move was not reflected in the options Greeks), and **hallucinated “218.29” ticker** indicate a need for stricter data‑validation pipelines (real‑time feeds, chain completeness checks).  
 - **Risk Management** – **Stop‑losses were absent** on all active recommendations (the self‑improvement note demands 8% hard stops). The **concentration metric is contradictory** (memory shows 68% concentration, portfolio report says 0%), indicating a bug that prevents proper risk monitoring.  
@@ -122,3 +105,31 @@ These bullet points directly reference the tickers, prices, and data points from
   7. **Reduce idle cash**: sweep excess cash into a 1‑month T‑Bill ETF (e.g., **BIL**) to earn ~4.5% annualized while waiting for deployable ideas, moving the portfolio closer to the 90% investment target.  
 
 Implementing these changes should turn the current hit‑rate into a more reliable, risk‑adjusted performance loop, curb concentration‑driven losses, and continuously improve the agent’s ability to teach and profit simultaneously.
+
+## Run: 2026-09-13 14:30:43 ET
+- **Recommendation quality:** The PLTR pick (price $139.47, +19.90% projected) used stale data – the actual market price on 2026‑09‑13 was ≈ $152, so the upside was overstated and the 8/10 conviction was misleading. SOFI ($16.29 → $17.32, +6.32%) and TEM ($50.22 → $59.01, +17.50%) showed realistic gains, while VRT ($348.38 → $257.06, –26.21%) was a clear false positive despite an 8/10 conviction.
+
+- **Conviction calibration:** 4 of the 5 active 8/10 picks (PLTR, SOFI, TEM, VRT) did not all meet their conviction level; VRT’s –26% loss proves that high conviction does not guarantee correctness when data are outdated or thesis assumptions are weak.
+
+- **Thesis journal review:** The thesis journal is currently empty, so there is no record of past thesis statements, their validation, or refutation. Without this log we cannot assess whether the “once‑in‑a‑lifetime asymmetric plays” were truly supported by a sound thesis or were guesses.
+
+- **Missed opportunities:** The system limited recommendations to the existing 7‑position portfolio, ignoring high‑conviction ideas such as a cloud‑AI infrastructure play (e.g., **SNOW**) or a biotech breakthrough (e.g., **MRNA**) that could have added diversification and higher expected return.
+
+- **Data quality issues:**  
+  - PLTR price is stale (last update > 24 h).  
+  - Options chain endpoint is broken, preventing accurate LEAP pricing and Greeks for SOFI and TEM.  
+  - No real‑time feed for VRT, causing the –26% loss to be based on outdated price data.
+
+- **Risk management:** No stop‑losses were indicated for any position; the portfolio’s concentration metric shows 68.4% of value in a few stocks (as seen in the last three runs), creating hidden tail‑risk despite a “0% concentration” label in the summary.
+
+- **Cash deployment:** 51% of the $102k portfolio (~$52k) sits idle, missing a ~4.5% annualized return that could be earned by allocating to a 1‑month T‑Bill ETF such as **BIL**. The 90% investment target is far from reached.
+
+- **Memory & learning:** The last three runs (2026‑09‑12/13) show identical portfolio value and concentration (≈ 68.4%) with no visible learning progression; the agent repeats the same tickers without incorporating new insights or correcting past mistakes.
+
+- **Process improvements – data pipelines:** Enforce ≤ 1‑second latency for all price feeds, restore the options chain endpoint, and implement a daily price‑validation script to flag stale quotes (e.g., PLTR) before generating recommendations.
+
+- **Process improvements – educational content:** Append a concise “lesson” to each pick (e.g., “High short‑interest in SOFI may precede a squeeze”) and link to a short learning module, directly addressing the user’s request for deeper teaching.
+
+- **Process improvements – recommendation universe:** Broaden the universe beyond current holdings to include new, high‑conviction ideas; use a screening filter for “big‑event” stocks (e.g., earnings beat, regulatory approval) to surface timely opportunities.
+
+- **Process improvements – cash management:** Automate a quarterly sweep that moves excess cash (> 5% of portfolio) into **BIL** or a short‑duration Treasury fund, reducing idle cash and aligning with the 90% investment target while preserving liquidity for new ideas.
