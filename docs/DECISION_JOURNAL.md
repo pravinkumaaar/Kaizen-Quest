@@ -1862,3 +1862,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-13 | AVGO | BUY | $361.99 | $600.00 | 9/10 | Active | - | Why: Broadcom provides essential networking and infrastructure software for AI d |
 | 2026-09-13 | COST | BUY | $540.00 | $720.00 | 8/10 | Active | - | Why: Costco’s membership model delivers stable, recurring revenue and resilient  |
 | 2026-09-13 | FDX | BUY | $225.00 | $285.00 | 8/10 | Active | - | Why: FedEx’s expanding parcel volume driven by e‑commerce, combined with cost‑co |
+| 2026-09-15 | MU | BUY | $927.60 | N/A | 7/10 | Active | - | Why: Micron's leadership in memory and storage positions it to benefit from the  |
+| 2026-09-15 | STZ | BUY | $250.00 | N/A | 8/10 | Active | - | Why: Constellation Brands is a leader in alcoholic beverages, benefiting from pr |
+| 2026-09-15 | GLD | BUY | $394.15 | N/A | 7/10 | Active | - | Why: Gold acts as a hedge against inflation and geopolitical risks, with central |
+| 2026-09-15 | PLTR | BUY | $172.56 | N/A | 5/10 | Active | - | Why: Palantir's dominance in AI-driven data analytics for government and enterpr |
