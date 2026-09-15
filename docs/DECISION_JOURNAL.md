@@ -1866,3 +1866,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-15 | STZ | BUY | $250.00 | N/A | 8/10 | Active | - | Why: Constellation Brands is a leader in alcoholic beverages, benefiting from pr |
 | 2026-09-15 | GLD | BUY | $394.15 | N/A | 7/10 | Active | - | Why: Gold acts as a hedge against inflation and geopolitical risks, with central |
 | 2026-09-15 | PLTR | BUY | $172.56 | N/A | 5/10 | Active | - | Why: Palantir's dominance in AI-driven data analytics for government and enterpr |
+| 2026-09-15 | FDX | BUY | N/A | $31.00 | 9/10 | Active | - | Why: 1) Our DCF model (confidence 85%) yields an intrinsic value of $285, implyi |
+| 2026-09-15 | AZO | BUY | N/A | N/A | 8/10 | Active | - | Why: 1) DCF (confidence 80%) shows fair value $300 vs $260; 2) Analyst EPS estim |
+| 2026-09-15 | EEM | BUY | N/A | N/A | 8/10 | Active | - | Why: 1) Global rotation data shows cyclical sectors outperforming defensives by  |
