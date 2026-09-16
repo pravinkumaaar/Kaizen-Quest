@@ -1869,3 +1869,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-15 | FDX | BUY | N/A | $31.00 | 9/10 | Active | - | Why: 1) Our DCF model (confidence 85%) yields an intrinsic value of $285, implyi |
 | 2026-09-15 | AZO | BUY | N/A | N/A | 8/10 | Active | - | Why: 1) DCF (confidence 80%) shows fair value $300 vs $260; 2) Analyst EPS estim |
 | 2026-09-15 | EEM | BUY | N/A | N/A | 8/10 | Active | - | Why: 1) Global rotation data shows cyclical sectors outperforming defensives by  |
+| 2026-09-16 | AVGO | BUY | $344.72 | N/A | 9/10 | Active | - | Why: Broadcom is a critical supplier of AI‑accelerator ASICs, networking chips,  |
+| 2026-09-16 | COST | BUY | $904.30 | N/A | 8/10 | Active | - | Why: Costco operates a membership‑based warehouse model with exceptionally stick |
+| 2026-09-16 | EEM | BUY | $57.53 | N/A | 7/10 | Active | - | Why: The market‑foresight outlook flagged narrowing breadth and small‑cap underp |
