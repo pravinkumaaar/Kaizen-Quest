@@ -1872,3 +1872,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-16 | AVGO | BUY | $344.72 | N/A | 9/10 | Active | - | Why: Broadcom is a critical supplier of AI‑accelerator ASICs, networking chips,  |
 | 2026-09-16 | COST | BUY | $904.30 | N/A | 8/10 | Active | - | Why: Costco operates a membership‑based warehouse model with exceptionally stick |
 | 2026-09-16 | EEM | BUY | $57.53 | N/A | 7/10 | Active | - | Why: The market‑foresight outlook flagged narrowing breadth and small‑cap underp |
+| 2026-09-16 | PLTR | BUY | $172.56 | N/A | 7/10 | Active | - | Why: PLTR is the single largest holding (36.3% of portfolio) and has become extr |
+| 2026-09-16 | TSM | BUY | $140.00 | $185.00 | 8/10 | Active | - | Why: TSMC is the world’s leading foundry, benefitting from the AI‑chip boom, str |
+| 2026-09-16 | EEM | BUY | $45.20 | $55.00 | 7/10 | Active | - | Why: The portfolio is heavily weighted to US equities (≈90%). Emerging markets o |
+| 2026-09-16 | TEM | BUY | N/A | $310.00 | 8/10 | Active | - | Why: TEM (Tempus AI) jumped +10.67% today on strong AI‑healthcare momentum. The  |
