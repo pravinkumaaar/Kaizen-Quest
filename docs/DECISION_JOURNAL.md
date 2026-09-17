@@ -1884,3 +1884,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-17 | GLD | BUY | $391.74 | $450.00 | 8/10 | Active | - | Why: Global inflation signals are rising, and gold historically outperforms in s |
 | 2026-09-17 | LITE | BUY | $919.40 | $1100.00 | 7/10 | Active | - | Why: LITE surged 9.59% today, indicating strong momentum in optical networking a |
 | 2026-09-17 | NBIS | BUY | $209.37 | N/A | 7/10 | Active | - | Why: NBIS has surged 292.4% and now represents 8.8% of the portfolio. The thesis |
+| 2026-09-17 | IONQ | BUY | $39.13 | N/A | 5/10 | Active | - | Why: IonQ is the only publicly‑traded, full‑stack quantum‑computing pure play. I |
+| 2026-09-17 | OPENW | BUY | $0.13 | N/A | 5/10 | Active | - | Why: Open Water Holdings (OPENW) is a micro‑cap water‑infrastructure technology  |
+| 2026-09-17 | GLD | BUY | $180.00 | N/A | 5/10 | Active | - | Why: Gold remains the premier inflation and geopolitical hedge. Real‑rate expect |
