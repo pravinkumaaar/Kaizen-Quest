@@ -1879,3 +1879,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-16 | AVGO | BUY | $339.27 | $480.00 | 8/10 | Active | - | Why: Broadcom is the indispensable “pick‑and‑shovel” provider for AI‑accelerator |
 | 2026-09-16 | COST | BUY | $845.00 | $950.00 | 7/10 | Active | - | Why: Costco’s membership‑driven model provides sticky, recurring revenue and pri |
 | 2026-09-16 | PLTR | BUY | $172.56 | N/A | 9/10 | Active | - | Why: PLTR has become an excessively large concentration (36.3% of portfolio) aft |
+| 2026-09-17 | PLTR | BUY | $174.34 | N/A | 8/10 | Active | - | Why: PLTR has surged 178.2% and now represents 35.9% of the portfolio, creating  |
+| 2026-09-17 | MU | BUY | $926.55 | $1050.00 | 7/10 | Active | - | Why: MU has strong earnings momentum (+144.5% unrealized P&L) and upcoming earni |
+| 2026-09-17 | GLD | BUY | $391.74 | $450.00 | 8/10 | Active | - | Why: Global inflation signals are rising, and gold historically outperforms in s |
+| 2026-09-17 | LITE | BUY | $919.40 | $1100.00 | 7/10 | Active | - | Why: LITE surged 9.59% today, indicating strong momentum in optical networking a |
+| 2026-09-17 | NBIS | BUY | $209.37 | N/A | 7/10 | Active | - | Why: NBIS has surged 292.4% and now represents 8.8% of the portfolio. The thesis |
