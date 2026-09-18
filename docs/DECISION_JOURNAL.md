@@ -1887,3 +1887,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-17 | IONQ | BUY | $39.13 | N/A | 5/10 | Active | - | Why: IonQ is the only publicly‑traded, full‑stack quantum‑computing pure play. I |
 | 2026-09-17 | OPENW | BUY | $0.13 | N/A | 5/10 | Active | - | Why: Open Water Holdings (OPENW) is a micro‑cap water‑infrastructure technology  |
 | 2026-09-17 | GLD | BUY | $180.00 | N/A | 5/10 | Active | - | Why: Gold remains the premier inflation and geopolitical hedge. Real‑rate expect |
+| 2026-09-18 | TSM | BUY | $150.20 | $210.00 | 9/10 | Active | - | Why: Taiwan Semiconductor Manufacturing (TSM) is the world’s leading pure‑play f |
+| 2026-09-18 | ASML | BUY | $820.00 | $1200.00 | 8/10 | Active | - | Why: ASML Holding (ASML) is the sole supplier of EUV (extreme‑ultraviolet) litho |
+| 2026-09-18 | LULU | BUY | $350.00 | $480.00 | 8/10 | Active | - | Why: lululemon athletica (LULU) has demonstrated resilient consumer demand, stro |
+| 2026-09-18 | CRWD | BUY | $300.00 | $420.00 | 7/10 | Active | - | Why: CrowdStrike Holdings (CRWD) is a leader in cloud‑native endpoint security,  |
