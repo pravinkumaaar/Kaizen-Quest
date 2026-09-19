@@ -3,9 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **AVGO** | $357.61 | $420.00 | 9/10 |  Active  |  $357.61  |  +0.0%  | Medium‑term (3‑12 months) | Watchlist |
-| 2 | **COST** | $600.00 | $660.00 | 8/10 |  Active  |  $600.00  |  +0.0%  | Short‑term swing (2‑8 weeks) | Watchlist |
-| 3 | **AZO** | $500.00 | $560.00 | 8/10 |  Active  |  $500.00  |  +0.0%  | Swing (2‑8 weeks) | Watchlist |
+| 1 | **ACN** | $360.00 | $10.00 | 9/10 |  Active  |  $360.00  |  +0.0%  | Medium‑term swing (3‑6 months) | Watchlist |
+| 2 | **COST** | Market | $6.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Short‑term swing (2‑8 weeks) | Watchlist |
+| 3 | **COST** | Market | $770.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium‑term swing (3‑6 months) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
