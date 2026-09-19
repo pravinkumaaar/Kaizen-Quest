@@ -3,8 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **TICKER** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | **Medium (3‑6 months)** – around earnings release and next quarter guidance. | Watchlist |
-| 2 | **TICKER** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | **Short‑medium (4‑8 weeks)** – around earnings release and next quarter guidance. | Watchlist |
+| 1 | **SLV** | $59.93 | TBD | 7/10 |  Active  |  $59.93  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 2 | **COST** | Market | TBD | 8/10 |  Active  |  Fetching...  |  +0.0%  | Swing 2-8wk (Earnings play) | Watchlist |
+| 3 | **RKLB** | $64.57 | TBD | 9/10 |  Active  |  $64.57  |  +0.0%  | Long 1-3yr | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
