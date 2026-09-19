@@ -1903,3 +1903,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-19 | ACN | BUY | $360.00 | $10.00 | 9/10 | Active | - | Why: First‑principles: Accenture (ACN) is a leading digital‑services firm with > |
 | 2026-09-19 | COST | BUY | N/A | $6.00 | 8/10 | Active | - | Why: Deep research indicates a DCF valuation of $720 and a price target of $720, |
 | 2026-09-19 | COST | BUY | N/A | $770.00 | 8/10 | Active | - | Why: Deep research confirms a DCF valuation of $720 and a price target of $720,  |
+| 2026-09-19 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Costco’s resilient membership model, strong same‑store sales growth and  |
+| 2026-09-19 | TICKER | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Lennar’s dominant position in entry‑level housing, strong delivery momen |

@@ -3,9 +3,8 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **ACN** | $360.00 | $10.00 | 9/10 |  Active  |  $360.00  |  +0.0%  | Medium‑term swing (3‑6 months) | Watchlist |
-| 2 | **COST** | Market | $6.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Short‑term swing (2‑8 weeks) | Watchlist |
-| 3 | **COST** | Market | $770.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium‑term swing (3‑6 months) | Watchlist |
+| 1 | **TICKER** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | **Medium (3‑6 months)** – around earnings release and next quarter guidance. | Watchlist |
+| 2 | **TICKER** | Market | TBD | 5/10 |  Active  |  Fetching...  |  +0.0%  | **Short‑medium (4‑8 weeks)** – around earnings release and next quarter guidance. | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
