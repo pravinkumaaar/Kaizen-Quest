@@ -1897,3 +1897,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-19 | EEM | BUY | $45.00 | $60.00 | 7/10 | Active | - | Why: Emerging markets (EM) have significantly underperformed US equities over th |
 | 2026-09-19 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold serves as a timeless hedge against currency debasement, geopolitical i |
 | 2026-09-19 | PLTR | BUY | $177.64 | $12.00 | 9/10 | Active | - | Why: PLTR has been a stellar performer, up 183.4% and now comprising 35.6% of th |
+| 2026-09-19 | AVGO | BUY | $357.61 | $420.00 | 9/10 | Active | - | Why: Broadcom (AVGO) is a dominant provider of connectivity and infrastructure s |
+| 2026-09-19 | COST | BUY | $600.00 | $660.00 | 8/10 | Active | - | Why: Costco (COST) operates a high‑margin membership model with strong same‑stor |
+| 2026-09-19 | AZO | BUY | $500.00 | $560.00 | 8/10 | Active | - | Why: AutoZone (AZO) benefits from a resilient automotive aftermarket, with stead |
