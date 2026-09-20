@@ -1,39 +1,6 @@
 ...[older entries archived in HISTORY/]
 
- for fresh opportunities.  
-
-### Conviction Calibration  
-| Conviction | Ticker | Entry | Target | Result | Outcome vs. Expectation |
-|-----------|--------|-------|--------|--------|--------------------------|
-| 8/10 | **PLTR** | $139.47 | $177.64 | +27.4 % | **True positive** – thesis held. |
-| 8/10 | **NVDA** | $207.14 | $222.27 | +7.3 % | **True positive** – modest but in‑line with AI‑spend thesis. |
-| 8/10 | **SOFI** | $16.29 | $16.96 | +4.1 % | **True positive** – earnings‑beat thesis validated. |
-| 8/10 | **TEM** | $50.22 | $77.84 | +55.0 % | **True positive** – upside realized, though model over‑estimated confidence due to missing chain data. |
-| 8/10 | **VRT** | $348.38 | $249.39 | –28.4 % | **False positive** – short thesis failed; over‑confidence in downside scenario. |
-
-**Take‑away:** 4/5 high‑conviction ideas worked, giving an 80 % hit rate, but the one failure (VRT) was costly enough to dent risk‑adjusted returns. Conviction scores need a *downside‑scenario* weighting (e.g., assign a probability‑adjusted target range rather than a single point).  
-
-### Thesis Journal Review  
-*The journal is currently empty, so no past theses to validate.*  
-- **Pattern:** Absence of a journal prevents learning from previous successes/failures.  
-- **Action:** Seed the journal with the five active theses above (PLTR GARP, NVDA AI‑spend, SOFI earnings‑beat, TEM AI‑diagnostics, VRT aerospace‑cycle) and tag each with outcome and lessons learned.  
-
-### Missed Opportunities  
-- **Macro hedge** – A 5 % allocation to VIX‑call spreads or VIX‑futures would have capped the VRT drawdown and improved the Sharpe‑like metric (currently weak due to the large loss).  
-- **Sector rotation** – With cash at 50 %, we could have added a **high‑conviction, low‑correlation** name such as **ASML** (EUV lithography, price ≈ $720, analyst target $820, +13 % upside) or **ADSY** (defense‑tech, price ≈ $45, target $55, +22 % upside) to diversify away from pure tech/growth.  
-- **Options income** – Selling cash‑secured puts on **SOFI** at the $15 strike (≈4 % annualized) would have generated premium while waiting for a better entry, addressing the user’s desire for more options‑education depth.  
-- **Alternative data** – Incorporating satellite‑based freight‑volume trends could have flagged the VRT rebound earlier (increased aerospace parts shipments).  
-
-### Data Quality Issues  
-- **PLTR price stale** – >1 day old at recommendation time; source: delayed Alpaca feed.  
-- **VRT price stale** – >2 days old; likely due to a temporary API throttling event.  
-- **TEM options chain incomplete** – Missing the 2027 $80 call; led to an inflated model‑derived payoff.  
-- **No real‑time IV surface** – The model used a flat‑vol assumption for LEAP pricing, ignoring the term‑structure steepening that occurred after earnings.  
-
-### Risk Management  
-- **Stop‑losses** – None of the active recommendations displayed explicit stop‑loss levels; the VRT loss could have been limited to ~‑10 % with a trailing stop at 12 % below entry.  
-- **Concentration** – The memory snippet shows historic concentration >68 % (likely from prior runs), yet the current portfolio reports 0 % concentration—a discrepancy indicating the concentration‑calc module is not updating correctly.  
-- **Position sizing** – All active ideas were sized equally (implicitly), ignoring the differing risk profiles (e.g., VRT short is higher‑volatility than PLTR long).  
+gher‑volatility than PLTR long).  
 
 ### Cash Deployment  
 - **Idle cash:** 50 % of $104,804 ≈ $52,402 earning ≈0 % (money‑market).  
@@ -140,3 +107,32 @@
 - **Process Improvements – Data Refresh Cadence** – Automate price and options‑chain updates for all recommended tickers at least every 6 hours to eliminate stale data (as seen with PLTR) and to ensure options Greeks are accurate for LEAP recommendations.  
 - **Process Improvements – Risk Controls** – Introduce mandatory stop‑loss or trailing‑stop rules for all new positions, and enforce a maximum single‑ticker exposure of **≤20 %** of total portfolio value to curb concentration risk.  
 - **Process Improvements – Cash Utilization Algorithm** – Re‑balance the cash allocation to target **≈90 % deployed** by prioritizing high‑conviction, low‑correlation ideas and automatically generating order tickets for the top‑ranked candidates.
+
+## Run: 2026-09-20 09:55:14 ET
+- **High‑conviction picks delivered mixed results** – TEM (+55 % to $77.84) and PLTR (+27 % to $177.64) validated the 8/10 conviction rating, but VRT (‑28 % to $249.39) shows a false positive despite an 8/10 score, indicating conviction calibration still needs refinement.  
+
+- **Stale price data eroded confidence** – PLTR was quoted at $139.47 (old close) while the current market price is $177.64 (+27 %); this 27 % discrepancy highlights a >6‑hour refresh lag that must be automated.  
+
+- **Cash idle at 50 % vs. 90 % deployment target** – With $52,402 cash on hand, the portfolio is only ~50 % deployed; the cash‑utilization algorithm does not prioritize high‑conviction, low‑correlation ideas, leaving ~40 % of capital uninvested and creating opportunity cost.  
+
+- **Concentration risk is hidden** – Memory insights show portfolio value $257,491 with 68‑69 % concentration in a single ticker (likely TEM or a similar holding), contradicting the “0 % concentration” claim; a hard cap of ≤20 % per ticker is required.  
+
+- **Stop‑loss / risk controls are absent** – VRT remains open at a 28 % loss with no trailing‑stop or stop‑loss rule; new positions (e.g., NVDA, SOFI) lack any predefined exit level, exposing the portfolio to tail risk.  
+
+- **Thesis journal is empty** – No recorded theses to validate or refute, preventing proper conviction calibration; a living thesis log (e.g., “AI‑driven cloud infrastructure”) must be maintained for each recommendation.  
+
+- **Limited ticker universe** – Recommendations only draw from existing holdings; no new ideas (e.g., AI chip makers, cybersecurity leaders, clean‑energy growth stocks) were explored, missing asymmetric plays that could boost returns.  
+
+- **Options data broken** – LEAP analysis for LEAP (not listed but referenced) reported “options data broken,” causing inaccurate Greeks and mis‑priced contracts; this must be fixed before any options recommendation.  
+
+- **Learning section is generic** – The narrative offers broad “learn about cloud services” without linking to the portfolio (e.g., “add Zscaler (ZS) to complement TEM’s cloud exposure”), reducing educational value and actionable insight.  
+
+- **Process improvement needed: automated data pipeline** – Refresh prices and options chains for all tickers every 6 hours (or less) and validate that options Greeks are correct before issuing LEAP trades.  
+
+- **Process improvement needed: enforce risk limits** – Implement a mandatory 20 % max single‑ticker exposure and automatic stop‑loss or trailing‑stop orders for every new position; back‑test to ensure stop‑losses trigger before >15 % drawdown.  
+
+- **Process improvement needed: cash allocation engine** – Re‑balance cash to target ~90 % deployed by ranking candidates on conviction, correlation, and valuation metrics; auto‑generate order tickets for the top‑ranked ideas each day.  
+
+- **Memory usage must evolve** – Store past thesis statements, learning takeaways, and data snapshots (price, options chain) in a searchable knowledge base to avoid re‑researching the same companies and to build on prior insights.  
+
+- **Overall self‑assessment** – The last run (9.2/10) excelled in portfolio awareness and nuanced option explanations, but data freshness, concentration management, and conviction calibration remain critical gaps that must be closed to move the average rating toward 9 / 10.

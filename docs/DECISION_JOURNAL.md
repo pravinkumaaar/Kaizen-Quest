@@ -1908,3 +1908,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-19 | SLV | BUY | $59.93 | N/A | 7/10 | Active | - | Why: The "Digest" notes AI-driven military tensions and geopolitical instability |
 | 2026-09-19 | COST | BUY | N/A | N/A | 8/10 | Active | - | Why: Earnings in 5 days (Sept 24). While you are tech-heavy, you need a "low-bet |
 | 2026-09-19 | RKLB | BUY | $64.57 | N/A | 9/10 | Active | - | Why: You already own this, but the deep research shows 14 "Buy" ratings and 0 "S |
+| 2026-09-20 | MU | BUY | $1015.80 | N/A | 7/10 | Active | - | Why: MU has earnings in 10 days with strong momentum (+3.92% today). The semicon |
+| 2026-09-20 | EEM | BUY | $45.60 | N/A | 6/10 | Active | - | Why: Emerging markets are undervalued relative to US equities. EEM provides expo |
+| 2026-09-20 | GLD | BUY | $180.25 | N/A | 5/10 | Active | - | Why: Inflationary pressures are increasing, and gold acts as a hedge against inf |
+| 2026-09-20 | PLTR | BUY | $177.64 | N/A | 8/10 | Active | - | Why: PLTR is your largest position at 35.6%. Reducing exposure locks in gains an |
+| 2026-09-20 | COST | BUY | $600.00 | N/A | 7/10 | Active | - | Why: COST has earnings in 4 days with strong fundamentals and a history of beati |
