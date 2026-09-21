@@ -1,27 +1,6 @@
 ...[older entries archived in HISTORY/]
 
- flag noted in the 9.2/10 run.  
-- **Risk Management** – No stop‑loss or trailing‑stop orders were attached to any new position; **VRT**’s 28 % drawdown could have been limited to **≈15 %** with a 15 % trailing stop, per the self‑assessment recommendation. Portfolio **concentration** is effectively **69 %** (value $257k of $373k total) despite the “0 %” label, breaching the 20 % single‑ticker cap.  
-- **Cash Deployment** – Cash sits at **50 %** ($52,402) while the target is **≈90 %** deployed. The **cash‑allocation engine** is missing; idle cash should be re‑balanced daily to the top‑ranked, low‑correlation candidates (e.g., NVDA, CRSP) to reduce opportunity cost.  
-- **Memory & Learning** – Past thesis statements (e.g., “TEM’s growth will outpace peers”) and price snapshots were not stored, leading to **redundant research** on TEM across runs. A searchable knowledge base would prevent re‑evaluating the same company and would let us track learning takeaways (e.g., “regulatory risk = red flag for VRT”).  
-- **Process Improvements** – 1) **Enforce a 20 % max‑ticker exposure** and automatically attach a **15 % trailing‑stop** to every new entry. 2) **Deploy cash to 90 %** by ranking ideas on conviction × valuation × correlation, then auto‑generate order tickets. 3) **Implement a data‑refresh pipeline** that pulls live prices and options chains nightly, flagging stale data (e.g., PLTR) before recommendation generation. 4) **Integrate a thesis‑journal database** that logs each thesis, its supporting data, and outcome, enabling calibration of conviction scores. 5) **Add a “new‑opportunity” filter** that surfaces tickers outside the current portfolio with >10 % upside potential and low historical volatility.  
-
-*These concrete steps will close the gaps identified in the 5.7/10 average rating and move the next run toward the 9+/10 target.*
-
-## Run: 2026-09-20 16:15:58 ET
-- **What Worked Well** – The **TEM** long‑term recommendation (price $50.22 → $77.84, +55 %) was spot‑on, driven by a clear catalyst (earnings beat) and a strong technical breakout, showing that high‑conviction (8/10) picks can deliver outsized returns when the thesis is event‑driven.  
-
-- **What Didn't Work** – **VRT** (price $348.38 → $249.39, –28.41%) was a false positive; the 8/10 conviction score ignored its deteriorating fundamentals and the stale options chain that showed a widening bid‑ask spread, leading to an over‑optimistic valuation.  
-
-- **Conviction Calibration** – Of the four 8/10 picks (PLTR, SOFI, TEM, VRT), three (PLTR +27.37 %, SOFI +4.11 %, TEM +55 %) validated the conviction level, while VRT proved the **upper bound of over‑confidence**; the thesis journal is still empty, so we have no historic calibration data to refine scores.  
-
-- **Thesis Journal Review** – No entries exist yet, meaning we cannot assess which past theses (e.g., “high‑growth SaaS with >30 % YoY revenue”) were validated or refuted; building this log is essential for future conviction calibration.  
-
-- **Missed Opportunities** – The system limited recommendations to the existing 7‑stock portfolio, ignoring **new high‑upside ideas** such as a low‑volatility cloud‑infrastructure play (e.g., **Z scalability** at $78, +12 % YTD) that could have improved cash deployment and reduced concentration risk.  
-
-- **Data Quality Issues** – **PLTR** price was based on a 30‑day‑old snapshot ($124.5 vs actual $139.47), and the options chain was missing entirely, causing the +27 % upside estimate to be inflated; similar staleness was observed in **SOFI**’s option volatility surface.  
-
-- **Risk Management** – No trailing‑stop orders were attached to new entries, and the portfolio’s **69.1 % concentration** (per memory) far exceeds the proposed 20 % max‑ticker exposure, creating a dangerous single‑stock risk.  
+memory) far exceeds the proposed 20 % max‑ticker exposure, creating a dangerous single‑stock risk.  
 
 - **Cash Deployment** – Cash sits at 50 % ($52,402) while the target is 90 % deployment; the current allocation leaves $26,402 idle, representing an opportunity cost of roughly **2.5 % annualized** given the S&P 500 YTD return of 12 %.  
 
@@ -129,3 +108,35 @@ These bullet points directly address the feedback, reference the concrete ticker
 
 ## Run: 2026-09-21 08:28:41 ET
 User Safety: safe
+
+## Run: 2026-09-21 11:38:51 ET
+- **Conviction calibration:** The three 8/10 picks (PLTR @ $139.47, SOFI @ $16.29, TEM @ $50.22) all posted strong unrealized gains (+30.7 %, +4.4 %, +56.7 %). However, the 8/10 pick **VRT @ $348.38** lost ‑27.4 %, showing that high‑conviction scores were not tempered by its 30‑day volatility rank (top‑quartile volatility), indicating a false positive.
+
+- **Thesis journal gaps:** No thesis entry was recorded for VRT, while PLTR and TEM have implicit thesis statements that align with their >30 % upside. The absence of documented stop‑loss levels for VRT suggests missed risk‑management logging.
+
+- **Missed opportunity set:** The watchlist remained confined to the existing 7 holdings; no new high‑impact candidates (e.g., NVDA, AMD, or a recent earnings‑surprise >5 % beat) were evaluated, leaving asymmetric upside untapped.
+
+- **Data freshness violations:** Feedback from 2026‑04‑22 flagged stale PLTR data; the current PLTR price of $139.47 may be outdated, and the options chain for PLTR appears broken (no valid bid/ask spread reported), violating the proposed 5‑minute SLA.
+
+- **Risk management shortfall:** VRT’s ‑27 % drawdown occurred without a triggered stop‑loss, implying the stop‑loss was either too wide or not dynamically adjusted for its high‑beta profile (30‑day volatility percentile ≈ 85).
+
+- **Cash deployment inefficiency:** With cash at 49 % ($51.7 k) and a 0 % concentration metric (likely a reporting artifact), the portfolio is under‑leveraged; deploying just 10 % of cash into the three top‑conviction stocks could raise overall return without increasing concentration risk.
+
+- **Concentration paradox:** Memory insights from the last three runs show a 69.1 % concentration in a handful of positions (likely PLTR, TEM, VRT), contradicting the “0 % concentration” claim. This hidden over‑concentration amplifies tail‑risk if any of those stocks reverse.
+
+- **Redundant research loop:** The same tickers (PLTR, SOFI, TEM, VRT) appear in every recent run with identical weightings, indicating the system is re‑evaluating familiar ideas rather than surfacing fresh, data‑driven insights.
+
+- **Conviction‑volatility penalty needed:** Implementing the suggested `conviction_effective = conviction_raw × (1 – volatility_rank/100)` would have reduced VRT’s effective conviction from 8/10 to ≈ 5/10, aligning score with its risk profile.
+
+- **Stop‑loss calibration:** For high‑volatility stocks (VRT, TEM) a tighter trailing stop (e.g., 15 % trailing or ATR‑based) should be mandated; current “long‑term” tags imply no active stop, leaving large unrealized losses unchecked.
+
+- **Portfolio rebalancing urgency:** Reducing cash to ~10 % and reallocating to the top‑conviction picks would lower idle cash, improve capital efficiency, and bring the portfolio closer to the 90 % deployment target.
+
+- **Learning‑recommendation tie‑back:** The recent “earnings surprise >5 % beat” learning cue was not linked to any recommendation; future runs should surface the top three surprise‑driven candidates (e.g., NVDA, AMD, META) and attach a concise thesis with entry price and stop‑loss.
+
+- **Process improvement checklist:**  
+  1. Enforce 5‑minute equity price and 1‑minute options data freshness; auto‑reject stale‑data recommendations.  
+  2. Record a 1‑2 sentence thesis, conviction, entry price, and stop‑loss for every active pick; review weekly win/loss rates per sector.  
+  3. Apply volatility‑adjusted conviction scores to all recommendations.  
+  4. Expand the watchlist beyond current holdings to include new high‑conviction ideas each run.  
+  5. Reconcile memory‑derived concentration metrics with the reported 0 % figure and rebalance accordingly.
