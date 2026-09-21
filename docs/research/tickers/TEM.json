@@ -1,8 +1,8 @@
 {
   "ticker": "TEM",
   "first_researched": "2026-05-22T14:47:56.790842",
-  "last_researched": "2026-09-20T09:11:51.106974",
-  "research_count": 206,
+  "last_researched": "2026-09-21T00:00:08.379024",
+  "research_count": 207,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 77.84,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-20T09:11:51.106974"
+      "last_verified": "2026-09-21T00:00:08.379024"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-20T09:11:51.106974"
+      "last_verified": "2026-09-21T00:00:08.379024"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-20T09:11:51.106974"
+      "last_verified": "2026-09-21T00:00:08.379024"
     }
   ],
   "facts": [
@@ -662,8 +662,8 @@
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
-      "first_verified": "2026-09-20T09:09:45.453450",
-      "last_verified": "2026-09-20T09:11:51.106974",
+      "first_verified": "2026-09-20T23:58:07.862653",
+      "last_verified": "2026-09-21T00:00:08.379024",
       "verification_count": 1
     }
   ],
@@ -671,41 +671,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "TEM",
-    "timestamp": "2026-09-20 09:11:21",
+    "timestamp": "2026-09-20 23:59:37",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "negative_news",
-    "insider_trades",
-    "recommendation_trends",
-    "earnings_momentum",
-    "insider_trades_contrarian",
-    "analyst_estimates",
-    "financial_ratios",
-    "insider_sentiment",
-    "industry_pe",
-    "sector_rotation",
-    "congressional",
-    "esg",
-    "competitive_landscape",
-    "treasury_rates",
-    "price_target",
-    "market_sentiment",
-    "risk_assessment",
-    "technical_indicators",
-    "income_statement",
-    "aggregate_indicators",
-    "balance_sheet",
-    "macro_rotation",
-    "comps_analysis",
-    "institutional",
-    "earnings_history",
     "sector_performance",
-    "cashflow",
-    "valuation_multiples",
+    "market_sentiment",
+    "aggregate_indicators",
     "supply_chain",
-    "dcf"
+    "congressional",
+    "financial_ratios",
+    "dcf",
+    "institutional",
+    "insider_trades",
+    "analyst_estimates",
+    "insider_trades_contrarian",
+    "comps_analysis",
+    "valuation_multiples",
+    "risk_assessment",
+    "balance_sheet",
+    "competitive_landscape",
+    "industry_pe",
+    "treasury_rates",
+    "income_statement",
+    "cashflow",
+    "insider_sentiment",
+    "macro_rotation",
+    "earnings_history",
+    "sector_rotation",
+    "earnings_momentum",
+    "recommendation_trends",
+    "esg",
+    "technical_indicators",
+    "price_target",
+    "negative_news"
   ],
   "research_gaps": [],
   "contrarian_signals": []
