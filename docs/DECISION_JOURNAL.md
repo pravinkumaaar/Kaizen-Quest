@@ -1917,3 +1917,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-22 | GLD | BUY | $285.00 | N/A | 8/10 | Active | - | Why: Gold functions as an inflation hedge and safe‑haven asset with a historical |
 | 2026-09-22 | INDA | BUY | $95.00 | N/A | 8/10 | Active | - | Why: India’s economy is expanding at ~6.5% YoY with a youthful demographic and r |
 | 2026-09-22 | COST | BUY | $540.00 | N/A | 7/10 | Active | - | Why: Costco’s membership‑based model delivers stable cash flow and high recurrin |
+| 2026-09-22 | KBH | BUY | N/A | N/A | 5/10 | Active | - | Thesis: KB Home’s Q3 earnings beat, expanding margins and a strong housing‑deman |
+| 2026-09-22 | THO | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Thor Industries’ record RV backlog, resilient consumer discretionary spe |
+| 2026-09-22 | KMX | BUY | N/A | N/A | 5/10 | Active | - | Thesis: KMX’s turnaround narrative, supported by rising used‑car prices and an e |
+| 2026-09-22 | ACN | BUY | N/A | N/A | 5/10 | Active | - | Thesis: Accenture’s consistent double‑digit revenue growth, strong cash flow and |
