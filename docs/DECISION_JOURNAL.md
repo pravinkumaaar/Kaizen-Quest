@@ -1913,3 +1913,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-20 | GLD | BUY | $180.25 | N/A | 5/10 | Active | - | Why: Inflationary pressures are increasing, and gold acts as a hedge against inf |
 | 2026-09-20 | PLTR | BUY | $177.64 | N/A | 8/10 | Active | - | Why: PLTR is your largest position at 35.6%. Reducing exposure locks in gains an |
 | 2026-09-20 | COST | BUY | $600.00 | N/A | 7/10 | Active | - | Why: COST has earnings in 4 days with strong fundamentals and a history of beati |
+| 2026-09-22 | AVGO | BUY | $362.66 | N/A | 9/10 | Active | - | Why: Broadcom is a leading supplier of custom ASICs and networking silicon for d |
+| 2026-09-22 | GLD | BUY | $285.00 | N/A | 8/10 | Active | - | Why: Gold functions as an inflation hedge and safe‑haven asset with a historical |
+| 2026-09-22 | INDA | BUY | $95.00 | N/A | 8/10 | Active | - | Why: India’s economy is expanding at ~6.5% YoY with a youthful demographic and r |
+| 2026-09-22 | COST | BUY | $540.00 | N/A | 7/10 | Active | - | Why: Costco’s membership‑based model delivers stable cash flow and high recurrin |
