@@ -1,6 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-eading to generic rather than chain‑specific recommendations.  
+mendations.  
   - **Missing fundamentals** – no forward‑PE, EPS estimate, or short‑interest data displayed for ENPH/VRT, making it hard to assess whether the down‑move was fundamentally justified.  
 
 - **Risk Management**  
@@ -112,3 +112,6 @@ These actions should tighten conviction calibration, reduce false positives, imp
   5. **Concentration caps**: Enforce a max position weight of 15 % (or 10 % for high‑beta names) and trigger a rebalance alert when any holding exceeds the threshold, automatically suggesting a trim or hedge.  
   6. **Enhanced news‑momentum scanner**: Run a separate high‑frequency scan for tickers with >5 % intraday moves on high volume; feed those into the watchlist regardless of portfolio membership to capture opportunities like NVDA and CRSP.  
   7. **Learning‑module integration**: Append a concise “takeaway” bullet to each recommendation (e.g., “Today’s PLTR move illustrates how AI‑product launch events can drive IV crush‑resistant LEAPs”) to satisfy the user’s desire for teaching while reinforcing the agent’s own knowledge base.
+
+## Run: 2026-09-23 03:35:52 ET
+User Safety: safe
