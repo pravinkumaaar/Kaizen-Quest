@@ -1924,3 +1924,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-23 | AVGO | BUY | $350.00 | $460.00 | 9/10 | Active | - | Why: Broadcom (AVGO) is a leading supplier of high‑performance networking and st |
 | 2026-09-23 | COST | BUY | $560.00 | $680.00 | 8/10 | Active | - | Why: Costco’s membership model delivers sticky, high‑value customers, while its  |
 | 2026-09-23 | GLD | BUY | $245.00 | $320.00 | 7/10 | Active | - | Why: Gold remains a compelling hedge against low real yields and geopolitical ri |
+| 2026-09-23 | GLD | BUY | $393.44 | $452.00 | 7/10 | Active | - | Why: Gold traditionally rises when real‑interest‑rate expectations fall and geop |
+| 2026-09-23 | SLV | BUY | $58.37 | $67.13 | 6/10 | Active | - | Why: Silver blends precious‑metal safety with industrial exposure (solar, EVs, 5 |
+| 2026-09-23 | ASTS | BUY | $63.69 | $80.00 | 7/10 | Active | - | Why: AST SpaceMobile is building the first space‑based cellular broadband networ |
