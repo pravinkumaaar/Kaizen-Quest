@@ -1927,3 +1927,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-23 | GLD | BUY | $393.44 | $452.00 | 7/10 | Active | - | Why: Gold traditionally rises when real‑interest‑rate expectations fall and geop |
 | 2026-09-23 | SLV | BUY | $58.37 | $67.13 | 6/10 | Active | - | Why: Silver blends precious‑metal safety with industrial exposure (solar, EVs, 5 |
 | 2026-09-23 | ASTS | BUY | $63.69 | $80.00 | 7/10 | Active | - | Why: AST SpaceMobile is building the first space‑based cellular broadband networ |
+| 2026-09-24 | NTRB | BUY | N/A | $13.00 | 5/10 | Active | - | Why: After a sharp 17% intraday rally on unusually high volume, NTRB shows early |
+| 2026-09-24 | IONQ | BUY | N/A | $80.00 | 5/10 | Active | - | Why: IonQ’s trapped‑ion technology has secured multiple multi‑year agreements wi |
