@@ -1929,3 +1929,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-23 | ASTS | BUY | $63.69 | $80.00 | 7/10 | Active | - | Why: AST SpaceMobile is building the first space‑based cellular broadband networ |
 | 2026-09-24 | NTRB | BUY | N/A | $13.00 | 5/10 | Active | - | Why: After a sharp 17% intraday rally on unusually high volume, NTRB shows early |
 | 2026-09-24 | IONQ | BUY | N/A | $80.00 | 5/10 | Active | - | Why: IonQ’s trapped‑ion technology has secured multiple multi‑year agreements wi |
+| 2026-09-24 | FCX | BUY | N/A | $83.00 | 8/10 | Active | - | Thesis – Copper demand driven by AI data‑center expansion and green‑energy proje |
+| 2026-09-24 | COST | BUY | N/A | $21.70 | 7/10 | Active | - | Thesis – Costco’s resilient membership base, strong same‑store sales growth, and |
