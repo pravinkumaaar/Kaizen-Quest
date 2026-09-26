@@ -1934,3 +1934,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-26 | MSFT | BUY | N/A | N/A | 8/10 | Active | - | Why: Microsoft combines entrenched cloud (Azure) monopoly, AI‑infused productivi |
 | 2026-09-26 | GLD | BUY | $165.00 | $80.00 | 7/10 | Active | - | Why: Gold serves as a hedge against the geopolitical and inflationary pressures  |
 | 2026-09-26 | FCX | BUY | $2.20 | $140.00 | 7/10 | Active | - | Why: Copper is the “metal of electrification” – essential for AI data‑center pow |
+| 2026-09-26 | ASML | BUY | $770.00 | N/A | 8/10 | Active | - | Why: ASML is the sole provider of EUV lithography tools, the only machine capabl |
+| 2026-09-26 | FCX | BUY | $38.00 | N/A | 7/10 | Active | - | Why: FCX is a leading copper miner with low‑cost assets (~$2.30/lb) that stand t |
