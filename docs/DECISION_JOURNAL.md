@@ -1931,3 +1931,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-24 | IONQ | BUY | N/A | $80.00 | 5/10 | Active | - | Why: IonQ’s trapped‑ion technology has secured multiple multi‑year agreements wi |
 | 2026-09-24 | FCX | BUY | N/A | $83.00 | 8/10 | Active | - | Thesis – Copper demand driven by AI data‑center expansion and green‑energy proje |
 | 2026-09-24 | COST | BUY | N/A | $21.70 | 7/10 | Active | - | Thesis – Costco’s resilient membership base, strong same‑store sales growth, and |
+| 2026-09-26 | MSFT | BUY | N/A | N/A | 8/10 | Active | - | Why: Microsoft combines entrenched cloud (Azure) monopoly, AI‑infused productivi |
+| 2026-09-26 | GLD | BUY | $165.00 | $80.00 | 7/10 | Active | - | Why: Gold serves as a hedge against the geopolitical and inflationary pressures  |
+| 2026-09-26 | FCX | BUY | $2.20 | $140.00 | 7/10 | Active | - | Why: Copper is the “metal of electrification” – essential for AI data‑center pow |
