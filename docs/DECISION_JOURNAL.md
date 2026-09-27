@@ -1936,3 +1936,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-26 | FCX | BUY | $2.20 | $140.00 | 7/10 | Active | - | Why: Copper is the “metal of electrification” – essential for AI data‑center pow |
 | 2026-09-26 | ASML | BUY | $770.00 | N/A | 8/10 | Active | - | Why: ASML is the sole provider of EUV lithography tools, the only machine capabl |
 | 2026-09-26 | FCX | BUY | $38.00 | N/A | 7/10 | Active | - | Why: FCX is a leading copper miner with low‑cost assets (~$2.30/lb) that stand t |
+| 2026-09-27 | COP | BUY | $85.00 | $130.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) is a premier independent E&P with a strong balance she |
+| 2026-09-27 | UNH | BUY | $560.00 | $720.00 | 9/10 | Active | - | Why: UnitedHealth Group (UNH) is the largest US health‑insurance carrier with co |
