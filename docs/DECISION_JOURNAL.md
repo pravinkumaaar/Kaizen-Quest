@@ -1938,3 +1938,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-26 | FCX | BUY | $38.00 | N/A | 7/10 | Active | - | Why: FCX is a leading copper miner with low‑cost assets (~$2.30/lb) that stand t |
 | 2026-09-27 | COP | BUY | $85.00 | $130.00 | 9/10 | Active | - | Why: ConocoPhillips (COP) is a premier independent E&P with a strong balance she |
 | 2026-09-27 | UNH | BUY | $560.00 | $720.00 | 9/10 | Active | - | Why: UnitedHealth Group (UNH) is the largest US health‑insurance carrier with co |
+| 2026-09-28 | PLTR | BUY | $189.67 | $150.00 | 7/10 | Active | - | Why: PLTR now represents 36.7% of the portfolio, creating extreme concentration  |
+| 2026-09-28 | GLD | BUY | $198.00 | $260.00 | 8/10 | Active | - | Why: With real‑interest‑rate pressure easing, central banks (especially EM) incr |
+| 2026-09-28 | INDA | BUY | $44.80 | $60.00 | 8/10 | Active | - | Why: India is positioned to capture manufacturing relocation from China, benefit |
