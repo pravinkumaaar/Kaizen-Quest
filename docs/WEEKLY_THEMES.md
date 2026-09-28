@@ -1,21 +1,21 @@
 # 📚 Weekly Learning Themes
 
-## Current Theme (Week of 2026-09-11)
+## Current Theme (Week of 2026-09-28)
 
-**📌 Theme:** Artificial Intelligence: The Technology Reshaping Everything
+**📌 Theme:** Macroeconomics: How the World Economy Really Works
 
-**Duration:** Week of 2026-09-11
+**Duration:** Week of 2026-09-28
 **Status:** In Progress (Day 1 of 7)
 
 ### Daily Deep Dives:
 
-- [ ] Day 1: From Narrow AI to General AI - The Holy Grail
-- [ ] Day 2: Deep Learning Explosion - How Neural Networks Work
-- [ ] Day 3: AI in Medicine - Cancer Detection & Drug Discovery
-- [ ] Day 4: AI in Finance - Algorithmic Trading & Risk Management
-- [ ] Day 5: AI Alignment - The Problem of Values & Control
-- [ ] Day 6: The AI Arms Race - Geopolitical Implications
-- [ ] Day 7: Investment Plays - How to Profit from the AI Revolution
+- [ ] Day 1: Money & Inflation - What Makes Your Savings Worth Less
+- [ ] Day 2: Interest Rates & The Fed - How Central Banks Control Everything
+- [ ] Day 3: Supply & Demand - The Force Behind Every Price
+- [ ] Day 4: Recessions & Business Cycles - Why Booms Turn to Busts
+- [ ] Day 5: Currencies & Trade - Why the Dollar Matters Globally
+- [ ] Day 6: Geopolitics & Economics - When Politics Changes Markets
+- [ ] Day 7: Investment Implications - How to Profit from Economic Cycles
 
 ---
 *New theme rotates each week. Archive your learnings.*

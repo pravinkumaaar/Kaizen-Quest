@@ -1941,3 +1941,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-28 | PLTR | BUY | $189.67 | $150.00 | 7/10 | Active | - | Why: PLTR now represents 36.7% of the portfolio, creating extreme concentration  |
 | 2026-09-28 | GLD | BUY | $198.00 | $260.00 | 8/10 | Active | - | Why: With real‑interest‑rate pressure easing, central banks (especially EM) incr |
 | 2026-09-28 | INDA | BUY | $44.80 | $60.00 | 8/10 | Active | - | Why: India is positioned to capture manufacturing relocation from China, benefit |
+| 2026-09-28 | TICKER | BUY | N/A | $13.50 | 8/10 | Active | - | THESIS: KMX is positioned to capture a rebound in the used‑car market after toda |
+| 2026-09-28 | TICKER | BUY | N/A | $630.00 | 7/10 | Active | - | THESIS: UNH’s defensive health‑care profile and consistent earnings growth make  |
+| 2026-09-28 | TICKER | BUY | N/A | $225.00 | 7/10 | Active | - | THESIS: JPMorgan’s strong balance sheet and favorable interest‑rate environment  |
