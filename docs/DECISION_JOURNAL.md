@@ -1944,3 +1944,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-28 | TICKER | BUY | N/A | $13.50 | 8/10 | Active | - | THESIS: KMX is positioned to capture a rebound in the used‑car market after toda |
 | 2026-09-28 | TICKER | BUY | N/A | $630.00 | 7/10 | Active | - | THESIS: UNH’s defensive health‑care profile and consistent earnings growth make  |
 | 2026-09-28 | TICKER | BUY | N/A | $225.00 | 7/10 | Active | - | THESIS: JPMorgan’s strong balance sheet and favorable interest‑rate environment  |
+| 2026-09-29 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Gold offers a non‑correlated hedge against inflation, geopolitical risk, an |
+| 2026-09-29 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: India’s economy is expanding >6 % YoY, driven by services, manufacturing in |
+| 2026-09-29 | JPM | BUY | N/A | N/A | 8/10 | Active | - | Why: Banks benefit from higher rates via expanded net‑interest margins (NIM). JP |
