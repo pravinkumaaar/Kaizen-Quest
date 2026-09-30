@@ -1958,3 +1958,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-30 | INDA | BUY | $100.00 | $130.00 | 8/10 | Active | - | Why: INDA (India ETF) offers diversified exposure to Indian equities that are be |
 | 2026-09-30 | LRCX | BUY | $45.00 | $70.00 | 8/10 | Active | - | Why: Lam Research (LRCX) is a leading supplier of semiconductor manufacturing eq |
 | 2026-09-30 | ABT | BUY | $120.00 | $150.00 | 8/10 | Active | - | Why: Abbott Laboratories (ABT) is a diversified healthcare giant with a fast‑gro |
+| 2026-09-30 | FCX | BUY | $42.10 | $60.00 | 9/10 | Active | - | Why: Global copper demand is projected to rise >6% CAGR through 2030 as AI data‑ |
+| 2026-09-30 | ASML | BUY | $822.40 | $1050.00 | 8/10 | Active | - | Why: ASML holds a near‑monopoly on extreme‑ultraviolet (EUV) lithography systems |
+| 2026-09-30 | INDA | BUY | $44.20 | $60.00 | 7/10 | Active | - | Why: India’s GDP is projected to grow 6.5‑7.0% FY25‑27, driven by a rising middl |
