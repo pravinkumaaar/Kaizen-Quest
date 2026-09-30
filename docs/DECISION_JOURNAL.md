@@ -1961,3 +1961,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-30 | FCX | BUY | $42.10 | $60.00 | 9/10 | Active | - | Why: Global copper demand is projected to rise >6% CAGR through 2030 as AI data‑ |
 | 2026-09-30 | ASML | BUY | $822.40 | $1050.00 | 8/10 | Active | - | Why: ASML holds a near‑monopoly on extreme‑ultraviolet (EUV) lithography systems |
 | 2026-09-30 | INDA | BUY | $44.20 | $60.00 | 7/10 | Active | - | Why: India’s GDP is projected to grow 6.5‑7.0% FY25‑27, driven by a rising middl |
+| 2026-09-30 | LRCX | BUY | $260.00 | $360.00 | 8/10 | Active | - | Why: Deep‑research shows LRCX’s backlog has risen 18% YoY and its equipment is e |
+| 2026-09-30 | AMD | BUY | $150.00 | $220.00 | 7/10 | Active | - | Why: AMD’s expanding CPU/GPU portfolio and Xilinx synergies position it to captu |
+| 2026-09-30 | FCX | BUY | $38.00 | $55.00 | 6/10 | Active | - | Why: Rising copper demand from renewable energy and electric‑vehicle supply chai |
