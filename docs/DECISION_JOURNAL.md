@@ -1954,3 +1954,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-30 | AMD | BUY | $135.00 | $26800.00 | 9/10 | Active | - | Why: AMD is positioned to capture AI data‑center growth with its Instinct GPUs a |
 | 2026-09-30 | FCX | BUY | $38.00 | $26800.00 | 8/10 | Active | - | Why: FCX is a leading copper miner with a strong balance sheet; copper demand is |
 | 2026-09-30 | TSM | BUY | $160.00 | $26800.00 | 9/10 | Active | - | Why: TSMC is the world’s premier semiconductor foundry, poised to capture the bu |
+| 2026-09-30 | TSM | BUY | $150.00 | $190.00 | 9/10 | Active | - | Why: Taiwan Semiconductor Manufacturing (TSM) is the world’s largest pure‑play s |
+| 2026-09-30 | INDA | BUY | $100.00 | $130.00 | 8/10 | Active | - | Why: INDA (India ETF) offers diversified exposure to Indian equities that are be |
+| 2026-09-30 | LRCX | BUY | $45.00 | $70.00 | 8/10 | Active | - | Why: Lam Research (LRCX) is a leading supplier of semiconductor manufacturing eq |
+| 2026-09-30 | ABT | BUY | $120.00 | $150.00 | 8/10 | Active | - | Why: Abbott Laboratories (ABT) is a diversified healthcare giant with a fast‑gro |
