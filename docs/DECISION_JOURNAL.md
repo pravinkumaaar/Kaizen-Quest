@@ -1951,3 +1951,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-30 | GLD | BUY | $182.50 | N/A | 7/10 | Active | - | Why: Inflation remains sticky (core CPI ~3.2%); real yields are still negative i |
 | 2026-09-30 | TSLA | BUY | $224.80 | N/A | 8/10 | Active | - | Why: Tesla is approaching a dual‑catalyst window: (1) Full Self‑Driving (FSD) v1 |
 | 2026-09-30 | AMD | BUY | $130.00 | N/A | 9/10 | Active | - | Why: AMD is a leading semiconductor manufacturer positioned to benefit from expl |
+| 2026-09-30 | AMD | BUY | $135.00 | $26800.00 | 9/10 | Active | - | Why: AMD is positioned to capture AI data‑center growth with its Instinct GPUs a |
+| 2026-09-30 | FCX | BUY | $38.00 | $26800.00 | 8/10 | Active | - | Why: FCX is a leading copper miner with a strong balance sheet; copper demand is |
+| 2026-09-30 | TSM | BUY | $160.00 | $26800.00 | 9/10 | Active | - | Why: TSMC is the world’s premier semiconductor foundry, poised to capture the bu |
