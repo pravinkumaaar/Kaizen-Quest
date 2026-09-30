@@ -1947,3 +1947,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-29 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Why: Gold offers a non‑correlated hedge against inflation, geopolitical risk, an |
 | 2026-09-29 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: India’s economy is expanding >6 % YoY, driven by services, manufacturing in |
 | 2026-09-29 | JPM | BUY | N/A | N/A | 8/10 | Active | - | Why: Banks benefit from higher rates via expanded net‑interest margins (NIM). JP |
+| 2026-09-30 | EEM | BUY | $45.20 | N/A | 6/10 | Active | - | Why: The US equity market is extremely concentrated (top 5 = 70% of portfolio) a |
+| 2026-09-30 | GLD | BUY | $182.50 | N/A | 7/10 | Active | - | Why: Inflation remains sticky (core CPI ~3.2%); real yields are still negative i |
+| 2026-09-30 | TSLA | BUY | $224.80 | N/A | 8/10 | Active | - | Why: Tesla is approaching a dual‑catalyst window: (1) Full Self‑Driving (FSD) v1 |
