@@ -1950,3 +1950,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-30 | EEM | BUY | $45.20 | N/A | 6/10 | Active | - | Why: The US equity market is extremely concentrated (top 5 = 70% of portfolio) a |
 | 2026-09-30 | GLD | BUY | $182.50 | N/A | 7/10 | Active | - | Why: Inflation remains sticky (core CPI ~3.2%); real yields are still negative i |
 | 2026-09-30 | TSLA | BUY | $224.80 | N/A | 8/10 | Active | - | Why: Tesla is approaching a dual‑catalyst window: (1) Full Self‑Driving (FSD) v1 |
+| 2026-09-30 | AMD | BUY | $130.00 | N/A | 9/10 | Active | - | Why: AMD is a leading semiconductor manufacturer positioned to benefit from expl |
