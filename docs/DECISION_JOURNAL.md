@@ -1964,3 +1964,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-09-30 | LRCX | BUY | $260.00 | $360.00 | 8/10 | Active | - | Why: Deep‑research shows LRCX’s backlog has risen 18% YoY and its equipment is e |
 | 2026-09-30 | AMD | BUY | $150.00 | $220.00 | 7/10 | Active | - | Why: AMD’s expanding CPU/GPU portfolio and Xilinx synergies position it to captu |
 | 2026-09-30 | FCX | BUY | $38.00 | $55.00 | 6/10 | Active | - | Why: Rising copper demand from renewable energy and electric‑vehicle supply chai |
+| 2026-10-01 | TSM | BUY | $130.00 | $190.00 | 8/10 | Active | - | Why: TSM is the world’s leading advanced‑node foundry and the primary beneficiar |
+| 2026-10-01 | AI | BUY | $30.00 | $60.00 | 7/10 | Active | - | Why: C3.ai provides an enterprise‑AI application platform that is seeing acceler |
+| 2026-10-01 | PAAS | BUY | $22.00 | $35.00 | 6/10 | Active | - | Why: Pan American Silver is the world’s largest primary silver miner, benefittin |
