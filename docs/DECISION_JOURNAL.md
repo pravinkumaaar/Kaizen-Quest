@@ -1967,3 +1967,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-01 | TSM | BUY | $130.00 | $190.00 | 8/10 | Active | - | Why: TSM is the world’s leading advanced‑node foundry and the primary beneficiar |
 | 2026-10-01 | AI | BUY | $30.00 | $60.00 | 7/10 | Active | - | Why: C3.ai provides an enterprise‑AI application platform that is seeing acceler |
 | 2026-10-01 | PAAS | BUY | $22.00 | $35.00 | 6/10 | Active | - | Why: Pan American Silver is the world’s largest primary silver miner, benefittin |
+| 2026-10-01 | AMD | BUY | $150.00 | $180.00 | 8/10 | Active | - | Why: Deep‑research DCF models give a fair‑value of $180 (≈20% upside) while the  |
+| 2026-10-01 | FCNCA | BUY | $130.00 | $155.00 | 7/10 | Active | - | Why: Deep‑research DCF valuation yields a fair‑value of $155 (≈19% upside) versu |
+| 2026-10-01 | MS | BUY | $420.00 | $470.00 | 8/10 | Active | - | Why: Deep‑research models project a fair‑value of $470 (≈12% upside) based on a  |
