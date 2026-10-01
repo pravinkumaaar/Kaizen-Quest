@@ -1970,3 +1970,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-01 | AMD | BUY | $150.00 | $180.00 | 8/10 | Active | - | Why: Deep‑research DCF models give a fair‑value of $180 (≈20% upside) while the  |
 | 2026-10-01 | FCNCA | BUY | $130.00 | $155.00 | 7/10 | Active | - | Why: Deep‑research DCF valuation yields a fair‑value of $155 (≈19% upside) versu |
 | 2026-10-01 | MS | BUY | $420.00 | $470.00 | 8/10 | Active | - | Why: Deep‑research models project a fair‑value of $470 (≈12% upside) based on a  |
+| 2026-10-01 | EEM | BUY | $45.00 | $60.00 | 8/10 | Active | - | Why: Emerging markets are positioned for a multi‑year rally as the U.S. dollar w |
+| 2026-10-01 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold is regaining its role as an inflation hedge and a safe‑haven amid risi |
+| 2026-10-01 | NVDA | BUY | N/A | $47.50 | 8/10 | Active | - | Net Debit (entry): ≈ $10.00 per spread (based on mid‑quote IV ≈ 45%). |
