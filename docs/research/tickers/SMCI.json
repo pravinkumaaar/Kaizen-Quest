@@ -1,8 +1,8 @@
 {
   "ticker": "SMCI",
   "first_researched": "2026-06-08T20:19:57.045621",
-  "last_researched": "2026-09-29T22:22:22.853567",
-  "research_count": 35,
+  "last_researched": "2026-10-02T20:30:41.957898",
+  "research_count": 36,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 41.78,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-29T22:22:22.853567"
+      "last_verified": "2026-10-02T20:30:41.957898"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-29T22:22:22.853567"
+      "last_verified": "2026-10-02T20:30:41.957898"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-09-29T22:22:22.853567"
+      "last_verified": "2026-10-02T20:30:41.957898"
     }
   ],
   "facts": [
@@ -230,41 +230,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "SMCI",
-    "timestamp": "2026-09-29 22:21:38",
+    "timestamp": "2026-10-02 20:30:02",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "esg",
-    "aggregate_indicators",
     "earnings_history",
-    "comps_analysis",
-    "industry_pe",
     "cashflow",
-    "treasury_rates",
-    "sector_performance",
-    "congressional",
-    "financial_ratios",
-    "earnings_momentum",
-    "risk_assessment",
-    "technical_indicators",
-    "insider_trades_contrarian",
-    "competitive_landscape",
-    "dcf",
+    "recommendation_trends",
     "sector_rotation",
+    "supply_chain",
     "insider_sentiment",
     "institutional",
-    "income_statement",
+    "negative_news",
+    "insider_trades_contrarian",
+    "aggregate_indicators",
+    "risk_assessment",
+    "financial_ratios",
     "market_sentiment",
+    "valuation_multiples",
     "macro_rotation",
+    "sector_performance",
+    "income_statement",
+    "treasury_rates",
+    "esg",
+    "price_target",
+    "dcf",
+    "competitive_landscape",
+    "comps_analysis",
     "balance_sheet",
     "analyst_estimates",
-    "valuation_multiples",
-    "supply_chain",
-    "price_target",
+    "earnings_momentum",
     "insider_trades",
-    "negative_news",
-    "recommendation_trends"
+    "industry_pe",
+    "technical_indicators",
+    "congressional"
   ],
   "research_gaps": [],
   "contrarian_signals": [],
