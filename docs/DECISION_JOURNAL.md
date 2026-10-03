@@ -1973,3 +1973,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-01 | EEM | BUY | $45.00 | $60.00 | 8/10 | Active | - | Why: Emerging markets are positioned for a multi‑year rally as the U.S. dollar w |
 | 2026-10-01 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold is regaining its role as an inflation hedge and a safe‑haven amid risi |
 | 2026-10-01 | NVDA | BUY | N/A | $47.50 | 8/10 | Active | - | Net Debit (entry): ≈ $10.00 per spread (based on mid‑quote IV ≈ 45%). |
+| 2026-10-03 | CRWD | BUY | $210.00 | $295.00 | 9/10 | Active | - | Why: CrowdStrike is the market‑leading cloud‑native endpoint detection and respo |
+| 2026-10-03 | VLO | BUY | $150.00 | $200.00 | 8/10 | Active | - | Why: Valero Energy is a premier independent refining and marketing company with  |
+| 2026-10-03 | ASML | BUY | $800.00 | $1100.00 | 9/10 | Active | - | Why: ASML holds a near‑monopoly on EUV lithography tools, the only viable path t |
