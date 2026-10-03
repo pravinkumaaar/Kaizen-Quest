@@ -1976,3 +1976,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-03 | CRWD | BUY | $210.00 | $295.00 | 9/10 | Active | - | Why: CrowdStrike is the market‑leading cloud‑native endpoint detection and respo |
 | 2026-10-03 | VLO | BUY | $150.00 | $200.00 | 8/10 | Active | - | Why: Valero Energy is a premier independent refining and marketing company with  |
 | 2026-10-03 | ASML | BUY | $800.00 | $1100.00 | 9/10 | Active | - | Why: ASML holds a near‑monopoly on EUV lithography tools, the only viable path t |
+| 2026-10-03 | APLD | BUY | $25.38 | $32.00 | 7/10 | Active | - | Why: APLD provides data center solutions for AI workloads. With earnings in 4 da |
+| 2026-10-03 | TSM | BUY | $298.12 | $370.00 | 8/10 | Active | - | Why: The purest play on AI semiconductor demand as fab for NVDA/AMD/INTC. Tradin |
+| 2026-10-03 | MU | BUY | $1074.89 | N/A | 7/10 | Active | - | Why: DRAM prices rising 15% QoQ. MU has 25% DRAM share. |
