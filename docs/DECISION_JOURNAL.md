@@ -1979,3 +1979,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-03 | APLD | BUY | $25.38 | $32.00 | 7/10 | Active | - | Why: APLD provides data center solutions for AI workloads. With earnings in 4 da |
 | 2026-10-03 | TSM | BUY | $298.12 | $370.00 | 8/10 | Active | - | Why: The purest play on AI semiconductor demand as fab for NVDA/AMD/INTC. Tradin |
 | 2026-10-03 | MU | BUY | $1074.89 | N/A | 7/10 | Active | - | Why: DRAM prices rising 15% QoQ. MU has 25% DRAM share. |
+| 2026-10-03 | CRSP | BUY | N/A | N/A | 5/10 | Active | - | Why: CRISPR’s exa‑cel (CTX001) for sickle‑cell disease is slated for an FDA deci |
+| 2026-10-03 | FCX | BUY | N/A | N/A | 8/10 | Active | - | Why: Copper is the linchpin of the global electrification push (EVs, grid upgrad |
+| 2026-10-03 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: India is poised to become the world’s fastest‑growing major economy, with G |
