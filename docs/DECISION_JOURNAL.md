@@ -1982,3 +1982,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-03 | CRSP | BUY | N/A | N/A | 5/10 | Active | - | Why: CRISPR’s exa‑cel (CTX001) for sickle‑cell disease is slated for an FDA deci |
 | 2026-10-03 | FCX | BUY | N/A | N/A | 8/10 | Active | - | Why: Copper is the linchpin of the global electrification push (EVs, grid upgrad |
 | 2026-10-03 | INDA | BUY | N/A | N/A | 7/10 | Active | - | Why: India is poised to become the world’s fastest‑growing major economy, with G |
+| 2026-10-04 | QCOM | BUY | $115.00 | N/A | 8/10 | Active | - | Why: Apple’s macOS update now blocks silent full‑disk access, forcing AI workloa |
+| 2026-10-04 | AMAT | BUY | $130.00 | N/A | 8/10 | Active | - | Why: The U.S. CHIPS Act is directing >$50 B of federal subsidies toward domestic |
+| 2026-10-04 | EWY | BUY | $70.00 | N/A | 7/10 | Active | - | Why: South Korea’s champions—Samsung Electronics and SK Hynix—supply ~70% of glo |
+| 2026-10-04 | PLTR | BUY | $188.75 | N/A | 6/10 | Active | - | Why: PLTR has been a stellar performer (+201% unrealized) and now constitutes 36 |
