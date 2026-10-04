@@ -1986,3 +1986,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-04 | AMAT | BUY | $130.00 | N/A | 8/10 | Active | - | Why: The U.S. CHIPS Act is directing >$50 B of federal subsidies toward domestic |
 | 2026-10-04 | EWY | BUY | $70.00 | N/A | 7/10 | Active | - | Why: South Korea’s champions—Samsung Electronics and SK Hynix—supply ~70% of glo |
 | 2026-10-04 | PLTR | BUY | $188.75 | N/A | 6/10 | Active | - | Why: PLTR has been a stellar performer (+201% unrealized) and now constitutes 36 |
+| 2026-10-04 | T | BUY | N/A | N/A | 9/10 | Active | - | Thesis: AT&T is undervalued due to strong cash flow, a high‑yield dividend, and  |
