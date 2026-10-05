@@ -1993,3 +1993,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-05 | CRWD | BUY | $320.00 | $460.00 | 8/10 | Active | - | Why: CrowdStrike’s Falcon platform is benefitting from a surge in AI‑generated c |
 | 2026-10-05 | SNOW | BUY | $175.00 | $260.00 | 7/10 | Active | - | Why: Snowflake’s consumption‑based model is capturing rising demand for scalable |
 | 2026-10-05 | GLD | BUY | $185.00 | $240.00 | 6/10 | Active | - | Why: With real yields still negative and persistent geopolitical risk, gold rema |
+| 2026-10-05 | SHOP | BUY | $160.11 | $210.00 | 8/10 | Active | - | Why: Shopify’s merchant‑base growth (>1.75M active shops) is being accelerated b |
+| 2026-10-05 | WDC | BUY | $441.64 | $560.00 | 7/10 | Active | - | Why: Western Digital is positioned to capture a rebound in data‑center storage d |
+| 2026-10-05 | GLD | BUY | $180.20 | $210.00 | 8/10 | Active | - | Why: Real yields are drifting lower as the Fed signals a potential pause, while  |
