@@ -1987,3 +1987,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-04 | EWY | BUY | $70.00 | N/A | 7/10 | Active | - | Why: South Korea’s champions—Samsung Electronics and SK Hynix—supply ~70% of glo |
 | 2026-10-04 | PLTR | BUY | $188.75 | N/A | 6/10 | Active | - | Why: PLTR has been a stellar performer (+201% unrealized) and now constitutes 36 |
 | 2026-10-04 | T | BUY | N/A | N/A | 9/10 | Active | - | Thesis: AT&T is undervalued due to strong cash flow, a high‑yield dividend, and  |
+| 2026-10-05 | CRWD | BUY | $260.00 | $340.00 | 9/10 | Active | - | Why: Deep‑research DCF valuation sets a fair value of $340, implying a 30% upsid |
+| 2026-10-05 | COP | BUY | $70.00 | $85.00 | 8/10 | Active | - | Why: Deep‑research DCF sets a fair value of $85, implying ~21% upside from $70.  |
