@@ -1989,3 +1989,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-04 | T | BUY | N/A | N/A | 9/10 | Active | - | Thesis: AT&T is undervalued due to strong cash flow, a high‑yield dividend, and  |
 | 2026-10-05 | CRWD | BUY | $260.00 | $340.00 | 9/10 | Active | - | Why: Deep‑research DCF valuation sets a fair value of $340, implying a 30% upsid |
 | 2026-10-05 | COP | BUY | $70.00 | $85.00 | 8/10 | Active | - | Why: Deep‑research DCF sets a fair value of $85, implying ~21% upside from $70.  |
+| 2026-10-05 | PLTR | BUY | $189.40 | N/A | 7/10 | Active | - | Why: PLTR has rallied >200% YTD, driving the portfolio’s concentration to 36.3%  |
+| 2026-10-05 | CRWD | BUY | $320.00 | $460.00 | 8/10 | Active | - | Why: CrowdStrike’s Falcon platform is benefitting from a surge in AI‑generated c |
+| 2026-10-05 | SNOW | BUY | $175.00 | $260.00 | 7/10 | Active | - | Why: Snowflake’s consumption‑based model is capturing rising demand for scalable |
+| 2026-10-05 | GLD | BUY | $185.00 | $240.00 | 6/10 | Active | - | Why: With real yields still negative and persistent geopolitical risk, gold rema |
