@@ -2000,3 +2000,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-06 | GLD | BUY | N/A | $5.00 | 8/10 | Active | - | THESIS: Persistent inflation expectations and geopolitical risk keep gold as a s |
 | 2026-10-06 | AMD | BUY | N/A | $4.00 | 8/10 | Active | - | THESIS: AMD’s upcoming MI300 AI accelerator and EPYC 9004 CPU generations are se |
 | 2026-10-06 | INDA | BUY | N/A | $30.00 | 9/10 | Active | - | THESIS: India’s demographic dividend, policy reforms, and strong foreign‑institu |
+| 2026-10-06 | GLD | BUY | $382.68 | $500.00 | 8/10 | Active | - | Why: Gold is rallying (GLD +0.82% today, SLV +0.89%) as real‑yields drift lower  |
+| 2026-10-06 | EIDO | BUY | $44.50 | $70.00 | 7/10 | Active | - | Why: Indonesia’s economy is projected to grow ~5.2% YoY in 2026, driven by stron |
+| 2026-10-06 | ASML | BUY | $785.00 | $1100.00 | 8/10 | Active | - | Why: ASML is the sole provider of EUV lithography machines essential for cutting |
