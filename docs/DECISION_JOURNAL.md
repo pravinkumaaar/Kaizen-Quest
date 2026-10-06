@@ -2003,3 +2003,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-06 | GLD | BUY | $382.68 | $500.00 | 8/10 | Active | - | Why: Gold is rallying (GLD +0.82% today, SLV +0.89%) as real‑yields drift lower  |
 | 2026-10-06 | EIDO | BUY | $44.50 | $70.00 | 7/10 | Active | - | Why: Indonesia’s economy is projected to grow ~5.2% YoY in 2026, driven by stron |
 | 2026-10-06 | ASML | BUY | $785.00 | $1100.00 | 8/10 | Active | - | Why: ASML is the sole provider of EUV lithography machines essential for cutting |
+| 2026-10-06 | VRSK | BUY | $215.00 | $285.00 | 8/10 | Active | - | Why: OpenAI‑driven inflation of Wikipedia traffic is exposing a systemic shortag |
+| 2026-10-06 | NXPI | BUY | $210.00 | $280.00 | 8/10 | Active | - | Why: The new MCP agent‑to‑agent protocol creates liability exposure for AI platf |
+| 2026-10-06 | PLTR | BUY | $192.07 | N/A | 7/10 | Active | - | Why: Palantir remains a high‑conviction holding, but its weight has ballooned to |
