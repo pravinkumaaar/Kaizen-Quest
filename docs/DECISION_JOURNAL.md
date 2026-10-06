@@ -1996,3 +1996,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-05 | SHOP | BUY | $160.11 | $210.00 | 8/10 | Active | - | Why: Shopify’s merchant‑base growth (>1.75M active shops) is being accelerated b |
 | 2026-10-05 | WDC | BUY | $441.64 | $560.00 | 7/10 | Active | - | Why: Western Digital is positioned to capture a rebound in data‑center storage d |
 | 2026-10-05 | GLD | BUY | $180.20 | $210.00 | 8/10 | Active | - | Why: Real yields are drifting lower as the Fed signals a potential pause, while  |
+| 2026-10-06 | COP | BUY | N/A | $110.00 | 9/10 | Active | - | THESIS: Oil price upside combined with COP’s low breakeven cost and solid divide |
+| 2026-10-06 | GLD | BUY | N/A | $5.00 | 8/10 | Active | - | THESIS: Persistent inflation expectations and geopolitical risk keep gold as a s |
+| 2026-10-06 | AMD | BUY | N/A | $4.00 | 8/10 | Active | - | THESIS: AMD’s upcoming MI300 AI accelerator and EPYC 9004 CPU generations are se |
+| 2026-10-06 | INDA | BUY | N/A | $30.00 | 9/10 | Active | - | THESIS: India’s demographic dividend, policy reforms, and strong foreign‑institu |
