@@ -2006,3 +2006,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-06 | VRSK | BUY | $215.00 | $285.00 | 8/10 | Active | - | Why: OpenAI‑driven inflation of Wikipedia traffic is exposing a systemic shortag |
 | 2026-10-06 | NXPI | BUY | $210.00 | $280.00 | 8/10 | Active | - | Why: The new MCP agent‑to‑agent protocol creates liability exposure for AI platf |
 | 2026-10-06 | PLTR | BUY | $192.07 | N/A | 7/10 | Active | - | Why: Palantir remains a high‑conviction holding, but its weight has ballooned to |
+| 2026-10-07 | TSM | BUY | $175.00 | $260.00 | 9/10 | Active | - | Why: TSMC remains the indispensable foundry for the AI‑chip boom, with >60% shar |
+| 2026-10-07 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, currency debas |
