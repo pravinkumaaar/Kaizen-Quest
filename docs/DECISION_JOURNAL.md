@@ -2011,3 +2011,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-08 | AMD | BUY | $115.00 | $260.00 | 9/10 | Active | - | Why: Microsoft’s Oct 8 AI‑optimized hardware event and the surge in cloud AI wor |
 | 2026-10-08 | EIDO | BUY | $22.40 | $30.00 | 7/10 | Active | - | Why: Global rotation data shows emerging markets (EM) beginning to outperform th |
 | 2026-10-08 | SLV | BUY | $53.82 | $72.00 | 7/10 | Active | - | Why: Silver offers dual exposure: an inflation‑hedge precious metal and an indus |
+| 2026-10-08 | EIDO | BUY | $48.00 | N/A | 8/10 | Active | - | Why: Indonesia’s consumer‑led economy is growing ~5% YoY, driven by rising middl |
+| 2026-10-08 | TSM | BUY | $150.00 | N/A | 9/10 | Active | - | Why: TSM is the indispensable fab for AI accelerators, high‑performance CPUs, an |
+| 2026-10-08 | SLV | BUY | $52.89 | N/A | 7/10 | Active | - | Why: Silver sits at the intersection of industrial demand (EV batteries, 5G, sol |
