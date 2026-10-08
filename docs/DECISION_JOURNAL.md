@@ -2008,3 +2008,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-06 | PLTR | BUY | $192.07 | N/A | 7/10 | Active | - | Why: Palantir remains a high‑conviction holding, but its weight has ballooned to |
 | 2026-10-07 | TSM | BUY | $175.00 | $260.00 | 9/10 | Active | - | Why: TSMC remains the indispensable foundry for the AI‑chip boom, with >60% shar |
 | 2026-10-07 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, currency debas |
+| 2026-10-08 | AMD | BUY | $115.00 | $260.00 | 9/10 | Active | - | Why: Microsoft’s Oct 8 AI‑optimized hardware event and the surge in cloud AI wor |
+| 2026-10-08 | EIDO | BUY | $22.40 | $30.00 | 7/10 | Active | - | Why: Global rotation data shows emerging markets (EM) beginning to outperform th |
+| 2026-10-08 | SLV | BUY | $53.82 | $72.00 | 7/10 | Active | - | Why: Silver offers dual exposure: an inflation‑hedge precious metal and an indus |
