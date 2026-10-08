@@ -2014,3 +2014,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-08 | EIDO | BUY | $48.00 | N/A | 8/10 | Active | - | Why: Indonesia’s consumer‑led economy is growing ~5% YoY, driven by rising middl |
 | 2026-10-08 | TSM | BUY | $150.00 | N/A | 9/10 | Active | - | Why: TSM is the indispensable fab for AI accelerators, high‑performance CPUs, an |
 | 2026-10-08 | SLV | BUY | $52.89 | N/A | 7/10 | Active | - | Why: Silver sits at the intersection of industrial demand (EV batteries, 5G, sol |
+| 2026-10-08 | GLD | BUY | $379.67 | N/A | 7/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, geopolitical r |
+| 2026-10-08 | EEM | BUY | $44.12 | $1.40 | 8/10 | Active | - | Why: Emerging markets are poised for a cyclical rebound as China’s stimulus roll |
+| 2026-10-08 | TSM | BUY | $132.40 | $6.00 | 8/10 | Active | - | Why: TSM is the indispensable foundry for AI accelerators, 5G/6G chips, and auto |
