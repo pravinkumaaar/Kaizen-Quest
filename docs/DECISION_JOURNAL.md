@@ -2017,3 +2017,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-08 | GLD | BUY | $379.67 | N/A | 7/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation, geopolitical r |
 | 2026-10-08 | EEM | BUY | $44.12 | $1.40 | 8/10 | Active | - | Why: Emerging markets are poised for a cyclical rebound as China’s stimulus roll |
 | 2026-10-08 | TSM | BUY | $132.40 | $6.00 | 8/10 | Active | - | Why: TSM is the indispensable foundry for AI accelerators, 5G/6G chips, and auto |
+| 2026-10-09 | REGN | BUY | $300.00 | $425.00 | 9/10 | Active | - | Why: Deep research DCF valuation indicates fair value of $340, suggesting 13% up |
+| 2026-10-09 | LLY | BUY | $350.00 | $500.00 | 9/10 | Active | - | Why: Strong growth in obesity drug sales (Mounjaro) with high demand and pricing |
