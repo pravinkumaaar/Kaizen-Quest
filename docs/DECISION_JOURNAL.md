@@ -2019,3 +2019,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-08 | TSM | BUY | $132.40 | $6.00 | 8/10 | Active | - | Why: TSM is the indispensable foundry for AI accelerators, 5G/6G chips, and auto |
 | 2026-10-09 | REGN | BUY | $300.00 | $425.00 | 9/10 | Active | - | Why: Deep research DCF valuation indicates fair value of $340, suggesting 13% up |
 | 2026-10-09 | LLY | BUY | $350.00 | $500.00 | 9/10 | Active | - | Why: Strong growth in obesity drug sales (Mounjaro) with high demand and pricing |
+| 2026-10-09 | EIDO | BUY | $22.40 | $28.00 | 7/10 | Active | - | Why: Indonesia’s GDP is growing ~5% YoY, driven by rising commodity exports (nic |
+| 2026-10-09 | GLD | BUY | $191.20 | $225.00 | 8/10 | Active | - | Why: Real‑interest rates remain deeply negative (10‑yr TIPS yield ≈‑1.2%), centr |
+| 2026-10-09 | PLTR | BUY | $209.05 | $210.00 | 6/10 | Active | - | Why: PLTR has become the largest position (39.7% of portfolio) after a +233.6% r |
+| 2026-10-09 | BE | BUY | $15.80 | $22.00 | 8/10 | Active | - | Why: Bloom Energy reports earnings in 20 days (2026‑10‑27, BMO). The company is  |
