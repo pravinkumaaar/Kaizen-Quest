@@ -2030,3 +2030,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-10 | COIN | BUY | $70.00 | $120.00 | 8/10 | Active | - | Why: Research indicates crypto transaction volume has risen 40% YoY (CoinMetrics |
 | 2026-10-10 | F | BUY | $12.00 | $18.00 | 8/10 | Active | - | Why: Research shows Ford is positioned to benefit from the rapid EV transition,  |
 | 2026-10-10 | GLD | BUY | $210.00 | $225.00 | 7/10 | Active | - | Why: Gold remains a potent inflation hedge, with the metal up 12% YoY (World Gol |
+| 2026-10-10 | PLTR | BUY | $209.05 | N/A | 7/10 | Active | - | Why: PLTR remains a dominant AI‑data‑analytics platform, but it now represents 3 |
+| 2026-10-10 | ORCL | BUY | $141.40 | $200.00 | 8/10 | Active | - | Why: Oracle is leveraging its massive installed‑base of database licences to sel |
+| 2026-10-10 | KMDA | BUY | $8.08 | $12.00 | 7/10 | Active | - | Why: Kamada Ltd. is a plasma‑derived therapeutics firm with a late‑stage Alpha‑1 |
+| 2026-10-10 | SLV | BUY | $54.78 | $70.00 | 6/10 | Active | - | Why: Silver has broken above its 200‑day MA ($52.50) and is showing bullish mome |

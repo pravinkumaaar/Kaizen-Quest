@@ -3,10 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **FCX** | $30.00 | $55.00 | 9/10 |  Active  |  $30.00  |  +0.0%  | 8‑12 weeks (post‑earnings swing) | Watchlist |
-| 2 | **COIN** | $70.00 | $120.00 | 8/10 |  Active  |  $70.00  |  +0.0%  | 4‑8 weeks (around earnings) | Watchlist |
-| 3 | **F** | $12.00 | $18.00 | 8/10 |  Active  |  $12.00  |  +0.0%  | 6‑10 weeks (post‑earnings swing) | Watchlist |
-| 4 | **GLD** | $210.00 | $225.00 | 7/10 |  Active  |  $210.00  |  +0.0%  | 8‑12 weeks (swing trade) | Watchlist |
+| 1 | **PLTR** | $209.05 | TBD | 7/10 |  Active  |  $209.05  |  +0.0%  | Swing 2‑8 weeks (mean‑reversion play). | Watchlist |
+| 2 | **ORCL** | $141.40 | $200.00 | 8/10 |  Active  |  $141.40  |  +0.0%  | Medium 3‑12 months (cloud‑inflection play). | Watchlist |
+| 3 | **KMDA** | $8.08 | $12.00 | 7/10 |  Active  |  $8.08  |  +0.0%  | Swing 2‑6 months (catalyst‑driven). | Watchlist |
+| 4 | **SLV** | $54.78 | $70.00 | 6/10 |  Active  |  $54.78  |  +0.0%  | Swing 4‑10 weeks (macro‑driven). | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
