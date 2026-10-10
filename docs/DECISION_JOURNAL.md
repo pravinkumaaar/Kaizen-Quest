@@ -2023,3 +2023,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-09 | GLD | BUY | $191.20 | $225.00 | 8/10 | Active | - | Why: Real‑interest rates remain deeply negative (10‑yr TIPS yield ≈‑1.2%), centr |
 | 2026-10-09 | PLTR | BUY | $209.05 | $210.00 | 6/10 | Active | - | Why: PLTR has become the largest position (39.7% of portfolio) after a +233.6% r |
 | 2026-10-09 | BE | BUY | $15.80 | $22.00 | 8/10 | Active | - | Why: Bloom Energy reports earnings in 20 days (2026‑10‑27, BMO). The company is  |
+| 2026-10-10 | ORCL | BUY | $141.40 | $180.00 | 8/10 | Active | - | Why: Oracle’s cloud infrastructure is becoming the preferred backend for enterpr |
+| 2026-10-10 | GLD | BUY | $384.58 | $500.00 | 7/10 | Active | - | Why: With persistent fiscal deficits, sticky services inflation, and heightened  |
+| 2026-10-10 | PLTR | BUY | $209.05 | N/A | 6/10 | Active | - | Why: Palantir now represents 39.3% of the portfolio, far above prudent diversifi |
