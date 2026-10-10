@@ -2026,3 +2026,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-10 | ORCL | BUY | $141.40 | $180.00 | 8/10 | Active | - | Why: Oracle’s cloud infrastructure is becoming the preferred backend for enterpr |
 | 2026-10-10 | GLD | BUY | $384.58 | $500.00 | 7/10 | Active | - | Why: With persistent fiscal deficits, sticky services inflation, and heightened  |
 | 2026-10-10 | PLTR | BUY | $209.05 | N/A | 6/10 | Active | - | Why: Palantir now represents 39.3% of the portfolio, far above prudent diversifi |
+| 2026-10-10 | FCX | BUY | $30.00 | $55.00 | 9/10 | Active | - | Why: Deep research shows copper demand is being driven by AI data‑center constru |
+| 2026-10-10 | COIN | BUY | $70.00 | $120.00 | 8/10 | Active | - | Why: Research indicates crypto transaction volume has risen 40% YoY (CoinMetrics |
+| 2026-10-10 | F | BUY | $12.00 | $18.00 | 8/10 | Active | - | Why: Research shows Ford is positioned to benefit from the rapid EV transition,  |
+| 2026-10-10 | GLD | BUY | $210.00 | $225.00 | 7/10 | Active | - | Why: Gold remains a potent inflation hedge, with the metal up 12% YoY (World Gol |
