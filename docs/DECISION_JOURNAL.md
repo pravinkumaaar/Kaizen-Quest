@@ -2034,3 +2034,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-10 | ORCL | BUY | $141.40 | $200.00 | 8/10 | Active | - | Why: Oracle is leveraging its massive installed‑base of database licences to sel |
 | 2026-10-10 | KMDA | BUY | $8.08 | $12.00 | 7/10 | Active | - | Why: Kamada Ltd. is a plasma‑derived therapeutics firm with a late‑stage Alpha‑1 |
 | 2026-10-10 | SLV | BUY | $54.78 | $70.00 | 6/10 | Active | - | Why: Silver has broken above its 200‑day MA ($52.50) and is showing bullish mome |
+| 2026-10-11 | GLD | BUY | $384.58 | $470.00 | 7/10 | Active | - | Why: Gold is reacting to heightened geopolitical risk (Ukraine drone strike on a |
+| 2026-10-11 | SLV | BUY | $54.78 | $78.00 | 6/10 | Active | - | Why: Silver blends monetary safe‑haven traits with expanding industrial demand f |
+| 2026-10-11 | MSFT | BUY | $420.00 | $560.00 | 8/10 | Active | - | Why: Microsoft’s cloud (Azure) continues to gain share, AI copilots are monetizi |
