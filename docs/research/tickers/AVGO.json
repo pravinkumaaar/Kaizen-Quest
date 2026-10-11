@@ -1,8 +1,8 @@
 {
   "ticker": "AVGO",
   "first_researched": "2026-05-22T13:52:53.580585",
-  "last_researched": "2026-10-10T17:07:33.234878",
-  "research_count": 243,
+  "last_researched": "2026-10-11T08:28:01.973304",
+  "research_count": 244,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 361.54,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-10-10T17:07:33.234878"
+      "last_verified": "2026-10-11T08:28:01.973304"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-10-10T17:07:33.234878"
+      "last_verified": "2026-10-11T08:28:01.973304"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-10-10T04:17:11.987890"
+      "last_verified": "2026-10-11T08:28:01.973304"
     }
   ],
   "facts": [
@@ -923,8 +923,8 @@
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
-      "first_verified": "2026-10-10T17:06:38.090113",
-      "last_verified": "2026-10-10T17:07:33.234878",
+      "first_verified": "2026-10-11T08:27:00.368828",
+      "last_verified": "2026-10-11T08:28:01.973304",
       "verification_count": 1
     }
   ],
@@ -932,41 +932,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "AVGO",
-    "timestamp": "2026-10-10 17:06:52",
+    "timestamp": "2026-10-11 08:27:16",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "insider_trades_contrarian",
-    "insider_trades",
-    "aggregate_indicators",
-    "competitive_landscape",
-    "market_sentiment",
-    "negative_news",
-    "supply_chain",
-    "insider_sentiment",
-    "analyst_estimates",
     "cashflow",
-    "earnings_history",
-    "earnings_momentum",
-    "treasury_rates",
-    "esg",
-    "recommendation_trends",
-    "macro_rotation",
-    "financial_ratios",
-    "congressional",
-    "income_statement",
-    "balance_sheet",
-    "comps_analysis",
-    "institutional",
     "valuation_multiples",
-    "sector_rotation",
     "risk_assessment",
-    "sector_performance",
+    "recommendation_trends",
+    "income_statement",
+    "institutional",
+    "supply_chain",
     "dcf",
+    "market_sentiment",
+    "treasury_rates",
+    "negative_news",
+    "insider_trades_contrarian",
+    "comps_analysis",
+    "esg",
+    "aggregate_indicators",
+    "earnings_momentum",
+    "competitive_landscape",
+    "financial_ratios",
+    "macro_rotation",
     "price_target",
+    "sector_rotation",
+    "analyst_estimates",
+    "balance_sheet",
+    "insider_sentiment",
+    "insider_trades",
+    "earnings_history",
+    "sector_performance",
+    "industry_pe",
     "technical_indicators",
-    "industry_pe"
+    "congressional"
   ],
   "research_gaps": [],
   "contrarian_signals": []
