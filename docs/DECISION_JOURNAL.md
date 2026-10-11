@@ -2037,3 +2037,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-11 | GLD | BUY | $384.58 | $470.00 | 7/10 | Active | - | Why: Gold is reacting to heightened geopolitical risk (Ukraine drone strike on a |
 | 2026-10-11 | SLV | BUY | $54.78 | $78.00 | 6/10 | Active | - | Why: Silver blends monetary safe‑haven traits with expanding industrial demand f |
 | 2026-10-11 | MSFT | BUY | $420.00 | $560.00 | 8/10 | Active | - | Why: Microsoft’s cloud (Azure) continues to gain share, AI copilots are monetizi |
+| 2026-10-11 | GLD | BUY | $384.58 | $540.00 | 7/10 | Active | - | Why: Gold is benefitting from negative real yields, sustained central‑bank buyin |
+| 2026-10-11 | SLV | BUY | $54.78 | $88.00 | 7/10 | Active | - | Why: Silver blends monetary‑metal safety with industrial demand (solar, EVs, 5G) |
+| 2026-10-11 | ORCL | BUY | $141.40 | $210.00 | 7/10 | Active | - | Why: Oracle is transitioning from legacy licenses to a high‑growth cloud‑infrast |
