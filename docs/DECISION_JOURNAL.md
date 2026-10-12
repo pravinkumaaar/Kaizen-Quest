@@ -2043,3 +2043,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-12 | TICKER | BUY | $165.20 | $190.00 | 9/10 | Active | - | Why: Deep‑research DCF models (7‑layer) value ABBV at $180‑$185, implying ~9‑11% |
 | 2026-10-12 | TICKER | BUY | $170.10 | $210.00 | 8/10 | Active | - | Why: Energy fundamentals are strengthening: WTI crude up 8% YTD, OPEC+ productio |
 | 2026-10-12 | TICKER | BUY | $185.30 | $205.00 | 6/10 | Active | - | Why: Gold remains a compelling inflation hedge as CPI expectations stay above 3% |
+| 2026-10-12 | MSFT | BUY | $410.00 | $530.00 | 8/10 | Active | - | Why: Microsoft is the world’s largest enterprise‑software vendor with a growing  |
+| 2026-10-12 | GRAB | BUY | $4.20 | $5.50 | 7/10 | Active | - | Why: Grab is the leading ride‑hailing, food‑delivery and fintech platform across |
+| 2026-10-12 | UUUU | BUY | $6.50 | $8.50 | 6/10 | Active | - | Why: Uranium Energy Corp (UUUU) is a low‑cost, ISR‑based uranium producer with a |
