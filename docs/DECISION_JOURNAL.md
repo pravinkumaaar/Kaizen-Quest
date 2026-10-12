@@ -2040,3 +2040,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-11 | GLD | BUY | $384.58 | $540.00 | 7/10 | Active | - | Why: Gold is benefitting from negative real yields, sustained central‑bank buyin |
 | 2026-10-11 | SLV | BUY | $54.78 | $88.00 | 7/10 | Active | - | Why: Silver blends monetary‑metal safety with industrial demand (solar, EVs, 5G) |
 | 2026-10-11 | ORCL | BUY | $141.40 | $210.00 | 7/10 | Active | - | Why: Oracle is transitioning from legacy licenses to a high‑growth cloud‑infrast |
+| 2026-10-12 | TICKER | BUY | $165.20 | $190.00 | 9/10 | Active | - | Why: Deep‑research DCF models (7‑layer) value ABBV at $180‑$185, implying ~9‑11% |
+| 2026-10-12 | TICKER | BUY | $170.10 | $210.00 | 8/10 | Active | - | Why: Energy fundamentals are strengthening: WTI crude up 8% YTD, OPEC+ productio |
+| 2026-10-12 | TICKER | BUY | $185.30 | $205.00 | 6/10 | Active | - | Why: Gold remains a compelling inflation hedge as CPI expectations stay above 3% |
