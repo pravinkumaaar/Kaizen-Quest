@@ -2050,3 +2050,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-13 | INDA | BUY | $100.00 | $115.00 | 9/10 | Active | - | Why: INDA provides diversified exposure to India’s rapid economic growth, demogr |
 | 2026-10-13 | XLF | BUY | $45.00 | $55.00 | 9/10 | Active | - | Why: XLF tracks US financials and offers dividend yield plus potential price app |
 | 2026-10-13 | FCX | BUY | $38.00 | N/A | 8/10 | Active | - | Why: FCX is a low‑cost copper producer with a dividend yield and a balance sheet |
+| 2026-10-13 | GRAB | BUY | $2.98 | $5.00 | 8/10 | Active | - | Why: Grab is the leading ride‑hailing, food‑delivery and digital‑payments platfo |
+| 2026-10-13 | ANET | BUY | $315.00 | $380.00 | 9/10 | Active | - | Why: Arista Networks supplies high‑speed Ethernet switches that are the backbone |
