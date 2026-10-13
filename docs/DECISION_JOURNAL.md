@@ -2046,3 +2046,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-12 | MSFT | BUY | $410.00 | $530.00 | 8/10 | Active | - | Why: Microsoft is the world’s largest enterprise‑software vendor with a growing  |
 | 2026-10-12 | GRAB | BUY | $4.20 | $5.50 | 7/10 | Active | - | Why: Grab is the leading ride‑hailing, food‑delivery and fintech platform across |
 | 2026-10-12 | UUUU | BUY | $6.50 | $8.50 | 6/10 | Active | - | Why: Uranium Energy Corp (UUUU) is a low‑cost, ISR‑based uranium producer with a |
+| 2026-10-13 | AMD | BUY | $150.00 | $260.00 | 10/10 | Active | - | Why: AMD is positioned to capture the fastest‑growing segment of the semiconduct |
+| 2026-10-13 | INDA | BUY | $100.00 | $115.00 | 9/10 | Active | - | Why: INDA provides diversified exposure to India’s rapid economic growth, demogr |
+| 2026-10-13 | XLF | BUY | $45.00 | $55.00 | 9/10 | Active | - | Why: XLF tracks US financials and offers dividend yield plus potential price app |
+| 2026-10-13 | FCX | BUY | $38.00 | N/A | 8/10 | Active | - | Why: FCX is a low‑cost copper producer with a dividend yield and a balance sheet |
