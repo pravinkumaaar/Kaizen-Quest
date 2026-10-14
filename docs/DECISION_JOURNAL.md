@@ -2052,3 +2052,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-13 | FCX | BUY | $38.00 | N/A | 8/10 | Active | - | Why: FCX is a low‑cost copper producer with a dividend yield and a balance sheet |
 | 2026-10-13 | GRAB | BUY | $2.98 | $5.00 | 8/10 | Active | - | Why: Grab is the leading ride‑hailing, food‑delivery and digital‑payments platfo |
 | 2026-10-13 | ANET | BUY | $315.00 | $380.00 | 9/10 | Active | - | Why: Arista Networks supplies high‑speed Ethernet switches that are the backbone |
+| 2026-10-14 | ANET | BUY | $350.00 | N/A | 8/10 | Active | - | Why: Arista is the leading provider of cloud‑scale Ethernet switching, a critica |
+| 2026-10-14 | SHOP | BUY | $62.00 | N/A | 7/10 | Active | - | Why: Shopify’s merchant‑services take‑rate is stabilizing after the 2024 pricing |
+| 2026-10-14 | GLD | BUY | $182.00 | N/A | 6/10 | Active | - | Why: Gold continues to serve as a hedge against persistent inflation, real‑yield |
