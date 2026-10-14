@@ -2058,3 +2058,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-14 | AMD | BUY | $150.00 | $12447.00 | 8/10 | Active | - | Why: AMD is the clear #2 GPU supplier to data‑centers, benefiting from the AI‑tr |
 | 2026-10-14 | TSLA | BUY | $250.00 | $14003.00 | 9/10 | Active | - | Why: Tesla is transitioning from pure EV maker to an AI‑robotics and energy‑stor |
 | 2026-10-14 | GLD | BUY | $375.00 | N/A | 7/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation and geopolitica |
+| 2026-10-14 | PLTR | BUY | $201.30 | N/A | 8/10 | Active | - | Why: PLTR has become the single largest position (41.3 % of the portfolio) after |
+| 2026-10-14 | SLV | BUY | $50.24 | $65.00 | 7/10 | Active | - | Why: Silver has slipped −6.1 % today and is trading near the lower end of its 6‑ |
+| 2026-10-14 | ANET | BUY | $280.00 | $360.00 | 8/10 | Active | - | Why: Arista Networks (ANET) supplies high‑speed Ethernet switches and routing ge |
