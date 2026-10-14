@@ -2055,3 +2055,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-14 | ANET | BUY | $350.00 | N/A | 8/10 | Active | - | Why: Arista is the leading provider of cloud‑scale Ethernet switching, a critica |
 | 2026-10-14 | SHOP | BUY | $62.00 | N/A | 7/10 | Active | - | Why: Shopify’s merchant‑services take‑rate is stabilizing after the 2024 pricing |
 | 2026-10-14 | GLD | BUY | $182.00 | N/A | 6/10 | Active | - | Why: Gold continues to serve as a hedge against persistent inflation, real‑yield |
+| 2026-10-14 | AMD | BUY | $150.00 | $12447.00 | 8/10 | Active | - | Why: AMD is the clear #2 GPU supplier to data‑centers, benefiting from the AI‑tr |
+| 2026-10-14 | TSLA | BUY | $250.00 | $14003.00 | 9/10 | Active | - | Why: Tesla is transitioning from pure EV maker to an AI‑robotics and energy‑stor |
+| 2026-10-14 | GLD | BUY | $375.00 | N/A | 7/10 | Active | - | Why: Gold remains the premier hedge against persistent inflation and geopolitica |
