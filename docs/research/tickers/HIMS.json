@@ -1,29 +1,29 @@
 {
   "ticker": "HIMS",
   "first_researched": "2026-06-18T15:49:59.623459",
-  "last_researched": "2026-08-25T13:57:39.649418",
-  "research_count": 89,
+  "last_researched": "2026-10-15T21:22:44.125303",
+  "research_count": 90,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 31.08,
+  "last_price": 27.72,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-25T13:57:39.649418"
+      "last_verified": "2026-10-15T21:22:44.125303"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-25T13:57:39.649418"
+      "last_verified": "2026-10-15T21:22:44.125303"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-08-20T22:42:40.583633"
+      "last_verified": "2026-10-15T21:22:44.125303"
     }
   ],
   "facts": [
@@ -359,47 +359,56 @@
       "first_verified": "2026-08-25T13:56:49.519900",
       "last_verified": "2026-08-25T13:57:39.649418",
       "verification_count": 1
+    },
+    {
+      "claim": "HIMS trading at $27.72 (-6.70%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-10-15T21:22:01.159351",
+      "last_verified": "2026-10-15T21:22:44.125303",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "HIMS",
-    "timestamp": "2026-08-25 13:57:02",
+    "timestamp": "2026-10-15 21:22:11",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "macro_rotation",
-    "cashflow",
-    "aggregate_indicators",
-    "sector_performance",
     "risk_assessment",
-    "negative_news",
-    "congressional",
-    "balance_sheet",
-    "comps_analysis",
-    "income_statement",
     "financial_ratios",
-    "technical_indicators",
-    "sector_rotation",
-    "supply_chain",
-    "esg",
-    "treasury_rates",
-    "insider_trades_contrarian",
-    "dcf",
     "analyst_estimates",
     "price_target",
-    "institutional",
-    "earnings_momentum",
-    "valuation_multiples",
-    "insider_sentiment",
-    "recommendation_trends",
-    "industry_pe",
+    "macro_rotation",
     "competitive_landscape",
-    "market_sentiment",
+    "income_statement",
     "insider_trades",
-    "earnings_history"
+    "esg",
+    "sector_performance",
+    "aggregate_indicators",
+    "institutional",
+    "negative_news",
+    "balance_sheet",
+    "recommendation_trends",
+    "sector_rotation",
+    "dcf",
+    "cashflow",
+    "supply_chain",
+    "valuation_multiples",
+    "market_sentiment",
+    "congressional",
+    "insider_sentiment",
+    "industry_pe",
+    "comps_analysis",
+    "earnings_momentum",
+    "treasury_rates",
+    "technical_indicators",
+    "earnings_history",
+    "insider_trades_contrarian"
   ],
   "research_gaps": [],
   "contrarian_signals": [],

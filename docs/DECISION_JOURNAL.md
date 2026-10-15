@@ -2061,3 +2061,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-14 | PLTR | BUY | $201.30 | N/A | 8/10 | Active | - | Why: PLTR has become the single largest position (41.3 % of the portfolio) after |
 | 2026-10-14 | SLV | BUY | $50.24 | $65.00 | 7/10 | Active | - | Why: Silver has slipped −6.1 % today and is trading near the lower end of its 6‑ |
 | 2026-10-14 | ANET | BUY | $280.00 | $360.00 | 8/10 | Active | - | Why: Arista Networks (ANET) supplies high‑speed Ethernet switches and routing ge |
+| 2026-10-15 | OPEN | BUY | $2.32 | $112.00 | 8/10 | Active | - | Why: Open Lending runs a cloud‑based loan‑origination platform for auto lenders. |
+| 2026-10-15 | ARM | BUY | $132.40 | $1240.00 | 8/10 | Active | - | Why: Arm designs the CPU architecture that powers >95 % of smartphones and is ra |
