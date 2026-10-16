@@ -2067,3 +2067,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-16 | SMCI | BUY | $35.09 | N/A | 7/10 | Active | - | Why: While SMCI benefits from AI server demand, valuation appears stretched vs f |
 | 2026-10-16 | GLD | BUY | $185.42 | N/A | 8/10 | Active | - | Why: With inflation expectations rising and USD weakening, gold offers portfolio |
 | 2026-10-16 | EIDO | BUY | $30.15 | N/A | 7/10 | Active | - | Why: Indonesia offers compelling demographics (median age 28), resource abundanc |
+| 2026-10-16 | NET | BUY | $78.00 | N/A | 5/10 | Active | - | Why: Cloudflare’s edge‑compute platform is benefitting from the secular shift to |
+| 2026-10-16 | ACHR | BUY | $4.05 | N/A | 5/10 | Active | - | Why: Archer is a pure‑play eVTOL (electric vertical take‑off and landing) manufa |
+| 2026-10-16 | RXRX | BUY | $4.16 | N/A | 5/10 | Active | - | Why: Recursion combines AI‑driven cellular imaging with a massive proprietary da |
