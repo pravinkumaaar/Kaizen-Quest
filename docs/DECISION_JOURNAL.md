@@ -2070,3 +2070,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-16 | NET | BUY | $78.00 | N/A | 5/10 | Active | - | Why: Cloudflare’s edge‑compute platform is benefitting from the secular shift to |
 | 2026-10-16 | ACHR | BUY | $4.05 | N/A | 5/10 | Active | - | Why: Archer is a pure‑play eVTOL (electric vertical take‑off and landing) manufa |
 | 2026-10-16 | RXRX | BUY | $4.16 | N/A | 5/10 | Active | - | Why: Recursion combines AI‑driven cellular imaging with a massive proprietary da |
+| 2026-10-16 | FCX | BUY | $30.00 | $45.00 | 9/10 | Active | - | Why: Deep‑research shows copper demand will grow 3‑4% YoY through 2030 as green‑ |
+| 2026-10-16 | COP | BUY | $80.00 | $115.00 | 8/10 | Active | - | Why: Deep‑research indicates oil prices are poised to rise to $90‑$95/Bbl by Q4  |
+| 2026-10-16 | INDA | BUY | $100.00 | $130.00 | 7/10 | Active | - | Why: Deep‑research highlights India’s 6‑7% annual GDP growth, a youthful demogra |
+| 2026-10-16 | GLD | BUY | $200.00 | $260.00 | 9/10 | Active | - | Why: Deep‑research shows inflation expectations remain above 3% and geopolitical |
