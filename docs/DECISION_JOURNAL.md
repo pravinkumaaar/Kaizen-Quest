@@ -2074,3 +2074,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-16 | COP | BUY | $80.00 | $115.00 | 8/10 | Active | - | Why: Deep‑research indicates oil prices are poised to rise to $90‑$95/Bbl by Q4  |
 | 2026-10-16 | INDA | BUY | $100.00 | $130.00 | 7/10 | Active | - | Why: Deep‑research highlights India’s 6‑7% annual GDP growth, a youthful demogra |
 | 2026-10-16 | GLD | BUY | $200.00 | $260.00 | 9/10 | Active | - | Why: Deep‑research shows inflation expectations remain above 3% and geopolitical |
+| 2026-10-16 | MRNA | BUY | $92.00 | $200.00 | 8/10 | Active | - | Why: Moderna’s mRNA platform is advancing beyond COVID‑19 into prophylactic vacc |
+| 2026-10-16 | BIP | BUY | $34.20 | $55.00 | 8/10 | Active | - | Why: BIP owns a diversified portfolio of regulated utilities, transport, data‑in |
+| 2026-10-16 | EEM | BUY | $48.60 | $68.00 | 6/10 | Active | - | Why: Emerging markets (EM) have lagged the U.S. for 18 months, but several catal |
