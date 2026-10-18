@@ -2077,3 +2077,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-16 | MRNA | BUY | $92.00 | $200.00 | 8/10 | Active | - | Why: Moderna’s mRNA platform is advancing beyond COVID‑19 into prophylactic vacc |
 | 2026-10-16 | BIP | BUY | $34.20 | $55.00 | 8/10 | Active | - | Why: BIP owns a diversified portfolio of regulated utilities, transport, data‑in |
 | 2026-10-16 | EEM | BUY | $48.60 | $68.00 | 6/10 | Active | - | Why: Emerging markets (EM) have lagged the U.S. for 18 months, but several catal |
+| 2026-10-18 | FCX | BUY | $45.00 | $3.00 | 8/10 | Active | - | Why: Freeport‑McMoRan is the world’s largest publicly traded copper miner; coppe |
+| 2026-10-18 | INFY | BUY | $20.20 | $25.00 | 7/10 | Active | - | Why: Infosys is India’s second‑largest IT services exporter, with >60% of revenu |
