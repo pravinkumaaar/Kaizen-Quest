@@ -2080,3 +2080,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-18 | FCX | BUY | $45.00 | $3.00 | 8/10 | Active | - | Why: Freeport‑McMoRan is the world’s largest publicly traded copper miner; coppe |
 | 2026-10-18 | INFY | BUY | $20.20 | $25.00 | 7/10 | Active | - | Why: Infosys is India’s second‑largest IT services exporter, with >60% of revenu |
 | 2026-10-19 | TICKER | BUY | $58.00 | N/A | 9/10 | Active | - | <unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk> |
+| 2026-10-19 | GLD | BUY | N/A | $460.00 | 7/10 | Active | - | Why: Gold remains the premier non‑correlated store of value when real‑rates are  |
+| 2026-10-19 | INDA | BUY | N/A | $58.00 | 8/10 | Active | - | Why: India’s structural growth story (digital infrastructure, manufacturing PLI, |
+| 2026-10-19 | BEAM | BUY | N/A | $28.00 | 9/10 | Active | - | Why: Beam Therapeutics is a leader in base‑editing, with its flagship program BE |
