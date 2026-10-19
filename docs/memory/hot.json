@@ -6,19 +6,6 @@
     "top_recommendations": [],
     "key_learnings": [],
     "portfolio_summary": {
-      "total_value": 239732.65243505998,
-      "top_holding": "",
-      "concentration": 71.33074571321576
-    },
-    "benchmarks": {}
-  },
-  {
-    "date": "2026-10-19",
-    "model": "free",
-    "rating": 0,
-    "top_recommendations": [],
-    "key_learnings": [],
-    "portfolio_summary": {
       "total_value": 239329.45243506,
       "top_holding": "",
       "concentration": 71.45091711869445
@@ -35,6 +22,19 @@
       "total_value": 249244.93003505995,
       "top_holding": "",
       "concentration": 71.61926502372197
+    },
+    "benchmarks": {}
+  },
+  {
+    "date": "2026-10-19",
+    "model": "free",
+    "rating": 0,
+    "top_recommendations": [],
+    "key_learnings": [],
+    "portfolio_summary": {
+      "total_value": 243530.48343506004,
+      "top_holding": "",
+      "concentration": 72.14923582527757
     },
     "benchmarks": {}
   }
