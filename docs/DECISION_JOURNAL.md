@@ -2083,3 +2083,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-19 | GLD | BUY | N/A | $460.00 | 7/10 | Active | - | Why: Gold remains the premier non‑correlated store of value when real‑rates are  |
 | 2026-10-19 | INDA | BUY | N/A | $58.00 | 8/10 | Active | - | Why: India’s structural growth story (digital infrastructure, manufacturing PLI, |
 | 2026-10-19 | BEAM | BUY | N/A | $28.00 | 9/10 | Active | - | Why: Beam Therapeutics is a leader in base‑editing, with its flagship program BE |
+| 2026-10-19 | TSM | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: TSM is the world’s leading semiconductor manufacturing services provider wi |
+| 2026-10-19 | COP | BUY | $85.00 | $125.00 | 8/10 | Active | - | Why: COP operates low‑breakeven upstream assets (~$40/barrel) and benefits from  |
+| 2026-10-19 | EEM | BUY | $68.00 | $85.00 | 7/10 | Active | - | Why: EEM tracks large‑cap EM equities and benefits from a macro rotation into em |
