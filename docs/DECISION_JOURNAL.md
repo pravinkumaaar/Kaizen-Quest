@@ -2093,3 +2093,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-20 | OSCR | BUY | $33.84 | $55.00 | 7/10 | Active | - | Why: Oscar Health (OSCR) combines insurance with digital health services, positi |
 | 2026-10-20 | GLD | BUY | $377.90 | N/A | 6/10 | Active | - | Why: Gold remains a trusted hedge against rising inflation and geopolitical risk |
 | 2026-10-20 | BAP | BUY | $25.59 | N/A | 6/10 | Active | - | Why: Bausch Health (BAP) is undergoing a strategic cost‑restructuring and pipeli |
+| 2026-10-20 | KLA | BUY | $500.00 | $630.00 | 9/10 | Active | - | Why: KLA provides essential metrology and inspection tools for advanced semicond |
+| 2026-10-20 | ASML | BUY | $710.00 | $860.00 | 9/10 | Active | - | Why: ASML is the sole supplier of EUV lithography systems, the only technology c |
