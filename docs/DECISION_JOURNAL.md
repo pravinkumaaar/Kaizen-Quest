@@ -2089,3 +2089,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-20 | COP | BUY | $78.00 | $124.00 | 9/10 | Active | - | Why: Deep research shows COP is undervalued relative to peers, has strong upstre |
 | 2026-10-20 | BILI | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: Deep research indicates BILI is positioned for accelerated user growth and  |
 | 2026-10-20 | CSCO | BUY | $55.00 | $78.00 | 8/10 | Active | - | Why: Deep research shows CSCO’s transition to a subscription model, strong cash  |
+| 2026-10-20 | WDC | BUY | $364.87 | $440.00 | 8/10 | Active | - | Why: Western Digital (WDC) is a leading provider of high‑performance flash stora |
+| 2026-10-20 | OSCR | BUY | $33.84 | $55.00 | 7/10 | Active | - | Why: Oscar Health (OSCR) combines insurance with digital health services, positi |
+| 2026-10-20 | GLD | BUY | $377.90 | N/A | 6/10 | Active | - | Why: Gold remains a trusted hedge against rising inflation and geopolitical risk |
+| 2026-10-20 | BAP | BUY | $25.59 | N/A | 6/10 | Active | - | Why: Bausch Health (BAP) is undergoing a strategic cost‑restructuring and pipeli |
