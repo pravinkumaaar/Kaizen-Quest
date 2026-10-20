@@ -1,12 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-.  
-
-- **Process improvement: enforce cash‑deployment rule:** Add an automated check that forces at least 20% of idle cash to be allocated to new high‑conviction ideas each month until cash falls below 30%, then rebalance to reach the 90% invested target.  
-
-- **Process improvement: add stop‑loss automation:** Auto‑generate trailing stop‑loss orders (15‑20%) for any position with conviction ≥8/10, and log the stop‑loss price in the recommendation table to ensure risk limits are respected.  
-
-- **Process improvement: enrich recommendation list with external opportunities:** Expand the recommendation engine to scan the broader universe (e.g., top‑gaining stocks, emerging AI firms) and surface new ideas that are not currently held, thereby reducing opportunity cost and addressing the “only portfolio stocks” limitation.  
+deas that are not currently held, thereby reducing opportunity cost and addressing the “only portfolio stocks” limitation.  
 
 - **Process improvement: implement top‑event column & dynamic rating:** Include a “top‑event” flag (price move >5%, earnings surprise, major news) and replace the blunt outlook score with a risk‑adjusted metric (Sharpe‑ratio weighted) plus scenario‑based confidence intervals for each recommendation.  
 
@@ -140,3 +134,9 @@ These concrete actions directly address the data staleness, cash inefficiency, c
 
 ## Run: 2026-10-20 10:04:41 ET
 - **What Worked – Learning & Teaching**: The learning section has been the most consistently praised feature. The user rated it highly for tying new market concepts (e.g., AI chip supply chains) to specific tickers like NVDA, and for the “teaching” tone that nudges them toward deeper understanding. The cross-domain analysis and brutally honest assessments (e.g
+
+## Run: 2026-10-20 12:38:29 ET
+# 🧠 AI Investment Agent Self-Reflection (2026-10-20)
+
+- ✅ **Learning section delivered highest user value**: Consistently rated 8.5–9.2/10 for tying AI chip supply chains, options mechanics, and macro themes to specific tickers (e.g., NVDA). The “teaching tone” that nudges deeper understanding while naming concrete companies is the single strongest feature; keep this structural approach intact.
+- ✅ **Options LEAP explanations with thesis rationale**: When data was current (e.g., the 2026-04-30 run), LEAP calls/puts with clear max-profit/loss diagrams, implied vol context, and time-decay education scored strongly. User specifically requested “why we arrived at what
