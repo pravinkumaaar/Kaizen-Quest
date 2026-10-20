@@ -2086,3 +2086,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-19 | TSM | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: TSM is the world’s leading semiconductor manufacturing services provider wi |
 | 2026-10-19 | COP | BUY | $85.00 | $125.00 | 8/10 | Active | - | Why: COP operates low‑breakeven upstream assets (~$40/barrel) and benefits from  |
 | 2026-10-19 | EEM | BUY | $68.00 | $85.00 | 7/10 | Active | - | Why: EEM tracks large‑cap EM equities and benefits from a macro rotation into em |
+| 2026-10-20 | COP | BUY | $78.00 | $124.00 | 9/10 | Active | - | Why: Deep research shows COP is undervalued relative to peers, has strong upstre |
+| 2026-10-20 | BILI | BUY | $30.00 | $55.00 | 8/10 | Active | - | Why: Deep research indicates BILI is positioned for accelerated user growth and  |
+| 2026-10-20 | CSCO | BUY | $55.00 | $78.00 | 8/10 | Active | - | Why: Deep research shows CSCO’s transition to a subscription model, strong cash  |
