@@ -2095,3 +2095,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-20 | BAP | BUY | $25.59 | N/A | 6/10 | Active | - | Why: Bausch Health (BAP) is undergoing a strategic cost‑restructuring and pipeli |
 | 2026-10-20 | KLA | BUY | $500.00 | $630.00 | 9/10 | Active | - | Why: KLA provides essential metrology and inspection tools for advanced semicond |
 | 2026-10-20 | ASML | BUY | $710.00 | $860.00 | 9/10 | Active | - | Why: ASML is the sole supplier of EUV lithography systems, the only technology c |
+| 2026-10-21 | COP | BUY | N/A | $115.00 | 9/10 | Active | - | THESIS: ConocoPhillips is undervalued relative to its cash‑flow yield and divide |
+| 2026-10-21 | CRWD | BUY | N/A | $420.00 | 8/10 | Active | - | THESIS: CrowdStrike’s market‑leading cloud‑native endpoint security platform, ac |
+| 2026-10-21 | SLV | BUY | N/A | N/A | 7/10 | Active | - | THESIS: Silver is poised for a breakout driven by a confluence of industrial dem |
