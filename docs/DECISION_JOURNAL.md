@@ -2098,3 +2098,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-21 | COP | BUY | N/A | $115.00 | 9/10 | Active | - | THESIS: ConocoPhillips is undervalued relative to its cash‑flow yield and divide |
 | 2026-10-21 | CRWD | BUY | N/A | $420.00 | 8/10 | Active | - | THESIS: CrowdStrike’s market‑leading cloud‑native endpoint security platform, ac |
 | 2026-10-21 | SLV | BUY | N/A | N/A | 7/10 | Active | - | THESIS: Silver is poised for a breakout driven by a confluence of industrial dem |
+| 2026-10-22 | BILI | BUY | $25.00 | N/A | 9/10 | Active | - | Why: BILI is a leading Chinese video platform with robust growth in digital adve |
+| 2026-10-22 | NTES | BUY | $70.00 | N/A | 8/10 | Active | - | Why: NTES demonstrates strong top‑line growth and expanding margins, with a high |
+| 2026-10-22 | AFYA | BUY | $12.00 | N/A | 8/10 | Active | - | Why: AFYA benefits from Brazil’s demographic tailwinds and expanding health‑care |
