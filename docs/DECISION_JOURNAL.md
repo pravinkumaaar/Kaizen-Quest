@@ -2101,3 +2101,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-22 | BILI | BUY | $25.00 | N/A | 9/10 | Active | - | Why: BILI is a leading Chinese video platform with robust growth in digital adve |
 | 2026-10-22 | NTES | BUY | $70.00 | N/A | 8/10 | Active | - | Why: NTES demonstrates strong top‑line growth and expanding margins, with a high |
 | 2026-10-22 | AFYA | BUY | $12.00 | N/A | 8/10 | Active | - | Why: AFYA benefits from Brazil’s demographic tailwinds and expanding health‑care |
+| 2026-10-22 | AMAT | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Applied Materials supplies the essential equipment for AI‑driven semiconduc |
+| 2026-10-22 | FICO | BUY | $350.00 | $525.00 | 8/10 | Active | - | Why: FICO dominates credit scoring and data analytics with massive transaction v |
+| 2026-10-22 | DLO | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Datadog’s leading observability platform is positioned to capture the fast‑ |
