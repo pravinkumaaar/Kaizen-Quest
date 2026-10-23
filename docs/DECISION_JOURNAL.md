@@ -2111,3 +2111,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-23 | KKR | BUY | N/A | $105.00 | 5/10 | Active | - | Thesis: KKR’s strong private‑equity fundamentals and an expected earnings beat o |
 | 2026-10-23 | PANW | BUY | N/A | N/A | 5/10 | Active | - | Thesis: PANW’s transition to cloud‑native security and strong recurring revenue  |
 | 2026-10-23 | NTES | BUY | N/A | $250.00 | 5/10 | Active | - | Thesis: NTES’s massive revenue base and an anticipated earnings beat on Nov 12 s |
+| 2026-10-23 | BAP | BUY | $30.00 | $48.00 | 9/10 | Active | - | Why: Banco do Brasil (BAP) is a leading state‑owned Brazilian bank with strong c |
+| 2026-10-23 | AFYA | BUY | $15.20 | $28.00 | 8/10 | Active | - | Why: Afya Ltd is a fast‑growing Brazilian health‑care platform that leverages di |
+| 2026-10-23 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold remains a potent inflation hedge and safe‑haven asset amid persistent  |
