@@ -2104,3 +2104,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-22 | AMAT | BUY | $150.00 | $210.00 | 9/10 | Active | - | Why: Applied Materials supplies the essential equipment for AI‑driven semiconduc |
 | 2026-10-22 | FICO | BUY | $350.00 | $525.00 | 8/10 | Active | - | Why: FICO dominates credit scoring and data analytics with massive transaction v |
 | 2026-10-22 | DLO | BUY | $150.00 | $210.00 | 8/10 | Active | - | Why: Datadog’s leading observability platform is positioned to capture the fast‑ |
+| 2026-10-23 | MU | BUY | $856.49 | N/A | 8/10 | Active | - | Why: Micron is positioned to benefit from the cyclical recovery in memory chip p |
+| 2026-10-23 | EEM | BUY | $49.34 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued relative to US equities, with attractive v |
+| 2026-10-23 | PLTR | BUY | $196.19 | N/A | 9/10 | Active | - | Why: While PLTR has been a top performer (+213%), its concentration in the portf |
+| 2026-10-23 | PANW | BUY | $269.01 | N/A | 7/10 | Active | - | Why: PANW’s recent pullback (-11.69%) provides an entry point into a leader in c |
