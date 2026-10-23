@@ -2108,3 +2108,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-23 | EEM | BUY | $49.34 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued relative to US equities, with attractive v |
 | 2026-10-23 | PLTR | BUY | $196.19 | N/A | 9/10 | Active | - | Why: While PLTR has been a top performer (+213%), its concentration in the portf |
 | 2026-10-23 | PANW | BUY | $269.01 | N/A | 7/10 | Active | - | Why: PANW’s recent pullback (-11.69%) provides an entry point into a leader in c |
+| 2026-10-23 | KKR | BUY | N/A | $105.00 | 5/10 | Active | - | Thesis: KKR’s strong private‑equity fundamentals and an expected earnings beat o |
+| 2026-10-23 | PANW | BUY | N/A | N/A | 5/10 | Active | - | Thesis: PANW’s transition to cloud‑native security and strong recurring revenue  |
+| 2026-10-23 | NTES | BUY | N/A | $250.00 | 5/10 | Active | - | Thesis: NTES’s massive revenue base and an anticipated earnings beat on Nov 12 s |
