@@ -2114,3 +2114,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-23 | BAP | BUY | $30.00 | $48.00 | 9/10 | Active | - | Why: Banco do Brasil (BAP) is a leading state‑owned Brazilian bank with strong c |
 | 2026-10-23 | AFYA | BUY | $15.20 | $28.00 | 8/10 | Active | - | Why: Afya Ltd is a fast‑growing Brazilian health‑care platform that leverages di |
 | 2026-10-23 | GLD | BUY | $200.00 | $260.00 | 7/10 | Active | - | Why: Gold remains a potent inflation hedge and safe‑haven asset amid persistent  |
+| 2026-10-24 | PLTR | BUY | $196.75 | $20.00 | 9/10 | Active | - | Why: Palantir Technologies has been a stellar performer (+214%) but now represen |
+| 2026-10-24 | MU | BUY | $877.55 | $1100.00 | 8/10 | Active | - | Why: Micron is poised to benefit from AI-driven HBM demand (+175% expected in 20 |
+| 2026-10-24 | SE | BUY | $59.20 | $90.00 | 7/10 | Active | - | Why: Sea Limited dominates Southeast Asia digital economy (400M users) while tra |
