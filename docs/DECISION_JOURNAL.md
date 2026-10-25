@@ -2117,3 +2117,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-24 | PLTR | BUY | $196.75 | $20.00 | 9/10 | Active | - | Why: Palantir Technologies has been a stellar performer (+214%) but now represen |
 | 2026-10-24 | MU | BUY | $877.55 | $1100.00 | 8/10 | Active | - | Why: Micron is poised to benefit from AI-driven HBM demand (+175% expected in 20 |
 | 2026-10-24 | SE | BUY | $59.20 | $90.00 | 7/10 | Active | - | Why: Sea Limited dominates Southeast Asia digital economy (400M users) while tra |
+| 2026-10-25 | ASML | BUY | $750.00 | N/A | 8/10 | Active | - | Why: ASML dominates the EUV lithography market ( >70% share) – the only viable t |
+| 2026-10-25 | NIO | BUY | $10.00 | N/A | 7/10 | Active | - | Why: NIO is a premium Chinese EV maker with a differentiated battery‑swap model, |
+| 2026-10-25 | BAM | BUY | $60.00 | N/A | 7/10 | Active | - | Why: BAM is a diversified alternative‑asset manager with a defensive profile, hi |
+| 2026-10-25 | EEM | BUY | $38.00 | N/A | 7/10 | Active | - | Why: EEM offers diversified exposure to fast‑growing emerging‑market equities, p |
