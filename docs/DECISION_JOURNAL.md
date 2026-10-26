@@ -2121,3 +2121,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-25 | NIO | BUY | $10.00 | N/A | 7/10 | Active | - | Why: NIO is a premium Chinese EV maker with a differentiated battery‑swap model, |
 | 2026-10-25 | BAM | BUY | $60.00 | N/A | 7/10 | Active | - | Why: BAM is a diversified alternative‑asset manager with a defensive profile, hi |
 | 2026-10-25 | EEM | BUY | $38.00 | N/A | 7/10 | Active | - | Why: EEM offers diversified exposure to fast‑growing emerging‑market equities, p |
+| 2026-10-26 | TICKER | BUY | N/A | $12216.00 | 9/10 | Active | - | THESIS: Applied Materials is positioned to capture the AI‑driven semiconductor e |
+| 2026-10-26 | TICKER | BUY | N/A | $17083.00 | 8/10 | Active | - | THESIS: Futu’s rapid user growth in Chinese online education and fintech, combin |
+| 2026-10-26 | TICKER | BUY | N/A | $14659.00 | 8/10 | Active | - | THESIS: PDD’s dominant position in China’s online marketplace and expanding logi |
