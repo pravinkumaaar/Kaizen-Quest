@@ -2124,3 +2124,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-26 | TICKER | BUY | N/A | $12216.00 | 9/10 | Active | - | THESIS: Applied Materials is positioned to capture the AI‑driven semiconductor e |
 | 2026-10-26 | TICKER | BUY | N/A | $17083.00 | 8/10 | Active | - | THESIS: Futu’s rapid user growth in Chinese online education and fintech, combin |
 | 2026-10-26 | TICKER | BUY | N/A | $14659.00 | 8/10 | Active | - | THESIS: PDD’s dominant position in China’s online marketplace and expanding logi |
+| 2026-10-27 | AMD | BUY | $115.00 | $170.00 | 8/10 | Active | - | Why: Deep‑research shows AMD is positioned to capture a growing share of the AI‑ |
