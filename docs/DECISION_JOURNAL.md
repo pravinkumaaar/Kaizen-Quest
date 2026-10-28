@@ -2134,3 +2134,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-28 | PLTR | BUY | $198.73 | N/A | 8/10 | Active | - | Why: Palantir's AI governance platform is becoming the OS for large institutions |
 | 2026-10-28 | ONON | BUY | $218.50 | N/A | 8/10 | Active | - | Why: On Holding AG is taking share from Nike/Adidas with premium performance-tec |
 | 2026-10-28 | ASTS | BUY | $41.96 | N/A | 7/10 | Active | - | Why: AST SpaceMobile's upcoming Nov 16 earnings could show progress on global co |
+| 2026-10-28 | RR | BUY | $1.05 | N/A | 7/10 | Active | - | Why: Asymmetric play on AI-powered robotics adoption in manufacturing and logist |
+| 2026-10-28 | SLV | BUY | $48.51 | N/A | 8/10 | Active | - | Why: Silver's dual role as monetary metal and industrial commodity positions it  |
+| 2026-10-28 | PLTR | BUY | $194.55 | N/A | 6/10 | Active | - | Why: Lock in 210% gains while maintaining core exposure to government AI contrac |
