@@ -2125,3 +2125,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-26 | TICKER | BUY | N/A | $17083.00 | 8/10 | Active | - | THESIS: Futu’s rapid user growth in Chinese online education and fintech, combin |
 | 2026-10-26 | TICKER | BUY | N/A | $14659.00 | 8/10 | Active | - | THESIS: PDD’s dominant position in China’s online marketplace and expanding logi |
 | 2026-10-27 | AMD | BUY | $115.00 | $170.00 | 8/10 | Active | - | Why: Deep‑research shows AMD is positioned to capture a growing share of the AI‑ |
+| 2026-10-28 | TICKER | BUY | $95.00 | $150.00 | 9/10 | Active | - | FUTU - High-growth Chinese online brokerage poised to benefit from expanding ret |
+| 2026-10-28 | TICKER | BUY | $55.00 | $80.00 | 8/10 | Active | - | LKNCY - Luckin Coffee is scaling rapidly in China's coffee market with strong sa |
+| 2026-10-28 | TICKER | BUY | $12.00 | $22.00 | 8/10 | Active | - | PAGS - PagSeguro Digital is positioned to capture Brazil's growing digital payme |
+| 2026-10-28 | TICKER | BUY | $38.00 | $55.00 | 7/10 | Active | - | FCX - Freeport‑McMoRan is leveraged to rising copper prices driven by AI and EV  |
+| 2026-10-28 | TICKER | BUY | $95.00 | $150.00 | 9/10 | Active | - | FUTU - High-growth Chinese online brokerage... |
+| 2026-10-28 | FUTU | BUY | $95.00 | $150.00 | 9/10 | Active | - | Why: ... |
