@@ -2142,3 +2142,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-28 | NVDA | BUY | $217.17 | N/A | 8/10 | Active | - | Why: NVDA is overweight in the portfolio (12.9%) and faces potential earnings vo |
 | 2026-10-28 | GLD | BUY | $370.23 | N/A | 7/10 | Active | - | Why: Gold serves as a hedge against inflation and geopolitical risks, with centr |
 | 2026-10-28 | PLTR | BUY | $194.16 | N/A | 9/10 | Active | - | Why: PLTR remains a best-in-class big data AI platform but is massively overweig |
+| 2026-10-28 | LKNCY | BUY | $6.45 | $12.00 | 9/10 | Active | - | Why: LKNCY is a diversified auto‑parts manufacturer with robust free cash flow,  |
+| 2026-10-28 | FUTU | BUY | $23.00 | $35.00 | 8/10 | Active | - | Why: FUTU exhibits rapid revenue acceleration, rising institutional backing, and |
+| 2026-10-28 | GLOB | BUY | $70.00 | $120.00 | 8/10 | Active | - | Why: GLOB generates strong cash flow, has a DCF‑derived upside of ~70%, and is p |
+| 2026-10-28 | BILI | BUY | $150.00 | $280.00 | 8/10 | Active | - | Why: BILI shows strong subscriber expansion, robust revenue growth, and an upcom |
