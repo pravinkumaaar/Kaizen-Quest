@@ -2131,3 +2131,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-28 | TICKER | BUY | $38.00 | $55.00 | 7/10 | Active | - | FCX - Freeport‑McMoRan is leveraged to rising copper prices driven by AI and EV  |
 | 2026-10-28 | TICKER | BUY | $95.00 | $150.00 | 9/10 | Active | - | FUTU - High-growth Chinese online brokerage... |
 | 2026-10-28 | FUTU | BUY | $95.00 | $150.00 | 9/10 | Active | - | Why: ... |
+| 2026-10-28 | PLTR | BUY | $198.73 | N/A | 8/10 | Active | - | Why: Palantir's AI governance platform is becoming the OS for large institutions |
+| 2026-10-28 | ONON | BUY | $218.50 | N/A | 8/10 | Active | - | Why: On Holding AG is taking share from Nike/Adidas with premium performance-tec |
+| 2026-10-28 | ASTS | BUY | $41.96 | N/A | 7/10 | Active | - | Why: AST SpaceMobile's upcoming Nov 16 earnings could show progress on global co |
