@@ -2146,3 +2146,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-28 | FUTU | BUY | $23.00 | $35.00 | 8/10 | Active | - | Why: FUTU exhibits rapid revenue acceleration, rising institutional backing, and |
 | 2026-10-28 | GLOB | BUY | $70.00 | $120.00 | 8/10 | Active | - | Why: GLOB generates strong cash flow, has a DCF‑derived upside of ~70%, and is p |
 | 2026-10-28 | BILI | BUY | $150.00 | $280.00 | 8/10 | Active | - | Why: BILI shows strong subscriber expansion, robust revenue growth, and an upcom |
+| 2026-10-29 | PLTR | BUY | $196.81 | N/A | 9/10 | Active | - | Why: Palantir Technologies (PLTR) has been a stellar performer in your portfolio |
+| 2026-10-29 | NBIS | BUY | $182.34 | N/A | 8/10 | Active | - | Why: NBI Systems (NBIS) has been a top performer (+241.8%), leveraging its leade |
+| 2026-10-29 | WMT | BUY | $189.20 | N/A | 8/10 | Active | - | Why: Walmart (WMT) is a defensive play with low earnings risk coming up in 21 da |
+| 2026-10-29 | MU | BUY | $983.23 | N/A | 7/10 | Active | - | Why: Micron Technology (MU) has rallied sharply (+159.5%) but faces cyclical hea |
+| 2026-10-29 | EWW | BUY | $49.06 | N/A | 7/10 | Active | - | Why: iShares MSCI Mexico ETF (EWW) provides exposure to Mexico's economy, which  |
