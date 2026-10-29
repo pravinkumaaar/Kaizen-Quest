@@ -2159,3 +2159,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-29 | PLTR | BUY | $195.07 | N/A | 6/10 | Active | - | Why: PLTR (Palantir Technologies) has been a top performer but now constitutes o |
 | 2026-10-29 | SOFI | BUY | $18.32 | N/A | 7/10 | Active | - | Why: SOFI (SoFi Technologies) has strong growth momentum and upcoming earnings c |
 | 2026-10-29 | NVDA | BUY | $213.97 | N/A | 7/10 | Active | - | Why: NVDA (NVIDIA Corporation) is a strong performer with upcoming earnings. The |
+| 2026-10-29 | PLTR | BUY | $196.42 | N/A | 9/10 | Active | - | THESIS: A 40.8% single-stock position in a 73x forward earnings, government-depe |
+| 2026-10-29 | NVDA | BUY | $6.50 | $14.00 | 8/10 | Active | - | THESIS: NVDA reports in 19 days with Blackwell ramp, sovereign AI demand, and Ch |
+| 2026-10-29 | RKLB | BUY | $59.10 | $95.00 | 8/10 | Active | - | THESIS: Electron cash-flow positive + Neutron debut (mid-2025) + Space Systems m |
+| 2026-10-29 | INDA | BUY | $58.20 | $75.00 | 7/10 | Active | - | THESIS: India is the only major economy with 7%+ GDP growth, demographic dividen |
