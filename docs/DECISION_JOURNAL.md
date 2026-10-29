@@ -2151,3 +2151,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-29 | WMT | BUY | $189.20 | N/A | 8/10 | Active | - | Why: Walmart (WMT) is a defensive play with low earnings risk coming up in 21 da |
 | 2026-10-29 | MU | BUY | $983.23 | N/A | 7/10 | Active | - | Why: Micron Technology (MU) has rallied sharply (+159.5%) but faces cyclical hea |
 | 2026-10-29 | EWW | BUY | $49.06 | N/A | 7/10 | Active | - | Why: iShares MSCI Mexico ETF (EWW) provides exposure to Mexico's economy, which  |
+| 2026-10-29 | PANW | BUY | $350.00 | $550.00 | 9/10 | Active | - | Why: Deep‑research DCF valuation shows a fair value of $420, implying ~20% upsid |
+| 2026-10-29 | FCX | BUY | $38.00 | $65.00 | 8/10 | Active | - | Why: DCF models estimate intrinsic value $52, implying ~37% upside; free‑cash‑fl |
+| 2026-10-29 | AMD | BUY | $150.00 | $260.00 | 9/10 | Active | - | Why: DCF valuation yields an intrinsic price of $210, implying ~40% upside; AMD’ |
