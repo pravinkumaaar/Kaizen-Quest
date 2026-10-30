@@ -2163,3 +2163,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-29 | NVDA | BUY | $6.50 | $14.00 | 8/10 | Active | - | THESIS: NVDA reports in 19 days with Blackwell ramp, sovereign AI demand, and Ch |
 | 2026-10-29 | RKLB | BUY | $59.10 | $95.00 | 8/10 | Active | - | THESIS: Electron cash-flow positive + Neutron debut (mid-2025) + Space Systems m |
 | 2026-10-29 | INDA | BUY | $58.20 | $75.00 | 7/10 | Active | - | THESIS: India is the only major economy with 7%+ GDP growth, demographic dividen |
+| 2026-10-30 | CSCO | BUY | $20.37 | N/A | 8/10 | Active | - | Why: Cloud/AI networking demand surge + 4.3% dividend + earnings beat potential  |
+| 2026-10-30 | OCUP | BUY | $4.29 | N/A | 9/10 | Active | - | Why: November 16th FDA decision on Nyxol for presbyopia (peak sales $750M) with  |
+| 2026-10-30 | PLTR | BUY | $196.42 | N/A | 7/10 | Active | - | Why: 40% portfolio weighting excessive after 213% run. Recommend trimming 1/3 po |
