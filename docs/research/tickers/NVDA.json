@@ -1,8 +1,8 @@
 {
   "ticker": "NVDA",
   "first_researched": "2026-05-22T13:54:38.930823",
-  "last_researched": "2026-10-30T05:24:13.059207",
-  "research_count": 274,
+  "last_researched": "2026-10-30T19:19:41.120069",
+  "research_count": 275,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 213.66,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-10-30T05:24:13.059207"
+      "last_verified": "2026-10-30T19:19:41.120069"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-10-30T05:24:13.059207"
+      "last_verified": "2026-10-30T19:19:41.120069"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-10-30T05:24:13.059207"
+      "last_verified": "2026-10-30T19:19:41.120069"
     }
   ],
   "facts": [
@@ -950,41 +950,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "NVDA",
-    "timestamp": "2026-10-30 05:23:40",
+    "timestamp": "2026-10-30 19:19:03",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "analyst_estimates",
-    "macro_rotation",
-    "industry_pe",
-    "price_target",
-    "sector_performance",
-    "cashflow",
     "financial_ratios",
     "competitive_landscape",
-    "market_sentiment",
-    "risk_assessment",
-    "insider_sentiment",
-    "sector_rotation",
-    "institutional",
-    "balance_sheet",
-    "insider_trades_contrarian",
-    "earnings_momentum",
     "supply_chain",
-    "congressional",
-    "valuation_multiples",
-    "technical_indicators",
-    "comps_analysis",
+    "treasury_rates",
+    "sector_rotation",
     "insider_trades",
-    "earnings_history",
-    "recommendation_trends",
-    "esg",
+    "risk_assessment",
+    "sector_performance",
+    "comps_analysis",
     "aggregate_indicators",
-    "income_statement",
-    "dcf",
+    "institutional",
+    "market_sentiment",
+    "earnings_momentum",
+    "cashflow",
+    "recommendation_trends",
+    "valuation_multiples",
     "negative_news",
-    "treasury_rates"
+    "insider_sentiment",
+    "earnings_history",
+    "esg",
+    "technical_indicators",
+    "insider_trades_contrarian",
+    "congressional",
+    "industry_pe",
+    "balance_sheet",
+    "dcf",
+    "price_target",
+    "analyst_estimates",
+    "macro_rotation",
+    "income_statement"
   ],
   "research_gaps": [],
   "contrarian_signals": []

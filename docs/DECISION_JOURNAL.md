@@ -2166,3 +2166,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-30 | CSCO | BUY | $20.37 | N/A | 8/10 | Active | - | Why: Cloud/AI networking demand surge + 4.3% dividend + earnings beat potential  |
 | 2026-10-30 | OCUP | BUY | $4.29 | N/A | 9/10 | Active | - | Why: November 16th FDA decision on Nyxol for presbyopia (peak sales $750M) with  |
 | 2026-10-30 | PLTR | BUY | $196.42 | N/A | 7/10 | Active | - | Why: 40% portfolio weighting excessive after 213% run. Recommend trimming 1/3 po |
+| 2026-10-30 | ZIM | BUY | N/A | N/A | 9/10 | Active | - | Why: ZIM is a pure‑play container shipper that has seen freight rates rebound >3 |
+| 2026-10-30 | FUTU | BUY | N/A | N/A | 9/10 | Active | - | Why: FUTU operates a scalable SaaS platform that has captured >30% market share  |
+| 2026-10-30 | GLBE | BUY | N/A | N/A | 8/10 | Active | - | Why: GLBE delivers end‑to‑end digital transformation, cloud migration, and AI‑en |
