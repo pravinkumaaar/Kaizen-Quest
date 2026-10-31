@@ -2170,3 +2170,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-30 | FUTU | BUY | N/A | N/A | 9/10 | Active | - | Why: FUTU operates a scalable SaaS platform that has captured >30% market share  |
 | 2026-10-30 | GLBE | BUY | N/A | N/A | 8/10 | Active | - | Why: GLBE delivers end‑to‑end digital transformation, cloud migration, and AI‑en |
 | 2026-10-31 | SNDK | BUY | N/A | $180.00 | 5/10 | Active | - | Why: Skyworks Solutions (SNDK) supplies high‑performance RF and mixed‑signal dev |
+| 2026-10-31 | NVDA | BUY | $204.64 | N/A | 8/10 | Active | - | Why: NVIDIA (NVDA) has earnings in 17 days with EPS estimates at $2.53 and reven |
+| 2026-10-31 | GLD | BUY | $355.78 | N/A | 7/10 | Active | - | Why: Gold (GLD) is down -3.47% today but remains a strong hedge against inflatio |
+| 2026-10-31 | EEM | BUY | $47.21 | N/A | 7/10 | Active | - | Why: Emerging markets (EEM) are undervalued relative to US equities and offer di |
+| 2026-10-31 | PLTR | BUY | $184.11 | N/A | 8/10 | Active | - | Why: Palantir (PLTR) is +193.8% in your portfolio, now 40.4% of total holdings.  |
+| 2026-10-31 | HIMS | BUY | $16.76 | N/A | 6/10 | Active | - | Why: Hims & Hers Health (HIMS) is down -32.9% in your portfolio. Despite a solid |
