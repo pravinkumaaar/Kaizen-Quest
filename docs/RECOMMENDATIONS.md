@@ -3,11 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NVDA** | $204.64 | TBD | 8/10 |  Active  |  $204.64  |  +0.0%  | Swing 2-8wk | Watchlist |
-| 2 | **GLD** | $355.78 | TBD | 7/10 |  Active  |  $355.78  |  +0.0%  | Medium 3-12mo | Watchlist |
-| 3 | **EEM** | $47.21 | TBD | 7/10 |  Active  |  $47.21  |  +0.0%  | Medium 3-12mo | Watchlist |
-| 4 | **PLTR** | $184.11 | TBD | 8/10 |  Active  |  $184.11  |  +0.0%  | Immediate | Watchlist |
-| 5 | **HIMS** | $16.76 | TBD | 6/10 |  Active  |  $16.76  |  +0.0%  | Immediate | Watchlist |
+| 1 | **PLTR** | $184.11 | TBD | 9/10 |  Active  |  $184.11  |  +0.0%  | Immediate (risk management) | Watchlist |
+| 2 | **GLD** | Market | $310.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6-18 months | Watchlist |
+| 3 | **CSCO** | Market | $72.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing 2-8 weeks (earnings catalyst) → Medium if guide raised | Watchlist |
+| 4 | **HIMS** | $27.68 | TBD | 8/10 |  Active  |  $27.68  |  +0.0%  | Immediate | Watchlist |
+| 5 | **INDA** | Market | $70.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Long 1-3 years | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

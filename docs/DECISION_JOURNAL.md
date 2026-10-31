@@ -2175,3 +2175,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-31 | EEM | BUY | $47.21 | N/A | 7/10 | Active | - | Why: Emerging markets (EEM) are undervalued relative to US equities and offer di |
 | 2026-10-31 | PLTR | BUY | $184.11 | N/A | 8/10 | Active | - | Why: Palantir (PLTR) is +193.8% in your portfolio, now 40.4% of total holdings.  |
 | 2026-10-31 | HIMS | BUY | $16.76 | N/A | 6/10 | Active | - | Why: Hims & Hers Health (HIMS) is down -32.9% in your portfolio. Despite a solid |
+| 2026-10-31 | PLTR | BUY | $184.11 | N/A | 9/10 | Active | - | Why: PLTR at 40.3% of portfolio violates every risk management principle. A sing |
+| 2026-10-31 | GLD | BUY | N/A | $310.00 | 7/10 | Active | - | Why: Portfolio has 0% precious metals exposure. SLV down 5.67% today — oversold. |
+| 2026-10-31 | CSCO | BUY | N/A | $72.00 | 7/10 | Active | - | Why: The "picks and shovels" of AI networking. CSCO owns the ethernet switching/ |
+| 2026-10-31 | HIMS | BUY | $27.68 | N/A | 8/10 | Active | - | Why: Down 33% from cost, 1.4% of portfolio. Earnings Nov 9 (9 days) — binary eve |
+| 2026-10-31 | INDA | BUY | N/A | $70.00 | 6/10 | Active | - | Why: India is the only major economy with: (1) demographics tailwind (median age |
