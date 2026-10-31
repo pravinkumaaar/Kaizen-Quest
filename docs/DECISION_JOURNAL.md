@@ -2169,3 +2169,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-30 | ZIM | BUY | N/A | N/A | 9/10 | Active | - | Why: ZIM is a pure‑play container shipper that has seen freight rates rebound >3 |
 | 2026-10-30 | FUTU | BUY | N/A | N/A | 9/10 | Active | - | Why: FUTU operates a scalable SaaS platform that has captured >30% market share  |
 | 2026-10-30 | GLBE | BUY | N/A | N/A | 8/10 | Active | - | Why: GLBE delivers end‑to‑end digital transformation, cloud migration, and AI‑en |
+| 2026-10-31 | SNDK | BUY | N/A | $180.00 | 5/10 | Active | - | Why: Skyworks Solutions (SNDK) supplies high‑performance RF and mixed‑signal dev |
