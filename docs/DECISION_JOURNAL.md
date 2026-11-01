@@ -2182,3 +2182,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-31 | INDA | BUY | N/A | $70.00 | 6/10 | Active | - | Why: India is the only major economy with: (1) demographics tailwind (median age |
 | 2026-11-01 | AMAT | BUY | $115.00 | $165.00 | 9/10 | Active | - | Why: Applied Materials is the world’s leading supplier of semiconductor manufact |
 | 2026-11-01 | LSCC | BUY | $15.00 | $28.00 | 8/10 | Active | - | Why: Lattice Semiconductor supplies low‑power FPGA and ASIC solutions for AI edg |
+| 2026-11-01 | NVDA | BUY | $204.64 | N/A | 8/10 | Active | - | Why: NVIDIA continues to dominate the AI and GPU markets with strong earnings gr |
+| 2026-11-01 | PLTR | BUY | $184.11 | N/A | 7/10 | Active | - | Why: Palantir's government and enterprise AI platforms drive strong revenue grow |
+| 2026-11-01 | MU | BUY | $884.74 | N/A | 8/10 | Active | - | Why: Micron benefits from strong memory chip demand driven by AI and data center |
+| 2026-11-01 | GLBE | BUY | $319.00 | N/A | 7/10 | Active | - | Why: Global-e is a leader in cross-border e-commerce solutions with strong growt |
+| 2026-11-01 | GLD | BUY | $150.00 | N/A | 7/10 | Active | - | Why: Gold serves as a hedge against inflation and economic uncertainty. |

@@ -3,8 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **AMAT** | $115.00 | $165.00 | 9/10 |  Active  |  $115.00  |  +0.0%  | Medium‑term 3‑6 months (post‑earnings to next guidance). | Watchlist |
-| 2 | **LSCC** | $15.00 | $28.00 | 8/10 |  Active  |  $15.00  |  +0.0%  | Short‑medium 4‑8 weeks (around the 8‑day earnings window). | Watchlist |
+| 1 | **NVDA** | $204.64 | TBD | 8/10 |  Active  |  $204.64  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 2 | **PLTR** | $184.11 | TBD | 7/10 |  Active  |  $184.11  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 3 | **MU** | $884.74 | TBD | 8/10 |  Active  |  $884.74  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 4 | **GLBE** | $319.00 | TBD | 7/10 |  Active  |  $319.00  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 5 | **GLD** | $150.00 | TBD | 7/10 |  Active  |  $150.00  |  +0.0%  | Medium 3-12mo | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
@@ -19,10 +22,10 @@
 
 
 ## 🏦 Alpaca Holdings (Actual Positions)
-- 2026-10-31 | AVGO | $390.80 | 20 | 8/10 | Active | $326.08 | -16.56% | Long-term (Alpaca)
-- 2026-10-31 | MU | $651.61 | 7 | 8/10 | Active | $884.74 | +35.78% | Long-term (Alpaca)
-- 2026-10-31 | NVDA | $207.14 | 38 | 8/10 | Active | $204.64 | -1.21% | Long-term (Alpaca)
-- 2026-10-31 | PLTR | $139.47 | 57 | 8/10 | Active | $184.11 | +32.01% | Long-term (Alpaca)
-- 2026-10-31 | SOFI | $16.29 | 306 | 8/10 | Active | $16.76 | +2.89% | Long-term (Alpaca)
-- 2026-10-31 | TEM | $50.22 | 99 | 8/10 | Active | $72.22 | +43.81% | Long-term (Alpaca)
-- 2026-10-31 | VRT | $348.38 | 28 | 8/10 | Active | $232.50 | -33.26% | Long-term (Alpaca)
+- 2026-11-01 | AVGO | $390.80 | 20 | 8/10 | Active | $326.08 | -16.56% | Long-term (Alpaca)
+- 2026-11-01 | MU | $651.61 | 7 | 8/10 | Active | $884.74 | +35.78% | Long-term (Alpaca)
+- 2026-11-01 | NVDA | $207.14 | 38 | 8/10 | Active | $204.64 | -1.21% | Long-term (Alpaca)
+- 2026-11-01 | PLTR | $139.47 | 57 | 8/10 | Active | $184.11 | +32.01% | Long-term (Alpaca)
+- 2026-11-01 | SOFI | $16.29 | 306 | 8/10 | Active | $16.76 | +2.89% | Long-term (Alpaca)
+- 2026-11-01 | TEM | $50.22 | 99 | 8/10 | Active | $72.22 | +43.81% | Long-term (Alpaca)
+- 2026-11-01 | VRT | $348.38 | 28 | 8/10 | Active | $232.50 | -33.26% | Long-term (Alpaca)
