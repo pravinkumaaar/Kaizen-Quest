@@ -3,11 +3,8 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $184.11 | TBD | 9/10 |  Active  |  $184.11  |  +0.0%  | Immediate (risk management) | Watchlist |
-| 2 | **GLD** | Market | $310.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6-18 months | Watchlist |
-| 3 | **CSCO** | Market | $72.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Swing 2-8 weeks (earnings catalyst) → Medium if guide raised | Watchlist |
-| 4 | **HIMS** | $27.68 | TBD | 8/10 |  Active  |  $27.68  |  +0.0%  | Immediate | Watchlist |
-| 5 | **INDA** | Market | $70.00 | 6/10 |  Active  |  Fetching...  |  +0.0%  | Long 1-3 years | Watchlist |
+| 1 | **AMAT** | $115.00 | $165.00 | 9/10 |  Active  |  $115.00  |  +0.0%  | Medium‑term 3‑6 months (post‑earnings to next guidance). | Watchlist |
+| 2 | **LSCC** | $15.00 | $28.00 | 8/10 |  Active  |  $15.00  |  +0.0%  | Short‑medium 4‑8 weeks (around the 8‑day earnings window). | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

@@ -2180,3 +2180,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-10-31 | CSCO | BUY | N/A | $72.00 | 7/10 | Active | - | Why: The "picks and shovels" of AI networking. CSCO owns the ethernet switching/ |
 | 2026-10-31 | HIMS | BUY | $27.68 | N/A | 8/10 | Active | - | Why: Down 33% from cost, 1.4% of portfolio. Earnings Nov 9 (9 days) — binary eve |
 | 2026-10-31 | INDA | BUY | N/A | $70.00 | 6/10 | Active | - | Why: India is the only major economy with: (1) demographics tailwind (median age |
+| 2026-11-01 | AMAT | BUY | $115.00 | $165.00 | 9/10 | Active | - | Why: Applied Materials is the world’s leading supplier of semiconductor manufact |
+| 2026-11-01 | LSCC | BUY | $15.00 | $28.00 | 8/10 | Active | - | Why: Lattice Semiconductor supplies low‑power FPGA and ASIC solutions for AI edg |
