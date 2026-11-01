@@ -2187,3 +2187,4 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-01 | MU | BUY | $884.74 | N/A | 8/10 | Active | - | Why: Micron benefits from strong memory chip demand driven by AI and data center |
 | 2026-11-01 | GLBE | BUY | $319.00 | N/A | 7/10 | Active | - | Why: Global-e is a leader in cross-border e-commerce solutions with strong growt |
 | 2026-11-01 | GLD | BUY | $150.00 | N/A | 7/10 | Active | - | Why: Gold serves as a hedge against inflation and economic uncertainty. |
+| 2026-11-01 | ASML | BUY | $785.00 | $975.00 | 7/10 | Active | - | Why: ASML is the sole provider of extreme ultraviolet (EUV) lithography machines |
