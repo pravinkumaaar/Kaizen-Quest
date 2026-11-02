@@ -2188,3 +2188,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-01 | GLBE | BUY | $319.00 | N/A | 7/10 | Active | - | Why: Global-e is a leader in cross-border e-commerce solutions with strong growt |
 | 2026-11-01 | GLD | BUY | $150.00 | N/A | 7/10 | Active | - | Why: Gold serves as a hedge against inflation and economic uncertainty. |
 | 2026-11-01 | ASML | BUY | $785.00 | $975.00 | 7/10 | Active | - | Why: ASML is the sole provider of extreme ultraviolet (EUV) lithography machines |
+| 2026-11-02 | PLTR | BUY | $182.84 | $20.00 | 10/10 | Active | - | Why: PLTR at 41.3% of portfolio ($94,400) creates catastrophic single-stock risk |
+| 2026-11-02 | NVDA | BUY | $205.20 | N/A | 9/10 | Active | - | Why: NVDA reports Nov 17 (15 days) with $111B revenue estimate — any miss trigge |
+| 2026-11-02 | PANW | BUY | N/A | $340.00 | 7/10 | Active | - | Why: PANW reports Nov 12 (10 days). Platformization strategy (Cortex XSIAM, Pris |
+| 2026-11-02 | GLD | BUY | N/A | $310.00 | 8/10 | Active | - | Why: Portfolio has 0% precious metals, 0% international, 95%+ US tech. Gold at a |
+| 2026-11-02 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Zero emerging markets exposure. India: 7% GDP growth, 1.4B people, median a |
