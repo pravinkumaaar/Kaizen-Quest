@@ -2193,3 +2193,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-02 | PANW | BUY | N/A | $340.00 | 7/10 | Active | - | Why: PANW reports Nov 12 (10 days). Platformization strategy (Cortex XSIAM, Pris |
 | 2026-11-02 | GLD | BUY | N/A | $310.00 | 8/10 | Active | - | Why: Portfolio has 0% precious metals, 0% international, 95%+ US tech. Gold at a |
 | 2026-11-02 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: Zero emerging markets exposure. India: 7% GDP growth, 1.4B people, median a |
+| 2026-11-02 | NVDA | BUY | $202.06 | N/A | 8/10 | Active | - | Why: NVIDIA is a leader in AI and GPU technology, with a strong moat and consist |
+| 2026-11-02 | GRAB | BUY | $3.50 | N/A | 7/10 | Active | - | Why: Grab Holdings is a leading superapp in Southeast Asia, benefiting from rapi |
+| 2026-11-02 | EEM | BUY | $40.00 | N/A | 8/10 | Active | - | Why: Emerging markets offer higher growth potential and diversification benefits |
+| 2026-11-02 | GLD | BUY | $180.00 | N/A | 7/10 | Active | - | Why: Gold serves as a hedge against inflation and currency devaluation, essentia |
+| 2026-11-02 | PLTR | BUY | $178.34 | N/A | 6/10 | Active | - | Why: Palantir Technologies has had a strong run but now represents a significant |
