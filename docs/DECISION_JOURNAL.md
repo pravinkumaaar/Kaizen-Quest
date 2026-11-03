@@ -2198,3 +2198,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-02 | EEM | BUY | $40.00 | N/A | 8/10 | Active | - | Why: Emerging markets offer higher growth potential and diversification benefits |
 | 2026-11-02 | GLD | BUY | $180.00 | N/A | 7/10 | Active | - | Why: Gold serves as a hedge against inflation and currency devaluation, essentia |
 | 2026-11-02 | PLTR | BUY | $178.34 | N/A | 6/10 | Active | - | Why: Palantir Technologies has had a strong run but now represents a significant |
+| 2026-11-03 | PLTR | BUY | $178.34 | N/A | 8/10 | Active | - | Why: Palantir is a genuine AI platform leader with +184.6% unrealized gains, but |
+| 2026-11-03 | AMAT | BUY | N/A | $245.00 | 8/10 | Active | - | Why: Applied Materials is the unsung hero of the AI infrastructure buildout. Whi |
+| 2026-11-03 | PANW | BUY | N/A | $520.00 | 7/10 | Active | - | Why: Palo Alto Networks is a defensive cybersecurity play with an earnings catal |
+| 2026-11-03 | SMCI | BUY | $30.44 | N/A | 7/10 | Active | - | Why: Super Micro Computer is down -22.9% in your portfolio and the fundamentals  |
+| 2026-11-03 | GLD | BUY | $361.65 | $385.00 | 7/10 | Active | - | Why: Gold is up 1.65% today while your tech portfolio is getting hammered. That' |
