@@ -2206,3 +2206,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-03 | FUTU | BUY | N/A | N/A | 8/10 | Active | - | Thesis: Fintech platform benefitting from China’s digital wealth‑management boom |
 | 2026-11-03 | BIDU | BUY | N/A | $30.00 | 7/10 | Active | - | Thesis: Baidu’s AI cloud platform and autonomous‑driving stack are positioned to |
 | 2026-11-03 | LKNCY | BUY | N/A | $54.00 | 6/10 | Active | - | Thesis: Luckin Coffee is poised to capitalize on China’s post‑pandemic consumer  |
+| 2026-11-03 | APLD | BUY | $17.81 | N/A | 7/10 | Active | - | Why: APLD is a player in the digital transformation space, focusing on AI-driven |
+| 2026-11-03 | GLD | BUY | $359.26 | N/A | 8/10 | Active | - | Why: Gold serves as a hedge against inflation and market volatility. With curren |
+| 2026-11-03 | NVDA | BUY | $206.69 | N/A | 7/10 | Active | - | Why: NVDA is a leader in GPU technology with strong AI and data center growth po |
+| 2026-11-03 | EWW | BUY | $70.00 | N/A | 7/10 | Active | - | Why: Mexico’s economy is benefiting from nearshoring trends and a weaker peso, b |
+| 2026-11-03 | PLTR | BUY | $175.40 | N/A | 6/10 | Active | - | Why: PLTR is a leader in big data analytics and AI solutions with strong governm |
