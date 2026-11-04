@@ -2211,3 +2211,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-03 | NVDA | BUY | $206.69 | N/A | 7/10 | Active | - | Why: NVDA is a leader in GPU technology with strong AI and data center growth po |
 | 2026-11-03 | EWW | BUY | $70.00 | N/A | 7/10 | Active | - | Why: Mexico’s economy is benefiting from nearshoring trends and a weaker peso, b |
 | 2026-11-03 | PLTR | BUY | $175.40 | N/A | 6/10 | Active | - | Why: PLTR is a leader in big data analytics and AI solutions with strong governm |
+| 2026-11-04 | SMCI | BUY | $31.39 | N/A | 7/10 | Active | - | Why: Super Micro Computer (SMCI) is down 20.5% in the portfolio, with no clear c |
+| 2026-11-04 | EIDO | BUY | $25.80 | N/A | 8/10 | Active | - | Why: Indonesia’s economy is growing at 5%+ annually, driven by its young populat |
+| 2026-11-04 | MU | BUY | $855.10 | N/A | 7/10 | Active | - | Why: Micron (MU) is a leader in memory semiconductors, benefiting from AI and da |
