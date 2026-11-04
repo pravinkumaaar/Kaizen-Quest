@@ -2214,3 +2214,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-04 | SMCI | BUY | $31.39 | N/A | 7/10 | Active | - | Why: Super Micro Computer (SMCI) is down 20.5% in the portfolio, with no clear c |
 | 2026-11-04 | EIDO | BUY | $25.80 | N/A | 8/10 | Active | - | Why: Indonesia’s economy is growing at 5%+ annually, driven by its young populat |
 | 2026-11-04 | MU | BUY | $855.10 | N/A | 7/10 | Active | - | Why: Micron (MU) is a leader in memory semiconductors, benefiting from AI and da |
+| 2026-11-04 | PLTR | BUY | $171.70 | N/A | 9/10 | Active | - | Type/Stock: Palantir Technologies @ $171.70 |
+| 2026-11-04 | NVDA | BUY | $200.13 | N/A | 8/10 | Active | - | Type/Stock: NVIDIA @ $200.13 |
+| 2026-11-04 | DELL | BUY | N/A | N/A | 7/10 | Active | - | Type/Stock: Dell Technologies @ $X.XX (fetch live price) |
+| 2026-11-04 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Type/ETF: SPDR Gold Shares @ $X.XX (fetch live price) |
+| 2026-11-04 | WMT | BUY | N/A | $20.00 | 7/10 | Active | - | Type/Stock: Walmart @ $X.XX (fetch live price) |
