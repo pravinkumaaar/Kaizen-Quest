@@ -2219,3 +2219,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-04 | DELL | BUY | N/A | N/A | 7/10 | Active | - | Type/Stock: Dell Technologies @ $X.XX (fetch live price) |
 | 2026-11-04 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Type/ETF: SPDR Gold Shares @ $X.XX (fetch live price) |
 | 2026-11-04 | WMT | BUY | N/A | $20.00 | 7/10 | Active | - | Type/Stock: Walmart @ $X.XX (fetch live price) |
+| 2026-11-05 | PLTR | BUY | $171.70 | N/A | 8/10 | Active | - | Why: Palantir has been your best performer (+174%) but now represents 39.7% of p |
+| 2026-11-05 | GLBE | BUY | $29.60 | N/A | 7/10 | Active | - | Why: Cross-border e-commerce enabler with 60% growth in emerging markets (India/ |
