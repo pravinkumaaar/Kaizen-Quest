@@ -2224,3 +2224,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-05 | FUTU | BUY | N/A | N/A | 9/10 | Active | - | Why: Deep‑research DCF models from our 7‑layer system value FUTU at $44‑$48 (≈ + |
 | 2026-11-05 | PDD | BUY | N/A | N/A | 8/10 | Active | - | Why: Our DCF analysis (peer‑adjusted) yields a fair value of $210‑$225 (≈ +38‑47 |
 | 2026-11-05 | GLBE | BUY | N/A | N/A | 8/10 | Active | - | Why: DCF model (peer‑adjusted) indicates fair value $48‑$52 (≈ +53‑65% upside).  |
+| 2026-11-05 | PLTR | BUY | $155.25 | N/A | 8/10 | Active | - | Why: Palantir Technologies (PLTR) represents 39.7% of your portfolio, creating e |
+| 2026-11-05 | INDA | BUY | $50.55 | N/A | 9/10 | Active | - | Why: India is the fastest-growing major economy (~7% GDP growth), benefiting fro |
+| 2026-11-05 | GLD | BUY | $376.01 | N/A | 7/10 | Active | - | Why: With inflationary pressures and geopolitical risks, gold serves as a hedge  |
+| 2026-11-05 | APLD | BUY | $13.82 | N/A | 7/10 | Active | - | Why: APLD (data center infrastructure for AI/blockchain) sold off sharply (-16.8 |
+| 2026-11-05 | MU | BUY | $678.14 | N/A | 8/10 | Active | - | Why: MU is a leader in DRAM/NAND memory chips, benefiting from AI-driven demand  |
