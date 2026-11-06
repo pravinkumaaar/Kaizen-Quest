@@ -2229,3 +2229,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-05 | GLD | BUY | $376.01 | N/A | 7/10 | Active | - | Why: With inflationary pressures and geopolitical risks, gold serves as a hedge  |
 | 2026-11-05 | APLD | BUY | $13.82 | N/A | 7/10 | Active | - | Why: APLD (data center infrastructure for AI/blockchain) sold off sharply (-16.8 |
 | 2026-11-05 | MU | BUY | $678.14 | N/A | 8/10 | Active | - | Why: MU is a leader in DRAM/NAND memory chips, benefiting from AI-driven demand  |
+| 2026-11-06 | GLD | BUY | $375.49 | N/A | 7/10 | Active | - | Why: Gold is a proven hedge against market volatility and inflation. With tech s |
+| 2026-11-06 | PLTR | BUY | $154.99 | N/A | 8/10 | Active | - | Why: Palantir Technologies has been a stellar performer in your portfolio (+147. |
+| 2026-11-06 | TEM | BUY | $70.43 | N/A | 7/10 | Active | - | Why: Tempus AI is a leader in precision medicine, leveraging AI to optimize canc |
+| 2026-11-06 | EEM | BUY | $45.50 | N/A | 6/10 | Active | - | Why: Emerging markets are undervalued relative to U.S. equities and poised for o |
