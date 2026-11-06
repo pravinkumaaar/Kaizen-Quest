@@ -2233,3 +2233,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-06 | PLTR | BUY | $154.99 | N/A | 8/10 | Active | - | Why: Palantir Technologies has been a stellar performer in your portfolio (+147. |
 | 2026-11-06 | TEM | BUY | $70.43 | N/A | 7/10 | Active | - | Why: Tempus AI is a leader in precision medicine, leveraging AI to optimize canc |
 | 2026-11-06 | EEM | BUY | $45.50 | N/A | 6/10 | Active | - | Why: Emerging markets are undervalued relative to U.S. equities and poised for o |
+| 2026-11-06 | INDA | BUY | $51.20 | N/A | 8/10 | Active | - | Why: India’s GDP growth is accelerating due to structural reforms, demographic d |
+| 2026-11-06 | COP | BUY | $78.45 | N/A | 8/10 | Active | - | Why: Oil demand is resilient despite global economic slowdowns, and COP’s low-co |
+| 2026-11-06 | PLTR | BUY | $161.83 | N/A | 7/10 | Active | - | Why: PLTR is now 39.6% of the portfolio, creating concentration risk. While grow |
+| 2026-11-06 | GLBE | BUY | $46.80 | N/A | 7/10 | Active | - | Why: GLBE enables e-commerce businesses to sell globally with minimal friction,  |
+| 2026-11-06 | SLV | BUY | $46.95 | N/A | 5/10 | Active | - | Why: Silver is a hedge against inflation and currency debasement, but recent sta |
