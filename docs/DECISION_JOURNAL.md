@@ -2238,3 +2238,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-06 | PLTR | BUY | $161.83 | N/A | 7/10 | Active | - | Why: PLTR is now 39.6% of the portfolio, creating concentration risk. While grow |
 | 2026-11-06 | GLBE | BUY | $46.80 | N/A | 7/10 | Active | - | Why: GLBE enables e-commerce businesses to sell globally with minimal friction,  |
 | 2026-11-06 | SLV | BUY | $46.95 | N/A | 5/10 | Active | - | Why: Silver is a hedge against inflation and currency debasement, but recent sta |
+| 2026-11-06 | AMAT | BUY | $119.00 | N/A | 8/10 | Active | - | Why: Applied Materials (AMAT) is the premier supplier of semiconductor manufactu |
+| 2026-11-06 | LKNCY | BUY | $9.80 | N/A | 7/10 | Active | - | Why: Luckin Coffee (LKNCY) is executing a delivery‑first strategy that is rapidl |
+| 2026-11-06 | FUTU | BUY | $18.00 | N/A | 8/10 | Active | - | Why: Futu Holdings (FUTU) operates a leading AI‑enhanced digital finance and edu |
