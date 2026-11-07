@@ -2245,3 +2245,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-07 | TEM | BUY | $76.05 | N/A | 7/10 | Active | - | Why: Tempus AI (TEM) is a leader in precision medicine, with accelerating revenu |
 | 2026-11-07 | GLBE | BUY | $319.00 | N/A | 7/10 | Active | - | Why: GLBE is a leader in cross-border e-commerce logistics, benefiting from glob |
 | 2026-11-07 | PLTR | BUY | $160.38 | N/A | 8/10 | Active | - | Why: PLTR has outperformed significantly (+155.9%) but now represents 39.3% of t |
+| 2026-11-07 | PLTR | BUY | $160.38 | N/A | 8/10 | Active | - | Why: Palantir Technologies (PLTR) is now 39.4% of your portfolio with +155.9% un |
+| 2026-11-07 | IONQ | BUY | $32.62 | N/A | 8/10 | Active | - | Why: IonQ (IONQ) is a leader in quantum computing, a nascent but high-growth sec |
+| 2026-11-07 | SLV | BUY | $46.87 | N/A | 7/10 | Active | - | Why: iShares Silver Trust (SLV) offers exposure to silver, a hedge against infla |
+| 2026-11-07 | NVDA | BUY | $186.64 | N/A | 6/10 | Active | - | Why: NVIDIA Corporation (NVDA) is a top AI/GPU player with strong fundamentals,  |
+| 2026-11-07 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: iShares MSCI Emerging Markets ETF (EEM) offers diversification as US equiti |

@@ -3,10 +3,11 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NBIS** | $129.49 | TBD | 8/10 |  Active  |  $129.49  |  +0.0%  | Swing (2-8wk) | Watchlist |
-| 2 | **TEM** | $76.05 | TBD | 7/10 |  Active  |  $76.05  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 3 | **GLBE** | $319.00 | TBD | 7/10 |  Active  |  $319.00  |  +0.0%  | Medium (3-12mo) | Watchlist |
-| 4 | **PLTR** | $160.38 | TBD | 8/10 |  Active  |  $160.38  |  +0.0%  | Swing | Watchlist |
+| 1 | **PLTR** | $160.38 | TBD | 8/10 |  Active  |  $160.38  |  +0.0%  | Immediate | Watchlist |
+| 2 | **IONQ** | $32.62 | TBD | 8/10 |  Active  |  $32.62  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 3 | **SLV** | $46.87 | TBD | 7/10 |  Active  |  $46.87  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 4 | **NVDA** | $186.64 | TBD | 6/10 |  Active  |  $186.64  |  +0.0%  | Swing 2-8wk | Watchlist |
+| 5 | **EEM** | $42.50 | TBD | 7/10 |  Active  |  $42.50  |  +0.0%  | Medium 3-12mo | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
