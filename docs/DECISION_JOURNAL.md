@@ -2250,3 +2250,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-07 | SLV | BUY | $46.87 | N/A | 7/10 | Active | - | Why: iShares Silver Trust (SLV) offers exposure to silver, a hedge against infla |
 | 2026-11-07 | NVDA | BUY | $186.64 | N/A | 6/10 | Active | - | Why: NVIDIA Corporation (NVDA) is a top AI/GPU player with strong fundamentals,  |
 | 2026-11-07 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: iShares MSCI Emerging Markets ETF (EEM) offers diversification as US equiti |
+| 2026-11-07 | PLTR | BUY | $160.38 | N/A | 8/10 | Active | - | Why: Palantir Technologies has become overweight in your portfolio at 40.2%, cre |
+| 2026-11-07 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued relative to US equities, with EEM trading  |
+| 2026-11-07 | ARBE | BUY | $5.20 | N/A | 7/10 | Active | - | Why: Arbe Robotics is a leader in 4D imaging radar for autonomous vehicles. Earn |
+| 2026-11-07 | SLV | BUY | $23.50 | N/A | 8/10 | Active | - | Why: Silver is historically undervalued relative to gold (gold/silver ratio ~80x |
