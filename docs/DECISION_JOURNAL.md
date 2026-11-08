@@ -2254,3 +2254,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-07 | EEM | BUY | $42.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued relative to US equities, with EEM trading  |
 | 2026-11-07 | ARBE | BUY | $5.20 | N/A | 7/10 | Active | - | Why: Arbe Robotics is a leader in 4D imaging radar for autonomous vehicles. Earn |
 | 2026-11-07 | SLV | BUY | $23.50 | N/A | 8/10 | Active | - | Why: Silver is historically undervalued relative to gold (gold/silver ratio ~80x |
+| 2026-11-08 | PLTR | BUY | $160.38 | $20.00 | 10/10 | Active | - | Why: PLTR is 40.3% of a $205K portfolio — a single-stock concentration that viol |
+| 2026-11-08 | NVDA | BUY | $186.64 | N/A | 8/10 | Active | - | Why: NVDA is 13.6% of portfolio with earnings in 9 days. IV rank elevated. A 10% |
+| 2026-11-08 | POWL | BUY | N/A | $315.00 | 8/10 | Active | - | Why: Powell Industries builds custom electrical equipment for data centers (swit |
+| 2026-11-08 | FCX | BUY | N/A | $60.00 | 7/10 | Active | - | Why: Zero commodity exposure in portfolio. Copper is *the* electrification metal |
+| 2026-11-08 | GLD | BUY | N/A | N/A | 9/10 | Active | - | Why: 0% gold/precious metals in portfolio. Fiscal dominance (US debt/GDP 120%, r |
