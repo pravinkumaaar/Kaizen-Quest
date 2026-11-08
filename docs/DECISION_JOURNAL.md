@@ -2259,3 +2259,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-08 | POWL | BUY | N/A | $315.00 | 8/10 | Active | - | Why: Powell Industries builds custom electrical equipment for data centers (swit |
 | 2026-11-08 | FCX | BUY | N/A | $60.00 | 7/10 | Active | - | Why: Zero commodity exposure in portfolio. Copper is *the* electrification metal |
 | 2026-11-08 | GLD | BUY | N/A | N/A | 9/10 | Active | - | Why: 0% gold/precious metals in portfolio. Fiscal dominance (US debt/GDP 120%, r |
+| 2026-11-08 | ONDS | BUY | $5.33 | N/A | 8/10 | Active | - | Why: Ondas Holdings is a defense tech company specializing in critical communica |
+| 2026-11-08 | DLO | BUY | $28.50 | N/A | 9/10 | Active | - | Why: DLocal provides cross-border payment infrastructure in Latin America, one o |
+| 2026-11-08 | RAMP | BUY | $50.00 | N/A | 8/10 | Active | - | Why: LiveRamp provides data connectivity for enterprise cloud migration, a secul |

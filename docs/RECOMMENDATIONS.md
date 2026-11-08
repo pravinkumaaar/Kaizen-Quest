@@ -3,11 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $160.38 | $20.00 | 10/10 |  Active  |  $160.38  |  +0.0%  | Immediate (Portfolio Hygiene) | Watchlist |
-| 2 | **NVDA** | $186.64 | TBD | 8/10 |  Active  |  $186.64  |  +0.0%  | Swing (9 days) | Watchlist |
-| 3 | **POWL** | Market | $315.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Swing (2-8 weeks) → Medium (3-12 mo if thesis holds) | Watchlist |
-| 4 | **FCX** | Market | $60.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium (3-12 mo) → Long (1-3 yr) | Watchlist |
-| 5 | **GLD** | Market | TBD | 9/10 |  Active  |  Fetching...  |  +0.0%  | Long (1-3 yr+) — Permanent Portfolio Sleeve | Watchlist |
+| 1 | **ONDS** | $5.33 | TBD | 8/10 |  Active  |  $5.33  |  +0.0%  | Swing 2-8wk | Watchlist |
+| 2 | **DLO** | $28.50 | TBD | 9/10 |  Active  |  $28.50  |  +0.0%  | Medium 3-12mo | Watchlist |
+| 3 | **RAMP** | $50.00 | TBD | 8/10 |  Active  |  $50.00  |  +0.0%  | Medium 3-12mo | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
