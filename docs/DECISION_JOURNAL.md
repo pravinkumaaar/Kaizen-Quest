@@ -2267,3 +2267,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-09 | MU | BUY | $690.00 | N/A | 8/10 | Active | - | Why: Micron Technology (MU) is a leader in memory semiconductors, benefiting fro |
 | 2026-11-09 | GLBE | BUY | $45.20 | N/A | 7/10 | Active | - | Why: Global-E Online (GLBE) is a leader in cross-border e-commerce, with earning |
 | 2026-11-09 | GLD | BUY | $372.52 | N/A | 7/10 | Active | - | Why: Gold (GLD) acts as a hedge against inflation and currency devaluation. |
+| 2026-11-09 | PLTR | BUY | $168.31 | N/A | 8/10 | Active | - | Why: Palantir Technologies dominates government and enterprise AI/analytics mark |
+| 2026-11-09 | NVDA | BUY | $176.09 | N/A | 7/10 | Active | - | Why: Nvidia remains the AI hardware leader, with 8-day earnings catalyst and lon |
+| 2026-11-09 | GLBE | BUY | $319.75 | N/A | 8/10 | Active | - | Why: Global-E Online enables e-commerce globalization, with 9-day earnings catal |
+| 2026-11-09 | INDA | BUY | $52.10 | N/A | 7/10 | Active | - | Why: India offers demographic and economic tailwinds, with GDP growth accelerati |
