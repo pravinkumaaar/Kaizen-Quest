@@ -1,8 +1,8 @@
 {
   "ticker": "MU",
   "first_researched": "2026-05-22T13:53:52.517248",
-  "last_researched": "2026-11-08T18:47:19.819143",
-  "research_count": 289,
+  "last_researched": "2026-11-09T15:54:45.609990",
+  "research_count": 290,
   "research_depth_score": 6,
   "last_research_type": "moderate",
   "last_price": 690.0,
@@ -11,19 +11,19 @@
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-11-08T18:47:19.819143"
+      "last_verified": "2026-11-09T15:54:45.609990"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-11-08T18:47:19.819143"
+      "last_verified": "2026-11-09T15:54:45.609990"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-11-08T18:47:19.819143"
+      "last_verified": "2026-11-09T15:54:45.609990"
     }
   ],
   "facts": [
@@ -1103,8 +1103,8 @@
       "type": "price",
       "initial_confidence": 0.95,
       "source": "polygon",
-      "first_verified": "2026-11-08T04:19:52.612766",
-      "last_verified": "2026-11-08T04:21:13.598600",
+      "first_verified": "2026-11-09T15:53:25.397302",
+      "last_verified": "2026-11-09T15:54:45.609990",
       "verification_count": 1
     },
     {
@@ -1121,41 +1121,41 @@
   "risks": [],
   "competitive_position": {
     "ticker": "MU",
-    "timestamp": "2026-11-08 18:46:52",
+    "timestamp": "2026-11-09 15:54:16",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "congressional",
-    "price_target",
-    "recommendation_trends",
-    "aggregate_indicators",
+    "income_statement",
     "esg",
     "balance_sheet",
-    "valuation_multiples",
-    "income_statement",
-    "dcf",
-    "market_sentiment",
-    "negative_news",
-    "earnings_momentum",
-    "insider_sentiment",
-    "competitive_landscape",
-    "comps_analysis",
-    "analyst_estimates",
-    "risk_assessment",
-    "sector_rotation",
-    "insider_trades",
-    "sector_performance",
-    "supply_chain",
-    "macro_rotation",
-    "treasury_rates",
-    "financial_ratios",
-    "earnings_history",
-    "industry_pe",
-    "insider_trades_contrarian",
     "cashflow",
     "institutional",
-    "technical_indicators"
+    "sector_performance",
+    "earnings_history",
+    "sector_rotation",
+    "insider_trades",
+    "price_target",
+    "financial_ratios",
+    "congressional",
+    "risk_assessment",
+    "industry_pe",
+    "macro_rotation",
+    "negative_news",
+    "insider_sentiment",
+    "dcf",
+    "technical_indicators",
+    "insider_trades_contrarian",
+    "competitive_landscape",
+    "aggregate_indicators",
+    "analyst_estimates",
+    "recommendation_trends",
+    "treasury_rates",
+    "market_sentiment",
+    "earnings_momentum",
+    "comps_analysis",
+    "supply_chain",
+    "valuation_multiples"
   ],
   "research_gaps": [],
   "contrarian_signals": []
