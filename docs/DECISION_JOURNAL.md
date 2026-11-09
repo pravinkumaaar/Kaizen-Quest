@@ -2262,3 +2262,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-08 | ONDS | BUY | $5.33 | N/A | 8/10 | Active | - | Why: Ondas Holdings is a defense tech company specializing in critical communica |
 | 2026-11-08 | DLO | BUY | $28.50 | N/A | 9/10 | Active | - | Why: DLocal provides cross-border payment infrastructure in Latin America, one o |
 | 2026-11-08 | RAMP | BUY | $50.00 | N/A | 8/10 | Active | - | Why: LiveRamp provides data connectivity for enterprise cloud migration, a secul |
+| 2026-11-09 | PLTR | BUY | $160.38 | N/A | 7/10 | Active | - | Why: Palantir Technologies (PLTR) is currently 39.3% of the portfolio, up 155.9% |
+| 2026-11-09 | EIDO | BUY | $37.45 | N/A | 8/10 | Active | - | Why: Indonesia (EIDO) is benefiting from commodity tailwinds, geopolitical diver |
+| 2026-11-09 | MU | BUY | $690.00 | N/A | 8/10 | Active | - | Why: Micron Technology (MU) is a leader in memory semiconductors, benefiting fro |
+| 2026-11-09 | GLBE | BUY | $45.20 | N/A | 7/10 | Active | - | Why: Global-E Online (GLBE) is a leader in cross-border e-commerce, with earning |
+| 2026-11-09 | GLD | BUY | $372.52 | N/A | 7/10 | Active | - | Why: Gold (GLD) acts as a hedge against inflation and currency devaluation. |
