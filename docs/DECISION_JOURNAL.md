@@ -2275,3 +2275,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-10 | SLV | BUY | $48.14 | N/A | 7/10 | Active | - | Why: Silver is undervalued relative to gold (gold/silver ratio at 85x) and benef |
 | 2026-11-10 | PLTR | BUY | $169.20 | N/A | 6/10 | Active | - | Why: Palantir has been a stellar performer (+170%) but now represents 40.1% of t |
 | 2026-11-10 | INDA | BUY | $52.67 | N/A | 8/10 | Active | - | Why: India’s economy is growing at 7% annually, driven by demographics, digital  |
+| 2026-11-10 | PLTR | BUY | $168.82 | N/A | 8/10 | Active | - | Why: Palantir remains a strong long-term AI/defense play but now accounts for 40 |
+| 2026-11-10 | MU | BUY | $725.11 | N/A | 7/10 | Active | - | Why: Micron is positioned for memory upturn with AI-driven HBM demand, trading a |
+| 2026-11-10 | GLBE | BUY | $319.75 | N/A | 7/10 | Active | - | Why: Global-e Online dominates cross-border ecommerce with 85% market share in l |
+| 2026-11-10 | ASTS | BUY | $33.69 | N/A | 6/10 | Active | - | Why: AST SpaceMobile has first-mover advantage in direct-to-cell satellite conne |
