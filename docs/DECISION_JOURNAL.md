@@ -2279,3 +2279,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-10 | MU | BUY | $725.11 | N/A | 7/10 | Active | - | Why: Micron is positioned for memory upturn with AI-driven HBM demand, trading a |
 | 2026-11-10 | GLBE | BUY | $319.75 | N/A | 7/10 | Active | - | Why: Global-e Online dominates cross-border ecommerce with 85% market share in l |
 | 2026-11-10 | ASTS | BUY | $33.69 | N/A | 6/10 | Active | - | Why: AST SpaceMobile has first-mover advantage in direct-to-cell satellite conne |
+| 2026-11-10 | NVDA | BUY | $168.89 | N/A | 8/10 | Active | - | Why: Nvidia (NVDA) is set to report earnings in 7 days with strong AI-driven dem |
+| 2026-11-10 | EIDO | BUY | $32.45 | N/A | 7/10 | Active | - | Why: Indonesia is emerging as a tech hub with favorable demographics and governm |
+| 2026-11-10 | PLTR | BUY | $168.82 | N/A | 9/10 | Active | - | Why: Palantir (PLTR) has become excessively concentrated at 41.3% of the portfol |
+| 2026-11-10 | GLD | BUY | $185.45 | N/A | 7/10 | Active | - | Why: Gold ETFs like GLD offer a hedge against potential inflation resurgence, pa |
+| 2026-11-10 | CASH | BUY | N/A | N/A | 8/10 | Active | - | Why: Given the current market volatility and lack of compelling asymmetric oppor |
