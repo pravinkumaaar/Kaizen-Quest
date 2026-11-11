@@ -2289,3 +2289,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-11 | TEM | BUY | $80.54 | N/A | 8/10 | Active | - | Why: TEM is a leader in healthcare data analytics. Recent pullback offers a good |
 | 2026-11-11 | GLD | BUY | $369.36 | N/A | 7/10 | Active | - | Why: GLD provides exposure to gold, which serves as a hedge against inflation an |
 | 2026-11-11 | HIMS | BUY | $19.13 | N/A | 7/10 | Active | - | Why: HIMS faces significant headwinds despite recent momentum. Shorting could of |
+| 2026-11-11 | PLTR | BUY | N/A | N/A | 9/10 | Active | - | Why: Palantir is a genuinely great business (AIP/PLTR government + commercial ac |
+| 2026-11-11 | NBIS | BUY | N/A | N/A | 6/10 | Active | - | Why: Nebius is a real AI-infrastructure/cloud story, up ~196% on your cost — a w |
+| 2026-11-11 | NVDA | BUY | N/A | N/A | 8/10 | Active | - | Why: Still the picks-and-shovels monopoly on AI compute. Reports in 6 days (est  |
+| 2026-11-11 | MRVL | BUY | N/A | N/A | 7/10 | Active | - | Why: Marvell is the differentiated *custom silicon (ASIC) + optical/networking*  |
+| 2026-11-11 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: CrowdStrike is the cybersecurity platform-consolidation leader (endpoint →  |
