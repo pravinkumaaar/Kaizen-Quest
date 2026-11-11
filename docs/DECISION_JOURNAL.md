@@ -2294,3 +2294,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-11 | NVDA | BUY | N/A | N/A | 8/10 | Active | - | Why: Still the picks-and-shovels monopoly on AI compute. Reports in 6 days (est  |
 | 2026-11-11 | MRVL | BUY | N/A | N/A | 7/10 | Active | - | Why: Marvell is the differentiated *custom silicon (ASIC) + optical/networking*  |
 | 2026-11-11 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: CrowdStrike is the cybersecurity platform-consolidation leader (endpoint →  |
+| 2026-11-11 | TEM | BUY | $79.43 | $105.00 | 8/10 | Active | - | Why: TEM is the only pure-play AI genomics company with massive pharma partnersh |
+| 2026-11-11 | PANW | BUY | $205.00 | $245.00 | 7/10 | Active | - | Why: PANW is acquiring Talon ($50B deal) to dominate SASE market. Current valuat |
