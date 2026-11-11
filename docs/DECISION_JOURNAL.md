@@ -2296,3 +2296,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-11 | CRWD | BUY | N/A | N/A | 7/10 | Active | - | Why: CrowdStrike is the cybersecurity platform-consolidation leader (endpoint →  |
 | 2026-11-11 | TEM | BUY | $79.43 | $105.00 | 8/10 | Active | - | Why: TEM is the only pure-play AI genomics company with massive pharma partnersh |
 | 2026-11-11 | PANW | BUY | $205.00 | $245.00 | 7/10 | Active | - | Why: PANW is acquiring Talon ($50B deal) to dominate SASE market. Current valuat |
+| 2026-11-11 | PLTR | BUY | $172.40 | N/A | 9/10 | Active | - | Why: Palantir has been your biggest winner (+175%), now representing 39.7% of po |
+| 2026-11-11 | EEM | BUY | $44.50 | N/A | 8/10 | Active | - | Why: EM undervalued vs US (P/E 12x vs 21x) with dollar peaking and manufacturing |
+| 2026-11-11 | ASML | BUY | $812.00 | N/A | 9/10 | Active | - | Why: Sole supplier of EUV lithography machines needed for 3nm+ chips. 80% gross  |
