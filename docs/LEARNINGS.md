@@ -1,26 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ion risk that must be monitored.  
-
-- **Cash Deployment** – With **$51.6 k (52%)** idle cash, the portfolio is far from the 90% deployment target; deploying surplus cash into a pre‑approved watchlist (e.g., NVDA, MSFT) until cash ≤10% would free ~$44 k for investment, reducing drag and improving return potential.  
-
-- **Memory & Learning** – The recent memory snapshots (value $218 k, concentration 69%) show that the model previously held a highly concentrated position, yet the current run shows 0% concentration, indicating **redundant research** and a lack of continuity; the system should store the prior concentration metric and avoid re‑evaluating the same tickers without new data.  
-
-- **Process Improvements** – Implement a **real‑time price feed** and **daily earnings‑surprise filter** to keep conviction scores fresh; add **mandatory thesis fields** (entry price, exit price, % return, conviction rating, catalyst) to the journal for systematic post‑trade analysis; auto‑generate **15% trailing stop‑losses** for all new positions and flag any holding >20% of portfolio weight for immediate review.  
-
-- **Process Improvements** – Introduce an **automated cash‑allocation rule**: deploy surplus cash into a pre‑approved high‑conviction, low‑beta watchlist until cash ≤10% of total assets, thereby meeting the 90% deployment goal and reducing idle‑cash drag.  
-
-- **Process Improvements** – Expand the **recommendation scope** beyond current holdings to include **external high‑conviction ideas** (e.g., NVDA, MSFT, CRM) with a separate vetting step, ensuring the model captures new market themes and avoids opportunity cost.
-
-## Run: 2026-11-10 11:46:32 ET
-- **What Worked Well** – The **TEM** long‑term play (entry $50.22, current $80.12, +59.54%) showed a high‑conviction (8/10) thesis backed by strong earnings momentum and a clear catalyst (new product launch).  
-- **What Didn't Work** – **VRT** (entry $348.38, current $189.36, –45.65%) was a false positive; the 8/10 conviction score was not justified by recent fundamentals, indicating over‑optimistic thesis validation.  
-- **Conviction Calibration** – Only **TEM** and **PLTR** (entry $139.47, current $165.97, +19.00%) met the “8+ conviction” threshold and delivered positive returns; **SOFI** (entry $16.29, current $15.96, –1.99%) and **VRT** were over‑rated, revealing a need for tighter conviction thresholds.  
-- **Thesis Journal Review** – No explicit thesis entries were captured in the journal for the last three runs, so we cannot verify whether past theses (e.g., “TEM will benefit from 5G rollout”) were validated or refuted; the absence itself is a data gap.  
-- **Missed Opportunities** – The model ignored **external high‑conviction ideas** such as **NVDA** (AI chip demand), **MSFT** (cloud services tailwinds), and **CRM** (enterprise SaaS growth) that were mentioned in feedback as potential alpha‑generating picks.  
-- **Data Quality Issues** – **PLTR** price was stale (last update >30 days old) and **VRT** data showed a 45% drop without recent news, indicating reliance on outdated price feeds and missing fundamental filters.  
-- **Risk Management** – Portfolio concentration is effectively **0.0%** in the summary but memory shows a **69.6% top‑position weight**, creating hidden concentration risk; stop‑losses were not automatically set (no trailing‑stop rule applied).  
-- **Cash Deployment** – Cash sits at **53% ($51,628)** of the $97,414 portfolio, far above the 10% target; idle cash is not being allocated to a pre‑approved watchlist, resulting in significant opportunity cost.  
+$51,628)** of the $97,414 portfolio, far above the 10% target; idle cash is not being allocated to a pre‑approved watchlist, resulting in significant opportunity cost.  
 - **Memory & Learning** – Recent runs repeatedly re‑evaluate the same tickers (PLTR, SOFI, TEM, VRT) without incorporating fresh data or new catalysts, indicating a memory‑usage flaw that prevents learning from evolving market conditions.  
 - **Process Improvements – Data** – Implement a **real‑time price feed** (e.g., via Alpaca or Polygon) and a **daily earnings‑surprise filter** to ensure conviction scores reflect the latest fundamentals.  
 - **Process Improvements – Thesis Discipline** – Mandate **thesis fields** (entry price, exit price, % return, conviction rating, catalyst) for every recommendation; this will enable systematic post‑trade analysis and better calibration of conviction scores.  
@@ -132,3 +112,28 @@ ion risk that must be monitored.
 - **Stop‑loss automation** – Set default trailing stops (12‑15%) for all new positions; enforce review if price breaches 10% of entry.  
 - **Cash‑deployment rule** – Trigger a “cash‑recycle” alert when cash < 15% of total assets, prompting the engine to evaluate the pre‑vetted watchlist (NVDA, MSFT, AMD, CRWD) and allocate up to 10% of cash per trade.  
 - **Portfolio‑aware recommendation set** – Expand the candidate pool beyond existing holdings;
+
+## Run: 2026-11-11 00:35:57 ET
+- **Conviction calibration:** The 8/10 conviction pick **TEM** (entry $50.22 → exit $81.78, +62.84%) proved the thesis correct, while **VRT** (entry $348.38 → exit $206.19, -40.81%) and **NVDA** (entry $207.14 → exit $173.14, -16.41%) show false positives, indicating that an 8‑plus score is not a reliable predictor of outperformance.  
+
+- **Cash deployment inefficiency:** With **cash at 52 % ($51,800)** of a $99,613 portfolio, the “cash‑recycle” rule (cash < 15 % → allocate up to 10 % of cash per trade) has not been triggered, leaving > $50k idle and creating a large opportunity cost relative to the 90 % deployment target.  
+
+- **Missed new‑stock opportunities:** The recommendation engine limited suggestions to the existing 7 holdings, ignoring high‑conviction ideas such as **AMD ($115)**, **CRWD ($78)**, or **MSFT ($380)** that showed strong earnings momentum and could have improved returns on the idle cash.  
+
+- **Stop‑loss management:** No explicit stop‑loss levels were recorded in the run; the default trailing‑stop (12‑15 %) was not enforced, allowing **VRT** to drop 40 % and **NVDA** to lose 16 % without automatic protection, highlighting a gap in risk control.  
+
+- **Concentration risk:** Although the report lists “concentration = 0 %,” the actual weightings reveal a few dominant positions (e.g., **TEM 99 shares ≈ 5 %**, **VRT 28 shares ≈ 10 %**), meaning the portfolio is effectively concentrated and vulnerable to sector‑specific shocks.  
+
+- **Data quality – stale pricing:** Feedback from 2026‑04‑22 noted that **PLTR** data used was outdated; the current price ($139.47) differs from the price referenced in the recommendation, indicating a need for real‑time price refreshes from primary exchanges.  
+
+- **Options chain validation gap:** The “options data was broken” comment (2026‑05‑07) shows that the engine did not verify liquidity or bid‑ask spreads before suggesting LEAP or other options, leading to potentially inaccurate pricing and hedging decisions.  
+
+- **Memory & research redundancy:** The system repeatedly references the same tickers (**PLTR, NVDA**) without integrating fresh insights or new catalyst data, suggesting that the memory database is not being leveraged to avoid re‑researching already‑covered stocks.  
+
+- **Dynamic confidence metric needed:** Replace static “8/10” scores with a **0‑100 confidence index** that weights 30‑day price slope, earnings surprise magnitude, and macro‑catalyst relevance; this would give a clearer picture of why **TEM** succeeded while **VRT** failed.  
+
+- **Real‑time data hygiene:** Automate price pulls from NASDAQ/NYSE and validate options chain liquidity (minimum open interest ≥ 500, bid‑ask spread ≤ $0.50) before any recommendation is generated, eliminating stale or hallucinated facts.  
+
+- **Cash‑recycle trigger:** Implement a **cash‑recycle alert** when cash falls below 15 % of total assets; the engine should then evaluate a pre‑vetted watchlist (NVDA, MSFT, AMD, CRWD) and allocate up to 10 % of cash per trade to move toward the 90 % deployment goal.  
+
+- **Portfolio‑aware candidate expansion:** Broaden the recommendation pool beyond the current 7 holdings to include **new tickers** with strong thesis support (e.g., **Snowflake (SNOW)**, **Rivian (RIVN)**) and assess their fit relative to existing positions, ensuring suggestions are truly additive rather than redundant.

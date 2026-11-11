@@ -2284,3 +2284,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-10 | PLTR | BUY | $168.82 | N/A | 9/10 | Active | - | Why: Palantir (PLTR) has become excessively concentrated at 41.3% of the portfol |
 | 2026-11-10 | GLD | BUY | $185.45 | N/A | 7/10 | Active | - | Why: Gold ETFs like GLD offer a hedge against potential inflation resurgence, pa |
 | 2026-11-10 | CASH | BUY | N/A | N/A | 8/10 | Active | - | Why: Given the current market volatility and lack of compelling asymmetric oppor |
+| 2026-11-11 | NVDA | BUY | $168.89 | N/A | 8/10 | Active | - | Why: NVDA has upcoming earnings in 6 days. Despite recent volatility, the compan |
+| 2026-11-11 | CRDO | BUY | $0.04 | N/A | 7/10 | Active | - | Why: CRDO is deeply oversold and has upcoming earnings. Smart contract adoption  |
+| 2026-11-11 | TEM | BUY | $80.54 | N/A | 8/10 | Active | - | Why: TEM is a leader in healthcare data analytics. Recent pullback offers a good |
+| 2026-11-11 | GLD | BUY | $369.36 | N/A | 7/10 | Active | - | Why: GLD provides exposure to gold, which serves as a hedge against inflation an |
+| 2026-11-11 | HIMS | BUY | $19.13 | N/A | 7/10 | Active | - | Why: HIMS faces significant headwinds despite recent momentum. Shorting could of |
