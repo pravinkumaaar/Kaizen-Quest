@@ -2299,3 +2299,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-11 | PLTR | BUY | $172.40 | N/A | 9/10 | Active | - | Why: Palantir has been your biggest winner (+175%), now representing 39.7% of po |
 | 2026-11-11 | EEM | BUY | $44.50 | N/A | 8/10 | Active | - | Why: EM undervalued vs US (P/E 12x vs 21x) with dollar peaking and manufacturing |
 | 2026-11-11 | ASML | BUY | $812.00 | N/A | 9/10 | Active | - | Why: Sole supplier of EUV lithography machines needed for 3nm+ chips. 80% gross  |
+| 2026-11-12 | SNOW | BUY | $156.30 | N/A | 8/10 | Active | - | Why: Snowflake is the AWS of data clouds, now monetizing AI workflows. Earnings  |
+| 2026-11-12 | COP | BUY | $118.40 | N/A | 7/10 | Active | - | Why: ConocoPhillips provides oil exposure with 5% FCF yield as inflation hedge.  |
