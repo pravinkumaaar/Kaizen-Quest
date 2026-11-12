@@ -2309,3 +2309,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-12 | GLD | BUY | N/A | $4.00 | 7/10 | Active | - | Why: Portfolio has 0% commodities, 0% international, 100% US tech beta. Central  |
 | 2026-11-12 | MRVL | BUY | N/A | N/A | 7/10 | Active | - | Why: Pure-play AI networking (optical DSP, 800G/1.6T PAM4, custom ASICs for Goog |
 | 2026-11-12 | EWY | BUY | N/A | $3.00 | 6/10 | Active | - | Why: 0% international exposure. Korea = 70% of global memory (SK Hynix, Samsung) |
+| 2026-11-12 | CRWD | BUY | $250.00 | $380.00 | 8/10 | Active | - | Why: Deep‑research DCF model (85% confidence) values CRWD at $380, implying 52%  |
+| 2026-11-12 | FUTU | BUY | $15.00 | $25.00 | 8/10 | Active | - | Why: DCF model (80% confidence) values FUTU at $25.0, implying 67% upside; Q3 20 |
+| 2026-11-12 | ZS | BUY | $150.00 | $23.30 | 7/10 | Active | - | Why: DCF analysis (88% confidence) yields a fair value of $190, indicating 27% u |
