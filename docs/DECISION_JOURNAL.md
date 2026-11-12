@@ -2304,3 +2304,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-12 | CRWD | BUY | $340.00 | $22471.00 | 9/10 | Active | - | Why: 1) Market‑leading XDR platform with > 30 % YoY revenue growth and a 95 % gr |
 | 2026-11-12 | DE | BUY | $380.00 | $17977.00 | 8/10 | Active | - | Why: 1) Beneficiary of the global commodity up‑cycle – copper up 6 % YTD and oil |
 | 2026-11-12 | FUTU | BUY | $120.00 | $13483.00 | 7/10 | Active | - | Why: 1) Market leader in K‑12 live‑learning platforms with > 70 % penetration in |
+| 2026-11-12 | PLTR | BUY | $171.79 | $20.00 | 9/10 | Active | - | Why: PLTR at 41.6% of portfolio ($88.7K) is an existential concentration risk. A |
+| 2026-11-12 | NVDA | BUY | $164.54 | N/A | 8/10 | Active | - | Why: 11.6% position ($24.7K) with binary event risk. IV rank likely elevated. Bl |
+| 2026-11-12 | GLD | BUY | N/A | $4.00 | 7/10 | Active | - | Why: Portfolio has 0% commodities, 0% international, 100% US tech beta. Central  |
+| 2026-11-12 | MRVL | BUY | N/A | N/A | 7/10 | Active | - | Why: Pure-play AI networking (optical DSP, 800G/1.6T PAM4, custom ASICs for Goog |
+| 2026-11-12 | EWY | BUY | N/A | $3.00 | 6/10 | Active | - | Why: 0% international exposure. Korea = 70% of global memory (SK Hynix, Samsung) |
