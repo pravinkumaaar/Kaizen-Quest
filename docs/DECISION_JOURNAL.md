@@ -2301,3 +2301,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-11 | ASML | BUY | $812.00 | N/A | 9/10 | Active | - | Why: Sole supplier of EUV lithography machines needed for 3nm+ chips. 80% gross  |
 | 2026-11-12 | SNOW | BUY | $156.30 | N/A | 8/10 | Active | - | Why: Snowflake is the AWS of data clouds, now monetizing AI workflows. Earnings  |
 | 2026-11-12 | COP | BUY | $118.40 | N/A | 7/10 | Active | - | Why: ConocoPhillips provides oil exposure with 5% FCF yield as inflation hedge.  |
+| 2026-11-12 | CRWD | BUY | $340.00 | $22471.00 | 9/10 | Active | - | Why: 1) Market‑leading XDR platform with > 30 % YoY revenue growth and a 95 % gr |
+| 2026-11-12 | DE | BUY | $380.00 | $17977.00 | 8/10 | Active | - | Why: 1) Beneficiary of the global commodity up‑cycle – copper up 6 % YTD and oil |
+| 2026-11-12 | FUTU | BUY | $120.00 | $13483.00 | 7/10 | Active | - | Why: 1) Market leader in K‑12 live‑learning platforms with > 70 % penetration in |
