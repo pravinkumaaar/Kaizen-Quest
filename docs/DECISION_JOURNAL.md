@@ -2314,3 +2314,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-12 | ZS | BUY | $150.00 | $23.30 | 7/10 | Active | - | Why: DCF analysis (88% confidence) yields a fair value of $190, indicating 27% u |
 | 2026-11-13 | SMCI | BUY | $26.23 | N/A | 8/10 | Active | - | Why: Critical supplier for AI/ML servers with GPU-optimized architectures. Recen |
 | 2026-11-13 | GLBE | BUY | $319.00 | N/A | 9/10 | Active | - | Why: Monopoly-like position in international checkout tech, with Alibaba partner |
+| 2026-11-13 | PLTR | BUY | $169.26 | N/A | 9/10 | Active | - | Why: Thesis is intact — AIP commercial ramp, government backlog, genuine moat in |
+| 2026-11-13 | NVDA | BUY | $162.50 | N/A | 8/10 | Active | - | Why: 11.5% weight, +56.6% gain. Earnings in 4 days is a binary event. At this we |
+| 2026-11-13 | MRVL | BUY | N/A | N/A | 7/10 | Active | - | Type/Stock — verify live price (not in feed) | Earnings Nov 26 | NEW position |  |
