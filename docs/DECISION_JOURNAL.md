@@ -2312,3 +2312,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-12 | CRWD | BUY | $250.00 | $380.00 | 8/10 | Active | - | Why: Deep‑research DCF model (85% confidence) values CRWD at $380, implying 52%  |
 | 2026-11-12 | FUTU | BUY | $15.00 | $25.00 | 8/10 | Active | - | Why: DCF model (80% confidence) values FUTU at $25.0, implying 67% upside; Q3 20 |
 | 2026-11-12 | ZS | BUY | $150.00 | $23.30 | 7/10 | Active | - | Why: DCF analysis (88% confidence) yields a fair value of $190, indicating 27% u |
+| 2026-11-13 | SMCI | BUY | $26.23 | N/A | 8/10 | Active | - | Why: Critical supplier for AI/ML servers with GPU-optimized architectures. Recen |
+| 2026-11-13 | GLBE | BUY | $319.00 | N/A | 9/10 | Active | - | Why: Monopoly-like position in international checkout tech, with Alibaba partner |
