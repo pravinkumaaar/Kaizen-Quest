@@ -1,28 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-orces at least one new ticker per month would avoid re‑researching stale ideas.  
-
-- **Systemic process improvements**:  
-  1. **Real‑time options chain fetcher** – integrate an API that supplies live IV, enabling precise LEAP strike/expiry selection based on the holder’s risk tolerance.  
-  2. **Portfolio‑aware filter** – block adding any high‑beta tech ticker when existing weight >30 % to keep concentration under control.  
-  3. **Dynamic rating scale** – adopt a 1‑10 conviction scale with clear thresholds (8+ = high conviction, 6‑7 = moderate) to improve calibration.  
-  4. **Earnings‑risk flag** – automatically reduce position size by 20 % if earnings surprise >10 % to protect against volatility spikes.  
-  5. **Thesis outcome logging** – require each thesis to record entry price, target, and actual exit P&L, creating a feedback loop for future conviction adjustments.  
-
-These concrete, data‑driven actions address the identified weaknesses and will drive higher recommendation quality, better risk management, and more efficient cash deployment in the next run.
-
-## Run: 2026-11-12 07:24:35 ET
-- **Real‑time options chain fetcher** (systemic improvement #1) will let us select precise LEAP strikes for NVDA (current price $207, IV ≈28%) instead of using stale chain data, reducing false‑positive conviction.  
-- **Portfolio‑aware filter** (systemic improvement #2) should block adding VRT ($348) when existing tech exposure already exceeds 30% (PLTR, NVDA, TEM together ≈38%), preventing the 42% loss seen on VRT.  
-- **Conviction calibration**: the 8/10 “high‑conviction” picks (NVDA, PLTR, SOFI, TEM, VRT) show mixed outcomes — NVDA (‑22.8%) and VRT (‑42%) are false positives, while TEM (+53.6%) and PLTR (+21.7%) are true positives, indicating a need for tighter conviction thresholds.  
-- **Thesis journal review**: the journal is empty; without recorded entry prices, targets, and P&L we cannot evaluate calibration — implement mandatory logging (e.g., NVDA entry $180, target $250, actual –$22.8) for every thesis.  
-- **Missed opportunity**: the report ignored high‑growth AI infrastructure names such as AMD ($115, +18% YTD) and Broadcom ($850, +12% YTD) that are not in the portfolio but could rebalance the 53% cash and improve the 90% cash‑deployment target.  
-- **Data quality issue**: PLTR price $139.47 appears stale (last update 2026‑04‑20) while the market price is $152, creating a 9% undervaluation in the recommendation; integrate real‑time price feeds to avoid stale data.  
-- **Risk management**: current concentration 69.5% in a few stocks (NVDA, PLTR, TEM, VRT) exceeds safe limits; enforce a hard cap of 30% per ticker and trigger alerts when weight >25% to protect against tail risks.  
-- **Cash deployment**: 53% cash (~$52k) sits idle; allocate 20% of cash each week to high‑conviction ideas (e.g., a 10% position in a new AI chip stock) to meet the 90% cash‑to‑cash‑out target and reduce opportunity cost.  
-- **Earnings‑risk flag**: missing for NVDA ahead of its July earnings; applying a 20% position reduction would have limited the 22.8% drop, so automate a 20% size cut for any holding with >10% earnings surprise.  
-- **Memory usage**: the past analysis of TEM’s 53% gain (Sept‑Oct 2026) was not referenced in the Nov‑12 run; incorporate historical price trends and volume spikes to refine entry points and avoid repeating outdated assumptions.  
-- **Process improvement – dynamic rating scale**: replace the static 8/10 conviction rating with a 1‑10 scale where 8+ = high conviction; this will prevent over‑rating stocks like NVDA that have underperformed.  
+where 8+ = high conviction; this will prevent over‑rating stocks like NVDA that have underperformed.  
 - **Market foresight rating**: update the 6/100 score to a relative sector momentum metric (e.g., AI sector +12% vs S&P flat) to give a clearer, less overly conservative forward view.  
 - **Options data integrity**: integrate a live options‑chain API before the next run to fix broken LEAP data for PLTR and VRT, ensuring accurate premium and Greeks calculations.  
 - **New‑stock scan module**: add a filter that surfaces tickers with >15% earnings surprise and low correlation to existing holdings, preventing the portfolio from being limited solely to current positions and capturing fresh asymmetric plays.
@@ -148,3 +126,28 @@ These concrete steps address the specific failures highlighted in the user feedb
 - **Opportunity cost audit:** The **$51.8k cash** could have been used to capture the **+52 % upside in TEM** (add ~50 shares) or to establish a **long‑short pair** (e.g., long TEM, short VRT) to hedge the sector exposure, reducing the **69 % concentration risk** while improving overall return potential.  
 
 - **Overall self‑assessment:** The run demonstrated **strong analytical depth** (detailed thesis, news quality, options rationale) but suffered from **inconsistent data freshness, absent risk controls, and a lack of systematic learning integration**, which together limited the portfolio’s ability to translate high‑conviction ideas into reliable outperformance.
+
+## Run: 2026-11-12 21:29:26 ET
+- **What Worked Well** – The **TEM** long‑term recommendation (8/10 conviction) delivered a **+52 % upside** (price $50.22 → $76.40) using clean price data from Alpaca, showing that high‑conviction picks can be highly profitable when the underlying thesis (strong earnings momentum + low short‑interest) is sound.  
+
+- **What Didn't Work** – **SOFI** (8/10 conviction, $16.29 → $15.74) posted a **‑3.38 % loss**, indicating that the thesis (payment‑services growth) was over‑optimistic; the model failed to adjust for rising competition and macro‑rate pressure, leading to a false positive.  
+
+- **Conviction Calibration** – Out of the four 8/10 picks (PLTR, SOFI, TEM, VRT), only **TEM** and **PLTR** (+23 %) met expectations; **SOFI** and **VRT** (‑3.4 % and ‑38 % respectively) were false positives, revealing a lack of calibrated confidence levels.  
+
+- **Thesis Journal Review** – The **TEM** thesis (“high‑growth, low‑float tech‑enabled services with expanding TAM”) was **validated** by the +52 % price move; the **VRT** thesis (“cloud‑infrastructure play with strong tailwinds”) was **refuted** by a 38 % decline, highlighting a pattern where overly optimistic market‑size assumptions without competitive moats lead to poor outcomes.  
+
+- **Missed Opportunities** – The **$51.8 k cash** (52 % of portfolio) could have been used to add **≈50 shares of TEM** (≈$2.5 k) or to launch a **long‑short pair** (long TEM, short VRT) to hedge the sector exposure, improving the 69 % concentration risk seen in recent runs.  
+
+- **Data Quality Issues** – PLTR price ($139.47) appears **stale** (last update >30 days) and the options chain was reported as “broken,” causing inaccurate premium calculations; VRT’s price also showed a **large discrepancy** between entry ($348.38) and current ($214.98) suggesting possible delayed or hallucinated data.  
+
+- **Risk Management** – No explicit **stop‑loss** levels were set for the active positions; the **69 % concentration** in the recent memory (value $212,648, concentration 69.7 %) indicates that a single adverse move could jeopardize > two‑thirds of portfolio value, violating prudent risk controls.  
+
+- **Cash Deployment** – Cash is far from the **90 % deployment target**; deploying even 30 % of idle cash into high‑conviction ideas (e.g., TEM) would reduce idle drag and improve the **-0.4 % P&L** to a more meaningful positive return.  
+
+- **Memory & Learning** – The system **failed to incorporate sector relative‑strength metrics** (30‑day RS) and **did not filter for top‑movers**, missing a chance to reassess NVDA (high volume, still negative) or other emerging leaders, indicating a gap in learning integration.  
+
+- **Process Improvements** – Implement a **conviction‑score calibration** that ties confidence levels to historical win‑rates (e.g., 8/10 → ≥70 % historical success) and enforce **automatic stop‑loss triggers** (e.g., 15 % downside) for all active positions.  
+
+- **Process Improvements** – Add a **watchlist filter** that surfaces **new stocks with >5 % price move or volume surge** (e.g., NVDA, META) to broaden opportunity set beyond current holdings, addressing the “only consider existing positions” limitation.  
+
+- **Process Improvements** – Integrate **real‑time price validation** and **options chain integrity checks** into the data pipeline, flagging stale quotes (like PLTR) before generating recommendations, thereby eliminating hallucinated facts and improving overall report reliability.
