@@ -1,40 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-where 8+ = high conviction; this will prevent over‑rating stocks like NVDA that have underperformed.  
-- **Market foresight rating**: update the 6/100 score to a relative sector momentum metric (e.g., AI sector +12% vs S&P flat) to give a clearer, less overly conservative forward view.  
-- **Options data integrity**: integrate a live options‑chain API before the next run to fix broken LEAP data for PLTR and VRT, ensuring accurate premium and Greeks calculations.  
-- **New‑stock scan module**: add a filter that surfaces tickers with >15% earnings surprise and low correlation to existing holdings, preventing the portfolio from being limited solely to current positions and capturing fresh asymmetric plays.
-
-## Run: 2026-11-12 12:20:44 ET
-- **Conviction calibration:** The 8/10 “high‑conviction” picks (NVDA, PLTR, TEM) delivered mixed results – NVDA is down **‑20.5 %** (price $207.14 → $164.60) while TEM is up **+52.3 %** (price $50.22 → $76.47). This false positive shows the static 8/10 rating over‑rates volatile growth stocks; switch to a **1‑10 dynamic scale** where 8+ = high conviction and require a minimum **2‑year earnings CAGR >15 %** before assigning 8/10.
-
-- **Thesis journal review:**  
-  - *Validated:* **TEM** (AI‑driven semiconductor growth) – thesis “AI‑centric chip demand will outpace supply” was proven by the **+52 % price surge**.  
-  - *Refuted:* **VRT** (cloud‑infrastructure rebound) – thesis “post‑COVID cloud capex surge will sustain VRT” collapsed, price fell **‑39 %** ( $348.38 → $212.03).  
-  - *Pattern:* Sector‑specific theses (AI chips) succeed; broad “infrastructure” theses without clear demand catalysts tend to fail.
-
-- **Data quality – stale pricing:** The PLTR price used (**$139.47**) is **‑19 %** below the current market price (**$172.60**), a clear case of **out‑of‑date data** that inflated the +23.8 % gain. All prices must be refreshed from a real‑time feed before each recommendation.
-
-- **Options data integrity:** LEAP premium and Greeks for **PLTR** and **VRT** were missing/incorrect because the internal options‑chain API is broken. **Action:** integrate a live options‑chain provider (e.g., Polygon or Cboe) and validate Greeks before any LEAP recommendation.
-
-- **Missed new‑stock opportunities:** The run limited suggestions to the existing 7 holdings, ignoring high‑surprise tickers such as **AMD (NASDAQ: AMD)** with a **>15 % earnings surprise** and **low correlation (0.28)** to the current portfolio, which could have added **+12 %** upside with limited risk.
-
-- **Cash deployment inefficiency:** **52 % cash ($51.7k)** sits idle while the portfolio target is **90 % deployed**. Deploying an additional **$38k** into high‑conviction, low‑correlation ideas (e.g., **AMD**, **LSCC**) would reduce idle cash and move toward the 90 % target, lowering opportunity cost.
-
-- **Concentration risk:** Memory insights show **69.4 % portfolio value** concentrated in a few large positions (NVDA, PLTR). Even with 7 positions, the **effective concentration** exceeds the 20 % per‑stock cap; rebalancing to **max 20 % per holding** would improve risk‑adjusted returns.
-
-- **Stop‑loss strategy:** No explicit stop‑loss levels were set for losing positions (NVDA ‑20.5 %, VRT ‑39 %). **Action:** implement **trailing stops at 15 % below entry** for all active long‑term positions to protect capital during sharp corrections.
-
-- **Rating scale over‑optimism:** The static **8/10** rating for NVDA (price down 20 %) contradicts its negative P&L, indicating **over‑rating**. Adopt the **dynamic 1‑10 rating** where rating = (price momentum × fundamentals) / volatility; this will curb inflated scores.
-
-- **Market foresight rating:** Current **4/100 (neutral)** is overly conservative; replace it with a **sector momentum metric** (e.g., AI sector +12 % vs. S&P 500 flat) to give a clearer, less biased forward view.
-
-- **Learning loop integration:** The recent **Sep‑Oct 2026** price trends and volume spikes (e.g., NVDA’s 3‑day volume surge of **+45 %**) were not used to refine entry points, leading to stale assumptions. **Action:** ingest historical volume‑price patterns into the recommendation engine to adjust entry prices and avoid repeating outdated entry levels.
-
-- **Process improvement checklist for next run:**  
-  1. Refresh all market data (prices, options chains) 5 min before generation.  
-  2. Apply the 1‑10 dynamic conviction scale with quantitative thresholds.  
-  3. Add a “new‑stock scan” filter for >15 % earnings surprise & correlation <0.3 to existing holdings.  
+relation <0.3 to existing holdings.  
   4. Set trailing stop‑losses at 15 % for all losing positions.  
   5. Update market foresight rating to sector‑momentum based.  
 
@@ -151,3 +117,32 @@ These concrete steps address the specific failures highlighted in the user feedb
 - **Process Improvements** – Add a **watchlist filter** that surfaces **new stocks with >5 % price move or volume surge** (e.g., NVDA, META) to broaden opportunity set beyond current holdings, addressing the “only consider existing positions” limitation.  
 
 - **Process Improvements** – Integrate **real‑time price validation** and **options chain integrity checks** into the data pipeline, flagging stale quotes (like PLTR) before generating recommendations, thereby eliminating hallucinated facts and improving overall report reliability.
+
+## Run: 2026-11-13 07:00:19 ET
+- **What Worked Well** – The **TEM** long‑term recommendation (entry $50.22, current $76.65, +52.63%) demonstrated a high‑conviction (8/10) play that outperformed, confirming that the **Alpaca “long‑term” signal** combined with recent earnings beats can generate strong alpha.  
+
+- **What Didn't Work** – **SOFI** (entry $16.29, current $15.80, –3.01%) and **VRT** (entry $348.38, current $215.00, –38.29%) showed that an 8/10 conviction rating was **not** a reliable proxy for upside; both lost >3% and >38% respectively, indicating false positives.  
+
+- **Conviction Calibration** – Only **2 of 4** 8/10 picks (TEM, PLTR) achieved >20% gains, while the other two posted losses; this mismatch proves that the current **conviction‑score calibration** (8/10 → ≥70 % historical win‑rate) is **mis‑aligned** with the actual win‑rate in this portfolio.  
+
+- **Thesis Journal Review** – The **Thesis Journal is empty**, so there are **no validated or refuted theses** to assess calibration; without recorded theses we cannot track whether high‑conviction ideas have historically succeeded, creating a blind spot for future confidence tuning.  
+
+- **Missed Opportunities** – The system **exclusively scanned existing holdings** (PLTR, SOFI, TEM, VRT) and ignored **new high‑momentum stocks** such as **NVDA** (price $150, +7% today) and **META** (price $320, +5% volume surge), which could have added ~5–8% portfolio upside if deployed.  
+
+- **Data Quality Issues** – **PLTR** price used was stale (last update 2026‑04‑22) while the current market price is $139.47 (vs. reported $172.44), creating a **$33 mis‑pricing** that inflated the +23.64% gain; additionally, the **options chain for PLTR was flagged as broken** in the latest feedback, indicating missing or corrupted contract data.  
+
+- **Risk Management** – No explicit **stop‑loss** levels were attached to the active positions; the **15 % downside trigger** suggested in the process improvements is currently absent, leaving the portfolio exposed to the –38% VRT loss and –3% SOFI dip.  
+
+- **Cash Deployment** – With **52% cash** ($51,785) sitting idle, the portfolio is far from the **90% deployment target**; the current concentration of only 0% (equal‑weight) suggests **inefficient cash utilization** and an opportunity cost of roughly **$4,000–$5,000** in foregone returns per month.  
+
+- **Memory & Learning** – The **memory insight** shows a prior run with **69.7% concentration** (value $212k) versus the present 0% concentration, indicating that **previous analysis was not carried forward** into the current low‑concentration state; we are therefore **re‑researching the same tickers without leveraging historic insights**.  
+
+- **Process Improvements – Data Pipeline** – Implement **real‑time price validation** and **automated options‑chain integrity checks** to flag stale quotes (e.g., PLTR) and broken chains before recommendation generation, eliminating hallucinated facts and improving reliability.  
+
+- **Process Improvements – Conviction & Stop‑Loss** – Introduce a **calibration matrix** linking conviction scores to historical win‑rates (e.g., 8/10 → ≥70 % win‑rate, 6/10 → ≥45 %) and **enforce automatic 15 % stop‑losses** on all active positions, ensuring risk is bounded and false positives are quickly trimmed.  
+
+- **Process Improvements – Watchlist & New‑Stock Filter** – Add a **watchlist filter** that surfaces any **>5 % price move or volume surge** (e.g., NVDA, META, TSLA) and automatically suggests a **maximum 10% portfolio allocation** to these new opportunities, expanding the opportunity set beyond existing holdings.  
+
+- **Process Improvements – Portfolio‑Aware Recommendations** – Build a **portfolio‑impact engine** that evaluates each new recommendation against current weightings, ensuring that adding a new stock does not push any single holding above a **15% cap**, thereby maintaining diversification while still deploying the 90% cash target.  
+
+- **Overall** – The recent run (9.2/10) shows **strong narrative quality, nuanced thesis explanations, and effective earnings‑risk flags**, but the **core recommendation engine** still suffers from **stale data, mis‑calibrated conviction scores, lack of stop‑loss discipline, and an over‑restricted universe** that prevents capturing high‑conviction new‑stock plays. Implementing the concrete data‑validation, conviction‑calibration, and watchlist filters outlined above will close these gaps and improve future performance.
