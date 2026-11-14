@@ -2320,3 +2320,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-14 | NVDA | BUY | $162.85 | N/A | 8/10 | Active | - | Why: NVDA has pulled back 15% from highs despite AI dominance. Earnings could re |
 | 2026-11-14 | EEM | BUY | $41.20 | N/A | 7/10 | Active | - | Why: EM valuations at 12x vs S&P 21x, USD peaking, manufacturing recovery |
 | 2026-11-14 | PANW | BUY | $254.30 | N/A | 8/10 | Active | - | Why: Leader in cloud security with 25% growth, 20% FCF margins, and 30% insider  |
+| 2026-11-14 | INDA | BUY | $85.50 | N/A | 8/10 | Active | - | Why: India continues to outpace developed markets in GDP growth (~7% annually),  |
+| 2026-11-14 | GLD | BUY | $182.40 | N/A | 7/10 | Active | - | Why: With escalating geopolitical tensions and stubborn inflation (~4% CPI), gol |
