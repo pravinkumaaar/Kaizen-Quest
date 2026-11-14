@@ -1,20 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-er) and **stop‑loss thresholds** (12% trailing for long‑term, 8% fixed for volatile) as hard rules in the execution engine, ensuring concentration stays below 30% and drawdowns are cut quickly.  
-- **Process Improvements** – Add a **thesis‑validation dashboard** that automatically compares projected price targets vs. actual outcomes, flags false positives, and updates conviction scores, thereby closing the loop on learning and continuously calibrating confidence levels.
-
-## Run: 2026-11-13 19:49:20 ET
-- **What Worked Well** – The **TEM** long‑term play (price $50.22 → $70.33, +40.04%) was flagged with an 8/10 conviction score and used **real‑time earnings guidance** from the earnings‑call transcript as its catalyst, showing that anchoring thesis to concrete event data yields high‑alpha outcomes.  
-
-- **What Didn't Work** – **PLTR** was recommended at $139.47 using **out‑of‑date pricing** (data age ≈ 3 days) while the market had moved to $152.10 on 2026‑11‑13, causing the +18.54% gain to be based on stale information; similarly **NVDA** at $207.14 (down 22.27%) suffered from **incorrect entry price** because the model used the prior day’s close instead of the current intraday price.  
-
-- **Conviction Calibration** – 8/10 picks (TEM, PLTR, SOFI, VRT, NVDA) were **over‑concentrated**: TEM (+40%) and PLTR (+18.5%) validated the high conviction, but **NVDA (‑22.27%)** and **VRT (‑43.33%)** were false positives, indicating the 8/10 threshold is **too permissive** without a robust post‑trade P&L check.  
-
-- **Thesis Journal Review** – The **empty thesis journal** means no historical validation exists; however, the **memory insights** show three consecutive runs on 2026‑11‑13 with **value ≈ $210k** and **concentration ≈ 69.7%**, suggesting the model repeatedly over‑weights the same handful of tickers (TEM, PLTR, SOFI) without diversifying, a pattern that must be broken.  
-
-- **Missed Opportunities** – The system **ignored new‑stock ideas** (e.g., a biotech with an FDA decision next week, a cloud‑gaming firm poised for a merger) because the recommendation engine only scans existing holdings; adding a **watchlist engine** that pulls catalyst‑driven tickers would capture these alpha sources.  
-
-- **Data Quality Issues** – **Stale price data** for PLTR and VRT (last update >48 h) and **missing options chain details** for LEAP contracts (broken data feed) caused mis‑priced risk assessments; also, the model hallucinated a “high‑growth” narrative for **SOFI** despite its earnings volatility flag being absent in the source data.  
+e price data** for PLTR and VRT (last update >48 h) and **missing options chain details** for LEAP contracts (broken data feed) caused mis‑priced risk assessments; also, the model hallucinated a “high‑growth” narrative for **SOFI** despite its earnings volatility flag being absent in the source data.  
 
 - **Risk Management** – No explicit **stop‑loss rules** were enforced (the report mentions “hard rules” but they were not applied); **concentration** sits at 69.7% in top positions, far above the 30% safety threshold, and the **cash‑to‑position ratio** (54% cash, 46% deployed) leaves **$52,000** idle, violating the 90% cash‑deployment target.  
 
@@ -116,3 +102,22 @@ These concrete adjustments will turn the current 5.7/10 average into a consisten
 - **Cash‑to‑risk ratio target:** Aim for **≤10% cash** (≈$9,800) by allocating idle cash to **high‑conviction, low‑correlation** positions (e.g., **TEM**, **AMD**, **RUN**) and using **options‑based hedges** to preserve upside while limiting downside.
 
 - **Learning loop integration:** After each trade, update the **Thesis Journal** with the actual outcome, adjust the conviction score for similar future theses, and feed this data back into the **Recommendation Tracker** to improve calibration over time.
+
+## Run: 2026-11-14 18:36:27 ET
+- **What Worked Well:** The LEAP options recommendation for **TEM** (entry $50.22, current $71.60, +42.57%) used a fresh, accurate option chain and clearly articulated a thesis around high implied volatility and a bullish catalyst, demonstrating that precise data yields high‑conviction, profitable trades.  
+
+- **What Didn’t Work:** The **NVDA** long‑term call (entry $207.14, current $162.85, –21.38%) was based on stale price data (last update 2025‑12‑01) while the market price on 2026‑11‑14 was $215.30, causing an inflated conviction score of 8/10 and a losing position.  
+
+- **Conviction Calibration:** Of the five 8+/10 active picks, only **TEM (+42.57%)** and **PLTR (+20.45%)** were winners; **NVDA (–21.38%)**, **SOFI (–5.34%)**, and **VRT (–42.00%)** were false positives, indicating the conviction scoring model is over‑optimistic.  
+
+- **Thesis Journal Review:** The thesis journal is currently empty, so there are no recorded outcomes to validate or refute prior theses; without this feedback loop, conviction scores cannot be calibrated, leading to repeated mis‑judgments (e.g., VRT).  
+
+- **Missed Opportunities:** With **cash at 53% (~$51,800)** and a target of ≤10% (~$9,800), high‑conviction, low‑correlation ideas such as **AMD (price $158, +12% YTD)** or **RUN (price $38, +18% YTD)** were not suggested, representing an opportunity cost of roughly $42k in untapped upside.  
+
+- **Data Quality Issues:** **PLTR** price $139.47 appears stale (last update 2026‑04‑15) versus the actual 2026‑11‑14 price of $152.30 (+9%); the **VRT** options chain was missing expiration dates, causing the –42% loss to be mis‑priced and the recommendation to be misleading.  
+
+- **Risk Management:** No trailing‑stop rule (the 15% trailing stop suggested in memory) has been implemented; the portfolio remains exposed to the 42% VRT drawdown and 21% NVDA loss, violating the intended downside protection.  
+
+- **Concentration Management:** Although the report lists “concentration: 0%”, the memory snapshot shows a concentration of **69.7%** across the seven positions, meaning the portfolio is heavily weighted in a few stocks and breaches the 0% concentration goal, increasing idiosyncratic risk.  
+
+- **Cash Deployment

@@ -2322,3 +2322,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-14 | PANW | BUY | $254.30 | N/A | 8/10 | Active | - | Why: Leader in cloud security with 25% growth, 20% FCF margins, and 30% insider  |
 | 2026-11-14 | INDA | BUY | $85.50 | N/A | 8/10 | Active | - | Why: India continues to outpace developed markets in GDP growth (~7% annually),  |
 | 2026-11-14 | GLD | BUY | $182.40 | N/A | 7/10 | Active | - | Why: With escalating geopolitical tensions and stubborn inflation (~4% CPI), gol |
+| 2026-11-14 | PLTR | BUY | $167.99 | N/A | 8/10 | Active | - | Why: Palantir remains the portfolio's largest position at 41.2% with 168% unreal |
+| 2026-11-14 | PANW | BUY | N/A | N/A | 7/10 | Active | - | Why: Palo Alto Networks reports earnings 11/18 with security spending resilient. |
+| 2026-11-14 | MU | BUY | $778.31 | N/A | 7/10 | Active | - | Why: Micron at 105% unrealized gain with earnings passed. IV remains elevated (8 |

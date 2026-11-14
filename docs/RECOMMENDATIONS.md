@@ -3,8 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **INDA** | $85.50 | TBD | 8/10 |  Active  |  $85.50  |  +0.0%  | Medium 6-18mo | Watchlist |
-| 2 | **GLD** | $182.40 | TBD | 7/10 |  Active  |  $182.40  |  +0.0%  | Swing 3-6mo | Watchlist |
+| 1 | **PLTR** | $167.99 | TBD | 8/10 |  Active  |  $167.99  |  +0.0%  | Immediate action | Watchlist |
+| 2 | **PANW** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | 2-8 weeks | Watchlist |
+| 3 | **MU** | $778.31 | TBD | 7/10 |  Active  |  $778.31  |  +0.0%  | Swing | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
