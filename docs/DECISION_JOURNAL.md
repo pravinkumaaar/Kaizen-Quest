@@ -2317,3 +2317,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-13 | PLTR | BUY | $169.26 | N/A | 9/10 | Active | - | Why: Thesis is intact — AIP commercial ramp, government backlog, genuine moat in |
 | 2026-11-13 | NVDA | BUY | $162.50 | N/A | 8/10 | Active | - | Why: 11.5% weight, +56.6% gain. Earnings in 4 days is a binary event. At this we |
 | 2026-11-13 | MRVL | BUY | N/A | N/A | 7/10 | Active | - | Type/Stock — verify live price (not in feed) | Earnings Nov 26 | NEW position |  |
+| 2026-11-14 | NVDA | BUY | $162.85 | N/A | 8/10 | Active | - | Why: NVDA has pulled back 15% from highs despite AI dominance. Earnings could re |
+| 2026-11-14 | EEM | BUY | $41.20 | N/A | 7/10 | Active | - | Why: EM valuations at 12x vs S&P 21x, USD peaking, manufacturing recovery |
+| 2026-11-14 | PANW | BUY | $254.30 | N/A | 8/10 | Active | - | Why: Leader in cloud security with 25% growth, 20% FCF margins, and 30% insider  |
