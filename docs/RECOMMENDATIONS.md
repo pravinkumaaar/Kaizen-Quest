@@ -3,9 +3,10 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **NVDA** | $162.85 | TBD | 8/10 |  Active  |  $162.85  |  +0.0%  | Swing (1-2 weeks) | Watchlist |
-| 2 | **EEM** | $41.22 | TBD | 7/10 |  Active  |  $41.22  |  +0.0%  | Medium (6-12 months) | Watchlist |
-| 3 | **MU** | $778.31 | $20.00 | 6/10 |  Active  |  $778.31  |  +0.0%  | Medium (3-6 months) | Watchlist |
+| 1 | **PLTR** | $167.99 | $20.00 | 9/10 |  Active  |  $167.99  |  +0.0%  | Swing 2–8 weeks to execute | **Conviction: 9/10** | **Track: Yes** | Watchlist |
+| 2 | **MRVL** | Market | TBD | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6–18 months | **Conviction: 8/10** | **Track: Yes** | Watchlist |
+| 3 | **SLV** | $44.13 | $60.00 | 7/10 |  Active  |  $44.13  |  +0.0%  | Long 1–3 years | **Conviction: 7/10** | **Track: Yes** | Watchlist |
+| 4 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6–18 months | **Conviction: 7/10** | **Track: Yes** | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

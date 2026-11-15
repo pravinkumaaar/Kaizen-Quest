@@ -2333,3 +2333,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-15 | NVDA | BUY | $162.85 | N/A | 8/10 | Active | - | Why: NVIDIA's earnings will set the tone for AI hardware demand. Despite recent  |
 | 2026-11-15 | EEM | BUY | $41.22 | N/A | 7/10 | Active | - | Why: EM valuations at 12x P/E vs S&P 500 at 20x. Dollar weakness + Fed pause cre |
 | 2026-11-15 | MU | BUY | $778.31 | $20.00 | 6/10 | Active | - | Why: Micron is best-positioned for HBM3 memory ramp to feed AI servers. DRAM pri |
+| 2026-11-15 | PLTR | BUY | $167.99 | $20.00 | 9/10 | Active | - | Why: Position size has become the risk, not the thesis. A 35% drawdown in PLTR — |
+| 2026-11-15 | MRVL | BUY | N/A | N/A | 8/10 | Active | - | Why: You own the *merchant GPU* (NVDA) and the *memory* (MU) of the AI buildout, |
+| 2026-11-15 | SLV | BUY | $44.13 | $60.00 | 7/10 | Active | - | Why: You own zero real assets in a book that is 100% financial-claims-on-AI. Sil |
+| 2026-11-15 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your MU position (+105%) is telling you memory is in an upcycle. But you're |
