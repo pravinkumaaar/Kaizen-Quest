@@ -2330,3 +2330,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-15 | PLTR | BUY | $167.99 | N/A | 9/10 | Active | - | Why: PLTR remains a core holding but has grown to 41.3% of the portfolio, signal |
 | 2026-11-15 | SLV | BUY | $44.13 | N/A | 7/10 | Active | - | Why: Silver is a hedge against inflation and has industrial demand tailwinds fro |
 | 2026-11-15 | CASH | BUY | N/A | N/A | 8/10 | Active | - | Why: With earnings season volatility and macroeconomic uncertainty, holding cash |
+| 2026-11-15 | NVDA | BUY | $162.85 | N/A | 8/10 | Active | - | Why: NVIDIA's earnings will set the tone for AI hardware demand. Despite recent  |
+| 2026-11-15 | EEM | BUY | $41.22 | N/A | 7/10 | Active | - | Why: EM valuations at 12x P/E vs S&P 500 at 20x. Dollar weakness + Fed pause cre |
+| 2026-11-15 | MU | BUY | $778.31 | $20.00 | 6/10 | Active | - | Why: Micron is best-positioned for HBM3 memory ramp to feed AI servers. DRAM pri |
