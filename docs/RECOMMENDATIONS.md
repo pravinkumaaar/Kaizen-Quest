@@ -3,10 +3,9 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $167.99 | $20.00 | 9/10 |  Active  |  $167.99  |  +0.0%  | Swing 2–8 weeks to execute | **Conviction: 9/10** | **Track: Yes** | Watchlist |
-| 2 | **MRVL** | Market | TBD | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6–18 months | **Conviction: 8/10** | **Track: Yes** | Watchlist |
-| 3 | **SLV** | $44.13 | $60.00 | 7/10 |  Active  |  $44.13  |  +0.0%  | Long 1–3 years | **Conviction: 7/10** | **Track: Yes** | Watchlist |
-| 4 | **EWY** | Market | TBD | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 6–18 months | **Conviction: 7/10** | **Track: Yes** | Watchlist |
+| 1 | **PANW** | $265.50 | TBD | 8/10 |  Active  |  $265.50  |  +0.0%  | Swing (2-8 weeks) | Watchlist |
+| 2 | **EWY** | $71.30 | TBD | 7/10 |  Active  |  $71.30  |  +0.0%  | Medium (6-18mo) | Watchlist |
+| 3 | **GLBE** | $32.50 | TBD | 7/10 |  Active  |  $32.50  |  +0.0%  | Swing | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

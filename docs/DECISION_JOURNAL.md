@@ -2337,3 +2337,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-15 | MRVL | BUY | N/A | N/A | 8/10 | Active | - | Why: You own the *merchant GPU* (NVDA) and the *memory* (MU) of the AI buildout, |
 | 2026-11-15 | SLV | BUY | $44.13 | $60.00 | 7/10 | Active | - | Why: You own zero real assets in a book that is 100% financial-claims-on-AI. Sil |
 | 2026-11-15 | EWY | BUY | N/A | N/A | 7/10 | Active | - | Why: Your MU position (+105%) is telling you memory is in an upcycle. But you're |
+| 2026-11-15 | PANW | BUY | $265.50 | N/A | 8/10 | Active | - | Why: The FAA's AI air traffic expansion and drone attacks highlight urgent need  |
+| 2026-11-15 | EWY | BUY | $71.30 | N/A | 7/10 | Active | - | Why: Korea is trading at 9x P/E vs S&P's 21x, with 70% tech composition includin |
+| 2026-11-15 | GLBE | BUY | $32.50 | N/A | 7/10 | Active | - | Why: Final EU digital market act implementation forces cross-border compliance,  |
