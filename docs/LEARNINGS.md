@@ -1,25 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-e price data** for PLTR and VRT (last update >48 h) and **missing options chain details** for LEAP contracts (broken data feed) caused mis‑priced risk assessments; also, the model hallucinated a “high‑growth” narrative for **SOFI** despite its earnings volatility flag being absent in the source data.  
-
-- **Risk Management** – No explicit **stop‑loss rules** were enforced (the report mentions “hard rules” but they were not applied); **concentration** sits at 69.7% in top positions, far above the 30% safety threshold, and the **cash‑to‑position ratio** (54% cash, 46% deployed) leaves **$52,000** idle, violating the 90% cash‑deployment target.  
-
-- **Cash Deployment** – With **$54k** (54% of $96.9k) sitting idle, the portfolio’s **opportunity cost** is high; reallocating 30% of cash into **high‑conviction, low‑correlation stocks** (e.g., a clean‑energy play with a 12% upside catalyst) would move the cash usage toward the 90% goal and reduce drawdown risk.  
-
-- **Memory & Learning** – The **memory log** repeats the same three values and concentrations, indicating **no learning progression**; the system should ingest the **P&L of each ticker** (e.g., TEM +40% vs. VRT ‑43%) to re‑weight conviction scores and avoid re‑recommending losing ideas.  
-
-- **Process Improvements – Watchlist** – Expand the **watchlist engine** to include **event‑driven catalysts** (earnings, FDA approvals, M&A) and rank by **historical thesis success rate** (e.g., 8/10 picks that hit >30% upside), thereby preventing the current “portfolio‑only” bias.  
-
-- **Process Improvements – Position‑Size & Stop‑Loss** – Enforce **max 15% portfolio per ticker** and **hard stop‑losses** (12% trailing for long‑term, 8% fixed for volatile stocks); this will cap concentration below 30% and automatically cut the ‑43% VRT loss, improving risk‑adjusted returns.  
-
-- **Process Improvements – Thesis‑Validation Dashboard** – Build a **real‑time dashboard** that compares projected price targets vs. actual outcomes, flags false positives (e.g., NVDA, VRT), and updates conviction scores, closing the learning loop and calibrating future 8/10 recommendations.  
-
-- **Overall** – The recent **9.2/10 run** demonstrated strong **portfolio awareness**, **detailed thesis explanations**, and **high‑quality news**, but the **core flaw** remains the **inability to look beyond existing holdings**, leading to stale data, poor conviction calibration, and missed high‑alpha opportunities. Implementing the above systematic fixes will turn the current 5.7/10 average into a consistently high‑performing, low‑risk portfolio.
-
-## Run: 2026-11-13 23:47:14 ET
-- **What Worked Well** – The 8/10 conviction picks **PLTR ($139.47 → $167.99, +20.45%)** and **TEM ($50.22 → $71.60, +42.57%)** showed strong upside, confirming that the **Alpaca “long‑term” options thesis** (high implied volatility, 30‑day expiry) delivered measurable returns when the underlying moved as expected.  
-
-- **What Didn't Work** – **VRT ($348.38 → $202.07, -42.00%)** was a clear false positive; the model over‑estimated upside based on stale price data (last update > 30 days) and failed to apply the required **12% trailing stop‑loss**, resulting in a 43% drawdown that far exceeded the 12% risk budget.  
+ and failed to apply the required **12% trailing stop‑loss**, resulting in a 43% drawdown that far exceeded the 12% risk budget.  
 
 - **Conviction Calibration** – Only **2 of 4 8/10 picks (PLTR, TEM)** met the upside threshold; **SOFI ($16.29 → $15.42, -5.34%)** and **VRT** were false positives, indicating **conviction scores were not calibrated** to actual price movement and need a tighter link to recent news catalysts and technical breakouts.  
 
@@ -121,3 +102,20 @@ These concrete adjustments will turn the current 5.7/10 average into a consisten
 - **Concentration Management:** Although the report lists “concentration: 0%”, the memory snapshot shows a concentration of **69.7%** across the seven positions, meaning the portfolio is heavily weighted in a few stocks and breaches the 0% concentration goal, increasing idiosyncratic risk.  
 
 - **Cash Deployment
+
+## Run: 2026-11-14 23:39:11 ET
+- The 8‑point “high‑conviction” picks (NVDA, PLTR, SOFI, TEM, VRT, etc.) delivered mixed results: **TEM (+42.57%)** and **PLTR (+20.45%)** validated the thesis, while **VRT (‑42.00%)** and **NVDA (‑21.38%)** were clear false positives.  
+- **PLTR price used was $139.47** (last update 2026‑04‑15) versus the actual 2026‑11‑14 price of **$152.30**, a **9% stale‑price error** that inflated upside and misled risk assessment.  
+- **VRT options chain lacked expiration dates**, causing the –42% loss to be mis‑priced; the model assumed a 15% trailing stop that never triggered, leaving the position exposed to a steep drawdown.  
+- **Cash sits at 53% ($51,600) of the $97,708 portfolio**, far below the 90% target, creating an opportunity cost of roughly **$42k** in untapped upside (e.g., missed **AMD $158 (+12% YTD)** or **RUN $38 (+18% YTD)**).  
+- Portfolio “concentration: 0%” is contradicted by memory snapshots showing **69.7% of total value** tied to the seven positions, violating the zero‑concentration rule and inflating idiosyncratic risk.  
+- The recommendation universe was limited to existing holdings; **no new ideas such as AMD or RUN** were suggested despite clear YTD gains, representing a missed diversification and upside opportunity.  
+- No trailing‑stop rule (the 15% trailing stop noted in memory) has been implemented; stop‑losses are either absent or based on static thresholds that failed to protect **VRT** and **NVDA**.  
+- An **earnings‑risk flag** was correctly generated for several positions, showing the model can spot downside catalysts, yet the flag was not acted upon because stop‑losses were not set.  
+- **Data freshness checks are insufficient**: PLTR and VRT data were stale, and the model hallucinated that VRT options were priced correctly, leading to misleading loss calculations.  
+- The **thesis journal is empty**, preventing calibration of conviction scores over time; without recorded theses we cannot see which ideas survived or failed, limiting learning.  
+- Recent memory snapshots (2026‑11‑14) show portfolio value fluctuating between **$206k‑$210k** with concentration staying at **~69.7%**, indicating that rebalancing or cash deployment has not improved since the last review.  
+- **Process improvement:** Deploy automated data‑validation scripts that flag prices older than 7 days and missing option‑chain fields before generating recommendations.  
+- **Process improvement:** Enforce a hard concentration cap (e.g., max 20% per ticker) and run portfolio‑level checks each rebalance, freeing cash for new high‑conviction ideas like **AMD** or **RUN**.  
+- **Process improvement:** Add a trailing‑stop algorithm (e.g., 12% trailing from peak price) that auto‑executes on Alpaca, ensuring downside protection for high‑volatility positions such as **VRT** and **NVDA**.  
+- **Process improvement:** Expand the recommendation engine to scan the entire investable universe (including ETFs, sector leaders, and emerging themes) rather than only existing holdings, and prioritize ideas with conviction scores ≥8 and recent news catalysts.

@@ -2325,3 +2325,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-14 | PLTR | BUY | $167.99 | N/A | 8/10 | Active | - | Why: Palantir remains the portfolio's largest position at 41.2% with 168% unreal |
 | 2026-11-14 | PANW | BUY | N/A | N/A | 7/10 | Active | - | Why: Palo Alto Networks reports earnings 11/18 with security spending resilient. |
 | 2026-11-14 | MU | BUY | $778.31 | N/A | 7/10 | Active | - | Why: Micron at 105% unrealized gain with earnings passed. IV remains elevated (8 |
+| 2026-11-15 | GLBE | BUY | $319.00 | N/A | 8/10 | Active | - | Why: GLBE is a leading SaaS e-commerce platform enabling brands to go global by  |
+| 2026-11-15 | EWW | BUY | $44.00 | N/A | 7/10 | Active | - | Why: Mexico’s economy is benefiting from near-shoring trends, with increased man |
+| 2026-11-15 | PLTR | BUY | $167.99 | N/A | 9/10 | Active | - | Why: PLTR remains a core holding but has grown to 41.3% of the portfolio, signal |
+| 2026-11-15 | SLV | BUY | $44.13 | N/A | 7/10 | Active | - | Why: Silver is a hedge against inflation and has industrial demand tailwinds fro |
+| 2026-11-15 | CASH | BUY | N/A | N/A | 8/10 | Active | - | Why: With earnings season volatility and macroeconomic uncertainty, holding cash |
