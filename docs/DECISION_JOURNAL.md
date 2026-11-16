@@ -2340,3 +2340,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-15 | PANW | BUY | $265.50 | N/A | 8/10 | Active | - | Why: The FAA's AI air traffic expansion and drone attacks highlight urgent need  |
 | 2026-11-15 | EWY | BUY | $71.30 | N/A | 7/10 | Active | - | Why: Korea is trading at 9x P/E vs S&P's 21x, with 70% tech composition includin |
 | 2026-11-15 | GLBE | BUY | $32.50 | N/A | 7/10 | Active | - | Why: Final EU digital market act implementation forces cross-border compliance,  |
+| 2026-11-16 | PLTR | BUY | $167.99 | $15.00 | 10/10 | Active | - | Why: PLTR at 41.3% of portfolio is an existential concentration risk. No single  |
+| 2026-11-16 | NVDA | BUY | $162.85 | N/A | 8/10 | Active | - | Why: NVDA is the AI infrastructure monopoly. Blackwell ramp + sovereign AI deman |
+| 2026-11-16 | INDA | BUY | N/A | $78.00 | 8/10 | Active | - | Why: Portfolio is 100% US-equity correlated. India offers: 7%+ GDP growth, demog |
+| 2026-11-16 | GLD | BUY | N/A | $320.00 | 8/10 | Active | - | Why: Central bank buying (1,000+ tonnes/yr since 2022), fiscal dominance (US def |
+| 2026-11-16 | FCX | BUY | N/A | $62.00 | 8/10 | Active | - | Why: Copper is the "oil of electrification." AI data centers + EV + grid + renew |
