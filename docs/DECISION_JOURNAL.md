@@ -2345,3 +2345,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-16 | INDA | BUY | N/A | $78.00 | 8/10 | Active | - | Why: Portfolio is 100% US-equity correlated. India offers: 7%+ GDP growth, demog |
 | 2026-11-16 | GLD | BUY | N/A | $320.00 | 8/10 | Active | - | Why: Central bank buying (1,000+ tonnes/yr since 2022), fiscal dominance (US def |
 | 2026-11-16 | FCX | BUY | N/A | $62.00 | 8/10 | Active | - | Why: Copper is the "oil of electrification." AI data centers + EV + grid + renew |
+| 2026-11-16 | ZS | BUY | $185.00 | $245.00 | 7/10 | Active | - | Why: Zscaler stands to benefit from the "defensive market niche" opened by drone |
+| 2026-11-16 | EWW | BUY | $48.50 | $58.00 | 8/10 | Active | - | Why: Portfolio suffers from extreme concentration risk (69.6% in top 5 positions |
