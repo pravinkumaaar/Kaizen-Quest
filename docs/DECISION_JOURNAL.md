@@ -2354,3 +2354,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-17 | NVDA | BUY | $156.14 | N/A | 7/10 | Active | - | Why: 12% is a defensible core weight. What is *not* defensible is adding ahead o |
 | 2026-11-17 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Type/ETF: Gold trust — NEW position |
 | 2026-11-17 | PANW | BUY | N/A | N/A | 8/10 | Active | - | Why: You need a growth sleeve that isn't levered to the same AI-capex cycle. Cyb |
+| 2026-11-17 | TEM | BUY | $64.76 | N/A | 8/10 | Active | - | Why: Tempus AI leverages AI to revolutionize personalized medicine, integrating  |
+| 2026-11-17 | AVGO | BUY | $1256.45 | N/A | 9/10 | Active | - | Why: Broadcom is a dominant player in semiconductors with a strong foothold in A |
+| 2026-11-17 | PLTR | BUY | $160.39 | N/A | 6/10 | Active | - | Why: Palantir has seen substantial gains (+155.9%), representing 42.4% of the po |
+| 2026-11-17 | NVDA | BUY | $156.14 | N/A | 8/10 | Active | - | Why: NVIDIA remains a leader in AI hardware with strong fundamentals and growth  |
+| 2026-11-17 | GLD | BUY | $195.00 | N/A | 7/10 | Active | - | Why: Gold provides a hedge against market volatility and potential inflationary  |
