@@ -2359,3 +2359,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-17 | PLTR | BUY | $160.39 | N/A | 6/10 | Active | - | Why: Palantir has seen substantial gains (+155.9%), representing 42.4% of the po |
 | 2026-11-17 | NVDA | BUY | $156.14 | N/A | 8/10 | Active | - | Why: NVIDIA remains a leader in AI hardware with strong fundamentals and growth  |
 | 2026-11-17 | GLD | BUY | $195.00 | N/A | 7/10 | Active | - | Why: Gold provides a hedge against market volatility and potential inflationary  |
+| 2026-11-17 | PLTR | BUY | $156.81 | $110.00 | 9/10 | Active | - |  |
+| 2026-11-17 | NVDA | BUY | $153.82 | N/A | 8/10 | Active | - |  |
+| 2026-11-17 | AVAV | BUY | N/A | N/A | 7/10 | Active | - | Earnings: 2026-12-08, EPS est $0.40 / Rev est $521M — 21 days out. This is a pre |

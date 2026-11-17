@@ -1,29 +1,29 @@
 {
   "ticker": "NBIS",
   "first_researched": "2026-05-22T16:40:15.629640",
-  "last_researched": "2026-11-17T00:13:58.612579",
-  "research_count": 260,
+  "last_researched": "2026-11-17T20:53:38.512274",
+  "research_count": 261,
   "research_depth_score": 6,
   "last_research_type": "moderate",
-  "last_price": 115.88,
+  "last_price": 107.13,
   "catalysts": [
     {
       "catalyst": "Analyst estimates available",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-11-17T00:13:58.612579"
+      "last_verified": "2026-11-17T20:53:38.512274"
     },
     {
       "catalyst": "Earnings history tracked",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-11-17T00:13:58.612579"
+      "last_verified": "2026-11-17T20:53:38.512274"
     },
     {
       "catalyst": "Sector performance analyzed",
       "confidence": 0.8,
       "source": "research",
-      "last_verified": "2026-11-17T00:13:58.612579"
+      "last_verified": "2026-11-17T20:53:38.512274"
     }
   ],
   "facts": [
@@ -1124,47 +1124,56 @@
       "first_verified": "2026-11-17T00:12:36.951640",
       "last_verified": "2026-11-17T00:13:58.612579",
       "verification_count": 1
+    },
+    {
+      "claim": "NBIS trading at $107.13 (-7.55%)",
+      "type": "price",
+      "initial_confidence": 0.95,
+      "source": "polygon",
+      "first_verified": "2026-11-17T20:52:23.768126",
+      "last_verified": "2026-11-17T20:53:38.512274",
+      "verification_count": 1
     }
   ],
   "thesis_history": [],
   "risks": [],
   "competitive_position": {
     "ticker": "NBIS",
-    "timestamp": "2026-11-17 00:13:30",
+    "timestamp": "2026-11-17 20:53:12",
     "methodology": "Competitive landscape mapping with moat assessment",
     "error": "Expecting value: line 1 column 1 (char 0)"
   },
   "data_sources_used": [
-    "esg",
-    "insider_trades_contrarian",
-    "comps_analysis",
-    "balance_sheet",
-    "financial_ratios",
-    "risk_assessment",
     "earnings_momentum",
+    "balance_sheet",
+    "earnings_history",
+    "institutional",
+    "treasury_rates",
+    "comps_analysis",
+    "macro_rotation",
+    "esg",
+    "insider_sentiment",
     "technical_indicators",
-    "negative_news",
-    "market_sentiment",
-    "aggregate_indicators",
-    "sector_performance",
-    "insider_trades",
-    "sector_rotation",
-    "price_target",
-    "analyst_estimates",
     "congressional",
+    "competitive_landscape",
+    "risk_assessment",
+    "aggregate_indicators",
+    "dcf",
+    "price_target",
     "cashflow",
     "industry_pe",
-    "macro_rotation",
-    "supply_chain",
-    "institutional",
-    "valuation_multiples",
-    "dcf",
-    "insider_sentiment",
-    "earnings_history",
-    "treasury_rates",
-    "competitive_landscape",
+    "financial_ratios",
+    "insider_trades",
     "recommendation_trends",
-    "income_statement"
+    "market_sentiment",
+    "valuation_multiples",
+    "analyst_estimates",
+    "negative_news",
+    "sector_rotation",
+    "insider_trades_contrarian",
+    "sector_performance",
+    "income_statement",
+    "supply_chain"
   ],
   "research_gaps": [],
   "contrarian_signals": []
