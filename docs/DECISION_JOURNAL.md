@@ -2350,3 +2350,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-17 | PLTR | BUY | $160.39 | N/A | 8/10 | Active | - | Why: Palantir has delivered outstanding returns (+155.9%), but excessive concent |
 | 2026-11-17 | TUR | BUY | $38.72 | N/A | 7/10 | Active | - | Why: Turkish equities trade at 3.8x P/E vs 15x EM average after currency stabili |
 | 2026-11-17 | KLIC | BUY | $46.80 | N/A | 7/10 | Active | - | Why: Leading semiconductor packaging equipment supplier trading at 1.2x P/S vs s |
+| 2026-11-17 | PLTR | BUY | $160.39 | N/A | 9/10 | Active | - | Why: The thesis is intact — AIP land-and-expand, government + commercial flywhee |
+| 2026-11-17 | NVDA | BUY | $156.14 | N/A | 7/10 | Active | - | Why: 12% is a defensible core weight. What is *not* defensible is adding ahead o |
+| 2026-11-17 | GLD | BUY | N/A | N/A | 8/10 | Active | - | Type/ETF: Gold trust — NEW position |
+| 2026-11-17 | PANW | BUY | N/A | N/A | 8/10 | Active | - | Why: You need a growth sleeve that isn't levered to the same AI-capex cycle. Cyb |
