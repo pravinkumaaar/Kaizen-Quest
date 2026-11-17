@@ -2347,3 +2347,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-16 | FCX | BUY | N/A | $62.00 | 8/10 | Active | - | Why: Copper is the "oil of electrification." AI data centers + EV + grid + renew |
 | 2026-11-16 | ZS | BUY | $185.00 | $245.00 | 7/10 | Active | - | Why: Zscaler stands to benefit from the "defensive market niche" opened by drone |
 | 2026-11-16 | EWW | BUY | $48.50 | $58.00 | 8/10 | Active | - | Why: Portfolio suffers from extreme concentration risk (69.6% in top 5 positions |
+| 2026-11-17 | PLTR | BUY | $160.39 | N/A | 8/10 | Active | - | Why: Palantir has delivered outstanding returns (+155.9%), but excessive concent |
+| 2026-11-17 | TUR | BUY | $38.72 | N/A | 7/10 | Active | - | Why: Turkish equities trade at 3.8x P/E vs 15x EM average after currency stabili |
+| 2026-11-17 | KLIC | BUY | $46.80 | N/A | 7/10 | Active | - | Why: Leading semiconductor packaging equipment supplier trading at 1.2x P/S vs s |
