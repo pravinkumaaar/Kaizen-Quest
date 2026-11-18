@@ -2362,3 +2362,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-17 | PLTR | BUY | $156.81 | $110.00 | 9/10 | Active | - |  |
 | 2026-11-17 | NVDA | BUY | $153.82 | N/A | 8/10 | Active | - |  |
 | 2026-11-17 | AVAV | BUY | N/A | N/A | 7/10 | Active | - | Earnings: 2026-12-08, EPS est $0.40 / Rev est $521M — 21 days out. This is a pre |
+| 2026-11-18 | PLTR | BUY | $156.67 | N/A | 8/10 | Active | - | Why: At 42.6% of portfolio with +150% unrealized gain, position size demands ris |
+| 2026-11-18 | PANW | BUY | $386.72 | N/A | 7/10 | Active | - | Why: Earnings TODAY AMC with cybersecurity sector showing budget resilience (+23 |
+| 2026-11-18 | LRCX | BUY | $1028.50 | N/A | 8/10 | Active | - | Why: Memory capex rebound (DRAM + NAND spending up 18% QoQ) benefits wafer fab e |
