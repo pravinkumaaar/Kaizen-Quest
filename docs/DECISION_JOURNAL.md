@@ -2365,3 +2365,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-18 | PLTR | BUY | $156.67 | N/A | 8/10 | Active | - | Why: At 42.6% of portfolio with +150% unrealized gain, position size demands ris |
 | 2026-11-18 | PANW | BUY | $386.72 | N/A | 7/10 | Active | - | Why: Earnings TODAY AMC with cybersecurity sector showing budget resilience (+23 |
 | 2026-11-18 | LRCX | BUY | $1028.50 | N/A | 8/10 | Active | - | Why: Memory capex rebound (DRAM + NAND spending up 18% QoQ) benefits wafer fab e |
+| 2026-11-19 | PLTR | BUY | $156.67 | N/A | 9/10 | Active | - | Why: Palantir is a genuinely great business — AIP is sticky, government + commer |
+| 2026-11-19 | SMCI | BUY | $24.37 | N/A | 8/10 | Active | - | Why: The AI server assembly business is a commodity pass-through with price-take |
+| 2026-11-19 | MU | BUY | $705.27 | N/A | 7/10 | Active | - | Why: Memory is a cyclical, always has been. HBM demand is genuine and the AI bui |
+| 2026-11-19 | GEV | BUY | N/A | N/A | 8/10 | Active | - | Why: Every dollar of AI capex eventually becomes a megawatt, and the US grid phy |
+| 2026-11-19 | WDC | BUY | N/A | N/A | 7/10 | Active | - | Why: Everyone chases GPU (NVDA), HBM (MU), and networking. Almost nobody watches |
+| 2026-11-19 | GLD | BUY | N/A | $8.00 | 7/10 | Active | - | Why: This is not a trade — it's a structural hedge, and I'll be honest that it w |
