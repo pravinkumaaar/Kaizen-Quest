@@ -2375,3 +2375,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-19 | AVGO | BUY | N/A | $240.00 | 8/10 | Active | - | Why: Best risk/reward in AI infrastructure. Custom silicon (Google TPU v6, Meta  |
 | 2026-11-19 | CRDO | BUY | N/A | $85.00 | 7/10 | Active | - | Why: Pure-play AI connectivity. Only merchant supplier of 112G/224G PAM4 DSPs +  |
 | 2026-11-19 | GLD | BUY | N/A | $310.00 | 8/10 | Active | - | Why: Portfolio has 0% commodities, 0% international, 100% US tech correlation. C |
+| 2026-11-19 | PLTR | BUY | $153.68 | $20.00 | 8/10 | Active | - | Why: Palantir has been a massive winner (+145%) but now represents 43% of the po |
+| 2026-11-19 | AVGO | BUY | $1025.67 | $1250.00 | 9/10 | Active | - | Why: Broadcom is the "picks and shovels" play for AI data centers with 60% expos |
+| 2026-11-19 | EEM | BUY | $41.22 | $49.00 | 7/10 | Active | - | Why: EM valuations at 12x P/E vs S&P 500 at 21x. Dollar peaking + Fed pivot crea |

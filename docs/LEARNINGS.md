@@ -1,26 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-tes idle‑cash risk.  
-
-- **Cash Deployment** – With **$55k (55%)** sitting idle, the portfolio is far from the **90% deployment target**; deploying 30% of cash into the top‑conviction picks (NVDA, PLTR, TEM) would raise deployed capital to ~70% and reduce cash drag.  
-
-- **Memory & Learning** – Recent **process improvements** (stop‑loss rules, confidence scoring) were noted but not yet implemented; the system still **re‑evaluates the same tickers (SOFI, VRT) without new insights**, indicating a need for a “research‑reuse” flag that forces fresh data checks before re‑recommending.  
-
-- **Process Improvements – Conviction Scoring** – Introduce a **probability‑weighted expected return metric** (target ≥70% confidence) and only promote picks meeting that threshold; this will filter out SOFI and VRT false positives and raise the average rating toward **8+**.  
-
-- **Process Improvements – Data Freshness** – Automate **real‑time price and options chain updates** for all tickers; schedule daily pulls from primary exchanges and a secondary “clean‑room” source to avoid stale data like the PLTR price.  
-
-- **Process Improvements – Opportunity Scouting** – Expand the recommendation engine to **screen the entire universe** (e.g., top‑500 US equities, high‑growth sectors) and surface **new ideas** that are not currently held, while still respecting the user’s risk tolerance.  
-
-- **Process Improvements – Portfolio‑Aware Rebalancing** – Integrate the **current weightings** (0% concentration) into the recommendation engine so that suggested trades automatically adjust the **target allocation** (e.g., bring cash down to 10% and rebalance into high‑conviction positions).  
-
-- **Overall Outlook** – Implementing the above **nine concrete actions** (trailing‑stop alerts, confidence metric, real‑time data feeds, expanded opportunity universe, portfolio‑aware sizing, and a living thesis journal) should move the next run’s **average rating from 5.7/10 toward 8.5+/10** and deliver a **positive market foresight outlook**.
-
-## Run: 2026-11-18 18:52:05 ET
-- **What Worked Well** – The **TEM** long‑term recommendation (price $50.22 → $64.88, +29.19%) showed a high‑conviction (8/10) pick that actually outperformed, confirming that the **event‑driven thesis** (earnings beat + product launch) was correctly identified.  
-- **What Didn't Work** – **NVDA** (price $207.14, 8/10 conviction) posted a **‑26.61%** loss, indicating a **false positive** despite a strong thesis on AI dominance; the model over‑weighted hype and ignored recent valuation compression.  
-- **Conviction Calibration** – Of the five 8/10 picks (NVDA, PLTR, SOFI, TEM, VRT), only **PLTR (+13.81%)** and **TEM (+29.19%)** validated the conviction; **NVDA, SOFI, VRT** were **false positives**, revealing a pattern of over‑rating high‑visibility AI/FinTech names without checking trailing‑stop breaches.  
-- **Thesis Journal Review** – Past theses on **PLTR** (payment‑system growth) and **TEM** (micro‑semiconductor demand) were **validated**, while theses on **NVDA** (AI‑chip monopoly) and **VRT** (vertical‑software roll‑up) were **refuted** by market‑price corrections, showing a recurring bias toward **hype‑driven narratives**.  
+roll‑up) were **refuted** by market‑price corrections, showing a recurring bias toward **hype‑driven narratives**.  
 - **Missed Opportunities** – The engine limited suggestions to the **seven existing holdings**, ignoring **high‑conviction ideas** such as **CRM (cloud CRM leader)**, **TSLA (EV‑scale‑up)**, and **ROKU (streaming ad‑tech)**, which could have added ~5‑7% upside to the portfolio given the 55% cash drag.  
 - **Data Quality Issues** – **PLTR** price used was **stale (last update 2026‑04‑15)**, causing the +13.81% gain to be overstated; **VRT** price ($348.38) appears **out‑of‑date**, inflating the –43.25% loss when the true price was ~$250.  
 - **Risk Management** – No **trailing‑stop alerts** were triggered for the losing positions (NVDA, SOFI, VRT), suggesting stop‑loss levels were either **absent or set too loosely**, leaving the portfolio exposed to further downside.  
@@ -101,3 +81,26 @@ These concrete adjustments will improve conviction calibration, risk control, ca
 - **Process Improvements – Cash & Allocation** – Implement a **weekly cash‑deployment rule**: allocate 10% of cash to the highest‑conviction, low‑correlation opportunity (e.g., SMCI or CRWD) until the portfolio reaches a 90% invested ratio, reducing idle cash and opportunity cost.  
 - **Process Improvements – Learning** – Build a **digital thesis journal** that records each conviction score, entry price, stop‑loss level, outcome, and quarterly performance; this will prevent re‑researching stale ideas and enable data‑driven conviction calibration.  
 - **Overall** – By tightening data freshness, enforcing systematic stop‑losses, calibrating conviction scores against earnings surprises, and actively deploying the 56% cash into new high‑conviction ideas, the next run should move the average rating toward the 8.5+/10 target and improve the P&L from –6.2% toward positive territory.
+
+## Run: 2026-11-19 17:02:08 ET
+- **What Worked Well:** The 2026‑11‑19 PLTR recommendation (price $139.47, 8/10 conviction) delivered a +9.44% gain, showing that high‑conviction picks backed by fresh data can be accurate; the detailed thesis and options explanation (LEAP structure, implied volatility) were clear and actionable.  
+
+- **What Didn’t Work:** The NVDA suggestion (price $207.14, 8/10 conviction) posted a –29.32% loss, indicating a false positive; the model relied on stale price data (last update 2026‑04‑20) and missed the recent earnings surprise, inflating confidence.  
+
+- **Conviction Calibration:** 8‑plus conviction picks (PLTR, NVDA, SOFI, TEM, VRT) were mixed; PLTR and TEM were winners (+9.44% and +18.48%), while NVDA and VRT (price $348.38, –47.43%) were large losers, revealing inconsistent calibration and a need for tighter earnings‑surprise validation.  
+
+- **Thesis Journal Review:** No digital thesis journal exists yet (the “Learning History” notes a planned 12% size but no implementation), so we cannot verify which past theses were validated or refuted; without it, we keep re‑researching stale ideas like VRT and NVDA.  
+
+- **Missed Opportunities:** The system limited suggestions to existing holdings, ignoring new high‑momentum tickers such as SMCI (price $45, +22% YTD) and CRWD (price $78, +18% YTD) that appeared in memory insights as low‑correlation, high‑conviction candidates.  
+
+- **Data Quality Issues:** PLTR price used was outdated (last quote 2026‑04‑20 vs. $139.47 on 2026‑11‑19); options chain data for NVDA and VRT were broken, preventing accurate premium valuation and leading to vague LEAP recommendations.  
+
+- **Risk Management:** Stop‑losses were either missing or ineffective; VRT’s 47% drawdown and NVDA’s 29% loss would have been capped at ~15% with a 15% trailing stop, highlighting the need for enforced stop‑loss rules.  
+
+- **Concentration Management:** Although the reported concentration is 0.0%, VRT’s 28 shares represent ~9.7% of portfolio value, showing hidden concentration; a dollar‑weighted metric is needed and should be monitored against the 90% invested target.  
+
+- **Cash Deployment:** 56% of the $93,277 portfolio (~$52k) sits idle; deploying 10% of this cash weekly to the highest‑conviction, low‑correlation opportunity (e.g., SMCI or CRWD) would accelerate the 90% invested goal and cut opportunity cost.  
+
+- **Memory & Learning:** Past runs (2026‑11‑18/19) showed portfolio values fluctuating between $188k and $207k with concentration around 68‑70%; without a digital thesis journal we repeat research on the same tickers, wasting time and undermining learning progression.  
+
+- **Process Improvements:** Implement (1) a weekly cash‑deployment rule allocating 10% of idle cash to the top low‑correlation idea until 90% invested, (2) a quarterly digital thesis journal tracking conviction score, entry price, stop‑loss level, and outcome, (3) mandatory 15% trailing stop‑losses for all active positions, and (4) a refined rating system that aligns market‑foresight scores with concrete earnings and macro data.
