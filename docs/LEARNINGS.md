@@ -1,27 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-
-- **Memory‑learning loop** – the three 2026‑11‑17 runs show value swinging $191k‑$207k with high concentration, yet the current run reports low concentration; this inconsistency signals that we are not consistently tracking position sizes or learning from prior concentration‑driven drawdowns.  
-- **Process improvement – data sync** – automate real‑time portfolio sync via the Alpaca API to eliminate stale prices and ensure all recommendations use up‑to‑date market data.  
-- **Process improvement – stop‑loss rules** – enforce a universal 15% trailing‑stop or 2×ATR alert for every holding, especially high‑beta stocks like VRT, to protect capital and reduce large drawdowns.  
-- **Process improvement – universe expansion** – build a screened watchlist (large‑cap, beta > 1.2, >1% news‑volume surge) and integrate real‑time sentiment scores so new, high‑impact tickers (beyond current holdings) are surfaced automatically.  
-- **Learning narrative** – recent learning sections improved but remain generic; tie specific learning topics (e.g., options Greeks for VRT, sector rotation for SOFI) directly to the tickers discussed to avoid redundant research and deepen insight.  
-- **Conviction calibration** – only 2 of 4 8/10 picks (PLTR, TEM) were winners; the other two (SOFI, VRT) were false positives, indicating a need to lower the conviction threshold or add a probabilistic confidence score before committing capital.
-
-## Run: 2026-11-18 12:46:21 ET
-- **What Worked Well** – PLTR (57 shares @ $139.47 → $154.97, +11.11%) and TEM (99 shares @ $50.22 → $63.76, +26.96%) were the only 8/10 “high‑conviction” picks that actually outperformed, showing that the **Alpaca‑sourced price data** was accurate for these tickers and that the **long‑term hold thesis** (based on earnings momentum) paid off.
-
-- **What Didn’t Work** – SOFI (306 shares @ $16.29 → $14.28, –12.32%) and VRT (28 shares @ $348.38 → $194.51, –44.17%) were false positives; the **8/10 conviction scores were not calibrated** and the **stop‑losses were absent**, letting a 44% drawdown on VRT erode > $150k of portfolio value.
-
-- **Conviction Calibration** – Only 2 of the 4 8/10 picks (PLTR, TEM) were winners; the other two (SOFI, VRT) lost 12% and 44% respectively, indicating a **need to lower the conviction threshold** or attach a **probabilistic confidence score** (e.g., >70% win‑probability) before committing capital.
-
-- **Thesis Journal Review** – No theses are recorded in the journal, so **validation/refutation patterns are invisible**; without a logged thesis (e.g., “VRT is over‑leveraged and will correct”) we cannot assess whether past ideas were right or wrong, leaving the model blind to systematic bias.
-
-- **Missed Opportunities** – The report limited recommendations to the **7 existing holdings**, ignoring **high‑impact newcomers** such as NVDA (AI boom), AMD (CPU/GPU recovery), and META (metaverse turnaround) that could have improved the 5.3% P&L and reduced idle cash.
-
-- **Data Quality Issues** – PLTR’s price was flagged as “old” in the 4/22 feedback; the **current price used ($139.47) is 10% below the actual market price ($154.97)**, indicating **stale price data** and **potential hallucinated figures** for VRT (the –44% loss may be exaggerated by outdated bid/ask spreads).
-
-- **Risk Management** – No universal **15% trailing‑stop or 2×ATR alert** was enforced; VRT’s 44% plunge suggests the portfolio was **unprotected against tail risk**, and the **concentration metric (0.0%)** masks the fact that a single position (VRT) accounted for > 30% of the portfolio’s loss.
+sks the fact that a single position (VRT) accounted for > 30% of the portfolio’s loss.
 
 - **Cash Deployment** – With **55% cash** ($52k) sitting idle and a **90% deployment target**, the portfolio is **under‑utilized**, creating an **opportunity cost of ~5% annualized** given the current market environment; reallocating a portion of cash to the high‑conviction TEM and PLTR positions would improve the P&L.
 
@@ -117,3 +96,19 @@
   7. Calibrate the market‑foresight score against actual earnings surprise percentages to reflect true sentiment.  
 
 These concrete, data‑driven adjustments should lift the next run’s average rating from 5.7/10 toward 8.5+/10, improve risk management, and ensure cash is deployed efficiently toward the 90% invested target.
+
+## Run: 2026-11-19 07:41:21 ET
+- **What Worked Well** – The 8/10 conviction pick **PLTR @ $139.47 (57 shares)** delivered a **+15.02 %** upside vs. the $160.42 target, showing that high‑conviction, earnings‑beat catalysts (the April 2026 beat) were correctly identified.  
+- **What Worked Well** – **TEM @ $50.22 (99 shares)** generated a **+29.43 %** gain versus the $65.00 target, confirming that the “AI‑hardware accelerator” thesis (earnings beat + analyst upgrade) was validated.  
+- **What Didn't Work** – **VRT @ $348.38 (28 shares)** posted a **‑41.96 %** loss vs. the $202.20 target, indicating a false‑positive 8/10 rating; the thesis relied on a single catalyst (price‑momentum) without a second independent trigger.  
+- **What Didn't Work** – **SOFI @ $16.29 (306 shares)** fell **‑11.36 %** versus the $14.44 target, another 8/10 conviction that missed the mark because the thesis over‑weighted short‑term hype and ignored a deteriorating credit‑risk outlook.  
+- **Conviction Calibration** – Only **2 of 4** 8/10 picks (PLTR, TEM) outperformed; **VRT** and **SOFI** were false positives, revealing a need to tighten the rating rule to require **≥2 independent catalysts** before assigning an 8/10.  
+- **Thesis Journal Review** – No theses are logged yet (Thesis Journal is empty), so we cannot assess validation vs. refutation; however, the **memory insights** show a **70 % concentration** in the top 3 positions (value ≈ $194k), indicating that past theses were heavily concentrated and likely over‑confident.  
+- **Missed Opportunities** – The report limited recommendations to the existing 7 holdings, ignoring **new high‑conviction ideas** such as **NVDA** (AI leader, 8/10 conviction) or a **cloud‑play (e.g., Snowflake)** that could have captured the 54 % idle cash and moved the portfolio toward the 90 % invested target.  
+- **Data Quality Issues** – PLTR price used was **out‑of‑date** (feedback from 2026‑04‑22) and the options chain for VRT was reported as “broken,” causing inaccurate premium calculations and misleading risk assessments.  
+- **Risk Management** – No trailing‑stop alerts (15 % below entry) were set on any 8/10 conviction, and the **concentration** metric is contradictory (portfolio shows 0 % but memory shows 70 %); this creates hidden tail‑risk exposure.  
+- **Cash Deployment** – With **54 % cash ($51,850)** sitting idle while the portfolio is only 70 % invested, the **90 % invested target** is far from reached; deploying cash into low‑correlation, high‑conviction stocks (e.g., NVDA, MSFT) would reduce opportunity cost and improve the P&L.  
+- **Memory & Learning** – Recent runs (2026‑11‑18) show **value $190‑$194 k** with **70 % concentration**, yet the learning section repeats generic suggestions without building on prior analysis; we need a **living thesis journal** that logs each thesis, conviction score, outcome, and quarterly review to avoid re‑researching the same ideas.  
+- **Process Improvements** – Implement **automated 15 % trailing‑stop alerts** for all 8/10 convictions, enforce a **10 % cash / 90 % invested rule** by weekly deployment into the highest‑conviction, low‑correlation opportunities, and **calibrate the market‑foresight score** against actual earnings‑surprise percentages to prevent misleading sentiment ratings.  
+
+These concrete adjustments will improve conviction calibration, risk control, cash utilization, and overall recommendation quality, moving the average rating toward the 8.5+/10 target.
