@@ -2371,3 +2371,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-19 | GEV | BUY | N/A | N/A | 8/10 | Active | - | Why: Every dollar of AI capex eventually becomes a megawatt, and the US grid phy |
 | 2026-11-19 | WDC | BUY | N/A | N/A | 7/10 | Active | - | Why: Everyone chases GPU (NVDA), HBM (MU), and networking. Almost nobody watches |
 | 2026-11-19 | GLD | BUY | N/A | $8.00 | 7/10 | Active | - | Why: This is not a trade — it's a structural hedge, and I'll be honest that it w |
+| 2026-11-19 | PLTR | BUY | $156.83 | $21.50 | 10/10 | Active | - | Why: PLTR at 43% of portfolio ($81K) creates existential concentration risk. A 3 |
+| 2026-11-19 | AVGO | BUY | N/A | $240.00 | 8/10 | Active | - | Why: Best risk/reward in AI infrastructure. Custom silicon (Google TPU v6, Meta  |
+| 2026-11-19 | CRDO | BUY | N/A | $85.00 | 7/10 | Active | - | Why: Pure-play AI connectivity. Only merchant supplier of 112G/224G PAM4 DSPs +  |
+| 2026-11-19 | GLD | BUY | N/A | $310.00 | 8/10 | Active | - | Why: Portfolio has 0% commodities, 0% international, 100% US tech correlation. C |
