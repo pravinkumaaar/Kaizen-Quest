@@ -2381,3 +2381,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-20 | COST | BUY | N/A | $19.50 | 5/10 | Active | - | Thesis: Costco’s membership model and high‑margin warehouse format are poised to |
 | 2026-11-20 | ADI | BUY | N/A | $27.00 | 5/10 | Active | - | Thesis: Analog Devices is positioned to benefit from AI‑driven demand for high‑p |
 | 2026-11-20 | GLD | BUY | N/A | $10.30 | 5/10 | Active | - | Thesis: Gold is emerging as a hedge against persistent inflation and geopolitica |
+| 2026-11-20 | PLTR | BUY | $145.66 | N/A | 9/10 | Active | - | Why: You are mathematically over-exposed. A 10% correction in PLTR wipes out a m |
+| 2026-11-20 | AVGO | BUY | $178.00 | N/A | 8/10 | Active | - | Why: While NVDA is the "brain," Broadcom (AVGO) owns the custom silicon (ASIC) a |
+| 2026-11-20 | GLD | BUY | $324.35 | N/A | 7/10 | Active | - | Why: Your portfolio is 95%+ correlated to "Risk-On" tech. When tech sells off, y |
