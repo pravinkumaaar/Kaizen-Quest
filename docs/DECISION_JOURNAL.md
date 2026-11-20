@@ -2389,3 +2389,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-20 | GLD | BUY | $175.67 | N/A | 7/10 | Active | - | Why: Central banks globally are easing monetary policy, driving inflation fears. |
 | 2026-11-20 | TEM | BUY | $55.95 | N/A | 6/10 | Active | - | Why: TEM is down 22%, but the AI-driven precision medicine space is a long-term  |
 | 2026-11-20 | NNOX | BUY | $15.25 | N/A | 6/10 | Active | - | Why: NNOX has earnings in 5 days, and its AI-powered imaging solutions stand to  |
+| 2026-11-20 | ASML | BUY | $820.00 | $1200.00 | 8/10 | Active | - | Why: ASML is the sole supplier of EUV lithography tools, the only viable technol |
+| 2026-11-20 | LULU | BUY | $350.00 | $500.00 | 7/10 | Active | - | Why: LULU combines a premium athleisure brand, strong international store growth |
+| 2026-11-20 | FCX | BUY | $28.00 | $46.00 | 7/10 | Active | - | Why: FCX’s copper assets are critical to AI, renewable‑energy, and infrastructur |
