@@ -2378,3 +2378,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-19 | PLTR | BUY | $153.68 | $20.00 | 8/10 | Active | - | Why: Palantir has been a massive winner (+145%) but now represents 43% of the po |
 | 2026-11-19 | AVGO | BUY | $1025.67 | $1250.00 | 9/10 | Active | - | Why: Broadcom is the "picks and shovels" play for AI data centers with 60% expos |
 | 2026-11-19 | EEM | BUY | $41.22 | $49.00 | 7/10 | Active | - | Why: EM valuations at 12x P/E vs S&P 500 at 21x. Dollar peaking + Fed pivot crea |
+| 2026-11-20 | COST | BUY | N/A | $19.50 | 5/10 | Active | - | Thesis: Costco’s membership model and high‑margin warehouse format are poised to |
+| 2026-11-20 | ADI | BUY | N/A | $27.00 | 5/10 | Active | - | Thesis: Analog Devices is positioned to benefit from AI‑driven demand for high‑p |
+| 2026-11-20 | GLD | BUY | N/A | $10.30 | 5/10 | Active | - | Thesis: Gold is emerging as a hedge against persistent inflation and geopolitica |
