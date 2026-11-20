@@ -2384,3 +2384,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-20 | PLTR | BUY | $145.66 | N/A | 9/10 | Active | - | Why: You are mathematically over-exposed. A 10% correction in PLTR wipes out a m |
 | 2026-11-20 | AVGO | BUY | $178.00 | N/A | 8/10 | Active | - | Why: While NVDA is the "brain," Broadcom (AVGO) owns the custom silicon (ASIC) a |
 | 2026-11-20 | GLD | BUY | $324.35 | N/A | 7/10 | Active | - | Why: Your portfolio is 95%+ correlated to "Risk-On" tech. When tech sells off, y |
+| 2026-11-20 | INDA | BUY | $50.12 | N/A | 8/10 | Active | - | Why: India is the fastest-growing major economy with GDP growth >6% annually. Th |
+| 2026-11-20 | AVGO | BUY | $605.54 | N/A | 7/10 | Active | - | Why: AVGO is up 59.8% and represents 6.6% of the portfolio. The stock is overbou |
+| 2026-11-20 | GLD | BUY | $175.67 | N/A | 7/10 | Active | - | Why: Central banks globally are easing monetary policy, driving inflation fears. |
+| 2026-11-20 | TEM | BUY | $55.95 | N/A | 6/10 | Active | - | Why: TEM is down 22%, but the AI-driven precision medicine space is a long-term  |
+| 2026-11-20 | NNOX | BUY | $15.25 | N/A | 6/10 | Active | - | Why: NNOX has earnings in 5 days, and its AI-powered imaging solutions stand to  |
