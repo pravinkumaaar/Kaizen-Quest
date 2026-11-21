@@ -2392,3 +2392,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-20 | ASML | BUY | $820.00 | $1200.00 | 8/10 | Active | - | Why: ASML is the sole supplier of EUV lithography tools, the only viable technol |
 | 2026-11-20 | LULU | BUY | $350.00 | $500.00 | 7/10 | Active | - | Why: LULU combines a premium athleisure brand, strong international store growth |
 | 2026-11-20 | FCX | BUY | $28.00 | $46.00 | 7/10 | Active | - | Why: FCX’s copper assets are critical to AI, renewable‑energy, and infrastructur |
+| 2026-11-21 | PLTR | BUY | $143.49 | N/A | 8/10 | Active | - | Why: Palantir Technologies (PLTR) accounts for 44.6% of the portfolio despite a  |
+| 2026-11-21 | EEM | BUY | $39.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued relative to US equities, offering diversif |
+| 2026-11-21 | GLD | BUY | $175.50 | N/A | 7/10 | Active | - | Why: Gold (GLD) provides a hedge against inflation and portfolio volatility. Wit |
+| 2026-11-21 | MU | BUY | $594.51 | N/A | 7/10 | Active | - | Why: Micron Technology (MU) remains well-positioned in the memory chip market, b |
