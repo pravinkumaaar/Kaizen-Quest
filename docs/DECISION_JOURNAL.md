@@ -2396,3 +2396,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-21 | EEM | BUY | $39.50 | N/A | 7/10 | Active | - | Why: Emerging markets are undervalued relative to US equities, offering diversif |
 | 2026-11-21 | GLD | BUY | $175.50 | N/A | 7/10 | Active | - | Why: Gold (GLD) provides a hedge against inflation and portfolio volatility. Wit |
 | 2026-11-21 | MU | BUY | $594.51 | N/A | 7/10 | Active | - | Why: Micron Technology (MU) remains well-positioned in the memory chip market, b |
+| 2026-11-21 | PLTR | BUY | $143.49 | N/A | 8/10 | Active | - | Why: Palantir has risen 129% in the portfolio and now represents dangerous conce |
+| 2026-11-21 | DE | BUY | $594.51 | N/A | 7/10 | Active | - | Why: Deere & Company (DE) reports earnings 11/25 with expectations set very low  |
+| 2026-11-21 | EWW | BUY | $64.22 | N/A | 7/10 | Active | - | Why: iShares MSCI Mexico ETF benefits from nearshoring boom (US/Mexico trade hit |
+| 2026-11-21 | NVDA | BUY | $125.53 | N/A | 7/10 | Active | - | Why: Nvidia remains the AI infrastructure leader but faces near-term volatility  |

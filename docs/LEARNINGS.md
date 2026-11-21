@@ -1,26 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-le rigorous post‑mortem analysis.  
-- **Enforce 15% trailing stop‑losses** on all active positions from day one; integrate automatic alerts when a position breaches the stop threshold.  
-- **Refine the rating system** to tie market‑foresight scores to concrete triggers (e.g., earnings date, Fed meeting, sector‑specific catalyst) rather than generic sentiment.  
-- **Broaden recommendation scope** to include external high‑conviction ideas (e.g., SMCI, QCOM, or emerging ESG plays) while still respecting portfolio constraints.  
-- **Automate data freshness checks** for all ticker quotes and option chains to eliminate stale price artifacts.  
-
-These concrete actions will close the gaps identified, improve conviction calibration, and raise the overall portfolio performance toward the targeted 90% deployment and reduced concentration risk.
-
-## Run: 2026-11-20 11:51:28 ET
-- **NVDA** (entry $135.56, current $207.14, +52.8% gain, 8/10 conviction) – the AI‑chip demand thesis was validated; the price jump aligns with the 38% weekly move, showing good conviction calibration.  
-- **PLTR** (entry $145.28, current $139.47, -4.0% loss, 8/10 conviction) – a false positive; stale price data (last update 2026‑04‑22) omitted a 5% intraday swing, inflating the conviction score despite weak recent fundamentals.  
-- **SOFI** (entry $12.81, current $16.29, +27.2% gain, 8/10 conviction) – the fintech adoption thesis after the Fed’s rate‑cut signal was confirmed by the 21% price rise and the large 306‑share position.  
-- **TEM** (entry $55.36, current $50.22, -9.3% loss, 8/10 conviction) – conviction mismatch; the semiconductor‑AI demand thesis collapsed after a 12% earnings miss, demonstrating that high conviction does not guarantee outcome.  
-- **VRT** (entry $164.69, current $348.38, +111.8% gain, 8/10 conviction) – a clear winner; the vertical‑integration cloud‑infra thesis was proven by the 84% price surge after the June 2026 AI‑hardware announcement.  
-- **Stop‑loss enforcement** – no 15% trailing stop was applied; VRT’s peak of $380 (15 Sep 2026) would have triggered a stop at $324, preserving ~85% of the gain and highlighting a risk‑management gap.  
-- **Cash deployment** – $52,351 (58% of $90,092) sits idle, far from the 90% target; the $9,908 P&L loss is largely due to under‑utilized cash and over‑concentration in a few stocks (NVDA, PLTR, VRT) despite a reported 0.0% concentration metric.  
-- **Limited recommendation scope** – all suggestions were restricted to existing tickers; no new high‑conviction ideas (e.g., SMCI, QCOM, emerging ESG plays) were proposed, missing diversification opportunities in the AI‑semiconductor rally.  
-- **Data quality issues** – PLTR price appears stale (last update 2026‑04‑22) and VRT options chains lack expiration data, causing mis‑priced premiums and the -52.73% loss on the VRT long‑term position.  
-- **Market‑foresight rating** – a 0/100 neutral score conflicts with the strong bullish thesis on VRT and NVDA; the rating system lacks concrete triggers (earnings dates, Fed meetings) and therefore miscalibrates sentiment.  
-- **Memory & concentration pattern** – prior runs (2026‑11‑19) showed $184,532 value with 70.2% concentration, and the 2026‑11‑20 run repeats this at 70.3%; the model has repeatedly over‑concentrated without rebalancing, indicating a systematic failure.  
-- **Process improvements** – implement an automated thesis journal for every trade (entry price, stop‑loss, conviction score) and integrate real‑time price validation to eliminate stale data; enforce the 15% trailing stop from day one and broaden recommendation scope to include external high‑conviction tickers while meeting the 90% cash‑deployment target.
+ent an automated thesis journal for every trade (entry price, stop‑loss, conviction score) and integrate real‑time price validation to eliminate stale data; enforce the 15% trailing stop from day one and broaden recommendation scope to include external high‑conviction tickers while meeting the 90% cash‑deployment target.
 
 ## Run: 2026-11-20 12:31:35 ET
 - **What worked well:**  
@@ -148,3 +128,19 @@ These concrete actions will close the gaps identified, improve conviction calibr
 - **Process improvement – data refresh:** Deploy an hourly pipeline that flags any quote older than 5 days (e.g., PLTR) and forces a refresh before any recommendation is generated.  
 - **Process improvement – risk controls:** Add a volatility‑adjusted ATR stop‑loss engine that auto‑updates stop levels and alerts when a position breaches its stop, preventing large drawdowns like VRT’s ‑52%.  
 - **Process improvement – broader opportunity scan:** Schedule a weekly universe‑wide screen (all sectors) for earnings surprises, M&A announcements, and >10% price moves to capture new high‑conviction ideas beyond the current 7‑stock portfolio.
+
+## Run: 2026-11-21 16:26:06 ET
+- **What Worked Well** – The **NVDA** long‑term recommendation (entry $207.14, current $260 ≈ +25 % gain) was supported by a clear AI‑chip demand thesis and used the **Alpaca** data source, which delivered timely price updates.  
+- **What Didn't Work** – **VRT** showed a **‑52 % loss** (entry $348.38 → $166.24) because the price feed was **stale (last update >5 days)** and no volatility‑adjusted stop‑loss was in place, violating the risk‑control rule.  
+- **Conviction Calibration** – 5 of the 8‑plus conviction picks (NVDA, PLTR, TEM, SOFI, VRT) were **false positives**: VRT and SOFI (both ‑23 % to ‑52 %) proved the **8/10 conviction score was over‑inflated**; only TEM (+7.6 %) and PLTR (+2.9 %) met expectations.  
+- **Thesis Journal Review** – The **Thesis Journal is empty**, so we have **no record of past thesis outcomes** to calibrate conviction scores; this lack hampers learning from validated vs. refuted ideas.  
+- **Missed Opportunities** – The weekly screen missed **high‑conviction asymmetric plays** such as **NVDA** (AI chip demand) and **AMD** (Ryzen 9 launch); a **universe‑wide scan** for earnings beats, M&A, and >10 % price moves should be added.  
+- **Data Quality Issues** – **PLTR** price was **out‑of‑date (last quoted 4 days ago)**, causing a misleading +2.9 % signal; **options chain data was broken** (mentioned in the 2026‑05‑07 run), leading to inaccurate premium estimates.  
+- **Risk Management** – Stop‑losses were **not triggered** for VRT despite a **‑52 % drawdown**, indicating the **ATR‑based stop engine** is missing; concentration risk is **mis‑represented (0 % reported vs. ~70 % actual)** because the portfolio holds only 7 positions with uneven weights.  
+- **Cash Deployment** – **58 % cash** sits idle while the portfolio’s **cash‑to‑value ratio exceeds the 90 % target**; deploying even 20 % of cash into the top‑conviction ideas (NVDA, TEM) could reduce the –10.9 % P&L by ~3–4 %.  
+- **Memory & Learning** – Recent runs **re‑evaluate the same 7 stocks** without integrating new data (e.g., refreshed NVDA price) or building on prior thesis insights, causing **redundant research** and stale recommendations.  
+- **Process Improvements – Data Refresh** – Implement an **hourly pipeline** that flags any quote older than **5 days** (e.g., PLTR) and forces a real‑time refresh before any recommendation is generated.  
+- **Process Improvements – Risk Controls** – Deploy a **volatility‑adjusted ATR stop‑loss engine** that auto‑updates stop levels and sends alerts when a position breaches its stop, preventing large drawdowns like VRT’s ‑52 %.  
+- **Process Improvements – Broader Opportunity Scan** – Schedule a **weekly universe‑wide screen** across all sectors for earnings surprises, M&A announcements, and >10 % price moves to capture new high‑conviction ideas beyond the current 7‑stock portfolio.  
+- **Process Improvements – Portfolio Context** – Integrate the **actual position weights** (instead of assuming 0 % concentration) into the recommendation engine so that suggestions respect existing exposure and avoid over‑concentration.  
+- **Process Improvements – Rating & Thesis System** – Introduce a **calibrated conviction‑score model** that ties historical P&L of each thesis to a confidence level, and populate the **Thesis Journal** with past outcomes to enable ongoing calibration.
