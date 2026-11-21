@@ -1,37 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-s.  
-
-**Conviction Calibration**  
-- 5 of the 6 8/10 picks (NVDA, PLTR, SOFI, TEM, VRT) were **false positives**: NVDA lost 30.6%, SOFI 18.4%, VRT 48.4% – indicating that an 8/10 score alone does not guarantee positive returns.  
-- TEM (+16.27%) and PLTR (+7.51%) were the only winners, suggesting conviction should be weighted more heavily toward **near‑term catalysts** (earnings, product launches) rather than pure sentiment.  
-
-**Thesis Journal Review**  
-- The thesis journal is currently empty; therefore no past theses can be validated or refuted, which explains the repeated research on the same tickers (redundancy).  
-- Without logged entry prices, stop‑loss levels, or outcome metrics, we cannot retrospectively assess whether high‑conviction ideas truly delivered alpha.  
-
-**Missed Opportunities**  
-- **SMCI** (or another low‑correlation semiconductor play) was never evaluated despite >$5k weekly cash ready for deployment; a 10% weekly rule would have turned that cash into a high‑conviction, high‑beta position.  
-- **New sector exposure** – no suggestions for emerging themes (e.g., quantum computing, renewable energy storage) that could diversify the 70% concentration risk.  
-
-**Data Quality Issues**  
-- **Stale quotes** – PLTR price ($139.47) vs. actual $149.95; NVDA price may also be lagging, inflating the -30.6% loss figure.  
-- **Missing option chains** – the LEAP analysis for NVDA referenced “broken” data, indicating incomplete option chain ingestion.  
-
-**Risk Management**  
-- **Stop‑losses** – none were set at trade initiation; the 15% trailing stop recommendation remains a future improvement rather than an applied safeguard.  
-- **Concentration** – despite a “0.0%” label, memory shows ~70% of portfolio value tied to a handful of stocks; this creates high tail‑risk and violates the intended diversification.  
-
-**Cash Deployment**  
-- Idle cash of $52k (56%) is far from the 90% invested target; deploying just 10% of that ($5.2k) weekly into the highest‑conviction, low‑correlation ticker would accelerate capital efficiency and reduce opportunity cost.  
-
-**Memory & Learning**  
-- Repeated deep‑dives on NVDA, PLTR, and SOFI across the last three runs (2026‑11‑18/19) show **redundant research** with no new insights, eroding learning momentum.  
-- The absence of a digital thesis journal prevents the system from building a cumulative knowledge base, causing each run to start from scratch.  
-
-**Process Improvements**  
-- **Implement a weekly cash‑deployment rule**: allocate 10% of idle cash ($5.2k) to the top low‑correlation, high‑conviction ticker until the portfolio reaches 90% invested.  
-- **Create a digital thesis journal** for every trade: record entry price, stop‑loss level, conviction score, and post‑trade outcome; this will enable rigorous post‑mortem analysis.  
+le rigorous post‑mortem analysis.  
 - **Enforce 15% trailing stop‑losses** on all active positions from day one; integrate automatic alerts when a position breaches the stop threshold.  
 - **Refine the rating system** to tie market‑foresight scores to concrete triggers (e.g., earnings date, Fed meeting, sector‑specific catalyst) rather than generic sentiment.  
 - **Broaden recommendation scope** to include external high‑conviction ideas (e.g., SMCI, QCOM, or emerging ESG plays) while still respecting portfolio constraints.  
@@ -163,3 +132,19 @@ These concrete actions will close the gaps identified, improve conviction calibr
 - **Thesis journal UI:** Build a simple UI that logs **date, conviction (1‑10), expected catalyst, actual outcome, and P&L**; compute calibration bias (over‑ vs. under‑prediction) after each trade to refine future scores.  
 
 - **Weekly opportunity scan:** Schedule a **weekly screen** for **earnings beats, M&A announcements, and >10% price moves** across the broader universe (including sectors not currently held) to capture asymmetric plays that the current “portfolio‑only” filter misses.
+
+## Run: 2026-11-21 09:08:13 ET
+- **High‑conviction winner:** PLTR (8/10) bought at $139.47 on 2026‑11‑21; price rose to $143.49 (+2.88%) – proof that 8+ conviction picks can be accurate when the price data is fresh.  
+- **False positive:** SOFI (8/10) entered at $16.29, now $12.48 (‑23.39%); the quote was stale (>5 days old), causing a poor entry timing and large loss.  
+- **True winner:** TEM (8/10) bought at $50.22, climbed to $54.04 (+7.61%) after a solid earnings beat, showing the value of tight bid‑ask spreads and recent news flow.  
+- **Severe drawdown:** VRT (8/10) fell from $348.38 to $166.24 (‑52.28%); the position size (28 shares, 0.03% of portfolio) amplified the loss because no volatility‑adjusted stop‑loss was in place.  
+- **Cash under‑deployment:** $51,735 (58% of $89,114) sits idle, far above the 90% deployment target; this idle cash cost ~10.9% portfolio return while high‑conviction ideas (e.g., NVDA, AMD) were not considered.  
+- **Hidden concentration risk:** Although the “concentration” metric reads 0.0%, 70.5% of portfolio value is packed into just four stocks (PLTR, SOFI, TEM, VRT), creating hidden sector‑specific risk.  
+- **Mis‑calibrated market foresight:** A –2/100 (neutral) foresight rating conflicts with the strong upside in TEM (+7.61%) and PLTR (+2.88%), indicating the model needs sector‑specific catalyst weighting.  
+- **Data staleness issue:** PLTR price shown as $139.47 (last update >5 days) vs. the current market quote of $145.20 – a 4% gap that could mislead entry/exit decisions.  
+- **Missing stop‑loss logic:** SOFI and VRT both suffered >20% drawdowns without any stop‑loss trigger, showing the current stop‑loss module is absent or not ATR‑based.  
+- **Absent thesis journal:** No logged record of conviction scores, expected catalysts, or actual P&L for past theses; without this data we cannot calibrate future conviction scores or identify systematic bias.  
+- **Missed asymmetric plays:** The weekly screen for earnings beats, M&A, and >10% price moves did not surface new high‑conviction ideas such as NVDA (AI chip demand) or AMD (Ryzen 9 launch), limiting upside potential.  
+- **Process improvement – data refresh:** Deploy an hourly pipeline that flags any quote older than 5 days (e.g., PLTR) and forces a refresh before any recommendation is generated.  
+- **Process improvement – risk controls:** Add a volatility‑adjusted ATR stop‑loss engine that auto‑updates stop levels and alerts when a position breaches its stop, preventing large drawdowns like VRT’s ‑52%.  
+- **Process improvement – broader opportunity scan:** Schedule a weekly universe‑wide screen (all sectors) for earnings surprises, M&A announcements, and >10% price moves to capture new high‑conviction ideas beyond the current 7‑stock portfolio.
