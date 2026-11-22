@@ -2400,3 +2400,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-21 | DE | BUY | $594.51 | N/A | 7/10 | Active | - | Why: Deere & Company (DE) reports earnings 11/25 with expectations set very low  |
 | 2026-11-21 | EWW | BUY | $64.22 | N/A | 7/10 | Active | - | Why: iShares MSCI Mexico ETF benefits from nearshoring boom (US/Mexico trade hit |
 | 2026-11-21 | NVDA | BUY | $125.53 | N/A | 7/10 | Active | - | Why: Nvidia remains the AI infrastructure leader but faces near-term volatility  |
+| 2026-11-22 | PLTR | BUY | $143.49 | N/A | 8/10 | Active | - | Why: Palantir now represents 43.3% of your portfolio after a 129% gain. While th |
+| 2026-11-22 | AVGO | BUY | $1025.67 | N/A | 8/10 | Active | - | Why: Broadcom is the hidden backbone of AI with custom ASICs, networking chips,  |
+| 2026-11-22 | GLD | BUY | $175.92 | N/A | 7/10 | Active | - | Why: With real yields peaking and Fed likely done hiking, gold is setting up for |
