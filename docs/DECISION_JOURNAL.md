@@ -2405,3 +2405,9 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-22 | GLD | BUY | $175.92 | N/A | 7/10 | Active | - | Why: With real yields peaking and Fed likely done hiking, gold is setting up for |
 | 2026-11-22 | PLTR | BUY | $143.49 | N/A | 8/10 | Active | - | Why: With 44.6% portfolio concentration and +129% unrealized gain, this AI/defen |
 | 2026-11-22 | AVGO | BUY | $1025.00 | N/A | 7/10 | Active | - | Why: Dominant position in AI networking chips (Tomahawk 5, Jericho3) with 17% FC |
+| 2026-11-22 | PLTR | BUY | $143.49 | N/A | 10/10 | Active | - | Why: PLTR at 44.6% of portfolio is an existential concentration risk. A 20% draw |
+| 2026-11-22 | AVGO | BUY | N/A | $235.00 | 8/10 | Active | - | Why: Broadcom is the *picks-and-shovels* winner of AI infrastructure: 80%+ marke |
+| 2026-11-22 | MRVL | BUY | N/A | $130.00 | 7/10 | Active | - | Why: Marvell is the *other* custom AI silicon winner alongside AVGO, but with cl |
+| 2026-11-22 | GLDM | BUY | N/A | $58.00 | 7/10 | Active | - | Why: Portfolio is 100% US equities, 70% AI/tech correlated. Gold provides: (1) Z |
+| 2026-11-22 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: India is the only major economy with: (1) Demographics tailwind (median age |
+| 2026-11-22 | SMCI | BUY | $21.65 | N/A | 9/10 | Active | - | Why: -45.1% unrealized loss, 1.3% of portfolio. Accounting controller resignatio |

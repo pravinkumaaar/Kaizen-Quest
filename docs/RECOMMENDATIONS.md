@@ -3,8 +3,12 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $143.49 | TBD | 8/10 |  Active  |  $143.49  |  +0.0%  | Immediate action | Watchlist |
-| 2 | **AVGO** | $1025.00 | TBD | 7/10 |  Active  |  $1025.00  |  +0.0%  | 3-6 months | Watchlist |
+| 1 | **PLTR** | $143.49 | TBD | 10/10 |  Active  |  $143.49  |  +0.0%  | Immediate (risk management) | **Conviction:** 10/10 | **Track:** Yes | Watchlist |
+| 2 | **AVGO** | Market | $235.00 | 8/10 |  Active  |  Fetching...  |  +0.0%  | Medium 3-9mo | **Conviction:** 8/10 | **Track:** Yes | Watchlist |
+| 3 | **MRVL** | Market | $130.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Medium 3-9mo | **Conviction:** 7.5/10 | **Track:** Yes | Watchlist |
+| 4 | **GLDM** | Market | $58.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long 1-3yr (strategic allocation) | **Conviction:** 7/10 | **Track:** Yes | Watchlist |
+| 5 | **INDA** | Market | $65.00 | 7/10 |  Active  |  Fetching...  |  +0.0%  | Long 2-5yr (structural allocation) | **Conviction:** 7/10 | **Track:** Yes | Watchlist |
+| 6 | **SMCI** | $21.65 | TBD | 9/10 |  Active  |  $21.65  |  +0.0%  | Immediate | **Conviction:** 9/10 | **Track:** Yes | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
