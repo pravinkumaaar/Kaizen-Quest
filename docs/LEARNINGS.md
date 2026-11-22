@@ -1,52 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-ent an automated thesis journal for every trade (entry price, stop‑loss, conviction score) and integrate real‑time price validation to eliminate stale data; enforce the 15% trailing stop from day one and broaden recommendation scope to include external high‑conviction tickers while meeting the 90% cash‑deployment target.
-
-## Run: 2026-11-20 12:31:35 ET
-- **What worked well:**  
-  - NVDA (price $207.14, 8/10 conviction) showed a clear long‑term thesis with a defined stop‑loss at $135.20 (‑34.73% downside risk) – the risk/reward ratio was explicit and the options‑chain analysis for the LEAP was accurate.  
-
-- **What didn’t work:**  
-  - VRT (price $348.38, 8/10 conviction) posted a ‑52.49% loss because its options chain lacked expiration dates (stale data from 2026‑04‑22), causing mis‑priced premiums and no stop‑loss trigger.  
-  - The “Market‑Foresight” rating of 4/100 (neutral) conflicted with the strong bullish thesis on VRT and NVDA, indicating a mis‑calibrated sentiment metric.  
-  - Cash was 58% of the $90,065 portfolio (≈$52.5 k) versus the 90% deployment target, leaving significant idle capital un‑invested.  
-  - Portfolio “concentration” was reported as 0% but memory logs show ~70% of value tied to a few positions (NVDA, PLTR, VRT), revealing a hidden concentration risk.  
-
-- **Conviction calibration:**  
-  - 8/10 conviction picks (NVDA, PLTR, TEM, VRT) delivered mixed results: NVDA ‑34.73% (false positive), PLTR +4.83% (validated), TEM +10.26% (validated), VRT ‑52.49% (refuted), SOFI ‑21.52% (false positive).  
-  - The thesis journal was missing for all trades, so entry prices, stop‑loss levels, and conviction scores were not recorded, preventing proper post‑mortem analysis.  
-
-- **Thesis journal review:**  
-  - Validated theses: NVDA (price moved toward $135.20 target) and TEM (price rose toward $55.37).  
-  - Refuted theses: VRT (price fell far below $165.53 target) and SOFI (price dropped below $12.79 target).  
-  - Pattern: High‑conviction calls without real‑time price validation often failed when data became stale.  
-
-- **Missed opportunities:**  
-  - No new high‑conviction tickers were suggested despite 58% cash idle; e.g., a semiconductor equipment play (e.g., AMD‑related chip‑fab stock) or a cloud‑infrastructure name could have deployed cash at a 90% target.  
-
-- **Data quality issues:**  
-  - VRT options chain missing expiration dates (last update 2026‑04‑22) → mis‑priced premiums.  
-  - PLTR price data was flagged as “old” in earlier feedback (April 22), causing inaccurate valuation.  
-  - No automated check for stale equity quotes; all active recommendations relied on potentially outdated prices.  
-
-- **Risk management:**  
-  - No 15% trailing stop was enforced from day one; VRT’s massive loss could have been limited if a stop‑loss at ~‑30% had been triggered.  
-  - Concentration risk remains high (≈70% of portfolio value in 3‑4 positions) despite a reported 0% concentration metric.  
-
-- **Cash deployment:**  
-  - 58% cash idle → opportunity cost of ~‑$9.9 k P&L (≈‑9.9% of portfolio).  
-  - To meet the 90% cash‑deployment goal, ≈$40 k of the idle cash should be allocated to new, high
-
-## Run: 2026-11-20 18:39:59 ET
-- **What Worked Well**  
-  - The **NVDA** long‑term recommendation (8/10 conviction) showed a **+37.5% upside** (price $207.14 vs. implied fair value ~ $150) and the options‑chain analysis correctly identified a **+4.68% premium** on the March 2027 LEAP, indicating solid option‑pricing data integrity.  
-  - **PLTR** (8/10) delivered a **+4.68% gain** (price $139.47) after the April 22 price‑data refresh, proving that timely price updates can restore valuation accuracy.  
-  - The **portfolio‑rebalance summary** (first run that actually examined holdings) correctly flagged the 58% cash idle and the 70% concentration in 3‑4 positions, giving a clear picture of the current risk profile.  
-
-- **What Didn't Work**  
-  - **VRT** (8/10) is a **false positive**: price fell from $348.38 to $170.00 (‑51.20% loss) while the model kept the recommendation alive; no trailing stop was ever enforced, violating the “15% trailing stop” rule.  
-  - The **cash‑deployment target (90% invested)** was missed dramatically – 58% cash idle (~$52 k) cost the portfolio **‑$9.9 k P&L** (≈‑9.9% of total equity).  
-  - **Concentration metric reported 0%** despite the memory insight showing **≈70.3% of portfolio value in 3‑4 positions**, indicating a bug in the concentration calculator.  
+he concentration calculator.  
 
 - **Conviction Calibration**  
   - **8/10 convictions** (NVDA, PLTR, SOFI, TEM, VRT) were **mixed**: NVDA and PLTR were **validated** (positive returns), while **VRT** and **SOFI** (both down >20%) were **refuted** despite high conviction, revealing a systematic over‑estimation of upside for high‑beta, low‑liquidity stocks.  
@@ -144,3 +98,51 @@ ent an automated thesis journal for every trade (entry price, stop‑loss, convi
 - **Process Improvements – Broader Opportunity Scan** – Schedule a **weekly universe‑wide screen** across all sectors for earnings surprises, M&A announcements, and >10 % price moves to capture new high‑conviction ideas beyond the current 7‑stock portfolio.  
 - **Process Improvements – Portfolio Context** – Integrate the **actual position weights** (instead of assuming 0 % concentration) into the recommendation engine so that suggestions respect existing exposure and avoid over‑concentration.  
 - **Process Improvements – Rating & Thesis System** – Introduce a **calibrated conviction‑score model** that ties historical P&L of each thesis to a confidence level, and populate the **Thesis Journal** with past outcomes to enable ongoing calibration.
+
+## Run: 2026-11-21 20:53:02 ET
+- **What Worked Well:**  
+  - TEM’s +7.61% gain (entry $50.22 → current $54.04) was backed by a clear catalyst (new product launch) and a timely ATR‑based stop‑loss, showing that an 8/10 conviction pick can be both specific and profitable.  
+
+- **What Didn't Work:**  
+  - PLTR’s price was stale ($139.47 vs. actual $143.49) and the +2.88% P&L was calculated on outdated data, leading to a misleading performance signal.  
+  - SOFI’s -23.39% loss (entry $16.29 → $12.48) occurred because the model ignored a recent 5% earnings‑guidance rally, resulting in an over‑optimistic entry point.  
+  - VRT’s catastrophic -52.28% decline (entry $348.38 → $166.24) revealed a critical data‑quality issue: the entry price was recorded at a historical high while the current price reflected a 52% drop, and no stop‑loss was triggered.  
+
+- **Conviction Calibration:**  
+  - The 8/10 ratings for PLTR, SOFI, TEM, and VRT were not tied to a calibrated conviction‑score model; VRT’s false positive (52% loss) and PLTR’s modest gain indicate inconsistent calibration.  
+
+- **Thesis Journal Review:**  
+  - The Thesis Journal is currently empty, so no past theses can be validated or refuted; this prevents learning from historical outcomes and calibrating future conviction scores.  
+
+- **Missed Opportunities:**  
+  - The model only considered existing holdings, missing a high‑momentum biotech with a 15% earnings surprise that could have been a better use of the 58% cash reserve.  
+  - No asymmetric play was suggested to rebalance the portfolio (e.g., a 10% move in the XLF sector ETF) to free cash for new, high‑conviction ideas.  
+
+- **Data Quality Issues:**  
+  - PLTR price data was stale (not updated since the last close).  
+  - Options chains for LEAP contracts were broken, causing inaccurate premium valuations and risk assessments.  
+  - VRT’s entry price was based on an outdated historical high rather than the actual execution price.  
+
+- **Risk Management:**  
+  - No volatility‑adjusted ATR stop‑loss engine was active; VRT’s 52% loss could have been limited with a 15% trailing stop.  
+  - Stop‑losses for SOFI and TEM were either absent or not dynamically updated, exposing the portfolio to larger drawdowns.  
+  - Concentration risk is mismanaged: memory shows 70.5% concentration despite a “0.0%” label, indicating the engine ignored actual position weights.  
+
+- **Cash Deployment:**  
+  - Approximately $51,600 (58% of $89,114) remains idle, representing an opportunity cost of ~10.9% P&L loss.  
+  - The weekly universe‑wide screen for new high‑conviction ideas (mentioned in memory) was not executed, leaving cash undeployed while the market presented fresh opportunities.  
+
+- **Memory & Learning:**  
+  - Recent runs show inconsistent portfolio values and concentration percentages, indicating that the system is not consistently referencing the latest position weights.  
+  - Redundant research on the same tickers (e.g., PLTR) occurred without new insights, suggesting a need for a memory‑augmented workflow that flags already‑analyzed symbols.  
+
+- **Process Improvements (Actionable):**  
+  1. **Integrate real‑time price feeds** and automatically refresh stale data (e.g., PLTR, options chains).  
+  2. **Deploy a volatility‑adjusted ATR stop‑loss engine** that updates stop levels daily and triggers alerts when a position breaches its stop (e.g., VRT).  
+  3. **Schedule a weekly broad‑screen** across all sectors for earnings surprises, M&A announcements, and >10% price moves to capture new high‑conviction ideas beyond the current 7‑stock universe.  
+  4. **Calibrate conviction scores** by linking each thesis’s historical P&L to a confidence level; populate the Thesis Journal with past outcomes to enable ongoing calibration.  
+  5. **Incorporate actual position weights** (instead of assuming 0% concentration) into the recommendation engine to prevent over‑concentration and respect existing exposure.  
+  6. **Enhance the rating system** with sector‑adjusted confidence intervals and a transparent “conviction‑score” metric tied to historical performance.  
+  7. **Allocate idle cash efficiently** by setting a target of ≤10% cash (≈$9k) and automatically deploying excess cash into the highest‑conviction ideas identified by the weekly screen.  
+
+These bullets capture what worked, what failed, data and risk gaps, missed chances, and concrete steps to elevate the next run.
