@@ -2403,3 +2403,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-22 | PLTR | BUY | $143.49 | N/A | 8/10 | Active | - | Why: Palantir now represents 43.3% of your portfolio after a 129% gain. While th |
 | 2026-11-22 | AVGO | BUY | $1025.67 | N/A | 8/10 | Active | - | Why: Broadcom is the hidden backbone of AI with custom ASICs, networking chips,  |
 | 2026-11-22 | GLD | BUY | $175.92 | N/A | 7/10 | Active | - | Why: With real yields peaking and Fed likely done hiking, gold is setting up for |
+| 2026-11-22 | PLTR | BUY | $143.49 | N/A | 8/10 | Active | - | Why: With 44.6% portfolio concentration and +129% unrealized gain, this AI/defen |
+| 2026-11-22 | AVGO | BUY | $1025.00 | N/A | 7/10 | Active | - | Why: Dominant position in AI networking chips (Tomahawk 5, Jericho3) with 17% FC |

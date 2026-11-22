@@ -4,8 +4,7 @@
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
 | 1 | **PLTR** | $143.49 | TBD | 8/10 |  Active  |  $143.49  |  +0.0%  | Immediate action | Watchlist |
-| 2 | **AVGO** | $1025.67 | TBD | 8/10 |  Active  |  $1025.67  |  +0.0%  | 3-6 months | Watchlist |
-| 3 | **GLD** | $175.92 | TBD | 7/10 |  Active  |  $175.92  |  +0.0%  | 6-12 months | Watchlist |
+| 2 | **AVGO** | $1025.00 | TBD | 7/10 |  Active  |  $1025.00  |  +0.0%  | 3-6 months | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |

@@ -1,22 +1,6 @@
 ...[older entries archived in HISTORY/]
 
-r catalyst, ensuring the portfolio isn’t limited to existing positions.  
-
-- **Overall**  
-  - The recent run (9.2/10) demonstrated **strong narrative depth, nuanced options analysis, and honest market‑foresight assessment**, but **data freshness, stop‑loss enforcement, and concentration handling** remain critical weaknesses that must be systemically addressed to improve future performance.
-
-## Run: 2026-11-21 00:29:02 ET
-- **Conviction calibration:** The 8/10 “high‑conviction” pick **NVDA** (current price **$207.14** vs. prior **$125.53**, **‑39.40%** drop) and **VRT** (**$348.38** vs. **$166.24**, **‑52.28%** drop) show that the model over‑estimated upside; these are clear false positives that must be re‑rated downward.  
-
-- **Thesis journal status:** The journal is **empty**; without a structured log of date, conviction score, catalyst, and outcome we cannot calibrate confidence levels or identify systematic over‑/under‑prediction biases.  
-
-- **Data freshness:** **PLTR** price **$139.47** appears stale (last update >30 days) per user feedback, leading to inaccurate risk assessments; similarly **VRT** may be using outdated pricing, inflating the perceived loss.  
-
-- **Stop‑loss enforcement:** No trailing or fixed stop‑loss levels were set for the large losers (NVDA, VRT). A **15% trailing stop** would have limited VRT’s drawdown from 52% to roughly 30%, preserving capital.  
-
-- **Cash deployment efficiency:** **58% cash ($51,600)** sits idle while the target is **90%** deployment; redeploying **≈$44,000** into high‑conviction new ideas (e.g., semiconductor equipment **ASML**, cloud infra **SNOW**) would reduce opportunity cost and move toward the cash‑target.  
-
-- **Concentration risk:** Memory shows **70.8% of portfolio value** concentrated in a few positions despite a reported **0% concentration**; enforce a **max‑20% per‑ticker** rule and rebalance **VRT** and **NVDA** down to ≤20% each, freeing capital for new bets.  
+*NVDA** down to ≤20% each, freeing capital for new bets.  
 
 - **Missed opportunity filter:** The system ignored recent **>10% price moves** such as **ASML (+12%)** and **Snowflake (+9%)** that signaled high‑impact catalysts; adding a **new‑stock filter** for such movers would surface fresh, high‑conviction ideas.  
 
@@ -146,3 +130,24 @@ These bullets capture what worked, what failed, data and risk gaps, missed chanc
 - **Options data fix:** Integrate live option chain feeds (bid/ask, implied volatility) to resolve the “broken options data” issue noted on 2026‑05‑07, enabling accurate LEAP pricing and proper risk assessment.  
 
 - **New‑stock inclusion flag:** Add a rule that expands recommendations beyond the current 7‑stock universe, ensuring high‑conviction tickers identified by the weekly screen (e.g., CRWD, TSLA) are considered for addition.
+
+## Run: 2026-11-22 12:35:24 ET
+- **Strong performers:** TEM (+7.6% on 99 shares, cost $54.04 → price $50.22) and PLTR (+2.9% on 57 shares, cost $143.49 → price $139.47) show that 8/10 conviction picks can be correct when market sentiment shifts positively.  
+
+- **False‑positive conviction:** NVDA (8/10) dropped 39.4% (cost $125.53 → price $207.14) and VRT (8/10) fell 52.3% (cost $166.24 → price $348.38), indicating over‑optimistic theses and poor calibration of conviction scores.  
+
+- **Data staleness:** PLTR price ($139.47) was based on outdated data while the cost basis reflected a later price, making the modest +2.9% gain misleading and suggesting stale price feeds.  
+
+- **Options data breakdown:** The LEAP recommendation for NVDA used stale bid/ask and implied volatility, rendering the risk/reward analysis unreliable (noted on 2026‑05‑07).  
+
+- **Portfolio blind spot:** All active recommendations were limited to the existing 7‑stock universe; no new high‑conviction tickers such as CRWD or TSLA were evaluated, ignoring potential upside.  
+
+- **Cash inefficiency:** 58% of the $89,114 portfolio (~$51,700) sits idle, creating a 10.9% P&L drag; the ≤10% cash‑deployment rule is violated, costing significant opportunity returns.  
+
+- **Concentration risk:** Although reported as 0.0% concentration, equal‑weight allocation across 7 positions leaves large unrealized losses (VRT –52.3%, NVDA –39.4%) that could be mitigated with tighter sizing or stop‑losses.  
+
+- **Missing stop‑loss triggers:** No stop‑loss orders were activated for VRT, NVDA, or SOFI despite drawdowns exceeding 20%, indicating a lack of automated risk controls.  
+
+- **Thesis journal emptiness:** No validated or refuted theses exist, preventing calibration of conviction scores; historical P&L (TEM +7.6% vs VRT –52.3%) must be recorded to adjust future scores.  
+
+- **Opportunity cost of narrow screen:** The
