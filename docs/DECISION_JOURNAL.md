@@ -2414,3 +2414,7 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-23 | ADBE | BUY | $304.41 | $460.00 | 9/10 | Active | - | Why: Adobe’s subscription‑based creative cloud model generates high‑margin recur |
 | 2026-11-23 | COST | BUY | $502.00 | $620.00 | 8/10 | Active | - | Why: Costco’s membership‑based warehouse model delivers stable cash flow, low‑co |
 | 2026-11-23 | MRVL | BUY | $1.10 | $2.00 | 8/10 | Active | - | Why: Marvell is a key supplier to data‑center and cloud‑computing ecosystems, wi |
+| 2026-11-23 | PLTR | BUY | N/A | N/A | 5/10 | Active | - | Why: You have a +155% winner that has grown to 42.5% of your book *by appreciati |
+| 2026-11-23 | AVGO | BUY | N/A | $480.00 | 9/10 | Active | - | Why: Everyone crowds into NVDA for the GPU; AVGO owns the *custom ASIC + network |
+| 2026-11-23 | FCX | BUY | N/A | $62.00 | 7/10 | Active | - | Why: Dot-connect: AI compute demand → data-center power demand → grid buildout + |
+| 2026-11-23 | SLV | BUY | N/A | $50.00 | 7/10 | Active | - | Why: Silver just broke out (+5.2%) and it's the *higher-beta cousin* of gold — i |
