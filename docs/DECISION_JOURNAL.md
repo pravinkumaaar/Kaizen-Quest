@@ -2411,3 +2411,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-22 | GLDM | BUY | N/A | $58.00 | 7/10 | Active | - | Why: Portfolio is 100% US equities, 70% AI/tech correlated. Gold provides: (1) Z |
 | 2026-11-22 | INDA | BUY | N/A | $65.00 | 7/10 | Active | - | Why: India is the only major economy with: (1) Demographics tailwind (median age |
 | 2026-11-22 | SMCI | BUY | $21.65 | N/A | 9/10 | Active | - | Why: -45.1% unrealized loss, 1.3% of portfolio. Accounting controller resignatio |
+| 2026-11-23 | ADBE | BUY | $304.41 | $460.00 | 9/10 | Active | - | Why: Adobe’s subscription‑based creative cloud model generates high‑margin recur |
+| 2026-11-23 | COST | BUY | $502.00 | $620.00 | 8/10 | Active | - | Why: Costco’s membership‑based warehouse model delivers stable cash flow, low‑co |
+| 2026-11-23 | MRVL | BUY | $1.10 | $2.00 | 8/10 | Active | - | Why: Marvell is a key supplier to data‑center and cloud‑computing ecosystems, wi |
