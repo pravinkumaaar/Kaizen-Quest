@@ -2418,3 +2418,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-23 | AVGO | BUY | N/A | $480.00 | 9/10 | Active | - | Why: Everyone crowds into NVDA for the GPU; AVGO owns the *custom ASIC + network |
 | 2026-11-23 | FCX | BUY | N/A | $62.00 | 7/10 | Active | - | Why: Dot-connect: AI compute demand → data-center power demand → grid buildout + |
 | 2026-11-23 | SLV | BUY | N/A | $50.00 | 7/10 | Active | - | Why: Silver just broke out (+5.2%) and it's the *higher-beta cousin* of gold — i |
+| 2026-11-24 | PLTR | BUY | $161.57 | N/A | 8/10 | Active | - | Why: Palantir has been a massive winner (157.8% gain) but now represents dangero |
+| 2026-11-24 | AVGO | BUY | $313.55 | N/A | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play for AI with best-in-class networki |
+| 2026-11-24 | GLDM | BUY | $42.10 | N/A | 7/10 | Active | - | Why: Portfolio lacks inflation hedge. Gold historically outperforms when real ra |
