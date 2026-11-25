@@ -2429,3 +2429,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-25 | PLTR | BUY | $161.18 | N/A | 9/10 | Active | - | Why: +157% and 44.3% of the book is a position-sizing error, not a conviction st |
 | 2026-11-25 | AVGO | BUY | N/A | N/A | 7/10 | Active | - | Why: Broadcom is the cleanest way to own custom AI silicon (XPU/ASIC) plus the n |
 | 2026-11-25 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Your entire book rises and falls on one macro factor: AI/tech risk appetite |
+| 2026-11-25 | MU | BUY | $629.79 | N/A | 8/10 | Active | - | Why: MU sold off 11% despite strong fundamentals. As a leading memory chip maker |
+| 2026-11-25 | GLD | BUY | $192.50 | N/A | 7/10 | Active | - | Why: With inflationary pressures resurging, gold offers a proven hedge against d |
+| 2026-11-25 | TEM | BUY | $54.83 | N/A | 8/10 | Active | - | Why: TEM plunged near IPO lows (~$54) despite oncology/AI tailwinds. Attractive  |
