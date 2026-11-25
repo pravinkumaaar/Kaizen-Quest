@@ -2426,3 +2426,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-25 | AVGO | BUY | N/A | $50.00 | 8/10 | Active | - | Why: Broadcom owns the AI networking fabric (Tomahawk 5/6, Jericho3-AI) and cust |
 | 2026-11-25 | INDA | BUY | N/A | $25.00 | 8/10 | Active | - | Why: Zero international exposure is a portfolio hole. India: 7% GDP growth, demo |
 | 2026-11-25 | FCX | BUY | N/A | $5.00 | 7/10 | Active | - | Why: Copper is the "oil of electrification." AI data centers need 5-10x more cop |
+| 2026-11-25 | PLTR | BUY | $161.18 | N/A | 9/10 | Active | - | Why: +157% and 44.3% of the book is a position-sizing error, not a conviction st |
+| 2026-11-25 | AVGO | BUY | N/A | N/A | 7/10 | Active | - | Why: Broadcom is the cleanest way to own custom AI silicon (XPU/ASIC) plus the n |
+| 2026-11-25 | GLD | BUY | N/A | N/A | 7/10 | Active | - | Why: Your entire book rises and falls on one macro factor: AI/tech risk appetite |
