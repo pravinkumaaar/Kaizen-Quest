@@ -2421,3 +2421,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-24 | PLTR | BUY | $161.57 | N/A | 8/10 | Active | - | Why: Palantir has been a massive winner (157.8% gain) but now represents dangero |
 | 2026-11-24 | AVGO | BUY | $313.55 | N/A | 8/10 | Active | - | Why: Broadcom is the "picks and shovels" play for AI with best-in-class networki |
 | 2026-11-24 | GLDM | BUY | $42.10 | N/A | 7/10 | Active | - | Why: Portfolio lacks inflation hedge. Gold historically outperforms when real ra |
+| 2026-11-25 | PLTR | BUY | $161.18 | $20.00 | 10/10 | Active | - | Why: PLTR is 44.2% of portfolio ($83,285). A 30% drawdown = -$25K (13% portfolio |
+| 2026-11-25 | SMCI | BUY | $22.62 | N/A | 9/10 | Active | - | Why: -42.7% loss ($1,685). Accounting delays, auditor resignation (EY), Nasdaq d |
+| 2026-11-25 | AVGO | BUY | N/A | $50.00 | 8/10 | Active | - | Why: Broadcom owns the AI networking fabric (Tomahawk 5/6, Jericho3-AI) and cust |
+| 2026-11-25 | INDA | BUY | N/A | $25.00 | 8/10 | Active | - | Why: Zero international exposure is a portfolio hole. India: 7% GDP growth, demo |
+| 2026-11-25 | FCX | BUY | N/A | $5.00 | 7/10 | Active | - | Why: Copper is the "oil of electrification." AI data centers need 5-10x more cop |
