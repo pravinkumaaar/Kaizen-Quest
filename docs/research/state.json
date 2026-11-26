@@ -1,10 +1,10 @@
 {
-  "total_runs": 1169,
-  "last_run": "2026-11-26T00:15:46.104667",
+  "total_runs": 1170,
+  "last_run": "2026-11-26T02:13:33.795039",
   "last_run_tickers": [
-    "VRT",
-    "NBIS",
-    "APLD"
+    "AVGO",
+    "MU",
+    "ASTS"
   ],
   "research_queue": [],
   "global_facts": {}
