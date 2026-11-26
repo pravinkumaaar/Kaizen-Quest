@@ -2432,3 +2432,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-25 | MU | BUY | $629.79 | N/A | 8/10 | Active | - | Why: MU sold off 11% despite strong fundamentals. As a leading memory chip maker |
 | 2026-11-25 | GLD | BUY | $192.50 | N/A | 7/10 | Active | - | Why: With inflationary pressures resurging, gold offers a proven hedge against d |
 | 2026-11-25 | TEM | BUY | $54.83 | N/A | 8/10 | Active | - | Why: TEM plunged near IPO lows (~$54) despite oncology/AI tailwinds. Attractive  |
+| 2026-11-26 | PLTR | BUY | $163.59 | N/A | 8/10 | Active | - | Why: Your 46.1% position has gained 161% and now presents extreme concentration  |
+| 2026-11-26 | AVGO | BUY | $1025.67 | N/A | 9/10 | Active | - | Why: Dominant AI infrastructure play trading at just 18x forward P/E with: |
+| 2026-11-26 | EIDO | BUY | $25.40 | N/A | 7/10 | Active | - | Why: Overlooked AI infrastructure buildout play: |
