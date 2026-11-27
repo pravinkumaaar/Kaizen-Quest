@@ -2437,3 +2437,8 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-26 | EIDO | BUY | $25.40 | N/A | 7/10 | Active | - | Why: Overlooked AI infrastructure buildout play: |
 | 2026-11-27 | ADBE | BUY | $378.95 | $18298.00 | 8/10 | Active | - | Why: Adobe’s transition to AI‑enhanced Creative Cloud subscriptions and its high |
 | 2026-11-27 | SNPS | BUY | $23.31 | $18298.00 | 7/10 | Active | - | Why: Synopsys dominates electronic‑design‑automation (EDA) software, a critical  |
+| 2026-11-27 | RR | BUY | $0.65 | N/A | 7/10 | Active | - | Why: Richtech Robotics is positioned at the intersection of AI and robotics, a s |
+| 2026-11-27 | SLV | BUY | $39.41 | N/A | 8/10 | Active | - | Why: Silver is historically an effective hedge against inflation, and the recent |
+| 2026-11-27 | MU | BUY | $646.99 | N/A | 7/10 | Active | - | Why: Micron Technology has upcoming earnings with strong EPS estimates ($39.37)  |
+| 2026-11-27 | PLTR | BUY | $172.20 | N/A | 8/10 | Active | - | Why: Palantir Technologies represents 45.3% of the portfolio, posing significant |
+| 2026-11-27 | CASH | BUY | N/A | N/A | 7/10 | Active | - | Why: Given the high concentration risk in PLTR and mixed market signals, holding |
