@@ -2435,3 +2435,5 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-26 | PLTR | BUY | $163.59 | N/A | 8/10 | Active | - | Why: Your 46.1% position has gained 161% and now presents extreme concentration  |
 | 2026-11-26 | AVGO | BUY | $1025.67 | N/A | 9/10 | Active | - | Why: Dominant AI infrastructure play trading at just 18x forward P/E with: |
 | 2026-11-26 | EIDO | BUY | $25.40 | N/A | 7/10 | Active | - | Why: Overlooked AI infrastructure buildout play: |
+| 2026-11-27 | ADBE | BUY | $378.95 | $18298.00 | 8/10 | Active | - | Why: Adobe’s transition to AI‑enhanced Creative Cloud subscriptions and its high |
+| 2026-11-27 | SNPS | BUY | $23.31 | $18298.00 | 7/10 | Active | - | Why: Synopsys dominates electronic‑design‑automation (EDA) software, a critical  |
