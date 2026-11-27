@@ -2442,3 +2442,6 @@ Track every investment decision, its reasoning, and outcome.
 | 2026-11-27 | MU | BUY | $646.99 | N/A | 7/10 | Active | - | Why: Micron Technology has upcoming earnings with strong EPS estimates ($39.37)  |
 | 2026-11-27 | PLTR | BUY | $172.20 | N/A | 8/10 | Active | - | Why: Palantir Technologies represents 45.3% of the portfolio, posing significant |
 | 2026-11-27 | CASH | BUY | N/A | N/A | 7/10 | Active | - | Why: Given the high concentration risk in PLTR and mixed market signals, holding |
+| 2026-11-27 | PLTR | BUY | $172.17 | N/A | 8/10 | Active | - | Why: With 46.4% portfolio concentration and +174.7% unrealized gain, this AI/def |
+| 2026-11-27 | MU | BUY | $646.95 | N/A | 7/10 | Active | - | Why: Memory cycle recovery + AI server demand creates perfect setup. DRAM spot p |
+| 2026-11-27 | EEM | BUY | $44.20 | N/A | 7/10 | Active | - | Why: Extreme valuation gap vs S&P (P/E 12x vs 21x) with dollar peaking. South Ko |
