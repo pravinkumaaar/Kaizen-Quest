@@ -3,9 +3,7 @@
 ## 📋 Watchlist Recommendations
 | # | Ticker | Entry | Target | Conviction | Status | Current | P&L | Horizon | Source |
 |---|--------|-------|--------|------------|--------|---------|-----|---------|--------|
-| 1 | **PLTR** | $172.17 | TBD | 8/10 |  Active  |  $172.17  |  +0.0%  | Immediate action | Watchlist |
-| 2 | **MU** | $646.95 | TBD | 7/10 |  Active  |  $646.95  |  +0.0%  | Swing (3-6mo) | Watchlist |
-| 3 | **EEM** | $44.20 | TBD | 7/10 |  Active  |  $44.20  |  +0.0%  | Medium (1-2yr) | Watchlist |
+| 1 | **TICKER** | $312.34 | $22.00 | 9/10 |  Active  |  $312.34  |  +0.0%  | Swing (6‑8 weeks post‑earnings) | Watchlist |
 
 ## 🏦 Alpaca Paper Trading Holdings
 | Ticker | Qty | Avg Cost | Current | P&L |
